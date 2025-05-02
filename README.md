@@ -14,7 +14,7 @@ This project is still under development. The expected release window is around t
  - Add MinHook lib checks
  - Stable Entry/Exit methods for DLL
  - Reaserch the cleint message system
-     - Essentialy Functions
+     - Essential Functions
      - Necessary Hooks
      - Static Anylisis On Non-Reflection Methods
  - Create basic command interpreter
