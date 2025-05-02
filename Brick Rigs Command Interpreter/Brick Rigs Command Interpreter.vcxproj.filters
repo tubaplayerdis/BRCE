@@ -28,6 +28,24 @@
     <Filter Include="Header Files\menu">
       <UniqueIdentifier>{2e85828e-4981-409b-bcd6-8b6628eff522}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\menu">
+      <UniqueIdentifier>{bd3d12cd-af7f-47d7-8faa-2831a706a1d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\global">
+      <UniqueIdentifier>{665d2d01-dcc6-4c35-90cb-2a6448d7dbd6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\global">
+      <UniqueIdentifier>{8723699f-6a49-414d-abc0-afc6e6badcf1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\modules">
+      <UniqueIdentifier>{0f1b0565-df5f-4852-b027-248489caf70c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\module">
+      <UniqueIdentifier>{0b499e78-ccef-4de9-b9e4-8b624e67baab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\module\modules">
+      <UniqueIdentifier>{2c463f04-f5af-4d1d-bb5d-4243e32de5c6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -66,6 +84,12 @@
     <ClInclude Include="menu.h">
       <Filter>Header Files\menu</Filter>
     </ClInclude>
+    <ClInclude Include="global.h">
+      <Filter>Header Files\global</Filter>
+    </ClInclude>
+    <ClInclude Include="modules.h">
+      <Filter>Header Files\module</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -99,7 +123,10 @@
       <Filter>Source Files\kiero</Filter>
     </ClCompile>
     <ClCompile Include="menu.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\menu</Filter>
+    </ClCompile>
+    <ClCompile Include="global.cpp">
+      <Filter>Source Files\global</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
