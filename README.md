@@ -16,7 +16,7 @@ This project is still under development. The expected release window is around t
  - Reaserch the cleint message system
      - Essential Functions
      - Necessary Hooks
-     - Static Anylisis On Non-Reflection Methods
+     - Static Analysis On Non-Reflection Methods
  - Create basic command interpreter
  - Add accompanying IMGUI menu for customization of chat message commands
  - Beef up the command interpreter
