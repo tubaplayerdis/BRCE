@@ -13,7 +13,7 @@ FILE* p_file{ nullptr };
 
 DWORD WINAPI MainThread(LPVOID lpReserved)
 {
-    #ifdef _DEBUG
+    #ifdef _DEBUG //If in debug version enable console.
         AllocConsole();
         freopen_s(&p_file, "CONIN$", "r", stdin);
         freopen_s(&p_file, "CONOUT$", "w", stdout);
@@ -29,6 +29,10 @@ DWORD WINAPI MainThread(LPVOID lpReserved)
             init_hook = true;
         }
     } while (!init_hook);
+
+    //Run Main Loop Logic To Be Abstracted into another class/namespace. Most Likley Global.
+
+    return TRUE;
 
 }
 
