@@ -53,4 +53,8 @@ HRESULT __stdcall menu::renderLoop(IDXGISwapChain* pSwapChain, UINT SyncInterval
 	ImGui_ImplDX11_NewFrame();
 	ImGui_ImplWin32_NewFrame();
 	ImGui::NewFrame();
+	ImVec2 window_size(400, 300);
+	ImGui::SetNextWindowSize(window_size, ImGuiCond_Always);
+
+	ImGui::Begin("Brick Rigs Command Interpreter", nullptr, ImGuiWindowFlags_NoResize);
 }

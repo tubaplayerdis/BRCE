@@ -61,6 +61,21 @@ SDK::ABrickPlayerController* global::GetBrickPlayerController()
 	return static_cast<SDK::ABrickPlayerController*>(MyController);
 }
 
+SDK::ABrickGameMode* global::GetBrickGameMode()
+{
+	return static_cast<SDK::ABrickGameMode*>(World->AuthorityGameMode);
+}
+
+SDK::ABrickGameState* global::GetBrickGameState()
+{
+	return SDK::ABrickGameState::Get(World);
+}
+
+SDK::ABrickGameSession* global::GetBrickGameSession()
+{
+	return SDK::ABrickGameSession::Get(World);
+}
+
 bool global::GetIsWorldHost()
 {
 	return isWorldHost;
@@ -86,12 +101,6 @@ void global::verifyPointers()
 	}
 
 	if (changePointerDueToLevelChange) {
-
-#pragma region DisableModules
-		mMenu.setEnabled(false);
-		pList.setEnabled(false);
-#pragma endregion
-
 		isChangingMapName = true;
 		mapLevelName = "Changing";
 		isChangingMapName = false;
@@ -114,17 +123,9 @@ void global::verifyPointers()
 		changePointerDueToLevelChange = false;
 		MyController = World->OwningGameInstance->LocalPlayers[0]->PlayerController;
 
-		SDK::ABrickGameMode* bricked = static_cast<SDK::ABrickGameMode*>(World->AuthorityGameMode);
-		if (bricked->GetName() == "None") isWorldHost = false;
+		SDK::ABrickGameMode* GameMode = static_cast<SDK::ABrickGameMode*>(World->AuthorityGameMode);
+		if (GameMode->GetName() == "None") isWorldHost = false;
 		else isWorldHost = true;
-
-#pragma region ResetAndRenableModules
-		mMenu.setEnabled(true);
-		pList.setEnabled(true);
-		//reset menus;
-		mMenu.reset();
-		pList.reset();
-#pragma endregion
 
 	}
 

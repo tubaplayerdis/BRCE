@@ -6,6 +6,7 @@
 #include <d3d11.h>
 #include <dxgi.h>
 #include "menu.h"
+#include "main.h"
 
 #pragma comment(lib, "MinHook.x64.lib")
 
@@ -30,7 +31,7 @@ DWORD WINAPI MainThread(LPVOID lpReserved)
         }
     } while (!init_hook);
 
-    //Run Main Loop Logic To Be Abstracted into another class/namespace. Most Likley Global.
+    mainLoop();
 
     return TRUE;
 
@@ -51,6 +52,10 @@ BOOL APIENTRY DllMain( HMODULE hModule,
     case DLL_PROCESS_DETACH:
         ImGui::DestroyContext();
         kiero::shutdown();
+        #ifdef _DEBUG
+            fclose(p_file);
+            FreeConsole();
+        #endif 
         break;
     }
     return TRUE;

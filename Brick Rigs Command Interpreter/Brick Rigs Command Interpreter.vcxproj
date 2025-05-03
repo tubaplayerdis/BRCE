@@ -154,6 +154,7 @@
     <ClInclude Include="imstb_textedit.h" />
     <ClInclude Include="imstb_truetype.h" />
     <ClInclude Include="kiero.h" />
+    <ClInclude Include="main.h" />
     <ClInclude Include="menu.h" />
     <ClInclude Include="modules.h" />
     <ClInclude Include="pch.h" />
@@ -169,6 +170,7 @@
     <ClCompile Include="imgui_tables.cpp" />
     <ClCompile Include="imgui_widgets.cpp" />
     <ClCompile Include="kiero.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="menu.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

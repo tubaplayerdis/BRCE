@@ -31,5 +31,8 @@ namespace global
 
 	SDK::ABrickCharacter* GetBrickCharacter();
 	SDK::ABrickPlayerController* GetBrickPlayerController();
+	SDK::ABrickGameMode* GetBrickGameMode();
+	SDK::ABrickGameState* GetBrickGameState();
+	SDK::ABrickGameSession* GetBrickGameSession();
 	bool GetIsWorldHost();
 }
