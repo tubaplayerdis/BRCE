@@ -9,7 +9,7 @@ typedef uintptr_t PTR;
 
 namespace menu
 {
-	Present oPresent;
+	inline Present oPresent;
 	void initializeImGui();
 	HRESULT __stdcall renderLoop(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT Flags);
 }

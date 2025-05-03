@@ -76,6 +76,19 @@ SDK::ABrickGameSession* global::GetBrickGameSession()
 	return SDK::ABrickGameSession::Get(World);
 }
 
+bool global::isMapValid()
+{
+	std::string name = mapLevelName;
+	if (name == "City2") return true;
+	else if (name == "Canyon") return true;
+	else if (name == "City") return true;
+	else if (name == "Desert") return true;
+	else if (name == "GridMap") return true;
+	else if (name == "Raceway") return true;
+	else if (name == "Space") return true;
+	else return false;
+}
+
 bool global::GetIsWorldHost()
 {
 	return isWorldHost;
@@ -95,7 +108,7 @@ void global::verifyPointers()
 {
 	bool changePointerDueToLevelChange = false;
 
-	if (SDK::UWorld::GetWorld() != World) { //I hate this
+	if (SDK::UWorld::GetWorld() != World) { //I hate this. Hook UWorld::BeginPlay 
 		changePointerDueToLevelChange = true;
 		std::cout << "World Change" << std::endl;
 	}

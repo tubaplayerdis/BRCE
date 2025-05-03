@@ -143,8 +143,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="ChatMessageHooks.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="global.h" />
+    <ClInclude Include="hooks.h" />
     <ClInclude Include="imconfig.h" />
     <ClInclude Include="imgui.h" />
     <ClInclude Include="imgui_impl_dx11.h" />
@@ -160,6 +162,11 @@
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\Include\SDK\Basic.cpp" />
+    <ClCompile Include="..\Include\SDK\BrickRigs_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\CoreUObject_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\Engine_functions.cpp" />
+    <ClCompile Include="ChatMessageHooks.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="global.cpp" />
     <ClCompile Include="imgui.cpp" />

@@ -46,6 +46,12 @@
     <Filter Include="Header Files\module\modules">
       <UniqueIdentifier>{2c463f04-f5af-4d1d-bb5d-4243e32de5c6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\hooks">
+      <UniqueIdentifier>{753d8239-ff7f-4bba-8cd8-ba35b37c2175}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="More Files">
+      <UniqueIdentifier>{32faca21-f956-4a1f-9e8d-2c60a2fbbfe6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -90,6 +96,15 @@
     <ClInclude Include="modules.h">
       <Filter>Header Files\module</Filter>
     </ClInclude>
+    <ClInclude Include="main.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ChatMessageHooks.h">
+      <Filter>Header Files\hooks</Filter>
+    </ClInclude>
+    <ClInclude Include="hooks.h">
+      <Filter>Header Files\hooks</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -127,6 +142,24 @@
     </ClCompile>
     <ClCompile Include="global.cpp">
       <Filter>Source Files\global</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ChatMessageHooks.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\Basic.cpp">
+      <Filter>More Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\BrickRigs_functions.cpp">
+      <Filter>More Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\CoreUObject_functions.cpp">
+      <Filter>More Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\Engine_functions.cpp">
+      <Filter>More Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

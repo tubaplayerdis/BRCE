@@ -2,12 +2,13 @@
 #include "global.h"
 #include "modules.h"
 #include <windows.h>
+#include "hooks.h"
 
 using namespace global;
 
 void mainLoop()
 {
-	std::cout << "BRHack Loaded! Starting Setup.\n" << std::endl;
+	std::cout << "BRCI Injected! Starting Setup.\n" << std::endl;
 
 	Engine = SDK::UEngine::GetEngine();
 	World = SDK::UWorld::GetWorld();
@@ -21,6 +22,12 @@ void mainLoop()
 		return;
 	}
 
+	if (!hooks::ClientRecieveChatMessage::Init()) {
+		MessageBox(NULL, L"Failed To Hook Critical Functions. Uninjecting.", L"Uninjecting BRCI", MB_OK);
+		return;
+	}
+	hooks::ClientRecieveChatMessage::Enable();
+
 	while (true) {
 
 		Sleep(10);
@@ -29,6 +36,8 @@ void mainLoop()
 		if (MyController != nullptr) updateLocationVars(); //Check For PlayerControllerChanges
 
 		if (!isWorldHost) continue;
+
+		if (!isMapValid()) continue;
 
 		//Seutp Hooks
 	}

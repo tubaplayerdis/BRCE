@@ -57,4 +57,10 @@ HRESULT __stdcall menu::renderLoop(IDXGISwapChain* pSwapChain, UINT SyncInterval
 	ImGui::SetNextWindowSize(window_size, ImGuiCond_Always);
 
 	ImGui::Begin("Brick Rigs Command Interpreter", nullptr, ImGuiWindowFlags_NoResize);
+	ImGui::End();
+	ImGui::Render();
+
+	pContext->OMSetRenderTargets(1, &mainRenderTargetView, NULL);
+	ImGui_ImplDX11_RenderDrawData(ImGui::GetDrawData());
+	return oPresent(pSwapChain, SyncInterval, Flags);
 }

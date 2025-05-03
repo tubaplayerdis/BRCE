@@ -21,6 +21,7 @@ DWORD WINAPI MainThread(LPVOID lpReserved)
         freopen_s(&p_file, "CONOUT$", "w", stderr);
     #endif // _DEBUG
 
+
     bool init_hook = false;
     do
     {
@@ -47,8 +48,7 @@ BOOL APIENTRY DllMain( HMODULE hModule,
     case DLL_PROCESS_ATTACH:
         DisableThreadLibraryCalls(hModule);
         CreateThread(nullptr, 0, MainThread, hModule, 0, nullptr);
-    case DLL_THREAD_ATTACH:
-    case DLL_THREAD_DETACH:
+        break;
     case DLL_PROCESS_DETACH:
         ImGui::DestroyContext();
         kiero::shutdown();
