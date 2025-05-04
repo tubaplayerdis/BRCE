@@ -7,6 +7,7 @@
 #include <dxgi.h>
 #include "menu.h"
 #include "main.h"
+#include <MinHook.h>
 
 #pragma comment(lib, "MinHook.x64.lib")
 
@@ -24,7 +25,6 @@ DWORD WINAPI MainThread(LPVOID lpReserved)
         SetConsoleTitleW(L"Brick Rigs Command Interpreter");
     #endif // _DEBUG
 
-
     bool init_hook = false;
     do
     {
@@ -36,6 +36,20 @@ DWORD WINAPI MainThread(LPVOID lpReserved)
     } while (!init_hook);
 
     mainLoop();
+
+    kiero::shutdown();
+    MH_Uninitialize();
+    
+    #ifdef _DEBUG
+        fclose(pStdIn);
+        fclose(pStdOut);
+        fclose(pStdErr);
+        SetStdHandle(STD_INPUT_HANDLE, nullptr);
+        SetStdHandle(STD_OUTPUT_HANDLE, nullptr);
+        SetStdHandle(STD_ERROR_HANDLE, nullptr);
+        FreeConsole();
+        PostMessage(GetConsoleWindow(), WM_CLOSE, 0, 0);
+    #endif 
 
     return TRUE;
 
@@ -54,16 +68,6 @@ BOOL APIENTRY DllMain( HMODULE hModule,
         break;
     case DLL_PROCESS_DETACH:
         ImGui::DestroyContext();
-        kiero::shutdown();
-        #ifdef _DEBUG
-            fclose(pStdIn);
-            fclose(pStdOut);
-            fclose(pStdErr);
-            SetStdHandle(STD_INPUT_HANDLE, nullptr);
-            SetStdHandle(STD_OUTPUT_HANDLE, nullptr);
-            SetStdHandle(STD_ERROR_HANDLE, nullptr);
-            FreeConsole();
-        #endif 
         FreeLibraryAndExitThread(hModule, 0);
         break;
     }

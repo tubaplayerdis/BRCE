@@ -2,8 +2,9 @@
 #include "global.h"
 #include "modules.h"
 #include <windows.h>
-#include <MinHook.h>
 #include "hooks.h"
+#include <MinHook.h>
+#include "kiero.h"
 
 using namespace global;
 
@@ -44,8 +45,7 @@ void mainLoop()
 	}
 
 	//uninit hooks
-	hooks::ClientRecieveChatMessage::Disable();
-	MH_Uninitialize();
+	hooks::DisableAllHooks();
 
 	std::cout << "Uninjecting!" << std::endl;
 }
