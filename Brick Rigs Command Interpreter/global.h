@@ -34,6 +34,7 @@ namespace global
 	SDK::ABrickGameMode* GetBrickGameMode();
 	SDK::ABrickGameState* GetBrickGameState();
 	SDK::ABrickGameSession* GetBrickGameSession();
+	SDK::AWorldSetupActor* GetWorldSetupActor();
 	bool isMapValid();
 	bool GetIsWorldHost();
 }

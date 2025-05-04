@@ -76,6 +76,11 @@ SDK::ABrickGameSession* global::GetBrickGameSession()
 	return SDK::ABrickGameSession::Get(World);
 }
 
+SDK::AWorldSetupActor* global::GetWorldSetupActor()
+{
+	return SDK::AWorldSetupActor::Get(World);
+}
+
 bool global::isMapValid()
 {
 	std::string name = mapLevelName;

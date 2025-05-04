@@ -10,15 +10,18 @@
 
 #pragma comment(lib, "MinHook.x64.lib")
 
-FILE* p_file{ nullptr };
+FILE* pStdIn = nullptr;
+FILE* pStdOut = nullptr;
+FILE* pStdErr = nullptr;
 
 DWORD WINAPI MainThread(LPVOID lpReserved)
 {
     #ifdef _DEBUG //If in debug version enable console.
         AllocConsole();
-        freopen_s(&p_file, "CONIN$", "r", stdin);
-        freopen_s(&p_file, "CONOUT$", "w", stdout);
-        freopen_s(&p_file, "CONOUT$", "w", stderr);
+        freopen_s(&pStdIn, "CONIN$", "r", stdin);
+        freopen_s(&pStdOut, "CONOUT$", "w", stdout);
+        freopen_s(&pStdErr, "CONOUT$", "w", stderr);
+        SetConsoleTitleW(L"Brick Rigs Command Interpreter");
     #endif // _DEBUG
 
 
@@ -53,9 +56,15 @@ BOOL APIENTRY DllMain( HMODULE hModule,
         ImGui::DestroyContext();
         kiero::shutdown();
         #ifdef _DEBUG
-            fclose(p_file);
+            fclose(pStdIn);
+            fclose(pStdOut);
+            fclose(pStdErr);
+            SetStdHandle(STD_INPUT_HANDLE, nullptr);
+            SetStdHandle(STD_OUTPUT_HANDLE, nullptr);
+            SetStdHandle(STD_ERROR_HANDLE, nullptr);
             FreeConsole();
         #endif 
+        FreeLibraryAndExitThread(hModule, 0);
         break;
     }
     return TRUE;

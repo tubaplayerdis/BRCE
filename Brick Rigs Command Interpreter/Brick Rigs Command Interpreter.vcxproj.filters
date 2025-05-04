@@ -105,6 +105,9 @@
     <ClInclude Include="hooks.h">
       <Filter>Header Files\hooks</Filter>
     </ClInclude>
+    <ClInclude Include="CommandInterpreter.h">
+      <Filter>Header Files\module\modules</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -146,9 +149,6 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ChatMessageHooks.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\Include\SDK\Basic.cpp">
       <Filter>More Files</Filter>
     </ClCompile>
@@ -160,6 +160,12 @@
     </ClCompile>
     <ClCompile Include="..\Include\SDK\Engine_functions.cpp">
       <Filter>More Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CommandInterpreter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ChatMessageHooks.cpp">
+      <Filter>Source Files\modules</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

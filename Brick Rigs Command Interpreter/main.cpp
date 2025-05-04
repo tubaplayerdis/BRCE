@@ -2,6 +2,7 @@
 #include "global.h"
 #include "modules.h"
 #include <windows.h>
+#include <MinHook.h>
 #include "hooks.h"
 
 using namespace global;
@@ -32,13 +33,19 @@ void mainLoop()
 
 		Sleep(10);
 
+		if (GetAsyncKeyState(VK_DIVIDE) & 1) break;
+
 		verifyPointers(); //Check For World Changes
 		if (MyController != nullptr) updateLocationVars(); //Check For PlayerControllerChanges
 
 		if (!isWorldHost) continue;
 
 		if (!isMapValid()) continue;
-
-		//Seutp Hooks
 	}
+
+	//uninit hooks
+	hooks::ClientRecieveChatMessage::Disable();
+	MH_Uninitialize();
+
+	std::cout << "Uninjecting!" << std::endl;
 }

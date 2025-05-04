@@ -1,10 +1,12 @@
 #include "ChatMessageHooks.h"
+#include "modules.h"
 #include <MinHook.h>
 #include "global.h"
 
 void __fastcall hooks::ClientRecieveChatMessage::HookedClientRecieveChatMessageFunction(SDK::ABrickPlayerController* This, SDK::FBrickChatMessage& ChatMessage)
 {
     std::cout << ChatMessage.TextOption.ToString() << std::endl;
+    modules::CommandInterpreter::interpretCommand(ChatMessage.TextOption.ToString());
     OriginalClientRecieveChatMessageFunction(This, ChatMessage);
 }
 

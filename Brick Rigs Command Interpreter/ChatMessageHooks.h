@@ -16,5 +16,6 @@ namespace hooks
 		bool Init();
 		void Enable();
 		void Disable();
+		void Destory();
 	}
 }
