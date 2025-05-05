@@ -19,16 +19,13 @@ void mainLoop()
 	mapLevelName = Level->Outer->GetName();
 	isChangingMapName = false;
 
-	if (GetModuleHandle(L"MinHook.x64.dll") == NULL) {
-		MessageBox(NULL, L"Please Inject MinHook.x64.dll Before Loading. Uninjecting.", L"Uninjecting BRCI", MB_OK);
-		return;
-	}
-
 	if (!hooks::ClientRecieveChatMessage::Init()) {
 		MessageBox(NULL, L"Failed To Hook Critical Functions. Uninjecting.", L"Uninjecting BRCI", MB_OK);
 		return;
 	}
 	hooks::ClientRecieveChatMessage::Enable();
+
+	std::cout << "Starting Main Loop!" << std::endl;
 
 	while (true) {
 

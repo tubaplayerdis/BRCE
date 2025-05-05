@@ -25,6 +25,11 @@ DWORD WINAPI MainThread(LPVOID lpReserved)
         SetConsoleTitleW(L"Brick Rigs Command Interpreter");
     #endif // _DEBUG
 
+    if (GetModuleHandle(L"MinHook.x64.dll") == NULL) {
+        MessageBox(NULL, L"Please Inject MinHook.x64.dll Before Loading. Uninjecting.", L"Uninjecting BRCI", MB_OK);
+        return TRUE;
+    }
+
     bool init_hook = false;
     do
     {
