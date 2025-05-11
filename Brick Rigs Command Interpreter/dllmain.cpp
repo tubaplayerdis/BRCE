@@ -14,6 +14,7 @@
 FILE* pStdIn = nullptr;
 FILE* pStdOut = nullptr;
 FILE* pStdErr = nullptr;
+bool Aborted = false;
 
 DWORD WINAPI MainThread(LPVOID lpReserved)
 {
@@ -27,6 +28,7 @@ DWORD WINAPI MainThread(LPVOID lpReserved)
 
     if (GetModuleHandle(L"MinHook.x64.dll") == NULL) {
         MessageBox(NULL, L"Please Inject MinHook.x64.dll Before Loading. Uninjecting.", L"Uninjecting BRCI", MB_OK);
+        Aborted = true;
         return TRUE;
     }
 
@@ -72,7 +74,7 @@ BOOL APIENTRY DllMain( HMODULE hModule,
         CreateThread(nullptr, 0, MainThread, hModule, 0, nullptr);
         break;
     case DLL_PROCESS_DETACH:
-        ImGui::DestroyContext();
+        if(!Aborted) ImGui::DestroyContext();
         FreeLibraryAndExitThread(hModule, 0);
         break;
     }
