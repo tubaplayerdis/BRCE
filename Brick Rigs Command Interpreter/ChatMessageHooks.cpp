@@ -67,9 +67,9 @@ void hooks::AddChatMessage::Disable()
 
 void hooks::constructors::FBrickChatMessageConstructor(SDK::FBrickChatMessage* This, SDK::EChatMessageType ChatType, SDK::ABrickPlayerController* PC)
 {
-    uintptr_t FBrickChatMessageConstructor = (uintptr_t)GetModuleHandle(NULL) + 0x0CE2AD0;
+    uintptr_t FBrickChatMessageConstructor = (uintptr_t)GetModuleHandle(NULL) + 0x0CEF980;
 
-    using SetLoadoutAccessorFn = bool(__fastcall*)(SDK::FBrickChatMessage* This, SDK::EChatMessageType ChatType, SDK::ABrickPlayerController* PC);
+    using SetLoadoutAccessorFn = void(__fastcall*)(SDK::FBrickChatMessage* Thiss, SDK::EChatMessageType ChatTypee, SDK::ABrickPlayerController* PCC);
     SetLoadoutAccessorFn OnFBrickChatMessageConstructor = reinterpret_cast<SetLoadoutAccessorFn>(FBrickChatMessageConstructor);
 
     OnFBrickChatMessageConstructor(This, ChatType, PC);

@@ -32,19 +32,24 @@ DWORD WINAPI MainThread(LPVOID lpReserved)
         return TRUE;
     }
 
-    bool init_hook = false;
-    do
-    {
-        if (kiero::init(kiero::RenderType::D3D11) == kiero::Status::Success)
+    #ifdef _DEBUG //If in debug use imgui. otherwise dont
+        bool init_hook = false;
+        do
         {
-            kiero::bind(8, (void**)&menu::oPresent, menu::renderLoop);
-            init_hook = true;
-        }
-    } while (!init_hook);
+            if (kiero::init(kiero::RenderType::D3D11) == kiero::Status::Success)
+            {
+                kiero::bind(8, (void**)&menu::oPresent, menu::renderLoop);
+                init_hook = true;
+            }
+        } while (!init_hook);
+    #endif // _DEBUG
 
     mainLoop();
 
-    kiero::shutdown();
+    #ifdef _DEBUG //No need to shutdown kiero(dx11 hook) if it was never ran.
+        kiero::shutdown();
+    #endif // _DEBUG
+
     MH_Uninitialize();
     
     #ifdef _DEBUG

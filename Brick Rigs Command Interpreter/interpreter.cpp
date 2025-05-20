@@ -8,6 +8,7 @@
 
 void modules::interpreter::Commands::Night(PlayerInfo info)
 {
+    if (!isNight) return;
     using namespace global;
     auto cur = GetBrickGameState()->GetMatchSettings();
     std::cout << cur.WorldSetupParams.TimeOfDay << std::endl;
@@ -17,6 +18,7 @@ void modules::interpreter::Commands::Night(PlayerInfo info)
 
 void modules::interpreter::Commands::Day(PlayerInfo info)
 {
+    if (!isDay) return;
     using namespace global;
     auto cur = GetBrickGameState()->MatchSettings;
     std::cout << cur.WorldSetupParams.TimeOfDay << std::endl;
@@ -26,10 +28,17 @@ void modules::interpreter::Commands::Day(PlayerInfo info)
 
 void modules::interpreter::Commands::Rain(PlayerInfo info)
 {
+    if (!isRain) return;
 }
 
 void modules::interpreter::Commands::Sun(PlayerInfo info)
 {
+    if (!isSun) return;
+}
+
+void modules::interpreter::Commands::BombGun(PlayerInfo info)
+{
+    if (!isBombGun) return;
 }
 
 size_t hash_string(const std::string& str) {
@@ -82,6 +91,17 @@ void modules::interpreter::sendUserSpecificMessage(PlayerInfo info, std::string 
     }
 }
 
+void modules::interpreter::sendMessageToAdmin(std::string message)
+{
+    SDK::FText Fmessage = SDK::UKismetTextLibrary::Conv_StringToText(UC::FString(global::to_wstring_n(message).c_str()));
+    auto SMessage = SDK::FBrickChatMessage();
+    std::cout << "Calling Constructors!" << std::endl;
+    hooks::constructors::FBrickChatMessageConstructor(&SMessage, SDK::EChatMessageType::MatchSettings, global::GetBrickPlayerController());
+    std::cout << "Adding chat message!" << std::endl;
+    SMessage.TextOption = Fmessage;
+    global::GetBrickGameSession()->AddChatMessage(&SMessage);
+}
+
 void modules::interpreter::Commands::Command(PlayerInfo info)
 {
     sendUserSpecificMessage(info, CommandList::message);
@@ -89,28 +109,55 @@ void modules::interpreter::Commands::Command(PlayerInfo info)
 
 void modules::interpreter::Commands::Enable(PlayerInfo info, std::string command)
 {
+    using namespace global;
+    if (GetBrickPlayerControllerFromName(info.name) != GetBrickPlayerController()) return;
 }
 
 void modules::interpreter::Commands::Disable(PlayerInfo info, std::string command)
 {
+    using namespace global;
+    if (GetBrickPlayerControllerFromName(info.name) != GetBrickPlayerController()) return;
+}
+
+void modules::interpreter::Commands::PersonalMessage(PlayerInfo info, std::string message)
+{
+    if (!isPM) return;
+}
+
+void modules::interpreter::Commands::Help(PlayerInfo info)
+{
+    
 }
 
 void modules::interpreter::Commands::Fly(PlayerInfo info)
 {
+    if (!isFly) return;
 }
 
 void modules::interpreter::Commands::Walk(PlayerInfo info)
 {
+    if (!isWalk) return;
 }
 
 void modules::interpreter::Commands::Speed(PlayerInfo info, char level)
 {
+    if (!isSpeed) return;
 }
 
 void modules::interpreter::Commands::Teleport(PlayerInfo info)
 {
+    if (!isTeleport) return;
 }
 
 void modules::interpreter::Commands::Ghost(PlayerInfo info)
 {
+    if (!isGhost) return;
+}
+
+/*
+Replace code with varius things.
+*/
+void modules::interpreter::Commands::Debug(PlayerInfo info)
+{
+    sendMessageToAdmin("This is a testing message. If you can see this, please tell me.");
 }

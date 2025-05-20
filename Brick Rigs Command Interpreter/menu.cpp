@@ -2,6 +2,7 @@
 #include "imgui.h"
 #include "imgui_impl_dx11.h"
 #include "imgui_impl_win32.h"
+#include "interpreter.h"
 
 HWND window = NULL;
 WNDPROC oWndProc;
@@ -57,6 +58,10 @@ HRESULT __stdcall menu::renderLoop(IDXGISwapChain* pSwapChain, UINT SyncInterval
 	ImGui::SetNextWindowSize(window_size, ImGuiCond_Always);
 
 	ImGui::Begin("Brick Rigs Command Interpreter", nullptr, ImGuiWindowFlags_NoResize);
+	if(ImGui::Button("Send Debug Message")) {
+		PlayerInfo info;
+		modules::interpreter::Commands::Debug(info);
+	}
 	ImGui::End();
 	ImGui::Render();
 
