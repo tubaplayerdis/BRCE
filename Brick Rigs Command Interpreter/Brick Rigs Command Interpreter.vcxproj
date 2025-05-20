@@ -144,7 +144,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="ChatMessageHooks.h" />
-    <ClInclude Include="CommandInterpreter.h" />
+    <ClInclude Include="interpreter.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="global.h" />
     <ClInclude Include="hooks.h" />
@@ -168,7 +168,7 @@
     <ClCompile Include="..\Include\SDK\CoreUObject_functions.cpp" />
     <ClCompile Include="..\Include\SDK\Engine_functions.cpp" />
     <ClCompile Include="ChatMessageHooks.cpp" />
-    <ClCompile Include="CommandInterpreter.cpp" />
+    <ClCompile Include="interpreter.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="global.cpp" />
     <ClCompile Include="imgui.cpp" />
@@ -187,6 +187,9 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Modules.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

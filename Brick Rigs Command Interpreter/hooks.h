@@ -5,6 +5,6 @@ namespace hooks
 {
 	inline void DisableAllHooks() {
 		//Disable all hooks in one place
-		ClientRecieveChatMessage::Disable();
+		AddChatMessage::Disable();
 	}
 }

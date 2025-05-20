@@ -15432,6 +15432,16 @@ class ABrickGameSession* ABrickGameSession::Get(const class UObject* WorldContex
 	return Parms.ReturnValue;
 }
 
+void ABrickGameSession::AddChatMessage(FBrickChatMessage* NewMessage)
+{
+	uintptr_t AddChatMessageP = (uintptr_t)GetModuleHandle(NULL) + 0x0CF5390;
+
+	using SetLoadoutAccessorFn = bool(__fastcall*)(SDK::ABrickGameSession* Context, SDK::FBrickChatMessage* NewMessage);
+	SetLoadoutAccessorFn OnAddChatMessage = reinterpret_cast<SetLoadoutAccessorFn>(AddChatMessageP);
+
+	OnAddChatMessage(this, NewMessage);
+}
+
 
 // Function BrickRigs.BrickGameState.Get
 // (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)

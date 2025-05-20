@@ -2,6 +2,8 @@
 #include "SDK.hpp"
 #include "Windows.h"
 #include "modules.h"
+#include <codecvt>
+#include <locale>
 
 SDK::UEngine* global::Engine = SDK::UEngine::GetEngine();
 SDK::UWorld* global::World = SDK::UWorld::GetWorld();
@@ -79,6 +81,28 @@ SDK::ABrickGameSession* global::GetBrickGameSession()
 SDK::AWorldSetupActor* global::GetWorldSetupActor()
 {
 	return SDK::AWorldSetupActor::Get(World);
+}
+
+//Manually written helper functions in the big 25? are we serious.
+std::wstring global::to_wstring(const std::string& stringToConvert)
+{
+	std::wstring wideString =
+		std::wstring_convert<std::codecvt_utf8<wchar_t>>().from_bytes(stringToConvert);
+	return wideString;
+}
+
+SDK::ABrickPlayerController* global::GetBrickPlayerControllerFromName(std::string name)
+{
+	UC::TArray<SDK::AActor*> raw = UC::TArray<SDK::AActor*>();
+	UC::TArray<SDK::AActor*>* what = &raw;
+	SDK::UGameplayStatics::GetAllActorsOfClass(World, SDK::ABrickPlayerController::StaticClass(), what);
+	for (int i = 0; i < raw.Num(); i++)
+	{
+		SDK::ABrickPlayerController* cast = static_cast<SDK::ABrickPlayerController*>(raw[i]);
+		SDK::ABrickPlayerState* state = static_cast<SDK::ABrickPlayerState*>(cast->PlayerState);
+		if (state->GetPlayerName().CStr() == to_wstring(name).c_str()) return cast;
+	}
+	return nullptr;
 }
 
 bool global::isMapValid()

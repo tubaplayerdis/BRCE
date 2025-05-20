@@ -52,6 +52,27 @@
     <Filter Include="More Files">
       <UniqueIdentifier>{32faca21-f956-4a1f-9e8d-2c60a2fbbfe6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\module\modules\management">
+      <UniqueIdentifier>{e1059efd-4539-4715-a223-ef86a1eceae7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\module\modules\movement">
+      <UniqueIdentifier>{18c1a56d-5f01-4d0a-8898-0ae6291e915d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\module\modules\enviroment">
+      <UniqueIdentifier>{d182d15e-3cad-4f38-a18e-128e6e9a501a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\modules\management">
+      <UniqueIdentifier>{60867937-1c95-422c-a069-d41d7003bd93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\modules\movement">
+      <UniqueIdentifier>{17d9e70c-08ce-4ff3-82e6-ca734b62224d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\modules\enviroment">
+      <UniqueIdentifier>{fa17cd99-67e0-4e61-b3a5-d3cd0ffab790}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\hooks">
+      <UniqueIdentifier>{3d9255c5-a811-41e8-bd9a-a55df48bf214}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -105,8 +126,8 @@
     <ClInclude Include="hooks.h">
       <Filter>Header Files\hooks</Filter>
     </ClInclude>
-    <ClInclude Include="CommandInterpreter.h">
-      <Filter>Header Files\module\modules</Filter>
+    <ClInclude Include="interpreter.h">
+      <Filter>Header Files\module</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -161,11 +182,16 @@
     <ClCompile Include="..\Include\SDK\Engine_functions.cpp">
       <Filter>More Files</Filter>
     </ClCompile>
-    <ClCompile Include="CommandInterpreter.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ChatMessageHooks.cpp">
+    <ClCompile Include="interpreter.cpp">
       <Filter>Source Files\modules</Filter>
     </ClCompile>
+    <ClCompile Include="ChatMessageHooks.cpp">
+      <Filter>Source Files\hooks</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Modules.txt">
+      <Filter>Header Files\module</Filter>
+    </Text>
   </ItemGroup>
 </Project>

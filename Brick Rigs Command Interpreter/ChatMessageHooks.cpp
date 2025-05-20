@@ -6,23 +6,71 @@
 void __fastcall hooks::ClientRecieveChatMessage::HookedClientRecieveChatMessageFunction(SDK::ABrickPlayerController* This, SDK::FBrickChatMessage& ChatMessage)
 {
     std::cout << ChatMessage.TextOption.ToString() << std::endl;
-    modules::CommandInterpreter::interpretCommand(ChatMessage.TextOption.ToString());
+    PlayerInfo info;
+    info.name = ChatMessage.Player.PlayerName.ToString();
+    modules::interpreter::interpretCommand(ChatMessage.TextOption.ToString(), info);
     OriginalClientRecieveChatMessageFunction(This, ChatMessage);
 }
 
 bool hooks::ClientRecieveChatMessage::Init()
 {
+    if (initalized) return;
     MH_STATUS ret = MH_CreateHook((LPVOID)ClientRecieveChatMessageFunctionPointer, &HookedClientRecieveChatMessageFunction, (void**)&OriginalClientRecieveChatMessageFunction);
-    if (ret == MH_OK) return 1;
-    return 0;
+    initalized = true;
+    return (ret == MH_OK) ? true : false;
 }
 
 void hooks::ClientRecieveChatMessage::Enable()
 {
+    if (!initalized || enabled) return;
     MH_EnableHook((LPVOID)ClientRecieveChatMessageFunctionPointer);
+    enabled = true;
 }
 
 void hooks::ClientRecieveChatMessage::Disable()
 {
+    if (!initalized || !enabled) return;
     MH_DisableHook((LPVOID)ClientRecieveChatMessageFunctionPointer);
+    enabled = false;
+}
+
+void __fastcall hooks::AddChatMessage::HookedAddChatMessageFunction(SDK::ABrickPlayerController* This, SDK::FBrickChatMessage& ChatMessage)
+{
+    std::cout << ChatMessage.TextOption.ToString() << std::endl;
+    PlayerInfo info;
+    info.name = ChatMessage.Player.PlayerName.ToString();
+    modules::interpreter::interpretCommand(ChatMessage.TextOption.ToString(), info);
+    OriginalAddChatMessageFunction(This, ChatMessage);
+}
+
+bool hooks::AddChatMessage::Init()
+{
+    if (initalized) return;
+    MH_STATUS ret = MH_CreateHook((LPVOID)AddChatMessageFunctionPointer, &HookedAddChatMessageFunction, (void**)&OriginalAddChatMessageFunction);
+    initalized = true;
+    return (ret == MH_OK) ? true : false;
+}
+
+void hooks::AddChatMessage::Enable()
+{
+    if (!initalized || enabled) return;
+    MH_EnableHook((LPVOID)AddChatMessageFunctionPointer);
+    enabled = true;
+}
+
+void hooks::AddChatMessage::Disable()
+{
+    if (!initalized || !enabled) return;
+    MH_DisableHook((LPVOID)AddChatMessageFunctionPointer);
+    enabled = false;
+}
+
+void hooks::constructors::FBrickChatMessageConstructor(SDK::FBrickChatMessage* This, SDK::EChatMessageType ChatType, SDK::ABrickPlayerController* PC)
+{
+    uintptr_t FBrickChatMessageConstructor = (uintptr_t)GetModuleHandle(NULL) + 0x0CE2AD0;
+
+    using SetLoadoutAccessorFn = bool(__fastcall*)(SDK::FBrickChatMessage* This, SDK::EChatMessageType ChatType, SDK::ABrickPlayerController* PC);
+    SetLoadoutAccessorFn OnFBrickChatMessageConstructor = reinterpret_cast<SetLoadoutAccessorFn>(FBrickChatMessageConstructor);
+
+    OnFBrickChatMessageConstructor(This, ChatType, PC);
 }

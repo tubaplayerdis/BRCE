@@ -5320,6 +5320,7 @@ public:
 
 public:
 	static class ABrickGameSession* Get(const class UObject* WorldContextObject);
+	void AddChatMessage(FBrickChatMessage* NewMessage);
 
 public:
 	static class UClass* StaticClass()

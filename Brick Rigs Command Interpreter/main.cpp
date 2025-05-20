@@ -19,11 +19,11 @@ void mainLoop()
 	mapLevelName = Level->Outer->GetName();
 	isChangingMapName = false;
 
-	if (!hooks::ClientRecieveChatMessage::Init()) {
+	if (!hooks::AddChatMessage::Init()) {
 		MessageBox(NULL, L"Failed To Hook Critical Functions. Uninjecting.", L"Uninjecting BRCI", MB_OK);
 		return;
 	}
-	hooks::ClientRecieveChatMessage::Enable();
+	hooks::AddChatMessage::Enable();
 
 	std::cout << "Starting Main Loop!" << std::endl;
 

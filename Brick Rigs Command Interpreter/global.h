@@ -35,6 +35,10 @@ namespace global
 	SDK::ABrickGameState* GetBrickGameState();
 	SDK::ABrickGameSession* GetBrickGameSession();
 	SDK::AWorldSetupActor* GetWorldSetupActor();
+	
+	std::wstring global::to_wstring(const std::string& stringToConvert);
+	SDK::ABrickPlayerController* GetBrickPlayerControllerFromName(std::string name);
+
 	bool isMapValid();
 	bool GetIsWorldHost();
 }
