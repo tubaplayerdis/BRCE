@@ -15,30 +15,32 @@ This project is still under development. The expected release window is around t
 
 ### Commands
 
+(!) = Still being worked on or not implemented
+
 #### Management
 
-/help - Provides Help
+/help - Provides Help (!)
 
-/cmd - Lists all the commands (Sends back only to the user)
+/cmd - Lists all the commands (Sends back only to the user) (!)
 
-/off [command] - Turns command off (Admin Only)
+/off [command] - Turns command off (Admin Only) (!)
 
-/on [command] - Turns command on (Admin Only)
+/on [command] - Turns command on (Admin Only) (!)
 
-/pm [who] [content] - Personal Message Someone
+/pm [who] [content] - Personal Message Someone (!)
 
 
 #### Movement
 
-/fly - Turns the players movement mode to flying
+/fly - Turns the players movement mode to flying (!)
 
-/walk - Turns the players movement mode to walking
+/walk - Turns the players movement mode to walking (!)
 
-/speed [1-3] - changes the players speed based off input 
+/speed [1-3] - changes the players speed based off input (!)
 
-/teleport - teleports player to the place they are looking
+/teleport - teleports player to the place they are looking (!)
 
-/ghost - disables collision with the world and player can fly
+/ghost - disables collision with the world and player can fly (!)
 
 
 #### Enviroment
@@ -47,10 +49,10 @@ This project is still under development. The expected release window is around t
 
 /day - Turns world to day
 
-/rain - starts rain
+/rain - starts rain (!)
 
-/clear - sets weather to clear
+/clear - sets weather to clear (!)
 
 #####Weapons
 
-/bombgun - gives the player a gun that shoots bombs
+/bombgun - gives the player a gun that shoots bombs (!)
