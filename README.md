@@ -10,13 +10,47 @@ This project is still under development. The expected release window is around t
 
 ### Todo:
 
- - Test essential build functionality
- - Add MinHook lib checks
  - Stable Entry/Exit methods for DLL
- - Reaserch the cleint message system
-     - Essential Functions
-     - Necessary Hooks
-     - Static Analysis On Non-Reflection Methods
- - Create basic command interpreter
- - Add accompanying IMGUI menu for customization of chat message commands
- - Beef up the command interpreter
+ - Add accompanying IMGUI menu for customization of chat message commands (Scrap in favor of text based control of the mod)
+
+### Commands
+
+#### Management
+
+/help - Provides Help
+
+/cmd - Lists all the commands (Sends back only to the user)
+
+/off [command] - Turns command off (Admin Only)
+
+/on [command] - Turns command on (Admin Only)
+
+/pm [who] [content] - Personal Message Someone
+
+
+#### Movement
+
+/fly - Turns the players movement mode to flying
+
+/walk - Turns the players movement mode to walking
+
+/speed [1-3] - changes the players speed based off input 
+
+/teleport - teleports player to the place they are looking
+
+/ghost - disables collision with the world and player can fly
+
+
+#### Enviroment
+
+/night - Turns world to night
+
+/day - Turns world to day
+
+/rain - starts rain
+
+/clear - sets weather to clear
+
+#####Weapons
+
+/bombgun - gives the player a gun that shoots bombs
