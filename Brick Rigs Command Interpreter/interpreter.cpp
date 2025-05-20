@@ -95,9 +95,7 @@ void modules::interpreter::sendMessageToAdmin(std::string message)
 {
     SDK::FText Fmessage = SDK::UKismetTextLibrary::Conv_StringToText(UC::FString(global::to_wstring_n(message).c_str()));
     auto SMessage = SDK::FBrickChatMessage();
-    std::cout << "Calling Constructors!" << std::endl;
     hooks::constructors::FBrickChatMessageConstructor(&SMessage, SDK::EChatMessageType::MatchSettings, global::GetBrickPlayerController());
-    std::cout << "Adding chat message!" << std::endl;
     SMessage.TextOption = Fmessage;
     global::GetBrickGameSession()->AddChatMessage(&SMessage);
 }
