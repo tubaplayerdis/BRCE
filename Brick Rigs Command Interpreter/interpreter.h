@@ -13,7 +13,7 @@ namespace modules
 		namespace Commands
 		{
 			//Management
-			void Command(PlayerInfo info, std::string player);
+			void Command(PlayerInfo info);
 			void Enable(PlayerInfo info, std::string command);
 			void Disable(PlayerInfo info, std::string command);
 

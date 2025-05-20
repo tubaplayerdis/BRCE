@@ -2,6 +2,7 @@
 #include "SDK.hpp"
 #include "Windows.h"
 #include "modules.h"
+#include "interpreter.h"
 #include <codecvt>
 #include <locale>
 
@@ -84,11 +85,13 @@ SDK::AWorldSetupActor* global::GetWorldSetupActor()
 }
 
 //Manually written helper functions in the big 25? are we serious.
-std::wstring global::to_wstring(const std::string& stringToConvert)
+std::wstring global::to_wstring_n(const std::string& str)
 {
-	std::wstring wideString =
-		std::wstring_convert<std::codecvt_utf8<wchar_t>>().from_bytes(stringToConvert);
-	return wideString;
+	int size_needed = MultiByteToWideChar(CP_UTF8, 0, str.c_str(), -1, nullptr, 0);
+	std::wstring wstr(size_needed, 0);
+	MultiByteToWideChar(CP_UTF8, 0, str.c_str(), -1, &wstr[0], size_needed);
+	wstr.pop_back(); // remove null terminator
+	return wstr;
 }
 
 SDK::ABrickPlayerController* global::GetBrickPlayerControllerFromName(std::string name)
@@ -100,7 +103,7 @@ SDK::ABrickPlayerController* global::GetBrickPlayerControllerFromName(std::strin
 	{
 		SDK::ABrickPlayerController* cast = static_cast<SDK::ABrickPlayerController*>(raw[i]);
 		SDK::ABrickPlayerState* state = static_cast<SDK::ABrickPlayerState*>(cast->PlayerState);
-		if (state->GetPlayerName().CStr() == to_wstring(name).c_str()) return cast;
+		if (state->GetPlayerName().CStr() == to_wstring_n(name).c_str()) return cast;
 	}
 	return nullptr;
 }

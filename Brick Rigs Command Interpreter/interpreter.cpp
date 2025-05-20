@@ -1,4 +1,5 @@
 #include "interpreter.h"
+#include "modules.h"
 #include <thread>
 #include <functional>
 #include <SDK.hpp>
@@ -64,7 +65,7 @@ void modules::interpreter::interpretCommand(std::string command, PlayerInfo info
 void modules::interpreter::sendUserSpecificMessage(PlayerInfo info, std::string message)
 {
     
-    SDK::FText Fmessage = SDK::UKismetTextLibrary::Conv_StringToText(UC::FString(global::to_wstring(message).c_str()));
+    SDK::FText Fmessage = SDK::UKismetTextLibrary::Conv_StringToText(UC::FString(global::to_wstring_n(message).c_str()));
     auto SMessage = SDK::FBrickChatMessage();
     SMessage.TextOption = Fmessage;
     SDK::ABrickPlayerController* cont = global::GetBrickPlayerControllerFromName(info.name);
@@ -74,15 +75,16 @@ void modules::interpreter::sendUserSpecificMessage(PlayerInfo info, std::string 
     }
     else {
         auto PlayerController = global::GetBrickPlayerController();
-        SDK::FText FmessageN = SDK::UKismetTextLibrary::Conv_StringToText(SDK::UKismetStringLibrary::Concat_StrStr(UC::FString(L"Message Failed To Send To: "), UC::FString(global::to_wstring(info.name).c_str())));
+        SDK::FText FmessageN = SDK::UKismetTextLibrary::Conv_StringToText(SDK::UKismetStringLibrary::Concat_StrStr(UC::FString(L"Message Failed To Send To: "), UC::FString(global::to_wstring_n(info.name).c_str())));
         auto SMessageN = SDK::FBrickChatMessage();
         SMessageN.TextOption = FmessageN;
         global::GetBrickGameSession()->AddChatMessage(&SMessageN);
     }
 }
 
-void modules::interpreter::Commands::Command(PlayerInfo info, std::string player)
+void modules::interpreter::Commands::Command(PlayerInfo info)
 {
+    sendUserSpecificMessage(info, CommandList::message);
 }
 
 void modules::interpreter::Commands::Enable(PlayerInfo info, std::string command)

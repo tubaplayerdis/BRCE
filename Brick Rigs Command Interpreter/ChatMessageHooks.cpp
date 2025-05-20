@@ -1,5 +1,5 @@
 #include "ChatMessageHooks.h"
-#include "modules.h"
+#include "interpreter.h"
 #include <MinHook.h>
 #include "global.h"
 
@@ -14,10 +14,10 @@ void __fastcall hooks::ClientRecieveChatMessage::HookedClientRecieveChatMessageF
 
 bool hooks::ClientRecieveChatMessage::Init()
 {
-    if (initalized) return;
+    if (initalized) return false;
     MH_STATUS ret = MH_CreateHook((LPVOID)ClientRecieveChatMessageFunctionPointer, &HookedClientRecieveChatMessageFunction, (void**)&OriginalClientRecieveChatMessageFunction);
     initalized = true;
-    return (ret == MH_OK) ? true : false;
+    return ret == MH_OK;
 }
 
 void hooks::ClientRecieveChatMessage::Enable()
@@ -45,10 +45,10 @@ void __fastcall hooks::AddChatMessage::HookedAddChatMessageFunction(SDK::ABrickP
 
 bool hooks::AddChatMessage::Init()
 {
-    if (initalized) return;
+    if (initalized) return false;
     MH_STATUS ret = MH_CreateHook((LPVOID)AddChatMessageFunctionPointer, &HookedAddChatMessageFunction, (void**)&OriginalAddChatMessageFunction);
     initalized = true;
-    return (ret == MH_OK) ? true : false;
+    return ret == MH_OK;
 }
 
 void hooks::AddChatMessage::Enable()

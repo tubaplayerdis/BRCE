@@ -7,8 +7,8 @@ namespace hooks
 	//DO NOT USE THIS HOOK. It is called when distributing messages not when a new on is added.
 	namespace ClientRecieveChatMessage
 	{
-		bool enabled = false;
-		bool initalized = false;
+		inline bool enabled = false;
+		inline bool initalized = false;
 		inline uintptr_t ClientRecieveChatMessageFunctionPointer = (uintptr_t)GetModuleHandle(NULL) + 0x0E3CB30;
 
 		using  ClientRecieveChatMessage_t = void(__fastcall*)(SDK::ABrickPlayerController* This, SDK::FBrickChatMessage& ChatMessage);
@@ -23,8 +23,8 @@ namespace hooks
 
 	namespace AddChatMessage
 	{
-		bool enabled = false;
-		bool initalized = false;
+		inline bool enabled = false;
+		inline bool initalized = false;
 		inline uintptr_t AddChatMessageFunctionPointer = (uintptr_t)GetModuleHandle(NULL) + 0x0CF5390;
 
 		using  AddChatMessage_t = void(__fastcall*)(SDK::ABrickPlayerController* This, SDK::FBrickChatMessage& ChatMessage);

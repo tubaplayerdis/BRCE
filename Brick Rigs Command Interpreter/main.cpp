@@ -1,6 +1,7 @@
 #include "main.h"
 #include "global.h"
 #include "modules.h"
+#include "interpreter.h"
 #include <windows.h>
 #include "hooks.h"
 #include <MinHook.h>
