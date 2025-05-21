@@ -145,7 +145,6 @@
   <ItemGroup>
     <ClInclude Include="ChatMessageHooks.h" />
     <ClInclude Include="CommandList.h" />
-    <ClInclude Include="Flying.h" />
     <ClInclude Include="interpreter.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="global.h" />

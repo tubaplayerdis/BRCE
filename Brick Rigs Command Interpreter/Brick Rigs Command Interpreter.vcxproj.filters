@@ -132,9 +132,6 @@
     <ClInclude Include="CommandList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Flying.h">
-      <Filter>Header Files\module\modules\movement</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">

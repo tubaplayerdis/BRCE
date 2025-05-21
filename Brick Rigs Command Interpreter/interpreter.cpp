@@ -95,7 +95,7 @@ void modules::interpreter::sendMessageToAdmin(std::string message)
 {
     SDK::FText Fmessage = SDK::UKismetTextLibrary::Conv_StringToText(UC::FString(global::to_wstring_n(message).c_str()));
     auto SMessage = SDK::FBrickChatMessage();
-    hooks::constructors::FBrickChatMessageConstructor(&SMessage, SDK::EChatMessageType::MatchSettings, global::GetBrickPlayerController());
+    hooks::constructors::FBrickChatMessageConstructor(&SMessage, SDK::EChatMessageType::Message, global::GetBrickPlayerController());
     SMessage.TextOption = Fmessage;
     global::GetBrickGameSession()->AddChatMessage(&SMessage);
 }
@@ -129,12 +129,21 @@ void modules::interpreter::Commands::Help(PlayerInfo info)
 
 void modules::interpreter::Commands::Fly(PlayerInfo info)
 {
-    if (!isFly) return;
+    using namespace global;
+    auto BrickPlayerController = GetBrickPlayerControllerFromName(info.name);
+    if (BrickPlayerController == nullptr) return;
+    BrickPlayerController->Character->CharacterMovement->MovementMode = SDK::EMovementMode::MOVE_Flying;
+    //Change accel and speed values to appropriate levels
 }
 
 void modules::interpreter::Commands::Walk(PlayerInfo info)
 {
+    using namespace global;
     if (!isWalk) return;
+    auto BrickPlayerController = GetBrickPlayerControllerFromName(info.name);
+    if (BrickPlayerController == nullptr) return;
+    BrickPlayerController->Character->CharacterMovement->MovementMode = SDK::EMovementMode::MOVE_Walking;
+    //Return speed and accel to regular values
 }
 
 void modules::interpreter::Commands::Speed(PlayerInfo info, char level)
