@@ -145,6 +145,7 @@
   <ItemGroup>
     <ClInclude Include="ChatMessageHooks.h" />
     <ClInclude Include="CommandList.h" />
+    <ClInclude Include="GlobalHooks.h" />
     <ClInclude Include="interpreter.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="global.h" />
@@ -169,6 +170,7 @@
     <ClCompile Include="..\Include\SDK\CoreUObject_functions.cpp" />
     <ClCompile Include="..\Include\SDK\Engine_functions.cpp" />
     <ClCompile Include="ChatMessageHooks.cpp" />
+    <ClCompile Include="GlobalHooks.cpp" />
     <ClCompile Include="interpreter.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="global.cpp" />

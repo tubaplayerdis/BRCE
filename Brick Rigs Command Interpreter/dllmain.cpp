@@ -27,7 +27,7 @@ DWORD WINAPI MainThread(LPVOID lpReserved)
     #endif // _DEBUG
 
     if (GetModuleHandle(L"MinHook.x64.dll") == NULL) {
-        MessageBox(NULL, L"Please Inject MinHook.x64.dll Before Loading. Uninjecting.", L"Uninjecting BRCI", MB_OK);
+        MessageBox(GetActiveWindow(), L"Please Inject MinHook.x64.dll Before Loading. Uninjecting.", L"Uninjecting BRCI", MB_OK);
         Aborted = true;
         return TRUE;
     }

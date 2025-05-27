@@ -13,6 +13,11 @@ void mainLoop()
 {
 	std::cout << "BRCI Injected! Starting Setup.\n" << std::endl;
 
+	if (!hooks::AddChatMessage::Init() || !hooks::BeginPlay::Init()) {
+		MessageBox(GetActiveWindow(), L"Failed To Hook Critical Functions. Uninjecting.", L"Uninjecting BRCI", MB_OK);
+		return;
+	}
+
 	Engine = SDK::UEngine::GetEngine();
 	World = SDK::UWorld::GetWorld();
 	Level = World->PersistentLevel;
@@ -20,11 +25,7 @@ void mainLoop()
 	mapLevelName = Level->Outer->GetName();
 	isChangingMapName = false;
 
-	if (!hooks::AddChatMessage::Init()) {
-		MessageBox(NULL, L"Failed To Hook Critical Functions. Uninjecting.", L"Uninjecting BRCI", MB_OK);
-		return;
-	}
-	hooks::AddChatMessage::Enable();
+	hooks::EnableAllHooks();
 
 	std::cout << "Starting Main Loop!" << std::endl;
 
