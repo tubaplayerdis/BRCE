@@ -6,6 +6,7 @@
 #include "hooks.h"
 #include <MinHook.h>
 #include "kiero.h"
+#include <psapi.h>
 
 using namespace global;
 
@@ -14,7 +15,7 @@ void mainLoop()
 	std::cout << "BRCI Injected! Starting Setup.\n" << std::endl;
 
 	if (!hooks::AddChatMessage::Init() || !hooks::BeginPlay::Init()) {
-		MessageBox(GetActiveWindow(), L"Failed To Hook Critical Functions. Uninjecting.", L"Uninjecting BRCI", MB_OK);
+		MessageBox(GetActiveWindow(), L"Failed To Hook Critical Functions. Uninjecting BCRI.", L"Uninjecting BRCI", MB_OK);
 		return;
 	}
 

@@ -8,7 +8,7 @@ namespace hooks
 	{
 		inline bool enabled = false;
 		inline bool initalized = false;
-		inline uintptr_t BeginPlayFunctionPointer = (uintptr_t)GetModuleHandle(NULL) + 0x08A3120; //IDA lists the base of the this function as 142 instead of 140. My assumption is that it is static address tied to the engine.
+		inline uintptr_t BeginPlayFunctionPointer = (uintptr_t)GetModuleHandle(NULL) + 0x8A3120; //Function is aprart of engine dll and has 142 base address in binary so use the dll module handle.
 
 		using  BeginPlay_t = void(__fastcall*)(SDK::UWorld* This);
 		inline  BeginPlay_t OriginalBeginPlayFunction = nullptr;
