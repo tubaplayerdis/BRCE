@@ -40,7 +40,7 @@ void __fastcall hooks::AddChatMessage::HookedAddChatMessageFunction(SDK::ABrickP
     std::cout << ChatMessage.TextOption.ToString() << std::endl;
     PlayerInfo info;
     info.name = ChatMessage.Player.PlayerName.ToString();
-    modules::interpreter::interpretCommand(ChatMessage.TextOption.ToString(), info);
+    if(ChatMessage.Type == SDK::EChatMessageType::Message) modules::interpreter::interpretCommand(ChatMessage.TextOption.ToString(), info);
     OriginalAddChatMessageFunction(This, ChatMessage);
 }
 

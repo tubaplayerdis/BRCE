@@ -7,6 +7,7 @@
 #include <MinHook.h>
 #include "kiero.h"
 #include <psapi.h>
+#include "SDK.hpp"
 
 using namespace global;
 
@@ -28,6 +29,11 @@ void mainLoop()
 
 	hooks::EnableAllHooks();
 
+
+	SDK::UClass* WidgetClass = SDK::UBrickButtonWidget::StaticClass();
+	SDK::UBrickButtonWidget* brickButtonWidget = static_cast<SDK::UBrickButtonWidget*>(hooks::Functions::CreateWidget::CreateWidget(World, WidgetClass, SDK::FName()));
+	brickButtonWidget->AddToViewport(100);
+
 	std::cout << "Starting Main Loop!" << std::endl;
 
 	while (true) {
@@ -38,7 +44,7 @@ void mainLoop()
 
 		if (updatingPointers) continue;
 
-		if(doVerifyPointers) global::verifyPointers();
+		if(doVerifyPointers) global::verifyPointers(); //I dont know how useful this is/will be.
 
 		updateLocationVars();
 

@@ -59,3 +59,13 @@ void hooks::PossessedBy::Disable()
 	MH_DisableHook((LPVOID)PossessedByFunctionPointer);
 	enabled = false;
 }
+
+SDK::UUserWidget* hooks::Functions::CreateWidget::CreateWidget(SDK::UWorld* OwningObject, SDK::TSubclassOf<SDK::UUserWidget> UserWidgetClass, SDK::FName WidgetName)
+{
+	uintptr_t CreateWidgetFunction = (uintptr_t)GetModuleHandle(NULL) + 0x0CA5CC0;
+
+	using CreateWidgetFn = SDK::UUserWidget*(__fastcall*)(SDK::UWorld* OwningObject, SDK::TSubclassOf<SDK::UUserWidget> UserWidgetClass, SDK::FName WidgetName);
+	CreateWidgetFn OnCreateWidgetFunction = reinterpret_cast<CreateWidgetFn>(CreateWidgetFunction);
+
+	return OnCreateWidgetFunction(OwningObject, UserWidgetClass, WidgetName);
+}

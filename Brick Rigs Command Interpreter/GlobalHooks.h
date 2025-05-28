@@ -82,4 +82,12 @@ namespace hooks
         void Enable();
         void Disable();
     }
+
+    namespace Functions
+    {
+        namespace CreateWidget
+        {
+            SDK::UUserWidget* CreateWidget(SDK::UWorld* OwningObject, SDK::TSubclassOf<SDK::UUserWidget> UserWidgetClass, SDK::FName WidgetName);
+        }
+    }
 }
