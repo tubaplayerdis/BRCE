@@ -37,7 +37,7 @@ void mainLoop()
 		if (GetAsyncKeyState(VK_DIVIDE) & 1) break;
 
 		verifyPointers(); //Check For World Changes
-		if (MyController != nullptr) updateLocationVars(); //Check For PlayerControllerChanges
+		if (MyController != nullptr) updateLocationVars(); //Hook a related function
 
 		if (!isWorldHost) continue;
 
