@@ -36,6 +36,7 @@ void hooks::ClientRecieveChatMessage::Disable()
 
 void __fastcall hooks::AddChatMessage::HookedAddChatMessageFunction(SDK::ABrickPlayerController* This, SDK::FBrickChatMessage& ChatMessage)
 {
+    std::cout << "Imcoming Chat Message!" << std::endl;
     std::cout << ChatMessage.TextOption.ToString() << std::endl;
     PlayerInfo info;
     info.name = ChatMessage.Player.PlayerName.ToString();

@@ -35,7 +35,7 @@ bool global::ismapValid()
 
 void global::updateLocationVars()
 {
-	if (MyController->Pawn == nullptr || isChangingMapName) {
+	if (isChangingMapName || updatingPointers || World == nullptr || SDK::UWorld::GetWorld() != World || MyController == nullptr || MyController->Pawn == nullptr) {
 		X = -1;
 		Y = -1;
 		Z = -1;
@@ -138,45 +138,35 @@ void global::initPointers()
 
 void global::verifyPointers()
 {
-	bool changePointerDueToLevelChange = false;
-
-	if (SDK::UWorld::GetWorld() != World) { //I hate this. Hook UWorld::BeginPlay 
-		changePointerDueToLevelChange = true;
-		std::cout << "World Change" << std::endl;
-	}
-
-	if (changePointerDueToLevelChange) {
-		isChangingMapName = true;
-		mapLevelName = "Changing";
-		isChangingMapName = false;
-		Sleep(100);//Wait for new UWorld Load.
-		World = SDK::UWorld::GetWorld();
-		while (true)
-		{
-			if (World == nullptr) {
-				Sleep(100);
-				World = SDK::UWorld::GetWorld();
-			}
-			else break;
+	updatingPointers = true;
+	isChangingMapName = true;
+	mapLevelName = "Changing";
+	World = SDK::UWorld::GetWorld();
+	while (true)
+	{
+		if (World == nullptr) {
+			Sleep(100);
+			World = SDK::UWorld::GetWorld();
 		}
-
-		Level = World->PersistentLevel;
-		isChangingMapName = true;
-		mapLevelName = Level->Outer->GetName();
-		std::cout << mapLevelName << std::endl;
-		isChangingMapName = false;
-		changePointerDueToLevelChange = false;
-		MyController = World->OwningGameInstance->LocalPlayers[0]->PlayerController;
-
-		SDK::ABrickGameMode* GameMode = static_cast<SDK::ABrickGameMode*>(World->AuthorityGameMode);
-		if (GameMode->GetName() == "None") isWorldHost = false;
-		else isWorldHost = true;
-
+		else break;
 	}
 
-	//CHECK FOR CHANGED POINTERS
+	Level = World->PersistentLevel;
+	isChangingMapName = true;
+	mapLevelName = Level->Outer->GetName();
+	std::cout << "New Map Name: " << mapLevelName << std::endl;
+	MyController = World->OwningGameInstance->LocalPlayers[0]->PlayerController;
+
+	SDK::ABrickGameMode* GameMode = static_cast<SDK::ABrickGameMode*>(World->AuthorityGameMode);
+	if (GameMode->GetName() == "None") isWorldHost = false;
+	else isWorldHost = true;
+
 	if (MyController == nullptr || MyController != World->OwningGameInstance->LocalPlayers[0]->PlayerController) {
 		MyController = World->OwningGameInstance->LocalPlayers[0]->PlayerController;
 		std::cout << "Detected Change in PlayController! Switching." << std::endl;
 	}
+
+	updatingPointers = false;
+	isChangingMapName = false;
+	doVerifyPointers = false;
 }

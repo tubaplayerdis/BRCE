@@ -14,7 +14,7 @@ void mainLoop()
 {
 	std::cout << "BRCI Injected! Starting Setup.\n" << std::endl;
 
-	if (!hooks::AddChatMessage::Init() || !hooks::BeginPlay::Init()) {
+	if (!hooks::InitAllHooks()) {
 		MessageBox(GetActiveWindow(), L"Failed To Hook Critical Functions. Uninjecting BCRI.", L"Uninjecting BRCI", MB_OK);
 		return;
 	}
@@ -36,8 +36,11 @@ void mainLoop()
 
 		if (GetAsyncKeyState(VK_DIVIDE) & 1) break;
 
-		verifyPointers(); //Check For World Changes
-		if (MyController != nullptr) updateLocationVars(); //Hook a related function
+		if (updatingPointers) continue;
+
+		if(doVerifyPointers) global::verifyPointers();
+
+		updateLocationVars();
 
 		if (!isWorldHost) continue;
 

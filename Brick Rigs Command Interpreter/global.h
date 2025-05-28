@@ -27,6 +27,9 @@ namespace global
 
 	void initPointers();
 
+	inline bool updatingPointers = false;
+	inline bool doVerifyPointers = false;
+
 	void verifyPointers();
 
 	SDK::ABrickCharacter* GetBrickCharacter();
