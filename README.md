@@ -38,7 +38,7 @@ This project is still under development. The expected release window is around t
 
 /speed [1-3] - changes the players speed based off input (!)
 
-/teleport - teleports player to the place they are looking (!)
+/tp - teleports player to the place they are looking (!)
 
 /ghost - disables collision with the world and player can fly (!)
 
