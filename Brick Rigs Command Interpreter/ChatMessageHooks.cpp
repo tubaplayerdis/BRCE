@@ -36,11 +36,14 @@ void hooks::ClientRecieveChatMessage::Disable()
 
 void __fastcall hooks::AddChatMessage::HookedAddChatMessageFunction(SDK::ABrickPlayerController* This, SDK::FBrickChatMessage& ChatMessage)
 {
-    std::cout << "Imcoming Chat Message!" << std::endl;
     std::cout << ChatMessage.TextOption.ToString() << std::endl;
     PlayerInfo info;
     info.name = ChatMessage.Player.PlayerName.ToString();
-    if(ChatMessage.Type == SDK::EChatMessageType::Message) modules::interpreter::interpretCommand(ChatMessage.TextOption.ToString(), info);
+    if (ChatMessage.Type == SDK::EChatMessageType::Message && ChatMessage.TextOption.ToString().at(0) == '/') {
+        std::string command = "";//grab the word after the slash and ending at the space.
+        std::vector<std::string> args = std::vector<std::string>(); //Grab all strings passed after the first one as seperated by a space
+        modules::interpreter::interpretCommand(ChatMessage.TextOption.ToString(), info);
+    }
     OriginalAddChatMessageFunction(This, ChatMessage);
 }
 

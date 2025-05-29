@@ -66,6 +66,12 @@ void modules::interpreter::interpretCommand(std::string command, PlayerInfo info
         case hs("/day"):
             Commands::Day(info);
             break;
+        case hs("/rain"):
+            Commands::Rain(info);
+            break;
+        case hs("/sun"):
+            Commands::Sun(info);
+            break;
         default:
             break;
 	}

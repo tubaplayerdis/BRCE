@@ -46,6 +46,8 @@ namespace modules
 			//Misc
 			void Debug(PlayerInfo info); //Use this to test varius functions. Can be called by imgui.
 
+			//Toggles for wether or not a command is enabled or disabled
+
 			inline bool isPM = true;
 
 			inline bool isFly = true;
