@@ -7,6 +7,7 @@ The Brick Rigs Command Interpreter (BRCI) adds chat message command functionalit
 ## Development
 
 This project is still under development. The expected release window is around the time of the Brick Rigs 1.8 update.
+A Discord Bot that controls these functions or other administatrive items might be developed at some point
 
 ### Todo:
 
