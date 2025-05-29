@@ -29,13 +29,6 @@ void mainLoop()
 
 	hooks::EnableAllHooks();
 
-
-	SDK::UClass* WidgetClass = SDK::UBrickButtonWidget::StaticClass();
-	SDK::UBrickButtonWidget* brickButtonWidget = static_cast<SDK::UBrickButtonWidget*>(hooks::Functions::CreateWidget::CreateWidget(World, WidgetClass, SDK::FName()));
-	brickButtonWidget->AddToViewport(100);
-
-	std::cout << "Starting Main Loop!" << std::endl;
-
 	while (true) {
 
 		Sleep(10);
