@@ -73,6 +73,7 @@ void modules::interpreter::interpretCommand(std::string command, std::vector<std
 
 	switch (hash_val) {
         case hs("/enable"):
+            //Hook the function that provides immediate feedback like when a vehicle is too large or sum. That would be better immediate feedback that works natively
             if (args.size() < 1) break;
             Commands::Toggle(info, args[0], true);
             break;
