@@ -71,6 +71,10 @@ void modules::interpreter::interpretCommand(std::string command, std::vector<std
 {
 	size_t hash_val = hash_string(command);
 
+    for (std::string i : args) {
+        std::cout << i << std::endl;
+    }
+
 	switch (hash_val) {
         case hs("/enable"):
             //Hook the function that provides immediate feedback like when a vehicle is too large or sum. That would be better immediate feedback that works natively
@@ -135,8 +139,10 @@ void modules::interpreter::Commands::Command(PlayerInfo info)
 void modules::interpreter::Commands::Toggle(PlayerInfo info, std::string command, bool toggle)
 {
     using namespace global;
-    if (GetBrickPlayerControllerFromName(info.name) != GetBrickPlayerController()) return;
+    GetIsPlayerAdminFromName(info.name);
     size_t hash_val = hash_string(command);
+
+    std::cout << "We Made It!" << std::endl;
 
     switch (hash_val) {
     case hs("night"):

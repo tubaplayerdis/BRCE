@@ -34,6 +34,7 @@ namespace global
 
 	SDK::ABrickCharacter* GetBrickCharacter();
 	SDK::ABrickPlayerController* GetBrickPlayerController();
+	SDK::ABrickPlayerState* GetBrickPlayerState();
 	SDK::ABrickGameMode* GetBrickGameMode();
 	SDK::ABrickGameState* GetBrickGameState();
 	SDK::ABrickGameSession* GetBrickGameSession();
@@ -41,6 +42,7 @@ namespace global
 	
 	std::wstring to_wstring_n(const std::string& str);
 	SDK::ABrickPlayerController* GetBrickPlayerControllerFromName(std::string name);
+	bool GetIsPlayerAdminFromName(std::string name);
 
 	bool isMapValid();
 	bool GetIsWorldHost();

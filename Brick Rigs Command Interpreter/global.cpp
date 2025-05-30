@@ -64,6 +64,11 @@ SDK::ABrickPlayerController* global::GetBrickPlayerController()
 	return static_cast<SDK::ABrickPlayerController*>(MyController);
 }
 
+SDK::ABrickPlayerState* global::GetBrickPlayerState()
+{
+	return static_cast<SDK::ABrickPlayerState*>(MyController->PlayerState);
+}
+
 SDK::ABrickGameMode* global::GetBrickGameMode()
 {
 	return static_cast<SDK::ABrickGameMode*>(World->AuthorityGameMode);
@@ -103,9 +108,15 @@ SDK::ABrickPlayerController* global::GetBrickPlayerControllerFromName(std::strin
 	{
 		SDK::ABrickPlayerController* cast = static_cast<SDK::ABrickPlayerController*>(raw[i]);
 		SDK::ABrickPlayerState* state = static_cast<SDK::ABrickPlayerState*>(cast->PlayerState);
-		if (state->GetPlayerName().CStr() == to_wstring_n(name).c_str()) return cast;
+		if (state->GetPlayerNameText().ToString() == name) return cast;
 	}
 	return nullptr;
+}
+
+bool global::GetIsPlayerAdminFromName(std::string name)
+{
+	if (GetBrickPlayerControllerFromName(name) == nullptr) return false;
+	return static_cast<SDK::ABrickPlayerState*>(GetBrickPlayerControllerFromName(name)->PlayerState)->IsAdmin();
 }
 
 bool global::isMapValid()

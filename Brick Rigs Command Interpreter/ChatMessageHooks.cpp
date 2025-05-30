@@ -50,20 +50,22 @@ void __fastcall hooks::AddChatMessage::HookedAddChatMessageFunction(SDK::ABrickP
             int numSpaces = std::count(raw.begin(), raw.end(), ' ');
             if (numSpaces == 0) {
                 //no arguments
-                command = raw.substr(1);
+                command = raw.substr(0);
             }
             else {
                 //arguments
+                command = raw.substr(0, raw.find_first_of(' '));
                 std::string rawArgs = raw.substr(raw.find_first_of(' '));
                 std::istringstream iss(rawArgs);
                 std::string word;
 
                 while (iss >> word) {
+                    word.erase(std::remove(word.begin(), word.end(), ' '));
                     args.push_back(word);
                 }
             }
         }
-        modules::interpreter::interpretCommand(ChatMessage.TextOption.ToString(), args, info);
+        modules::interpreter::interpretCommand(command, args, info);
     }
     OriginalAddChatMessageFunction(This, ChatMessage);
 }
