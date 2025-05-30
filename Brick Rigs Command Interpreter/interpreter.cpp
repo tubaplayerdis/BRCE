@@ -29,11 +29,23 @@ void modules::interpreter::Commands::Day(PlayerInfo info)
 void modules::interpreter::Commands::Rain(PlayerInfo info)
 {
     if (!isRain) return;
+    using namespace global;
+    auto cur = GetBrickGameState()->MatchSettings;
+    std::cout << cur.WorldSetupParams.TimeOfDay << std::endl;
+    cur.WorldSetupParams.Weather->Weather.PrecipitationType = SDK::EPrecipitationType::Rain;
+    cur.WorldSetupParams.Weather->Weather.PrecipitationIntensity = 100.00f;
+    GetBrickGameState()->SetMatchSettings(cur);
 }
 
 void modules::interpreter::Commands::Sun(PlayerInfo info)
 {
     if (!isSun) return;
+    using namespace global;
+    auto cur = GetBrickGameState()->MatchSettings;
+    std::cout << cur.WorldSetupParams.TimeOfDay << std::endl;
+    cur.WorldSetupParams.Weather->Weather.PrecipitationType = SDK::EPrecipitationType::None;
+    cur.WorldSetupParams.Weather->Weather.PrecipitationIntensity = 0.00f;
+    GetBrickGameState()->SetMatchSettings(cur);
 }
 
 void modules::interpreter::Commands::BombGun(PlayerInfo info)
@@ -55,11 +67,19 @@ constexpr size_t hs(const char* str) {
     return hash;
 }
 
-void modules::interpreter::interpretCommand(std::string command, PlayerInfo info)
+void modules::interpreter::interpretCommand(std::string command, std::vector<std::string> args, PlayerInfo info)
 {
 	size_t hash_val = hash_string(command);
 
 	switch (hash_val) {
+        case hs("/enable"):
+            if (args.size() < 1) break;
+            Commands::Toggle(info, args[0], true);
+            break;
+        case hs("/disable"):
+            if (args.size() < 1) break;
+            Commands::Toggle(info, args[0], false);
+            break;
 		case hs("/night"):
             Commands::Night(info);
             break;
@@ -111,16 +131,28 @@ void modules::interpreter::Commands::Command(PlayerInfo info)
     sendUserSpecificMessage(info, CommandList::message);
 }
 
-void modules::interpreter::Commands::Enable(PlayerInfo info, std::string command)
+void modules::interpreter::Commands::Toggle(PlayerInfo info, std::string command, bool toggle)
 {
     using namespace global;
     if (GetBrickPlayerControllerFromName(info.name) != GetBrickPlayerController()) return;
-}
+    size_t hash_val = hash_string(command);
 
-void modules::interpreter::Commands::Disable(PlayerInfo info, std::string command)
-{
-    using namespace global;
-    if (GetBrickPlayerControllerFromName(info.name) != GetBrickPlayerController()) return;
+    switch (hash_val) {
+    case hs("night"):
+        isNight = toggle;
+        break;
+    case hs("day"):
+        isDay = toggle;
+        break;
+    case hs("rain"):
+        isRain = toggle;
+        break;
+    case hs("sun"):
+        isSun = toggle;
+        break;
+    default:
+        break;
+    }
 }
 
 void modules::interpreter::Commands::PersonalMessage(PlayerInfo info, std::string message)

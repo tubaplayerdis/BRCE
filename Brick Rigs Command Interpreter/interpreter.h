@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <vector>
 
 struct PlayerInfo
 {
@@ -22,8 +23,7 @@ namespace modules
 		{
 			//Management
 			void Command(PlayerInfo info);
-			void Enable(PlayerInfo info, std::string command);
-			void Disable(PlayerInfo info, std::string command);
+			void Toggle(PlayerInfo info, std::string command, bool toggle);
 			void PersonalMessage(PlayerInfo info, std::string message);
 			void Help(PlayerInfo info);
 
@@ -63,7 +63,7 @@ namespace modules
 
 			inline bool isBombGun = true;
 		}
-		void interpretCommand(std::string command, PlayerInfo info);
+		void interpretCommand(std::string command, std::vector<std::string> args, PlayerInfo info);
 		void sendUserSpecificMessage(PlayerInfo info, std::string message);
 		void sendMessageToAdmin(std::string message);
 	}

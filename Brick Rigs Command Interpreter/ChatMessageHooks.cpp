@@ -2,13 +2,16 @@
 #include "interpreter.h"
 #include <MinHook.h>
 #include "global.h"
+#include <iostream>
+#include <sstream>
+#include <vector>
 
 void __fastcall hooks::ClientRecieveChatMessage::HookedClientRecieveChatMessageFunction(SDK::ABrickPlayerController* This, SDK::FBrickChatMessage& ChatMessage)
 {
     std::cout << ChatMessage.TextOption.ToString() << std::endl;
     PlayerInfo info;
     info.name = ChatMessage.Player.PlayerName.ToString();
-    modules::interpreter::interpretCommand(ChatMessage.TextOption.ToString(), info);
+    //modules::interpreter::interpretCommand(ChatMessage.TextOption.ToString(), info);
     OriginalClientRecieveChatMessageFunction(This, ChatMessage);
 }
 
@@ -40,9 +43,27 @@ void __fastcall hooks::AddChatMessage::HookedAddChatMessageFunction(SDK::ABrickP
     PlayerInfo info;
     info.name = ChatMessage.Player.PlayerName.ToString();
     if (ChatMessage.Type == SDK::EChatMessageType::Message && ChatMessage.TextOption.ToString().at(0) == '/') {
+        std::string raw = ChatMessage.TextOption.ToString();
         std::string command = "";//grab the word after the slash and ending at the space.
         std::vector<std::string> args = std::vector<std::string>(); //Grab all strings passed after the first one as seperated by a space
-        modules::interpreter::interpretCommand(ChatMessage.TextOption.ToString(), info);
+        if (raw.length() > 2) {
+            int numSpaces = std::count(raw.begin(), raw.end(), ' ');
+            if (numSpaces == 0) {
+                //no arguments
+                command = raw.substr(1);
+            }
+            else {
+                //arguments
+                std::string rawArgs = raw.substr(raw.find_first_of(' '));
+                std::istringstream iss(rawArgs);
+                std::string word;
+
+                while (iss >> word) {
+                    args.push_back(word);
+                }
+            }
+        }
+        modules::interpreter::interpretCommand(ChatMessage.TextOption.ToString(), args, info);
     }
     OriginalAddChatMessageFunction(This, ChatMessage);
 }
