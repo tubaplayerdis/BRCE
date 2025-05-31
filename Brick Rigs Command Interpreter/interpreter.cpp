@@ -31,7 +31,6 @@ void modules::interpreter::Commands::Rain(PlayerInfo info)
     if (!isRain) return;
     using namespace global;
     auto cur = GetBrickGameState()->MatchSettings;
-    std::cout << cur.WorldSetupParams.TimeOfDay << std::endl;
     cur.WorldSetupParams.Weather->Weather.PrecipitationType = SDK::EPrecipitationType::Rain;
     cur.WorldSetupParams.Weather->Weather.PrecipitationIntensity = 100.00f;
     GetBrickGameState()->SetMatchSettings(cur);
@@ -42,7 +41,6 @@ void modules::interpreter::Commands::Sun(PlayerInfo info)
     if (!isSun) return;
     using namespace global;
     auto cur = GetBrickGameState()->MatchSettings;
-    std::cout << cur.WorldSetupParams.TimeOfDay << std::endl;
     cur.WorldSetupParams.Weather->Weather.PrecipitationType = SDK::EPrecipitationType::None;
     cur.WorldSetupParams.Weather->Weather.PrecipitationIntensity = 0.00f;
     GetBrickGameState()->SetMatchSettings(cur);
@@ -75,10 +73,21 @@ void modules::interpreter::interpretCommand(std::string command, std::vector<std
         std::cout << i << std::endl;
     }
 
+    SDK::FName nameS = SDK::UKismetStringLibrary::Conv_StringToName(L"MoneyMinus");
+    SDK::UHUDNotificationWidget* WidgetSkib = SDK::UGameOverlayWidget::Get(global::World)->CreateHUDNotification(nameS, true);
+    WidgetSkib->TextBlock->SetText(SDK::UKismetTextLibrary::Conv_StringToText(L"Whats Up!"));
+    WidgetSkib->TextBlock->SetTextStyle(SDK::EBrickUITextStyle::Bold);
+    WidgetSkib->TextBlock->SetStyleState(SDK::EBrickUIStyleState::Foreground);
+    WidgetSkib->TextBlock->SetColorStyle(SDK::EBrickUIColorStyle::Negative);
+    WidgetSkib->IconImage->SetColorStyle(SDK::EBrickUIColorStyle::Negative);
+    WidgetSkib->SetColorAndOpacity(hooks::constructors::CreateLinearColor(0, 135, 255, 1));
+    //WidgetSkib->IconImage->SetColorAndOpacity(hooks::constructors::CreateLinearColor(242, 255, 0, 1));
+    //WidgetSkib->ThumbnailImage->SetColorAndOpacity(hooks::constructors::CreateLinearColor(0, 135, 255, 1));
+    SDK::UGameOverlayWidget::Get(global::World)->AddHUDNotification(WidgetSkib, 0);
+
 	switch (hash_val) {
         case hs("/enable"):
             //Hook the function that provides immediate feedback like when a vehicle is too large or sum. That would be better immediate feedback that works natively
-            //SDK::UGameOverlayWidget::
             if (args.size() < 1) break;
             Commands::Toggle(info, args[0], true);
             break;
@@ -130,6 +139,10 @@ void modules::interpreter::sendMessageToAdmin(std::string message)
     hooks::constructors::FBrickChatMessageConstructor(&SMessage, SDK::EChatMessageType::Message, global::GetBrickPlayerController());
     SMessage.TextOption = Fmessage;
     global::GetBrickGameSession()->AddChatMessage(&SMessage);
+}
+
+void modules::interpreter::sendNotificationToUser(std::string message, PlayerInfo info)
+{
 }
 
 void modules::interpreter::Commands::Command(PlayerInfo info)
@@ -214,3 +227,22 @@ void modules::interpreter::Commands::Debug(PlayerInfo info)
 {
     sendMessageToAdmin("This is a testing message. If you can see this, please tell me.");
 }
+
+/*
+* FailedToSpawnVehicleFormat
+* Failed to spawn your vehicle
+* VehicleSpawnFail
+* ProjectileCam
+* MoneyPlus
+* MoneyMinus
+* VehicleCam
+* FirstPersonCamera
+* VehicleCamera
+* First Person
+* ThirdPersonCamera
+* Third Person
+* save
+* CameraSpeed
+* zoom
+* slomo
+*/

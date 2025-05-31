@@ -5,14 +5,14 @@
 namespace hooks
 {
 	inline bool InitAllHooks() {
+		std::cout << "Starting Hook Searches!" << std::endl;
 		bool ACMHook = AddChatMessage::Init();
 		bool BPHook = BeginPlay::Init();
-		bool PBHook = PossessedBy::Init();
-		if (!ACMHook || !BPHook || !PBHook) {
+		std::cout << "Completed!" << std::endl;
+		if (!ACMHook || !BPHook) {
 			//print cases
 			std::cout << "ACMHOOK: " << ACMHook << std::endl;
 			std::cout << "BPHOOK: " << BPHook << std::endl;
-			std::cout << "PBHOOK: " << PBHook << std::endl;
 			return false;
 		}
 		return true;
@@ -21,13 +21,13 @@ namespace hooks
 	inline void EnableAllHooks() {
 		AddChatMessage::Enable();
 		BeginPlay::Enable();
-		PossessedBy::Enable();
+		//PossessedBy::Enable();
 	}
 
 	inline void DisableAllHooks() {
 		//Disable all hooks in one place
 		AddChatMessage::Disable();
 		BeginPlay::Disable();
-		PossessedBy::Disable();
+		//PossessedBy::Disable();
 	}
 }

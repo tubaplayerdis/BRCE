@@ -6,32 +6,19 @@
 
 namespace global
 {
-	extern bool isChangingMapName;
+	//Useful "Global" Variables
 	extern std::string mapLevelName;
-
 	extern SDK::UEngine* Engine;
 	extern SDK::UWorld* World;
 	extern SDK::ULevel* Level;
 	extern SDK::APlayerController* MyController;
 
-	extern float X;
-	extern float Y;
-	extern float Z;
-	extern float H;
-
-	extern bool isWorldHost;
-
-	bool ismapValid();
-
-	void updateLocationVars();
-
-	void initPointers();
-
+	//Pointer Stuff
 	inline bool updatingPointers = false;
-	inline bool doVerifyPointers = false;
+	void InitPointers();
+	void UpdatePointers(SDK::UWorld* NewWorld);
 
-	void verifyPointers();
-
+	//SDK Helpers
 	SDK::ABrickCharacter* GetBrickCharacter();
 	SDK::ABrickPlayerController* GetBrickPlayerController();
 	SDK::ABrickPlayerState* GetBrickPlayerState();
@@ -39,11 +26,13 @@ namespace global
 	SDK::ABrickGameState* GetBrickGameState();
 	SDK::ABrickGameSession* GetBrickGameSession();
 	SDK::AWorldSetupActor* GetWorldSetupActor();
-	
-	std::wstring to_wstring_n(const std::string& str);
 	SDK::ABrickPlayerController* GetBrickPlayerControllerFromName(std::string name);
-	bool GetIsPlayerAdminFromName(std::string name);
 
+	//General Helpers
+	std::wstring to_wstring_n(const std::string& str);
+	bool GetIsPlayerAdminFromName(std::string name);
 	bool isMapValid();
-	bool GetIsWorldHost();
+	bool IsHost();
+	inline bool NotHost() { return !IsHost(); };
+	void SendNotificationLocal(std::wstring notif, int slot);
 }

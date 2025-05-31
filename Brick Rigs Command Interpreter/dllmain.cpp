@@ -8,16 +8,19 @@
 #include "menu.h"
 #include "main.h"
 #include <MinHook.h>
+#include "imgui_impl_dx11.h"
+#include "imgui_impl_win32.h"
 
 #pragma comment(lib, "MinHook.x64.lib")
 
 FILE* pStdIn = nullptr;
 FILE* pStdOut = nullptr;
 FILE* pStdErr = nullptr;
-bool Aborted = false;
 
 DWORD WINAPI MainThread(LPVOID lpReserved)
 {
+    HMODULE hModule = static_cast<HMODULE>(lpReserved);
+
     #ifdef _DEBUG //If in debug version enable console.
         AllocConsole();
         freopen_s(&pStdIn, "CONIN$", "r", stdin);
@@ -28,8 +31,8 @@ DWORD WINAPI MainThread(LPVOID lpReserved)
 
     if (GetModuleHandle(L"MinHook.x64.dll") == NULL) {
         MessageBox(GetActiveWindow(), L"Please Inject MinHook.x64.dll Before Loading. Uninjecting BRCI.", L"Uninjecting BRCI", MB_OK);
-        Aborted = true;
-        return TRUE;
+        FreeLibraryAndExitThread(hModule, 0);
+        return 0;
     }
 
     #ifdef _DEBUG //If in debug use imgui. otherwise dont
@@ -44,12 +47,25 @@ DWORD WINAPI MainThread(LPVOID lpReserved)
         } while (!init_hook);
     #endif // _DEBUG
 
+    #ifdef _RELEASE
+        MH_Initialize(); //Kiero normally calls this, but in release we need to call it.
+    #endif // _RELEASE
+
+
     mainLoop();
 
+    Sleep(200); //Let render thread stop
+
     #ifdef _DEBUG //No need to shutdown kiero(dx11 hook) if it was never ran.
+        kiero::unbind(8);
+        ImGui_ImplWin32_Shutdown();
+        ImGui_ImplDX11_Shutdown();
+        ImGui::DestroyContext();
         kiero::shutdown();
     #endif // _DEBUG
 
+    
+    MH_DisableHook(MH_ALL_HOOKS);
     MH_Uninitialize();
     
     #ifdef _DEBUG
@@ -63,7 +79,8 @@ DWORD WINAPI MainThread(LPVOID lpReserved)
         PostMessage(GetConsoleWindow(), WM_CLOSE, 0, 0);
     #endif 
 
-    return TRUE;
+    FreeLibraryAndExitThread(hModule, 0);
+    return 0;
 
 }
 
@@ -77,10 +94,6 @@ BOOL APIENTRY DllMain( HMODULE hModule,
     case DLL_PROCESS_ATTACH:
         DisableThreadLibraryCalls(hModule);
         CreateThread(nullptr, 0, MainThread, hModule, 0, nullptr);
-        break;
-    case DLL_PROCESS_DETACH:
-        if(!Aborted) ImGui::DestroyContext();
-        FreeLibraryAndExitThread(hModule, 0);
         break;
     }
     return TRUE;

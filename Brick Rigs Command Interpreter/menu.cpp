@@ -30,6 +30,33 @@ void menu::initializeImGui()
 
 HRESULT __stdcall menu::renderLoop(IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT Flags)
 {
+	if (shouldExit)
+	{
+		if (init)
+		{
+			SetWindowLongPtr(window, GWLP_WNDPROC, (LONG_PTR)oWndProc);
+
+			if (mainRenderTargetView) {
+				mainRenderTargetView->Release();
+				mainRenderTargetView = nullptr;
+			}
+
+			if (pContext) {
+				pContext->Release();
+				pContext = nullptr;
+			}
+
+			if (pDevice) {
+				pDevice->Release();
+				pDevice = nullptr;
+			}
+
+			init = false;
+		}
+
+		return oPresent(pSwapChain, SyncInterval, Flags);
+	}
+
 	if (!init)
 	{
 		if (SUCCEEDED(pSwapChain->GetDevice(__uuidof(ID3D11Device), (void**)&pDevice)))

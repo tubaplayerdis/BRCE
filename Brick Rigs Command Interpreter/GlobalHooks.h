@@ -51,7 +51,7 @@ namespace hooks
 		inline bool initalized = false;
 		inline const char* pattern = "\x40\x53\x48\x83\xEC\x20\x48\x8B\xD9\x48\x8B\x89\x18\x01\x00\x00\x48\x85\xC9\x74\x1E\x48\x8B\x01";
 		inline const char* mask = "xxxxxxxxxxxxxxxxxxxxxxx";
-		inline uintptr_t BeginPlayFunctionPointer = FindPattern(pattern, mask, GetModuleBaseN(), GetModuleSizeN());
+        inline uintptr_t BeginPlayFunctionPointer = 0; //This is found in init.
 
 		using  BeginPlay_t = void(__fastcall*)(SDK::UWorld* This);
 		inline  BeginPlay_t OriginalBeginPlayFunction = nullptr;
@@ -62,26 +62,6 @@ namespace hooks
 		void Enable();
 		void Disable();
 	}
-
-    namespace PossessedBy 
-    {
-        inline bool enabled = false;
-        inline bool initalized = false;
-        inline const char* pattern = "\x48\x89\x5C\x24\x08\x48\x89\x6C\x24\x10\x48\x89\x74\x24\x18"
-                                     "\x57\x48\x83\xEC\x30\x48\x8B\x01\x48\x8B\xF2\x48\x8B\xD9";
-        inline const char* mask = "xxxxxxxxxxxxxxx"
-                                  "xxxxxxxxxxxxxx";
-        inline uintptr_t PossessedByFunctionPointer = FindPattern(pattern, mask, GetModuleBaseN(), GetModuleSizeN());
-
-        using  PossessedBy_t = void(__fastcall*)(SDK::APawn* This, SDK::AController* NewController);
-        inline  PossessedBy_t OriginalPossessedByFunction = nullptr;
-
-        void __fastcall HookedPossessedByFunction(SDK::APawn* This, SDK::AController* NewController);
-
-        bool Init();
-        void Enable();
-        void Disable();
-    }
 
     namespace Functions
     {

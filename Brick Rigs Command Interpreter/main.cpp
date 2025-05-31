@@ -8,26 +8,25 @@
 #include "kiero.h"
 #include <psapi.h>
 #include "SDK.hpp"
+#include "menu.h"
 
 using namespace global;
 
 void mainLoop()
 {
-	std::cout << "BRCI Injected! Starting Setup.\n" << std::endl;
+	std::cout << "BRCI Injected! Starting Setup" << std::endl;
 
 	if (!hooks::InitAllHooks()) {
 		MessageBox(GetActiveWindow(), L"Failed To Hook Critical Functions. Uninjecting BCRI.", L"Uninjecting BRCI", MB_OK);
+		menu::shouldExit = true;
 		return;
 	}
 
-	Engine = SDK::UEngine::GetEngine();
-	World = SDK::UWorld::GetWorld();
-	Level = World->PersistentLevel;
-	MyController = World->OwningGameInstance->LocalPlayers[0]->PlayerController;
-	mapLevelName = Level->Outer->GetName();
-	isChangingMapName = false;
+	global::InitPointers();
 
 	hooks::EnableAllHooks();
+
+	std::cout << "Starting Main Loop!" << std::endl;
 
 	while (true) {
 
@@ -35,19 +34,22 @@ void mainLoop()
 
 		if (GetAsyncKeyState(VK_DIVIDE) & 1) break;
 
-		if (updatingPointers) continue;
-
-		if(doVerifyPointers) global::verifyPointers(); //I dont know how useful this is/will be.
-
-		updateLocationVars();
-
-		if (!isWorldHost) continue;
-
-		if (!isMapValid()) continue;
+		if (GetAsyncKeyState(VK_MULTIPLY) & 1) {
+			if (hooks::AddChatMessage::enabled) {
+				hooks::AddChatMessage::Disable();
+				SendNotificationLocal(L"Disabled Chat Commands!", 1); //Explore the icon atlas more
+			}
+			else {
+				hooks::AddChatMessage::Enable();
+				SendNotificationLocal(L"Enabled Chat Commands!", 0);
+			}
+		}
 	}
 
 	//uninit hooks
-	hooks::DisableAllHooks();
+	//hooks::DisableAllHooks(); //MinHook has a disable all hook feature.
+
+	menu::shouldExit = true;
 
 	std::cout << "Uninjecting!" << std::endl;
 }

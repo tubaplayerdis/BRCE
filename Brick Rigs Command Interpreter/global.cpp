@@ -11,48 +11,6 @@ SDK::UWorld* global::World = SDK::UWorld::GetWorld();
 SDK::ULevel* global::Level = World->PersistentLevel;
 SDK::APlayerController* global::MyController = World->OwningGameInstance->LocalPlayers[0]->PlayerController;
 std::string global::mapLevelName = "None So Far";
-bool global::isChangingMapName = false;
-
-float global::X = 0;
-float global::Y = 0;
-float global::Z = 0;
-float global::H = 0;
-
-bool global::isWorldHost = false;
-
-bool global::ismapValid()
-{
-	std::string name = mapLevelName;
-	if (name == "City2") return true;
-	else if (name == "Canyon") return true;
-	else if (name == "City") return true;
-	else if (name == "Desert") return true;
-	else if (name == "GridMap") return true;
-	else if (name == "Raceway") return true;
-	else if (name == "Space") return true;
-	else return false;
-}
-
-void global::updateLocationVars()
-{
-	if (isChangingMapName || updatingPointers || World == nullptr || SDK::UWorld::GetWorld() != World || MyController == nullptr || MyController->Pawn == nullptr) {
-		X = -1;
-		Y = -1;
-		Z = -1;
-		H = -1;
-		return;
-	}
-	SDK::FVector CurrentLocation = SDK::FVector();
-	CurrentLocation = MyController->Pawn->K2_GetActorLocation();
-	X = CurrentLocation.X;
-	Y = CurrentLocation.Y;
-	Z = CurrentLocation.Z;
-
-	if (MyController != nullptr) {
-		SDK::FRotator CurrentRotation = MyController->GetControlRotation();
-		H = CurrentRotation.Yaw;
-	}
-}
 
 SDK::ABrickCharacter* global::GetBrickCharacter()
 {
@@ -132,45 +90,45 @@ bool global::isMapValid()
 	else return false;
 }
 
-bool global::GetIsWorldHost()
+bool global::IsHost()
 {
-	return isWorldHost;
+	if(updatingPointers || World->NetDriver == nullptr && World->NetDriver->ServerConnection != nullptr) return false;
+	return true;
 }
 
-void global::initPointers()
+void global::SendNotificationLocal(std::wstring notif, int slot)
+{
+	SDK::FName nameS = SDK::UKismetStringLibrary::Conv_StringToName(L"None");
+	SDK::UHUDNotificationWidget* WidgetSkib = SDK::UGameOverlayWidget::Get(global::World)->CreateHUDNotification(nameS, true);
+	WidgetSkib->TextBlock->SetText(SDK::UKismetTextLibrary::Conv_StringToText(notif.c_str()));
+	WidgetSkib->TextBlock->SetTextStyle(SDK::EBrickUITextStyle::Bold);
+	WidgetSkib->TextBlock->SetStyleState(SDK::EBrickUIStyleState::Foreground);
+	SDK::FBrickUIIconSlot slots = WidgetSkib->IconImage->IconSlot;
+	slots.Index = slot;
+	WidgetSkib->IconImage->SetIconSlot(slots);
+	SDK::UGameOverlayWidget::Get(global::World)->AddHUDNotification(WidgetSkib, 0);
+}
+
+void global::InitPointers()
 {
 	Engine = SDK::UEngine::GetEngine();
 	World = SDK::UWorld::GetWorld();
 	Level = World->PersistentLevel;
 	MyController = World->OwningGameInstance->LocalPlayers[0]->PlayerController;
-	mapLevelName = "None So Far";
-	isChangingMapName = false;
+	mapLevelName = Level->Outer->GetName();
 }
 
-void global::verifyPointers()
+void global::UpdatePointers(SDK::UWorld* NewWorld)
 {
+	std::cout << "Updating Pointers!" << std::endl;
 	updatingPointers = true;
-	isChangingMapName = true;
 	mapLevelName = "Changing";
-	World = SDK::UWorld::GetWorld();
-	while (true)
-	{
-		if (World == nullptr) {
-			Sleep(100);
-			World = SDK::UWorld::GetWorld();
-		}
-		else break;
-	}
-
+	World = NewWorld;
+	
 	Level = World->PersistentLevel;
-	isChangingMapName = true;
 	mapLevelName = Level->Outer->GetName();
 	std::cout << "New Map Name: " << mapLevelName << std::endl;
 	MyController = World->OwningGameInstance->LocalPlayers[0]->PlayerController;
-
-	SDK::ABrickGameMode* GameMode = static_cast<SDK::ABrickGameMode*>(World->AuthorityGameMode);
-	if (GameMode->GetName() == "None") isWorldHost = false;
-	else isWorldHost = true;
 
 	if (MyController == nullptr || MyController != World->OwningGameInstance->LocalPlayers[0]->PlayerController) {
 		MyController = World->OwningGameInstance->LocalPlayers[0]->PlayerController;
@@ -178,6 +136,4 @@ void global::verifyPointers()
 	}
 
 	updatingPointers = false;
-	isChangingMapName = false;
-	doVerifyPointers = false;
 }
