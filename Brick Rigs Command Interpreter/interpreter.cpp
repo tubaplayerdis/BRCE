@@ -107,6 +107,12 @@ void modules::interpreter::interpretCommand(std::string command, std::vector<std
         case hs("/sun"):
             Commands::Sun(info);
             break;
+        case hs("/fly"):
+            Commands::Fly(info);
+            break;
+        case hs("/walk"):
+            Commands::Walk(info);
+            break;
         default:
             break;
 	}
@@ -114,21 +120,22 @@ void modules::interpreter::interpretCommand(std::string command, std::vector<std
 
 void modules::interpreter::sendUserSpecificMessage(PlayerInfo info, std::string message)
 {
-    
     SDK::FText Fmessage = SDK::UKismetTextLibrary::Conv_StringToText(UC::FString(global::to_wstring_n(message).c_str()));
     auto SMessage = SDK::FBrickChatMessage();
-    SMessage.TextOption = Fmessage;
     SDK::ABrickPlayerController* cont = global::GetBrickPlayerControllerFromName(info.name);
     if (cont != nullptr) {
         hooks::constructors::FBrickChatMessageConstructor(&SMessage, SDK::EChatMessageType::Message, global::GetBrickPlayerControllerFromName(info.name));
-        global::GetBrickGameSession()->AddChatMessage(&SMessage);
+        SMessage.TextOption = Fmessage;
+        SMessage.Type = SDK::EChatMessageType::Message;
+        SMessage.IntOption = 3;//SDK::EChatContext::Admin;
+        global::GetBrickPlayerControllerFromName(info.name)->ClientReceiveChatMessage(SMessage);
     }
     else {
         auto PlayerController = global::GetBrickPlayerController();
         SDK::FText FmessageN = SDK::UKismetTextLibrary::Conv_StringToText(SDK::UKismetStringLibrary::Concat_StrStr(UC::FString(L"Message Failed To Send To: "), UC::FString(global::to_wstring_n(info.name).c_str())));
         auto SMessageN = SDK::FBrickChatMessage();
         SMessageN.TextOption = FmessageN;
-        global::GetBrickGameSession()->AddChatMessage(&SMessageN);
+        global::GetBrickPlayerController()->ClientReceiveChatMessage(SMessageN);
     }
 }
 
@@ -139,10 +146,6 @@ void modules::interpreter::sendMessageToAdmin(std::string message)
     hooks::constructors::FBrickChatMessageConstructor(&SMessage, SDK::EChatMessageType::Message, global::GetBrickPlayerController());
     SMessage.TextOption = Fmessage;
     global::GetBrickGameSession()->AddChatMessage(&SMessage);
-}
-
-void modules::interpreter::sendNotificationToUser(std::string message, PlayerInfo info)
-{
 }
 
 void modules::interpreter::Commands::Command(PlayerInfo info)
@@ -159,18 +162,24 @@ void modules::interpreter::Commands::Toggle(PlayerInfo info, std::string command
     std::cout << "We Made It!" << std::endl;
 
     switch (hash_val) {
-    case hs("night"):
-        isNight = toggle;
-        break;
-    case hs("day"):
-        isDay = toggle;
-        break;
-    case hs("rain"):
-        isRain = toggle;
-        break;
-    case hs("sun"):
-        isSun = toggle;
-        break;
+        case hs("night"):
+            isNight = toggle;
+            break;
+        case hs("day"):
+            isDay = toggle;
+            break;
+        case hs("rain"):
+            isRain = toggle;
+            break;
+        case hs("sun"):
+            isSun = toggle;
+            break;
+        case hs("fly"):
+            isFly = toggle;
+            break;
+        case hs("walk"):
+            isWalk = toggle;
+            break;
     default:
         break;
     }

@@ -2181,7 +2181,7 @@ public:
 	struct FChatMessagePlayerInfo                 Player;                                            // 0x0008(0x0038)(NativeAccessSpecifierPrivate)
 	struct FChatMessagePlayerInfo                 OtherPlayer;                                       // 0x0040(0x0038)(NativeAccessSpecifierPrivate)
 	class FText                                   TextOption;                                        // 0x0078(0x0018)(NativeAccessSpecifierPrivate)
-	int32                                         IntOption;                                         // 0x0090(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	int32                                         IntOption;                                         // 0x0090(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate) //"Context"
 	struct FGenericTeamId                         TeamOption;                                        // 0x0094(0x0001)(NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_95[0x3];                                       // 0x0095(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FFluUGCItemIdWrapper                   OnlineUGCItemIdOption;                             // 0x0098(0x0010)(HasGetValueTypeHash, NativeAccessSpecifierPrivate)

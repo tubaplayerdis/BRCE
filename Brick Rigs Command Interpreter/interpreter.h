@@ -66,6 +66,5 @@ namespace modules
 		void interpretCommand(std::string command, std::vector<std::string> args, PlayerInfo info);
 		void sendUserSpecificMessage(PlayerInfo info, std::string message);
 		void sendMessageToAdmin(std::string message);
-		void sendNotificationToUser(std::string message, PlayerInfo info);
 	}
 }
