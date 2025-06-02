@@ -108,6 +108,7 @@ void modules::interpreter::interpretCommand(std::string command, std::vector<std
 
 void modules::interpreter::sendUserSpecificMessage(PlayerInfo info, std::string message)
 {
+    if (!global::isMapValid()) return;
     SDK::FText Fmessage = SDK::UKismetTextLibrary::Conv_StringToText(UC::FString(global::to_wstring_n(message).c_str()));
     SDK::FBrickChatMessage SMessage;
     SDK::ABrickPlayerController* cont = global::GetBrickPlayerControllerFromName(info.name);
@@ -122,6 +123,7 @@ void modules::interpreter::sendUserSpecificMessage(PlayerInfo info, std::string 
     }
     else {
         auto PlayerController = global::GetBrickPlayerController();
+        if (PlayerController == nullptr) return;
         SDK::FText FmessageN = SDK::UKismetTextLibrary::Conv_StringToText(SDK::UKismetStringLibrary::Concat_StrStr(UC::FString(L"Message Failed To Send To: "), UC::FString(global::to_wstring_n(info.name).c_str())));
         auto SMessageN = SDK::FBrickChatMessage();
         SMessageN.TextOption = FmessageN;
@@ -131,6 +133,7 @@ void modules::interpreter::sendUserSpecificMessage(PlayerInfo info, std::string 
 
 void modules::interpreter::sendUserSpecificMessageWithContext(PlayerInfo info, std::string message, SDK::EChatContext context, const wchar_t* sender)
 {
+    if (!global::isMapValid()) return;
     SDK::FText Fmessage = SDK::UKismetTextLibrary::Conv_StringToText(UC::FString(global::to_wstring_n(message).c_str()));
     SDK::FBrickChatMessage SMessage;
     SDK::ABrickPlayerController* cont = global::GetBrickPlayerControllerFromName(info.name);
@@ -145,6 +148,7 @@ void modules::interpreter::sendUserSpecificMessageWithContext(PlayerInfo info, s
     }
     else {
         auto PlayerController = global::GetBrickPlayerController();
+        if (PlayerController == nullptr) return;
         SDK::FText FmessageN = SDK::UKismetTextLibrary::Conv_StringToText(SDK::UKismetStringLibrary::Concat_StrStr(UC::FString(L"Message Failed To Send To: "), UC::FString(global::to_wstring_n(info.name).c_str())));
         auto SMessageN = SDK::FBrickChatMessage();
         SMessageN.TextOption = FmessageN;
@@ -154,6 +158,7 @@ void modules::interpreter::sendUserSpecificMessageWithContext(PlayerInfo info, s
 
 void modules::interpreter::sendMessageToAdmin(std::string message)
 {
+    if (!global::isMapValid()) return;
     sendUserSpecificMessage(global::GetPlayerInfoFromController(global::GetBrickPlayerController()), message);
 }
 
@@ -165,7 +170,7 @@ void modules::interpreter::Commands::Command(PlayerInfo info)
 void modules::interpreter::Commands::Toggle(PlayerInfo info, std::string command, bool toggle)
 {
     using namespace global;
-    GetIsPlayerAdminFromName(info.name);
+    if (!GetIsPlayerAdminFromName(info.name)) return;
     size_t hash_val = hash_string(command);
 
     std::cout << "We Made It!" << std::endl;

@@ -69,5 +69,10 @@ namespace hooks
         {
             SDK::UUserWidget* CreateWidget(SDK::UWorld* OwningObject, SDK::TSubclassOf<SDK::UUserWidget> UserWidgetClass, SDK::FName WidgetName);
         }
+
+        namespace OpenPopup
+        {
+            char OpenPopup(SDK::UWindowManagerWidget* This, SDK::UClass* HandleT, SDK::UPopupParams* PopupParams, bool bToggleOpen);
+        }
     }
 }

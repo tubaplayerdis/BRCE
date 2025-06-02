@@ -24,6 +24,13 @@ void mainLoop()
 		return;
 	}
 
+	if (SDK::UWindowManagerWidget::Get(World) != nullptr) {
+		SDK::UNetworkErrorPopupParams parms = SDK::UNetworkErrorPopupParams();
+		auto wm = SDK::UWindowManagerWidget::Get(World);
+		std::cout << wm->PopupContainerWidgets.Num() << std::endl;
+	}
+
+
 	global::InitPointers();
 
 	hooks::EnableAllHooks();

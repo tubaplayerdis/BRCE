@@ -42,3 +42,13 @@ SDK::UUserWidget* hooks::Functions::CreateWidget::CreateWidget(SDK::UWorld* Owni
 
 	return OnCreateWidgetFunction(OwningObject, UserWidgetClass, WidgetName);
 }
+
+char hooks::Functions::OpenPopup::OpenPopup(SDK::UWindowManagerWidget* This, SDK::UClass* HandleT, SDK::UPopupParams* PopupParams, bool bToggleOpen)
+{
+	uintptr_t OpenPopupFunction = (uintptr_t)GetModuleHandle(NULL) + 0x0DCBA60;
+
+	using OpenPopupFn = char (__fastcall*)(SDK::UWindowManagerWidget* Thiss, SDK::UClass* HandleTT, SDK::UPopupParams* PopupParamss, bool bToggleOpenn);
+	OpenPopupFn OnOpenPopupFunction = reinterpret_cast<OpenPopupFn>(OpenPopupFunction);
+
+	return OnOpenPopupFunction(This, HandleT, PopupParams, bToggleOpen);
+}
