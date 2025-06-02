@@ -1,14 +1,17 @@
 #pragma once
 #include "ChatMessageHooks.h"
 #include "GlobalHooks.h"
+#include <chrono>
 
 namespace hooks
 {
 	inline bool InitAllHooks() {
-		std::cout << "Starting Hook Searches!" << std::endl;
+		std::cout << "Finding Hooks!" << std::endl;
+		auto start = std::chrono::high_resolution_clock::now();
 		bool ACMHook = AddChatMessage::Init();
 		bool BPHook = BeginPlay::Init();
-		std::cout << "Completed!" << std::endl;
+		auto end = std::chrono::high_resolution_clock::now();
+		std::cout << "Elapsed Time Finding Hooks: " << std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count() << std::endl;
 		if (!ACMHook || !BPHook) {
 			//print cases
 			std::cout << "ACMHOOK: " << ACMHook << std::endl;

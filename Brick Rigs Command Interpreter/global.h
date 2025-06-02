@@ -3,6 +3,7 @@
 #pragma once
 #include <string>
 #include "SDK.hpp"
+#include "interpreter.h"
 
 namespace global
 {
@@ -35,4 +36,5 @@ namespace global
 	bool IsHost();
 	inline bool NotHost() { return !IsHost(); };
 	void SendNotificationLocal(std::wstring notif, int slot);
+	PlayerInfo GetPlayerInfoFromController(SDK::ABrickPlayerController* controller);
 }

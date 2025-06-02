@@ -14,7 +14,9 @@ using namespace global;
 
 void mainLoop()
 {
-	std::cout << "BRCI Injected! Starting Setup" << std::endl;
+	std::cout << reinterpret_cast<const char*>(CommandLineLogo) << std::endl;
+
+	//Find a way to alert the user that BRCI is loaded without using the console.
 
 	if (!hooks::InitAllHooks()) {
 		MessageBox(GetActiveWindow(), L"Failed To Hook Critical Functions. Uninjecting BCRI.", L"Uninjecting BRCI", MB_OK);
@@ -32,6 +34,8 @@ void mainLoop()
 
 		Sleep(10);
 
+		if (GetAsyncKeyState(VK_RETURN) & 1) continue;
+
 		if (GetAsyncKeyState(VK_DIVIDE) & 1) break;
 
 		if (GetAsyncKeyState(VK_MULTIPLY) & 1) {
@@ -46,8 +50,8 @@ void mainLoop()
 		}
 	}
 
-	//uninit hooks
-	//hooks::DisableAllHooks(); //MinHook has a disable all hook feature.
+	modules::interpreter::sendMessageToAdmin("Uninjecting BRCI!");
+	SendNotificationLocal(L"Uninjecting BRCI", 9);
 
 	menu::shouldExit = true;
 

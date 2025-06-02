@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <vector>
+#include "SDK/BrickRigs_structs.hpp"
 
 struct PlayerInfo
 {
@@ -64,7 +65,24 @@ namespace modules
 			inline bool isBombGun = true;
 		}
 		void interpretCommand(std::string command, std::vector<std::string> args, PlayerInfo info);
+
+		/*
+		* Send a specified user a message. messages send from user "Command Interpreter" with default message context
+		* info - Recipient info
+		* message - message context
+		*/
 		void sendUserSpecificMessage(PlayerInfo info, std::string message);
+
+		/*
+		* Send a specified user a message with context and sender options.
+		* info - Recipient info
+		* message - message content
+		* context - Brick Rigs's chat context
+		* sender - custom sender name.
+		*/
+		void sendUserSpecificMessageWithContext(PlayerInfo info, std::string message, SDK::EChatContext context, const wchar_t* sender);
+
+
 		void sendMessageToAdmin(std::string message);
 	}
 }

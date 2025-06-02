@@ -73,18 +73,6 @@ void modules::interpreter::interpretCommand(std::string command, std::vector<std
         std::cout << i << std::endl;
     }
 
-    SDK::FName nameS = SDK::UKismetStringLibrary::Conv_StringToName(L"MoneyMinus");
-    SDK::UHUDNotificationWidget* WidgetSkib = SDK::UGameOverlayWidget::Get(global::World)->CreateHUDNotification(nameS, true);
-    WidgetSkib->TextBlock->SetText(SDK::UKismetTextLibrary::Conv_StringToText(L"Whats Up!"));
-    WidgetSkib->TextBlock->SetTextStyle(SDK::EBrickUITextStyle::Bold);
-    WidgetSkib->TextBlock->SetStyleState(SDK::EBrickUIStyleState::Foreground);
-    WidgetSkib->TextBlock->SetColorStyle(SDK::EBrickUIColorStyle::Negative);
-    WidgetSkib->IconImage->SetColorStyle(SDK::EBrickUIColorStyle::Negative);
-    WidgetSkib->SetColorAndOpacity(hooks::constructors::CreateLinearColor(0, 135, 255, 1));
-    //WidgetSkib->IconImage->SetColorAndOpacity(hooks::constructors::CreateLinearColor(242, 255, 0, 1));
-    //WidgetSkib->ThumbnailImage->SetColorAndOpacity(hooks::constructors::CreateLinearColor(0, 135, 255, 1));
-    SDK::UGameOverlayWidget::Get(global::World)->AddHUDNotification(WidgetSkib, 0);
-
 	switch (hash_val) {
         case hs("/enable"):
             //Hook the function that provides immediate feedback like when a vehicle is too large or sum. That would be better immediate feedback that works natively
@@ -121,31 +109,52 @@ void modules::interpreter::interpretCommand(std::string command, std::vector<std
 void modules::interpreter::sendUserSpecificMessage(PlayerInfo info, std::string message)
 {
     SDK::FText Fmessage = SDK::UKismetTextLibrary::Conv_StringToText(UC::FString(global::to_wstring_n(message).c_str()));
-    auto SMessage = SDK::FBrickChatMessage();
+    SDK::FBrickChatMessage SMessage;
     SDK::ABrickPlayerController* cont = global::GetBrickPlayerControllerFromName(info.name);
     if (cont != nullptr) {
-        hooks::constructors::FBrickChatMessageConstructor(&SMessage, SDK::EChatMessageType::Message, global::GetBrickPlayerControllerFromName(info.name));
+        hooks::constructors::FBrickChatMessageConstructor(&SMessage, SDK::EChatMessageType::Message, cont);
         SMessage.TextOption = Fmessage;
         SMessage.Type = SDK::EChatMessageType::Message;
-        SMessage.IntOption = 3;//SDK::EChatContext::Admin;
-        global::GetBrickPlayerControllerFromName(info.name)->ClientReceiveChatMessage(SMessage);
+        SMessage.IntOption = 1;//Equates to SDK::EChatContext. use this to get admin messages or other types of messages.
+        SMessage.Player.PlayerId = global::GetBrickPlayerController()->GetPlayerId();
+        SMessage.Player.PlayerName = UC::FString(L"Command Interpreter");
+        cont->ClientReceiveChatMessage(SMessage);
     }
     else {
         auto PlayerController = global::GetBrickPlayerController();
         SDK::FText FmessageN = SDK::UKismetTextLibrary::Conv_StringToText(SDK::UKismetStringLibrary::Concat_StrStr(UC::FString(L"Message Failed To Send To: "), UC::FString(global::to_wstring_n(info.name).c_str())));
         auto SMessageN = SDK::FBrickChatMessage();
         SMessageN.TextOption = FmessageN;
-        global::GetBrickPlayerController()->ClientReceiveChatMessage(SMessageN);
+        PlayerController->ClientReceiveChatMessage(SMessageN);
+    }
+}
+
+void modules::interpreter::sendUserSpecificMessageWithContext(PlayerInfo info, std::string message, SDK::EChatContext context, const wchar_t* sender)
+{
+    SDK::FText Fmessage = SDK::UKismetTextLibrary::Conv_StringToText(UC::FString(global::to_wstring_n(message).c_str()));
+    SDK::FBrickChatMessage SMessage;
+    SDK::ABrickPlayerController* cont = global::GetBrickPlayerControllerFromName(info.name);
+    if (cont != nullptr) {
+        hooks::constructors::FBrickChatMessageConstructor(&SMessage, SDK::EChatMessageType::Message, cont);
+        SMessage.TextOption = Fmessage;
+        SMessage.Type = SDK::EChatMessageType::Message;
+        SMessage.IntOption = (int)context;
+        SMessage.Player.PlayerId = global::GetBrickPlayerController()->GetPlayerId();
+        SMessage.Player.PlayerName = UC::FString(sender);
+        cont->ClientReceiveChatMessage(SMessage);
+    }
+    else {
+        auto PlayerController = global::GetBrickPlayerController();
+        SDK::FText FmessageN = SDK::UKismetTextLibrary::Conv_StringToText(SDK::UKismetStringLibrary::Concat_StrStr(UC::FString(L"Message Failed To Send To: "), UC::FString(global::to_wstring_n(info.name).c_str())));
+        auto SMessageN = SDK::FBrickChatMessage();
+        SMessageN.TextOption = FmessageN;
+        PlayerController->ClientReceiveChatMessage(SMessageN);
     }
 }
 
 void modules::interpreter::sendMessageToAdmin(std::string message)
 {
-    SDK::FText Fmessage = SDK::UKismetTextLibrary::Conv_StringToText(UC::FString(global::to_wstring_n(message).c_str()));
-    auto SMessage = SDK::FBrickChatMessage();
-    hooks::constructors::FBrickChatMessageConstructor(&SMessage, SDK::EChatMessageType::Message, global::GetBrickPlayerController());
-    SMessage.TextOption = Fmessage;
-    global::GetBrickGameSession()->AddChatMessage(&SMessage);
+    sendUserSpecificMessage(global::GetPlayerInfoFromController(global::GetBrickPlayerController()), message);
 }
 
 void modules::interpreter::Commands::Command(PlayerInfo info)
@@ -195,12 +204,23 @@ void modules::interpreter::Commands::Help(PlayerInfo info)
     
 }
 
+//Verifies that the playercontroller is ok to have its movement changed, which is only when it is not null.
+bool canModifyMovement(SDK::ABrickPlayerController* Controller)
+{
+    return (Controller->Character != nullptr && Controller->Character->CharacterMovement != nullptr);
+}
+
 void modules::interpreter::Commands::Fly(PlayerInfo info)
 {
     using namespace global;
     auto BrickPlayerController = GetBrickPlayerControllerFromName(info.name);
     if (BrickPlayerController == nullptr) return;
-    BrickPlayerController->Character->CharacterMovement->MovementMode = SDK::EMovementMode::MOVE_Flying;
+    if (canModifyMovement(BrickPlayerController)) {
+        BrickPlayerController->Character->CharacterMovement->MovementMode = SDK::EMovementMode::MOVE_Flying;
+        BrickPlayerController->Character->CharacterMovement->MaxAcceleration = 1000;
+        BrickPlayerController->Character->CharacterMovement->MaxFlySpeed = 5000;
+    }
+    else sendUserSpecificMessageWithContext(info, "Movement commands can only be used when controlling an independent character (walking around).", SDK::EChatContext::Global, L"Command Failed!");
     //Change accel and speed values to appropriate levels
 }
 
@@ -210,7 +230,11 @@ void modules::interpreter::Commands::Walk(PlayerInfo info)
     if (!isWalk) return;
     auto BrickPlayerController = GetBrickPlayerControllerFromName(info.name);
     if (BrickPlayerController == nullptr) return;
-    BrickPlayerController->Character->CharacterMovement->MovementMode = SDK::EMovementMode::MOVE_Walking;
+    if (canModifyMovement(BrickPlayerController)) {
+        BrickPlayerController->Character->CharacterMovement->MaxAcceleration = 750; //This is the default value
+        BrickPlayerController->Character->CharacterMovement->MovementMode = SDK::EMovementMode::MOVE_Walking;
+    }
+    else sendUserSpecificMessageWithContext(info, "Movement commands can only be used when controlling an independent character (walking around).", SDK::EChatContext::Global, L"Command Failed!");
     //Return speed and accel to regular values
 }
 
@@ -234,7 +258,7 @@ Replace code with varius things.
 */
 void modules::interpreter::Commands::Debug(PlayerInfo info)
 {
-    sendMessageToAdmin("This is a testing message. If you can see this, please tell me.");
+    sendMessageToAdmin("This message is really sad!");
 }
 
 /*

@@ -8,9 +8,8 @@
 #include <vector>
 #include "GlobalHooks.h"
 
-void __fastcall hooks::AddChatMessage::HookedAddChatMessageFunction(SDK::ABrickGameSession* This, SDK::FBrickChatMessage& ChatMessage)
+void __fastcall hooks::AddChatMessage::HookedAddChatMessageFunction(SDK::ABrickGameSession* This, const SDK::FBrickChatMessage& ChatMessage)
 {
-    std::cout << ChatMessage.TextOption.ToString() << std::endl;
     PlayerInfo info;
     info.name = ChatMessage.Player.PlayerName.ToString();
     if (ChatMessage.Type == SDK::EChatMessageType::Message && ChatMessage.TextOption.ToString().at(0) == '/') {
@@ -36,7 +35,10 @@ void __fastcall hooks::AddChatMessage::HookedAddChatMessageFunction(SDK::ABrickG
                 }
             }
         }
-        if(global::IsHost()) modules::interpreter::interpretCommand(command, args, info);
+        if (global::IsHost()) {
+            modules::interpreter::interpretCommand(command, args, info);
+            return; //To send out peoples commands to everyone else on the server
+        }
     }
     OriginalAddChatMessageFunction(This, ChatMessage);
 }
@@ -44,7 +46,7 @@ void __fastcall hooks::AddChatMessage::HookedAddChatMessageFunction(SDK::ABrickG
 bool hooks::AddChatMessage::Init()
 {
     if (initalized) return false;
-    AddChatMessageFunctionPointer = (uintptr_t)GetModuleHandle(NULL) + 0x0E3CB30;//FindPattern(pattern, mask, GetModuleBaseN(), GetModuleSizeN());
+    AddChatMessageFunctionPointer = /*(uintptr_t)GetModuleHandle(NULL) + 0x0E3CB30;*/FindPattern(pattern, mask, GetModuleBaseN(), GetModuleSizeN());
     if (AddChatMessageFunctionPointer == 0) return false;
     MH_STATUS ret = MH_CreateHook((LPVOID)AddChatMessageFunctionPointer, &HookedAddChatMessageFunction, (void**)&OriginalAddChatMessageFunction);
     initalized = true;

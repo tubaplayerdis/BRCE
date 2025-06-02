@@ -27,6 +27,7 @@ DWORD WINAPI MainThread(LPVOID lpReserved)
         freopen_s(&pStdOut, "CONOUT$", "w", stdout);
         freopen_s(&pStdErr, "CONOUT$", "w", stderr);
         SetConsoleTitleW(L"Brick Rigs Command Interpreter");
+        SetConsoleOutputCP(CP_UTF8);
     #endif // _DEBUG
 
     if (GetModuleHandle(L"MinHook.x64.dll") == NULL) {
@@ -51,6 +52,7 @@ DWORD WINAPI MainThread(LPVOID lpReserved)
         MH_Initialize(); //Kiero normally calls this, but in release we need to call it.
     #endif // _RELEASE
 
+    SetThreadPriority(GetCurrentThread(), THREAD_PRIORITY_LOWEST); //Prevent random freezes
 
     mainLoop();
 
@@ -66,6 +68,7 @@ DWORD WINAPI MainThread(LPVOID lpReserved)
 
     
     MH_DisableHook(MH_ALL_HOOKS);
+    MH_RemoveHook(MH_ALL_HOOKS);
     MH_Uninitialize();
     
     #ifdef _DEBUG

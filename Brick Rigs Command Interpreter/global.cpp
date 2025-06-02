@@ -98,8 +98,10 @@ bool global::IsHost()
 
 void global::SendNotificationLocal(std::wstring notif, int slot)
 {
+	//WidgetSkib->SetColorAndOpacity(hooks::constructors::CreateLinearColor(0, 135, 255, 1)); //Change Color
 	SDK::FName nameS = SDK::UKismetStringLibrary::Conv_StringToName(L"None");
-	SDK::UHUDNotificationWidget* WidgetSkib = SDK::UGameOverlayWidget::Get(global::World)->CreateHUDNotification(nameS, true);
+	if (SDK::UGameOverlayWidget::Get(World) == nullptr) return;
+	SDK::UHUDNotificationWidget* WidgetSkib = SDK::UGameOverlayWidget::Get(World)->CreateHUDNotification(nameS, true);
 	WidgetSkib->TextBlock->SetText(SDK::UKismetTextLibrary::Conv_StringToText(notif.c_str()));
 	WidgetSkib->TextBlock->SetTextStyle(SDK::EBrickUITextStyle::Bold);
 	WidgetSkib->TextBlock->SetStyleState(SDK::EBrickUIStyleState::Foreground);
@@ -107,6 +109,15 @@ void global::SendNotificationLocal(std::wstring notif, int slot)
 	slots.Index = slot;
 	WidgetSkib->IconImage->SetIconSlot(slots);
 	SDK::UGameOverlayWidget::Get(global::World)->AddHUDNotification(WidgetSkib, 0);
+}
+
+PlayerInfo global::GetPlayerInfoFromController(SDK::ABrickPlayerController* controller)
+{
+	if (controller == nullptr) return PlayerInfo();
+	PlayerInfo ret = PlayerInfo();
+	SDK::ABrickPlayerState* state = static_cast<SDK::ABrickPlayerState*>(controller->PlayerState);
+	ret.name = state->GetPlayerNameText().ToString();
+	return ret;
 }
 
 void global::InitPointers()

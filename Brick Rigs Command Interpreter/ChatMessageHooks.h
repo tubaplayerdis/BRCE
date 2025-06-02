@@ -15,10 +15,10 @@ namespace hooks
 			"xxxxxxxxxxxxxxxxx????xxxx????";
 		inline uintptr_t AddChatMessageFunctionPointer = 0;//Initalized in Init()
 
-		using  AddChatMessage_t = void(__fastcall*)(SDK::ABrickGameSession* This, SDK::FBrickChatMessage& ChatMessage);
+		using  AddChatMessage_t = void(__fastcall*)(SDK::ABrickGameSession* This, const SDK::FBrickChatMessage& ChatMessage);
 		inline  AddChatMessage_t OriginalAddChatMessageFunction = nullptr;
 
-		void __fastcall HookedAddChatMessageFunction(SDK::ABrickGameSession* This, SDK::FBrickChatMessage& ChatMessage);
+		void __fastcall HookedAddChatMessageFunction(SDK::ABrickGameSession* This, const SDK::FBrickChatMessage& ChatMessage);
 
 		bool Init();
 		void Enable();
