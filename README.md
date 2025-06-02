@@ -24,18 +24,18 @@ A Discord Bot that controls these functions or other administatrive items might 
 
 /cmd - Lists all the commands (Sends back only to the user) (!)
 
-/off [command] - Turns command off (Admin Only) (!)
+/off [command] - Disables command (Admin Only)
 
-/on [command] - Turns command on (Admin Only) (!)
+/on [command] - Enables command(Admin Only)
 
 /pm [who] [content] - Personal Message Someone (!)
 
 
 #### Movement
 
-/fly - Turns the players movement mode to flying (!)
+/fly - Turns the players movement mode to flying
 
-/walk - Turns the players movement mode to walking (!)
+/walk - Turns the players movement mode to walking
 
 /speed [1-3] - changes the players speed based off input (!)
 
