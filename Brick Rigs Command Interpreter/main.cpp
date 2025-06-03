@@ -1,3 +1,15 @@
+/*----------------------------------------------------------------------------*/
+/*                                                                            */
+/*    Copyright (c) Aaron Wilk 2025, All rights reserved.                     */
+/*                                                                            */
+/*    Module:     main.cpp                                                    */
+/*    Author:     Aaron Wilk                                                  */
+/*    Created:    3 May 2025                                                  */
+/*                                                                            */
+/*    Revisions:  V0.1                                                        */
+/*                                                                            */
+/*----------------------------------------------------------------------------*/
+
 #include "main.h"
 #include "modules.h"
 #include "interpreter.h"

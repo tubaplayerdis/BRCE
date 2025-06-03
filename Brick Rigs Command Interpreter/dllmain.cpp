@@ -1,4 +1,15 @@
-// dllmain.cpp : Defines the entry point for the DLL application.
+/*----------------------------------------------------------------------------*/
+/*                                                                            */
+/*    Copyright (c) Aaron Wilk 2025, All rights reserved.                     */
+/*                                                                            */
+/*    Module:     dllmain.cpp                                                 */
+/*    Author:     Aaron Wilk                                                  */
+/*    Created:    2 May 2025                                                  */
+/*                                                                            */
+/*    Revisions:  V0.1                                                        */
+/*                                                                            */
+/*----------------------------------------------------------------------------*/
+
 #include "pch.h"
 #include "stdio.h"
 #include "main.h"
@@ -30,7 +41,7 @@ DWORD WINAPI MainThread(LPVOID lpReserved)
     }
 
     
-    MH_Initialize();
+    MH_Initialize(); //Initalize MinHook
 
     SetThreadPriority(GetCurrentThread(), THREAD_PRIORITY_LOWEST); //Prevent random freezes
 

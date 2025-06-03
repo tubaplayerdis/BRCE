@@ -81,11 +81,11 @@
     <ClInclude Include="interpreter.h">
       <Filter>Header Files\module</Filter>
     </ClInclude>
-    <ClInclude Include="CommandList.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="GlobalHooks.h">
       <Filter>Header Files\hooks</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandList.h">
+      <Filter>Header Files\module\modules\management</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -1,4 +1,16 @@
-﻿#pragma once
+﻿/*----------------------------------------------------------------------------*/
+/*                                                                            */
+/*    Copyright (c) Aaron Wilk 2025, All rights reserved.                     */
+/*                                                                            */
+/*    Module:     main.h                                                      */
+/*    Author:     Aaron Wilk                                                  */
+/*    Created:    3 May 2025                                                  */
+/*                                                                            */
+/*    Revisions:  V0.1                                                        */
+/*                                                                            */
+/*----------------------------------------------------------------------------*/
+
+#pragma once
 
 inline const char8_t* CommandLineLogo = u8R"(
 ░▒▓███████▓▒░  ░▒▓███████▓▒░   ░▒▓██████▓▒░  ░▒▓█▓▒░ 

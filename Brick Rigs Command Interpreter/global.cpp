@@ -1,3 +1,15 @@
+/*----------------------------------------------------------------------------*/
+/*                                                                            */
+/*    Copyright (c) Aaron Wilk 2025, All rights reserved.                     */
+/*                                                                            */
+/*    Module:     global.cp                                                   */
+/*    Author:     Aaron Wilk                                                  */
+/*    Created:    2 May 2025                                                  */
+/*                                                                            */
+/*    Revisions:  V0.1                                                        */
+/*                                                                            */
+/*----------------------------------------------------------------------------*/
+
 #include "global.h"
 #include "SDK.hpp"
 #include "Windows.h"

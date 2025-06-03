@@ -1,3 +1,15 @@
+/*----------------------------------------------------------------------------*/
+/*                                                                            */
+/*    Copyright (c) Aaron Wilk 2025, All rights reserved.                     */
+/*                                                                            */
+/*    Module:     hooks.h                                                     */
+/*    Author:     Aaron Wilk                                                  */
+/*    Created:    3 May 2025                                                  */
+/*                                                                            */
+/*    Revisions:  V0.1                                                        */
+/*                                                                            */
+/*----------------------------------------------------------------------------*/
+
 #pragma once
 #include "ChatMessageHooks.h"
 #include "GlobalHooks.h"

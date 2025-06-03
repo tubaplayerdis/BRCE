@@ -1,3 +1,15 @@
+/*----------------------------------------------------------------------------*/
+/*                                                                            */
+/*    Copyright (c) Aaron Wilk 2025, All rights reserved.                     */
+/*                                                                            */
+/*    Module:     Interpreter.cpp                                             */
+/*    Author:     Aaron Wilk                                                  */
+/*    Created:    19 May 2025                                                 */
+/*                                                                            */
+/*    Revisions:  V0.1                                                        */
+/*                                                                            */
+/*----------------------------------------------------------------------------*/
+
 #include "interpreter.h"
 #include "modules.h"
 #include <thread>

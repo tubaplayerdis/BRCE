@@ -1,3 +1,15 @@
+/*----------------------------------------------------------------------------*/
+/*                                                                            */
+/*    Copyright (c) Aaron Wilk 2025, All rights reserved.                     */
+/*                                                                            */
+/*    Module:     GlobalHooks.cpp                                             */
+/*    Author:     Aaron Wilk                                                  */
+/*    Created:    27 May 2025                                                 */
+/*                                                                            */
+/*    Revisions:  V0.1                                                        */
+/*                                                                            */
+/*----------------------------------------------------------------------------*/
+
 #include "GlobalHooks.h"
 #include "MinHook.h"
 #include "global.h"
