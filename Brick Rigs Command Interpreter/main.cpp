@@ -1,14 +1,12 @@
 #include "main.h"
-#include "global.h"
 #include "modules.h"
 #include "interpreter.h"
 #include <windows.h>
+#include "global.h"
 #include "hooks.h"
 #include <MinHook.h>
-#include "kiero.h"
 #include <psapi.h>
 #include "SDK.hpp"
-#include "menu.h"
 
 using namespace global;
 
@@ -16,24 +14,18 @@ void mainLoop()
 {
 	std::cout << reinterpret_cast<const char*>(CommandLineLogo) << std::endl;
 
-	//Find a way to alert the user that BRCI is loaded without using the console.
+	//Find a way to alert the user that BRCI is loaded without using the console. Maybe try to make a notification out of a text border. a watermark is currently used but it might not be enough.
 
 	if (!hooks::InitAllHooks()) {
 		MessageBox(GetActiveWindow(), L"Failed To Hook Critical Functions. Uninjecting BCRI.", L"Uninjecting BRCI", MB_OK);
-		menu::shouldExit = true;
 		return;
 	}
 
-	if (SDK::UWindowManagerWidget::Get(World) != nullptr) {
-		SDK::UNetworkErrorPopupParams parms = SDK::UNetworkErrorPopupParams();
-		auto wm = SDK::UWindowManagerWidget::Get(World);
-		std::cout << wm->PopupContainerWidgets.Num() << std::endl;
-	}
-
-
 	global::InitPointers();
 
-	hooks::EnableAllHooks();
+	hooks::EnableAllHooks(); //Excludes the rendering hook.
+
+	global::watermark::InitalizeWaterMark();
 
 	std::cout << "Starting Main Loop!" << std::endl;
 
@@ -57,10 +49,11 @@ void mainLoop()
 		}
 	}
 
+	global::watermark::HideWaterWark();
+	global::watermark::UnInitalizeWaterMark();
+
 	modules::interpreter::sendMessageToAdmin("Uninjecting BRCI!");
 	SendNotificationLocal(L"Uninjecting BRCI", 9);
-
-	menu::shouldExit = true;
 
 	std::cout << "Uninjecting!" << std::endl;
 }

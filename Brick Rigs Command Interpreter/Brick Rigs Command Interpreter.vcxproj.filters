@@ -13,24 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Header Files\kiero">
-      <UniqueIdentifier>{bfe2ea0b-4908-4e85-b1ce-43c6f0cc87ee}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\imgui">
-      <UniqueIdentifier>{babcb6b9-7ed9-4636-a0b6-af8fcb9727df}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\imgui">
-      <UniqueIdentifier>{f5ebbdd3-1332-4b1a-bd38-d6fb912aae61}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\kiero">
-      <UniqueIdentifier>{383fb43e-9b61-46cf-92fe-537a92a2f163}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\menu">
-      <UniqueIdentifier>{2e85828e-4981-409b-bcd6-8b6628eff522}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\menu">
-      <UniqueIdentifier>{bd3d12cd-af7f-47d7-8faa-2831a706a1d1}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\global">
       <UniqueIdentifier>{665d2d01-dcc6-4c35-90cb-2a6448d7dbd6}</UniqueIdentifier>
     </Filter>
@@ -81,36 +63,6 @@
     <ClInclude Include="pch.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="kiero.h">
-      <Filter>Header Files\kiero</Filter>
-    </ClInclude>
-    <ClInclude Include="imconfig.h">
-      <Filter>Header Files\imgui</Filter>
-    </ClInclude>
-    <ClInclude Include="imgui.h">
-      <Filter>Header Files\imgui</Filter>
-    </ClInclude>
-    <ClInclude Include="imgui_impl_dx11.h">
-      <Filter>Header Files\imgui</Filter>
-    </ClInclude>
-    <ClInclude Include="imgui_impl_win32.h">
-      <Filter>Header Files\imgui</Filter>
-    </ClInclude>
-    <ClInclude Include="imgui_internal.h">
-      <Filter>Header Files\imgui</Filter>
-    </ClInclude>
-    <ClInclude Include="imstb_rectpack.h">
-      <Filter>Header Files\imgui</Filter>
-    </ClInclude>
-    <ClInclude Include="imstb_textedit.h">
-      <Filter>Header Files\imgui</Filter>
-    </ClInclude>
-    <ClInclude Include="imstb_truetype.h">
-      <Filter>Header Files\imgui</Filter>
-    </ClInclude>
-    <ClInclude Include="menu.h">
-      <Filter>Header Files\menu</Filter>
-    </ClInclude>
     <ClInclude Include="global.h">
       <Filter>Header Files\global</Filter>
     </ClInclude>
@@ -142,33 +94,6 @@
     </ClCompile>
     <ClCompile Include="pch.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="imgui.cpp">
-      <Filter>Source Files\imgui</Filter>
-    </ClCompile>
-    <ClCompile Include="imgui_demo.cpp">
-      <Filter>Source Files\imgui</Filter>
-    </ClCompile>
-    <ClCompile Include="imgui_draw.cpp">
-      <Filter>Source Files\imgui</Filter>
-    </ClCompile>
-    <ClCompile Include="imgui_impl_dx11.cpp">
-      <Filter>Source Files\imgui</Filter>
-    </ClCompile>
-    <ClCompile Include="imgui_impl_win32.cpp">
-      <Filter>Source Files\imgui</Filter>
-    </ClCompile>
-    <ClCompile Include="imgui_tables.cpp">
-      <Filter>Source Files\imgui</Filter>
-    </ClCompile>
-    <ClCompile Include="imgui_widgets.cpp">
-      <Filter>Source Files\imgui</Filter>
-    </ClCompile>
-    <ClCompile Include="kiero.cpp">
-      <Filter>Source Files\kiero</Filter>
-    </ClCompile>
-    <ClCompile Include="menu.cpp">
-      <Filter>Source Files\menu</Filter>
     </ClCompile>
     <ClCompile Include="global.cpp">
       <Filter>Source Files\global</Filter>

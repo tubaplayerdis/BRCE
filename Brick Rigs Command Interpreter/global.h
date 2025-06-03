@@ -1,6 +1,7 @@
 #pragma once
-
-#pragma once
+#undef TEXT
+#define TEXT(text) SDK::UKismetTextLibrary::Conv_StringToText(SDK::FString(text))
+#define STRING(string) UC::FString(string)
 #include <string>
 #include "SDK.hpp"
 #include "interpreter.h"
@@ -32,9 +33,25 @@ namespace global
 	//General Helpers
 	std::wstring to_wstring_n(const std::string& str);
 	bool GetIsPlayerAdminFromName(std::string name);
+
+	/*
+	* Returns true if a map that is loaded is playable, false if otherwise.
+	*/
 	bool isMapValid();
 	bool IsHost();
 	inline bool NotHost() { return !IsHost(); };
 	void SendNotificationLocal(std::wstring notif, int slot);
 	PlayerInfo GetPlayerInfoFromController(SDK::ABrickPlayerController* controller);
+
+	//Watermark
+	namespace watermark
+	{
+		inline SDK::UCanvasPanel* panel = nullptr;
+		inline SDK::UPanelWidget* RootPanel = nullptr;
+		inline SDK::UBrickBorder* TextBorder = nullptr;
+		bool InitalizeWaterMark();
+		void ShowWaterMark();
+		void HideWaterWark();
+		void UnInitalizeWaterMark();
+	}
 }

@@ -1,15 +1,8 @@
 // dllmain.cpp : Defines the entry point for the DLL application.
 #include "pch.h"
-#include "kiero.h"
-#include "imgui.h"
 #include "stdio.h"
-#include <d3d11.h>
-#include <dxgi.h>
-#include "menu.h"
 #include "main.h"
 #include <MinHook.h>
-#include "imgui_impl_dx11.h"
-#include "imgui_impl_win32.h"
 
 #pragma comment(lib, "MinHook.x64.lib")
 
@@ -36,36 +29,14 @@ DWORD WINAPI MainThread(LPVOID lpReserved)
         return 0;
     }
 
-    #ifdef _DEBUG //If in debug use imgui. otherwise dont
-        bool init_hook = false;
-        do
-        {
-            if (kiero::init(kiero::RenderType::D3D11) == kiero::Status::Success)
-            {
-                kiero::bind(8, (void**)&menu::oPresent, menu::renderLoop);
-                init_hook = true;
-            }
-        } while (!init_hook);
-    #endif // _DEBUG
-
-    #ifdef _RELEASE
-        MH_Initialize(); //Kiero normally calls this, but in release we need to call it.
-    #endif // _RELEASE
+    
+    MH_Initialize();
 
     SetThreadPriority(GetCurrentThread(), THREAD_PRIORITY_LOWEST); //Prevent random freezes
 
     mainLoop();
 
     Sleep(200); //Let render thread stop
-
-    #ifdef _DEBUG //No need to shutdown kiero(dx11 hook) if it was never ran.
-        kiero::unbind(8);
-        ImGui_ImplWin32_Shutdown();
-        ImGui_ImplDX11_Shutdown();
-        ImGui::DestroyContext();
-        kiero::shutdown();
-    #endif // _DEBUG
-
     
     MH_DisableHook(MH_ALL_HOOKS);
     MH_RemoveHook(MH_ALL_HOOKS);

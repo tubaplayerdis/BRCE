@@ -63,6 +63,43 @@ namespace hooks
 		void Disable();
 	}
 
+    //Use this to render primatives. Not currently used.
+    namespace DrawTransition
+    {
+        inline bool enabled = false;
+        inline bool initalized = false;
+        inline const char* pattern = "\x48\x89\x74\x24\x18\x57\x48\x83\xEC\x40\x80\xB9\x88\x00\x00\x00\x00\x48\x8B\xF2\x48\x8B\xF9\x0F\x85\x00\x00\x00\x00\x8B\x41\x08\x45\x33\xC0\xC1\xE8\x04\xA8\x01\x41\x8B\xC0";
+        inline const char* mask = "xxxxxxxxxxxxxxxxxxxxxxxxx????xxxxxxxxxxxxxx";
+        inline uintptr_t DrawTransitionFunctionPointer = 0;
+
+        using DrawTransition_t = void(__fastcall*)(SDK::UGameViewportClient* This, SDK::UCanvas* Canvas);
+        inline DrawTransition_t OriginalDrawTransitionFunction = nullptr;
+
+        void __fastcall HookedDrawTransitionFunction(SDK::UGameViewportClient* This, SDK::UCanvas* Canvas);
+
+        bool Init();
+        void Enable();
+        void Disable();
+    }
+
+    namespace OpenMenu
+    {
+        inline bool enabled = false;
+        inline bool initalized = false;
+        inline const char* pattern = "\x48\x89\x54\x24\x10\x55\x53\x56\x57\x41\x54\x41\x55\x48\x8D\x6C\x24\xD1\x48\x81\xEC";
+        inline const char* mask = "xxxxxxxxxxxxxxxxxxxx";
+        inline uintptr_t OpenMenuFunctionPointer = 0;
+
+        using OpenMenu_t = void(__fastcall*)(SDK::UMenuWidget* This, SDK::FName InMenu);
+        inline OpenMenu_t OriginalOpenMenuFunction = nullptr;
+
+        void __fastcall HookedOpenMenuFunction(SDK::UMenuWidget* This, SDK::FName InMenu);
+
+        bool Init();
+        void Enable();
+        void Disable();
+    }
+
     namespace Functions
     {
         namespace CreateWidget
@@ -73,6 +110,19 @@ namespace hooks
         namespace OpenPopup
         {
             char OpenPopup(SDK::UWindowManagerWidget* This, SDK::UClass* HandleT, SDK::UPopupParams* PopupParams, bool bToggleOpen);
+        }
+
+        namespace Initalize
+        {
+            char Initalize(SDK::UPopupContainerWidget* This);
+        }
+
+        namespace SynchronizeProperties
+        {
+            inline const char* pattern = "\x48\x89\x5C\x24\x08\x48\x89\x74\x24\x10\x48\x89\x7C\x24\x18\x4C\x89\x74\x24\x20\x55\x48\x8B\xEC\x48\x83\xEC\x60\x48\x8B\xF1";
+            inline const char* mask = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+            inline uintptr_t SynchronizePropertiesFunction = 0;//Calculated at first run.
+            void SynchronizeProperties(SDK::UBrickBorder* This);
         }
     }
 }

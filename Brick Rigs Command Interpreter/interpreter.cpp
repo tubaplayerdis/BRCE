@@ -3,8 +3,8 @@
 #include <thread>
 #include <functional>
 #include <SDK.hpp>
-#include "global.h"
 #include "hooks.h"
+#include "global.h"
 
 void modules::interpreter::Commands::Night(PlayerInfo info)
 {
@@ -74,12 +74,11 @@ void modules::interpreter::interpretCommand(std::string command, std::vector<std
     }
 
 	switch (hash_val) {
-        case hs("/enable"):
-            //Hook the function that provides immediate feedback like when a vehicle is too large or sum. That would be better immediate feedback that works natively
+        case hs("/on"):
             if (args.size() < 1) break;
             Commands::Toggle(info, args[0], true);
             break;
-        case hs("/disable"):
+        case hs("/off"):
             if (args.size() < 1) break;
             Commands::Toggle(info, args[0], false);
             break;
@@ -109,7 +108,7 @@ void modules::interpreter::interpretCommand(std::string command, std::vector<std
 void modules::interpreter::sendUserSpecificMessage(PlayerInfo info, std::string message)
 {
     if (!global::isMapValid()) return;
-    SDK::FText Fmessage = SDK::UKismetTextLibrary::Conv_StringToText(UC::FString(global::to_wstring_n(message).c_str()));
+    SDK::FText Fmessage = TEXT(global::to_wstring_n(message).c_str());
     SDK::FBrickChatMessage SMessage;
     SDK::ABrickPlayerController* cont = global::GetBrickPlayerControllerFromName(info.name);
     if (cont != nullptr) {
@@ -118,7 +117,7 @@ void modules::interpreter::sendUserSpecificMessage(PlayerInfo info, std::string 
         SMessage.Type = SDK::EChatMessageType::Message;
         SMessage.IntOption = 1;//Equates to SDK::EChatContext. use this to get admin messages or other types of messages.
         SMessage.Player.PlayerId = global::GetBrickPlayerController()->GetPlayerId();
-        SMessage.Player.PlayerName = UC::FString(L"Command Interpreter");
+        SMessage.Player.PlayerName = STRING(L"Command Interpreter");
         cont->ClientReceiveChatMessage(SMessage);
     }
     else {
@@ -134,7 +133,7 @@ void modules::interpreter::sendUserSpecificMessage(PlayerInfo info, std::string 
 void modules::interpreter::sendUserSpecificMessageWithContext(PlayerInfo info, std::string message, SDK::EChatContext context, const wchar_t* sender)
 {
     if (!global::isMapValid()) return;
-    SDK::FText Fmessage = SDK::UKismetTextLibrary::Conv_StringToText(UC::FString(global::to_wstring_n(message).c_str()));
+    SDK::FText Fmessage = TEXT(global::to_wstring_n(message).c_str());
     SDK::FBrickChatMessage SMessage;
     SDK::ABrickPlayerController* cont = global::GetBrickPlayerControllerFromName(info.name);
     if (cont != nullptr) {
@@ -143,7 +142,7 @@ void modules::interpreter::sendUserSpecificMessageWithContext(PlayerInfo info, s
         SMessage.Type = SDK::EChatMessageType::Message;
         SMessage.IntOption = (int)context;
         SMessage.Player.PlayerId = global::GetBrickPlayerController()->GetPlayerId();
-        SMessage.Player.PlayerName = UC::FString(sender);
+        SMessage.Player.PlayerName = STRING(sender);
         cont->ClientReceiveChatMessage(SMessage);
     }
     else {
