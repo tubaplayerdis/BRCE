@@ -20,7 +20,7 @@
 
 void modules::interpreter::Commands::Night(PlayerInfo info)
 {
-    if (!isNight) return;
+    if (!isNight) { sendUserSpecificMessageCommandFailed(info, "The /night command is currently disabled!"); return; }
     using namespace global;
     auto cur = GetBrickGameState()->GetMatchSettings();
     std::cout << cur.WorldSetupParams.TimeOfDay << std::endl;
@@ -30,7 +30,7 @@ void modules::interpreter::Commands::Night(PlayerInfo info)
 
 void modules::interpreter::Commands::Day(PlayerInfo info)
 {
-    if (!isDay) return;
+    if (!isDay) { sendUserSpecificMessageCommandFailed(info, "The /day command is currently disabled!"); return; }
     using namespace global;
     auto cur = GetBrickGameState()->MatchSettings;
     std::cout << cur.WorldSetupParams.TimeOfDay << std::endl;
@@ -40,7 +40,7 @@ void modules::interpreter::Commands::Day(PlayerInfo info)
 
 void modules::interpreter::Commands::Rain(PlayerInfo info)
 {
-    if (!isRain) return;
+    if (!isRain) { sendUserSpecificMessageCommandFailed(info, "The /rain command is currently disabled!"); return; }
     using namespace global;
     auto cur = GetBrickGameState()->MatchSettings;
     cur.WorldSetupParams.Weather->Weather.PrecipitationType = SDK::EPrecipitationType::Rain;
@@ -50,7 +50,7 @@ void modules::interpreter::Commands::Rain(PlayerInfo info)
 
 void modules::interpreter::Commands::Sun(PlayerInfo info)
 {
-    if (!isSun) return;
+    if (!isSun) { sendUserSpecificMessageCommandFailed(info, "The /sun command is currently disabled!"); return; }
     using namespace global;
     auto cur = GetBrickGameState()->MatchSettings;
     cur.WorldSetupParams.Weather->Weather.PrecipitationType = SDK::EPrecipitationType::None;
@@ -60,7 +60,7 @@ void modules::interpreter::Commands::Sun(PlayerInfo info)
 
 void modules::interpreter::Commands::BombGun(PlayerInfo info)
 {
-    if (!isBombGun) return;
+    if (!isBombGun) { sendUserSpecificMessageCommandFailed(info, "The /bombgun command is currently disabled!"); return; }
 }
 
 size_t hash_string(const std::string& str) {
@@ -184,7 +184,7 @@ void modules::interpreter::Commands::Toggle(PlayerInfo info, std::string command
 {
     using namespace global;
     if (!GetIsPlayerAdminFromName(info.name)) {
-        sendUserSpecificMessageCommandFailed(info, "Only admins can use this command!")
+        sendUserSpecificMessageCommandFailed(info, "Only admins can use this command!");
     } 
     return;
     size_t hash_val = hash_string(command);
@@ -213,9 +213,35 @@ void modules::interpreter::Commands::Toggle(PlayerInfo info, std::string command
     }
 }
 
+/*
+* Preconditions:
+* The user has managed to correctly input /pm and a space
+* originalMessage is the raw original message
+*/
 void modules::interpreter::Commands::PersonalMessage(PlayerInfo info, std::string originalMessage)
 {
-    if (!isPM) return;
+    if (!isPM) { sendUserSpecificMessageCommandFailed(info, "The /pm command is currently disabled!"); return; }
+
+    //Send the user back thier original message for context.
+    sendUserSpecificMessageWithContext(info, originalMessage, SDK::EChatContext::None, L"(Only you can see this)");
+
+    size_t firstSpace = originalMessage.find_first_of(' ');
+    if (firstSpace == std::string::npos) { sendUserSpecificMessageCommandFailed(info, "There was a formatting error when using /pm! Usage Example: /pm john123 Whats Up!"); return; } //This realisitclly shouldnt happen, but edge cases are edge cases
+
+    std::string sub = originalMessage.substr(firstSpace + 1);
+    size_t second = sub.find_first_of(' ');
+    if (second == std::string::npos) { sendUserSpecificMessageCommandFailed(info, "There was a formatting error when using /pm! use a space after the intended recipient!"); return; }
+
+    std::string recipient = sub.substr(0, second);
+
+    SDK::ABrickPlayerController* otherCont = global::GetBrickPlayerControllerFromName(recipient);
+    if(!otherCont) { sendUserSpecificMessageCommandFailed(info, "The intended recipient was not found! Please try agian."); return; }
+
+    std::string message = sub.substr(second + 1);
+    std::wstring contextmessage = global::to_wstring_n(info.name);
+    contextmessage += L" (Personal Message)";
+    sendUserSpecificMessageWithContext(PlayerInfo(recipient), message, SDK::EChatContext::None, contextmessage.c_str());
+    
 }
 
 void modules::interpreter::Commands::Help(PlayerInfo info)
@@ -231,6 +257,7 @@ bool canModifyMovement(SDK::ABrickPlayerController* Controller)
 
 void modules::interpreter::Commands::Fly(PlayerInfo info)
 {
+    if(isFly) { sendUserSpecificMessageCommandFailed(info, "The /fly command is currently disabled!"); return; }
     using namespace global;
     auto BrickPlayerController = GetBrickPlayerControllerFromName(info.name);
     if (BrickPlayerController == nullptr) return;
@@ -247,7 +274,7 @@ void modules::interpreter::Commands::Fly(PlayerInfo info)
 void modules::interpreter::Commands::Walk(PlayerInfo info)
 {
     using namespace global;
-    if (!isWalk) return;
+    if (!isWalk) { sendUserSpecificMessageCommandFailed(info, "The /walk command is currently disabled!"); return; }
     auto BrickPlayerController = GetBrickPlayerControllerFromName(info.name);
     if (BrickPlayerController == nullptr) return;
     if (canModifyMovement(BrickPlayerController)) {
@@ -260,17 +287,17 @@ void modules::interpreter::Commands::Walk(PlayerInfo info)
 
 void modules::interpreter::Commands::Speed(PlayerInfo info, char level)
 {
-    if (!isSpeed) return;
+    if (!isSpeed) { sendUserSpecificMessageCommandFailed(info, "The /speed command is currently disabled!"); return; }
 }
 
 void modules::interpreter::Commands::Teleport(PlayerInfo info)
 {
-    if (!isTeleport) return;
+    if (!isTeleport) { sendUserSpecificMessageCommandFailed(info, "The /tp command is currently disabled!"); return; }
 }
 
 void modules::interpreter::Commands::Ghost(PlayerInfo info)
 {
-    if (!isGhost) return;
+    if (!isGhost) { sendUserSpecificMessageCommandFailed(info, "The /ghost command is currently disabled!"); return; }
 }
 
 /*
