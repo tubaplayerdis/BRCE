@@ -28,7 +28,15 @@ A Discord Bot that controls these functions or other administatrive items might 
 
 /on [command] - Enables command(Admin Only)
 
-/pm [who] [content] - Personal Message Someone (!)
+/pm [who] [content] - Personal Message Someone
+
+/mute - Mute all incoming personal messages
+
+/unmute - Unmute all incoming personal messages
+
+/block [who] - Block a user from personal messaging you
+
+/unblock [who] - Un-Block a user from personal messaging you
 
 
 #### Movement
