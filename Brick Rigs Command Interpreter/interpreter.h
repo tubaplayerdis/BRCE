@@ -37,7 +37,7 @@ namespace modules
 			//Management
 			void Command(PlayerInfo info);
 			void Toggle(PlayerInfo info, std::string command, bool toggle);
-			void PersonalMessage(PlayerInfo info, std::string message);
+			void PersonalMessage(PlayerInfo info, std::string originalMessage);
 			void Help(PlayerInfo info);
 
 			//Movement
@@ -76,7 +76,7 @@ namespace modules
 
 			inline bool isBombGun = true;
 		}
-		void interpretCommand(std::string command, std::vector<std::string> args, PlayerInfo info);
+		void interpretCommand(std::string command, std::vector<std::string> args, PlayerInfo info, std::string originalMessage);
 
 		/*
 		* Send a specified user a message. messages send from user "Command Interpreter" with default message context
@@ -93,6 +93,14 @@ namespace modules
 		* sender - custom sender name.
 		*/
 		void sendUserSpecificMessageWithContext(PlayerInfo info, std::string message, SDK::EChatContext context, const wchar_t* sender);
+
+		/*
+		* Send a specified user a message with context as the Command Failed! sender.
+		* info - Recipient info
+		* message - message content
+		* context - Brick Rigs's chat context
+		*/
+		inline void sendUserSpecificMessageCommandFailed(PlayerInfo info, std::string message) { sendUserSpecificMessageWithContext(info, message, SDK::EChatContext::None, L"Command Failed!"); }
 
 
 		void sendMessageToAdmin(std::string message);

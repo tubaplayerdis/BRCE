@@ -14,6 +14,7 @@
 #undef TEXT
 #define TEXT(text) SDK::UKismetTextLibrary::Conv_StringToText(SDK::FString(text))
 #define STRING(string) UC::FString(string)
+#define NAME(text) SDK::UKistmetStringLibrary::Conv_StringToName(SDK::FString(text));
 #include <string>
 #include "SDK.hpp"
 #include "interpreter.h"

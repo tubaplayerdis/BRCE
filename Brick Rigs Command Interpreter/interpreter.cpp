@@ -77,7 +77,7 @@ constexpr size_t hs(const char* str) {
     return hash;
 }
 
-void modules::interpreter::interpretCommand(std::string command, std::vector<std::string> args, PlayerInfo info)
+void modules::interpreter::interpretCommand(std::string command, std::vector<std::string> args, PlayerInfo info, std::string originalMessage)
 {
 	size_t hash_val = hash_string(command);
 
@@ -112,6 +112,8 @@ void modules::interpreter::interpretCommand(std::string command, std::vector<std
         case hs("/walk"):
             Commands::Walk(info);
             break;
+        case hs("/pm"):
+            Commands::PersonalMessage(info, originalMessage);
         default:
             break;
 	}
@@ -128,7 +130,7 @@ void modules::interpreter::sendUserSpecificMessage(PlayerInfo info, std::string 
         SMessage.TextOption = Fmessage;
         SMessage.Type = SDK::EChatMessageType::Message;
         SMessage.IntOption = 1;//Equates to SDK::EChatContext. use this to get admin messages or other types of messages.
-        SMessage.Player.PlayerId = global::GetBrickPlayerController()->GetPlayerId();
+        SMessage.Player.PlayerId = cont->GetPlayerId();
         SMessage.Player.PlayerName = STRING(L"Command Interpreter");
         cont->ClientReceiveChatMessage(SMessage);
     }
@@ -153,7 +155,7 @@ void modules::interpreter::sendUserSpecificMessageWithContext(PlayerInfo info, s
         SMessage.TextOption = Fmessage;
         SMessage.Type = SDK::EChatMessageType::Message;
         SMessage.IntOption = (int)context;
-        SMessage.Player.PlayerId = global::GetBrickPlayerController()->GetPlayerId();
+        SMessage.Player.PlayerId = cont->GetPlayerId();
         SMessage.Player.PlayerName = STRING(sender);
         cont->ClientReceiveChatMessage(SMessage);
     }
@@ -170,7 +172,7 @@ void modules::interpreter::sendUserSpecificMessageWithContext(PlayerInfo info, s
 void modules::interpreter::sendMessageToAdmin(std::string message)
 {
     if (!global::isMapValid()) return;
-    sendUserSpecificMessage(global::GetPlayerInfoFromController(global::GetBrickPlayerController()), message);
+    sendUserSpecificMessageWithContext(global::GetPlayerInfoFromController(global::GetBrickPlayerController()), message, SDK::EChatContext::Admin, L"Command Interpreter");
 }
 
 void modules::interpreter::Commands::Command(PlayerInfo info)
@@ -182,7 +184,7 @@ void modules::interpreter::Commands::Toggle(PlayerInfo info, std::string command
 {
     using namespace global;
     if (!GetIsPlayerAdminFromName(info.name)) {
-        sendUserSpecificMessageWithContext(info, "Only admins can use this command!", SDK::EChatContext::Global, L"Command Failed!");
+        sendUserSpecificMessageCommandFailed(info, "Only admins can use this command!")
     } 
     return;
     size_t hash_val = hash_string(command);
@@ -211,7 +213,7 @@ void modules::interpreter::Commands::Toggle(PlayerInfo info, std::string command
     }
 }
 
-void modules::interpreter::Commands::PersonalMessage(PlayerInfo info, std::string message)
+void modules::interpreter::Commands::PersonalMessage(PlayerInfo info, std::string originalMessage)
 {
     if (!isPM) return;
 }
@@ -234,11 +236,11 @@ void modules::interpreter::Commands::Fly(PlayerInfo info)
     if (BrickPlayerController == nullptr) return;
     if (canModifyMovement(BrickPlayerController)) {
         BrickPlayerController->Character->CharacterMovement->MaxFlySpeed = 3000;
-        BrickPlayerController->Character->CharacterMovement->SetMovementMode(SDK::EMovementMode::MOVE_Walking, 0);
+        BrickPlayerController->Character->CharacterMovement->SetMovementMode(SDK::EMovementMode::MOVE_None, 0);
         BrickPlayerController->Character->CharacterMovement->SetMovementMode(SDK::EMovementMode::MOVE_Flying, 0);
         BrickPlayerController->Character->CharacterMovement->Velocity = SDK::FVector(0, 0);
     }
-    else sendUserSpecificMessageWithContext(info, "Movement commands can only be used when controlling an independent character (walking around).", SDK::EChatContext::Global, L"Command Failed!");
+    else sendUserSpecificMessageCommandFailed(info, "Movement commands can only be used when controlling an independent character (walking around).");
     //Change accel and speed values to appropriate levels
 }
 
@@ -252,7 +254,7 @@ void modules::interpreter::Commands::Walk(PlayerInfo info)
         BrickPlayerController->Character->CharacterMovement->MaxAcceleration = 750; //This is the default value
         BrickPlayerController->Character->CharacterMovement->SetMovementMode(SDK::EMovementMode::MOVE_Walking, 0);
     }
-    else sendUserSpecificMessageWithContext(info, "Movement commands can only be used when controlling an independent character (walking around).", SDK::EChatContext::Global, L"Command Failed!");
+    else sendUserSpecificMessageCommandFailed(info, "Movement commands can only be used when controlling an independent character (walking around).");
     //Return speed and accel to regular values
 }
 

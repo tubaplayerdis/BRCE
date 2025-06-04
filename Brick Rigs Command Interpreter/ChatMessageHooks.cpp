@@ -48,8 +48,8 @@ void __fastcall hooks::AddChatMessage::HookedAddChatMessageFunction(SDK::ABrickG
             }
         }
         if (global::IsHost()) {
-            modules::interpreter::interpretCommand(command, args, info);
-            return; //To send out peoples commands to everyone else on the server
+            modules::interpreter::interpretCommand(command, args, info, raw);
+            return; //To not send out peoples commands to everyone else on the server
         }
     }
     OriginalAddChatMessageFunction(This, ChatMessage);
