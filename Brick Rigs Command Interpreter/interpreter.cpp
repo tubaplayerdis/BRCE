@@ -181,10 +181,11 @@ void modules::interpreter::Commands::Command(PlayerInfo info)
 void modules::interpreter::Commands::Toggle(PlayerInfo info, std::string command, bool toggle)
 {
     using namespace global;
-    if (!GetIsPlayerAdminFromName(info.name)) return;
+    if (!GetIsPlayerAdminFromName(info.name)) {
+        sendUserSpecificMessageWithContext(info, "Only admins can use this command!", SDK::EChatContext::Global, L"Command Failed!");
+    } 
+    return;
     size_t hash_val = hash_string(command);
-
-    std::cout << "We Made It!" << std::endl;
 
     switch (hash_val) {
         case hs("night"):
@@ -232,9 +233,10 @@ void modules::interpreter::Commands::Fly(PlayerInfo info)
     auto BrickPlayerController = GetBrickPlayerControllerFromName(info.name);
     if (BrickPlayerController == nullptr) return;
     if (canModifyMovement(BrickPlayerController)) {
-        BrickPlayerController->Character->CharacterMovement->MovementMode = SDK::EMovementMode::MOVE_Flying;
-        BrickPlayerController->Character->CharacterMovement->MaxAcceleration = 1000;
-        BrickPlayerController->Character->CharacterMovement->MaxFlySpeed = 5000;
+        BrickPlayerController->Character->CharacterMovement->MaxFlySpeed = 3000;
+        BrickPlayerController->Character->CharacterMovement->SetMovementMode(SDK::EMovementMode::MOVE_Walking, 0);
+        BrickPlayerController->Character->CharacterMovement->SetMovementMode(SDK::EMovementMode::MOVE_Flying, 0);
+        BrickPlayerController->Character->CharacterMovement->Velocity = SDK::FVector(0, 0);
     }
     else sendUserSpecificMessageWithContext(info, "Movement commands can only be used when controlling an independent character (walking around).", SDK::EChatContext::Global, L"Command Failed!");
     //Change accel and speed values to appropriate levels
@@ -248,7 +250,7 @@ void modules::interpreter::Commands::Walk(PlayerInfo info)
     if (BrickPlayerController == nullptr) return;
     if (canModifyMovement(BrickPlayerController)) {
         BrickPlayerController->Character->CharacterMovement->MaxAcceleration = 750; //This is the default value
-        BrickPlayerController->Character->CharacterMovement->MovementMode = SDK::EMovementMode::MOVE_Walking;
+        BrickPlayerController->Character->CharacterMovement->SetMovementMode(SDK::EMovementMode::MOVE_Walking, 0);
     }
     else sendUserSpecificMessageWithContext(info, "Movement commands can only be used when controlling an independent character (walking around).", SDK::EChatContext::Global, L"Command Failed!");
     //Return speed and accel to regular values
