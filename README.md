@@ -34,9 +34,9 @@ A Discord Bot that controls these functions or other administatrive items might 
 
 /unmute - [who] - Re-Enable a users ability to speak in chat and personal message other users (Admin Only)
 
-/silence - silence(block) all incoming personal messages
+/pma - allow incoming personal messages
 
-/unsilence - unsilence(unblock) all incoming personal messages
+/pmd - disallow incoming personal messages
 
 /block [who] - Block a user from personal messaging you
 
