@@ -30,9 +30,13 @@ A Discord Bot that controls these functions or other administatrive items might 
 
 /pm [who] [content] - Personal Message Someone
 
-/mute - Mute all incoming personal messages
+/mute [who] [mode] - Disable a users ability to speak in chat or personal message other users
 
-/unmute - Unmute all incoming personal messages
+/unmute - [who] [mode] - Re-Enable a users ability to speak in chat or personal message other users
+
+/silence - Silence all incoming personal messages
+
+/unsilence - Un silence all incoming personal messages
 
 /block [who] - Block a user from personal messaging you
 
