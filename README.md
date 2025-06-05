@@ -20,9 +20,7 @@ A Discord Bot that controls these functions or other administatrive items might 
 
 #### Management
 
-/help - Provides Help (!)
-
-/cmd - Lists all the commands (Sends back only to the user) (!)
+/help - Provides help with commands and displays command list
 
 /off [command] - Disables command (Admin Only)
 
