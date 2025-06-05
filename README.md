@@ -64,6 +64,6 @@ A Discord Bot that controls these functions or other administatrive items might 
 
 /clear - sets weather to clear (!)
 
-#####Weapons
+#### Weapons
 
 /bombgun - gives the player a gun that shoots bombs (!)
