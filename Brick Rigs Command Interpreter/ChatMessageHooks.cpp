@@ -24,6 +24,9 @@ void __fastcall hooks::AddChatMessage::HookedAddChatMessageFunction(SDK::ABrickG
 {
     PlayerInfo info;
     info.name = ChatMessage.Player.PlayerName.ToString();
+    
+    if (global::moderation::isPlayerMuted(info)) { modules::interpreter::sendUserSpecificMessageWithContext(info, "You are currently muted.", SDK::EChatContext::Admin, L"Admin"); return; }
+
     if (ChatMessage.Type == SDK::EChatMessageType::Message && ChatMessage.TextOption.ToString().at(0) == '/') {
         std::string raw = ChatMessage.TextOption.ToString();
         std::string command = "";//grab the word after the slash and ending at the space.

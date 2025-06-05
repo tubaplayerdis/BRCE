@@ -67,4 +67,27 @@ namespace global
 		void HideWaterWark();
 		void UnInitalizeWaterMark();
 	}
+
+	namespace moderation
+	{
+		inline std::vector<PlayerInfo> MutedPlayers = std::vector<PlayerInfo>();
+		inline std::vector<PlayerInfo> PlayersOnPMSilence = std::vector<PlayerInfo>();
+		inline std::vector<BlockedPlayer> BlockedPlayers = std::vector<BlockedPlayer>();
+
+		//basic set and getters
+		inline void AddMutedPlayer(PlayerInfo info) { MutedPlayers.push_back(info); }
+		inline void RemoveMutedPlayer(PlayerInfo info) { MutedPlayers.erase(std::remove(MutedPlayers.begin(), MutedPlayers.end(), info), MutedPlayers.end()); }
+		inline void AddPMSilencePlayer(PlayerInfo info) { PlayersOnPMSilence.push_back(info); }
+		inline void RemovePMSilencePlayer(PlayerInfo info) { PlayersOnPMSilence.erase(std::remove(PlayersOnPMSilence.begin(), PlayersOnPMSilence.end(), info), PlayersOnPMSilence.end()); }
+		inline void AddBlockedPlayer(BlockedPlayer info) { BlockedPlayers.push_back(info); }
+		inline void RemoveBlockedPlayer(BlockedPlayer info) { BlockedPlayers.erase(std::remove(BlockedPlayers.begin(), BlockedPlayers.end(), info), BlockedPlayers.end()); }
+
+		bool isPlayerBlockedBy(PlayerInfo blocker, PlayerInfo blocked);
+		bool isPlayerMuted(PlayerInfo player);
+		bool isPlayerOnSilence(PlayerInfo player);
+
+		bool saveModerationValues();
+		bool loadModerationValues();
+		void clearModerationValues(); //Does it on the file and local instances.
+	}
 }

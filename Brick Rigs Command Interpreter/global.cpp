@@ -224,3 +224,46 @@ void global::watermark::UnInitalizeWaterMark()
 	RootPanel = nullptr;
 	panel = nullptr;
 }
+
+bool global::moderation::isPlayerBlockedBy(PlayerInfo blocker, PlayerInfo blocked)
+{
+	std::cout << "Searching in blocked users!" << std::endl;
+	BlockedPlayer player = BlockedPlayer(blocked, blocker); //This is reversed for some reason. This should work.
+	for (BlockedPlayer blocked : BlockedPlayers) {
+		if (player == blocked) return true;
+	}
+	return false;
+}
+
+bool global::moderation::isPlayerMuted(PlayerInfo player)
+{
+	for (PlayerInfo info : MutedPlayers) {
+		if (player == info) return true;
+	}
+	return false;
+}
+
+bool global::moderation::isPlayerOnSilence(PlayerInfo player)
+{
+	for (PlayerInfo info : PlayersOnPMSilence) {
+		if (player == info) return true;
+	}
+	return false;
+}
+
+bool global::moderation::saveModerationValues()
+{
+	//Implement Later
+	return false;
+}
+
+bool global::moderation::loadModerationValues()
+{
+	//Implement Later
+	return false;
+}
+
+void global::moderation::clearModerationValues()
+{
+	//Implement Later
+}

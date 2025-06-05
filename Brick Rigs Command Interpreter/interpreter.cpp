@@ -77,6 +77,9 @@ constexpr size_t hs(const char* str) {
     return hash;
 }
 
+/*
+* TODO: For all commands with arguments, if the amount of arguments are too small, send the respective help message back to the player.
+*/
 void modules::interpreter::interpretCommand(std::string command, std::vector<std::string> args, PlayerInfo info, std::string originalMessage)
 {
 	size_t hash_val = hash_string(command);
@@ -114,6 +117,29 @@ void modules::interpreter::interpretCommand(std::string command, std::vector<std
             break;
         case hs("/pm"):
             Commands::PersonalMessage(info, originalMessage);
+            break;
+        case hs("/mute"):
+            if (args.size() < 1) break;
+            Commands::Moderation::ToggleMute(info, PlayerInfo(args[0]), true);
+            break;
+        case hs("/unmute"):
+            if (args.size() < 1) break;
+            Commands::Moderation::ToggleMute(info, PlayerInfo(args[0]), false);
+            break;
+        case hs("/silence"):
+            Commands::Moderation::ToggleSilence(info, true);
+            break;
+        case hs("/unsilence"):
+            Commands::Moderation::ToggleSilence(info, false);
+            break;
+        case hs("/block"):
+            if (args.size() < 1) break;
+            Commands::Moderation::ToggleBlock(info, PlayerInfo(args[0]), true);
+            break;
+        case hs("/unblock"):
+            if (args.size() < 1) break;
+            Commands::Moderation::ToggleBlock(info, PlayerInfo(args[0]), true);
+            break;
         default:
             break;
 	}
@@ -185,8 +211,8 @@ void modules::interpreter::Commands::Toggle(PlayerInfo info, std::string command
     using namespace global;
     if (!GetIsPlayerAdminFromName(info.name)) {
         sendUserSpecificMessageCommandFailed(info, "Only admins can use this command!");
+        return;
     } 
-    return;
     size_t hash_val = hash_string(command);
 
     switch (hash_val) {
@@ -223,7 +249,7 @@ void modules::interpreter::Commands::PersonalMessage(PlayerInfo info, std::strin
     if (!isPM) { sendUserSpecificMessageCommandFailed(info, "The /pm command is currently disabled!"); return; }
 
     //Send the user back thier original message for context.
-    sendUserSpecificMessageWithContext(info, originalMessage, SDK::EChatContext::None, L"(Only you can see this)");
+    sendUserSpecificMessageWithContext(info, originalMessage, SDK::EChatContext::Global, L"(Only you can see this)");
 
     size_t firstSpace = originalMessage.find_first_of(' ');
     if (firstSpace == std::string::npos) { sendUserSpecificMessageCommandFailed(info, "There was a formatting error when using /pm! Usage Example: /pm john123 Whats Up!"); return; } //This realisitclly shouldnt happen, but edge cases are edge cases
@@ -237,10 +263,13 @@ void modules::interpreter::Commands::PersonalMessage(PlayerInfo info, std::strin
     SDK::ABrickPlayerController* otherCont = global::GetBrickPlayerControllerFromName(recipient);
     if(!otherCont) { sendUserSpecificMessageCommandFailed(info, "The intended recipient was not found! Please try agian."); return; }
 
+    if (global::moderation::isPlayerBlockedBy(info, PlayerInfo(recipient))) { return; }
+    if (global::moderation::isPlayerOnSilence(info)) { return; }
+
     std::string message = sub.substr(second + 1);
     std::wstring contextmessage = global::to_wstring_n(info.name);
     contextmessage += L" (Personal Message)";
-    sendUserSpecificMessageWithContext(PlayerInfo(recipient), message, SDK::EChatContext::None, contextmessage.c_str());
+    sendUserSpecificMessageWithContext(PlayerInfo(recipient), message, SDK::EChatContext::Global, contextmessage.c_str());
     
 }
 
@@ -326,3 +355,39 @@ void modules::interpreter::Commands::Debug(PlayerInfo info)
 * zoom
 * slomo
 */
+
+void modules::interpreter::Commands::Moderation::ToggleMute(PlayerInfo info, PlayerInfo other, bool on_off)
+{
+    using namespace global;
+    using namespace global::moderation;
+    using namespace modules::interpreter;
+    if (!GetIsPlayerAdminFromName(info.name)) { sendUserSpecificMessageCommandFailed(info, "Only admins can use this command!"); return; }
+    if (on_off) {
+        if (GetBrickPlayerControllerFromName(info.name)) { AddMutedPlayer(other); }
+        else { sendUserSpecificMessageCommandFailed(info, "The user you wanted to mute was not found!"); return; }
+        sendUserSpecificMessageWithContext(info, std::string("Successfully Muted: ") + other.name, SDK::EChatContext::Admin, L"Admin");
+    }
+    else { RemoveMutedPlayer(other); sendUserSpecificMessageWithContext(info, std::string("Successfully Unmuted: ") + other.name, SDK::EChatContext::Admin, L"Admin"); }
+}
+
+void modules::interpreter::Commands::Moderation::ToggleBlock(PlayerInfo info, PlayerInfo other, bool on_off)
+{
+    using namespace global;
+    using namespace global::moderation;
+    if (on_off) {
+        if (GetBrickPlayerControllerFromName(info.name)) { AddBlockedPlayer(BlockedPlayer(info, other)); }
+        else { sendUserSpecificMessageCommandFailed(info, "The user you wanted to block was not found!"); return; }
+        sendUserSpecificMessageWithContext(info, std::string("Successfully Blocked: ") + other.name, SDK::EChatContext::Admin, L"Admin");
+    }
+    else { RemoveBlockedPlayer(BlockedPlayer(info, other)); sendUserSpecificMessageWithContext(info, std::string("Successfully Unblocked: ") + other.name, SDK::EChatContext::Admin, L"Admin"); }
+}
+
+void modules::interpreter::Commands::Moderation::ToggleSilence(PlayerInfo info, bool on_off)
+{
+    using namespace global::moderation;
+    if (on_off) {
+        AddPMSilencePlayer(info);
+        sendUserSpecificMessageWithContext(info, std::string("Disallowed incoming personal messages!"), SDK::EChatContext::Global, L"BRCI Moderation");
+    }
+    else { RemovePMSilencePlayer(info); sendUserSpecificMessageWithContext(info, std::string("Disallowed incoming personal messages!"), SDK::EChatContext::Global, L"BRCI Moderation"); }
+}
