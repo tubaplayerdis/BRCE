@@ -89,6 +89,13 @@ void modules::interpreter::interpretCommand(std::string command, std::vector<std
     }
 
 	switch (hash_val) {
+        case hs("/help"):
+            if (args.size() < 1) {
+                Commands::Help(info, "master");
+                break;
+            }
+            Commands::Help(info, args[0]);
+            break;
         case hs("/on"):
             if (args.size() < 1) break;
             Commands::Toggle(info, args[0], true);
@@ -201,11 +208,6 @@ void modules::interpreter::sendMessageToAdmin(std::string message)
     sendUserSpecificMessageWithContext(global::GetPlayerInfoFromController(global::GetBrickPlayerController()), message, SDK::EChatContext::Admin, L"Command Interpreter");
 }
 
-void modules::interpreter::Commands::Command(PlayerInfo info)
-{
-    sendUserSpecificMessage(info, CommandList::message);
-}
-
 void modules::interpreter::Commands::Toggle(PlayerInfo info, std::string command, bool toggle)
 {
     using namespace global;
@@ -273,9 +275,32 @@ void modules::interpreter::Commands::PersonalMessage(PlayerInfo info, std::strin
     
 }
 
-void modules::interpreter::Commands::Help(PlayerInfo info)
+void modules::interpreter::Commands::Help(PlayerInfo info, std::string arg)
 {
-    
+    size_t hash_val = hash_string(arg);
+    switch (hash_val) {
+        case hs("master"):
+            sendUserSpecificMessageWithContext(info, MasterHelpMessage, SDK::EChatContext::Global, L"Help Command List:");
+            break;
+        case hs("main"):
+            sendUserSpecificMessageWithContext(info, MainHelpMessage, SDK::EChatContext::Global, L"Main Command List:");
+            break;
+        case hs("moderation"):
+            sendUserSpecificMessageWithContext(info, ModerationHelpMessage, SDK::EChatContext::Global, L"Moderation Command List:");
+            break;
+        case hs("movement"):
+            sendUserSpecificMessageWithContext(info, MovementHelpMessage, SDK::EChatContext::Global, L"Movement Command List:");
+            break;
+        case hs("enviroment"):
+            sendUserSpecificMessageWithContext(info, EnviromentHelpMessage, SDK::EChatContext::Global, L"Enviroment Command List:");
+            break;
+        case hs("weapons"):
+            sendUserSpecificMessageWithContext(info, WeaponsHelpMessage, SDK::EChatContext::Global, L"Weapons Command List:");
+            break;
+        default:
+            sendUserSpecificMessageWithContext(info, MasterHelpMessage, SDK::EChatContext::Global, L"Help Command List:");
+            break;
+    }
 }
 
 //Verifies that the playercontroller is ok to have its movement changed, which is only when it is not null.
@@ -286,12 +311,12 @@ bool canModifyMovement(SDK::ABrickPlayerController* Controller)
 
 void modules::interpreter::Commands::Fly(PlayerInfo info)
 {
-    if(isFly) { sendUserSpecificMessageCommandFailed(info, "The /fly command is currently disabled!"); return; }
+    if(!isFly) { sendUserSpecificMessageCommandFailed(info, "The /fly command is currently disabled!"); return; }
     using namespace global;
     auto BrickPlayerController = GetBrickPlayerControllerFromName(info.name);
     if (BrickPlayerController == nullptr) return;
     if (canModifyMovement(BrickPlayerController)) {
-        BrickPlayerController->Character->CharacterMovement->MaxFlySpeed = 3000;
+        BrickPlayerController->Character->CharacterMovement->MaxFlySpeed = 3000;//This dosent get replicated. Very sad.
         BrickPlayerController->Character->CharacterMovement->SetMovementMode(SDK::EMovementMode::MOVE_None, 0);
         BrickPlayerController->Character->CharacterMovement->SetMovementMode(SDK::EMovementMode::MOVE_Flying, 0);
         BrickPlayerController->Character->CharacterMovement->Velocity = SDK::FVector(0, 0);

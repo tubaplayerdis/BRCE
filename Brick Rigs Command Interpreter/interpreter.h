@@ -64,10 +64,9 @@ namespace modules
 		namespace Commands
 		{
 			//Management
-			void Command(PlayerInfo info);
 			void Toggle(PlayerInfo info, std::string command, bool toggle);
 			void PersonalMessage(PlayerInfo info, std::string originalMessage);
-			void Help(PlayerInfo info);
+			void Help(PlayerInfo info, std::string arg);
 
 			//Movement
 			void Fly(PlayerInfo info);
