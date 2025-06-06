@@ -127,12 +127,19 @@ void hooks::Functions::SynchronizeProperties::SynchronizeProperties(SDK::UBrickB
 	OnInitalizeFunction(This);
 }
 
+bool hooks::Functions::SynchronizeProperties::Init()
+{
+	SynchronizePropertiesFunction = FindPattern(pattern, mask, GetModuleBaseN(), GetModuleSizeN());
+	return SynchronizePropertiesFunction != 0;
+}
+
 void __fastcall hooks::OpenMenu::HookedOpenMenuFunction(SDK::UMenuWidget* This, SDK::FName InMenu)
 {
-	std::cout << InMenu.GetRawString() << std::endl;
+	OriginalOpenMenuFunction(This, InMenu);
+	if (!This) return;
+	if (InMenu.GetRawString().c_str() == nullptr) return;
 	if (InMenu.GetRawString() == "InGameMenu") global::watermark::ShowWaterMark();
 	if (InMenu.GetRawString() == "None" && global::isMapValid()) global::watermark::HideWaterWark();
-	OriginalOpenMenuFunction(This, InMenu);
 }
 
 bool hooks::OpenMenu::Init()
@@ -156,5 +163,35 @@ void hooks::OpenMenu::Disable()
 {
 	if (!initalized || !enabled) return;
 	MH_DisableHook((LPVOID)OpenMenuFunctionPointer);
+	enabled = false;
+}
+
+void __fastcall hooks::OnPlayerJoined::HookedOnPlayerJoinedFunction(SDK::ABrickGameSession* This, SDK::ABrickPlayerController* PC)
+{
+	OriginalOnPlayerJoinedFunction(This, PC);
+	modules::interpreter::sendUserSpecificMessageWithContext(global::GetPlayerInfoFromController(PC), "This server uses the Brick Rigs Command Interpreter(BRCI), use /help to get started!", SDK::EChatContext::Global, L"Welcome!");
+}
+
+bool hooks::OnPlayerJoined::Init()
+{
+	if (initalized) return false;
+	OnPlayerJoinedFunctionPointer = FindPattern(pattern, mask, GetModuleBaseN(), GetModuleSizeN());
+	if (OnPlayerJoinedFunctionPointer == 0) return false;
+	MH_STATUS ret = MH_CreateHook((LPVOID)OnPlayerJoinedFunctionPointer, &HookedOnPlayerJoinedFunction, (void**)&OriginalOnPlayerJoinedFunction);
+	initalized = true;
+	return ret == MH_OK;
+}
+
+void hooks::OnPlayerJoined::Enable()
+{
+	if (!initalized || enabled) return;
+	MH_EnableHook((LPVOID)OnPlayerJoinedFunctionPointer);
+	enabled = true;
+}
+
+void hooks::OnPlayerJoined::Disable()
+{
+	if (!initalized || !enabled) return;
+	MH_DisableHook((LPVOID)OnPlayerJoinedFunctionPointer);
 	enabled = false;
 }

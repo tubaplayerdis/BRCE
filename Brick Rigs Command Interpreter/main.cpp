@@ -66,6 +66,4 @@ void mainLoop()
 
 	modules::interpreter::sendMessageToAdmin("Uninjecting BRCI!");
 	SendNotificationLocal(L"Uninjecting BRCI", 9);
-
-	std::cout << "Uninjecting!" << std::endl;
 }

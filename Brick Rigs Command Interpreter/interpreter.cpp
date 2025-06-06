@@ -77,9 +77,6 @@ constexpr size_t hs(const char* str) {
     return hash;
 }
 
-/*
-* TODO: For all commands with arguments, if the amount of arguments are too small, send the respective help message back to the player.
-*/
 void modules::interpreter::interpretCommand(std::string command, std::vector<std::string> args, PlayerInfo info, std::string originalMessage)
 {
 	size_t hash_val = hash_string(command);
@@ -96,12 +93,15 @@ void modules::interpreter::interpretCommand(std::string command, std::vector<std
             }
             Commands::Help(info, args[0]);
             break;
+        case hs("/info"):
+            sendUserSpecificMessageWithContext(info, InfoMessage, SDK::EChatContext::Global, L"Info ABout BRCI:");
+            break;
         case hs("/on"):
-            if (args.size() < 1) break;
+            if (args.size() < 1) { ToFewArgs(info, "/on", "moderation"); break; }
             Commands::Toggle(info, args[0], true);
             break;
         case hs("/off"):
-            if (args.size() < 1) break;
+            if (args.size() < 1) { ToFewArgs(info, "/off", "moderation"); break; }
             Commands::Toggle(info, args[0], false);
             break;
 		case hs("/night"):
@@ -126,11 +126,11 @@ void modules::interpreter::interpretCommand(std::string command, std::vector<std
             Commands::PersonalMessage(info, originalMessage);
             break;
         case hs("/mute"):
-            if (args.size() < 1) break;
+            if (args.size() < 1) { ToFewArgs(info, "/mute", "moderation"); break; }
             Commands::Moderation::ToggleMute(info, PlayerInfo(args[0]), true);
             break;
         case hs("/unmute"):
-            if (args.size() < 1) break;
+            if (args.size() < 1) { ToFewArgs(info, "/unmute", "moderation"); break; }
             Commands::Moderation::ToggleMute(info, PlayerInfo(args[0]), false);
             break;
         case hs("/silence"):
@@ -140,11 +140,11 @@ void modules::interpreter::interpretCommand(std::string command, std::vector<std
             Commands::Moderation::ToggleSilence(info, false);
             break;
         case hs("/block"):
-            if (args.size() < 1) break;
+            if (args.size() < 1) { ToFewArgs(info, "/block", "main"); break; }
             Commands::Moderation::ToggleBlock(info, PlayerInfo(args[0]), true);
             break;
         case hs("/unblock"):
-            if (args.size() < 1) break;
+            if (args.size() < 1) { ToFewArgs(info, "/unblock", "main"); break; }
             Commands::Moderation::ToggleBlock(info, PlayerInfo(args[0]), true);
             break;
         default:

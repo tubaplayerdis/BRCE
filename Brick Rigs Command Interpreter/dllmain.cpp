@@ -46,8 +46,6 @@ DWORD WINAPI MainThread(LPVOID lpReserved)
     SetThreadPriority(GetCurrentThread(), THREAD_PRIORITY_LOWEST); //Prevent random freezes
 
     mainLoop();
-
-    Sleep(200); //Let render thread stop
     
     MH_DisableHook(MH_ALL_HOOKS);
     MH_RemoveHook(MH_ALL_HOOKS);

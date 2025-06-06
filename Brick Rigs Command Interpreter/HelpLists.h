@@ -14,13 +14,12 @@
 #include <string>
 
 inline std::string MasterHelpMessage = R"(
-Do not use the [] in the actual command call!
-Use the following command lists for the commands.
 /help main
 /help moderation
 /help movement
 /help enviroment
-/help weapons)";
+/help weapons
+/info)";
 
 inline std::string MainHelpMessage = R"(
 Do not use the [] in the actual command call!
@@ -62,4 +61,10 @@ inline std::string WeaponsHelpMessage = R"(
 Do not use the [] in the actual command call!
 Weapon Commands:
 /bombgun - Get a bombgun!)";
+
+inline std::string InfoMessage = R"(
+Brick Rigs Command Interpreter(BRCI), is a chat command mod made for Bricks Rigs that adds chat message functionality to your server. It is dll based and server-side only.
+Star the GitHub: https://github.com/tubaplayerdis/BRCI
+Follow the Creator: https://github.com/tubaplayerdis
+)";
 

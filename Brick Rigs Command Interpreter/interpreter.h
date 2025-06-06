@@ -137,6 +137,8 @@ namespace modules
 		*/
 		inline void sendUserSpecificMessageCommandFailed(PlayerInfo info, std::string message) { sendUserSpecificMessageWithContext(info, message, SDK::EChatContext::Global, L"Command Failed!"); }
 
+		inline void ToFewArgs(PlayerInfo info, std::string commandstr, std::string cmdgroup) { sendUserSpecificMessageCommandFailed(info, std::string("Too few arguments used in command: ") + commandstr + std::string("\nUse /help ") + cmdgroup + std::string(" for more details!")); };
+
 
 		void sendMessageToAdmin(std::string message);
 	}

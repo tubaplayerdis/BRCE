@@ -20,6 +20,7 @@
 #include <vector>
 #include "GlobalHooks.h"
 
+//TODO: add a shutdown flag to prevent this hook getting ran while the mod is shutting down.
 void __fastcall hooks::AddChatMessage::HookedAddChatMessageFunction(SDK::ABrickGameSession* This, const SDK::FBrickChatMessage& ChatMessage)
 {
     PlayerInfo info;
