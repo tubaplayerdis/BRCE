@@ -11,6 +11,7 @@ A Discord Bot that controls these functions or other administatrive items might 
 
 ### Todo:
 
+ - FIX NO MINHOOK CRASH
  - Change README command list groups
  - Implement unimplemented commands
  - Fix freezing/hook/memory issues
