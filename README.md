@@ -11,8 +11,9 @@ A Discord Bot that controls these functions or other administatrive items might 
 
 ### Todo:
 
- - Stable Entry/Exit methods for DLL
- - Add accompanying IMGUI menu for customization of chat message commands (Scrap in favor of text based control of the mod)
+ - Change README command list groups
+ - Implement unimplemented commands
+ - Fix freezing/hook/memory issues
 
 ### Commands
 
