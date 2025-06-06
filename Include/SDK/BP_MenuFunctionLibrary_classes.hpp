@@ -34,6 +34,7 @@ public:
 	static class UMenuButtonWidget* CreateEditButton(class UMenuButtonPanelWidget* Widget, const TDelegate<void()>& Delegate, class UObject* __WorldContext);
 	static class UMenuButtonWidget* CreateViewInBrowserButton(class UMenuButtonPanelWidget* Widget, const TDelegate<void()>& Delegate, class UObject* __WorldContext);
 	static class UMenuButtonWidget* CreateImportButton(class UMenuButtonPanelWidget* Widget, const TDelegate<void()>& Delegate, class UObject* __WorldContext);
+	static class UMenuButtonWidget* CreateDisplayModeButton(class UMenuButtonPanelWidget* Widget, const TDelegate<void()>& Delegate, class UObject* __WorldContext);
 
 public:
 	static class UClass* StaticClass()

@@ -75,7 +75,7 @@ namespace hooks
 		void Disable();
 	}
 
-    //Use this to render primatives. Not currently used.
+    //Use this to render primatives. Not currently used. The Signature should stay consistent unless UE version change
     namespace DrawTransition
     {
         inline bool enabled = false;
@@ -116,7 +116,7 @@ namespace hooks
     {
         inline bool enabled = false;
         inline bool initalized = false;
-        inline const char* pattern = "\x48\x83\xEC\x48\x48\x89\x5C\x24\x58\x33\xDB\x48\x89\x6C\x24\x60\x48\x89\x74\x24\x68";
+        inline const char* pattern = "\x48\x83\xEC\x48\x48\x89\x5C\x24\x58\x33\xDB\x48\x89\x74\x24\x68\x48\x89\x7C\x24\x40";
         inline const char* mask = "xxxxxxxxxxxxxxxxxxxx";
         inline uintptr_t OnPlayerJoinedFunctionPointer = 0;
 
@@ -148,9 +148,9 @@ namespace hooks
         }
 
         namespace SynchronizeProperties
-        {
-            inline const char* pattern = "\x48\x89\x5C\x24\x08\x48\x89\x74\x24\x10\x48\x89\x7C\x24\x18\x4C\x89\x74\x24\x20\x55\x48\x8B\xEC\x48\x83\xEC\x60\x48\x8B\xF1";
-            inline const char* mask = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+        {   
+            inline const char* pattern = ""; //Signature is faling. Currently using raw address
+            inline const char* mask = "";
             inline uintptr_t SynchronizePropertiesFunction = 0;//Calculated at first run.
             void SynchronizeProperties(SDK::UBrickBorder* This);
             bool Init(); //Find the address

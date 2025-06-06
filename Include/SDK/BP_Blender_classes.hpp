@@ -30,9 +30,9 @@ public:
 	bool                                          bUseFoundation;                                    // 0x0244(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
-	void ExecuteUbergraph_BP_Blender(int32 EntryPoint);
-	void ReceiveBeginPlay();
 	void UserConstructionScript();
+	void ReceiveBeginPlay();
+	void ExecuteUbergraph_BP_Blender(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

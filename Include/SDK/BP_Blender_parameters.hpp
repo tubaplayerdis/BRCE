@@ -16,17 +16,6 @@
 namespace SDK::Params
 {
 
-// Function BP_Blender.BP_Blender_C.ExecuteUbergraph_BP_Blender
-// 0x0004 (0x0004 - 0x0000)
-struct BP_Blender_C_ExecuteUbergraph_BP_Blender final
-{
-public:
-	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(BP_Blender_C_ExecuteUbergraph_BP_Blender) == 0x000004, "Wrong alignment on BP_Blender_C_ExecuteUbergraph_BP_Blender");
-static_assert(sizeof(BP_Blender_C_ExecuteUbergraph_BP_Blender) == 0x000004, "Wrong size on BP_Blender_C_ExecuteUbergraph_BP_Blender");
-static_assert(offsetof(BP_Blender_C_ExecuteUbergraph_BP_Blender, EntryPoint) == 0x000000, "Member 'BP_Blender_C_ExecuteUbergraph_BP_Blender::EntryPoint' has a wrong offset!");
-
 // Function BP_Blender.BP_Blender_C.UserConstructionScript
 // 0x0050 (0x0050 - 0x0000)
 struct BP_Blender_C_UserConstructionScript final
@@ -44,6 +33,17 @@ static_assert(offsetof(BP_Blender_C_UserConstructionScript, CallFunc_MakeRotator
 static_assert(offsetof(BP_Blender_C_UserConstructionScript, CallFunc_MakeTransform_ReturnValue) == 0x000010, "Member 'BP_Blender_C_UserConstructionScript::CallFunc_MakeTransform_ReturnValue' has a wrong offset!");
 static_assert(offsetof(BP_Blender_C_UserConstructionScript, CallFunc_AddComponent_ReturnValue) == 0x000040, "Member 'BP_Blender_C_UserConstructionScript::CallFunc_AddComponent_ReturnValue' has a wrong offset!");
 static_assert(offsetof(BP_Blender_C_UserConstructionScript, CallFunc_SetStaticMesh_ReturnValue) == 0x000048, "Member 'BP_Blender_C_UserConstructionScript::CallFunc_SetStaticMesh_ReturnValue' has a wrong offset!");
+
+// Function BP_Blender.BP_Blender_C.ExecuteUbergraph_BP_Blender
+// 0x0004 (0x0004 - 0x0000)
+struct BP_Blender_C_ExecuteUbergraph_BP_Blender final
+{
+public:
+	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(BP_Blender_C_ExecuteUbergraph_BP_Blender) == 0x000004, "Wrong alignment on BP_Blender_C_ExecuteUbergraph_BP_Blender");
+static_assert(sizeof(BP_Blender_C_ExecuteUbergraph_BP_Blender) == 0x000004, "Wrong size on BP_Blender_C_ExecuteUbergraph_BP_Blender");
+static_assert(offsetof(BP_Blender_C_ExecuteUbergraph_BP_Blender, EntryPoint) == 0x000000, "Member 'BP_Blender_C_ExecuteUbergraph_BP_Blender::EntryPoint' has a wrong offset!");
 
 }
 

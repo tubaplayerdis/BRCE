@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_TextCylinder.BP_TextCylinder_C
-// 0x0000 (0x01C0 - 0x01C0)
+// 0x0000 (0x01A8 - 0x01A8)
 class UBP_TextCylinder_C final : public UTextBrickStaticInfo
 {
 public:
@@ -31,7 +31,7 @@ public:
 	}
 };
 static_assert(alignof(UBP_TextCylinder_C) == 0x000008, "Wrong alignment on UBP_TextCylinder_C");
-static_assert(sizeof(UBP_TextCylinder_C) == 0x0001C0, "Wrong size on UBP_TextCylinder_C");
+static_assert(sizeof(UBP_TextCylinder_C) == 0x0001A8, "Wrong size on UBP_TextCylinder_C");
 
 }
 

@@ -186,7 +186,6 @@
     <ClCompile Include="..\Include\SDK\BP_UIStyle_Violet_functions.cpp" />
     <ClCompile Include="..\Include\SDK\BP_UIStyle_White_functions.cpp" />
     <ClCompile Include="..\Include\SDK\BP_ZombieAIController_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\BrickRigs_classes.cpp" />
     <ClCompile Include="..\Include\SDK\BrickRigs_functions.cpp" />
     <ClCompile Include="..\Include\SDK\BTS_ZombieFindTarget_functions.cpp" />
     <ClCompile Include="..\Include\SDK\BTT_ZombieAttack_functions.cpp" />
@@ -207,6 +206,7 @@
     <ClCompile Include="..\Include\SDK\GameplayTasks_functions.cpp" />
     <ClCompile Include="..\Include\SDK\HeadMountedDisplay_functions.cpp" />
     <ClCompile Include="..\Include\SDK\ImageWriteQueue_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\InteractiveToolsFramework_functions.cpp" />
     <ClCompile Include="..\Include\SDK\Landscape_functions.cpp" />
     <ClCompile Include="..\Include\SDK\LevelSequence_functions.cpp" />
     <ClCompile Include="..\Include\SDK\MediaAssets_functions.cpp" />
@@ -220,6 +220,7 @@
     <ClCompile Include="..\Include\SDK\Niagara_functions.cpp" />
     <ClCompile Include="..\Include\SDK\OnlineSubsystemUtils_functions.cpp" />
     <ClCompile Include="..\Include\SDK\OnlineSubsystem_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\ProceduralMeshComponent_functions.cpp" />
     <ClCompile Include="..\Include\SDK\StaticMeshDescription_functions.cpp" />
     <ClCompile Include="..\Include\SDK\TemplateSequence_functions.cpp" />
     <ClCompile Include="..\Include\SDK\TimeManagement_functions.cpp" />

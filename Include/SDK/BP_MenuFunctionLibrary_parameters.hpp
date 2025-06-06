@@ -261,5 +261,24 @@ static_assert(offsetof(BP_MenuFunctionLibrary_C_CreateImportButton, __WorldConte
 static_assert(offsetof(BP_MenuFunctionLibrary_C_CreateImportButton, ReturnValue) == 0x000020, "Member 'BP_MenuFunctionLibrary_C_CreateImportButton::ReturnValue' has a wrong offset!");
 static_assert(offsetof(BP_MenuFunctionLibrary_C_CreateImportButton, CallFunc_CreateButton_ReturnValue) == 0x000028, "Member 'BP_MenuFunctionLibrary_C_CreateImportButton::CallFunc_CreateButton_ReturnValue' has a wrong offset!");
 
+// Function BP_MenuFunctionLibrary.BP_MenuFunctionLibrary_C.CreateDisplayModeButton
+// 0x0030 (0x0030 - 0x0000)
+struct BP_MenuFunctionLibrary_C_CreateDisplayModeButton final
+{
+public:
+	class UMenuButtonPanelWidget*                 Widget;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TDelegate<void()>                             Delegate;                                          // 0x0008(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor)
+	class UObject*                                __WorldContext;                                    // 0x0018(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMenuButtonWidget*                      ReturnValue;                                       // 0x0020(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMenuButtonWidget*                      CallFunc_CreateButton_ReturnValue;                 // 0x0028(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(BP_MenuFunctionLibrary_C_CreateDisplayModeButton) == 0x000008, "Wrong alignment on BP_MenuFunctionLibrary_C_CreateDisplayModeButton");
+static_assert(sizeof(BP_MenuFunctionLibrary_C_CreateDisplayModeButton) == 0x000030, "Wrong size on BP_MenuFunctionLibrary_C_CreateDisplayModeButton");
+static_assert(offsetof(BP_MenuFunctionLibrary_C_CreateDisplayModeButton, Widget) == 0x000000, "Member 'BP_MenuFunctionLibrary_C_CreateDisplayModeButton::Widget' has a wrong offset!");
+static_assert(offsetof(BP_MenuFunctionLibrary_C_CreateDisplayModeButton, Delegate) == 0x000008, "Member 'BP_MenuFunctionLibrary_C_CreateDisplayModeButton::Delegate' has a wrong offset!");
+static_assert(offsetof(BP_MenuFunctionLibrary_C_CreateDisplayModeButton, __WorldContext) == 0x000018, "Member 'BP_MenuFunctionLibrary_C_CreateDisplayModeButton::__WorldContext' has a wrong offset!");
+static_assert(offsetof(BP_MenuFunctionLibrary_C_CreateDisplayModeButton, ReturnValue) == 0x000020, "Member 'BP_MenuFunctionLibrary_C_CreateDisplayModeButton::ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_MenuFunctionLibrary_C_CreateDisplayModeButton, CallFunc_CreateButton_ReturnValue) == 0x000028, "Member 'BP_MenuFunctionLibrary_C_CreateDisplayModeButton::CallFunc_CreateButton_ReturnValue' has a wrong offset!");
+
 }
 

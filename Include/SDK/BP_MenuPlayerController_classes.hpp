@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_MenuPlayerController.BP_MenuPlayerController_C
-// 0x0000 (0x0648 - 0x0648)
+// 0x0000 (0x0630 - 0x0630)
 class ABP_MenuPlayerController_C final : public AMenuPlayerController
 {
 public:
@@ -31,7 +31,7 @@ public:
 	}
 };
 static_assert(alignof(ABP_MenuPlayerController_C) == 0x000008, "Wrong alignment on ABP_MenuPlayerController_C");
-static_assert(sizeof(ABP_MenuPlayerController_C) == 0x000648, "Wrong size on ABP_MenuPlayerController_C");
+static_assert(sizeof(ABP_MenuPlayerController_C) == 0x000630, "Wrong size on ABP_MenuPlayerController_C");
 
 }
 

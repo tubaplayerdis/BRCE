@@ -634,49 +634,38 @@ static_assert(alignof(EditableTextBox_HasError) == 0x000001, "Wrong alignment on
 static_assert(sizeof(EditableTextBox_HasError) == 0x000001, "Wrong size on EditableTextBox_HasError");
 static_assert(offsetof(EditableTextBox_HasError, ReturnValue) == 0x000000, "Member 'EditableTextBox_HasError::ReturnValue' has a wrong offset!");
 
-// Function UMG.HorizontalBoxSlot.SetHorizontalAlignment
+// Function UMG.ButtonSlot.SetHorizontalAlignment
 // 0x0001 (0x0001 - 0x0000)
-struct HorizontalBoxSlot_SetHorizontalAlignment final
+struct ButtonSlot_SetHorizontalAlignment final
 {
 public:
 	EHorizontalAlignment                          InHorizontalAlignment;                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(HorizontalBoxSlot_SetHorizontalAlignment) == 0x000001, "Wrong alignment on HorizontalBoxSlot_SetHorizontalAlignment");
-static_assert(sizeof(HorizontalBoxSlot_SetHorizontalAlignment) == 0x000001, "Wrong size on HorizontalBoxSlot_SetHorizontalAlignment");
-static_assert(offsetof(HorizontalBoxSlot_SetHorizontalAlignment, InHorizontalAlignment) == 0x000000, "Member 'HorizontalBoxSlot_SetHorizontalAlignment::InHorizontalAlignment' has a wrong offset!");
+static_assert(alignof(ButtonSlot_SetHorizontalAlignment) == 0x000001, "Wrong alignment on ButtonSlot_SetHorizontalAlignment");
+static_assert(sizeof(ButtonSlot_SetHorizontalAlignment) == 0x000001, "Wrong size on ButtonSlot_SetHorizontalAlignment");
+static_assert(offsetof(ButtonSlot_SetHorizontalAlignment, InHorizontalAlignment) == 0x000000, "Member 'ButtonSlot_SetHorizontalAlignment::InHorizontalAlignment' has a wrong offset!");
 
-// Function UMG.HorizontalBoxSlot.SetPadding
+// Function UMG.ButtonSlot.SetPadding
 // 0x0010 (0x0010 - 0x0000)
-struct HorizontalBoxSlot_SetPadding final
+struct ButtonSlot_SetPadding final
 {
 public:
 	struct FMargin                                InPadding;                                         // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(HorizontalBoxSlot_SetPadding) == 0x000004, "Wrong alignment on HorizontalBoxSlot_SetPadding");
-static_assert(sizeof(HorizontalBoxSlot_SetPadding) == 0x000010, "Wrong size on HorizontalBoxSlot_SetPadding");
-static_assert(offsetof(HorizontalBoxSlot_SetPadding, InPadding) == 0x000000, "Member 'HorizontalBoxSlot_SetPadding::InPadding' has a wrong offset!");
+static_assert(alignof(ButtonSlot_SetPadding) == 0x000004, "Wrong alignment on ButtonSlot_SetPadding");
+static_assert(sizeof(ButtonSlot_SetPadding) == 0x000010, "Wrong size on ButtonSlot_SetPadding");
+static_assert(offsetof(ButtonSlot_SetPadding, InPadding) == 0x000000, "Member 'ButtonSlot_SetPadding::InPadding' has a wrong offset!");
 
-// Function UMG.HorizontalBoxSlot.SetSize
-// 0x0008 (0x0008 - 0x0000)
-struct HorizontalBoxSlot_SetSize final
-{
-public:
-	struct FSlateChildSize                        InSize;                                            // 0x0000(0x0008)(Parm, NoDestructor, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(HorizontalBoxSlot_SetSize) == 0x000004, "Wrong alignment on HorizontalBoxSlot_SetSize");
-static_assert(sizeof(HorizontalBoxSlot_SetSize) == 0x000008, "Wrong size on HorizontalBoxSlot_SetSize");
-static_assert(offsetof(HorizontalBoxSlot_SetSize, InSize) == 0x000000, "Member 'HorizontalBoxSlot_SetSize::InSize' has a wrong offset!");
-
-// Function UMG.HorizontalBoxSlot.SetVerticalAlignment
+// Function UMG.ButtonSlot.SetVerticalAlignment
 // 0x0001 (0x0001 - 0x0000)
-struct HorizontalBoxSlot_SetVerticalAlignment final
+struct ButtonSlot_SetVerticalAlignment final
 {
 public:
 	EVerticalAlignment                            InVerticalAlignment;                               // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(HorizontalBoxSlot_SetVerticalAlignment) == 0x000001, "Wrong alignment on HorizontalBoxSlot_SetVerticalAlignment");
-static_assert(sizeof(HorizontalBoxSlot_SetVerticalAlignment) == 0x000001, "Wrong size on HorizontalBoxSlot_SetVerticalAlignment");
-static_assert(offsetof(HorizontalBoxSlot_SetVerticalAlignment, InVerticalAlignment) == 0x000000, "Member 'HorizontalBoxSlot_SetVerticalAlignment::InVerticalAlignment' has a wrong offset!");
+static_assert(alignof(ButtonSlot_SetVerticalAlignment) == 0x000001, "Wrong alignment on ButtonSlot_SetVerticalAlignment");
+static_assert(sizeof(ButtonSlot_SetVerticalAlignment) == 0x000001, "Wrong size on ButtonSlot_SetVerticalAlignment");
+static_assert(offsetof(ButtonSlot_SetVerticalAlignment, InVerticalAlignment) == 0x000000, "Member 'ButtonSlot_SetVerticalAlignment::InVerticalAlignment' has a wrong offset!");
 
 // Function UMG.PanelWidget.AddChild
 // 0x0010 (0x0010 - 0x0000)
@@ -950,73 +939,135 @@ static_assert(alignof(Border_SetVerticalAlignment) == 0x000001, "Wrong alignment
 static_assert(sizeof(Border_SetVerticalAlignment) == 0x000001, "Wrong size on Border_SetVerticalAlignment");
 static_assert(offsetof(Border_SetVerticalAlignment, InVerticalAlignment) == 0x000000, "Member 'Border_SetVerticalAlignment::InVerticalAlignment' has a wrong offset!");
 
-// Function UMG.ListViewBase.SetScrollBarVisibility
+// Function UMG.ComboBoxString.AddOption
+// 0x0010 (0x0010 - 0x0000)
+struct ComboBoxString_AddOption final
+{
+public:
+	class FString                                 Option;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ComboBoxString_AddOption) == 0x000008, "Wrong alignment on ComboBoxString_AddOption");
+static_assert(sizeof(ComboBoxString_AddOption) == 0x000010, "Wrong size on ComboBoxString_AddOption");
+static_assert(offsetof(ComboBoxString_AddOption, Option) == 0x000000, "Member 'ComboBoxString_AddOption::Option' has a wrong offset!");
+
+// Function UMG.ComboBoxString.RemoveOption
+// 0x0018 (0x0018 - 0x0000)
+struct ComboBoxString_RemoveOption final
+{
+public:
+	class FString                                 Option;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(ComboBoxString_RemoveOption) == 0x000008, "Wrong alignment on ComboBoxString_RemoveOption");
+static_assert(sizeof(ComboBoxString_RemoveOption) == 0x000018, "Wrong size on ComboBoxString_RemoveOption");
+static_assert(offsetof(ComboBoxString_RemoveOption, Option) == 0x000000, "Member 'ComboBoxString_RemoveOption::Option' has a wrong offset!");
+static_assert(offsetof(ComboBoxString_RemoveOption, ReturnValue) == 0x000010, "Member 'ComboBoxString_RemoveOption::ReturnValue' has a wrong offset!");
+
+// Function UMG.ComboBoxString.SetSelectedIndex
+// 0x0004 (0x0004 - 0x0000)
+struct ComboBoxString_SetSelectedIndex final
+{
+public:
+	int32                                         Index_0;                                           // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ComboBoxString_SetSelectedIndex) == 0x000004, "Wrong alignment on ComboBoxString_SetSelectedIndex");
+static_assert(sizeof(ComboBoxString_SetSelectedIndex) == 0x000004, "Wrong size on ComboBoxString_SetSelectedIndex");
+static_assert(offsetof(ComboBoxString_SetSelectedIndex, Index_0) == 0x000000, "Member 'ComboBoxString_SetSelectedIndex::Index_0' has a wrong offset!");
+
+// Function UMG.ComboBoxString.SetSelectedOption
+// 0x0010 (0x0010 - 0x0000)
+struct ComboBoxString_SetSelectedOption final
+{
+public:
+	class FString                                 Option;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ComboBoxString_SetSelectedOption) == 0x000008, "Wrong alignment on ComboBoxString_SetSelectedOption");
+static_assert(sizeof(ComboBoxString_SetSelectedOption) == 0x000010, "Wrong size on ComboBoxString_SetSelectedOption");
+static_assert(offsetof(ComboBoxString_SetSelectedOption, Option) == 0x000000, "Member 'ComboBoxString_SetSelectedOption::Option' has a wrong offset!");
+
+// Function UMG.ComboBoxString.FindOptionIndex
+// 0x0018 (0x0018 - 0x0000)
+struct ComboBoxString_FindOptionIndex final
+{
+public:
+	class FString                                 Option;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(ComboBoxString_FindOptionIndex) == 0x000008, "Wrong alignment on ComboBoxString_FindOptionIndex");
+static_assert(sizeof(ComboBoxString_FindOptionIndex) == 0x000018, "Wrong size on ComboBoxString_FindOptionIndex");
+static_assert(offsetof(ComboBoxString_FindOptionIndex, Option) == 0x000000, "Member 'ComboBoxString_FindOptionIndex::Option' has a wrong offset!");
+static_assert(offsetof(ComboBoxString_FindOptionIndex, ReturnValue) == 0x000010, "Member 'ComboBoxString_FindOptionIndex::ReturnValue' has a wrong offset!");
+
+// Function UMG.ComboBoxString.GetOptionAtIndex
+// 0x0018 (0x0018 - 0x0000)
+struct ComboBoxString_GetOptionAtIndex final
+{
+public:
+	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ComboBoxString_GetOptionAtIndex) == 0x000008, "Wrong alignment on ComboBoxString_GetOptionAtIndex");
+static_assert(sizeof(ComboBoxString_GetOptionAtIndex) == 0x000018, "Wrong size on ComboBoxString_GetOptionAtIndex");
+static_assert(offsetof(ComboBoxString_GetOptionAtIndex, Index_0) == 0x000000, "Member 'ComboBoxString_GetOptionAtIndex::Index_0' has a wrong offset!");
+static_assert(offsetof(ComboBoxString_GetOptionAtIndex, ReturnValue) == 0x000008, "Member 'ComboBoxString_GetOptionAtIndex::ReturnValue' has a wrong offset!");
+
+// Function UMG.ComboBoxString.GetOptionCount
+// 0x0004 (0x0004 - 0x0000)
+struct ComboBoxString_GetOptionCount final
+{
+public:
+	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ComboBoxString_GetOptionCount) == 0x000004, "Wrong alignment on ComboBoxString_GetOptionCount");
+static_assert(sizeof(ComboBoxString_GetOptionCount) == 0x000004, "Wrong size on ComboBoxString_GetOptionCount");
+static_assert(offsetof(ComboBoxString_GetOptionCount, ReturnValue) == 0x000000, "Member 'ComboBoxString_GetOptionCount::ReturnValue' has a wrong offset!");
+
+// Function UMG.ComboBoxString.GetSelectedIndex
+// 0x0004 (0x0004 - 0x0000)
+struct ComboBoxString_GetSelectedIndex final
+{
+public:
+	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ComboBoxString_GetSelectedIndex) == 0x000004, "Wrong alignment on ComboBoxString_GetSelectedIndex");
+static_assert(sizeof(ComboBoxString_GetSelectedIndex) == 0x000004, "Wrong size on ComboBoxString_GetSelectedIndex");
+static_assert(offsetof(ComboBoxString_GetSelectedIndex, ReturnValue) == 0x000000, "Member 'ComboBoxString_GetSelectedIndex::ReturnValue' has a wrong offset!");
+
+// Function UMG.ComboBoxString.GetSelectedOption
+// 0x0010 (0x0010 - 0x0000)
+struct ComboBoxString_GetSelectedOption final
+{
+public:
+	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ComboBoxString_GetSelectedOption) == 0x000008, "Wrong alignment on ComboBoxString_GetSelectedOption");
+static_assert(sizeof(ComboBoxString_GetSelectedOption) == 0x000010, "Wrong size on ComboBoxString_GetSelectedOption");
+static_assert(offsetof(ComboBoxString_GetSelectedOption, ReturnValue) == 0x000000, "Member 'ComboBoxString_GetSelectedOption::ReturnValue' has a wrong offset!");
+
+// Function UMG.ComboBoxString.IsOpen
 // 0x0001 (0x0001 - 0x0000)
-struct ListViewBase_SetScrollBarVisibility final
+struct ComboBoxString_IsOpen final
 {
 public:
-	ESlateVisibility                              InVisibility;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(ListViewBase_SetScrollBarVisibility) == 0x000001, "Wrong alignment on ListViewBase_SetScrollBarVisibility");
-static_assert(sizeof(ListViewBase_SetScrollBarVisibility) == 0x000001, "Wrong size on ListViewBase_SetScrollBarVisibility");
-static_assert(offsetof(ListViewBase_SetScrollBarVisibility, InVisibility) == 0x000000, "Member 'ListViewBase_SetScrollBarVisibility::InVisibility' has a wrong offset!");
+static_assert(alignof(ComboBoxString_IsOpen) == 0x000001, "Wrong alignment on ComboBoxString_IsOpen");
+static_assert(sizeof(ComboBoxString_IsOpen) == 0x000001, "Wrong size on ComboBoxString_IsOpen");
+static_assert(offsetof(ComboBoxString_IsOpen, ReturnValue) == 0x000000, "Member 'ComboBoxString_IsOpen::ReturnValue' has a wrong offset!");
 
-// Function UMG.ListViewBase.SetScrollOffset
+// Function UMG.Int32Binding.GetValue
 // 0x0004 (0x0004 - 0x0000)
-struct ListViewBase_SetScrollOffset final
+struct Int32Binding_GetValue final
 {
 public:
-	float                                         InScrollOffset;                                    // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(ListViewBase_SetScrollOffset) == 0x000004, "Wrong alignment on ListViewBase_SetScrollOffset");
-static_assert(sizeof(ListViewBase_SetScrollOffset) == 0x000004, "Wrong size on ListViewBase_SetScrollOffset");
-static_assert(offsetof(ListViewBase_SetScrollOffset, InScrollOffset) == 0x000000, "Member 'ListViewBase_SetScrollOffset::InScrollOffset' has a wrong offset!");
-
-// Function UMG.ListViewBase.SetWheelScrollMultiplier
-// 0x0004 (0x0004 - 0x0000)
-struct ListViewBase_SetWheelScrollMultiplier final
-{
-public:
-	float                                         NewWheelScrollMultiplier;                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(ListViewBase_SetWheelScrollMultiplier) == 0x000004, "Wrong alignment on ListViewBase_SetWheelScrollMultiplier");
-static_assert(sizeof(ListViewBase_SetWheelScrollMultiplier) == 0x000004, "Wrong size on ListViewBase_SetWheelScrollMultiplier");
-static_assert(offsetof(ListViewBase_SetWheelScrollMultiplier, NewWheelScrollMultiplier) == 0x000000, "Member 'ListViewBase_SetWheelScrollMultiplier::NewWheelScrollMultiplier' has a wrong offset!");
-
-// Function UMG.ListViewBase.GetDisplayedEntryWidgets
-// 0x0010 (0x0010 - 0x0000)
-struct ListViewBase_GetDisplayedEntryWidgets final
-{
-public:
-	TArray<class UUserWidget*>                    ReturnValue;                                       // 0x0000(0x0010)(ConstParm, ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(ListViewBase_GetDisplayedEntryWidgets) == 0x000008, "Wrong alignment on ListViewBase_GetDisplayedEntryWidgets");
-static_assert(sizeof(ListViewBase_GetDisplayedEntryWidgets) == 0x000010, "Wrong size on ListViewBase_GetDisplayedEntryWidgets");
-static_assert(offsetof(ListViewBase_GetDisplayedEntryWidgets, ReturnValue) == 0x000000, "Member 'ListViewBase_GetDisplayedEntryWidgets::ReturnValue' has a wrong offset!");
-
-// Function UMG.VerticalBox.AddChildToVerticalBox
-// 0x0010 (0x0010 - 0x0000)
-struct VerticalBox_AddChildToVerticalBox final
-{
-public:
-	class UWidget*                                Content;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UVerticalBoxSlot*                       ReturnValue;                                       // 0x0008(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(VerticalBox_AddChildToVerticalBox) == 0x000008, "Wrong alignment on VerticalBox_AddChildToVerticalBox");
-static_assert(sizeof(VerticalBox_AddChildToVerticalBox) == 0x000010, "Wrong size on VerticalBox_AddChildToVerticalBox");
-static_assert(offsetof(VerticalBox_AddChildToVerticalBox, Content) == 0x000000, "Member 'VerticalBox_AddChildToVerticalBox::Content' has a wrong offset!");
-static_assert(offsetof(VerticalBox_AddChildToVerticalBox, ReturnValue) == 0x000008, "Member 'VerticalBox_AddChildToVerticalBox::ReturnValue' has a wrong offset!");
-
-// Function UMG.VerticalBox.SetSlotSpacing
-// 0x0004 (0x0004 - 0x0000)
-struct VerticalBox_SetSlotSpacing final
-{
-public:
-	float                                         InSpacing;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(VerticalBox_SetSlotSpacing) == 0x000004, "Wrong alignment on VerticalBox_SetSlotSpacing");
-static_assert(sizeof(VerticalBox_SetSlotSpacing) == 0x000004, "Wrong size on VerticalBox_SetSlotSpacing");
-static_assert(offsetof(VerticalBox_SetSlotSpacing, InSpacing) == 0x000000, "Member 'VerticalBox_SetSlotSpacing::InSpacing' has a wrong offset!");
+static_assert(alignof(Int32Binding_GetValue) == 0x000004, "Wrong alignment on Int32Binding_GetValue");
+static_assert(sizeof(Int32Binding_GetValue) == 0x000004, "Wrong size on Int32Binding_GetValue");
+static_assert(offsetof(Int32Binding_GetValue, ReturnValue) == 0x000000, "Member 'Int32Binding_GetValue::ReturnValue' has a wrong offset!");
 
 // Function UMG.ExpandableArea.SetIsExpanded
 // 0x0001 (0x0001 - 0x0000)
@@ -1051,18 +1102,93 @@ static_assert(alignof(ExpandableArea_GetIsExpanded) == 0x000001, "Wrong alignmen
 static_assert(sizeof(ExpandableArea_GetIsExpanded) == 0x000001, "Wrong size on ExpandableArea_GetIsExpanded");
 static_assert(offsetof(ExpandableArea_GetIsExpanded, ReturnValue) == 0x000000, "Member 'ExpandableArea_GetIsExpanded::ReturnValue' has a wrong offset!");
 
-// Function UMG.ScrollBar.SetState
-// 0x0008 (0x0008 - 0x0000)
-struct ScrollBar_SetState final
+// Function UMG.MenuAnchor.FitInWindow
+// 0x0001 (0x0001 - 0x0000)
+struct MenuAnchor_FitInWindow final
 {
 public:
-	float                                         InOffsetFraction;                                  // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         InThumbSizeFraction;                               // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bFit;                                              // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(ScrollBar_SetState) == 0x000004, "Wrong alignment on ScrollBar_SetState");
-static_assert(sizeof(ScrollBar_SetState) == 0x000008, "Wrong size on ScrollBar_SetState");
-static_assert(offsetof(ScrollBar_SetState, InOffsetFraction) == 0x000000, "Member 'ScrollBar_SetState::InOffsetFraction' has a wrong offset!");
-static_assert(offsetof(ScrollBar_SetState, InThumbSizeFraction) == 0x000004, "Member 'ScrollBar_SetState::InThumbSizeFraction' has a wrong offset!");
+static_assert(alignof(MenuAnchor_FitInWindow) == 0x000001, "Wrong alignment on MenuAnchor_FitInWindow");
+static_assert(sizeof(MenuAnchor_FitInWindow) == 0x000001, "Wrong size on MenuAnchor_FitInWindow");
+static_assert(offsetof(MenuAnchor_FitInWindow, bFit) == 0x000000, "Member 'MenuAnchor_FitInWindow::bFit' has a wrong offset!");
+
+// Function UMG.MenuAnchor.Open
+// 0x0001 (0x0001 - 0x0000)
+struct MenuAnchor_Open final
+{
+public:
+	bool                                          bFocusMenu;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(MenuAnchor_Open) == 0x000001, "Wrong alignment on MenuAnchor_Open");
+static_assert(sizeof(MenuAnchor_Open) == 0x000001, "Wrong size on MenuAnchor_Open");
+static_assert(offsetof(MenuAnchor_Open, bFocusMenu) == 0x000000, "Member 'MenuAnchor_Open::bFocusMenu' has a wrong offset!");
+
+// Function UMG.MenuAnchor.SetPlacement
+// 0x0001 (0x0001 - 0x0000)
+struct MenuAnchor_SetPlacement final
+{
+public:
+	EMenuPlacement                                InPlacement;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(MenuAnchor_SetPlacement) == 0x000001, "Wrong alignment on MenuAnchor_SetPlacement");
+static_assert(sizeof(MenuAnchor_SetPlacement) == 0x000001, "Wrong size on MenuAnchor_SetPlacement");
+static_assert(offsetof(MenuAnchor_SetPlacement, InPlacement) == 0x000000, "Member 'MenuAnchor_SetPlacement::InPlacement' has a wrong offset!");
+
+// Function UMG.MenuAnchor.ToggleOpen
+// 0x0001 (0x0001 - 0x0000)
+struct MenuAnchor_ToggleOpen final
+{
+public:
+	bool                                          bFocusOnOpen;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(MenuAnchor_ToggleOpen) == 0x000001, "Wrong alignment on MenuAnchor_ToggleOpen");
+static_assert(sizeof(MenuAnchor_ToggleOpen) == 0x000001, "Wrong size on MenuAnchor_ToggleOpen");
+static_assert(offsetof(MenuAnchor_ToggleOpen, bFocusOnOpen) == 0x000000, "Member 'MenuAnchor_ToggleOpen::bFocusOnOpen' has a wrong offset!");
+
+// Function UMG.MenuAnchor.GetMenuPosition
+// 0x0008 (0x0008 - 0x0000)
+struct MenuAnchor_GetMenuPosition final
+{
+public:
+	struct FVector2D                              ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(MenuAnchor_GetMenuPosition) == 0x000004, "Wrong alignment on MenuAnchor_GetMenuPosition");
+static_assert(sizeof(MenuAnchor_GetMenuPosition) == 0x000008, "Wrong size on MenuAnchor_GetMenuPosition");
+static_assert(offsetof(MenuAnchor_GetMenuPosition, ReturnValue) == 0x000000, "Member 'MenuAnchor_GetMenuPosition::ReturnValue' has a wrong offset!");
+
+// Function UMG.MenuAnchor.HasOpenSubMenus
+// 0x0001 (0x0001 - 0x0000)
+struct MenuAnchor_HasOpenSubMenus final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(MenuAnchor_HasOpenSubMenus) == 0x000001, "Wrong alignment on MenuAnchor_HasOpenSubMenus");
+static_assert(sizeof(MenuAnchor_HasOpenSubMenus) == 0x000001, "Wrong size on MenuAnchor_HasOpenSubMenus");
+static_assert(offsetof(MenuAnchor_HasOpenSubMenus, ReturnValue) == 0x000000, "Member 'MenuAnchor_HasOpenSubMenus::ReturnValue' has a wrong offset!");
+
+// Function UMG.MenuAnchor.IsOpen
+// 0x0001 (0x0001 - 0x0000)
+struct MenuAnchor_IsOpen final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(MenuAnchor_IsOpen) == 0x000001, "Wrong alignment on MenuAnchor_IsOpen");
+static_assert(sizeof(MenuAnchor_IsOpen) == 0x000001, "Wrong size on MenuAnchor_IsOpen");
+static_assert(offsetof(MenuAnchor_IsOpen, ReturnValue) == 0x000000, "Member 'MenuAnchor_IsOpen::ReturnValue' has a wrong offset!");
+
+// Function UMG.MenuAnchor.ShouldOpenDueToClick
+// 0x0001 (0x0001 - 0x0000)
+struct MenuAnchor_ShouldOpenDueToClick final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(MenuAnchor_ShouldOpenDueToClick) == 0x000001, "Wrong alignment on MenuAnchor_ShouldOpenDueToClick");
+static_assert(sizeof(MenuAnchor_ShouldOpenDueToClick) == 0x000001, "Wrong size on MenuAnchor_ShouldOpenDueToClick");
+static_assert(offsetof(MenuAnchor_ShouldOpenDueToClick, ReturnValue) == 0x000000, "Member 'MenuAnchor_ShouldOpenDueToClick::ReturnValue' has a wrong offset!");
 
 // Function UMG.UserWidget.AddToPlayerScreen
 // 0x0008 (0x0008 - 0x0000)
@@ -2135,115 +2261,73 @@ static_assert(alignof(UserWidget_OnPaint) == 0x000008, "Wrong alignment on UserW
 static_assert(sizeof(UserWidget_OnPaint) == 0x000030, "Wrong size on UserWidget_OnPaint");
 static_assert(offsetof(UserWidget_OnPaint, Context) == 0x000000, "Member 'UserWidget_OnPaint::Context' has a wrong offset!");
 
-// Function UMG.FloatBinding.GetValue
-// 0x0004 (0x0004 - 0x0000)
-struct FloatBinding_GetValue final
+// Function UMG.UserObjectListEntryLibrary.GetListItemObject
+// 0x0018 (0x0018 - 0x0000)
+struct UserObjectListEntryLibrary_GetListItemObject final
 {
 public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TScriptInterface<class IUserObjectListEntry>  UserObjectListEntry;                               // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, NativeAccessSpecifierPublic)
+	class UObject*                                ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FloatBinding_GetValue) == 0x000004, "Wrong alignment on FloatBinding_GetValue");
-static_assert(sizeof(FloatBinding_GetValue) == 0x000004, "Wrong size on FloatBinding_GetValue");
-static_assert(offsetof(FloatBinding_GetValue, ReturnValue) == 0x000000, "Member 'FloatBinding_GetValue::ReturnValue' has a wrong offset!");
+static_assert(alignof(UserObjectListEntryLibrary_GetListItemObject) == 0x000008, "Wrong alignment on UserObjectListEntryLibrary_GetListItemObject");
+static_assert(sizeof(UserObjectListEntryLibrary_GetListItemObject) == 0x000018, "Wrong size on UserObjectListEntryLibrary_GetListItemObject");
+static_assert(offsetof(UserObjectListEntryLibrary_GetListItemObject, UserObjectListEntry) == 0x000000, "Member 'UserObjectListEntryLibrary_GetListItemObject::UserObjectListEntry' has a wrong offset!");
+static_assert(offsetof(UserObjectListEntryLibrary_GetListItemObject, ReturnValue) == 0x000010, "Member 'UserObjectListEntryLibrary_GetListItemObject::ReturnValue' has a wrong offset!");
 
-// Function UMG.GridSlot.SetColumn
-// 0x0004 (0x0004 - 0x0000)
-struct GridSlot_SetColumn final
-{
-public:
-	int32                                         InColumn;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(GridSlot_SetColumn) == 0x000004, "Wrong alignment on GridSlot_SetColumn");
-static_assert(sizeof(GridSlot_SetColumn) == 0x000004, "Wrong size on GridSlot_SetColumn");
-static_assert(offsetof(GridSlot_SetColumn, InColumn) == 0x000000, "Member 'GridSlot_SetColumn::InColumn' has a wrong offset!");
-
-// Function UMG.GridSlot.SetColumnSpan
-// 0x0004 (0x0004 - 0x0000)
-struct GridSlot_SetColumnSpan final
-{
-public:
-	int32                                         InColumnSpan;                                      // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(GridSlot_SetColumnSpan) == 0x000004, "Wrong alignment on GridSlot_SetColumnSpan");
-static_assert(sizeof(GridSlot_SetColumnSpan) == 0x000004, "Wrong size on GridSlot_SetColumnSpan");
-static_assert(offsetof(GridSlot_SetColumnSpan, InColumnSpan) == 0x000000, "Member 'GridSlot_SetColumnSpan::InColumnSpan' has a wrong offset!");
-
-// Function UMG.GridSlot.SetHorizontalAlignment
+// Function UMG.ListViewBase.SetScrollBarVisibility
 // 0x0001 (0x0001 - 0x0000)
-struct GridSlot_SetHorizontalAlignment final
+struct ListViewBase_SetScrollBarVisibility final
 {
 public:
-	EHorizontalAlignment                          InHorizontalAlignment;                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ESlateVisibility                              InVisibility;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(GridSlot_SetHorizontalAlignment) == 0x000001, "Wrong alignment on GridSlot_SetHorizontalAlignment");
-static_assert(sizeof(GridSlot_SetHorizontalAlignment) == 0x000001, "Wrong size on GridSlot_SetHorizontalAlignment");
-static_assert(offsetof(GridSlot_SetHorizontalAlignment, InHorizontalAlignment) == 0x000000, "Member 'GridSlot_SetHorizontalAlignment::InHorizontalAlignment' has a wrong offset!");
+static_assert(alignof(ListViewBase_SetScrollBarVisibility) == 0x000001, "Wrong alignment on ListViewBase_SetScrollBarVisibility");
+static_assert(sizeof(ListViewBase_SetScrollBarVisibility) == 0x000001, "Wrong size on ListViewBase_SetScrollBarVisibility");
+static_assert(offsetof(ListViewBase_SetScrollBarVisibility, InVisibility) == 0x000000, "Member 'ListViewBase_SetScrollBarVisibility::InVisibility' has a wrong offset!");
 
-// Function UMG.GridSlot.SetLayer
+// Function UMG.ListViewBase.SetScrollOffset
 // 0x0004 (0x0004 - 0x0000)
-struct GridSlot_SetLayer final
+struct ListViewBase_SetScrollOffset final
 {
 public:
-	int32                                         InLayer;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         InScrollOffset;                                    // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(GridSlot_SetLayer) == 0x000004, "Wrong alignment on GridSlot_SetLayer");
-static_assert(sizeof(GridSlot_SetLayer) == 0x000004, "Wrong size on GridSlot_SetLayer");
-static_assert(offsetof(GridSlot_SetLayer, InLayer) == 0x000000, "Member 'GridSlot_SetLayer::InLayer' has a wrong offset!");
+static_assert(alignof(ListViewBase_SetScrollOffset) == 0x000004, "Wrong alignment on ListViewBase_SetScrollOffset");
+static_assert(sizeof(ListViewBase_SetScrollOffset) == 0x000004, "Wrong size on ListViewBase_SetScrollOffset");
+static_assert(offsetof(ListViewBase_SetScrollOffset, InScrollOffset) == 0x000000, "Member 'ListViewBase_SetScrollOffset::InScrollOffset' has a wrong offset!");
 
-// Function UMG.GridSlot.SetNudge
-// 0x0008 (0x0008 - 0x0000)
-struct GridSlot_SetNudge final
+// Function UMG.ListViewBase.SetWheelScrollMultiplier
+// 0x0004 (0x0004 - 0x0000)
+struct ListViewBase_SetWheelScrollMultiplier final
 {
 public:
-	struct FVector2D                              InNudge;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         NewWheelScrollMultiplier;                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(GridSlot_SetNudge) == 0x000004, "Wrong alignment on GridSlot_SetNudge");
-static_assert(sizeof(GridSlot_SetNudge) == 0x000008, "Wrong size on GridSlot_SetNudge");
-static_assert(offsetof(GridSlot_SetNudge, InNudge) == 0x000000, "Member 'GridSlot_SetNudge::InNudge' has a wrong offset!");
+static_assert(alignof(ListViewBase_SetWheelScrollMultiplier) == 0x000004, "Wrong alignment on ListViewBase_SetWheelScrollMultiplier");
+static_assert(sizeof(ListViewBase_SetWheelScrollMultiplier) == 0x000004, "Wrong size on ListViewBase_SetWheelScrollMultiplier");
+static_assert(offsetof(ListViewBase_SetWheelScrollMultiplier, NewWheelScrollMultiplier) == 0x000000, "Member 'ListViewBase_SetWheelScrollMultiplier::NewWheelScrollMultiplier' has a wrong offset!");
 
-// Function UMG.GridSlot.SetPadding
+// Function UMG.ListViewBase.GetDisplayedEntryWidgets
 // 0x0010 (0x0010 - 0x0000)
-struct GridSlot_SetPadding final
+struct ListViewBase_GetDisplayedEntryWidgets final
 {
 public:
-	struct FMargin                                InPadding;                                         // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	TArray<class UUserWidget*>                    ReturnValue;                                       // 0x0000(0x0010)(ConstParm, ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(GridSlot_SetPadding) == 0x000004, "Wrong alignment on GridSlot_SetPadding");
-static_assert(sizeof(GridSlot_SetPadding) == 0x000010, "Wrong size on GridSlot_SetPadding");
-static_assert(offsetof(GridSlot_SetPadding, InPadding) == 0x000000, "Member 'GridSlot_SetPadding::InPadding' has a wrong offset!");
+static_assert(alignof(ListViewBase_GetDisplayedEntryWidgets) == 0x000008, "Wrong alignment on ListViewBase_GetDisplayedEntryWidgets");
+static_assert(sizeof(ListViewBase_GetDisplayedEntryWidgets) == 0x000010, "Wrong size on ListViewBase_GetDisplayedEntryWidgets");
+static_assert(offsetof(ListViewBase_GetDisplayedEntryWidgets, ReturnValue) == 0x000000, "Member 'ListViewBase_GetDisplayedEntryWidgets::ReturnValue' has a wrong offset!");
 
-// Function UMG.GridSlot.SetRow
-// 0x0004 (0x0004 - 0x0000)
-struct GridSlot_SetRow final
-{
-public:
-	int32                                         InRow;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(GridSlot_SetRow) == 0x000004, "Wrong alignment on GridSlot_SetRow");
-static_assert(sizeof(GridSlot_SetRow) == 0x000004, "Wrong size on GridSlot_SetRow");
-static_assert(offsetof(GridSlot_SetRow, InRow) == 0x000000, "Member 'GridSlot_SetRow::InRow' has a wrong offset!");
-
-// Function UMG.GridSlot.SetRowSpan
-// 0x0004 (0x0004 - 0x0000)
-struct GridSlot_SetRowSpan final
-{
-public:
-	int32                                         InRowSpan;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(GridSlot_SetRowSpan) == 0x000004, "Wrong alignment on GridSlot_SetRowSpan");
-static_assert(sizeof(GridSlot_SetRowSpan) == 0x000004, "Wrong size on GridSlot_SetRowSpan");
-static_assert(offsetof(GridSlot_SetRowSpan, InRowSpan) == 0x000000, "Member 'GridSlot_SetRowSpan::InRowSpan' has a wrong offset!");
-
-// Function UMG.GridSlot.SetVerticalAlignment
+// Function UMG.MouseCursorBinding.GetValue
 // 0x0001 (0x0001 - 0x0000)
-struct GridSlot_SetVerticalAlignment final
+struct MouseCursorBinding_GetValue final
 {
 public:
-	EVerticalAlignment                            InVerticalAlignment;                               // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EMouseCursor                                  ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(GridSlot_SetVerticalAlignment) == 0x000001, "Wrong alignment on GridSlot_SetVerticalAlignment");
-static_assert(sizeof(GridSlot_SetVerticalAlignment) == 0x000001, "Wrong size on GridSlot_SetVerticalAlignment");
-static_assert(offsetof(GridSlot_SetVerticalAlignment, InVerticalAlignment) == 0x000000, "Member 'GridSlot_SetVerticalAlignment::InVerticalAlignment' has a wrong offset!");
+static_assert(alignof(MouseCursorBinding_GetValue) == 0x000001, "Wrong alignment on MouseCursorBinding_GetValue");
+static_assert(sizeof(MouseCursorBinding_GetValue) == 0x000001, "Wrong size on MouseCursorBinding_GetValue");
+static_assert(offsetof(MouseCursorBinding_GetValue, ReturnValue) == 0x000000, "Member 'MouseCursorBinding_GetValue::ReturnValue' has a wrong offset!");
 
 // Function UMG.GridPanel.AddChildToGrid
 // 0x0018 (0x0018 - 0x0000)
@@ -2286,28 +2370,6 @@ static_assert(sizeof(GridPanel_SetColumnFill) == 0x000008, "Wrong size on GridPa
 static_assert(offsetof(GridPanel_SetColumnFill, ColumnIndex) == 0x000000, "Member 'GridPanel_SetColumnFill::ColumnIndex' has a wrong offset!");
 static_assert(offsetof(GridPanel_SetColumnFill, Coefficient) == 0x000004, "Member 'GridPanel_SetColumnFill::Coefficient' has a wrong offset!");
 
-// Function UMG.GridPanel.SetDefaultColumnFill
-// 0x0004 (0x0004 - 0x0000)
-struct GridPanel_SetDefaultColumnFill final
-{
-public:
-	float                                         Coefficient;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(GridPanel_SetDefaultColumnFill) == 0x000004, "Wrong alignment on GridPanel_SetDefaultColumnFill");
-static_assert(sizeof(GridPanel_SetDefaultColumnFill) == 0x000004, "Wrong size on GridPanel_SetDefaultColumnFill");
-static_assert(offsetof(GridPanel_SetDefaultColumnFill, Coefficient) == 0x000000, "Member 'GridPanel_SetDefaultColumnFill::Coefficient' has a wrong offset!");
-
-// Function UMG.GridPanel.SetDefaultRowFill
-// 0x0004 (0x0004 - 0x0000)
-struct GridPanel_SetDefaultRowFill final
-{
-public:
-	float                                         Coefficient;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(GridPanel_SetDefaultRowFill) == 0x000004, "Wrong alignment on GridPanel_SetDefaultRowFill");
-static_assert(sizeof(GridPanel_SetDefaultRowFill) == 0x000004, "Wrong size on GridPanel_SetDefaultRowFill");
-static_assert(offsetof(GridPanel_SetDefaultRowFill, Coefficient) == 0x000000, "Member 'GridPanel_SetDefaultRowFill::Coefficient' has a wrong offset!");
-
 // Function UMG.GridPanel.SetRowFill
 // 0x0008 (0x0008 - 0x0000)
 struct GridPanel_SetRowFill final
@@ -2331,72 +2393,6 @@ public:
 static_assert(alignof(GridPanel_SetSlotSpacing) == 0x000004, "Wrong alignment on GridPanel_SetSlotSpacing");
 static_assert(sizeof(GridPanel_SetSlotSpacing) == 0x000008, "Wrong size on GridPanel_SetSlotSpacing");
 static_assert(offsetof(GridPanel_SetSlotSpacing, Spacing) == 0x000000, "Member 'GridPanel_SetSlotSpacing::Spacing' has a wrong offset!");
-
-// Function UMG.EditableText.SetHintText
-// 0x0018 (0x0018 - 0x0000)
-struct EditableText_SetHintText final
-{
-public:
-	class FText                                   InHintText;                                        // 0x0000(0x0018)(Parm, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(EditableText_SetHintText) == 0x000008, "Wrong alignment on EditableText_SetHintText");
-static_assert(sizeof(EditableText_SetHintText) == 0x000018, "Wrong size on EditableText_SetHintText");
-static_assert(offsetof(EditableText_SetHintText, InHintText) == 0x000000, "Member 'EditableText_SetHintText::InHintText' has a wrong offset!");
-
-// Function UMG.EditableText.SetIsPassword
-// 0x0001 (0x0001 - 0x0000)
-struct EditableText_SetIsPassword final
-{
-public:
-	bool                                          InbIsPassword;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(EditableText_SetIsPassword) == 0x000001, "Wrong alignment on EditableText_SetIsPassword");
-static_assert(sizeof(EditableText_SetIsPassword) == 0x000001, "Wrong size on EditableText_SetIsPassword");
-static_assert(offsetof(EditableText_SetIsPassword, InbIsPassword) == 0x000000, "Member 'EditableText_SetIsPassword::InbIsPassword' has a wrong offset!");
-
-// Function UMG.EditableText.SetIsReadOnly
-// 0x0001 (0x0001 - 0x0000)
-struct EditableText_SetIsReadOnly final
-{
-public:
-	bool                                          InbIsReadyOnly;                                    // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(EditableText_SetIsReadOnly) == 0x000001, "Wrong alignment on EditableText_SetIsReadOnly");
-static_assert(sizeof(EditableText_SetIsReadOnly) == 0x000001, "Wrong size on EditableText_SetIsReadOnly");
-static_assert(offsetof(EditableText_SetIsReadOnly, InbIsReadyOnly) == 0x000000, "Member 'EditableText_SetIsReadOnly::InbIsReadyOnly' has a wrong offset!");
-
-// Function UMG.EditableText.SetJustification
-// 0x0001 (0x0001 - 0x0000)
-struct EditableText_SetJustification final
-{
-public:
-	ETextJustify                                  InJustification;                                   // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(EditableText_SetJustification) == 0x000001, "Wrong alignment on EditableText_SetJustification");
-static_assert(sizeof(EditableText_SetJustification) == 0x000001, "Wrong size on EditableText_SetJustification");
-static_assert(offsetof(EditableText_SetJustification, InJustification) == 0x000000, "Member 'EditableText_SetJustification::InJustification' has a wrong offset!");
-
-// Function UMG.EditableText.SetText
-// 0x0018 (0x0018 - 0x0000)
-struct EditableText_SetText final
-{
-public:
-	class FText                                   InText;                                            // 0x0000(0x0018)(Parm, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(EditableText_SetText) == 0x000008, "Wrong alignment on EditableText_SetText");
-static_assert(sizeof(EditableText_SetText) == 0x000018, "Wrong size on EditableText_SetText");
-static_assert(offsetof(EditableText_SetText, InText) == 0x000000, "Member 'EditableText_SetText::InText' has a wrong offset!");
-
-// Function UMG.EditableText.GetText
-// 0x0018 (0x0018 - 0x0000)
-struct EditableText_GetText final
-{
-public:
-	class FText                                   ReturnValue;                                       // 0x0000(0x0018)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(EditableText_GetText) == 0x000008, "Wrong alignment on EditableText_GetText");
-static_assert(sizeof(EditableText_GetText) == 0x000018, "Wrong size on EditableText_GetText");
-static_assert(offsetof(EditableText_GetText, ReturnValue) == 0x000000, "Member 'EditableText_GetText::ReturnValue' has a wrong offset!");
 
 // Function UMG.HorizontalBox.AddChildToHorizontalBox
 // 0x0010 (0x0010 - 0x0000)
@@ -2588,47 +2584,6 @@ static_assert(alignof(Image_SetOpacity) == 0x000004, "Wrong alignment on Image_S
 static_assert(sizeof(Image_SetOpacity) == 0x000004, "Wrong size on Image_SetOpacity");
 static_assert(offsetof(Image_SetOpacity, InOpacity) == 0x000000, "Member 'Image_SetOpacity::InOpacity' has a wrong offset!");
 
-// Function UMG.UserListEntryLibrary.GetOwningListView
-// 0x0018 (0x0018 - 0x0000)
-struct UserListEntryLibrary_GetOwningListView final
-{
-public:
-	TScriptInterface<class IUserListEntry>        UserListEntry;                                     // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, NativeAccessSpecifierPublic)
-	class UListViewBase*                          ReturnValue;                                       // 0x0010(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(UserListEntryLibrary_GetOwningListView) == 0x000008, "Wrong alignment on UserListEntryLibrary_GetOwningListView");
-static_assert(sizeof(UserListEntryLibrary_GetOwningListView) == 0x000018, "Wrong size on UserListEntryLibrary_GetOwningListView");
-static_assert(offsetof(UserListEntryLibrary_GetOwningListView, UserListEntry) == 0x000000, "Member 'UserListEntryLibrary_GetOwningListView::UserListEntry' has a wrong offset!");
-static_assert(offsetof(UserListEntryLibrary_GetOwningListView, ReturnValue) == 0x000010, "Member 'UserListEntryLibrary_GetOwningListView::ReturnValue' has a wrong offset!");
-
-// Function UMG.UserListEntryLibrary.IsListItemExpanded
-// 0x0018 (0x0018 - 0x0000)
-struct UserListEntryLibrary_IsListItemExpanded final
-{
-public:
-	TScriptInterface<class IUserListEntry>        UserListEntry;                                     // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(UserListEntryLibrary_IsListItemExpanded) == 0x000008, "Wrong alignment on UserListEntryLibrary_IsListItemExpanded");
-static_assert(sizeof(UserListEntryLibrary_IsListItemExpanded) == 0x000018, "Wrong size on UserListEntryLibrary_IsListItemExpanded");
-static_assert(offsetof(UserListEntryLibrary_IsListItemExpanded, UserListEntry) == 0x000000, "Member 'UserListEntryLibrary_IsListItemExpanded::UserListEntry' has a wrong offset!");
-static_assert(offsetof(UserListEntryLibrary_IsListItemExpanded, ReturnValue) == 0x000010, "Member 'UserListEntryLibrary_IsListItemExpanded::ReturnValue' has a wrong offset!");
-
-// Function UMG.UserListEntryLibrary.IsListItemSelected
-// 0x0018 (0x0018 - 0x0000)
-struct UserListEntryLibrary_IsListItemSelected final
-{
-public:
-	TScriptInterface<class IUserListEntry>        UserListEntry;                                     // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(UserListEntryLibrary_IsListItemSelected) == 0x000008, "Wrong alignment on UserListEntryLibrary_IsListItemSelected");
-static_assert(sizeof(UserListEntryLibrary_IsListItemSelected) == 0x000018, "Wrong size on UserListEntryLibrary_IsListItemSelected");
-static_assert(offsetof(UserListEntryLibrary_IsListItemSelected, UserListEntry) == 0x000000, "Member 'UserListEntryLibrary_IsListItemSelected::UserListEntry' has a wrong offset!");
-static_assert(offsetof(UserListEntryLibrary_IsListItemSelected, ReturnValue) == 0x000010, "Member 'UserListEntryLibrary_IsListItemSelected::ReturnValue' has a wrong offset!");
-
 // Function UMG.TextLayoutWidget.SetJustification
 // 0x0001 (0x0001 - 0x0000)
 struct TextLayoutWidget_SetJustification final
@@ -2739,27 +2694,27 @@ static_assert(alignof(MultiLineEditableTextBox_GetText) == 0x000008, "Wrong alig
 static_assert(sizeof(MultiLineEditableTextBox_GetText) == 0x000018, "Wrong size on MultiLineEditableTextBox_GetText");
 static_assert(offsetof(MultiLineEditableTextBox_GetText, ReturnValue) == 0x000000, "Member 'MultiLineEditableTextBox_GetText::ReturnValue' has a wrong offset!");
 
-// Function UMG.UserListEntry.BP_OnItemExpansionChanged
+// Function UMG.InvalidationBox.SetCanCache
 // 0x0001 (0x0001 - 0x0000)
-struct UserListEntry_BP_OnItemExpansionChanged final
+struct InvalidationBox_SetCanCache final
 {
 public:
-	bool                                          bIsExpanded;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          CanCache;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(UserListEntry_BP_OnItemExpansionChanged) == 0x000001, "Wrong alignment on UserListEntry_BP_OnItemExpansionChanged");
-static_assert(sizeof(UserListEntry_BP_OnItemExpansionChanged) == 0x000001, "Wrong size on UserListEntry_BP_OnItemExpansionChanged");
-static_assert(offsetof(UserListEntry_BP_OnItemExpansionChanged, bIsExpanded) == 0x000000, "Member 'UserListEntry_BP_OnItemExpansionChanged::bIsExpanded' has a wrong offset!");
+static_assert(alignof(InvalidationBox_SetCanCache) == 0x000001, "Wrong alignment on InvalidationBox_SetCanCache");
+static_assert(sizeof(InvalidationBox_SetCanCache) == 0x000001, "Wrong size on InvalidationBox_SetCanCache");
+static_assert(offsetof(InvalidationBox_SetCanCache, CanCache) == 0x000000, "Member 'InvalidationBox_SetCanCache::CanCache' has a wrong offset!");
 
-// Function UMG.UserListEntry.BP_OnItemSelectionChanged
+// Function UMG.InvalidationBox.GetCanCache
 // 0x0001 (0x0001 - 0x0000)
-struct UserListEntry_BP_OnItemSelectionChanged final
+struct InvalidationBox_GetCanCache final
 {
 public:
-	bool                                          bIsSelected;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(UserListEntry_BP_OnItemSelectionChanged) == 0x000001, "Wrong alignment on UserListEntry_BP_OnItemSelectionChanged");
-static_assert(sizeof(UserListEntry_BP_OnItemSelectionChanged) == 0x000001, "Wrong size on UserListEntry_BP_OnItemSelectionChanged");
-static_assert(offsetof(UserListEntry_BP_OnItemSelectionChanged, bIsSelected) == 0x000000, "Member 'UserListEntry_BP_OnItemSelectionChanged::bIsSelected' has a wrong offset!");
+static_assert(alignof(InvalidationBox_GetCanCache) == 0x000001, "Wrong alignment on InvalidationBox_GetCanCache");
+static_assert(sizeof(InvalidationBox_GetCanCache) == 0x000001, "Wrong size on InvalidationBox_GetCanCache");
+static_assert(offsetof(InvalidationBox_GetCanCache, ReturnValue) == 0x000000, "Member 'InvalidationBox_GetCanCache::ReturnValue' has a wrong offset!");
 
 // Function UMG.RetainerBox.SetEffectMaterial
 // 0x0008 (0x0008 - 0x0000)
@@ -2818,214 +2773,82 @@ static_assert(alignof(RetainerBox_GetEffectMaterial) == 0x000008, "Wrong alignme
 static_assert(sizeof(RetainerBox_GetEffectMaterial) == 0x000008, "Wrong size on RetainerBox_GetEffectMaterial");
 static_assert(offsetof(RetainerBox_GetEffectMaterial, ReturnValue) == 0x000000, "Member 'RetainerBox_GetEffectMaterial::ReturnValue' has a wrong offset!");
 
-// Function UMG.SpinBox.SetAlwaysUsesDeltaSnap
+// Function UMG.BackgroundBlur.SetApplyAlphaToBlur
 // 0x0001 (0x0001 - 0x0000)
-struct SpinBox_SetAlwaysUsesDeltaSnap final
+struct BackgroundBlur_SetApplyAlphaToBlur final
 {
 public:
-	bool                                          bNewValue;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bInApplyAlphaToBlur;                               // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(SpinBox_SetAlwaysUsesDeltaSnap) == 0x000001, "Wrong alignment on SpinBox_SetAlwaysUsesDeltaSnap");
-static_assert(sizeof(SpinBox_SetAlwaysUsesDeltaSnap) == 0x000001, "Wrong size on SpinBox_SetAlwaysUsesDeltaSnap");
-static_assert(offsetof(SpinBox_SetAlwaysUsesDeltaSnap, bNewValue) == 0x000000, "Member 'SpinBox_SetAlwaysUsesDeltaSnap::bNewValue' has a wrong offset!");
+static_assert(alignof(BackgroundBlur_SetApplyAlphaToBlur) == 0x000001, "Wrong alignment on BackgroundBlur_SetApplyAlphaToBlur");
+static_assert(sizeof(BackgroundBlur_SetApplyAlphaToBlur) == 0x000001, "Wrong size on BackgroundBlur_SetApplyAlphaToBlur");
+static_assert(offsetof(BackgroundBlur_SetApplyAlphaToBlur, bInApplyAlphaToBlur) == 0x000000, "Member 'BackgroundBlur_SetApplyAlphaToBlur::bInApplyAlphaToBlur' has a wrong offset!");
 
-// Function UMG.SpinBox.SetDelta
+// Function UMG.BackgroundBlur.SetBlurRadius
 // 0x0004 (0x0004 - 0x0000)
-struct SpinBox_SetDelta final
+struct BackgroundBlur_SetBlurRadius final
 {
 public:
-	float                                         NewValue;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         InBlurRadius;                                      // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(SpinBox_SetDelta) == 0x000004, "Wrong alignment on SpinBox_SetDelta");
-static_assert(sizeof(SpinBox_SetDelta) == 0x000004, "Wrong size on SpinBox_SetDelta");
-static_assert(offsetof(SpinBox_SetDelta, NewValue) == 0x000000, "Member 'SpinBox_SetDelta::NewValue' has a wrong offset!");
+static_assert(alignof(BackgroundBlur_SetBlurRadius) == 0x000004, "Wrong alignment on BackgroundBlur_SetBlurRadius");
+static_assert(sizeof(BackgroundBlur_SetBlurRadius) == 0x000004, "Wrong size on BackgroundBlur_SetBlurRadius");
+static_assert(offsetof(BackgroundBlur_SetBlurRadius, InBlurRadius) == 0x000000, "Member 'BackgroundBlur_SetBlurRadius::InBlurRadius' has a wrong offset!");
 
-// Function UMG.SpinBox.SetForegroundColor
-// 0x0028 (0x0028 - 0x0000)
-struct SpinBox_SetForegroundColor final
-{
-public:
-	struct FSlateColor                            InForegroundColor;                                 // 0x0000(0x0028)(Parm, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(SpinBox_SetForegroundColor) == 0x000008, "Wrong alignment on SpinBox_SetForegroundColor");
-static_assert(sizeof(SpinBox_SetForegroundColor) == 0x000028, "Wrong size on SpinBox_SetForegroundColor");
-static_assert(offsetof(SpinBox_SetForegroundColor, InForegroundColor) == 0x000000, "Member 'SpinBox_SetForegroundColor::InForegroundColor' has a wrong offset!");
-
-// Function UMG.SpinBox.SetMaxFractionalDigits
+// Function UMG.BackgroundBlur.SetBlurStrength
 // 0x0004 (0x0004 - 0x0000)
-struct SpinBox_SetMaxFractionalDigits final
+struct BackgroundBlur_SetBlurStrength final
 {
 public:
-	int32                                         NewValue;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         InStrength;                                        // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(SpinBox_SetMaxFractionalDigits) == 0x000004, "Wrong alignment on SpinBox_SetMaxFractionalDigits");
-static_assert(sizeof(SpinBox_SetMaxFractionalDigits) == 0x000004, "Wrong size on SpinBox_SetMaxFractionalDigits");
-static_assert(offsetof(SpinBox_SetMaxFractionalDigits, NewValue) == 0x000000, "Member 'SpinBox_SetMaxFractionalDigits::NewValue' has a wrong offset!");
+static_assert(alignof(BackgroundBlur_SetBlurStrength) == 0x000004, "Wrong alignment on BackgroundBlur_SetBlurStrength");
+static_assert(sizeof(BackgroundBlur_SetBlurStrength) == 0x000004, "Wrong size on BackgroundBlur_SetBlurStrength");
+static_assert(offsetof(BackgroundBlur_SetBlurStrength, InStrength) == 0x000000, "Member 'BackgroundBlur_SetBlurStrength::InStrength' has a wrong offset!");
 
-// Function UMG.SpinBox.SetMaxSliderValue
-// 0x0004 (0x0004 - 0x0000)
-struct SpinBox_SetMaxSliderValue final
-{
-public:
-	float                                         NewValue;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(SpinBox_SetMaxSliderValue) == 0x000004, "Wrong alignment on SpinBox_SetMaxSliderValue");
-static_assert(sizeof(SpinBox_SetMaxSliderValue) == 0x000004, "Wrong size on SpinBox_SetMaxSliderValue");
-static_assert(offsetof(SpinBox_SetMaxSliderValue, NewValue) == 0x000000, "Member 'SpinBox_SetMaxSliderValue::NewValue' has a wrong offset!");
-
-// Function UMG.SpinBox.SetMaxValue
-// 0x0004 (0x0004 - 0x0000)
-struct SpinBox_SetMaxValue final
-{
-public:
-	float                                         NewValue;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(SpinBox_SetMaxValue) == 0x000004, "Wrong alignment on SpinBox_SetMaxValue");
-static_assert(sizeof(SpinBox_SetMaxValue) == 0x000004, "Wrong size on SpinBox_SetMaxValue");
-static_assert(offsetof(SpinBox_SetMaxValue, NewValue) == 0x000000, "Member 'SpinBox_SetMaxValue::NewValue' has a wrong offset!");
-
-// Function UMG.SpinBox.SetMinFractionalDigits
-// 0x0004 (0x0004 - 0x0000)
-struct SpinBox_SetMinFractionalDigits final
-{
-public:
-	int32                                         NewValue;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(SpinBox_SetMinFractionalDigits) == 0x000004, "Wrong alignment on SpinBox_SetMinFractionalDigits");
-static_assert(sizeof(SpinBox_SetMinFractionalDigits) == 0x000004, "Wrong size on SpinBox_SetMinFractionalDigits");
-static_assert(offsetof(SpinBox_SetMinFractionalDigits, NewValue) == 0x000000, "Member 'SpinBox_SetMinFractionalDigits::NewValue' has a wrong offset!");
-
-// Function UMG.SpinBox.SetMinSliderValue
-// 0x0004 (0x0004 - 0x0000)
-struct SpinBox_SetMinSliderValue final
-{
-public:
-	float                                         NewValue;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(SpinBox_SetMinSliderValue) == 0x000004, "Wrong alignment on SpinBox_SetMinSliderValue");
-static_assert(sizeof(SpinBox_SetMinSliderValue) == 0x000004, "Wrong size on SpinBox_SetMinSliderValue");
-static_assert(offsetof(SpinBox_SetMinSliderValue, NewValue) == 0x000000, "Member 'SpinBox_SetMinSliderValue::NewValue' has a wrong offset!");
-
-// Function UMG.SpinBox.SetMinValue
-// 0x0004 (0x0004 - 0x0000)
-struct SpinBox_SetMinValue final
-{
-public:
-	float                                         NewValue;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(SpinBox_SetMinValue) == 0x000004, "Wrong alignment on SpinBox_SetMinValue");
-static_assert(sizeof(SpinBox_SetMinValue) == 0x000004, "Wrong size on SpinBox_SetMinValue");
-static_assert(offsetof(SpinBox_SetMinValue, NewValue) == 0x000000, "Member 'SpinBox_SetMinValue::NewValue' has a wrong offset!");
-
-// Function UMG.SpinBox.SetValue
-// 0x0004 (0x0004 - 0x0000)
-struct SpinBox_SetValue final
-{
-public:
-	float                                         NewValue;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(SpinBox_SetValue) == 0x000004, "Wrong alignment on SpinBox_SetValue");
-static_assert(sizeof(SpinBox_SetValue) == 0x000004, "Wrong size on SpinBox_SetValue");
-static_assert(offsetof(SpinBox_SetValue, NewValue) == 0x000000, "Member 'SpinBox_SetValue::NewValue' has a wrong offset!");
-
-// Function UMG.SpinBox.GetAlwaysUsesDeltaSnap
+// Function UMG.BackgroundBlur.SetHorizontalAlignment
 // 0x0001 (0x0001 - 0x0000)
-struct SpinBox_GetAlwaysUsesDeltaSnap final
+struct BackgroundBlur_SetHorizontalAlignment final
 {
 public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EHorizontalAlignment                          InHorizontalAlignment;                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(SpinBox_GetAlwaysUsesDeltaSnap) == 0x000001, "Wrong alignment on SpinBox_GetAlwaysUsesDeltaSnap");
-static_assert(sizeof(SpinBox_GetAlwaysUsesDeltaSnap) == 0x000001, "Wrong size on SpinBox_GetAlwaysUsesDeltaSnap");
-static_assert(offsetof(SpinBox_GetAlwaysUsesDeltaSnap, ReturnValue) == 0x000000, "Member 'SpinBox_GetAlwaysUsesDeltaSnap::ReturnValue' has a wrong offset!");
+static_assert(alignof(BackgroundBlur_SetHorizontalAlignment) == 0x000001, "Wrong alignment on BackgroundBlur_SetHorizontalAlignment");
+static_assert(sizeof(BackgroundBlur_SetHorizontalAlignment) == 0x000001, "Wrong size on BackgroundBlur_SetHorizontalAlignment");
+static_assert(offsetof(BackgroundBlur_SetHorizontalAlignment, InHorizontalAlignment) == 0x000000, "Member 'BackgroundBlur_SetHorizontalAlignment::InHorizontalAlignment' has a wrong offset!");
 
-// Function UMG.SpinBox.GetDelta
-// 0x0004 (0x0004 - 0x0000)
-struct SpinBox_GetDelta final
+// Function UMG.BackgroundBlur.SetLowQualityFallbackBrush
+// 0x0088 (0x0088 - 0x0000)
+struct BackgroundBlur_SetLowQualityFallbackBrush final
 {
 public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FSlateBrush                            InBrush;                                           // 0x0000(0x0088)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(SpinBox_GetDelta) == 0x000004, "Wrong alignment on SpinBox_GetDelta");
-static_assert(sizeof(SpinBox_GetDelta) == 0x000004, "Wrong size on SpinBox_GetDelta");
-static_assert(offsetof(SpinBox_GetDelta, ReturnValue) == 0x000000, "Member 'SpinBox_GetDelta::ReturnValue' has a wrong offset!");
+static_assert(alignof(BackgroundBlur_SetLowQualityFallbackBrush) == 0x000008, "Wrong alignment on BackgroundBlur_SetLowQualityFallbackBrush");
+static_assert(sizeof(BackgroundBlur_SetLowQualityFallbackBrush) == 0x000088, "Wrong size on BackgroundBlur_SetLowQualityFallbackBrush");
+static_assert(offsetof(BackgroundBlur_SetLowQualityFallbackBrush, InBrush) == 0x000000, "Member 'BackgroundBlur_SetLowQualityFallbackBrush::InBrush' has a wrong offset!");
 
-// Function UMG.SpinBox.GetMaxFractionalDigits
-// 0x0004 (0x0004 - 0x0000)
-struct SpinBox_GetMaxFractionalDigits final
+// Function UMG.BackgroundBlur.SetPadding
+// 0x0010 (0x0010 - 0x0000)
+struct BackgroundBlur_SetPadding final
 {
 public:
-	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FMargin                                InPadding;                                         // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(SpinBox_GetMaxFractionalDigits) == 0x000004, "Wrong alignment on SpinBox_GetMaxFractionalDigits");
-static_assert(sizeof(SpinBox_GetMaxFractionalDigits) == 0x000004, "Wrong size on SpinBox_GetMaxFractionalDigits");
-static_assert(offsetof(SpinBox_GetMaxFractionalDigits, ReturnValue) == 0x000000, "Member 'SpinBox_GetMaxFractionalDigits::ReturnValue' has a wrong offset!");
+static_assert(alignof(BackgroundBlur_SetPadding) == 0x000004, "Wrong alignment on BackgroundBlur_SetPadding");
+static_assert(sizeof(BackgroundBlur_SetPadding) == 0x000010, "Wrong size on BackgroundBlur_SetPadding");
+static_assert(offsetof(BackgroundBlur_SetPadding, InPadding) == 0x000000, "Member 'BackgroundBlur_SetPadding::InPadding' has a wrong offset!");
 
-// Function UMG.SpinBox.GetMaxSliderValue
-// 0x0004 (0x0004 - 0x0000)
-struct SpinBox_GetMaxSliderValue final
+// Function UMG.BackgroundBlur.SetVerticalAlignment
+// 0x0001 (0x0001 - 0x0000)
+struct BackgroundBlur_SetVerticalAlignment final
 {
 public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EVerticalAlignment                            InVerticalAlignment;                               // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(SpinBox_GetMaxSliderValue) == 0x000004, "Wrong alignment on SpinBox_GetMaxSliderValue");
-static_assert(sizeof(SpinBox_GetMaxSliderValue) == 0x000004, "Wrong size on SpinBox_GetMaxSliderValue");
-static_assert(offsetof(SpinBox_GetMaxSliderValue, ReturnValue) == 0x000000, "Member 'SpinBox_GetMaxSliderValue::ReturnValue' has a wrong offset!");
-
-// Function UMG.SpinBox.GetMaxValue
-// 0x0004 (0x0004 - 0x0000)
-struct SpinBox_GetMaxValue final
-{
-public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(SpinBox_GetMaxValue) == 0x000004, "Wrong alignment on SpinBox_GetMaxValue");
-static_assert(sizeof(SpinBox_GetMaxValue) == 0x000004, "Wrong size on SpinBox_GetMaxValue");
-static_assert(offsetof(SpinBox_GetMaxValue, ReturnValue) == 0x000000, "Member 'SpinBox_GetMaxValue::ReturnValue' has a wrong offset!");
-
-// Function UMG.SpinBox.GetMinFractionalDigits
-// 0x0004 (0x0004 - 0x0000)
-struct SpinBox_GetMinFractionalDigits final
-{
-public:
-	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(SpinBox_GetMinFractionalDigits) == 0x000004, "Wrong alignment on SpinBox_GetMinFractionalDigits");
-static_assert(sizeof(SpinBox_GetMinFractionalDigits) == 0x000004, "Wrong size on SpinBox_GetMinFractionalDigits");
-static_assert(offsetof(SpinBox_GetMinFractionalDigits, ReturnValue) == 0x000000, "Member 'SpinBox_GetMinFractionalDigits::ReturnValue' has a wrong offset!");
-
-// Function UMG.SpinBox.GetMinSliderValue
-// 0x0004 (0x0004 - 0x0000)
-struct SpinBox_GetMinSliderValue final
-{
-public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(SpinBox_GetMinSliderValue) == 0x000004, "Wrong alignment on SpinBox_GetMinSliderValue");
-static_assert(sizeof(SpinBox_GetMinSliderValue) == 0x000004, "Wrong size on SpinBox_GetMinSliderValue");
-static_assert(offsetof(SpinBox_GetMinSliderValue, ReturnValue) == 0x000000, "Member 'SpinBox_GetMinSliderValue::ReturnValue' has a wrong offset!");
-
-// Function UMG.SpinBox.GetMinValue
-// 0x0004 (0x0004 - 0x0000)
-struct SpinBox_GetMinValue final
-{
-public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(SpinBox_GetMinValue) == 0x000004, "Wrong alignment on SpinBox_GetMinValue");
-static_assert(sizeof(SpinBox_GetMinValue) == 0x000004, "Wrong size on SpinBox_GetMinValue");
-static_assert(offsetof(SpinBox_GetMinValue, ReturnValue) == 0x000000, "Member 'SpinBox_GetMinValue::ReturnValue' has a wrong offset!");
-
-// Function UMG.SpinBox.GetValue
-// 0x0004 (0x0004 - 0x0000)
-struct SpinBox_GetValue final
-{
-public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(SpinBox_GetValue) == 0x000004, "Wrong alignment on SpinBox_GetValue");
-static_assert(sizeof(SpinBox_GetValue) == 0x000004, "Wrong size on SpinBox_GetValue");
-static_assert(offsetof(SpinBox_GetValue, ReturnValue) == 0x000000, "Member 'SpinBox_GetValue::ReturnValue' has a wrong offset!");
+static_assert(alignof(BackgroundBlur_SetVerticalAlignment) == 0x000001, "Wrong alignment on BackgroundBlur_SetVerticalAlignment");
+static_assert(sizeof(BackgroundBlur_SetVerticalAlignment) == 0x000001, "Wrong size on BackgroundBlur_SetVerticalAlignment");
+static_assert(offsetof(BackgroundBlur_SetVerticalAlignment, InVerticalAlignment) == 0x000000, "Member 'BackgroundBlur_SetVerticalAlignment::InVerticalAlignment' has a wrong offset!");
 
 // Function UMG.RichTextBlock.GetDecoratorByClass
 // 0x0010 (0x0010 - 0x0000)
@@ -3171,83 +2994,6 @@ public:
 static_assert(alignof(RichTextBlock_GetText) == 0x000008, "Wrong alignment on RichTextBlock_GetText");
 static_assert(sizeof(RichTextBlock_GetText) == 0x000018, "Wrong size on RichTextBlock_GetText");
 static_assert(offsetof(RichTextBlock_GetText, ReturnValue) == 0x000000, "Member 'RichTextBlock_GetText::ReturnValue' has a wrong offset!");
-
-// Function UMG.Button.SetBackgroundColor
-// 0x0010 (0x0010 - 0x0000)
-struct Button_SetBackgroundColor final
-{
-public:
-	struct FLinearColor                           InBackgroundColor;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(Button_SetBackgroundColor) == 0x000004, "Wrong alignment on Button_SetBackgroundColor");
-static_assert(sizeof(Button_SetBackgroundColor) == 0x000010, "Wrong size on Button_SetBackgroundColor");
-static_assert(offsetof(Button_SetBackgroundColor, InBackgroundColor) == 0x000000, "Member 'Button_SetBackgroundColor::InBackgroundColor' has a wrong offset!");
-
-// Function UMG.Button.SetClickMethod
-// 0x0001 (0x0001 - 0x0000)
-struct Button_SetClickMethod final
-{
-public:
-	EButtonClickMethod                            InClickMethod;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(Button_SetClickMethod) == 0x000001, "Wrong alignment on Button_SetClickMethod");
-static_assert(sizeof(Button_SetClickMethod) == 0x000001, "Wrong size on Button_SetClickMethod");
-static_assert(offsetof(Button_SetClickMethod, InClickMethod) == 0x000000, "Member 'Button_SetClickMethod::InClickMethod' has a wrong offset!");
-
-// Function UMG.Button.SetColorAndOpacity
-// 0x0010 (0x0010 - 0x0000)
-struct Button_SetColorAndOpacity final
-{
-public:
-	struct FLinearColor                           InColorAndOpacity;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(Button_SetColorAndOpacity) == 0x000004, "Wrong alignment on Button_SetColorAndOpacity");
-static_assert(sizeof(Button_SetColorAndOpacity) == 0x000010, "Wrong size on Button_SetColorAndOpacity");
-static_assert(offsetof(Button_SetColorAndOpacity, InColorAndOpacity) == 0x000000, "Member 'Button_SetColorAndOpacity::InColorAndOpacity' has a wrong offset!");
-
-// Function UMG.Button.SetPressMethod
-// 0x0001 (0x0001 - 0x0000)
-struct Button_SetPressMethod final
-{
-public:
-	EButtonPressMethod                            InPressMethod;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(Button_SetPressMethod) == 0x000001, "Wrong alignment on Button_SetPressMethod");
-static_assert(sizeof(Button_SetPressMethod) == 0x000001, "Wrong size on Button_SetPressMethod");
-static_assert(offsetof(Button_SetPressMethod, InPressMethod) == 0x000000, "Member 'Button_SetPressMethod::InPressMethod' has a wrong offset!");
-
-// Function UMG.Button.SetStyle
-// 0x0278 (0x0278 - 0x0000)
-struct Button_SetStyle final
-{
-public:
-	struct FButtonStyle                           InStyle;                                           // 0x0000(0x0278)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(Button_SetStyle) == 0x000008, "Wrong alignment on Button_SetStyle");
-static_assert(sizeof(Button_SetStyle) == 0x000278, "Wrong size on Button_SetStyle");
-static_assert(offsetof(Button_SetStyle, InStyle) == 0x000000, "Member 'Button_SetStyle::InStyle' has a wrong offset!");
-
-// Function UMG.Button.SetTouchMethod
-// 0x0001 (0x0001 - 0x0000)
-struct Button_SetTouchMethod final
-{
-public:
-	EButtonTouchMethod                            InTouchMethod;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(Button_SetTouchMethod) == 0x000001, "Wrong alignment on Button_SetTouchMethod");
-static_assert(sizeof(Button_SetTouchMethod) == 0x000001, "Wrong size on Button_SetTouchMethod");
-static_assert(offsetof(Button_SetTouchMethod, InTouchMethod) == 0x000000, "Member 'Button_SetTouchMethod::InTouchMethod' has a wrong offset!");
-
-// Function UMG.Button.IsPressed
-// 0x0001 (0x0001 - 0x0000)
-struct Button_IsPressed final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(Button_IsPressed) == 0x000001, "Wrong alignment on Button_IsPressed");
-static_assert(sizeof(Button_IsPressed) == 0x000001, "Wrong size on Button_IsPressed");
-static_assert(offsetof(Button_IsPressed, ReturnValue) == 0x000000, "Member 'Button_IsPressed::ReturnValue' has a wrong offset!");
 
 // Function UMG.ScrollBox.ScrollWidgetIntoView
 // 0x0010 (0x0010 - 0x0000)
@@ -3432,72 +3178,6 @@ static_assert(alignof(ScrollBox_GetViewOffsetFraction) == 0x000004, "Wrong align
 static_assert(sizeof(ScrollBox_GetViewOffsetFraction) == 0x000004, "Wrong size on ScrollBox_GetViewOffsetFraction");
 static_assert(offsetof(ScrollBox_GetViewOffsetFraction, ReturnValue) == 0x000000, "Member 'ScrollBox_GetViewOffsetFraction::ReturnValue' has a wrong offset!");
 
-// Function UMG.MultiLineEditableText.SetHintText
-// 0x0018 (0x0018 - 0x0000)
-struct MultiLineEditableText_SetHintText final
-{
-public:
-	class FText                                   InHintText;                                        // 0x0000(0x0018)(Parm, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(MultiLineEditableText_SetHintText) == 0x000008, "Wrong alignment on MultiLineEditableText_SetHintText");
-static_assert(sizeof(MultiLineEditableText_SetHintText) == 0x000018, "Wrong size on MultiLineEditableText_SetHintText");
-static_assert(offsetof(MultiLineEditableText_SetHintText, InHintText) == 0x000000, "Member 'MultiLineEditableText_SetHintText::InHintText' has a wrong offset!");
-
-// Function UMG.MultiLineEditableText.SetIsReadOnly
-// 0x0001 (0x0001 - 0x0000)
-struct MultiLineEditableText_SetIsReadOnly final
-{
-public:
-	bool                                          bReadOnly;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(MultiLineEditableText_SetIsReadOnly) == 0x000001, "Wrong alignment on MultiLineEditableText_SetIsReadOnly");
-static_assert(sizeof(MultiLineEditableText_SetIsReadOnly) == 0x000001, "Wrong size on MultiLineEditableText_SetIsReadOnly");
-static_assert(offsetof(MultiLineEditableText_SetIsReadOnly, bReadOnly) == 0x000000, "Member 'MultiLineEditableText_SetIsReadOnly::bReadOnly' has a wrong offset!");
-
-// Function UMG.MultiLineEditableText.SetText
-// 0x0018 (0x0018 - 0x0000)
-struct MultiLineEditableText_SetText final
-{
-public:
-	class FText                                   InText;                                            // 0x0000(0x0018)(Parm, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(MultiLineEditableText_SetText) == 0x000008, "Wrong alignment on MultiLineEditableText_SetText");
-static_assert(sizeof(MultiLineEditableText_SetText) == 0x000018, "Wrong size on MultiLineEditableText_SetText");
-static_assert(offsetof(MultiLineEditableText_SetText, InText) == 0x000000, "Member 'MultiLineEditableText_SetText::InText' has a wrong offset!");
-
-// Function UMG.MultiLineEditableText.SetWidgetStyle
-// 0x0270 (0x0270 - 0x0000)
-struct MultiLineEditableText_SetWidgetStyle final
-{
-public:
-	struct FTextBlockStyle                        InWidgetStyle;                                     // 0x0000(0x0270)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(MultiLineEditableText_SetWidgetStyle) == 0x000008, "Wrong alignment on MultiLineEditableText_SetWidgetStyle");
-static_assert(sizeof(MultiLineEditableText_SetWidgetStyle) == 0x000270, "Wrong size on MultiLineEditableText_SetWidgetStyle");
-static_assert(offsetof(MultiLineEditableText_SetWidgetStyle, InWidgetStyle) == 0x000000, "Member 'MultiLineEditableText_SetWidgetStyle::InWidgetStyle' has a wrong offset!");
-
-// Function UMG.MultiLineEditableText.GetHintText
-// 0x0018 (0x0018 - 0x0000)
-struct MultiLineEditableText_GetHintText final
-{
-public:
-	class FText                                   ReturnValue;                                       // 0x0000(0x0018)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(MultiLineEditableText_GetHintText) == 0x000008, "Wrong alignment on MultiLineEditableText_GetHintText");
-static_assert(sizeof(MultiLineEditableText_GetHintText) == 0x000018, "Wrong size on MultiLineEditableText_GetHintText");
-static_assert(offsetof(MultiLineEditableText_GetHintText, ReturnValue) == 0x000000, "Member 'MultiLineEditableText_GetHintText::ReturnValue' has a wrong offset!");
-
-// Function UMG.MultiLineEditableText.GetText
-// 0x0018 (0x0018 - 0x0000)
-struct MultiLineEditableText_GetText final
-{
-public:
-	class FText                                   ReturnValue;                                       // 0x0000(0x0018)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(MultiLineEditableText_GetText) == 0x000008, "Wrong alignment on MultiLineEditableText_GetText");
-static_assert(sizeof(MultiLineEditableText_GetText) == 0x000018, "Wrong size on MultiLineEditableText_GetText");
-static_assert(offsetof(MultiLineEditableText_GetText, ReturnValue) == 0x000000, "Member 'MultiLineEditableText_GetText::ReturnValue' has a wrong offset!");
-
 // Function UMG.TextBlock.GetDynamicFontMaterial
 // 0x0008 (0x0008 - 0x0000)
 struct TextBlock_GetDynamicFontMaterial final
@@ -3641,6 +3321,52 @@ static_assert(alignof(TextBlock_GetText) == 0x000008, "Wrong alignment on TextBl
 static_assert(sizeof(TextBlock_GetText) == 0x000018, "Wrong size on TextBlock_GetText");
 static_assert(offsetof(TextBlock_GetText, ReturnValue) == 0x000000, "Member 'TextBlock_GetText::ReturnValue' has a wrong offset!");
 
+// Function UMG.UserListEntry.BP_OnItemExpansionChanged
+// 0x0001 (0x0001 - 0x0000)
+struct UserListEntry_BP_OnItemExpansionChanged final
+{
+public:
+	bool                                          bIsExpanded;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(UserListEntry_BP_OnItemExpansionChanged) == 0x000001, "Wrong alignment on UserListEntry_BP_OnItemExpansionChanged");
+static_assert(sizeof(UserListEntry_BP_OnItemExpansionChanged) == 0x000001, "Wrong size on UserListEntry_BP_OnItemExpansionChanged");
+static_assert(offsetof(UserListEntry_BP_OnItemExpansionChanged, bIsExpanded) == 0x000000, "Member 'UserListEntry_BP_OnItemExpansionChanged::bIsExpanded' has a wrong offset!");
+
+// Function UMG.UserListEntry.BP_OnItemSelectionChanged
+// 0x0001 (0x0001 - 0x0000)
+struct UserListEntry_BP_OnItemSelectionChanged final
+{
+public:
+	bool                                          bIsSelected;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(UserListEntry_BP_OnItemSelectionChanged) == 0x000001, "Wrong alignment on UserListEntry_BP_OnItemSelectionChanged");
+static_assert(sizeof(UserListEntry_BP_OnItemSelectionChanged) == 0x000001, "Wrong size on UserListEntry_BP_OnItemSelectionChanged");
+static_assert(offsetof(UserListEntry_BP_OnItemSelectionChanged, bIsSelected) == 0x000000, "Member 'UserListEntry_BP_OnItemSelectionChanged::bIsSelected' has a wrong offset!");
+
+// Function UMG.VerticalBox.AddChildToVerticalBox
+// 0x0010 (0x0010 - 0x0000)
+struct VerticalBox_AddChildToVerticalBox final
+{
+public:
+	class UWidget*                                Content;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UVerticalBoxSlot*                       ReturnValue;                                       // 0x0008(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(VerticalBox_AddChildToVerticalBox) == 0x000008, "Wrong alignment on VerticalBox_AddChildToVerticalBox");
+static_assert(sizeof(VerticalBox_AddChildToVerticalBox) == 0x000010, "Wrong size on VerticalBox_AddChildToVerticalBox");
+static_assert(offsetof(VerticalBox_AddChildToVerticalBox, Content) == 0x000000, "Member 'VerticalBox_AddChildToVerticalBox::Content' has a wrong offset!");
+static_assert(offsetof(VerticalBox_AddChildToVerticalBox, ReturnValue) == 0x000008, "Member 'VerticalBox_AddChildToVerticalBox::ReturnValue' has a wrong offset!");
+
+// Function UMG.VerticalBox.SetSlotSpacing
+// 0x0004 (0x0004 - 0x0000)
+struct VerticalBox_SetSlotSpacing final
+{
+public:
+	float                                         InSpacing;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(VerticalBox_SetSlotSpacing) == 0x000004, "Wrong alignment on VerticalBox_SetSlotSpacing");
+static_assert(sizeof(VerticalBox_SetSlotSpacing) == 0x000004, "Wrong size on VerticalBox_SetSlotSpacing");
+static_assert(offsetof(VerticalBox_SetSlotSpacing, InSpacing) == 0x000000, "Member 'VerticalBox_SetSlotSpacing::InSpacing' has a wrong offset!");
+
 // Function UMG.AsyncTaskDownloadImage.DownloadImage
 // 0x0018 (0x0018 - 0x0000)
 struct AsyncTaskDownloadImage_DownloadImage final
@@ -3653,83 +3379,6 @@ static_assert(alignof(AsyncTaskDownloadImage_DownloadImage) == 0x000008, "Wrong 
 static_assert(sizeof(AsyncTaskDownloadImage_DownloadImage) == 0x000018, "Wrong size on AsyncTaskDownloadImage_DownloadImage");
 static_assert(offsetof(AsyncTaskDownloadImage_DownloadImage, URL) == 0x000000, "Member 'AsyncTaskDownloadImage_DownloadImage::URL' has a wrong offset!");
 static_assert(offsetof(AsyncTaskDownloadImage_DownloadImage, ReturnValue) == 0x000010, "Member 'AsyncTaskDownloadImage_DownloadImage::ReturnValue' has a wrong offset!");
-
-// Function UMG.BackgroundBlur.SetApplyAlphaToBlur
-// 0x0001 (0x0001 - 0x0000)
-struct BackgroundBlur_SetApplyAlphaToBlur final
-{
-public:
-	bool                                          bInApplyAlphaToBlur;                               // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BackgroundBlur_SetApplyAlphaToBlur) == 0x000001, "Wrong alignment on BackgroundBlur_SetApplyAlphaToBlur");
-static_assert(sizeof(BackgroundBlur_SetApplyAlphaToBlur) == 0x000001, "Wrong size on BackgroundBlur_SetApplyAlphaToBlur");
-static_assert(offsetof(BackgroundBlur_SetApplyAlphaToBlur, bInApplyAlphaToBlur) == 0x000000, "Member 'BackgroundBlur_SetApplyAlphaToBlur::bInApplyAlphaToBlur' has a wrong offset!");
-
-// Function UMG.BackgroundBlur.SetBlurRadius
-// 0x0004 (0x0004 - 0x0000)
-struct BackgroundBlur_SetBlurRadius final
-{
-public:
-	int32                                         InBlurRadius;                                      // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BackgroundBlur_SetBlurRadius) == 0x000004, "Wrong alignment on BackgroundBlur_SetBlurRadius");
-static_assert(sizeof(BackgroundBlur_SetBlurRadius) == 0x000004, "Wrong size on BackgroundBlur_SetBlurRadius");
-static_assert(offsetof(BackgroundBlur_SetBlurRadius, InBlurRadius) == 0x000000, "Member 'BackgroundBlur_SetBlurRadius::InBlurRadius' has a wrong offset!");
-
-// Function UMG.BackgroundBlur.SetBlurStrength
-// 0x0004 (0x0004 - 0x0000)
-struct BackgroundBlur_SetBlurStrength final
-{
-public:
-	float                                         InStrength;                                        // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BackgroundBlur_SetBlurStrength) == 0x000004, "Wrong alignment on BackgroundBlur_SetBlurStrength");
-static_assert(sizeof(BackgroundBlur_SetBlurStrength) == 0x000004, "Wrong size on BackgroundBlur_SetBlurStrength");
-static_assert(offsetof(BackgroundBlur_SetBlurStrength, InStrength) == 0x000000, "Member 'BackgroundBlur_SetBlurStrength::InStrength' has a wrong offset!");
-
-// Function UMG.BackgroundBlur.SetHorizontalAlignment
-// 0x0001 (0x0001 - 0x0000)
-struct BackgroundBlur_SetHorizontalAlignment final
-{
-public:
-	EHorizontalAlignment                          InHorizontalAlignment;                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BackgroundBlur_SetHorizontalAlignment) == 0x000001, "Wrong alignment on BackgroundBlur_SetHorizontalAlignment");
-static_assert(sizeof(BackgroundBlur_SetHorizontalAlignment) == 0x000001, "Wrong size on BackgroundBlur_SetHorizontalAlignment");
-static_assert(offsetof(BackgroundBlur_SetHorizontalAlignment, InHorizontalAlignment) == 0x000000, "Member 'BackgroundBlur_SetHorizontalAlignment::InHorizontalAlignment' has a wrong offset!");
-
-// Function UMG.BackgroundBlur.SetLowQualityFallbackBrush
-// 0x0088 (0x0088 - 0x0000)
-struct BackgroundBlur_SetLowQualityFallbackBrush final
-{
-public:
-	struct FSlateBrush                            InBrush;                                           // 0x0000(0x0088)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BackgroundBlur_SetLowQualityFallbackBrush) == 0x000008, "Wrong alignment on BackgroundBlur_SetLowQualityFallbackBrush");
-static_assert(sizeof(BackgroundBlur_SetLowQualityFallbackBrush) == 0x000088, "Wrong size on BackgroundBlur_SetLowQualityFallbackBrush");
-static_assert(offsetof(BackgroundBlur_SetLowQualityFallbackBrush, InBrush) == 0x000000, "Member 'BackgroundBlur_SetLowQualityFallbackBrush::InBrush' has a wrong offset!");
-
-// Function UMG.BackgroundBlur.SetPadding
-// 0x0010 (0x0010 - 0x0000)
-struct BackgroundBlur_SetPadding final
-{
-public:
-	struct FMargin                                InPadding;                                         // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BackgroundBlur_SetPadding) == 0x000004, "Wrong alignment on BackgroundBlur_SetPadding");
-static_assert(sizeof(BackgroundBlur_SetPadding) == 0x000010, "Wrong size on BackgroundBlur_SetPadding");
-static_assert(offsetof(BackgroundBlur_SetPadding, InPadding) == 0x000000, "Member 'BackgroundBlur_SetPadding::InPadding' has a wrong offset!");
-
-// Function UMG.BackgroundBlur.SetVerticalAlignment
-// 0x0001 (0x0001 - 0x0000)
-struct BackgroundBlur_SetVerticalAlignment final
-{
-public:
-	EVerticalAlignment                            InVerticalAlignment;                               // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BackgroundBlur_SetVerticalAlignment) == 0x000001, "Wrong alignment on BackgroundBlur_SetVerticalAlignment");
-static_assert(sizeof(BackgroundBlur_SetVerticalAlignment) == 0x000001, "Wrong size on BackgroundBlur_SetVerticalAlignment");
-static_assert(offsetof(BackgroundBlur_SetVerticalAlignment, InVerticalAlignment) == 0x000000, "Member 'BackgroundBlur_SetVerticalAlignment::InVerticalAlignment' has a wrong offset!");
 
 // Function UMG.BackgroundBlurSlot.SetHorizontalAlignment
 // 0x0001 (0x0001 - 0x0000)
@@ -3819,38 +3468,82 @@ static_assert(alignof(BrushBinding_GetValue) == 0x000008, "Wrong alignment on Br
 static_assert(sizeof(BrushBinding_GetValue) == 0x000088, "Wrong size on BrushBinding_GetValue");
 static_assert(offsetof(BrushBinding_GetValue, ReturnValue) == 0x000000, "Member 'BrushBinding_GetValue::ReturnValue' has a wrong offset!");
 
-// Function UMG.ButtonSlot.SetHorizontalAlignment
-// 0x0001 (0x0001 - 0x0000)
-struct ButtonSlot_SetHorizontalAlignment final
-{
-public:
-	EHorizontalAlignment                          InHorizontalAlignment;                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(ButtonSlot_SetHorizontalAlignment) == 0x000001, "Wrong alignment on ButtonSlot_SetHorizontalAlignment");
-static_assert(sizeof(ButtonSlot_SetHorizontalAlignment) == 0x000001, "Wrong size on ButtonSlot_SetHorizontalAlignment");
-static_assert(offsetof(ButtonSlot_SetHorizontalAlignment, InHorizontalAlignment) == 0x000000, "Member 'ButtonSlot_SetHorizontalAlignment::InHorizontalAlignment' has a wrong offset!");
-
-// Function UMG.ButtonSlot.SetPadding
+// Function UMG.Button.SetBackgroundColor
 // 0x0010 (0x0010 - 0x0000)
-struct ButtonSlot_SetPadding final
+struct Button_SetBackgroundColor final
 {
 public:
-	struct FMargin                                InPadding;                                         // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	struct FLinearColor                           InBackgroundColor;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(ButtonSlot_SetPadding) == 0x000004, "Wrong alignment on ButtonSlot_SetPadding");
-static_assert(sizeof(ButtonSlot_SetPadding) == 0x000010, "Wrong size on ButtonSlot_SetPadding");
-static_assert(offsetof(ButtonSlot_SetPadding, InPadding) == 0x000000, "Member 'ButtonSlot_SetPadding::InPadding' has a wrong offset!");
+static_assert(alignof(Button_SetBackgroundColor) == 0x000004, "Wrong alignment on Button_SetBackgroundColor");
+static_assert(sizeof(Button_SetBackgroundColor) == 0x000010, "Wrong size on Button_SetBackgroundColor");
+static_assert(offsetof(Button_SetBackgroundColor, InBackgroundColor) == 0x000000, "Member 'Button_SetBackgroundColor::InBackgroundColor' has a wrong offset!");
 
-// Function UMG.ButtonSlot.SetVerticalAlignment
+// Function UMG.Button.SetClickMethod
 // 0x0001 (0x0001 - 0x0000)
-struct ButtonSlot_SetVerticalAlignment final
+struct Button_SetClickMethod final
 {
 public:
-	EVerticalAlignment                            InVerticalAlignment;                               // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EButtonClickMethod                            InClickMethod;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(ButtonSlot_SetVerticalAlignment) == 0x000001, "Wrong alignment on ButtonSlot_SetVerticalAlignment");
-static_assert(sizeof(ButtonSlot_SetVerticalAlignment) == 0x000001, "Wrong size on ButtonSlot_SetVerticalAlignment");
-static_assert(offsetof(ButtonSlot_SetVerticalAlignment, InVerticalAlignment) == 0x000000, "Member 'ButtonSlot_SetVerticalAlignment::InVerticalAlignment' has a wrong offset!");
+static_assert(alignof(Button_SetClickMethod) == 0x000001, "Wrong alignment on Button_SetClickMethod");
+static_assert(sizeof(Button_SetClickMethod) == 0x000001, "Wrong size on Button_SetClickMethod");
+static_assert(offsetof(Button_SetClickMethod, InClickMethod) == 0x000000, "Member 'Button_SetClickMethod::InClickMethod' has a wrong offset!");
+
+// Function UMG.Button.SetColorAndOpacity
+// 0x0010 (0x0010 - 0x0000)
+struct Button_SetColorAndOpacity final
+{
+public:
+	struct FLinearColor                           InColorAndOpacity;                                 // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(Button_SetColorAndOpacity) == 0x000004, "Wrong alignment on Button_SetColorAndOpacity");
+static_assert(sizeof(Button_SetColorAndOpacity) == 0x000010, "Wrong size on Button_SetColorAndOpacity");
+static_assert(offsetof(Button_SetColorAndOpacity, InColorAndOpacity) == 0x000000, "Member 'Button_SetColorAndOpacity::InColorAndOpacity' has a wrong offset!");
+
+// Function UMG.Button.SetPressMethod
+// 0x0001 (0x0001 - 0x0000)
+struct Button_SetPressMethod final
+{
+public:
+	EButtonPressMethod                            InPressMethod;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(Button_SetPressMethod) == 0x000001, "Wrong alignment on Button_SetPressMethod");
+static_assert(sizeof(Button_SetPressMethod) == 0x000001, "Wrong size on Button_SetPressMethod");
+static_assert(offsetof(Button_SetPressMethod, InPressMethod) == 0x000000, "Member 'Button_SetPressMethod::InPressMethod' has a wrong offset!");
+
+// Function UMG.Button.SetStyle
+// 0x0278 (0x0278 - 0x0000)
+struct Button_SetStyle final
+{
+public:
+	struct FButtonStyle                           InStyle;                                           // 0x0000(0x0278)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(Button_SetStyle) == 0x000008, "Wrong alignment on Button_SetStyle");
+static_assert(sizeof(Button_SetStyle) == 0x000278, "Wrong size on Button_SetStyle");
+static_assert(offsetof(Button_SetStyle, InStyle) == 0x000000, "Member 'Button_SetStyle::InStyle' has a wrong offset!");
+
+// Function UMG.Button.SetTouchMethod
+// 0x0001 (0x0001 - 0x0000)
+struct Button_SetTouchMethod final
+{
+public:
+	EButtonTouchMethod                            InTouchMethod;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(Button_SetTouchMethod) == 0x000001, "Wrong alignment on Button_SetTouchMethod");
+static_assert(sizeof(Button_SetTouchMethod) == 0x000001, "Wrong size on Button_SetTouchMethod");
+static_assert(offsetof(Button_SetTouchMethod, InTouchMethod) == 0x000000, "Member 'Button_SetTouchMethod::InTouchMethod' has a wrong offset!");
+
+// Function UMG.Button.IsPressed
+// 0x0001 (0x0001 - 0x0000)
+struct Button_IsPressed final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(Button_IsPressed) == 0x000001, "Wrong alignment on Button_IsPressed");
+static_assert(sizeof(Button_IsPressed) == 0x000001, "Wrong size on Button_IsPressed");
+static_assert(offsetof(Button_IsPressed, ReturnValue) == 0x000000, "Member 'Button_IsPressed::ReturnValue' has a wrong offset!");
 
 // Function UMG.CanvasPanel.AddChildToCanvas
 // 0x0010 (0x0010 - 0x0000)
@@ -4217,125 +3910,6 @@ static_assert(alignof(ColorBinding_GetSlateValue) == 0x000008, "Wrong alignment 
 static_assert(sizeof(ColorBinding_GetSlateValue) == 0x000028, "Wrong size on ColorBinding_GetSlateValue");
 static_assert(offsetof(ColorBinding_GetSlateValue, ReturnValue) == 0x000000, "Member 'ColorBinding_GetSlateValue::ReturnValue' has a wrong offset!");
 
-// Function UMG.ComboBoxString.AddOption
-// 0x0010 (0x0010 - 0x0000)
-struct ComboBoxString_AddOption final
-{
-public:
-	class FString                                 Option;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(ComboBoxString_AddOption) == 0x000008, "Wrong alignment on ComboBoxString_AddOption");
-static_assert(sizeof(ComboBoxString_AddOption) == 0x000010, "Wrong size on ComboBoxString_AddOption");
-static_assert(offsetof(ComboBoxString_AddOption, Option) == 0x000000, "Member 'ComboBoxString_AddOption::Option' has a wrong offset!");
-
-// Function UMG.ComboBoxString.RemoveOption
-// 0x0018 (0x0018 - 0x0000)
-struct ComboBoxString_RemoveOption final
-{
-public:
-	class FString                                 Option;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(ComboBoxString_RemoveOption) == 0x000008, "Wrong alignment on ComboBoxString_RemoveOption");
-static_assert(sizeof(ComboBoxString_RemoveOption) == 0x000018, "Wrong size on ComboBoxString_RemoveOption");
-static_assert(offsetof(ComboBoxString_RemoveOption, Option) == 0x000000, "Member 'ComboBoxString_RemoveOption::Option' has a wrong offset!");
-static_assert(offsetof(ComboBoxString_RemoveOption, ReturnValue) == 0x000010, "Member 'ComboBoxString_RemoveOption::ReturnValue' has a wrong offset!");
-
-// Function UMG.ComboBoxString.SetSelectedIndex
-// 0x0004 (0x0004 - 0x0000)
-struct ComboBoxString_SetSelectedIndex final
-{
-public:
-	int32                                         Index_0;                                           // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(ComboBoxString_SetSelectedIndex) == 0x000004, "Wrong alignment on ComboBoxString_SetSelectedIndex");
-static_assert(sizeof(ComboBoxString_SetSelectedIndex) == 0x000004, "Wrong size on ComboBoxString_SetSelectedIndex");
-static_assert(offsetof(ComboBoxString_SetSelectedIndex, Index_0) == 0x000000, "Member 'ComboBoxString_SetSelectedIndex::Index_0' has a wrong offset!");
-
-// Function UMG.ComboBoxString.SetSelectedOption
-// 0x0010 (0x0010 - 0x0000)
-struct ComboBoxString_SetSelectedOption final
-{
-public:
-	class FString                                 Option;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(ComboBoxString_SetSelectedOption) == 0x000008, "Wrong alignment on ComboBoxString_SetSelectedOption");
-static_assert(sizeof(ComboBoxString_SetSelectedOption) == 0x000010, "Wrong size on ComboBoxString_SetSelectedOption");
-static_assert(offsetof(ComboBoxString_SetSelectedOption, Option) == 0x000000, "Member 'ComboBoxString_SetSelectedOption::Option' has a wrong offset!");
-
-// Function UMG.ComboBoxString.FindOptionIndex
-// 0x0018 (0x0018 - 0x0000)
-struct ComboBoxString_FindOptionIndex final
-{
-public:
-	class FString                                 Option;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(ComboBoxString_FindOptionIndex) == 0x000008, "Wrong alignment on ComboBoxString_FindOptionIndex");
-static_assert(sizeof(ComboBoxString_FindOptionIndex) == 0x000018, "Wrong size on ComboBoxString_FindOptionIndex");
-static_assert(offsetof(ComboBoxString_FindOptionIndex, Option) == 0x000000, "Member 'ComboBoxString_FindOptionIndex::Option' has a wrong offset!");
-static_assert(offsetof(ComboBoxString_FindOptionIndex, ReturnValue) == 0x000010, "Member 'ComboBoxString_FindOptionIndex::ReturnValue' has a wrong offset!");
-
-// Function UMG.ComboBoxString.GetOptionAtIndex
-// 0x0018 (0x0018 - 0x0000)
-struct ComboBoxString_GetOptionAtIndex final
-{
-public:
-	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 ReturnValue;                                       // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(ComboBoxString_GetOptionAtIndex) == 0x000008, "Wrong alignment on ComboBoxString_GetOptionAtIndex");
-static_assert(sizeof(ComboBoxString_GetOptionAtIndex) == 0x000018, "Wrong size on ComboBoxString_GetOptionAtIndex");
-static_assert(offsetof(ComboBoxString_GetOptionAtIndex, Index_0) == 0x000000, "Member 'ComboBoxString_GetOptionAtIndex::Index_0' has a wrong offset!");
-static_assert(offsetof(ComboBoxString_GetOptionAtIndex, ReturnValue) == 0x000008, "Member 'ComboBoxString_GetOptionAtIndex::ReturnValue' has a wrong offset!");
-
-// Function UMG.ComboBoxString.GetOptionCount
-// 0x0004 (0x0004 - 0x0000)
-struct ComboBoxString_GetOptionCount final
-{
-public:
-	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(ComboBoxString_GetOptionCount) == 0x000004, "Wrong alignment on ComboBoxString_GetOptionCount");
-static_assert(sizeof(ComboBoxString_GetOptionCount) == 0x000004, "Wrong size on ComboBoxString_GetOptionCount");
-static_assert(offsetof(ComboBoxString_GetOptionCount, ReturnValue) == 0x000000, "Member 'ComboBoxString_GetOptionCount::ReturnValue' has a wrong offset!");
-
-// Function UMG.ComboBoxString.GetSelectedIndex
-// 0x0004 (0x0004 - 0x0000)
-struct ComboBoxString_GetSelectedIndex final
-{
-public:
-	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(ComboBoxString_GetSelectedIndex) == 0x000004, "Wrong alignment on ComboBoxString_GetSelectedIndex");
-static_assert(sizeof(ComboBoxString_GetSelectedIndex) == 0x000004, "Wrong size on ComboBoxString_GetSelectedIndex");
-static_assert(offsetof(ComboBoxString_GetSelectedIndex, ReturnValue) == 0x000000, "Member 'ComboBoxString_GetSelectedIndex::ReturnValue' has a wrong offset!");
-
-// Function UMG.ComboBoxString.GetSelectedOption
-// 0x0010 (0x0010 - 0x0000)
-struct ComboBoxString_GetSelectedOption final
-{
-public:
-	class FString                                 ReturnValue;                                       // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(ComboBoxString_GetSelectedOption) == 0x000008, "Wrong alignment on ComboBoxString_GetSelectedOption");
-static_assert(sizeof(ComboBoxString_GetSelectedOption) == 0x000010, "Wrong size on ComboBoxString_GetSelectedOption");
-static_assert(offsetof(ComboBoxString_GetSelectedOption, ReturnValue) == 0x000000, "Member 'ComboBoxString_GetSelectedOption::ReturnValue' has a wrong offset!");
-
-// Function UMG.ComboBoxString.IsOpen
-// 0x0001 (0x0001 - 0x0000)
-struct ComboBoxString_IsOpen final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(ComboBoxString_IsOpen) == 0x000001, "Wrong alignment on ComboBoxString_IsOpen");
-static_assert(sizeof(ComboBoxString_IsOpen) == 0x000001, "Wrong size on ComboBoxString_IsOpen");
-static_assert(offsetof(ComboBoxString_IsOpen, ReturnValue) == 0x000000, "Member 'ComboBoxString_IsOpen::ReturnValue' has a wrong offset!");
-
 // Function UMG.DragDropOperation.DragCancelled
 // 0x0070 (0x0070 - 0x0000)
 struct DragDropOperation_DragCancelled final
@@ -4459,6 +4033,226 @@ static_assert(alignof(DynamicEntryBox_Reset) == 0x000001, "Wrong alignment on Dy
 static_assert(sizeof(DynamicEntryBox_Reset) == 0x000001, "Wrong size on DynamicEntryBox_Reset");
 static_assert(offsetof(DynamicEntryBox_Reset, bDeleteWidgets) == 0x000000, "Member 'DynamicEntryBox_Reset::bDeleteWidgets' has a wrong offset!");
 
+// Function UMG.EditableText.SetHintText
+// 0x0018 (0x0018 - 0x0000)
+struct EditableText_SetHintText final
+{
+public:
+	class FText                                   InHintText;                                        // 0x0000(0x0018)(Parm, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(EditableText_SetHintText) == 0x000008, "Wrong alignment on EditableText_SetHintText");
+static_assert(sizeof(EditableText_SetHintText) == 0x000018, "Wrong size on EditableText_SetHintText");
+static_assert(offsetof(EditableText_SetHintText, InHintText) == 0x000000, "Member 'EditableText_SetHintText::InHintText' has a wrong offset!");
+
+// Function UMG.EditableText.SetIsPassword
+// 0x0001 (0x0001 - 0x0000)
+struct EditableText_SetIsPassword final
+{
+public:
+	bool                                          InbIsPassword;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(EditableText_SetIsPassword) == 0x000001, "Wrong alignment on EditableText_SetIsPassword");
+static_assert(sizeof(EditableText_SetIsPassword) == 0x000001, "Wrong size on EditableText_SetIsPassword");
+static_assert(offsetof(EditableText_SetIsPassword, InbIsPassword) == 0x000000, "Member 'EditableText_SetIsPassword::InbIsPassword' has a wrong offset!");
+
+// Function UMG.EditableText.SetIsReadOnly
+// 0x0001 (0x0001 - 0x0000)
+struct EditableText_SetIsReadOnly final
+{
+public:
+	bool                                          InbIsReadyOnly;                                    // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(EditableText_SetIsReadOnly) == 0x000001, "Wrong alignment on EditableText_SetIsReadOnly");
+static_assert(sizeof(EditableText_SetIsReadOnly) == 0x000001, "Wrong size on EditableText_SetIsReadOnly");
+static_assert(offsetof(EditableText_SetIsReadOnly, InbIsReadyOnly) == 0x000000, "Member 'EditableText_SetIsReadOnly::InbIsReadyOnly' has a wrong offset!");
+
+// Function UMG.EditableText.SetJustification
+// 0x0001 (0x0001 - 0x0000)
+struct EditableText_SetJustification final
+{
+public:
+	ETextJustify                                  InJustification;                                   // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(EditableText_SetJustification) == 0x000001, "Wrong alignment on EditableText_SetJustification");
+static_assert(sizeof(EditableText_SetJustification) == 0x000001, "Wrong size on EditableText_SetJustification");
+static_assert(offsetof(EditableText_SetJustification, InJustification) == 0x000000, "Member 'EditableText_SetJustification::InJustification' has a wrong offset!");
+
+// Function UMG.EditableText.SetText
+// 0x0018 (0x0018 - 0x0000)
+struct EditableText_SetText final
+{
+public:
+	class FText                                   InText;                                            // 0x0000(0x0018)(Parm, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(EditableText_SetText) == 0x000008, "Wrong alignment on EditableText_SetText");
+static_assert(sizeof(EditableText_SetText) == 0x000018, "Wrong size on EditableText_SetText");
+static_assert(offsetof(EditableText_SetText, InText) == 0x000000, "Member 'EditableText_SetText::InText' has a wrong offset!");
+
+// Function UMG.EditableText.GetText
+// 0x0018 (0x0018 - 0x0000)
+struct EditableText_GetText final
+{
+public:
+	class FText                                   ReturnValue;                                       // 0x0000(0x0018)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(EditableText_GetText) == 0x000008, "Wrong alignment on EditableText_GetText");
+static_assert(sizeof(EditableText_GetText) == 0x000018, "Wrong size on EditableText_GetText");
+static_assert(offsetof(EditableText_GetText, ReturnValue) == 0x000000, "Member 'EditableText_GetText::ReturnValue' has a wrong offset!");
+
+// Function UMG.FloatBinding.GetValue
+// 0x0004 (0x0004 - 0x0000)
+struct FloatBinding_GetValue final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FloatBinding_GetValue) == 0x000004, "Wrong alignment on FloatBinding_GetValue");
+static_assert(sizeof(FloatBinding_GetValue) == 0x000004, "Wrong size on FloatBinding_GetValue");
+static_assert(offsetof(FloatBinding_GetValue, ReturnValue) == 0x000000, "Member 'FloatBinding_GetValue::ReturnValue' has a wrong offset!");
+
+// Function UMG.GridSlot.SetColumn
+// 0x0004 (0x0004 - 0x0000)
+struct GridSlot_SetColumn final
+{
+public:
+	int32                                         InColumn;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(GridSlot_SetColumn) == 0x000004, "Wrong alignment on GridSlot_SetColumn");
+static_assert(sizeof(GridSlot_SetColumn) == 0x000004, "Wrong size on GridSlot_SetColumn");
+static_assert(offsetof(GridSlot_SetColumn, InColumn) == 0x000000, "Member 'GridSlot_SetColumn::InColumn' has a wrong offset!");
+
+// Function UMG.GridSlot.SetColumnSpan
+// 0x0004 (0x0004 - 0x0000)
+struct GridSlot_SetColumnSpan final
+{
+public:
+	int32                                         InColumnSpan;                                      // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(GridSlot_SetColumnSpan) == 0x000004, "Wrong alignment on GridSlot_SetColumnSpan");
+static_assert(sizeof(GridSlot_SetColumnSpan) == 0x000004, "Wrong size on GridSlot_SetColumnSpan");
+static_assert(offsetof(GridSlot_SetColumnSpan, InColumnSpan) == 0x000000, "Member 'GridSlot_SetColumnSpan::InColumnSpan' has a wrong offset!");
+
+// Function UMG.GridSlot.SetHorizontalAlignment
+// 0x0001 (0x0001 - 0x0000)
+struct GridSlot_SetHorizontalAlignment final
+{
+public:
+	EHorizontalAlignment                          InHorizontalAlignment;                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(GridSlot_SetHorizontalAlignment) == 0x000001, "Wrong alignment on GridSlot_SetHorizontalAlignment");
+static_assert(sizeof(GridSlot_SetHorizontalAlignment) == 0x000001, "Wrong size on GridSlot_SetHorizontalAlignment");
+static_assert(offsetof(GridSlot_SetHorizontalAlignment, InHorizontalAlignment) == 0x000000, "Member 'GridSlot_SetHorizontalAlignment::InHorizontalAlignment' has a wrong offset!");
+
+// Function UMG.GridSlot.SetLayer
+// 0x0004 (0x0004 - 0x0000)
+struct GridSlot_SetLayer final
+{
+public:
+	int32                                         InLayer;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(GridSlot_SetLayer) == 0x000004, "Wrong alignment on GridSlot_SetLayer");
+static_assert(sizeof(GridSlot_SetLayer) == 0x000004, "Wrong size on GridSlot_SetLayer");
+static_assert(offsetof(GridSlot_SetLayer, InLayer) == 0x000000, "Member 'GridSlot_SetLayer::InLayer' has a wrong offset!");
+
+// Function UMG.GridSlot.SetNudge
+// 0x0008 (0x0008 - 0x0000)
+struct GridSlot_SetNudge final
+{
+public:
+	struct FVector2D                              InNudge;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(GridSlot_SetNudge) == 0x000004, "Wrong alignment on GridSlot_SetNudge");
+static_assert(sizeof(GridSlot_SetNudge) == 0x000008, "Wrong size on GridSlot_SetNudge");
+static_assert(offsetof(GridSlot_SetNudge, InNudge) == 0x000000, "Member 'GridSlot_SetNudge::InNudge' has a wrong offset!");
+
+// Function UMG.GridSlot.SetPadding
+// 0x0010 (0x0010 - 0x0000)
+struct GridSlot_SetPadding final
+{
+public:
+	struct FMargin                                InPadding;                                         // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(GridSlot_SetPadding) == 0x000004, "Wrong alignment on GridSlot_SetPadding");
+static_assert(sizeof(GridSlot_SetPadding) == 0x000010, "Wrong size on GridSlot_SetPadding");
+static_assert(offsetof(GridSlot_SetPadding, InPadding) == 0x000000, "Member 'GridSlot_SetPadding::InPadding' has a wrong offset!");
+
+// Function UMG.GridSlot.SetRow
+// 0x0004 (0x0004 - 0x0000)
+struct GridSlot_SetRow final
+{
+public:
+	int32                                         InRow;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(GridSlot_SetRow) == 0x000004, "Wrong alignment on GridSlot_SetRow");
+static_assert(sizeof(GridSlot_SetRow) == 0x000004, "Wrong size on GridSlot_SetRow");
+static_assert(offsetof(GridSlot_SetRow, InRow) == 0x000000, "Member 'GridSlot_SetRow::InRow' has a wrong offset!");
+
+// Function UMG.GridSlot.SetRowSpan
+// 0x0004 (0x0004 - 0x0000)
+struct GridSlot_SetRowSpan final
+{
+public:
+	int32                                         InRowSpan;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(GridSlot_SetRowSpan) == 0x000004, "Wrong alignment on GridSlot_SetRowSpan");
+static_assert(sizeof(GridSlot_SetRowSpan) == 0x000004, "Wrong size on GridSlot_SetRowSpan");
+static_assert(offsetof(GridSlot_SetRowSpan, InRowSpan) == 0x000000, "Member 'GridSlot_SetRowSpan::InRowSpan' has a wrong offset!");
+
+// Function UMG.GridSlot.SetVerticalAlignment
+// 0x0001 (0x0001 - 0x0000)
+struct GridSlot_SetVerticalAlignment final
+{
+public:
+	EVerticalAlignment                            InVerticalAlignment;                               // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(GridSlot_SetVerticalAlignment) == 0x000001, "Wrong alignment on GridSlot_SetVerticalAlignment");
+static_assert(sizeof(GridSlot_SetVerticalAlignment) == 0x000001, "Wrong size on GridSlot_SetVerticalAlignment");
+static_assert(offsetof(GridSlot_SetVerticalAlignment, InVerticalAlignment) == 0x000000, "Member 'GridSlot_SetVerticalAlignment::InVerticalAlignment' has a wrong offset!");
+
+// Function UMG.HorizontalBoxSlot.SetHorizontalAlignment
+// 0x0001 (0x0001 - 0x0000)
+struct HorizontalBoxSlot_SetHorizontalAlignment final
+{
+public:
+	EHorizontalAlignment                          InHorizontalAlignment;                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(HorizontalBoxSlot_SetHorizontalAlignment) == 0x000001, "Wrong alignment on HorizontalBoxSlot_SetHorizontalAlignment");
+static_assert(sizeof(HorizontalBoxSlot_SetHorizontalAlignment) == 0x000001, "Wrong size on HorizontalBoxSlot_SetHorizontalAlignment");
+static_assert(offsetof(HorizontalBoxSlot_SetHorizontalAlignment, InHorizontalAlignment) == 0x000000, "Member 'HorizontalBoxSlot_SetHorizontalAlignment::InHorizontalAlignment' has a wrong offset!");
+
+// Function UMG.HorizontalBoxSlot.SetPadding
+// 0x0010 (0x0010 - 0x0000)
+struct HorizontalBoxSlot_SetPadding final
+{
+public:
+	struct FMargin                                InPadding;                                         // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(HorizontalBoxSlot_SetPadding) == 0x000004, "Wrong alignment on HorizontalBoxSlot_SetPadding");
+static_assert(sizeof(HorizontalBoxSlot_SetPadding) == 0x000010, "Wrong size on HorizontalBoxSlot_SetPadding");
+static_assert(offsetof(HorizontalBoxSlot_SetPadding, InPadding) == 0x000000, "Member 'HorizontalBoxSlot_SetPadding::InPadding' has a wrong offset!");
+
+// Function UMG.HorizontalBoxSlot.SetSize
+// 0x0008 (0x0008 - 0x0000)
+struct HorizontalBoxSlot_SetSize final
+{
+public:
+	struct FSlateChildSize                        InSize;                                            // 0x0000(0x0008)(Parm, NoDestructor, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(HorizontalBoxSlot_SetSize) == 0x000004, "Wrong alignment on HorizontalBoxSlot_SetSize");
+static_assert(sizeof(HorizontalBoxSlot_SetSize) == 0x000008, "Wrong size on HorizontalBoxSlot_SetSize");
+static_assert(offsetof(HorizontalBoxSlot_SetSize, InSize) == 0x000000, "Member 'HorizontalBoxSlot_SetSize::InSize' has a wrong offset!");
+
+// Function UMG.HorizontalBoxSlot.SetVerticalAlignment
+// 0x0001 (0x0001 - 0x0000)
+struct HorizontalBoxSlot_SetVerticalAlignment final
+{
+public:
+	EVerticalAlignment                            InVerticalAlignment;                               // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(HorizontalBoxSlot_SetVerticalAlignment) == 0x000001, "Wrong alignment on HorizontalBoxSlot_SetVerticalAlignment");
+static_assert(sizeof(HorizontalBoxSlot_SetVerticalAlignment) == 0x000001, "Wrong size on HorizontalBoxSlot_SetVerticalAlignment");
+static_assert(offsetof(HorizontalBoxSlot_SetVerticalAlignment, InVerticalAlignment) == 0x000000, "Member 'HorizontalBoxSlot_SetVerticalAlignment::InVerticalAlignment' has a wrong offset!");
+
 // Function UMG.InputKeySelector.SetAllowGamepadKeys
 // 0x0001 (0x0001 - 0x0000)
 struct InputKeySelector_SetAllowGamepadKeys final
@@ -4547,38 +4341,46 @@ static_assert(alignof(InputKeySelector_GetIsSelectingKey) == 0x000001, "Wrong al
 static_assert(sizeof(InputKeySelector_GetIsSelectingKey) == 0x000001, "Wrong size on InputKeySelector_GetIsSelectingKey");
 static_assert(offsetof(InputKeySelector_GetIsSelectingKey, ReturnValue) == 0x000000, "Member 'InputKeySelector_GetIsSelectingKey::ReturnValue' has a wrong offset!");
 
-// Function UMG.Int32Binding.GetValue
-// 0x0004 (0x0004 - 0x0000)
-struct Int32Binding_GetValue final
+// Function UMG.UserListEntryLibrary.GetOwningListView
+// 0x0018 (0x0018 - 0x0000)
+struct UserListEntryLibrary_GetOwningListView final
 {
 public:
-	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TScriptInterface<class IUserListEntry>        UserListEntry;                                     // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, NativeAccessSpecifierPublic)
+	class UListViewBase*                          ReturnValue;                                       // 0x0010(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(Int32Binding_GetValue) == 0x000004, "Wrong alignment on Int32Binding_GetValue");
-static_assert(sizeof(Int32Binding_GetValue) == 0x000004, "Wrong size on Int32Binding_GetValue");
-static_assert(offsetof(Int32Binding_GetValue, ReturnValue) == 0x000000, "Member 'Int32Binding_GetValue::ReturnValue' has a wrong offset!");
+static_assert(alignof(UserListEntryLibrary_GetOwningListView) == 0x000008, "Wrong alignment on UserListEntryLibrary_GetOwningListView");
+static_assert(sizeof(UserListEntryLibrary_GetOwningListView) == 0x000018, "Wrong size on UserListEntryLibrary_GetOwningListView");
+static_assert(offsetof(UserListEntryLibrary_GetOwningListView, UserListEntry) == 0x000000, "Member 'UserListEntryLibrary_GetOwningListView::UserListEntry' has a wrong offset!");
+static_assert(offsetof(UserListEntryLibrary_GetOwningListView, ReturnValue) == 0x000010, "Member 'UserListEntryLibrary_GetOwningListView::ReturnValue' has a wrong offset!");
 
-// Function UMG.InvalidationBox.SetCanCache
-// 0x0001 (0x0001 - 0x0000)
-struct InvalidationBox_SetCanCache final
+// Function UMG.UserListEntryLibrary.IsListItemExpanded
+// 0x0018 (0x0018 - 0x0000)
+struct UserListEntryLibrary_IsListItemExpanded final
 {
 public:
-	bool                                          CanCache;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TScriptInterface<class IUserListEntry>        UserListEntry;                                     // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(InvalidationBox_SetCanCache) == 0x000001, "Wrong alignment on InvalidationBox_SetCanCache");
-static_assert(sizeof(InvalidationBox_SetCanCache) == 0x000001, "Wrong size on InvalidationBox_SetCanCache");
-static_assert(offsetof(InvalidationBox_SetCanCache, CanCache) == 0x000000, "Member 'InvalidationBox_SetCanCache::CanCache' has a wrong offset!");
+static_assert(alignof(UserListEntryLibrary_IsListItemExpanded) == 0x000008, "Wrong alignment on UserListEntryLibrary_IsListItemExpanded");
+static_assert(sizeof(UserListEntryLibrary_IsListItemExpanded) == 0x000018, "Wrong size on UserListEntryLibrary_IsListItemExpanded");
+static_assert(offsetof(UserListEntryLibrary_IsListItemExpanded, UserListEntry) == 0x000000, "Member 'UserListEntryLibrary_IsListItemExpanded::UserListEntry' has a wrong offset!");
+static_assert(offsetof(UserListEntryLibrary_IsListItemExpanded, ReturnValue) == 0x000010, "Member 'UserListEntryLibrary_IsListItemExpanded::ReturnValue' has a wrong offset!");
 
-// Function UMG.InvalidationBox.GetCanCache
-// 0x0001 (0x0001 - 0x0000)
-struct InvalidationBox_GetCanCache final
+// Function UMG.UserListEntryLibrary.IsListItemSelected
+// 0x0018 (0x0018 - 0x0000)
+struct UserListEntryLibrary_IsListItemSelected final
 {
 public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TScriptInterface<class IUserListEntry>        UserListEntry;                                     // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(InvalidationBox_GetCanCache) == 0x000001, "Wrong alignment on InvalidationBox_GetCanCache");
-static_assert(sizeof(InvalidationBox_GetCanCache) == 0x000001, "Wrong size on InvalidationBox_GetCanCache");
-static_assert(offsetof(InvalidationBox_GetCanCache, ReturnValue) == 0x000000, "Member 'InvalidationBox_GetCanCache::ReturnValue' has a wrong offset!");
+static_assert(alignof(UserListEntryLibrary_IsListItemSelected) == 0x000008, "Wrong alignment on UserListEntryLibrary_IsListItemSelected");
+static_assert(sizeof(UserListEntryLibrary_IsListItemSelected) == 0x000018, "Wrong size on UserListEntryLibrary_IsListItemSelected");
+static_assert(offsetof(UserListEntryLibrary_IsListItemSelected, UserListEntry) == 0x000000, "Member 'UserListEntryLibrary_IsListItemSelected::UserListEntry' has a wrong offset!");
+static_assert(offsetof(UserListEntryLibrary_IsListItemSelected, ReturnValue) == 0x000010, "Member 'UserListEntryLibrary_IsListItemSelected::ReturnValue' has a wrong offset!");
 
 // Function UMG.UserObjectListEntry.OnListItemObjectSet
 // 0x0008 (0x0008 - 0x0000)
@@ -4590,19 +4392,6 @@ public:
 static_assert(alignof(UserObjectListEntry_OnListItemObjectSet) == 0x000008, "Wrong alignment on UserObjectListEntry_OnListItemObjectSet");
 static_assert(sizeof(UserObjectListEntry_OnListItemObjectSet) == 0x000008, "Wrong size on UserObjectListEntry_OnListItemObjectSet");
 static_assert(offsetof(UserObjectListEntry_OnListItemObjectSet, ListItemObject) == 0x000000, "Member 'UserObjectListEntry_OnListItemObjectSet::ListItemObject' has a wrong offset!");
-
-// Function UMG.UserObjectListEntryLibrary.GetListItemObject
-// 0x0018 (0x0018 - 0x0000)
-struct UserObjectListEntryLibrary_GetListItemObject final
-{
-public:
-	TScriptInterface<class IUserObjectListEntry>  UserObjectListEntry;                               // 0x0000(0x0010)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, NativeAccessSpecifierPublic)
-	class UObject*                                ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(UserObjectListEntryLibrary_GetListItemObject) == 0x000008, "Wrong alignment on UserObjectListEntryLibrary_GetListItemObject");
-static_assert(sizeof(UserObjectListEntryLibrary_GetListItemObject) == 0x000018, "Wrong size on UserObjectListEntryLibrary_GetListItemObject");
-static_assert(offsetof(UserObjectListEntryLibrary_GetListItemObject, UserObjectListEntry) == 0x000000, "Member 'UserObjectListEntryLibrary_GetListItemObject::UserObjectListEntry' has a wrong offset!");
-static_assert(offsetof(UserObjectListEntryLibrary_GetListItemObject, ReturnValue) == 0x000010, "Member 'UserObjectListEntryLibrary_GetListItemObject::ReturnValue' has a wrong offset!");
 
 // Function UMG.ListView.AddItem
 // 0x0008 (0x0008 - 0x0000)
@@ -4839,104 +4628,71 @@ static_assert(alignof(ListView_IsRefreshPending) == 0x000001, "Wrong alignment o
 static_assert(sizeof(ListView_IsRefreshPending) == 0x000001, "Wrong size on ListView_IsRefreshPending");
 static_assert(offsetof(ListView_IsRefreshPending, ReturnValue) == 0x000000, "Member 'ListView_IsRefreshPending::ReturnValue' has a wrong offset!");
 
-// Function UMG.MenuAnchor.FitInWindow
-// 0x0001 (0x0001 - 0x0000)
-struct MenuAnchor_FitInWindow final
+// Function UMG.MultiLineEditableText.SetHintText
+// 0x0018 (0x0018 - 0x0000)
+struct MultiLineEditableText_SetHintText final
 {
 public:
-	bool                                          bFit;                                              // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FText                                   InHintText;                                        // 0x0000(0x0018)(Parm, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(MenuAnchor_FitInWindow) == 0x000001, "Wrong alignment on MenuAnchor_FitInWindow");
-static_assert(sizeof(MenuAnchor_FitInWindow) == 0x000001, "Wrong size on MenuAnchor_FitInWindow");
-static_assert(offsetof(MenuAnchor_FitInWindow, bFit) == 0x000000, "Member 'MenuAnchor_FitInWindow::bFit' has a wrong offset!");
+static_assert(alignof(MultiLineEditableText_SetHintText) == 0x000008, "Wrong alignment on MultiLineEditableText_SetHintText");
+static_assert(sizeof(MultiLineEditableText_SetHintText) == 0x000018, "Wrong size on MultiLineEditableText_SetHintText");
+static_assert(offsetof(MultiLineEditableText_SetHintText, InHintText) == 0x000000, "Member 'MultiLineEditableText_SetHintText::InHintText' has a wrong offset!");
 
-// Function UMG.MenuAnchor.Open
+// Function UMG.MultiLineEditableText.SetIsReadOnly
 // 0x0001 (0x0001 - 0x0000)
-struct MenuAnchor_Open final
+struct MultiLineEditableText_SetIsReadOnly final
 {
 public:
-	bool                                          bFocusMenu;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bReadOnly;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(MenuAnchor_Open) == 0x000001, "Wrong alignment on MenuAnchor_Open");
-static_assert(sizeof(MenuAnchor_Open) == 0x000001, "Wrong size on MenuAnchor_Open");
-static_assert(offsetof(MenuAnchor_Open, bFocusMenu) == 0x000000, "Member 'MenuAnchor_Open::bFocusMenu' has a wrong offset!");
+static_assert(alignof(MultiLineEditableText_SetIsReadOnly) == 0x000001, "Wrong alignment on MultiLineEditableText_SetIsReadOnly");
+static_assert(sizeof(MultiLineEditableText_SetIsReadOnly) == 0x000001, "Wrong size on MultiLineEditableText_SetIsReadOnly");
+static_assert(offsetof(MultiLineEditableText_SetIsReadOnly, bReadOnly) == 0x000000, "Member 'MultiLineEditableText_SetIsReadOnly::bReadOnly' has a wrong offset!");
 
-// Function UMG.MenuAnchor.SetPlacement
-// 0x0001 (0x0001 - 0x0000)
-struct MenuAnchor_SetPlacement final
+// Function UMG.MultiLineEditableText.SetText
+// 0x0018 (0x0018 - 0x0000)
+struct MultiLineEditableText_SetText final
 {
 public:
-	EMenuPlacement                                InPlacement;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FText                                   InText;                                            // 0x0000(0x0018)(Parm, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(MenuAnchor_SetPlacement) == 0x000001, "Wrong alignment on MenuAnchor_SetPlacement");
-static_assert(sizeof(MenuAnchor_SetPlacement) == 0x000001, "Wrong size on MenuAnchor_SetPlacement");
-static_assert(offsetof(MenuAnchor_SetPlacement, InPlacement) == 0x000000, "Member 'MenuAnchor_SetPlacement::InPlacement' has a wrong offset!");
+static_assert(alignof(MultiLineEditableText_SetText) == 0x000008, "Wrong alignment on MultiLineEditableText_SetText");
+static_assert(sizeof(MultiLineEditableText_SetText) == 0x000018, "Wrong size on MultiLineEditableText_SetText");
+static_assert(offsetof(MultiLineEditableText_SetText, InText) == 0x000000, "Member 'MultiLineEditableText_SetText::InText' has a wrong offset!");
 
-// Function UMG.MenuAnchor.ToggleOpen
-// 0x0001 (0x0001 - 0x0000)
-struct MenuAnchor_ToggleOpen final
+// Function UMG.MultiLineEditableText.SetWidgetStyle
+// 0x0270 (0x0270 - 0x0000)
+struct MultiLineEditableText_SetWidgetStyle final
 {
 public:
-	bool                                          bFocusOnOpen;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FTextBlockStyle                        InWidgetStyle;                                     // 0x0000(0x0270)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(MenuAnchor_ToggleOpen) == 0x000001, "Wrong alignment on MenuAnchor_ToggleOpen");
-static_assert(sizeof(MenuAnchor_ToggleOpen) == 0x000001, "Wrong size on MenuAnchor_ToggleOpen");
-static_assert(offsetof(MenuAnchor_ToggleOpen, bFocusOnOpen) == 0x000000, "Member 'MenuAnchor_ToggleOpen::bFocusOnOpen' has a wrong offset!");
+static_assert(alignof(MultiLineEditableText_SetWidgetStyle) == 0x000008, "Wrong alignment on MultiLineEditableText_SetWidgetStyle");
+static_assert(sizeof(MultiLineEditableText_SetWidgetStyle) == 0x000270, "Wrong size on MultiLineEditableText_SetWidgetStyle");
+static_assert(offsetof(MultiLineEditableText_SetWidgetStyle, InWidgetStyle) == 0x000000, "Member 'MultiLineEditableText_SetWidgetStyle::InWidgetStyle' has a wrong offset!");
 
-// Function UMG.MenuAnchor.GetMenuPosition
-// 0x0008 (0x0008 - 0x0000)
-struct MenuAnchor_GetMenuPosition final
+// Function UMG.MultiLineEditableText.GetHintText
+// 0x0018 (0x0018 - 0x0000)
+struct MultiLineEditableText_GetHintText final
 {
 public:
-	struct FVector2D                              ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FText                                   ReturnValue;                                       // 0x0000(0x0018)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(MenuAnchor_GetMenuPosition) == 0x000004, "Wrong alignment on MenuAnchor_GetMenuPosition");
-static_assert(sizeof(MenuAnchor_GetMenuPosition) == 0x000008, "Wrong size on MenuAnchor_GetMenuPosition");
-static_assert(offsetof(MenuAnchor_GetMenuPosition, ReturnValue) == 0x000000, "Member 'MenuAnchor_GetMenuPosition::ReturnValue' has a wrong offset!");
+static_assert(alignof(MultiLineEditableText_GetHintText) == 0x000008, "Wrong alignment on MultiLineEditableText_GetHintText");
+static_assert(sizeof(MultiLineEditableText_GetHintText) == 0x000018, "Wrong size on MultiLineEditableText_GetHintText");
+static_assert(offsetof(MultiLineEditableText_GetHintText, ReturnValue) == 0x000000, "Member 'MultiLineEditableText_GetHintText::ReturnValue' has a wrong offset!");
 
-// Function UMG.MenuAnchor.HasOpenSubMenus
-// 0x0001 (0x0001 - 0x0000)
-struct MenuAnchor_HasOpenSubMenus final
+// Function UMG.MultiLineEditableText.GetText
+// 0x0018 (0x0018 - 0x0000)
+struct MultiLineEditableText_GetText final
 {
 public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FText                                   ReturnValue;                                       // 0x0000(0x0018)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(MenuAnchor_HasOpenSubMenus) == 0x000001, "Wrong alignment on MenuAnchor_HasOpenSubMenus");
-static_assert(sizeof(MenuAnchor_HasOpenSubMenus) == 0x000001, "Wrong size on MenuAnchor_HasOpenSubMenus");
-static_assert(offsetof(MenuAnchor_HasOpenSubMenus, ReturnValue) == 0x000000, "Member 'MenuAnchor_HasOpenSubMenus::ReturnValue' has a wrong offset!");
-
-// Function UMG.MenuAnchor.IsOpen
-// 0x0001 (0x0001 - 0x0000)
-struct MenuAnchor_IsOpen final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(MenuAnchor_IsOpen) == 0x000001, "Wrong alignment on MenuAnchor_IsOpen");
-static_assert(sizeof(MenuAnchor_IsOpen) == 0x000001, "Wrong size on MenuAnchor_IsOpen");
-static_assert(offsetof(MenuAnchor_IsOpen, ReturnValue) == 0x000000, "Member 'MenuAnchor_IsOpen::ReturnValue' has a wrong offset!");
-
-// Function UMG.MenuAnchor.ShouldOpenDueToClick
-// 0x0001 (0x0001 - 0x0000)
-struct MenuAnchor_ShouldOpenDueToClick final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(MenuAnchor_ShouldOpenDueToClick) == 0x000001, "Wrong alignment on MenuAnchor_ShouldOpenDueToClick");
-static_assert(sizeof(MenuAnchor_ShouldOpenDueToClick) == 0x000001, "Wrong size on MenuAnchor_ShouldOpenDueToClick");
-static_assert(offsetof(MenuAnchor_ShouldOpenDueToClick, ReturnValue) == 0x000000, "Member 'MenuAnchor_ShouldOpenDueToClick::ReturnValue' has a wrong offset!");
-
-// Function UMG.MouseCursorBinding.GetValue
-// 0x0001 (0x0001 - 0x0000)
-struct MouseCursorBinding_GetValue final
-{
-public:
-	EMouseCursor                                  ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(MouseCursorBinding_GetValue) == 0x000001, "Wrong alignment on MouseCursorBinding_GetValue");
-static_assert(sizeof(MouseCursorBinding_GetValue) == 0x000001, "Wrong size on MouseCursorBinding_GetValue");
-static_assert(offsetof(MouseCursorBinding_GetValue, ReturnValue) == 0x000000, "Member 'MouseCursorBinding_GetValue::ReturnValue' has a wrong offset!");
+static_assert(alignof(MultiLineEditableText_GetText) == 0x000008, "Wrong alignment on MultiLineEditableText_GetText");
+static_assert(sizeof(MultiLineEditableText_GetText) == 0x000018, "Wrong size on MultiLineEditableText_GetText");
+static_assert(offsetof(MultiLineEditableText_GetText, ReturnValue) == 0x000000, "Member 'MultiLineEditableText_GetText::ReturnValue' has a wrong offset!");
 
 // Function UMG.Overlay.AddChildToOverlay
 // 0x0010 (0x0010 - 0x0000)
@@ -5110,6 +4866,19 @@ public:
 static_assert(alignof(ScaleBoxSlot_SetVerticalAlignment) == 0x000001, "Wrong alignment on ScaleBoxSlot_SetVerticalAlignment");
 static_assert(sizeof(ScaleBoxSlot_SetVerticalAlignment) == 0x000001, "Wrong size on ScaleBoxSlot_SetVerticalAlignment");
 static_assert(offsetof(ScaleBoxSlot_SetVerticalAlignment, InVerticalAlignment) == 0x000000, "Member 'ScaleBoxSlot_SetVerticalAlignment::InVerticalAlignment' has a wrong offset!");
+
+// Function UMG.ScrollBar.SetState
+// 0x0008 (0x0008 - 0x0000)
+struct ScrollBar_SetState final
+{
+public:
+	float                                         InOffsetFraction;                                  // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         InThumbSizeFraction;                               // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ScrollBar_SetState) == 0x000004, "Wrong alignment on ScrollBar_SetState");
+static_assert(sizeof(ScrollBar_SetState) == 0x000008, "Wrong size on ScrollBar_SetState");
+static_assert(offsetof(ScrollBar_SetState, InOffsetFraction) == 0x000000, "Member 'ScrollBar_SetState::InOffsetFraction' has a wrong offset!");
+static_assert(offsetof(ScrollBar_SetState, InThumbSizeFraction) == 0x000004, "Member 'ScrollBar_SetState::InThumbSizeFraction' has a wrong offset!");
 
 // Function UMG.ScrollBoxSlot.SetHorizontalAlignment
 // 0x0001 (0x0001 - 0x0000)
@@ -5635,6 +5404,215 @@ public:
 static_assert(alignof(Spacer_SetSize) == 0x000004, "Wrong alignment on Spacer_SetSize");
 static_assert(sizeof(Spacer_SetSize) == 0x000008, "Wrong size on Spacer_SetSize");
 static_assert(offsetof(Spacer_SetSize, InSize) == 0x000000, "Member 'Spacer_SetSize::InSize' has a wrong offset!");
+
+// Function UMG.SpinBox.SetAlwaysUsesDeltaSnap
+// 0x0001 (0x0001 - 0x0000)
+struct SpinBox_SetAlwaysUsesDeltaSnap final
+{
+public:
+	bool                                          bNewValue;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(SpinBox_SetAlwaysUsesDeltaSnap) == 0x000001, "Wrong alignment on SpinBox_SetAlwaysUsesDeltaSnap");
+static_assert(sizeof(SpinBox_SetAlwaysUsesDeltaSnap) == 0x000001, "Wrong size on SpinBox_SetAlwaysUsesDeltaSnap");
+static_assert(offsetof(SpinBox_SetAlwaysUsesDeltaSnap, bNewValue) == 0x000000, "Member 'SpinBox_SetAlwaysUsesDeltaSnap::bNewValue' has a wrong offset!");
+
+// Function UMG.SpinBox.SetDelta
+// 0x0004 (0x0004 - 0x0000)
+struct SpinBox_SetDelta final
+{
+public:
+	float                                         NewValue;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(SpinBox_SetDelta) == 0x000004, "Wrong alignment on SpinBox_SetDelta");
+static_assert(sizeof(SpinBox_SetDelta) == 0x000004, "Wrong size on SpinBox_SetDelta");
+static_assert(offsetof(SpinBox_SetDelta, NewValue) == 0x000000, "Member 'SpinBox_SetDelta::NewValue' has a wrong offset!");
+
+// Function UMG.SpinBox.SetForegroundColor
+// 0x0028 (0x0028 - 0x0000)
+struct SpinBox_SetForegroundColor final
+{
+public:
+	struct FSlateColor                            InForegroundColor;                                 // 0x0000(0x0028)(Parm, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(SpinBox_SetForegroundColor) == 0x000008, "Wrong alignment on SpinBox_SetForegroundColor");
+static_assert(sizeof(SpinBox_SetForegroundColor) == 0x000028, "Wrong size on SpinBox_SetForegroundColor");
+static_assert(offsetof(SpinBox_SetForegroundColor, InForegroundColor) == 0x000000, "Member 'SpinBox_SetForegroundColor::InForegroundColor' has a wrong offset!");
+
+// Function UMG.SpinBox.SetMaxFractionalDigits
+// 0x0004 (0x0004 - 0x0000)
+struct SpinBox_SetMaxFractionalDigits final
+{
+public:
+	int32                                         NewValue;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(SpinBox_SetMaxFractionalDigits) == 0x000004, "Wrong alignment on SpinBox_SetMaxFractionalDigits");
+static_assert(sizeof(SpinBox_SetMaxFractionalDigits) == 0x000004, "Wrong size on SpinBox_SetMaxFractionalDigits");
+static_assert(offsetof(SpinBox_SetMaxFractionalDigits, NewValue) == 0x000000, "Member 'SpinBox_SetMaxFractionalDigits::NewValue' has a wrong offset!");
+
+// Function UMG.SpinBox.SetMaxSliderValue
+// 0x0004 (0x0004 - 0x0000)
+struct SpinBox_SetMaxSliderValue final
+{
+public:
+	float                                         NewValue;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(SpinBox_SetMaxSliderValue) == 0x000004, "Wrong alignment on SpinBox_SetMaxSliderValue");
+static_assert(sizeof(SpinBox_SetMaxSliderValue) == 0x000004, "Wrong size on SpinBox_SetMaxSliderValue");
+static_assert(offsetof(SpinBox_SetMaxSliderValue, NewValue) == 0x000000, "Member 'SpinBox_SetMaxSliderValue::NewValue' has a wrong offset!");
+
+// Function UMG.SpinBox.SetMaxValue
+// 0x0004 (0x0004 - 0x0000)
+struct SpinBox_SetMaxValue final
+{
+public:
+	float                                         NewValue;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(SpinBox_SetMaxValue) == 0x000004, "Wrong alignment on SpinBox_SetMaxValue");
+static_assert(sizeof(SpinBox_SetMaxValue) == 0x000004, "Wrong size on SpinBox_SetMaxValue");
+static_assert(offsetof(SpinBox_SetMaxValue, NewValue) == 0x000000, "Member 'SpinBox_SetMaxValue::NewValue' has a wrong offset!");
+
+// Function UMG.SpinBox.SetMinFractionalDigits
+// 0x0004 (0x0004 - 0x0000)
+struct SpinBox_SetMinFractionalDigits final
+{
+public:
+	int32                                         NewValue;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(SpinBox_SetMinFractionalDigits) == 0x000004, "Wrong alignment on SpinBox_SetMinFractionalDigits");
+static_assert(sizeof(SpinBox_SetMinFractionalDigits) == 0x000004, "Wrong size on SpinBox_SetMinFractionalDigits");
+static_assert(offsetof(SpinBox_SetMinFractionalDigits, NewValue) == 0x000000, "Member 'SpinBox_SetMinFractionalDigits::NewValue' has a wrong offset!");
+
+// Function UMG.SpinBox.SetMinSliderValue
+// 0x0004 (0x0004 - 0x0000)
+struct SpinBox_SetMinSliderValue final
+{
+public:
+	float                                         NewValue;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(SpinBox_SetMinSliderValue) == 0x000004, "Wrong alignment on SpinBox_SetMinSliderValue");
+static_assert(sizeof(SpinBox_SetMinSliderValue) == 0x000004, "Wrong size on SpinBox_SetMinSliderValue");
+static_assert(offsetof(SpinBox_SetMinSliderValue, NewValue) == 0x000000, "Member 'SpinBox_SetMinSliderValue::NewValue' has a wrong offset!");
+
+// Function UMG.SpinBox.SetMinValue
+// 0x0004 (0x0004 - 0x0000)
+struct SpinBox_SetMinValue final
+{
+public:
+	float                                         NewValue;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(SpinBox_SetMinValue) == 0x000004, "Wrong alignment on SpinBox_SetMinValue");
+static_assert(sizeof(SpinBox_SetMinValue) == 0x000004, "Wrong size on SpinBox_SetMinValue");
+static_assert(offsetof(SpinBox_SetMinValue, NewValue) == 0x000000, "Member 'SpinBox_SetMinValue::NewValue' has a wrong offset!");
+
+// Function UMG.SpinBox.SetValue
+// 0x0004 (0x0004 - 0x0000)
+struct SpinBox_SetValue final
+{
+public:
+	float                                         NewValue;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(SpinBox_SetValue) == 0x000004, "Wrong alignment on SpinBox_SetValue");
+static_assert(sizeof(SpinBox_SetValue) == 0x000004, "Wrong size on SpinBox_SetValue");
+static_assert(offsetof(SpinBox_SetValue, NewValue) == 0x000000, "Member 'SpinBox_SetValue::NewValue' has a wrong offset!");
+
+// Function UMG.SpinBox.GetAlwaysUsesDeltaSnap
+// 0x0001 (0x0001 - 0x0000)
+struct SpinBox_GetAlwaysUsesDeltaSnap final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(SpinBox_GetAlwaysUsesDeltaSnap) == 0x000001, "Wrong alignment on SpinBox_GetAlwaysUsesDeltaSnap");
+static_assert(sizeof(SpinBox_GetAlwaysUsesDeltaSnap) == 0x000001, "Wrong size on SpinBox_GetAlwaysUsesDeltaSnap");
+static_assert(offsetof(SpinBox_GetAlwaysUsesDeltaSnap, ReturnValue) == 0x000000, "Member 'SpinBox_GetAlwaysUsesDeltaSnap::ReturnValue' has a wrong offset!");
+
+// Function UMG.SpinBox.GetDelta
+// 0x0004 (0x0004 - 0x0000)
+struct SpinBox_GetDelta final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(SpinBox_GetDelta) == 0x000004, "Wrong alignment on SpinBox_GetDelta");
+static_assert(sizeof(SpinBox_GetDelta) == 0x000004, "Wrong size on SpinBox_GetDelta");
+static_assert(offsetof(SpinBox_GetDelta, ReturnValue) == 0x000000, "Member 'SpinBox_GetDelta::ReturnValue' has a wrong offset!");
+
+// Function UMG.SpinBox.GetMaxFractionalDigits
+// 0x0004 (0x0004 - 0x0000)
+struct SpinBox_GetMaxFractionalDigits final
+{
+public:
+	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(SpinBox_GetMaxFractionalDigits) == 0x000004, "Wrong alignment on SpinBox_GetMaxFractionalDigits");
+static_assert(sizeof(SpinBox_GetMaxFractionalDigits) == 0x000004, "Wrong size on SpinBox_GetMaxFractionalDigits");
+static_assert(offsetof(SpinBox_GetMaxFractionalDigits, ReturnValue) == 0x000000, "Member 'SpinBox_GetMaxFractionalDigits::ReturnValue' has a wrong offset!");
+
+// Function UMG.SpinBox.GetMaxSliderValue
+// 0x0004 (0x0004 - 0x0000)
+struct SpinBox_GetMaxSliderValue final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(SpinBox_GetMaxSliderValue) == 0x000004, "Wrong alignment on SpinBox_GetMaxSliderValue");
+static_assert(sizeof(SpinBox_GetMaxSliderValue) == 0x000004, "Wrong size on SpinBox_GetMaxSliderValue");
+static_assert(offsetof(SpinBox_GetMaxSliderValue, ReturnValue) == 0x000000, "Member 'SpinBox_GetMaxSliderValue::ReturnValue' has a wrong offset!");
+
+// Function UMG.SpinBox.GetMaxValue
+// 0x0004 (0x0004 - 0x0000)
+struct SpinBox_GetMaxValue final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(SpinBox_GetMaxValue) == 0x000004, "Wrong alignment on SpinBox_GetMaxValue");
+static_assert(sizeof(SpinBox_GetMaxValue) == 0x000004, "Wrong size on SpinBox_GetMaxValue");
+static_assert(offsetof(SpinBox_GetMaxValue, ReturnValue) == 0x000000, "Member 'SpinBox_GetMaxValue::ReturnValue' has a wrong offset!");
+
+// Function UMG.SpinBox.GetMinFractionalDigits
+// 0x0004 (0x0004 - 0x0000)
+struct SpinBox_GetMinFractionalDigits final
+{
+public:
+	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(SpinBox_GetMinFractionalDigits) == 0x000004, "Wrong alignment on SpinBox_GetMinFractionalDigits");
+static_assert(sizeof(SpinBox_GetMinFractionalDigits) == 0x000004, "Wrong size on SpinBox_GetMinFractionalDigits");
+static_assert(offsetof(SpinBox_GetMinFractionalDigits, ReturnValue) == 0x000000, "Member 'SpinBox_GetMinFractionalDigits::ReturnValue' has a wrong offset!");
+
+// Function UMG.SpinBox.GetMinSliderValue
+// 0x0004 (0x0004 - 0x0000)
+struct SpinBox_GetMinSliderValue final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(SpinBox_GetMinSliderValue) == 0x000004, "Wrong alignment on SpinBox_GetMinSliderValue");
+static_assert(sizeof(SpinBox_GetMinSliderValue) == 0x000004, "Wrong size on SpinBox_GetMinSliderValue");
+static_assert(offsetof(SpinBox_GetMinSliderValue, ReturnValue) == 0x000000, "Member 'SpinBox_GetMinSliderValue::ReturnValue' has a wrong offset!");
+
+// Function UMG.SpinBox.GetMinValue
+// 0x0004 (0x0004 - 0x0000)
+struct SpinBox_GetMinValue final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(SpinBox_GetMinValue) == 0x000004, "Wrong alignment on SpinBox_GetMinValue");
+static_assert(sizeof(SpinBox_GetMinValue) == 0x000004, "Wrong size on SpinBox_GetMinValue");
+static_assert(offsetof(SpinBox_GetMinValue, ReturnValue) == 0x000000, "Member 'SpinBox_GetMinValue::ReturnValue' has a wrong offset!");
+
+// Function UMG.SpinBox.GetValue
+// 0x0004 (0x0004 - 0x0000)
+struct SpinBox_GetValue final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(SpinBox_GetValue) == 0x000004, "Wrong alignment on SpinBox_GetValue");
+static_assert(sizeof(SpinBox_GetValue) == 0x000004, "Wrong size on SpinBox_GetValue");
+static_assert(offsetof(SpinBox_GetValue, ReturnValue) == 0x000000, "Member 'SpinBox_GetValue::ReturnValue' has a wrong offset!");
 
 // Function UMG.TextBinding.GetStringValue
 // 0x0010 (0x0010 - 0x0000)

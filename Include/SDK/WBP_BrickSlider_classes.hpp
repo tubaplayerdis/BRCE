@@ -12,23 +12,32 @@
 
 #include "Engine_structs.hpp"
 #include "BrickRigs_classes.hpp"
+#include "SlateCore_structs.hpp"
 
 
 namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass WBP_BrickSlider.WBP_BrickSlider_C
-// 0x0010 (0x02F8 - 0x02E8)
+// 0x0028 (0x0328 - 0x0300)
 class UWBP_BrickSlider_C : public UBrickSliderWidget
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02E8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class USpacer*                                Spacer_225;                                        // 0x02F0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0300(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UOverlay*                               Overlay_0;                                         // 0x0308(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class USpacer*                                Spacer_225;                                        // 0x0310(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UWBP_InputKey_C*                        CtrlHintWidget;                                    // 0x0318(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UWBP_InputKey_C*                        ShiftHintWidget;                                   // 0x0320(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_WBP_BrickSlider(int32 EntryPoint);
-	void PreConstruct(bool IsDesignTime);
+	void PoolAllModifierHintWidgets();
+	void PoolModifierHintWidget(class UInputKeyWidget*& Widget);
+	void CreateModifierHintWidget(class UInputKeyWidget*& Widget, const struct FKey& Key, const struct FVector2D& Pivot, EHorizontalAlignment HorizontalAlignment, EVerticalAlignment VerticalAlignment);
 	void UpdateSliderPosition(float NewValue);
+	void PreConstruct(bool IsDesignTime);
+	void UpdateIsDragging(const bool bIsDragging);
+	void Destruct();
+	void ExecuteUbergraph_WBP_BrickSlider(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()
@@ -41,9 +50,12 @@ public:
 	}
 };
 static_assert(alignof(UWBP_BrickSlider_C) == 0x000008, "Wrong alignment on UWBP_BrickSlider_C");
-static_assert(sizeof(UWBP_BrickSlider_C) == 0x0002F8, "Wrong size on UWBP_BrickSlider_C");
-static_assert(offsetof(UWBP_BrickSlider_C, UberGraphFrame) == 0x0002E8, "Member 'UWBP_BrickSlider_C::UberGraphFrame' has a wrong offset!");
-static_assert(offsetof(UWBP_BrickSlider_C, Spacer_225) == 0x0002F0, "Member 'UWBP_BrickSlider_C::Spacer_225' has a wrong offset!");
+static_assert(sizeof(UWBP_BrickSlider_C) == 0x000328, "Wrong size on UWBP_BrickSlider_C");
+static_assert(offsetof(UWBP_BrickSlider_C, UberGraphFrame) == 0x000300, "Member 'UWBP_BrickSlider_C::UberGraphFrame' has a wrong offset!");
+static_assert(offsetof(UWBP_BrickSlider_C, Overlay_0) == 0x000308, "Member 'UWBP_BrickSlider_C::Overlay_0' has a wrong offset!");
+static_assert(offsetof(UWBP_BrickSlider_C, Spacer_225) == 0x000310, "Member 'UWBP_BrickSlider_C::Spacer_225' has a wrong offset!");
+static_assert(offsetof(UWBP_BrickSlider_C, CtrlHintWidget) == 0x000318, "Member 'UWBP_BrickSlider_C::CtrlHintWidget' has a wrong offset!");
+static_assert(offsetof(UWBP_BrickSlider_C, ShiftHintWidget) == 0x000320, "Member 'UWBP_BrickSlider_C::ShiftHintWidget' has a wrong offset!");
 
 }
 

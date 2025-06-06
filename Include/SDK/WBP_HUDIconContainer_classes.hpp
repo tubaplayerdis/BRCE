@@ -18,17 +18,17 @@ namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass WBP_HUDIconContainer.WBP_HUDIconContainer_C
-// 0x0010 (0x0320 - 0x0310)
+// 0x0010 (0x02E0 - 0x02D0)
 class UWBP_HUDIconContainer_C final : public UHUDIconContainerWidget
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0310(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UBrickGridPanel*                        GridPanel;                                         // 0x0318(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02D0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UBrickGridPanel*                        GridPanel;                                         // 0x02D8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_WBP_HUDIconContainer(int32 EntryPoint);
-	void AddCrosshairWidgets(const TArray<class UMapCrosshairWidget*>& Widgets);
 	void AddInteractionWidget(class UInteractionWidget* Widget);
+	void AddCrosshairWidgets(const TArray<class UMapCrosshairWidget*>& Widgets);
+	void ExecuteUbergraph_WBP_HUDIconContainer(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()
@@ -41,9 +41,9 @@ public:
 	}
 };
 static_assert(alignof(UWBP_HUDIconContainer_C) == 0x000008, "Wrong alignment on UWBP_HUDIconContainer_C");
-static_assert(sizeof(UWBP_HUDIconContainer_C) == 0x000320, "Wrong size on UWBP_HUDIconContainer_C");
-static_assert(offsetof(UWBP_HUDIconContainer_C, UberGraphFrame) == 0x000310, "Member 'UWBP_HUDIconContainer_C::UberGraphFrame' has a wrong offset!");
-static_assert(offsetof(UWBP_HUDIconContainer_C, GridPanel) == 0x000318, "Member 'UWBP_HUDIconContainer_C::GridPanel' has a wrong offset!");
+static_assert(sizeof(UWBP_HUDIconContainer_C) == 0x0002E0, "Wrong size on UWBP_HUDIconContainer_C");
+static_assert(offsetof(UWBP_HUDIconContainer_C, UberGraphFrame) == 0x0002D0, "Member 'UWBP_HUDIconContainer_C::UberGraphFrame' has a wrong offset!");
+static_assert(offsetof(UWBP_HUDIconContainer_C, GridPanel) == 0x0002D8, "Member 'UWBP_HUDIconContainer_C::GridPanel' has a wrong offset!");
 
 }
 

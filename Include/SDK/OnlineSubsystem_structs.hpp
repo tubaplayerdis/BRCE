@@ -46,6 +46,19 @@ enum class EMPMatchOutcome : uint8
 	EMPMatchOutcome_MAX                      = 10,
 };
 
+// ScriptStruct OnlineSubsystem.NamedInterface
+// 0x0010 (0x0010 - 0x0000)
+struct FNamedInterface final
+{
+public:
+	class FName                                   InterfaceName;                                     // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UObject*                                InterfaceObject;                                   // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FNamedInterface) == 0x000008, "Wrong alignment on FNamedInterface");
+static_assert(sizeof(FNamedInterface) == 0x000010, "Wrong size on FNamedInterface");
+static_assert(offsetof(FNamedInterface, InterfaceName) == 0x000000, "Member 'FNamedInterface::InterfaceName' has a wrong offset!");
+static_assert(offsetof(FNamedInterface, InterfaceObject) == 0x000008, "Member 'FNamedInterface::InterfaceObject' has a wrong offset!");
+
 // ScriptStruct OnlineSubsystem.InAppPurchaseProductInfo
 // 0x00A8 (0x00A8 - 0x0000)
 struct FInAppPurchaseProductInfo final
@@ -105,19 +118,6 @@ static_assert(alignof(FNamedInterfaceDef) == 0x000008, "Wrong alignment on FName
 static_assert(sizeof(FNamedInterfaceDef) == 0x000018, "Wrong size on FNamedInterfaceDef");
 static_assert(offsetof(FNamedInterfaceDef, InterfaceName) == 0x000000, "Member 'FNamedInterfaceDef::InterfaceName' has a wrong offset!");
 static_assert(offsetof(FNamedInterfaceDef, InterfaceClassName) == 0x000008, "Member 'FNamedInterfaceDef::InterfaceClassName' has a wrong offset!");
-
-// ScriptStruct OnlineSubsystem.NamedInterface
-// 0x0010 (0x0010 - 0x0000)
-struct FNamedInterface final
-{
-public:
-	class FName                                   InterfaceName;                                     // 0x0000(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UObject*                                InterfaceObject;                                   // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FNamedInterface) == 0x000008, "Wrong alignment on FNamedInterface");
-static_assert(sizeof(FNamedInterface) == 0x000010, "Wrong size on FNamedInterface");
-static_assert(offsetof(FNamedInterface, InterfaceName) == 0x000000, "Member 'FNamedInterface::InterfaceName' has a wrong offset!");
-static_assert(offsetof(FNamedInterface, InterfaceObject) == 0x000008, "Member 'FNamedInterface::InterfaceObject' has a wrong offset!");
 
 // ScriptStruct OnlineSubsystem.InAppPurchaseProductRequest
 // 0x0018 (0x0018 - 0x0000)

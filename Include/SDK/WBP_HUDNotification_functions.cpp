@@ -17,21 +17,49 @@
 namespace SDK
 {
 
-// Function WBP_HUDNotification.WBP_HUDNotification_C.ExecuteUbergraph_WBP_HUDNotification
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function WBP_HUDNotification.WBP_HUDNotification_C.PlayFadeInAnim
+// (Event, Protected, BlueprintEvent)
 
-void UWBP_HUDNotification_C::ExecuteUbergraph_WBP_HUDNotification(int32 EntryPoint)
+void UWBP_HUDNotification_C::PlayFadeInAnim()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_HUDNotification_C", "ExecuteUbergraph_WBP_HUDNotification");
+		Func = Class->GetFunction("WBP_HUDNotification_C", "PlayFadeInAnim");
 
-	Params::WBP_HUDNotification_C_ExecuteUbergraph_WBP_HUDNotification Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.EntryPoint = EntryPoint;
+
+// Function WBP_HUDNotification.WBP_HUDNotification_C.PlayFadeOutAnim
+// (Event, Protected, BlueprintEvent)
+
+void UWBP_HUDNotification_C::PlayFadeOutAnim()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_HUDNotification_C", "PlayFadeOutAnim");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function WBP_HUDNotification.WBP_HUDNotification_C.UpdateIsThumbnailNotification
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bNewIsThumbnail                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void UWBP_HUDNotification_C::UpdateIsThumbnailNotification(bool bNewIsThumbnail)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_HUDNotification_C", "UpdateIsThumbnailNotification");
+
+	Params::WBP_HUDNotification_C_UpdateIsThumbnailNotification Parms{};
+
+	Parms.bNewIsThumbnail = bNewIsThumbnail;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -61,51 +89,23 @@ void UWBP_HUDNotification_C::InitializeNotification(const struct FBrickUIIconSlo
 }
 
 
-// Function WBP_HUDNotification.WBP_HUDNotification_C.UpdateIsThumbnailNotification
-// (Event, Protected, BlueprintEvent)
+// Function WBP_HUDNotification.WBP_HUDNotification_C.ExecuteUbergraph_WBP_HUDNotification
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
-// bool                                    bNewIsThumbnail                                        (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UWBP_HUDNotification_C::UpdateIsThumbnailNotification(bool bNewIsThumbnail)
+void UWBP_HUDNotification_C::ExecuteUbergraph_WBP_HUDNotification(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_HUDNotification_C", "UpdateIsThumbnailNotification");
+		Func = Class->GetFunction("WBP_HUDNotification_C", "ExecuteUbergraph_WBP_HUDNotification");
 
-	Params::WBP_HUDNotification_C_UpdateIsThumbnailNotification Parms{};
+	Params::WBP_HUDNotification_C_ExecuteUbergraph_WBP_HUDNotification Parms{};
 
-	Parms.bNewIsThumbnail = bNewIsThumbnail;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function WBP_HUDNotification.WBP_HUDNotification_C.PlayFadeOutAnim
-// (Event, Protected, BlueprintEvent)
-
-void UWBP_HUDNotification_C::PlayFadeOutAnim()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_HUDNotification_C", "PlayFadeOutAnim");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function WBP_HUDNotification.WBP_HUDNotification_C.PlayFadeInAnim
-// (Event, Protected, BlueprintEvent)
-
-void UWBP_HUDNotification_C::PlayFadeInAnim()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_HUDNotification_C", "PlayFadeInAnim");
-
-	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

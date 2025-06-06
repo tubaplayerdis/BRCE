@@ -98,18 +98,6 @@
     <ClCompile Include="global.cpp">
       <Filter>Source Files\global</Filter>
     </ClCompile>
-    <ClCompile Include="..\Include\SDK\Basic.cpp">
-      <Filter>More Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\BrickRigs_functions.cpp">
-      <Filter>More Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\CoreUObject_functions.cpp">
-      <Filter>More Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\Engine_functions.cpp">
-      <Filter>More Files</Filter>
-    </ClCompile>
     <ClCompile Include="interpreter.cpp">
       <Filter>Source Files\modules</Filter>
     </ClCompile>
@@ -251,6 +239,9 @@
     <ClCompile Include="..\Include\SDK\StaticMeshDescription_functions.cpp">
       <Filter>More Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\Include\SDK\ProceduralMeshComponent_functions.cpp">
+      <Filter>More Files</Filter>
+    </ClCompile>
     <ClCompile Include="..\Include\SDK\OnlineSubsystemUtils_functions.cpp">
       <Filter>More Files</Filter>
     </ClCompile>
@@ -290,6 +281,9 @@
     <ClCompile Include="..\Include\SDK\Landscape_functions.cpp">
       <Filter>More Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\Include\SDK\InteractiveToolsFramework_functions.cpp">
+      <Filter>More Files</Filter>
+    </ClCompile>
     <ClCompile Include="..\Include\SDK\ImageWriteQueue_functions.cpp">
       <Filter>More Files</Filter>
     </ClCompile>
@@ -320,7 +314,13 @@
     <ClCompile Include="..\Include\SDK\EngineSettings_functions.cpp">
       <Filter>More Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\Include\SDK\Engine_functions.cpp">
+      <Filter>More Files</Filter>
+    </ClCompile>
     <ClCompile Include="..\Include\SDK\DLSSBlueprint_functions.cpp">
+      <Filter>More Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\CoreUObject_functions.cpp">
       <Filter>More Files</Filter>
     </ClCompile>
     <ClCompile Include="..\Include\SDK\ClothingSystemRuntimeNv_functions.cpp">
@@ -341,7 +341,7 @@
     <ClCompile Include="..\Include\SDK\BTS_ZombieFindTarget_functions.cpp">
       <Filter>More Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\Include\SDK\BrickRigs_classes.cpp">
+    <ClCompile Include="..\Include\SDK\BrickRigs_functions.cpp">
       <Filter>More Files</Filter>
     </ClCompile>
     <ClCompile Include="..\Include\SDK\BP_ZombieAIController_functions.cpp">
@@ -399,6 +399,9 @@
       <Filter>More Files</Filter>
     </ClCompile>
     <ClCompile Include="..\Include\SDK\BP_Blender_functions.cpp">
+      <Filter>More Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\Basic.cpp">
       <Filter>More Files</Filter>
     </ClCompile>
     <ClCompile Include="..\Include\SDK\AutomationUtils_functions.cpp">

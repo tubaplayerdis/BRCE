@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_LightBrick.BP_LightBrick_C
-// 0x0000 (0x01C0 - 0x01C0)
+// 0x0000 (0x01A8 - 0x01A8)
 class UBP_LightBrick_C final : public ULightBrickStaticInfo
 {
 public:
@@ -31,7 +31,7 @@ public:
 	}
 };
 static_assert(alignof(UBP_LightBrick_C) == 0x000008, "Wrong alignment on UBP_LightBrick_C");
-static_assert(sizeof(UBP_LightBrick_C) == 0x0001C0, "Wrong size on UBP_LightBrick_C");
+static_assert(sizeof(UBP_LightBrick_C) == 0x0001A8, "Wrong size on UBP_LightBrick_C");
 
 }
 

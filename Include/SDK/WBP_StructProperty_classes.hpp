@@ -18,12 +18,12 @@ namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass WBP_StructProperty.WBP_StructProperty_C
-// 0x0010 (0x0298 - 0x0288)
+// 0x0010 (0x02A0 - 0x0290)
 class UWBP_StructProperty_C final : public UStructPropertyWidget
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0288(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UBrickGridPanel*                        GridPanel;                                         // 0x0290(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0290(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UBrickGridPanel*                        GridPanel;                                         // 0x0298(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_WBP_StructProperty(int32 EntryPoint);
@@ -41,9 +41,9 @@ public:
 	}
 };
 static_assert(alignof(UWBP_StructProperty_C) == 0x000008, "Wrong alignment on UWBP_StructProperty_C");
-static_assert(sizeof(UWBP_StructProperty_C) == 0x000298, "Wrong size on UWBP_StructProperty_C");
-static_assert(offsetof(UWBP_StructProperty_C, UberGraphFrame) == 0x000288, "Member 'UWBP_StructProperty_C::UberGraphFrame' has a wrong offset!");
-static_assert(offsetof(UWBP_StructProperty_C, GridPanel) == 0x000290, "Member 'UWBP_StructProperty_C::GridPanel' has a wrong offset!");
+static_assert(sizeof(UWBP_StructProperty_C) == 0x0002A0, "Wrong size on UWBP_StructProperty_C");
+static_assert(offsetof(UWBP_StructProperty_C, UberGraphFrame) == 0x000290, "Member 'UWBP_StructProperty_C::UberGraphFrame' has a wrong offset!");
+static_assert(offsetof(UWBP_StructProperty_C, GridPanel) == 0x000298, "Member 'UWBP_StructProperty_C::GridPanel' has a wrong offset!");
 
 }
 

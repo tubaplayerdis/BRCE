@@ -10,17 +10,17 @@
 
 #include "Basic.hpp"
 
+#include "GameLogoEnum_structs.hpp"
 #include "Engine_structs.hpp"
 #include "BrickRigs_structs.hpp"
 #include "BrickRigs_classes.hpp"
-#include "GameLogoEnum_structs.hpp"
 
 
 namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass WBP_Menu.WBP_Menu_C
-// 0x0020 (0x0310 - 0x02F0)
+// 0x0028 (0x0318 - 0x02F0)
 class UWBP_Menu_C final : public UMenuWidget
 {
 public:
@@ -28,6 +28,7 @@ public:
 	class UWBP_GameLogo_C*                        Logo;                                              // 0x02F8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UBrickBorder*                           MenuPageBorder;                                    // 0x0300(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UBrickTextBlock*                        VersionTextBlock;                                  // 0x0308(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	struct FPopupHandle                           PopupHandle;                                       // 0x0310(0x0004)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor)
 
 public:
 	void CreateAdminMenuButton();
@@ -66,11 +67,12 @@ public:
 	}
 };
 static_assert(alignof(UWBP_Menu_C) == 0x000008, "Wrong alignment on UWBP_Menu_C");
-static_assert(sizeof(UWBP_Menu_C) == 0x000310, "Wrong size on UWBP_Menu_C");
+static_assert(sizeof(UWBP_Menu_C) == 0x000318, "Wrong size on UWBP_Menu_C");
 static_assert(offsetof(UWBP_Menu_C, UberGraphFrame) == 0x0002F0, "Member 'UWBP_Menu_C::UberGraphFrame' has a wrong offset!");
 static_assert(offsetof(UWBP_Menu_C, Logo) == 0x0002F8, "Member 'UWBP_Menu_C::Logo' has a wrong offset!");
 static_assert(offsetof(UWBP_Menu_C, MenuPageBorder) == 0x000300, "Member 'UWBP_Menu_C::MenuPageBorder' has a wrong offset!");
 static_assert(offsetof(UWBP_Menu_C, VersionTextBlock) == 0x000308, "Member 'UWBP_Menu_C::VersionTextBlock' has a wrong offset!");
+static_assert(offsetof(UWBP_Menu_C, PopupHandle) == 0x000310, "Member 'UWBP_Menu_C::PopupHandle' has a wrong offset!");
 
 }
 

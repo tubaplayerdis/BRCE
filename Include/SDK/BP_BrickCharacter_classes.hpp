@@ -18,11 +18,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_BrickCharacter.BP_BrickCharacter_C
-// 0x0010 (0x0940 - 0x0930)
+// 0x0010 (0x0920 - 0x0910)
 class ABP_BrickCharacter_C final : public ABrickCharacter
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0930(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0910(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
 	void ExecuteUbergraph_BP_BrickCharacter(int32 EntryPoint);
@@ -39,8 +39,8 @@ public:
 	}
 };
 static_assert(alignof(ABP_BrickCharacter_C) == 0x000010, "Wrong alignment on ABP_BrickCharacter_C");
-static_assert(sizeof(ABP_BrickCharacter_C) == 0x000940, "Wrong size on ABP_BrickCharacter_C");
-static_assert(offsetof(ABP_BrickCharacter_C, UberGraphFrame) == 0x000930, "Member 'ABP_BrickCharacter_C::UberGraphFrame' has a wrong offset!");
+static_assert(sizeof(ABP_BrickCharacter_C) == 0x000920, "Wrong size on ABP_BrickCharacter_C");
+static_assert(offsetof(ABP_BrickCharacter_C, UberGraphFrame) == 0x000910, "Member 'ABP_BrickCharacter_C::UberGraphFrame' has a wrong offset!");
 
 }
 

@@ -19,12 +19,12 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_UIStyle_Default.BP_UIStyle_Default_C
-// 0x0010 (0x5AD8 - 0x5AC8)
+// 0x0010 (0x5AE8 - 0x5AD8)
 class UBP_UIStyle_Default_C : public UBrickUIStyle
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x5AC8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	bool                                          bUseBrightBackground;                              // 0x5AD0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x5AD8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	bool                                          bUseBrightBackground;                              // 0x5AE0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
 	void ExecuteUbergraph_BP_UIStyle_Default(int32 EntryPoint);
@@ -48,9 +48,9 @@ public:
 	}
 };
 static_assert(alignof(UBP_UIStyle_Default_C) == 0x000008, "Wrong alignment on UBP_UIStyle_Default_C");
-static_assert(sizeof(UBP_UIStyle_Default_C) == 0x005AD8, "Wrong size on UBP_UIStyle_Default_C");
-static_assert(offsetof(UBP_UIStyle_Default_C, UberGraphFrame) == 0x005AC8, "Member 'UBP_UIStyle_Default_C::UberGraphFrame' has a wrong offset!");
-static_assert(offsetof(UBP_UIStyle_Default_C, bUseBrightBackground) == 0x005AD0, "Member 'UBP_UIStyle_Default_C::bUseBrightBackground' has a wrong offset!");
+static_assert(sizeof(UBP_UIStyle_Default_C) == 0x005AE8, "Wrong size on UBP_UIStyle_Default_C");
+static_assert(offsetof(UBP_UIStyle_Default_C, UberGraphFrame) == 0x005AD8, "Member 'UBP_UIStyle_Default_C::UberGraphFrame' has a wrong offset!");
+static_assert(offsetof(UBP_UIStyle_Default_C, bUseBrightBackground) == 0x005AE0, "Member 'UBP_UIStyle_Default_C::bUseBrightBackground' has a wrong offset!");
 
 }
 

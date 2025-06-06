@@ -21,10 +21,10 @@ namespace hooks
 		inline bool enabled = false;
 		inline bool initalized = false;
 		inline const char* pattern =
-			"\x48\x89\x74\x24\x18\x57\x48\x83\xEC\x40\x48\x8B\xFA\x48\x8B\xF1"
+			"\x48\x89\x7C\x24\x18\x41\x56\x48\x83\xEC\x40\x48\x8B\xFA\x4C\x8B\xF1"
 			"\xE8\x00\x00\x00\x00\x84\xC0\x0F\x84\x00\x00\x00\x00";
 		inline const char* mask =
-			"xxxxxxxxxxxxxxxxx????xxxx????";
+			"xxxxxxxxxxxxxxxxxx????xxxx????";
 		inline uintptr_t AddChatMessageFunctionPointer = 0;//Initalized in Init()
 
 		using  AddChatMessage_t = void(__fastcall*)(SDK::ABrickGameSession* This, const SDK::FBrickChatMessage& ChatMessage);

@@ -18,11 +18,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_UIStyle_Gray.BP_UIStyle_Gray_C
-// 0x0008 (0x5AE0 - 0x5AD8)
+// 0x0008 (0x5AF0 - 0x5AE8)
 class UBP_UIStyle_Gray_C final : public UBP_UIStyle_Default_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_BP_UIStyle_Gray_C;                  // 0x5AD8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame               UberGraphFrame_BP_UIStyle_Gray_C;                  // 0x5AE8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
 	void ExecuteUbergraph_BP_UIStyle_Gray(int32 EntryPoint);
@@ -39,8 +39,8 @@ public:
 	}
 };
 static_assert(alignof(UBP_UIStyle_Gray_C) == 0x000008, "Wrong alignment on UBP_UIStyle_Gray_C");
-static_assert(sizeof(UBP_UIStyle_Gray_C) == 0x005AE0, "Wrong size on UBP_UIStyle_Gray_C");
-static_assert(offsetof(UBP_UIStyle_Gray_C, UberGraphFrame_BP_UIStyle_Gray_C) == 0x005AD8, "Member 'UBP_UIStyle_Gray_C::UberGraphFrame_BP_UIStyle_Gray_C' has a wrong offset!");
+static_assert(sizeof(UBP_UIStyle_Gray_C) == 0x005AF0, "Wrong size on UBP_UIStyle_Gray_C");
+static_assert(offsetof(UBP_UIStyle_Gray_C, UberGraphFrame_BP_UIStyle_Gray_C) == 0x005AE8, "Member 'UBP_UIStyle_Gray_C::UberGraphFrame_BP_UIStyle_Gray_C' has a wrong offset!");
 
 }
 

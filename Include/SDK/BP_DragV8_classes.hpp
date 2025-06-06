@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_DragV8.BP_DragV8_C
-// 0x0000 (0x0200 - 0x0200)
+// 0x0000 (0x01E8 - 0x01E8)
 class UBP_DragV8_C final : public UMotorBrickStaticInfo
 {
 public:
@@ -31,7 +31,7 @@ public:
 	}
 };
 static_assert(alignof(UBP_DragV8_C) == 0x000008, "Wrong alignment on UBP_DragV8_C");
-static_assert(sizeof(UBP_DragV8_C) == 0x000200, "Wrong size on UBP_DragV8_C");
+static_assert(sizeof(UBP_DragV8_C) == 0x0001E8, "Wrong size on UBP_DragV8_C");
 
 }
 

@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "AnimationCore_structs.hpp"
 #include "Engine_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "AnimationCore_structs.hpp"
 
 
 namespace SDK
@@ -387,41 +387,6 @@ static_assert(offsetof(FAnimNode_RotateRootBone, PitchScaleBiasClamp) == 0x00002
 static_assert(offsetof(FAnimNode_RotateRootBone, YawScaleBiasClamp) == 0x000058, "Member 'FAnimNode_RotateRootBone::YawScaleBiasClamp' has a wrong offset!");
 static_assert(offsetof(FAnimNode_RotateRootBone, MeshToComponent) == 0x000088, "Member 'FAnimNode_RotateRootBone::MeshToComponent' has a wrong offset!");
 
-// ScriptStruct AnimGraphRuntime.AnimPhysConstraintSetup
-// 0x0048 (0x0048 - 0x0000)
-struct FAnimPhysConstraintSetup final
-{
-public:
-	EAnimPhysLinearConstraintType                 LinearXLimitType;                                  // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EAnimPhysLinearConstraintType                 LinearYLimitType;                                  // 0x0001(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EAnimPhysLinearConstraintType                 LinearZLimitType;                                  // 0x0002(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3[0x1];                                        // 0x0003(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                LinearAxesMin;                                     // 0x0004(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                LinearAxesMax;                                     // 0x0010(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EAnimPhysAngularConstraintType                AngularConstraintType;                             // 0x001C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EAnimPhysTwistAxis                            TwistAxis;                                         // 0x001D(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EAnimPhysTwistAxis                            AngularTargetAxis;                                 // 0x001E(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1F[0x1];                                       // 0x001F(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         ConeAngle;                                         // 0x0020(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                AngularLimitsMin;                                  // 0x0024(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                AngularLimitsMax;                                  // 0x0030(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                AngularTarget;                                     // 0x003C(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FAnimPhysConstraintSetup) == 0x000004, "Wrong alignment on FAnimPhysConstraintSetup");
-static_assert(sizeof(FAnimPhysConstraintSetup) == 0x000048, "Wrong size on FAnimPhysConstraintSetup");
-static_assert(offsetof(FAnimPhysConstraintSetup, LinearXLimitType) == 0x000000, "Member 'FAnimPhysConstraintSetup::LinearXLimitType' has a wrong offset!");
-static_assert(offsetof(FAnimPhysConstraintSetup, LinearYLimitType) == 0x000001, "Member 'FAnimPhysConstraintSetup::LinearYLimitType' has a wrong offset!");
-static_assert(offsetof(FAnimPhysConstraintSetup, LinearZLimitType) == 0x000002, "Member 'FAnimPhysConstraintSetup::LinearZLimitType' has a wrong offset!");
-static_assert(offsetof(FAnimPhysConstraintSetup, LinearAxesMin) == 0x000004, "Member 'FAnimPhysConstraintSetup::LinearAxesMin' has a wrong offset!");
-static_assert(offsetof(FAnimPhysConstraintSetup, LinearAxesMax) == 0x000010, "Member 'FAnimPhysConstraintSetup::LinearAxesMax' has a wrong offset!");
-static_assert(offsetof(FAnimPhysConstraintSetup, AngularConstraintType) == 0x00001C, "Member 'FAnimPhysConstraintSetup::AngularConstraintType' has a wrong offset!");
-static_assert(offsetof(FAnimPhysConstraintSetup, TwistAxis) == 0x00001D, "Member 'FAnimPhysConstraintSetup::TwistAxis' has a wrong offset!");
-static_assert(offsetof(FAnimPhysConstraintSetup, AngularTargetAxis) == 0x00001E, "Member 'FAnimPhysConstraintSetup::AngularTargetAxis' has a wrong offset!");
-static_assert(offsetof(FAnimPhysConstraintSetup, ConeAngle) == 0x000020, "Member 'FAnimPhysConstraintSetup::ConeAngle' has a wrong offset!");
-static_assert(offsetof(FAnimPhysConstraintSetup, AngularLimitsMin) == 0x000024, "Member 'FAnimPhysConstraintSetup::AngularLimitsMin' has a wrong offset!");
-static_assert(offsetof(FAnimPhysConstraintSetup, AngularLimitsMax) == 0x000030, "Member 'FAnimPhysConstraintSetup::AngularLimitsMax' has a wrong offset!");
-static_assert(offsetof(FAnimPhysConstraintSetup, AngularTarget) == 0x00003C, "Member 'FAnimPhysConstraintSetup::AngularTarget' has a wrong offset!");
-
 // ScriptStruct AnimGraphRuntime.AnimNode_SkeletalControlBase
 // 0x00B8 (0x00C8 - 0x0010)
 struct FAnimNode_SkeletalControlBase : public FAnimNode_Base
@@ -515,6 +480,41 @@ static_assert(offsetof(FRotationRetargetingInfo, CustomCurve) == 0x000098, "Memb
 static_assert(offsetof(FRotationRetargetingInfo, bFlipEasing) == 0x000120, "Member 'FRotationRetargetingInfo::bFlipEasing' has a wrong offset!");
 static_assert(offsetof(FRotationRetargetingInfo, EasingWeight) == 0x000124, "Member 'FRotationRetargetingInfo::EasingWeight' has a wrong offset!");
 static_assert(offsetof(FRotationRetargetingInfo, bClamp) == 0x000128, "Member 'FRotationRetargetingInfo::bClamp' has a wrong offset!");
+
+// ScriptStruct AnimGraphRuntime.AnimPhysConstraintSetup
+// 0x0048 (0x0048 - 0x0000)
+struct FAnimPhysConstraintSetup final
+{
+public:
+	EAnimPhysLinearConstraintType                 LinearXLimitType;                                  // 0x0000(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EAnimPhysLinearConstraintType                 LinearYLimitType;                                  // 0x0001(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EAnimPhysLinearConstraintType                 LinearZLimitType;                                  // 0x0002(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3[0x1];                                        // 0x0003(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                LinearAxesMin;                                     // 0x0004(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                LinearAxesMax;                                     // 0x0010(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EAnimPhysAngularConstraintType                AngularConstraintType;                             // 0x001C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EAnimPhysTwistAxis                            TwistAxis;                                         // 0x001D(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EAnimPhysTwistAxis                            AngularTargetAxis;                                 // 0x001E(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1F[0x1];                                       // 0x001F(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         ConeAngle;                                         // 0x0020(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                AngularLimitsMin;                                  // 0x0024(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                AngularLimitsMax;                                  // 0x0030(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                AngularTarget;                                     // 0x003C(0x000C)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FAnimPhysConstraintSetup) == 0x000004, "Wrong alignment on FAnimPhysConstraintSetup");
+static_assert(sizeof(FAnimPhysConstraintSetup) == 0x000048, "Wrong size on FAnimPhysConstraintSetup");
+static_assert(offsetof(FAnimPhysConstraintSetup, LinearXLimitType) == 0x000000, "Member 'FAnimPhysConstraintSetup::LinearXLimitType' has a wrong offset!");
+static_assert(offsetof(FAnimPhysConstraintSetup, LinearYLimitType) == 0x000001, "Member 'FAnimPhysConstraintSetup::LinearYLimitType' has a wrong offset!");
+static_assert(offsetof(FAnimPhysConstraintSetup, LinearZLimitType) == 0x000002, "Member 'FAnimPhysConstraintSetup::LinearZLimitType' has a wrong offset!");
+static_assert(offsetof(FAnimPhysConstraintSetup, LinearAxesMin) == 0x000004, "Member 'FAnimPhysConstraintSetup::LinearAxesMin' has a wrong offset!");
+static_assert(offsetof(FAnimPhysConstraintSetup, LinearAxesMax) == 0x000010, "Member 'FAnimPhysConstraintSetup::LinearAxesMax' has a wrong offset!");
+static_assert(offsetof(FAnimPhysConstraintSetup, AngularConstraintType) == 0x00001C, "Member 'FAnimPhysConstraintSetup::AngularConstraintType' has a wrong offset!");
+static_assert(offsetof(FAnimPhysConstraintSetup, TwistAxis) == 0x00001D, "Member 'FAnimPhysConstraintSetup::TwistAxis' has a wrong offset!");
+static_assert(offsetof(FAnimPhysConstraintSetup, AngularTargetAxis) == 0x00001E, "Member 'FAnimPhysConstraintSetup::AngularTargetAxis' has a wrong offset!");
+static_assert(offsetof(FAnimPhysConstraintSetup, ConeAngle) == 0x000020, "Member 'FAnimPhysConstraintSetup::ConeAngle' has a wrong offset!");
+static_assert(offsetof(FAnimPhysConstraintSetup, AngularLimitsMin) == 0x000024, "Member 'FAnimPhysConstraintSetup::AngularLimitsMin' has a wrong offset!");
+static_assert(offsetof(FAnimPhysConstraintSetup, AngularLimitsMax) == 0x000030, "Member 'FAnimPhysConstraintSetup::AngularLimitsMax' has a wrong offset!");
+static_assert(offsetof(FAnimPhysConstraintSetup, AngularTarget) == 0x00003C, "Member 'FAnimPhysConstraintSetup::AngularTarget' has a wrong offset!");
 
 // ScriptStruct AnimGraphRuntime.AnimNode_AnimDynamics
 // 0x0378 (0x0440 - 0x00C8)
@@ -1423,6 +1423,41 @@ static_assert(sizeof(FAnimNode_PoseByName) == 0x000098, "Wrong size on FAnimNode
 static_assert(offsetof(FAnimNode_PoseByName, PoseName) == 0x000080, "Member 'FAnimNode_PoseByName::PoseName' has a wrong offset!");
 static_assert(offsetof(FAnimNode_PoseByName, PoseWeight) == 0x000088, "Member 'FAnimNode_PoseByName::PoseWeight' has a wrong offset!");
 
+// ScriptStruct AnimGraphRuntime.RBFParams
+// 0x002C (0x002C - 0x0000)
+struct FRBFParams final
+{
+public:
+	int32                                         TargetDimensions;                                  // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ERBFSolverType                                SolverType;                                        // 0x0004(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         Radius;                                            // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bAutomaticRadius;                                  // 0x000C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ERBFFunctionType                              Function;                                          // 0x000D(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ERBFDistanceMethod                            DistanceMethod;                                    // 0x000E(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EBoneAxis                                     TwistAxis;                                         // 0x000F(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         WeightThreshold;                                   // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ERBFNormalizeMethod                           NormalizeMethod;                                   // 0x0014(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector                                MedianReference;                                   // 0x0018(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MedianMin;                                         // 0x0024(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         MedianMax;                                         // 0x0028(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FRBFParams) == 0x000004, "Wrong alignment on FRBFParams");
+static_assert(sizeof(FRBFParams) == 0x00002C, "Wrong size on FRBFParams");
+static_assert(offsetof(FRBFParams, TargetDimensions) == 0x000000, "Member 'FRBFParams::TargetDimensions' has a wrong offset!");
+static_assert(offsetof(FRBFParams, SolverType) == 0x000004, "Member 'FRBFParams::SolverType' has a wrong offset!");
+static_assert(offsetof(FRBFParams, Radius) == 0x000008, "Member 'FRBFParams::Radius' has a wrong offset!");
+static_assert(offsetof(FRBFParams, bAutomaticRadius) == 0x00000C, "Member 'FRBFParams::bAutomaticRadius' has a wrong offset!");
+static_assert(offsetof(FRBFParams, Function) == 0x00000D, "Member 'FRBFParams::Function' has a wrong offset!");
+static_assert(offsetof(FRBFParams, DistanceMethod) == 0x00000E, "Member 'FRBFParams::DistanceMethod' has a wrong offset!");
+static_assert(offsetof(FRBFParams, TwistAxis) == 0x00000F, "Member 'FRBFParams::TwistAxis' has a wrong offset!");
+static_assert(offsetof(FRBFParams, WeightThreshold) == 0x000010, "Member 'FRBFParams::WeightThreshold' has a wrong offset!");
+static_assert(offsetof(FRBFParams, NormalizeMethod) == 0x000014, "Member 'FRBFParams::NormalizeMethod' has a wrong offset!");
+static_assert(offsetof(FRBFParams, MedianReference) == 0x000018, "Member 'FRBFParams::MedianReference' has a wrong offset!");
+static_assert(offsetof(FRBFParams, MedianMin) == 0x000024, "Member 'FRBFParams::MedianMin' has a wrong offset!");
+static_assert(offsetof(FRBFParams, MedianMax) == 0x000028, "Member 'FRBFParams::MedianMax' has a wrong offset!");
+
 // ScriptStruct AnimGraphRuntime.PoseDriverTransform
 // 0x0018 (0x0018 - 0x0000)
 struct FPoseDriverTransform final
@@ -1465,41 +1500,6 @@ static_assert(offsetof(FPoseDriverTarget, bApplyCustomCurve) == 0x000022, "Membe
 static_assert(offsetof(FPoseDriverTarget, CustomCurve) == 0x000028, "Member 'FPoseDriverTarget::CustomCurve' has a wrong offset!");
 static_assert(offsetof(FPoseDriverTarget, DrivenName) == 0x0000A8, "Member 'FPoseDriverTarget::DrivenName' has a wrong offset!");
 static_assert(offsetof(FPoseDriverTarget, bIsHidden) == 0x0000B8, "Member 'FPoseDriverTarget::bIsHidden' has a wrong offset!");
-
-// ScriptStruct AnimGraphRuntime.RBFParams
-// 0x002C (0x002C - 0x0000)
-struct FRBFParams final
-{
-public:
-	int32                                         TargetDimensions;                                  // 0x0000(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ERBFSolverType                                SolverType;                                        // 0x0004(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         Radius;                                            // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bAutomaticRadius;                                  // 0x000C(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ERBFFunctionType                              Function;                                          // 0x000D(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ERBFDistanceMethod                            DistanceMethod;                                    // 0x000E(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EBoneAxis                                     TwistAxis;                                         // 0x000F(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         WeightThreshold;                                   // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ERBFNormalizeMethod                           NormalizeMethod;                                   // 0x0014(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_15[0x3];                                       // 0x0015(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector                                MedianReference;                                   // 0x0018(0x000C)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MedianMin;                                         // 0x0024(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         MedianMax;                                         // 0x0028(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FRBFParams) == 0x000004, "Wrong alignment on FRBFParams");
-static_assert(sizeof(FRBFParams) == 0x00002C, "Wrong size on FRBFParams");
-static_assert(offsetof(FRBFParams, TargetDimensions) == 0x000000, "Member 'FRBFParams::TargetDimensions' has a wrong offset!");
-static_assert(offsetof(FRBFParams, SolverType) == 0x000004, "Member 'FRBFParams::SolverType' has a wrong offset!");
-static_assert(offsetof(FRBFParams, Radius) == 0x000008, "Member 'FRBFParams::Radius' has a wrong offset!");
-static_assert(offsetof(FRBFParams, bAutomaticRadius) == 0x00000C, "Member 'FRBFParams::bAutomaticRadius' has a wrong offset!");
-static_assert(offsetof(FRBFParams, Function) == 0x00000D, "Member 'FRBFParams::Function' has a wrong offset!");
-static_assert(offsetof(FRBFParams, DistanceMethod) == 0x00000E, "Member 'FRBFParams::DistanceMethod' has a wrong offset!");
-static_assert(offsetof(FRBFParams, TwistAxis) == 0x00000F, "Member 'FRBFParams::TwistAxis' has a wrong offset!");
-static_assert(offsetof(FRBFParams, WeightThreshold) == 0x000010, "Member 'FRBFParams::WeightThreshold' has a wrong offset!");
-static_assert(offsetof(FRBFParams, NormalizeMethod) == 0x000014, "Member 'FRBFParams::NormalizeMethod' has a wrong offset!");
-static_assert(offsetof(FRBFParams, MedianReference) == 0x000018, "Member 'FRBFParams::MedianReference' has a wrong offset!");
-static_assert(offsetof(FRBFParams, MedianMin) == 0x000024, "Member 'FRBFParams::MedianMin' has a wrong offset!");
-static_assert(offsetof(FRBFParams, MedianMax) == 0x000028, "Member 'FRBFParams::MedianMax' has a wrong offset!");
 
 // ScriptStruct AnimGraphRuntime.AnimNode_PoseDriver
 // 0x00E8 (0x0168 - 0x0080)

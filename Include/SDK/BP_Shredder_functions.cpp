@@ -17,23 +17,17 @@
 namespace SDK
 {
 
-// Function BP_Shredder.BP_Shredder_C.ExecuteUbergraph_BP_Shredder
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function BP_Shredder.BP_Shredder_C.UserConstructionScript
+// (Event, Public, HasDefaults, BlueprintCallable, BlueprintEvent)
 
-void ABP_Shredder_C::ExecuteUbergraph_BP_Shredder(int32 EntryPoint)
+void ABP_Shredder_C::UserConstructionScript()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Shredder_C", "ExecuteUbergraph_BP_Shredder");
+		Func = Class->GetFunction("BP_Shredder_C", "UserConstructionScript");
 
-	Params::BP_Shredder_C_ExecuteUbergraph_BP_Shredder Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -57,17 +51,23 @@ void ABP_Shredder_C::ReceiveTick(float DeltaSeconds)
 }
 
 
-// Function BP_Shredder.BP_Shredder_C.UserConstructionScript
-// (Event, Public, HasDefaults, BlueprintCallable, BlueprintEvent)
+// Function BP_Shredder.BP_Shredder_C.ExecuteUbergraph_BP_Shredder
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void ABP_Shredder_C::UserConstructionScript()
+void ABP_Shredder_C::ExecuteUbergraph_BP_Shredder(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BP_Shredder_C", "UserConstructionScript");
+		Func = Class->GetFunction("BP_Shredder_C", "ExecuteUbergraph_BP_Shredder");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::BP_Shredder_C_ExecuteUbergraph_BP_Shredder Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 }

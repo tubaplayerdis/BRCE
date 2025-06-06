@@ -19,17 +19,17 @@ namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass WBP_Chat.WBP_Chat_C
-// 0x0010 (0x02D8 - 0x02C8)
+// 0x0010 (0x02C0 - 0x02B0)
 class UWBP_Chat_C final : public UChatWidget
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02C8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UBrickBorder*                           WarningBorder;                                     // 0x02D0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02B0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UBrickBorder*                           WarningBorder;                                     // 0x02B8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_WBP_Chat(int32 EntryPoint);
-	void UpdateIsTyping(bool bNewTyping);
 	void UpdateIsFocused(bool bNewFocused);
+	void UpdateIsTyping(bool bNewTyping);
+	void ExecuteUbergraph_WBP_Chat(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()
@@ -42,9 +42,9 @@ public:
 	}
 };
 static_assert(alignof(UWBP_Chat_C) == 0x000008, "Wrong alignment on UWBP_Chat_C");
-static_assert(sizeof(UWBP_Chat_C) == 0x0002D8, "Wrong size on UWBP_Chat_C");
-static_assert(offsetof(UWBP_Chat_C, UberGraphFrame) == 0x0002C8, "Member 'UWBP_Chat_C::UberGraphFrame' has a wrong offset!");
-static_assert(offsetof(UWBP_Chat_C, WarningBorder) == 0x0002D0, "Member 'UWBP_Chat_C::WarningBorder' has a wrong offset!");
+static_assert(sizeof(UWBP_Chat_C) == 0x0002C0, "Wrong size on UWBP_Chat_C");
+static_assert(offsetof(UWBP_Chat_C, UberGraphFrame) == 0x0002B0, "Member 'UWBP_Chat_C::UberGraphFrame' has a wrong offset!");
+static_assert(offsetof(UWBP_Chat_C, WarningBorder) == 0x0002B8, "Member 'UWBP_Chat_C::WarningBorder' has a wrong offset!");
 
 }
 

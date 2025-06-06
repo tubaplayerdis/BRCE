@@ -18,20 +18,20 @@ namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass WBP_Player.WBP_Player_C
-// 0x0010 (0x0550 - 0x0540)
+// 0x0010 (0x0530 - 0x0520)
 class UWBP_Player_C final : public UPlayerWidget
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0540(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0520(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
-	void ExecuteUbergraph_WBP_Player(int32 EntryPoint);
-	void AddCameraBrickWidget(class UCameraBrickWidget* InWidget);
-	void AddHealthBarWidget(class UHealthBarWidget* InWidget);
-	void AddCurrentItemWidget(class UCurrentItemWidget* InWidget);
-	void AddCrosshairWidget(class UCrosshairWidget* InWidget);
-	void AddDashboardWidget(class UDashboardWidget* InWidget);
 	void AddRestrictedAreaWidget(class URestrictedAreaWidget* InWidget);
+	void AddDashboardWidget(class UDashboardWidget* InWidget);
+	void AddCrosshairWidget(class UCrosshairWidget* InWidget);
+	void AddCurrentItemWidget(class UCurrentItemWidget* InWidget);
+	void AddHealthBarWidget(class UHealthBarWidget* InWidget);
+	void AddCameraBrickWidget(class UCameraBrickWidget* InWidget);
+	void ExecuteUbergraph_WBP_Player(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()
@@ -44,8 +44,8 @@ public:
 	}
 };
 static_assert(alignof(UWBP_Player_C) == 0x000010, "Wrong alignment on UWBP_Player_C");
-static_assert(sizeof(UWBP_Player_C) == 0x000550, "Wrong size on UWBP_Player_C");
-static_assert(offsetof(UWBP_Player_C, UberGraphFrame) == 0x000540, "Member 'UWBP_Player_C::UberGraphFrame' has a wrong offset!");
+static_assert(sizeof(UWBP_Player_C) == 0x000530, "Wrong size on UWBP_Player_C");
+static_assert(offsetof(UWBP_Player_C, UberGraphFrame) == 0x000520, "Member 'UWBP_Player_C::UberGraphFrame' has a wrong offset!");
 
 }
 

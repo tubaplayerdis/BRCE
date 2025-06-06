@@ -17,26 +17,6 @@
 namespace SDK
 {
 
-// Function WBP_BrickSliderReadOnly.WBP_BrickSliderReadOnly_C.ExecuteUbergraph_WBP_BrickSliderReadOnly
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UWBP_BrickSliderReadOnly_C::ExecuteUbergraph_WBP_BrickSliderReadOnly(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_BrickSliderReadOnly_C", "ExecuteUbergraph_WBP_BrickSliderReadOnly");
-
-	Params::WBP_BrickSliderReadOnly_C_ExecuteUbergraph_WBP_BrickSliderReadOnly Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function WBP_BrickSliderReadOnly.WBP_BrickSliderReadOnly_C.PreConstruct
 // (BlueprintCosmetic, Event, Public, BlueprintEvent)
 // Parameters:
@@ -52,6 +32,26 @@ void UWBP_BrickSliderReadOnly_C::PreConstruct(bool IsDesignTime)
 	Params::WBP_BrickSliderReadOnly_C_PreConstruct Parms{};
 
 	Parms.IsDesignTime = IsDesignTime;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function WBP_BrickSliderReadOnly.WBP_BrickSliderReadOnly_C.ExecuteUbergraph_WBP_BrickSliderReadOnly
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UWBP_BrickSliderReadOnly_C::ExecuteUbergraph_WBP_BrickSliderReadOnly(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_BrickSliderReadOnly_C", "ExecuteUbergraph_WBP_BrickSliderReadOnly");
+
+	Params::WBP_BrickSliderReadOnly_C_ExecuteUbergraph_WBP_BrickSliderReadOnly Parms{};
+
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

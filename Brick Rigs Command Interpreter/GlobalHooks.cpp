@@ -49,7 +49,7 @@ void hooks::BeginPlay::Disable()
 
 SDK::UUserWidget* hooks::Functions::CreateWidget::CreateWidget(SDK::UWorld* OwningObject, SDK::TSubclassOf<SDK::UUserWidget> UserWidgetClass, SDK::FName WidgetName)
 {
-	uintptr_t CreateWidgetFunction = (uintptr_t)GetModuleHandle(NULL) + 0x0CA5CC0;
+	uintptr_t CreateWidgetFunction = (uintptr_t)GetModuleHandle(NULL) + 0x0CC6140;
 
 	using CreateWidgetFn = SDK::UUserWidget*(__fastcall*)(SDK::UWorld* OwningObject, SDK::TSubclassOf<SDK::UUserWidget> UserWidgetClass, SDK::FName WidgetName);
 	CreateWidgetFn OnCreateWidgetFunction = reinterpret_cast<CreateWidgetFn>(CreateWidgetFunction);
@@ -59,7 +59,7 @@ SDK::UUserWidget* hooks::Functions::CreateWidget::CreateWidget(SDK::UWorld* Owni
 
 char hooks::Functions::OpenPopup::OpenPopup(SDK::UWindowManagerWidget* This, SDK::UClass* HandleT, SDK::UPopupParams* PopupParams, bool bToggleOpen)
 {
-	uintptr_t OpenPopupFunction = (uintptr_t)GetModuleHandle(NULL) + 0x0DCBA60;
+	uintptr_t OpenPopupFunction = (uintptr_t)GetModuleHandle(NULL) + 0x0DDCD00;
 
 	using OpenPopupFn = char (__fastcall*)(SDK::UWindowManagerWidget* Thiss, SDK::UClass* HandleTT, SDK::UPopupParams* PopupParamss, bool bToggleOpenn);
 	OpenPopupFn OnOpenPopupFunction = reinterpret_cast<OpenPopupFn>(OpenPopupFunction);
@@ -69,7 +69,7 @@ char hooks::Functions::OpenPopup::OpenPopup(SDK::UWindowManagerWidget* This, SDK
 
 char hooks::Functions::Initalize::Initalize(SDK::UPopupContainerWidget* This)
 {
-	uintptr_t InitalizeFunction = (uintptr_t)GetModuleHandle(NULL) + 0x0D59D10;
+	uintptr_t InitalizeFunction = (uintptr_t)GetModuleHandle(NULL) + 0x0DC7220;
 
 	using InitalizeFn = char(__fastcall*)(SDK::UPopupContainerWidget* Thiss);
 	InitalizeFn OnInitalizeFunction = reinterpret_cast<InitalizeFn>(InitalizeFunction);
@@ -129,7 +129,7 @@ void hooks::Functions::SynchronizeProperties::SynchronizeProperties(SDK::UBrickB
 
 bool hooks::Functions::SynchronizeProperties::Init()
 {
-	SynchronizePropertiesFunction = FindPattern(pattern, mask, GetModuleBaseN(), GetModuleSizeN());
+	SynchronizePropertiesFunction = (uintptr_t)GetModuleHandle(NULL) + 0x0DE8030;
 	return SynchronizePropertiesFunction != 0;
 }
 

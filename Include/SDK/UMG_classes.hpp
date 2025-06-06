@@ -12,19 +12,47 @@
 
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "MovieScene_structs.hpp"
+#include "MovieScene_classes.hpp"
+#include "MovieSceneTracks_classes.hpp"
 #include "UMG_structs.hpp"
 #include "Slate_structs.hpp"
 #include "SlateCore_structs.hpp"
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
 #include "InputCore_structs.hpp"
-#include "MovieSceneTracks_classes.hpp"
-#include "MovieScene_structs.hpp"
-#include "MovieScene_classes.hpp"
 
 
 namespace SDK
 {
+
+// Class UMG.MovieSceneMarginSection
+// 0x0288 (0x0370 - 0x00E8)
+class UMovieSceneMarginSection final : public UMovieSceneSection
+{
+public:
+	uint8                                         Pad_E8[0x8];                                       // 0x00E8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FMovieSceneFloatChannel                TopCurve;                                          // 0x00F0(0x00A0)(NativeAccessSpecifierPublic)
+	struct FMovieSceneFloatChannel                LeftCurve;                                         // 0x0190(0x00A0)(NativeAccessSpecifierPublic)
+	struct FMovieSceneFloatChannel                RightCurve;                                        // 0x0230(0x00A0)(NativeAccessSpecifierPublic)
+	struct FMovieSceneFloatChannel                BottomCurve;                                       // 0x02D0(0x00A0)(NativeAccessSpecifierPublic)
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"MovieSceneMarginSection">();
+	}
+	static class UMovieSceneMarginSection* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMovieSceneMarginSection>();
+	}
+};
+static_assert(alignof(UMovieSceneMarginSection) == 0x000008, "Wrong alignment on UMovieSceneMarginSection");
+static_assert(sizeof(UMovieSceneMarginSection) == 0x000370, "Wrong size on UMovieSceneMarginSection");
+static_assert(offsetof(UMovieSceneMarginSection, TopCurve) == 0x0000F0, "Member 'UMovieSceneMarginSection::TopCurve' has a wrong offset!");
+static_assert(offsetof(UMovieSceneMarginSection, LeftCurve) == 0x000190, "Member 'UMovieSceneMarginSection::LeftCurve' has a wrong offset!");
+static_assert(offsetof(UMovieSceneMarginSection, RightCurve) == 0x000230, "Member 'UMovieSceneMarginSection::RightCurve' has a wrong offset!");
+static_assert(offsetof(UMovieSceneMarginSection, BottomCurve) == 0x0002D0, "Member 'UMovieSceneMarginSection::BottomCurve' has a wrong offset!");
 
 // Class UMG.Visual
 // 0x0000 (0x0028 - 0x0028)
@@ -270,40 +298,36 @@ static_assert(sizeof(UPanelSlot) == 0x000038, "Wrong size on UPanelSlot");
 static_assert(offsetof(UPanelSlot, Parent) == 0x000028, "Member 'UPanelSlot::Parent' has a wrong offset!");
 static_assert(offsetof(UPanelSlot, Content) == 0x000030, "Member 'UPanelSlot::Content' has a wrong offset!");
 
-// Class UMG.HorizontalBoxSlot
+// Class UMG.ButtonSlot
 // 0x0028 (0x0060 - 0x0038)
-class UHorizontalBoxSlot final : public UPanelSlot
+class UButtonSlot final : public UPanelSlot
 {
 public:
-	uint8                                         Pad_38[0x8];                                       // 0x0038(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FMargin                                Padding;                                           // 0x0040(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	struct FSlateChildSize                        Size;                                              // 0x0050(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, NativeAccessSpecifierPublic)
-	EHorizontalAlignment                          HorizontalAlignment;                               // 0x0058(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EVerticalAlignment                            VerticalAlignment;                                 // 0x0059(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5A[0x6];                                       // 0x005A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FMargin                                Padding;                                           // 0x0038(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	EHorizontalAlignment                          HorizontalAlignment;                               // 0x0048(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EVerticalAlignment                            VerticalAlignment;                                 // 0x0049(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4A[0x16];                                      // 0x004A(0x0016)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void SetHorizontalAlignment(EHorizontalAlignment InHorizontalAlignment);
 	void SetPadding(const struct FMargin& InPadding);
-	void SetSize(const struct FSlateChildSize& InSize);
 	void SetVerticalAlignment(EVerticalAlignment InVerticalAlignment);
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"HorizontalBoxSlot">();
+		return StaticClassImpl<"ButtonSlot">();
 	}
-	static class UHorizontalBoxSlot* GetDefaultObj()
+	static class UButtonSlot* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UHorizontalBoxSlot>();
+		return GetDefaultObjImpl<UButtonSlot>();
 	}
 };
-static_assert(alignof(UHorizontalBoxSlot) == 0x000008, "Wrong alignment on UHorizontalBoxSlot");
-static_assert(sizeof(UHorizontalBoxSlot) == 0x000060, "Wrong size on UHorizontalBoxSlot");
-static_assert(offsetof(UHorizontalBoxSlot, Padding) == 0x000040, "Member 'UHorizontalBoxSlot::Padding' has a wrong offset!");
-static_assert(offsetof(UHorizontalBoxSlot, Size) == 0x000050, "Member 'UHorizontalBoxSlot::Size' has a wrong offset!");
-static_assert(offsetof(UHorizontalBoxSlot, HorizontalAlignment) == 0x000058, "Member 'UHorizontalBoxSlot::HorizontalAlignment' has a wrong offset!");
-static_assert(offsetof(UHorizontalBoxSlot, VerticalAlignment) == 0x000059, "Member 'UHorizontalBoxSlot::VerticalAlignment' has a wrong offset!");
+static_assert(alignof(UButtonSlot) == 0x000008, "Wrong alignment on UButtonSlot");
+static_assert(sizeof(UButtonSlot) == 0x000060, "Wrong size on UButtonSlot");
+static_assert(offsetof(UButtonSlot, Padding) == 0x000038, "Member 'UButtonSlot::Padding' has a wrong offset!");
+static_assert(offsetof(UButtonSlot, HorizontalAlignment) == 0x000048, "Member 'UButtonSlot::HorizontalAlignment' has a wrong offset!");
+static_assert(offsetof(UButtonSlot, VerticalAlignment) == 0x000049, "Member 'UButtonSlot::VerticalAlignment' has a wrong offset!");
 
 // Class UMG.PanelWidget
 // 0x0018 (0x0120 - 0x0108)
@@ -430,80 +454,117 @@ static_assert(offsetof(UBorder, OnMouseButtonUpEvent) == 0x00022C, "Member 'UBor
 static_assert(offsetof(UBorder, OnMouseMoveEvent) == 0x00023C, "Member 'UBorder::OnMouseMoveEvent' has a wrong offset!");
 static_assert(offsetof(UBorder, OnMouseDoubleClickEvent) == 0x00024C, "Member 'UBorder::OnMouseDoubleClickEvent' has a wrong offset!");
 
-// Class UMG.ListViewBase
-// 0x0110 (0x0218 - 0x0108)
-class UListViewBase : public UWidget
+// Class UMG.ComboBoxString
+// 0x0CF8 (0x0E00 - 0x0108)
+class UComboBoxString final : public UWidget
 {
 public:
-	TSubclassOf<class UUserWidget>                EntryWidgetClass;                                  // 0x0108(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         WheelScrollMultiplier;                             // 0x0110(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bEnableScrollAnimation;                            // 0x0114(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bEnableFixedLineOffset;                            // 0x0115(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_116[0x2];                                      // 0x0116(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         FixedLineScrollOffset;                             // 0x0118(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_11C[0x4];                                      // 0x011C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(class UUserWidget* Widget)> BP_OnEntryGenerated;                   // 0x0120(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPrivate)
-	TMulticastInlineDelegate<void(class UUserWidget* Widget)> BP_OnEntryReleased;                    // 0x0130(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPrivate)
-	struct FUserWidgetPool                        EntryWidgetPool;                                   // 0x0140(0x0080)(Transient, ContainsInstancedReference, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_1C0[0x58];                                     // 0x01C0(0x0058)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TArray<class FString>                         DefaultOptions;                                    // 0x0108(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPrivate)
+	class FString                                 SelectedOption;                                    // 0x0118(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	struct FComboBoxStyle                         WidgetStyle;                                       // 0x0128(0x03F0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FTableRowStyle                         ItemStyle;                                         // 0x0518(0x07C8)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FMargin                                ContentPadding;                                    // 0x0CE0(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	float                                         MaxListHeight;                                     // 0x0CF0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          HasDownArrow;                                      // 0x0CF4(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          EnableGamepadNavigationMode;                       // 0x0CF5(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_CF6[0x2];                                      // 0x0CF6(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSlateFontInfo                         Font;                                              // 0x0CF8(0x0058)(Edit, BlueprintVisible, BlueprintReadOnly, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FSlateColor                            ForegroundColor;                                   // 0x0D50(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	bool                                          bIsFocusable;                                      // 0x0D78(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D79[0x3];                                      // 0x0D79(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void(const class FString& Item)>    OnGenerateWidgetEvent;                             // 0x0D7C(0x0010)(Edit, ZeroConstructor, InstancedReference, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D8C[0x4];                                      // 0x0D8C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void(const class FString& SelectedItem, ESelectInfo SelectionType)> OnSelectionChanged; // 0x0D90(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnOpening;                                         // 0x0DA0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	uint8                                         Pad_DB0[0x50];                                     // 0x0DB0(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	void RegenerateAllEntries();
-	void RequestRefresh();
-	void ScrollToBottom();
-	void ScrollToTop();
-	void SetScrollBarVisibility(ESlateVisibility InVisibility);
-	void SetScrollOffset(const float InScrollOffset);
-	void SetWheelScrollMultiplier(float NewWheelScrollMultiplier);
+	void AddOption(const class FString& Option);
+	void ClearOptions();
+	void ClearSelection();
+	void RefreshOptions();
+	bool RemoveOption(const class FString& Option);
+	void SetSelectedIndex(const int32 Index_0);
+	void SetSelectedOption(const class FString& Option);
 
-	const TArray<class UUserWidget*> GetDisplayedEntryWidgets() const;
+	int32 FindOptionIndex(const class FString& Option) const;
+	class FString GetOptionAtIndex(int32 Index_0) const;
+	int32 GetOptionCount() const;
+	int32 GetSelectedIndex() const;
+	class FString GetSelectedOption() const;
+	bool IsOpen() const;
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"ListViewBase">();
+		return StaticClassImpl<"ComboBoxString">();
 	}
-	static class UListViewBase* GetDefaultObj()
+	static class UComboBoxString* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UListViewBase>();
+		return GetDefaultObjImpl<UComboBoxString>();
 	}
 };
-static_assert(alignof(UListViewBase) == 0x000008, "Wrong alignment on UListViewBase");
-static_assert(sizeof(UListViewBase) == 0x000218, "Wrong size on UListViewBase");
-static_assert(offsetof(UListViewBase, EntryWidgetClass) == 0x000108, "Member 'UListViewBase::EntryWidgetClass' has a wrong offset!");
-static_assert(offsetof(UListViewBase, WheelScrollMultiplier) == 0x000110, "Member 'UListViewBase::WheelScrollMultiplier' has a wrong offset!");
-static_assert(offsetof(UListViewBase, bEnableScrollAnimation) == 0x000114, "Member 'UListViewBase::bEnableScrollAnimation' has a wrong offset!");
-static_assert(offsetof(UListViewBase, bEnableFixedLineOffset) == 0x000115, "Member 'UListViewBase::bEnableFixedLineOffset' has a wrong offset!");
-static_assert(offsetof(UListViewBase, FixedLineScrollOffset) == 0x000118, "Member 'UListViewBase::FixedLineScrollOffset' has a wrong offset!");
-static_assert(offsetof(UListViewBase, BP_OnEntryGenerated) == 0x000120, "Member 'UListViewBase::BP_OnEntryGenerated' has a wrong offset!");
-static_assert(offsetof(UListViewBase, BP_OnEntryReleased) == 0x000130, "Member 'UListViewBase::BP_OnEntryReleased' has a wrong offset!");
-static_assert(offsetof(UListViewBase, EntryWidgetPool) == 0x000140, "Member 'UListViewBase::EntryWidgetPool' has a wrong offset!");
+static_assert(alignof(UComboBoxString) == 0x000008, "Wrong alignment on UComboBoxString");
+static_assert(sizeof(UComboBoxString) == 0x000E00, "Wrong size on UComboBoxString");
+static_assert(offsetof(UComboBoxString, DefaultOptions) == 0x000108, "Member 'UComboBoxString::DefaultOptions' has a wrong offset!");
+static_assert(offsetof(UComboBoxString, SelectedOption) == 0x000118, "Member 'UComboBoxString::SelectedOption' has a wrong offset!");
+static_assert(offsetof(UComboBoxString, WidgetStyle) == 0x000128, "Member 'UComboBoxString::WidgetStyle' has a wrong offset!");
+static_assert(offsetof(UComboBoxString, ItemStyle) == 0x000518, "Member 'UComboBoxString::ItemStyle' has a wrong offset!");
+static_assert(offsetof(UComboBoxString, ContentPadding) == 0x000CE0, "Member 'UComboBoxString::ContentPadding' has a wrong offset!");
+static_assert(offsetof(UComboBoxString, MaxListHeight) == 0x000CF0, "Member 'UComboBoxString::MaxListHeight' has a wrong offset!");
+static_assert(offsetof(UComboBoxString, HasDownArrow) == 0x000CF4, "Member 'UComboBoxString::HasDownArrow' has a wrong offset!");
+static_assert(offsetof(UComboBoxString, EnableGamepadNavigationMode) == 0x000CF5, "Member 'UComboBoxString::EnableGamepadNavigationMode' has a wrong offset!");
+static_assert(offsetof(UComboBoxString, Font) == 0x000CF8, "Member 'UComboBoxString::Font' has a wrong offset!");
+static_assert(offsetof(UComboBoxString, ForegroundColor) == 0x000D50, "Member 'UComboBoxString::ForegroundColor' has a wrong offset!");
+static_assert(offsetof(UComboBoxString, bIsFocusable) == 0x000D78, "Member 'UComboBoxString::bIsFocusable' has a wrong offset!");
+static_assert(offsetof(UComboBoxString, OnGenerateWidgetEvent) == 0x000D7C, "Member 'UComboBoxString::OnGenerateWidgetEvent' has a wrong offset!");
+static_assert(offsetof(UComboBoxString, OnSelectionChanged) == 0x000D90, "Member 'UComboBoxString::OnSelectionChanged' has a wrong offset!");
+static_assert(offsetof(UComboBoxString, OnOpening) == 0x000DA0, "Member 'UComboBoxString::OnOpening' has a wrong offset!");
 
-// Class UMG.VerticalBox
-// 0x0018 (0x0138 - 0x0120)
-class UVerticalBox : public UPanelWidget
+// Class UMG.PropertyBinding
+// 0x0038 (0x0060 - 0x0028)
+class UPropertyBinding : public UObject
 {
 public:
-	float                                         SlotSpacing;                                       // 0x0120(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_124[0x14];                                     // 0x0124(0x0014)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	class UVerticalBoxSlot* AddChildToVerticalBox(class UWidget* Content);
-	void SetSlotSpacing(float InSpacing);
+	TWeakObjectPtr<class UObject>                 SourceObject;                                      // 0x0028(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FDynamicPropertyPath                   SourcePath;                                        // 0x0030(0x0028)(NativeAccessSpecifierPublic)
+	class FName                                   DestinationProperty;                               // 0x0058(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"VerticalBox">();
+		return StaticClassImpl<"PropertyBinding">();
 	}
-	static class UVerticalBox* GetDefaultObj()
+	static class UPropertyBinding* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UVerticalBox>();
+		return GetDefaultObjImpl<UPropertyBinding>();
 	}
 };
-static_assert(alignof(UVerticalBox) == 0x000008, "Wrong alignment on UVerticalBox");
-static_assert(sizeof(UVerticalBox) == 0x000138, "Wrong size on UVerticalBox");
-static_assert(offsetof(UVerticalBox, SlotSpacing) == 0x000120, "Member 'UVerticalBox::SlotSpacing' has a wrong offset!");
+static_assert(alignof(UPropertyBinding) == 0x000008, "Wrong alignment on UPropertyBinding");
+static_assert(sizeof(UPropertyBinding) == 0x000060, "Wrong size on UPropertyBinding");
+static_assert(offsetof(UPropertyBinding, SourceObject) == 0x000028, "Member 'UPropertyBinding::SourceObject' has a wrong offset!");
+static_assert(offsetof(UPropertyBinding, SourcePath) == 0x000030, "Member 'UPropertyBinding::SourcePath' has a wrong offset!");
+static_assert(offsetof(UPropertyBinding, DestinationProperty) == 0x000058, "Member 'UPropertyBinding::DestinationProperty' has a wrong offset!");
+
+// Class UMG.Int32Binding
+// 0x0000 (0x0060 - 0x0060)
+class UInt32Binding final : public UPropertyBinding
+{
+public:
+	int32 GetValue() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"Int32Binding">();
+	}
+	static class UInt32Binding* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UInt32Binding>();
+	}
+};
+static_assert(alignof(UInt32Binding) == 0x000008, "Wrong alignment on UInt32Binding");
+static_assert(sizeof(UInt32Binding) == 0x000060, "Wrong size on UInt32Binding");
 
 // Class UMG.ExpandableArea
 // 0x0230 (0x0338 - 0x0108)
@@ -553,43 +614,71 @@ static_assert(offsetof(UExpandableArea, OnExpansionChanged) == 0x000308, "Member
 static_assert(offsetof(UExpandableArea, HeaderContent) == 0x000318, "Member 'UExpandableArea::HeaderContent' has a wrong offset!");
 static_assert(offsetof(UExpandableArea, BodyContent) == 0x000320, "Member 'UExpandableArea::BodyContent' has a wrong offset!");
 
-// Class UMG.ScrollBar
-// 0x0508 (0x0610 - 0x0108)
-class UScrollBar final : public UWidget
+// Class UMG.ListViewDesignerPreviewItem
+// 0x0000 (0x0028 - 0x0028)
+class UListViewDesignerPreviewItem final : public UObject
 {
 public:
-	struct FScrollBarStyle                        WidgetStyle;                                       // 0x0108(0x04D0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	class USlateWidgetStyleAsset*                 Style;                                             // 0x05D8(0x0008)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bAlwaysShowScrollbar;                              // 0x05E0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bAlwaysShowScrollbarTrack;                         // 0x05E1(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EOrientation                                  Orientation;                                       // 0x05E2(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5E3[0x1];                                      // 0x05E3(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector2D                              Thickness;                                         // 0x05E4(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FMargin                                Padding;                                           // 0x05EC(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5FC[0x14];                                     // 0x05FC(0x0014)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"ListViewDesignerPreviewItem">();
+	}
+	static class UListViewDesignerPreviewItem* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UListViewDesignerPreviewItem>();
+	}
+};
+static_assert(alignof(UListViewDesignerPreviewItem) == 0x000008, "Wrong alignment on UListViewDesignerPreviewItem");
+static_assert(sizeof(UListViewDesignerPreviewItem) == 0x000028, "Wrong size on UListViewDesignerPreviewItem");
+
+// Class UMG.MenuAnchor
+// 0x0050 (0x0170 - 0x0120)
+class UMenuAnchor final : public UContentWidget
+{
+public:
+	TSubclassOf<class UUserWidget>                MenuClass;                                         // 0x0120(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void()>                             OnGetMenuContentEvent;                             // 0x0128(0x0010)(Edit, ZeroConstructor, InstancedReference, NoDestructor, NativeAccessSpecifierPublic)
+	TDelegate<void()>                             OnGetUserMenuContentEvent;                         // 0x0138(0x0010)(Edit, ZeroConstructor, InstancedReference, NoDestructor, NativeAccessSpecifierPublic)
+	EMenuPlacement                                Placement;                                         // 0x0148(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bFitInWindow;                                      // 0x0149(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ShouldDeferPaintingAfterWindowContent;             // 0x014A(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          UseApplicationMenuStack;                           // 0x014B(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14C[0x4];                                      // 0x014C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void(bool bIsOpen)>  OnMenuOpenChanged;                                 // 0x0150(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	uint8                                         Pad_160[0x10];                                     // 0x0160(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	void SetState(float InOffsetFraction, float InThumbSizeFraction);
+	void Close();
+	void FitInWindow(bool bFit);
+	void Open(bool bFocusMenu);
+	void SetPlacement(EMenuPlacement InPlacement);
+	void ToggleOpen(bool bFocusOnOpen);
+
+	struct FVector2D GetMenuPosition() const;
+	bool HasOpenSubMenus() const;
+	bool IsOpen() const;
+	bool ShouldOpenDueToClick() const;
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"ScrollBar">();
+		return StaticClassImpl<"MenuAnchor">();
 	}
-	static class UScrollBar* GetDefaultObj()
+	static class UMenuAnchor* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UScrollBar>();
+		return GetDefaultObjImpl<UMenuAnchor>();
 	}
 };
-static_assert(alignof(UScrollBar) == 0x000008, "Wrong alignment on UScrollBar");
-static_assert(sizeof(UScrollBar) == 0x000610, "Wrong size on UScrollBar");
-static_assert(offsetof(UScrollBar, WidgetStyle) == 0x000108, "Member 'UScrollBar::WidgetStyle' has a wrong offset!");
-static_assert(offsetof(UScrollBar, Style) == 0x0005D8, "Member 'UScrollBar::Style' has a wrong offset!");
-static_assert(offsetof(UScrollBar, bAlwaysShowScrollbar) == 0x0005E0, "Member 'UScrollBar::bAlwaysShowScrollbar' has a wrong offset!");
-static_assert(offsetof(UScrollBar, bAlwaysShowScrollbarTrack) == 0x0005E1, "Member 'UScrollBar::bAlwaysShowScrollbarTrack' has a wrong offset!");
-static_assert(offsetof(UScrollBar, Orientation) == 0x0005E2, "Member 'UScrollBar::Orientation' has a wrong offset!");
-static_assert(offsetof(UScrollBar, Thickness) == 0x0005E4, "Member 'UScrollBar::Thickness' has a wrong offset!");
-static_assert(offsetof(UScrollBar, Padding) == 0x0005EC, "Member 'UScrollBar::Padding' has a wrong offset!");
+static_assert(alignof(UMenuAnchor) == 0x000008, "Wrong alignment on UMenuAnchor");
+static_assert(sizeof(UMenuAnchor) == 0x000170, "Wrong size on UMenuAnchor");
+static_assert(offsetof(UMenuAnchor, MenuClass) == 0x000120, "Member 'UMenuAnchor::MenuClass' has a wrong offset!");
+static_assert(offsetof(UMenuAnchor, OnGetMenuContentEvent) == 0x000128, "Member 'UMenuAnchor::OnGetMenuContentEvent' has a wrong offset!");
+static_assert(offsetof(UMenuAnchor, OnGetUserMenuContentEvent) == 0x000138, "Member 'UMenuAnchor::OnGetUserMenuContentEvent' has a wrong offset!");
+static_assert(offsetof(UMenuAnchor, Placement) == 0x000148, "Member 'UMenuAnchor::Placement' has a wrong offset!");
+static_assert(offsetof(UMenuAnchor, bFitInWindow) == 0x000149, "Member 'UMenuAnchor::bFitInWindow' has a wrong offset!");
+static_assert(offsetof(UMenuAnchor, ShouldDeferPaintingAfterWindowContent) == 0x00014A, "Member 'UMenuAnchor::ShouldDeferPaintingAfterWindowContent' has a wrong offset!");
+static_assert(offsetof(UMenuAnchor, UseApplicationMenuStack) == 0x00014B, "Member 'UMenuAnchor::UseApplicationMenuStack' has a wrong offset!");
+static_assert(offsetof(UMenuAnchor, OnMenuOpenChanged) == 0x000150, "Member 'UMenuAnchor::OnMenuOpenChanged' has a wrong offset!");
 
 // Class UMG.UserWidget
 // 0x0158 (0x0260 - 0x0108)
@@ -744,161 +833,110 @@ static_assert(offsetof(UUserWidget, TickFrequency) == 0x0001F0, "Member 'UUserWi
 static_assert(offsetof(UUserWidget, InputComponent) == 0x0001F8, "Member 'UUserWidget::InputComponent' has a wrong offset!");
 static_assert(offsetof(UUserWidget, AnimationCallbacks) == 0x000200, "Member 'UUserWidget::AnimationCallbacks' has a wrong offset!");
 
-// Class UMG.MovieSceneMarginTrack
-// 0x0000 (0x00C0 - 0x00C0)
-class UMovieSceneMarginTrack final : public UMovieScenePropertyTrack
+// Class UMG.UserObjectListEntryLibrary
+// 0x0000 (0x0028 - 0x0028)
+class UUserObjectListEntryLibrary final : public UBlueprintFunctionLibrary
 {
 public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"MovieSceneMarginTrack">();
-	}
-	static class UMovieSceneMarginTrack* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMovieSceneMarginTrack>();
-	}
-};
-static_assert(alignof(UMovieSceneMarginTrack) == 0x000008, "Wrong alignment on UMovieSceneMarginTrack");
-static_assert(sizeof(UMovieSceneMarginTrack) == 0x0000C0, "Wrong size on UMovieSceneMarginTrack");
-
-// Class UMG.PropertyBinding
-// 0x0038 (0x0060 - 0x0028)
-class UPropertyBinding : public UObject
-{
-public:
-	TWeakObjectPtr<class UObject>                 SourceObject;                                      // 0x0028(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FDynamicPropertyPath                   SourcePath;                                        // 0x0030(0x0028)(NativeAccessSpecifierPublic)
-	class FName                                   DestinationProperty;                               // 0x0058(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	static class UObject* GetListItemObject(TScriptInterface<class IUserObjectListEntry> UserObjectListEntry);
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"PropertyBinding">();
+		return StaticClassImpl<"UserObjectListEntryLibrary">();
 	}
-	static class UPropertyBinding* GetDefaultObj()
+	static class UUserObjectListEntryLibrary* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UPropertyBinding>();
+		return GetDefaultObjImpl<UUserObjectListEntryLibrary>();
 	}
 };
-static_assert(alignof(UPropertyBinding) == 0x000008, "Wrong alignment on UPropertyBinding");
-static_assert(sizeof(UPropertyBinding) == 0x000060, "Wrong size on UPropertyBinding");
-static_assert(offsetof(UPropertyBinding, SourceObject) == 0x000028, "Member 'UPropertyBinding::SourceObject' has a wrong offset!");
-static_assert(offsetof(UPropertyBinding, SourcePath) == 0x000030, "Member 'UPropertyBinding::SourcePath' has a wrong offset!");
-static_assert(offsetof(UPropertyBinding, DestinationProperty) == 0x000058, "Member 'UPropertyBinding::DestinationProperty' has a wrong offset!");
+static_assert(alignof(UUserObjectListEntryLibrary) == 0x000008, "Wrong alignment on UUserObjectListEntryLibrary");
+static_assert(sizeof(UUserObjectListEntryLibrary) == 0x000028, "Wrong size on UUserObjectListEntryLibrary");
 
-// Class UMG.FloatBinding
+// Class UMG.ListViewBase
+// 0x0110 (0x0218 - 0x0108)
+class UListViewBase : public UWidget
+{
+public:
+	TSubclassOf<class UUserWidget>                EntryWidgetClass;                                  // 0x0108(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         WheelScrollMultiplier;                             // 0x0110(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bEnableScrollAnimation;                            // 0x0114(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          bEnableFixedLineOffset;                            // 0x0115(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_116[0x2];                                      // 0x0116(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         FixedLineScrollOffset;                             // 0x0118(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_11C[0x4];                                      // 0x011C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void(class UUserWidget* Widget)> BP_OnEntryGenerated;                   // 0x0120(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPrivate)
+	TMulticastInlineDelegate<void(class UUserWidget* Widget)> BP_OnEntryReleased;                    // 0x0130(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPrivate)
+	struct FUserWidgetPool                        EntryWidgetPool;                                   // 0x0140(0x0080)(Transient, ContainsInstancedReference, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_1C0[0x58];                                     // 0x01C0(0x0058)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void RegenerateAllEntries();
+	void RequestRefresh();
+	void ScrollToBottom();
+	void ScrollToTop();
+	void SetScrollBarVisibility(ESlateVisibility InVisibility);
+	void SetScrollOffset(const float InScrollOffset);
+	void SetWheelScrollMultiplier(float NewWheelScrollMultiplier);
+
+	const TArray<class UUserWidget*> GetDisplayedEntryWidgets() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"ListViewBase">();
+	}
+	static class UListViewBase* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UListViewBase>();
+	}
+};
+static_assert(alignof(UListViewBase) == 0x000008, "Wrong alignment on UListViewBase");
+static_assert(sizeof(UListViewBase) == 0x000218, "Wrong size on UListViewBase");
+static_assert(offsetof(UListViewBase, EntryWidgetClass) == 0x000108, "Member 'UListViewBase::EntryWidgetClass' has a wrong offset!");
+static_assert(offsetof(UListViewBase, WheelScrollMultiplier) == 0x000110, "Member 'UListViewBase::WheelScrollMultiplier' has a wrong offset!");
+static_assert(offsetof(UListViewBase, bEnableScrollAnimation) == 0x000114, "Member 'UListViewBase::bEnableScrollAnimation' has a wrong offset!");
+static_assert(offsetof(UListViewBase, bEnableFixedLineOffset) == 0x000115, "Member 'UListViewBase::bEnableFixedLineOffset' has a wrong offset!");
+static_assert(offsetof(UListViewBase, FixedLineScrollOffset) == 0x000118, "Member 'UListViewBase::FixedLineScrollOffset' has a wrong offset!");
+static_assert(offsetof(UListViewBase, BP_OnEntryGenerated) == 0x000120, "Member 'UListViewBase::BP_OnEntryGenerated' has a wrong offset!");
+static_assert(offsetof(UListViewBase, BP_OnEntryReleased) == 0x000130, "Member 'UListViewBase::BP_OnEntryReleased' has a wrong offset!");
+static_assert(offsetof(UListViewBase, EntryWidgetPool) == 0x000140, "Member 'UListViewBase::EntryWidgetPool' has a wrong offset!");
+
+// Class UMG.MouseCursorBinding
 // 0x0000 (0x0060 - 0x0060)
-class UFloatBinding final : public UPropertyBinding
+class UMouseCursorBinding final : public UPropertyBinding
 {
 public:
-	float GetValue() const;
+	EMouseCursor GetValue() const;
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"FloatBinding">();
+		return StaticClassImpl<"MouseCursorBinding">();
 	}
-	static class UFloatBinding* GetDefaultObj()
+	static class UMouseCursorBinding* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UFloatBinding>();
+		return GetDefaultObjImpl<UMouseCursorBinding>();
 	}
 };
-static_assert(alignof(UFloatBinding) == 0x000008, "Wrong alignment on UFloatBinding");
-static_assert(sizeof(UFloatBinding) == 0x000060, "Wrong size on UFloatBinding");
-
-// Class UMG.GridSlot
-// 0x0038 (0x0070 - 0x0038)
-class UGridSlot final : public UPanelSlot
-{
-public:
-	struct FMargin                                Padding;                                           // 0x0038(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	EHorizontalAlignment                          HorizontalAlignment;                               // 0x0048(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EVerticalAlignment                            VerticalAlignment;                                 // 0x0049(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4A[0x2];                                       // 0x004A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         Row;                                               // 0x004C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         RowSpan;                                           // 0x0050(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Column;                                            // 0x0054(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ColumnSpan;                                        // 0x0058(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Layer;                                             // 0x005C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector2D                              Nudge;                                             // 0x0060(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_68[0x8];                                       // 0x0068(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void SetColumn(int32 InColumn);
-	void SetColumnSpan(int32 InColumnSpan);
-	void SetHorizontalAlignment(EHorizontalAlignment InHorizontalAlignment);
-	void SetLayer(int32 InLayer);
-	void SetNudge(const struct FVector2D& InNudge);
-	void SetPadding(const struct FMargin& InPadding);
-	void SetRow(int32 InRow);
-	void SetRowSpan(int32 InRowSpan);
-	void SetVerticalAlignment(EVerticalAlignment InVerticalAlignment);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"GridSlot">();
-	}
-	static class UGridSlot* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UGridSlot>();
-	}
-};
-static_assert(alignof(UGridSlot) == 0x000008, "Wrong alignment on UGridSlot");
-static_assert(sizeof(UGridSlot) == 0x000070, "Wrong size on UGridSlot");
-static_assert(offsetof(UGridSlot, Padding) == 0x000038, "Member 'UGridSlot::Padding' has a wrong offset!");
-static_assert(offsetof(UGridSlot, HorizontalAlignment) == 0x000048, "Member 'UGridSlot::HorizontalAlignment' has a wrong offset!");
-static_assert(offsetof(UGridSlot, VerticalAlignment) == 0x000049, "Member 'UGridSlot::VerticalAlignment' has a wrong offset!");
-static_assert(offsetof(UGridSlot, Row) == 0x00004C, "Member 'UGridSlot::Row' has a wrong offset!");
-static_assert(offsetof(UGridSlot, RowSpan) == 0x000050, "Member 'UGridSlot::RowSpan' has a wrong offset!");
-static_assert(offsetof(UGridSlot, Column) == 0x000054, "Member 'UGridSlot::Column' has a wrong offset!");
-static_assert(offsetof(UGridSlot, ColumnSpan) == 0x000058, "Member 'UGridSlot::ColumnSpan' has a wrong offset!");
-static_assert(offsetof(UGridSlot, Layer) == 0x00005C, "Member 'UGridSlot::Layer' has a wrong offset!");
-static_assert(offsetof(UGridSlot, Nudge) == 0x000060, "Member 'UGridSlot::Nudge' has a wrong offset!");
-
-// Class UMG.MovieSceneWidgetMaterialTrack
-// 0x0020 (0x00C0 - 0x00A0)
-class UMovieSceneWidgetMaterialTrack final : public UMovieSceneMaterialTrack
-{
-public:
-	uint8                                         Pad_A0[0x8];                                       // 0x00A0(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class FName>                           BrushPropertyNamePath;                             // 0x00A8(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
-	class FName                                   TrackName;                                         // 0x00B8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"MovieSceneWidgetMaterialTrack">();
-	}
-	static class UMovieSceneWidgetMaterialTrack* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMovieSceneWidgetMaterialTrack>();
-	}
-};
-static_assert(alignof(UMovieSceneWidgetMaterialTrack) == 0x000008, "Wrong alignment on UMovieSceneWidgetMaterialTrack");
-static_assert(sizeof(UMovieSceneWidgetMaterialTrack) == 0x0000C0, "Wrong size on UMovieSceneWidgetMaterialTrack");
-static_assert(offsetof(UMovieSceneWidgetMaterialTrack, BrushPropertyNamePath) == 0x0000A8, "Member 'UMovieSceneWidgetMaterialTrack::BrushPropertyNamePath' has a wrong offset!");
-static_assert(offsetof(UMovieSceneWidgetMaterialTrack, TrackName) == 0x0000B8, "Member 'UMovieSceneWidgetMaterialTrack::TrackName' has a wrong offset!");
+static_assert(alignof(UMouseCursorBinding) == 0x000008, "Wrong alignment on UMouseCursorBinding");
+static_assert(sizeof(UMouseCursorBinding) == 0x000060, "Wrong size on UMouseCursorBinding");
 
 // Class UMG.GridPanel
-// 0x0048 (0x0168 - 0x0120)
+// 0x0040 (0x0160 - 0x0120)
 class UGridPanel : public UPanelWidget
 {
 public:
 	TArray<float>                                 ColumnFill;                                        // 0x0120(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
 	TArray<float>                                 RowFill;                                           // 0x0130(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, NativeAccessSpecifierPublic)
-	float                                         DefaultColumnFill;                                 // 0x0140(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         DefaultRowFill;                                    // 0x0144(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector2D                              CellSizeOverride;                                  // 0x0148(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector2D                              SlotSpacing;                                       // 0x0150(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_158[0x10];                                     // 0x0158(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FVector2D                              CellSizeOverride;                                  // 0x0140(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector2D                              SlotSpacing;                                       // 0x0148(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_150[0x10];                                     // 0x0150(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	class UGridSlot* AddChildToGrid(class UWidget* Content, int32 InRow, int32 InColumn);
 	void SetCellSizeOverride(const struct FVector2D& Override);
 	void SetColumnFill(int32 ColumnIndex, float Coefficient);
-	void SetDefaultColumnFill(float Coefficient);
-	void SetDefaultRowFill(float Coefficient);
 	void SetRowFill(int32 ColumnIndex, float Coefficient);
 	void SetSlotSpacing(const struct FVector2D& Spacing);
 
@@ -913,100 +951,11 @@ public:
 	}
 };
 static_assert(alignof(UGridPanel) == 0x000008, "Wrong alignment on UGridPanel");
-static_assert(sizeof(UGridPanel) == 0x000168, "Wrong size on UGridPanel");
+static_assert(sizeof(UGridPanel) == 0x000160, "Wrong size on UGridPanel");
 static_assert(offsetof(UGridPanel, ColumnFill) == 0x000120, "Member 'UGridPanel::ColumnFill' has a wrong offset!");
 static_assert(offsetof(UGridPanel, RowFill) == 0x000130, "Member 'UGridPanel::RowFill' has a wrong offset!");
-static_assert(offsetof(UGridPanel, DefaultColumnFill) == 0x000140, "Member 'UGridPanel::DefaultColumnFill' has a wrong offset!");
-static_assert(offsetof(UGridPanel, DefaultRowFill) == 0x000144, "Member 'UGridPanel::DefaultRowFill' has a wrong offset!");
-static_assert(offsetof(UGridPanel, CellSizeOverride) == 0x000148, "Member 'UGridPanel::CellSizeOverride' has a wrong offset!");
-static_assert(offsetof(UGridPanel, SlotSpacing) == 0x000150, "Member 'UGridPanel::SlotSpacing' has a wrong offset!");
-
-// Class UMG.EditableText
-// 0x0358 (0x0460 - 0x0108)
-class UEditableText final : public UWidget
-{
-public:
-	class FText                                   Text;                                              // 0x0108(0x0018)(Edit, NativeAccessSpecifierPublic)
-	TDelegate<void()>                             TextDelegate;                                      // 0x0120(0x0010)(ZeroConstructor, InstancedReference, NoDestructor, NativeAccessSpecifierPublic)
-	class FText                                   HintText;                                          // 0x0130(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	TDelegate<void()>                             HintTextDelegate;                                  // 0x0148(0x0010)(ZeroConstructor, InstancedReference, NoDestructor, NativeAccessSpecifierPublic)
-	struct FEditableTextStyle                     WidgetStyle;                                       // 0x0158(0x0220)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	class USlateWidgetStyleAsset*                 Style;                                             // 0x0378(0x0008)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class USlateBrushAsset*                       BackgroundImageSelected;                           // 0x0380(0x0008)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class USlateBrushAsset*                       BackgroundImageComposing;                          // 0x0388(0x0008)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class USlateBrushAsset*                       CaretImage;                                        // 0x0390(0x0008)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FSlateFontInfo                         Font;                                              // 0x0398(0x0058)(Deprecated, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FSlateColor                            ColorAndOpacity;                                   // 0x03F0(0x0028)(Deprecated, NativeAccessSpecifierPublic)
-	bool                                          IsReadOnly;                                        // 0x0418(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsPassword;                                        // 0x0419(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_41A[0x2];                                      // 0x041A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         MinimumDesiredWidth;                               // 0x041C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsCaretMovedWhenGainFocus;                         // 0x0420(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          SelectAllTextWhenFocused;                          // 0x0421(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          RevertTextOnEscape;                                // 0x0422(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ClearKeyboardFocusOnCommit;                        // 0x0423(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          SelectAllTextOnCommit;                             // 0x0424(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          AllowContextMenu;                                  // 0x0425(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EVirtualKeyboardType                          KeyboardType;                                      // 0x0426(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVirtualKeyboardOptions                VirtualKeyboardOptions;                            // 0x0427(0x0001)(Edit, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
-	EVirtualKeyboardTrigger                       VirtualKeyboardTrigger;                            // 0x0428(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EVirtualKeyboardDismissAction                 VirtualKeyboardDismissAction;                      // 0x0429(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ETextJustify                                  Justification;                                     // 0x042A(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FShapedTextOptions                     ShapedTextOptions;                                 // 0x042B(0x0003)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
-	uint8                                         Pad_42E[0x2];                                      // 0x042E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(const class FText& Text)> OnTextChanged;                           // 0x0430(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(const class FText& Text, ETextCommit CommitMethod)> OnTextCommitted; // 0x0440(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_450[0x10];                                     // 0x0450(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void SetHintText(const class FText& InHintText);
-	void SetIsPassword(bool InbIsPassword);
-	void SetIsReadOnly(bool InbIsReadyOnly);
-	void SetJustification(ETextJustify InJustification);
-	void SetText(const class FText& InText);
-
-	class FText GetText() const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"EditableText">();
-	}
-	static class UEditableText* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UEditableText>();
-	}
-};
-static_assert(alignof(UEditableText) == 0x000008, "Wrong alignment on UEditableText");
-static_assert(sizeof(UEditableText) == 0x000460, "Wrong size on UEditableText");
-static_assert(offsetof(UEditableText, Text) == 0x000108, "Member 'UEditableText::Text' has a wrong offset!");
-static_assert(offsetof(UEditableText, TextDelegate) == 0x000120, "Member 'UEditableText::TextDelegate' has a wrong offset!");
-static_assert(offsetof(UEditableText, HintText) == 0x000130, "Member 'UEditableText::HintText' has a wrong offset!");
-static_assert(offsetof(UEditableText, HintTextDelegate) == 0x000148, "Member 'UEditableText::HintTextDelegate' has a wrong offset!");
-static_assert(offsetof(UEditableText, WidgetStyle) == 0x000158, "Member 'UEditableText::WidgetStyle' has a wrong offset!");
-static_assert(offsetof(UEditableText, Style) == 0x000378, "Member 'UEditableText::Style' has a wrong offset!");
-static_assert(offsetof(UEditableText, BackgroundImageSelected) == 0x000380, "Member 'UEditableText::BackgroundImageSelected' has a wrong offset!");
-static_assert(offsetof(UEditableText, BackgroundImageComposing) == 0x000388, "Member 'UEditableText::BackgroundImageComposing' has a wrong offset!");
-static_assert(offsetof(UEditableText, CaretImage) == 0x000390, "Member 'UEditableText::CaretImage' has a wrong offset!");
-static_assert(offsetof(UEditableText, Font) == 0x000398, "Member 'UEditableText::Font' has a wrong offset!");
-static_assert(offsetof(UEditableText, ColorAndOpacity) == 0x0003F0, "Member 'UEditableText::ColorAndOpacity' has a wrong offset!");
-static_assert(offsetof(UEditableText, IsReadOnly) == 0x000418, "Member 'UEditableText::IsReadOnly' has a wrong offset!");
-static_assert(offsetof(UEditableText, IsPassword) == 0x000419, "Member 'UEditableText::IsPassword' has a wrong offset!");
-static_assert(offsetof(UEditableText, MinimumDesiredWidth) == 0x00041C, "Member 'UEditableText::MinimumDesiredWidth' has a wrong offset!");
-static_assert(offsetof(UEditableText, IsCaretMovedWhenGainFocus) == 0x000420, "Member 'UEditableText::IsCaretMovedWhenGainFocus' has a wrong offset!");
-static_assert(offsetof(UEditableText, SelectAllTextWhenFocused) == 0x000421, "Member 'UEditableText::SelectAllTextWhenFocused' has a wrong offset!");
-static_assert(offsetof(UEditableText, RevertTextOnEscape) == 0x000422, "Member 'UEditableText::RevertTextOnEscape' has a wrong offset!");
-static_assert(offsetof(UEditableText, ClearKeyboardFocusOnCommit) == 0x000423, "Member 'UEditableText::ClearKeyboardFocusOnCommit' has a wrong offset!");
-static_assert(offsetof(UEditableText, SelectAllTextOnCommit) == 0x000424, "Member 'UEditableText::SelectAllTextOnCommit' has a wrong offset!");
-static_assert(offsetof(UEditableText, AllowContextMenu) == 0x000425, "Member 'UEditableText::AllowContextMenu' has a wrong offset!");
-static_assert(offsetof(UEditableText, KeyboardType) == 0x000426, "Member 'UEditableText::KeyboardType' has a wrong offset!");
-static_assert(offsetof(UEditableText, VirtualKeyboardOptions) == 0x000427, "Member 'UEditableText::VirtualKeyboardOptions' has a wrong offset!");
-static_assert(offsetof(UEditableText, VirtualKeyboardTrigger) == 0x000428, "Member 'UEditableText::VirtualKeyboardTrigger' has a wrong offset!");
-static_assert(offsetof(UEditableText, VirtualKeyboardDismissAction) == 0x000429, "Member 'UEditableText::VirtualKeyboardDismissAction' has a wrong offset!");
-static_assert(offsetof(UEditableText, Justification) == 0x00042A, "Member 'UEditableText::Justification' has a wrong offset!");
-static_assert(offsetof(UEditableText, ShapedTextOptions) == 0x00042B, "Member 'UEditableText::ShapedTextOptions' has a wrong offset!");
-static_assert(offsetof(UEditableText, OnTextChanged) == 0x000430, "Member 'UEditableText::OnTextChanged' has a wrong offset!");
-static_assert(offsetof(UEditableText, OnTextCommitted) == 0x000440, "Member 'UEditableText::OnTextCommitted' has a wrong offset!");
+static_assert(offsetof(UGridPanel, CellSizeOverride) == 0x000140, "Member 'UGridPanel::CellSizeOverride' has a wrong offset!");
+static_assert(offsetof(UGridPanel, SlotSpacing) == 0x000148, "Member 'UGridPanel::SlotSpacing' has a wrong offset!");
 
 // Class UMG.HorizontalBox
 // 0x0018 (0x0138 - 0x0120)
@@ -1033,23 +982,6 @@ public:
 static_assert(alignof(UHorizontalBox) == 0x000008, "Wrong alignment on UHorizontalBox");
 static_assert(sizeof(UHorizontalBox) == 0x000138, "Wrong size on UHorizontalBox");
 static_assert(offsetof(UHorizontalBox, SlotSpacing) == 0x000120, "Member 'UHorizontalBox::SlotSpacing' has a wrong offset!");
-
-// Class UMG.MovieScene2DTransformTrack
-// 0x0000 (0x00C0 - 0x00C0)
-class UMovieScene2DTransformTrack final : public UMovieScenePropertyTrack
-{
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"MovieScene2DTransformTrack">();
-	}
-	static class UMovieScene2DTransformTrack* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMovieScene2DTransformTrack>();
-	}
-};
-static_assert(alignof(UMovieScene2DTransformTrack) == 0x000008, "Wrong alignment on UMovieScene2DTransformTrack");
-static_assert(sizeof(UMovieScene2DTransformTrack) == 0x0000C0, "Wrong size on UMovieScene2DTransformTrack");
 
 // Class UMG.Image
 // 0x0108 (0x0210 - 0x0108)
@@ -1099,28 +1031,6 @@ static_assert(offsetof(UImage, ColorAndOpacity) == 0x0001A0, "Member 'UImage::Co
 static_assert(offsetof(UImage, ColorAndOpacityDelegate) == 0x0001B0, "Member 'UImage::ColorAndOpacityDelegate' has a wrong offset!");
 static_assert(offsetof(UImage, bFlipForRightToLeftFlowDirection) == 0x0001C0, "Member 'UImage::bFlipForRightToLeftFlowDirection' has a wrong offset!");
 static_assert(offsetof(UImage, OnMouseButtonDownEvent) == 0x0001C4, "Member 'UImage::OnMouseButtonDownEvent' has a wrong offset!");
-
-// Class UMG.UserListEntryLibrary
-// 0x0000 (0x0028 - 0x0028)
-class UUserListEntryLibrary final : public UBlueprintFunctionLibrary
-{
-public:
-	static class UListViewBase* GetOwningListView(TScriptInterface<class IUserListEntry> UserListEntry);
-	static bool IsListItemExpanded(TScriptInterface<class IUserListEntry> UserListEntry);
-	static bool IsListItemSelected(TScriptInterface<class IUserListEntry> UserListEntry);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"UserListEntryLibrary">();
-	}
-	static class UUserListEntryLibrary* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UUserListEntryLibrary>();
-	}
-};
-static_assert(alignof(UUserListEntryLibrary) == 0x000008, "Wrong alignment on UUserListEntryLibrary");
-static_assert(sizeof(UUserListEntryLibrary) == 0x000028, "Wrong size on UUserListEntryLibrary");
 
 // Class UMG.TextLayoutWidget
 // 0x0020 (0x0128 - 0x0108)
@@ -1227,36 +1137,35 @@ static_assert(offsetof(UMultiLineEditableTextBox, ReadOnlyForegroundColor) == 0x
 static_assert(offsetof(UMultiLineEditableTextBox, OnTextChanged) == 0x000C68, "Member 'UMultiLineEditableTextBox::OnTextChanged' has a wrong offset!");
 static_assert(offsetof(UMultiLineEditableTextBox, OnTextCommitted) == 0x000C78, "Member 'UMultiLineEditableTextBox::OnTextCommitted' has a wrong offset!");
 
-// Class UMG.UserListEntry
-// 0x0000 (0x0000 - 0x0000)
-class IUserListEntry final
+// Class UMG.InvalidationBox
+// 0x0018 (0x0138 - 0x0120)
+class UInvalidationBox final : public UContentWidget
 {
 public:
-	void BP_OnEntryReleased();
-	void BP_OnItemExpansionChanged(bool bIsExpanded);
-	void BP_OnItemSelectionChanged(bool bIsSelected);
+	bool                                          bCanCache;                                         // 0x0120(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	bool                                          CacheRelativeTransforms;                           // 0x0121(0x0001)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_122[0x16];                                     // 0x0122(0x0016)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void InvalidateCache();
+	void SetCanCache(bool CanCache);
+
+	bool GetCanCache() const;
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"UserListEntry">();
+		return StaticClassImpl<"InvalidationBox">();
 	}
-	static class IUserListEntry* GetDefaultObj()
+	static class UInvalidationBox* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<IUserListEntry>();
-	}
-
-	class UObject* AsUObject()
-	{
-		return reinterpret_cast<UObject*>(this);
-	}
-	const class UObject* AsUObject() const
-	{
-		return reinterpret_cast<const UObject*>(this);
+		return GetDefaultObjImpl<UInvalidationBox>();
 	}
 };
-static_assert(alignof(IUserListEntry) == 0x000001, "Wrong alignment on IUserListEntry");
-static_assert(sizeof(IUserListEntry) == 0x000001, "Wrong size on IUserListEntry");
+static_assert(alignof(UInvalidationBox) == 0x000008, "Wrong alignment on UInvalidationBox");
+static_assert(sizeof(UInvalidationBox) == 0x000138, "Wrong size on UInvalidationBox");
+static_assert(offsetof(UInvalidationBox, bCanCache) == 0x000120, "Member 'UInvalidationBox::bCanCache' has a wrong offset!");
+static_assert(offsetof(UInvalidationBox, CacheRelativeTransforms) == 0x000121, "Member 'UInvalidationBox::CacheRelativeTransforms' has a wrong offset!");
 
 // Class UMG.RetainerBox
 // 0x0030 (0x0150 - 0x0120)
@@ -1303,107 +1212,52 @@ static_assert(offsetof(URetainerBox, PhaseCount) == 0x000128, "Member 'URetainer
 static_assert(offsetof(URetainerBox, EffectMaterial) == 0x000130, "Member 'URetainerBox::EffectMaterial' has a wrong offset!");
 static_assert(offsetof(URetainerBox, TextureParameter) == 0x000138, "Member 'URetainerBox::TextureParameter' has a wrong offset!");
 
-// Class UMG.SpinBox
-// 0x0418 (0x0520 - 0x0108)
-class USpinBox final : public UWidget
+// Class UMG.BackgroundBlur
+// 0x00B8 (0x01D8 - 0x0120)
+class UBackgroundBlur final : public UContentWidget
 {
 public:
-	float                                         Value;                                             // 0x0108(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void()>                             ValueDelegate;                                     // 0x010C(0x0010)(ZeroConstructor, InstancedReference, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11C[0x4];                                      // 0x011C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSpinBoxStyle                          WidgetStyle;                                       // 0x0120(0x02E8)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	class USlateWidgetStyleAsset*                 Style;                                             // 0x0408(0x0008)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         MinFractionalDigits;                               // 0x0410(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         MaxFractionalDigits;                               // 0x0414(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bAlwaysUsesDeltaSnap;                              // 0x0418(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_419[0x3];                                      // 0x0419(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         Delta;                                             // 0x041C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         SliderExponent;                                    // 0x0420(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_424[0x4];                                      // 0x0424(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSlateFontInfo                         Font;                                              // 0x0428(0x0058)(Edit, BlueprintVisible, BlueprintReadOnly, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ETextJustify                                  Justification;                                     // 0x0480(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_481[0x3];                                      // 0x0481(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         MinDesiredWidth;                                   // 0x0484(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ClearKeyboardFocusOnCommit;                        // 0x0488(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          SelectAllTextOnCommit;                             // 0x0489(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_48A[0x6];                                      // 0x048A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSlateColor                            ForegroundColor;                                   // 0x0490(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(float InValue)> OnValueChanged;                                    // 0x04B8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(float InValue, ETextCommit CommitMethod)> OnValueCommitted;        // 0x04C8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void()>              OnBeginSliderMovement;                             // 0x04D8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(float InValue)> OnEndSliderMovement;                               // 0x04E8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         bOverride_MinValue : 1;                            // 0x04F8(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected))
-	uint8                                         bOverride_MaxValue : 1;                            // 0x04F8(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected))
-	uint8                                         bOverride_MinSliderValue : 1;                      // 0x04F8(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected))
-	uint8                                         bOverride_MaxSliderValue : 1;                      // 0x04F8(0x0001)(BitIndex: 0x03, PropSize: 0x0001 (Edit, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected))
-	uint8                                         Pad_4F9[0x3];                                      // 0x04F9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         MinValue;                                          // 0x04FC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         MaxValue;                                          // 0x0500(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         MinSliderValue;                                    // 0x0504(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	float                                         MaxSliderValue;                                    // 0x0508(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_50C[0x14];                                     // 0x050C(0x0014)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FMargin                                Padding;                                           // 0x0120(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	EHorizontalAlignment                          HorizontalAlignment;                               // 0x0130(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EVerticalAlignment                            VerticalAlignment;                                 // 0x0131(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bApplyAlphaToBlur;                                 // 0x0132(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_133[0x1];                                      // 0x0133(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         BlurStrength;                                      // 0x0134(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bOverrideAutoRadiusCalculation;                    // 0x0138(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_139[0x3];                                      // 0x0139(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         BlurRadius;                                        // 0x013C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FSlateBrush                            LowQualityFallbackBrush;                           // 0x0140(0x0088)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C8[0x10];                                     // 0x01C8(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	void ClearMaxSliderValue();
-	void ClearMaxValue();
-	void ClearMinSliderValue();
-	void ClearMinValue();
-	void SetAlwaysUsesDeltaSnap(bool bNewValue);
-	void SetDelta(float NewValue);
-	void SetForegroundColor(const struct FSlateColor& InForegroundColor);
-	void SetMaxFractionalDigits(int32 NewValue);
-	void SetMaxSliderValue(float NewValue);
-	void SetMaxValue(float NewValue);
-	void SetMinFractionalDigits(int32 NewValue);
-	void SetMinSliderValue(float NewValue);
-	void SetMinValue(float NewValue);
-	void SetValue(float NewValue);
-
-	bool GetAlwaysUsesDeltaSnap() const;
-	float GetDelta() const;
-	int32 GetMaxFractionalDigits() const;
-	float GetMaxSliderValue() const;
-	float GetMaxValue() const;
-	int32 GetMinFractionalDigits() const;
-	float GetMinSliderValue() const;
-	float GetMinValue() const;
-	float GetValue() const;
+	void SetApplyAlphaToBlur(bool bInApplyAlphaToBlur);
+	void SetBlurRadius(int32 InBlurRadius);
+	void SetBlurStrength(float InStrength);
+	void SetHorizontalAlignment(EHorizontalAlignment InHorizontalAlignment);
+	void SetLowQualityFallbackBrush(const struct FSlateBrush& InBrush);
+	void SetPadding(const struct FMargin& InPadding);
+	void SetVerticalAlignment(EVerticalAlignment InVerticalAlignment);
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"SpinBox">();
+		return StaticClassImpl<"BackgroundBlur">();
 	}
-	static class USpinBox* GetDefaultObj()
+	static class UBackgroundBlur* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<USpinBox>();
+		return GetDefaultObjImpl<UBackgroundBlur>();
 	}
 };
-static_assert(alignof(USpinBox) == 0x000008, "Wrong alignment on USpinBox");
-static_assert(sizeof(USpinBox) == 0x000520, "Wrong size on USpinBox");
-static_assert(offsetof(USpinBox, Value) == 0x000108, "Member 'USpinBox::Value' has a wrong offset!");
-static_assert(offsetof(USpinBox, ValueDelegate) == 0x00010C, "Member 'USpinBox::ValueDelegate' has a wrong offset!");
-static_assert(offsetof(USpinBox, WidgetStyle) == 0x000120, "Member 'USpinBox::WidgetStyle' has a wrong offset!");
-static_assert(offsetof(USpinBox, Style) == 0x000408, "Member 'USpinBox::Style' has a wrong offset!");
-static_assert(offsetof(USpinBox, MinFractionalDigits) == 0x000410, "Member 'USpinBox::MinFractionalDigits' has a wrong offset!");
-static_assert(offsetof(USpinBox, MaxFractionalDigits) == 0x000414, "Member 'USpinBox::MaxFractionalDigits' has a wrong offset!");
-static_assert(offsetof(USpinBox, bAlwaysUsesDeltaSnap) == 0x000418, "Member 'USpinBox::bAlwaysUsesDeltaSnap' has a wrong offset!");
-static_assert(offsetof(USpinBox, Delta) == 0x00041C, "Member 'USpinBox::Delta' has a wrong offset!");
-static_assert(offsetof(USpinBox, SliderExponent) == 0x000420, "Member 'USpinBox::SliderExponent' has a wrong offset!");
-static_assert(offsetof(USpinBox, Font) == 0x000428, "Member 'USpinBox::Font' has a wrong offset!");
-static_assert(offsetof(USpinBox, Justification) == 0x000480, "Member 'USpinBox::Justification' has a wrong offset!");
-static_assert(offsetof(USpinBox, MinDesiredWidth) == 0x000484, "Member 'USpinBox::MinDesiredWidth' has a wrong offset!");
-static_assert(offsetof(USpinBox, ClearKeyboardFocusOnCommit) == 0x000488, "Member 'USpinBox::ClearKeyboardFocusOnCommit' has a wrong offset!");
-static_assert(offsetof(USpinBox, SelectAllTextOnCommit) == 0x000489, "Member 'USpinBox::SelectAllTextOnCommit' has a wrong offset!");
-static_assert(offsetof(USpinBox, ForegroundColor) == 0x000490, "Member 'USpinBox::ForegroundColor' has a wrong offset!");
-static_assert(offsetof(USpinBox, OnValueChanged) == 0x0004B8, "Member 'USpinBox::OnValueChanged' has a wrong offset!");
-static_assert(offsetof(USpinBox, OnValueCommitted) == 0x0004C8, "Member 'USpinBox::OnValueCommitted' has a wrong offset!");
-static_assert(offsetof(USpinBox, OnBeginSliderMovement) == 0x0004D8, "Member 'USpinBox::OnBeginSliderMovement' has a wrong offset!");
-static_assert(offsetof(USpinBox, OnEndSliderMovement) == 0x0004E8, "Member 'USpinBox::OnEndSliderMovement' has a wrong offset!");
-static_assert(offsetof(USpinBox, MinValue) == 0x0004FC, "Member 'USpinBox::MinValue' has a wrong offset!");
-static_assert(offsetof(USpinBox, MaxValue) == 0x000500, "Member 'USpinBox::MaxValue' has a wrong offset!");
-static_assert(offsetof(USpinBox, MinSliderValue) == 0x000504, "Member 'USpinBox::MinSliderValue' has a wrong offset!");
-static_assert(offsetof(USpinBox, MaxSliderValue) == 0x000508, "Member 'USpinBox::MaxSliderValue' has a wrong offset!");
+static_assert(alignof(UBackgroundBlur) == 0x000008, "Wrong alignment on UBackgroundBlur");
+static_assert(sizeof(UBackgroundBlur) == 0x0001D8, "Wrong size on UBackgroundBlur");
+static_assert(offsetof(UBackgroundBlur, Padding) == 0x000120, "Member 'UBackgroundBlur::Padding' has a wrong offset!");
+static_assert(offsetof(UBackgroundBlur, HorizontalAlignment) == 0x000130, "Member 'UBackgroundBlur::HorizontalAlignment' has a wrong offset!");
+static_assert(offsetof(UBackgroundBlur, VerticalAlignment) == 0x000131, "Member 'UBackgroundBlur::VerticalAlignment' has a wrong offset!");
+static_assert(offsetof(UBackgroundBlur, bApplyAlphaToBlur) == 0x000132, "Member 'UBackgroundBlur::bApplyAlphaToBlur' has a wrong offset!");
+static_assert(offsetof(UBackgroundBlur, BlurStrength) == 0x000134, "Member 'UBackgroundBlur::BlurStrength' has a wrong offset!");
+static_assert(offsetof(UBackgroundBlur, bOverrideAutoRadiusCalculation) == 0x000138, "Member 'UBackgroundBlur::bOverrideAutoRadiusCalculation' has a wrong offset!");
+static_assert(offsetof(UBackgroundBlur, BlurRadius) == 0x00013C, "Member 'UBackgroundBlur::BlurRadius' has a wrong offset!");
+static_assert(offsetof(UBackgroundBlur, LowQualityFallbackBrush) == 0x000140, "Member 'UBackgroundBlur::LowQualityFallbackBrush' has a wrong offset!");
 
 // Class UMG.RichTextBlock
 // 0x0550 (0x0678 - 0x0128)
@@ -1462,62 +1316,22 @@ static_assert(offsetof(URichTextBlock, TextTransformPolicy) == 0x0003D4, "Member
 static_assert(offsetof(URichTextBlock, DefaultTextStyle) == 0x0003D8, "Member 'URichTextBlock::DefaultTextStyle' has a wrong offset!");
 static_assert(offsetof(URichTextBlock, InstanceDecorators) == 0x000648, "Member 'URichTextBlock::InstanceDecorators' has a wrong offset!");
 
-// Class UMG.Button
-// 0x0308 (0x0428 - 0x0120)
-class UButton final : public UContentWidget
+// Class UMG.MovieScene2DTransformTrack
+// 0x0000 (0x00C0 - 0x00C0)
+class UMovieScene2DTransformTrack final : public UMovieScenePropertyTrack
 {
-public:
-	class USlateWidgetStyleAsset*                 Style;                                             // 0x0120(0x0008)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FButtonStyle                           WidgetStyle;                                       // 0x0128(0x0278)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FLinearColor                           ColorAndOpacity;                                   // 0x03A0(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FLinearColor                           BackgroundColor;                                   // 0x03B0(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EButtonClickMethod                            ClickMethod;                                       // 0x03C0(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EButtonTouchMethod                            TouchMethod;                                       // 0x03C1(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EButtonPressMethod                            PressMethod;                                       // 0x03C2(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          IsFocusable;                                       // 0x03C3(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3C4[0x4];                                      // 0x03C4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void()>              OnClicked;                                         // 0x03C8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void()>              OnPressed;                                         // 0x03D8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void()>              OnReleased;                                        // 0x03E8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void()>              OnHovered;                                         // 0x03F8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void()>              OnUnhovered;                                       // 0x0408(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_418[0x10];                                     // 0x0418(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void SetBackgroundColor(const struct FLinearColor& InBackgroundColor);
-	void SetClickMethod(EButtonClickMethod InClickMethod);
-	void SetColorAndOpacity(const struct FLinearColor& InColorAndOpacity);
-	void SetPressMethod(EButtonPressMethod InPressMethod);
-	void SetStyle(const struct FButtonStyle& InStyle);
-	void SetTouchMethod(EButtonTouchMethod InTouchMethod);
-
-	bool IsPressed() const;
-
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"Button">();
+		return StaticClassImpl<"MovieScene2DTransformTrack">();
 	}
-	static class UButton* GetDefaultObj()
+	static class UMovieScene2DTransformTrack* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UButton>();
+		return GetDefaultObjImpl<UMovieScene2DTransformTrack>();
 	}
 };
-static_assert(alignof(UButton) == 0x000008, "Wrong alignment on UButton");
-static_assert(sizeof(UButton) == 0x000428, "Wrong size on UButton");
-static_assert(offsetof(UButton, Style) == 0x000120, "Member 'UButton::Style' has a wrong offset!");
-static_assert(offsetof(UButton, WidgetStyle) == 0x000128, "Member 'UButton::WidgetStyle' has a wrong offset!");
-static_assert(offsetof(UButton, ColorAndOpacity) == 0x0003A0, "Member 'UButton::ColorAndOpacity' has a wrong offset!");
-static_assert(offsetof(UButton, BackgroundColor) == 0x0003B0, "Member 'UButton::BackgroundColor' has a wrong offset!");
-static_assert(offsetof(UButton, ClickMethod) == 0x0003C0, "Member 'UButton::ClickMethod' has a wrong offset!");
-static_assert(offsetof(UButton, TouchMethod) == 0x0003C1, "Member 'UButton::TouchMethod' has a wrong offset!");
-static_assert(offsetof(UButton, PressMethod) == 0x0003C2, "Member 'UButton::PressMethod' has a wrong offset!");
-static_assert(offsetof(UButton, IsFocusable) == 0x0003C3, "Member 'UButton::IsFocusable' has a wrong offset!");
-static_assert(offsetof(UButton, OnClicked) == 0x0003C8, "Member 'UButton::OnClicked' has a wrong offset!");
-static_assert(offsetof(UButton, OnPressed) == 0x0003D8, "Member 'UButton::OnPressed' has a wrong offset!");
-static_assert(offsetof(UButton, OnReleased) == 0x0003E8, "Member 'UButton::OnReleased' has a wrong offset!");
-static_assert(offsetof(UButton, OnHovered) == 0x0003F8, "Member 'UButton::OnHovered' has a wrong offset!");
-static_assert(offsetof(UButton, OnUnhovered) == 0x000408, "Member 'UButton::OnUnhovered' has a wrong offset!");
+static_assert(alignof(UMovieScene2DTransformTrack) == 0x000008, "Wrong alignment on UMovieScene2DTransformTrack");
+static_assert(sizeof(UMovieScene2DTransformTrack) == 0x0000C0, "Wrong size on UMovieScene2DTransformTrack");
 
 // Class UMG.ScrollBox
 // 0x0768 (0x0888 - 0x0120)
@@ -1605,66 +1419,22 @@ static_assert(offsetof(UScrollBox, bAllowRightClickDragScrolling) == 0x000859, "
 static_assert(offsetof(UScrollBox, WheelScrollMultiplier) == 0x00085C, "Member 'UScrollBox::WheelScrollMultiplier' has a wrong offset!");
 static_assert(offsetof(UScrollBox, OnUserScrolled) == 0x000860, "Member 'UScrollBox::OnUserScrolled' has a wrong offset!");
 
-// Class UMG.MultiLineEditableText
-// 0x0348 (0x0470 - 0x0128)
-class UMultiLineEditableText final : public UTextLayoutWidget
+// Class UMG.MovieScene2DTransformPropertySystem
+// 0x0000 (0x0058 - 0x0058)
+class UMovieScene2DTransformPropertySystem final : public UMovieScenePropertySystem
 {
-public:
-	class FText                                   Text;                                              // 0x0128(0x0018)(Edit, NativeAccessSpecifierPublic)
-	class FText                                   HintText;                                          // 0x0140(0x0018)(Edit, NativeAccessSpecifierPublic)
-	TDelegate<void()>                             HintTextDelegate;                                  // 0x0158(0x0010)(ZeroConstructor, InstancedReference, NoDestructor, NativeAccessSpecifierPublic)
-	struct FTextBlockStyle                        WidgetStyle;                                       // 0x0168(0x0270)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	bool                                          bIsReadOnly;                                       // 0x03D8(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3D9[0x7];                                      // 0x03D9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSlateFontInfo                         Font;                                              // 0x03E0(0x0058)(Deprecated, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          SelectAllTextWhenFocused;                          // 0x0438(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ClearTextSelectionOnFocusLoss;                     // 0x0439(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          RevertTextOnEscape;                                // 0x043A(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ClearKeyboardFocusOnCommit;                        // 0x043B(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          AllowContextMenu;                                  // 0x043C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVirtualKeyboardOptions                VirtualKeyboardOptions;                            // 0x043D(0x0001)(Edit, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
-	EVirtualKeyboardDismissAction                 VirtualKeyboardDismissAction;                      // 0x043E(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_43F[0x1];                                      // 0x043F(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(const class FText& Text)> OnTextChanged;                           // 0x0440(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void(const class FText& Text, ETextCommit CommitMethod)> OnTextCommitted; // 0x0450(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_460[0x10];                                     // 0x0460(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void SetHintText(const class FText& InHintText);
-	void SetIsReadOnly(bool bReadOnly);
-	void SetText(const class FText& InText);
-	void SetWidgetStyle(const struct FTextBlockStyle& InWidgetStyle);
-
-	class FText GetHintText() const;
-	class FText GetText() const;
-
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"MultiLineEditableText">();
+		return StaticClassImpl<"MovieScene2DTransformPropertySystem">();
 	}
-	static class UMultiLineEditableText* GetDefaultObj()
+	static class UMovieScene2DTransformPropertySystem* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UMultiLineEditableText>();
+		return GetDefaultObjImpl<UMovieScene2DTransformPropertySystem>();
 	}
 };
-static_assert(alignof(UMultiLineEditableText) == 0x000008, "Wrong alignment on UMultiLineEditableText");
-static_assert(sizeof(UMultiLineEditableText) == 0x000470, "Wrong size on UMultiLineEditableText");
-static_assert(offsetof(UMultiLineEditableText, Text) == 0x000128, "Member 'UMultiLineEditableText::Text' has a wrong offset!");
-static_assert(offsetof(UMultiLineEditableText, HintText) == 0x000140, "Member 'UMultiLineEditableText::HintText' has a wrong offset!");
-static_assert(offsetof(UMultiLineEditableText, HintTextDelegate) == 0x000158, "Member 'UMultiLineEditableText::HintTextDelegate' has a wrong offset!");
-static_assert(offsetof(UMultiLineEditableText, WidgetStyle) == 0x000168, "Member 'UMultiLineEditableText::WidgetStyle' has a wrong offset!");
-static_assert(offsetof(UMultiLineEditableText, bIsReadOnly) == 0x0003D8, "Member 'UMultiLineEditableText::bIsReadOnly' has a wrong offset!");
-static_assert(offsetof(UMultiLineEditableText, Font) == 0x0003E0, "Member 'UMultiLineEditableText::Font' has a wrong offset!");
-static_assert(offsetof(UMultiLineEditableText, SelectAllTextWhenFocused) == 0x000438, "Member 'UMultiLineEditableText::SelectAllTextWhenFocused' has a wrong offset!");
-static_assert(offsetof(UMultiLineEditableText, ClearTextSelectionOnFocusLoss) == 0x000439, "Member 'UMultiLineEditableText::ClearTextSelectionOnFocusLoss' has a wrong offset!");
-static_assert(offsetof(UMultiLineEditableText, RevertTextOnEscape) == 0x00043A, "Member 'UMultiLineEditableText::RevertTextOnEscape' has a wrong offset!");
-static_assert(offsetof(UMultiLineEditableText, ClearKeyboardFocusOnCommit) == 0x00043B, "Member 'UMultiLineEditableText::ClearKeyboardFocusOnCommit' has a wrong offset!");
-static_assert(offsetof(UMultiLineEditableText, AllowContextMenu) == 0x00043C, "Member 'UMultiLineEditableText::AllowContextMenu' has a wrong offset!");
-static_assert(offsetof(UMultiLineEditableText, VirtualKeyboardOptions) == 0x00043D, "Member 'UMultiLineEditableText::VirtualKeyboardOptions' has a wrong offset!");
-static_assert(offsetof(UMultiLineEditableText, VirtualKeyboardDismissAction) == 0x00043E, "Member 'UMultiLineEditableText::VirtualKeyboardDismissAction' has a wrong offset!");
-static_assert(offsetof(UMultiLineEditableText, OnTextChanged) == 0x000440, "Member 'UMultiLineEditableText::OnTextChanged' has a wrong offset!");
-static_assert(offsetof(UMultiLineEditableText, OnTextCommitted) == 0x000450, "Member 'UMultiLineEditableText::OnTextCommitted' has a wrong offset!");
+static_assert(alignof(UMovieScene2DTransformPropertySystem) == 0x000008, "Wrong alignment on UMovieScene2DTransformPropertySystem");
+static_assert(sizeof(UMovieScene2DTransformPropertySystem) == 0x000058, "Wrong size on UMovieScene2DTransformPropertySystem");
 
 // Class UMG.TextBlock
 // 0x0180 (0x02A8 - 0x0128)
@@ -1730,6 +1500,63 @@ static_assert(offsetof(UTextBlock, bAutoWrapText) == 0x000295, "Member 'UTextBlo
 static_assert(offsetof(UTextBlock, TextTransformPolicy) == 0x000296, "Member 'UTextBlock::TextTransformPolicy' has a wrong offset!");
 static_assert(offsetof(UTextBlock, bSimpleTextMode) == 0x000297, "Member 'UTextBlock::bSimpleTextMode' has a wrong offset!");
 
+// Class UMG.UserListEntry
+// 0x0000 (0x0000 - 0x0000)
+class IUserListEntry final
+{
+public:
+	void BP_OnEntryReleased();
+	void BP_OnItemExpansionChanged(bool bIsExpanded);
+	void BP_OnItemSelectionChanged(bool bIsSelected);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"UserListEntry">();
+	}
+	static class IUserListEntry* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<IUserListEntry>();
+	}
+
+	class UObject* AsUObject()
+	{
+		return reinterpret_cast<UObject*>(this);
+	}
+	const class UObject* AsUObject() const
+	{
+		return reinterpret_cast<const UObject*>(this);
+	}
+};
+static_assert(alignof(IUserListEntry) == 0x000001, "Wrong alignment on IUserListEntry");
+static_assert(sizeof(IUserListEntry) == 0x000001, "Wrong size on IUserListEntry");
+
+// Class UMG.VerticalBox
+// 0x0018 (0x0138 - 0x0120)
+class UVerticalBox : public UPanelWidget
+{
+public:
+	float                                         SlotSpacing;                                       // 0x0120(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_124[0x14];                                     // 0x0124(0x0014)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	class UVerticalBoxSlot* AddChildToVerticalBox(class UWidget* Content);
+	void SetSlotSpacing(float InSpacing);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"VerticalBox">();
+	}
+	static class UVerticalBox* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UVerticalBox>();
+	}
+};
+static_assert(alignof(UVerticalBox) == 0x000008, "Wrong alignment on UVerticalBox");
+static_assert(sizeof(UVerticalBox) == 0x000138, "Wrong size on UVerticalBox");
+static_assert(offsetof(UVerticalBox, SlotSpacing) == 0x000120, "Member 'UVerticalBox::SlotSpacing' has a wrong offset!");
+
 // Class UMG.AsyncTaskDownloadImage
 // 0x0020 (0x0050 - 0x0030)
 class UAsyncTaskDownloadImage final : public UBlueprintAsyncActionBase
@@ -1755,53 +1582,6 @@ static_assert(alignof(UAsyncTaskDownloadImage) == 0x000008, "Wrong alignment on 
 static_assert(sizeof(UAsyncTaskDownloadImage) == 0x000050, "Wrong size on UAsyncTaskDownloadImage");
 static_assert(offsetof(UAsyncTaskDownloadImage, OnSuccess) == 0x000030, "Member 'UAsyncTaskDownloadImage::OnSuccess' has a wrong offset!");
 static_assert(offsetof(UAsyncTaskDownloadImage, OnFail) == 0x000040, "Member 'UAsyncTaskDownloadImage::OnFail' has a wrong offset!");
-
-// Class UMG.BackgroundBlur
-// 0x00B8 (0x01D8 - 0x0120)
-class UBackgroundBlur final : public UContentWidget
-{
-public:
-	struct FMargin                                Padding;                                           // 0x0120(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	EHorizontalAlignment                          HorizontalAlignment;                               // 0x0130(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EVerticalAlignment                            VerticalAlignment;                                 // 0x0131(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bApplyAlphaToBlur;                                 // 0x0132(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_133[0x1];                                      // 0x0133(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         BlurStrength;                                      // 0x0134(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bOverrideAutoRadiusCalculation;                    // 0x0138(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_139[0x3];                                      // 0x0139(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         BlurRadius;                                        // 0x013C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FSlateBrush                            LowQualityFallbackBrush;                           // 0x0140(0x0088)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C8[0x10];                                     // 0x01C8(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void SetApplyAlphaToBlur(bool bInApplyAlphaToBlur);
-	void SetBlurRadius(int32 InBlurRadius);
-	void SetBlurStrength(float InStrength);
-	void SetHorizontalAlignment(EHorizontalAlignment InHorizontalAlignment);
-	void SetLowQualityFallbackBrush(const struct FSlateBrush& InBrush);
-	void SetPadding(const struct FMargin& InPadding);
-	void SetVerticalAlignment(EVerticalAlignment InVerticalAlignment);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"BackgroundBlur">();
-	}
-	static class UBackgroundBlur* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UBackgroundBlur>();
-	}
-};
-static_assert(alignof(UBackgroundBlur) == 0x000008, "Wrong alignment on UBackgroundBlur");
-static_assert(sizeof(UBackgroundBlur) == 0x0001D8, "Wrong size on UBackgroundBlur");
-static_assert(offsetof(UBackgroundBlur, Padding) == 0x000120, "Member 'UBackgroundBlur::Padding' has a wrong offset!");
-static_assert(offsetof(UBackgroundBlur, HorizontalAlignment) == 0x000130, "Member 'UBackgroundBlur::HorizontalAlignment' has a wrong offset!");
-static_assert(offsetof(UBackgroundBlur, VerticalAlignment) == 0x000131, "Member 'UBackgroundBlur::VerticalAlignment' has a wrong offset!");
-static_assert(offsetof(UBackgroundBlur, bApplyAlphaToBlur) == 0x000132, "Member 'UBackgroundBlur::bApplyAlphaToBlur' has a wrong offset!");
-static_assert(offsetof(UBackgroundBlur, BlurStrength) == 0x000134, "Member 'UBackgroundBlur::BlurStrength' has a wrong offset!");
-static_assert(offsetof(UBackgroundBlur, bOverrideAutoRadiusCalculation) == 0x000138, "Member 'UBackgroundBlur::bOverrideAutoRadiusCalculation' has a wrong offset!");
-static_assert(offsetof(UBackgroundBlur, BlurRadius) == 0x00013C, "Member 'UBackgroundBlur::BlurRadius' has a wrong offset!");
-static_assert(offsetof(UBackgroundBlur, LowQualityFallbackBrush) == 0x000140, "Member 'UBackgroundBlur::LowQualityFallbackBrush' has a wrong offset!");
 
 // Class UMG.BackgroundBlurSlot
 // 0x0028 (0x0060 - 0x0038)
@@ -1908,36 +1688,62 @@ public:
 static_assert(alignof(UBrushBinding) == 0x000008, "Wrong alignment on UBrushBinding");
 static_assert(sizeof(UBrushBinding) == 0x000068, "Wrong size on UBrushBinding");
 
-// Class UMG.ButtonSlot
-// 0x0028 (0x0060 - 0x0038)
-class UButtonSlot final : public UPanelSlot
+// Class UMG.Button
+// 0x0308 (0x0428 - 0x0120)
+class UButton final : public UContentWidget
 {
 public:
-	struct FMargin                                Padding;                                           // 0x0038(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	EHorizontalAlignment                          HorizontalAlignment;                               // 0x0048(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EVerticalAlignment                            VerticalAlignment;                                 // 0x0049(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4A[0x16];                                      // 0x004A(0x0016)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class USlateWidgetStyleAsset*                 Style;                                             // 0x0120(0x0008)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FButtonStyle                           WidgetStyle;                                       // 0x0128(0x0278)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	struct FLinearColor                           ColorAndOpacity;                                   // 0x03A0(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           BackgroundColor;                                   // 0x03B0(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EButtonClickMethod                            ClickMethod;                                       // 0x03C0(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EButtonTouchMethod                            TouchMethod;                                       // 0x03C1(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EButtonPressMethod                            PressMethod;                                       // 0x03C2(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsFocusable;                                       // 0x03C3(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3C4[0x4];                                      // 0x03C4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void()>              OnClicked;                                         // 0x03C8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnPressed;                                         // 0x03D8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnReleased;                                        // 0x03E8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnHovered;                                         // 0x03F8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnUnhovered;                                       // 0x0408(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	uint8                                         Pad_418[0x10];                                     // 0x0418(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
-	void SetHorizontalAlignment(EHorizontalAlignment InHorizontalAlignment);
-	void SetPadding(const struct FMargin& InPadding);
-	void SetVerticalAlignment(EVerticalAlignment InVerticalAlignment);
+	void SetBackgroundColor(const struct FLinearColor& InBackgroundColor);
+	void SetClickMethod(EButtonClickMethod InClickMethod);
+	void SetColorAndOpacity(const struct FLinearColor& InColorAndOpacity);
+	void SetPressMethod(EButtonPressMethod InPressMethod);
+	void SetStyle(const struct FButtonStyle& InStyle);
+	void SetTouchMethod(EButtonTouchMethod InTouchMethod);
+
+	bool IsPressed() const;
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"ButtonSlot">();
+		return StaticClassImpl<"Button">();
 	}
-	static class UButtonSlot* GetDefaultObj()
+	static class UButton* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UButtonSlot>();
+		return GetDefaultObjImpl<UButton>();
 	}
 };
-static_assert(alignof(UButtonSlot) == 0x000008, "Wrong alignment on UButtonSlot");
-static_assert(sizeof(UButtonSlot) == 0x000060, "Wrong size on UButtonSlot");
-static_assert(offsetof(UButtonSlot, Padding) == 0x000038, "Member 'UButtonSlot::Padding' has a wrong offset!");
-static_assert(offsetof(UButtonSlot, HorizontalAlignment) == 0x000048, "Member 'UButtonSlot::HorizontalAlignment' has a wrong offset!");
-static_assert(offsetof(UButtonSlot, VerticalAlignment) == 0x000049, "Member 'UButtonSlot::VerticalAlignment' has a wrong offset!");
+static_assert(alignof(UButton) == 0x000008, "Wrong alignment on UButton");
+static_assert(sizeof(UButton) == 0x000428, "Wrong size on UButton");
+static_assert(offsetof(UButton, Style) == 0x000120, "Member 'UButton::Style' has a wrong offset!");
+static_assert(offsetof(UButton, WidgetStyle) == 0x000128, "Member 'UButton::WidgetStyle' has a wrong offset!");
+static_assert(offsetof(UButton, ColorAndOpacity) == 0x0003A0, "Member 'UButton::ColorAndOpacity' has a wrong offset!");
+static_assert(offsetof(UButton, BackgroundColor) == 0x0003B0, "Member 'UButton::BackgroundColor' has a wrong offset!");
+static_assert(offsetof(UButton, ClickMethod) == 0x0003C0, "Member 'UButton::ClickMethod' has a wrong offset!");
+static_assert(offsetof(UButton, TouchMethod) == 0x0003C1, "Member 'UButton::TouchMethod' has a wrong offset!");
+static_assert(offsetof(UButton, PressMethod) == 0x0003C2, "Member 'UButton::PressMethod' has a wrong offset!");
+static_assert(offsetof(UButton, IsFocusable) == 0x0003C3, "Member 'UButton::IsFocusable' has a wrong offset!");
+static_assert(offsetof(UButton, OnClicked) == 0x0003C8, "Member 'UButton::OnClicked' has a wrong offset!");
+static_assert(offsetof(UButton, OnPressed) == 0x0003D8, "Member 'UButton::OnPressed' has a wrong offset!");
+static_assert(offsetof(UButton, OnReleased) == 0x0003E8, "Member 'UButton::OnReleased' has a wrong offset!");
+static_assert(offsetof(UButton, OnHovered) == 0x0003F8, "Member 'UButton::OnHovered' has a wrong offset!");
+static_assert(offsetof(UButton, OnUnhovered) == 0x000408, "Member 'UButton::OnUnhovered' has a wrong offset!");
 
 // Class UMG.CanvasPanel
 // 0x0010 (0x0130 - 0x0120)
@@ -2199,73 +2005,6 @@ static_assert(offsetof(UComboBox, Items) == 0x000108, "Member 'UComboBox::Items'
 static_assert(offsetof(UComboBox, OnGenerateWidgetEvent) == 0x000118, "Member 'UComboBox::OnGenerateWidgetEvent' has a wrong offset!");
 static_assert(offsetof(UComboBox, bIsFocusable) == 0x000128, "Member 'UComboBox::bIsFocusable' has a wrong offset!");
 
-// Class UMG.ComboBoxString
-// 0x0CF8 (0x0E00 - 0x0108)
-class UComboBoxString final : public UWidget
-{
-public:
-	TArray<class FString>                         DefaultOptions;                                    // 0x0108(0x0010)(Edit, ZeroConstructor, NativeAccessSpecifierPrivate)
-	class FString                                 SelectedOption;                                    // 0x0118(0x0010)(Edit, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	struct FComboBoxStyle                         WidgetStyle;                                       // 0x0128(0x03F0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FTableRowStyle                         ItemStyle;                                         // 0x0518(0x07C8)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
-	struct FMargin                                ContentPadding;                                    // 0x0CE0(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	float                                         MaxListHeight;                                     // 0x0CF0(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          HasDownArrow;                                      // 0x0CF4(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          EnableGamepadNavigationMode;                       // 0x0CF5(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_CF6[0x2];                                      // 0x0CF6(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSlateFontInfo                         Font;                                              // 0x0CF8(0x0058)(Edit, BlueprintVisible, BlueprintReadOnly, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FSlateColor                            ForegroundColor;                                   // 0x0D50(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
-	bool                                          bIsFocusable;                                      // 0x0D78(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D79[0x3];                                      // 0x0D79(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void(const class FString& Item)>    OnGenerateWidgetEvent;                             // 0x0D7C(0x0010)(Edit, ZeroConstructor, InstancedReference, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D8C[0x4];                                      // 0x0D8C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(const class FString& SelectedItem, ESelectInfo SelectionType)> OnSelectionChanged; // 0x0D90(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	TMulticastInlineDelegate<void()>              OnOpening;                                         // 0x0DA0(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_DB0[0x50];                                     // 0x0DB0(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void AddOption(const class FString& Option);
-	void ClearOptions();
-	void ClearSelection();
-	void RefreshOptions();
-	bool RemoveOption(const class FString& Option);
-	void SetSelectedIndex(const int32 Index_0);
-	void SetSelectedOption(const class FString& Option);
-
-	int32 FindOptionIndex(const class FString& Option) const;
-	class FString GetOptionAtIndex(int32 Index_0) const;
-	int32 GetOptionCount() const;
-	int32 GetSelectedIndex() const;
-	class FString GetSelectedOption() const;
-	bool IsOpen() const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"ComboBoxString">();
-	}
-	static class UComboBoxString* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UComboBoxString>();
-	}
-};
-static_assert(alignof(UComboBoxString) == 0x000008, "Wrong alignment on UComboBoxString");
-static_assert(sizeof(UComboBoxString) == 0x000E00, "Wrong size on UComboBoxString");
-static_assert(offsetof(UComboBoxString, DefaultOptions) == 0x000108, "Member 'UComboBoxString::DefaultOptions' has a wrong offset!");
-static_assert(offsetof(UComboBoxString, SelectedOption) == 0x000118, "Member 'UComboBoxString::SelectedOption' has a wrong offset!");
-static_assert(offsetof(UComboBoxString, WidgetStyle) == 0x000128, "Member 'UComboBoxString::WidgetStyle' has a wrong offset!");
-static_assert(offsetof(UComboBoxString, ItemStyle) == 0x000518, "Member 'UComboBoxString::ItemStyle' has a wrong offset!");
-static_assert(offsetof(UComboBoxString, ContentPadding) == 0x000CE0, "Member 'UComboBoxString::ContentPadding' has a wrong offset!");
-static_assert(offsetof(UComboBoxString, MaxListHeight) == 0x000CF0, "Member 'UComboBoxString::MaxListHeight' has a wrong offset!");
-static_assert(offsetof(UComboBoxString, HasDownArrow) == 0x000CF4, "Member 'UComboBoxString::HasDownArrow' has a wrong offset!");
-static_assert(offsetof(UComboBoxString, EnableGamepadNavigationMode) == 0x000CF5, "Member 'UComboBoxString::EnableGamepadNavigationMode' has a wrong offset!");
-static_assert(offsetof(UComboBoxString, Font) == 0x000CF8, "Member 'UComboBoxString::Font' has a wrong offset!");
-static_assert(offsetof(UComboBoxString, ForegroundColor) == 0x000D50, "Member 'UComboBoxString::ForegroundColor' has a wrong offset!");
-static_assert(offsetof(UComboBoxString, bIsFocusable) == 0x000D78, "Member 'UComboBoxString::bIsFocusable' has a wrong offset!");
-static_assert(offsetof(UComboBoxString, OnGenerateWidgetEvent) == 0x000D7C, "Member 'UComboBoxString::OnGenerateWidgetEvent' has a wrong offset!");
-static_assert(offsetof(UComboBoxString, OnSelectionChanged) == 0x000D90, "Member 'UComboBoxString::OnSelectionChanged' has a wrong offset!");
-static_assert(offsetof(UComboBoxString, OnOpening) == 0x000DA0, "Member 'UComboBoxString::OnOpening' has a wrong offset!");
-
 // Class UMG.DragDropOperation
 // 0x0060 (0x0088 - 0x0028)
 class UDragDropOperation final : public UObject
@@ -2383,6 +2122,198 @@ static_assert(alignof(UDynamicEntryBox) == 0x000008, "Wrong alignment on UDynami
 static_assert(sizeof(UDynamicEntryBox) == 0x0001E0, "Wrong size on UDynamicEntryBox");
 static_assert(offsetof(UDynamicEntryBox, EntryWidgetClass) == 0x0001D8, "Member 'UDynamicEntryBox::EntryWidgetClass' has a wrong offset!");
 
+// Class UMG.EditableText
+// 0x0358 (0x0460 - 0x0108)
+class UEditableText final : public UWidget
+{
+public:
+	class FText                                   Text;                                              // 0x0108(0x0018)(Edit, NativeAccessSpecifierPublic)
+	TDelegate<void()>                             TextDelegate;                                      // 0x0120(0x0010)(ZeroConstructor, InstancedReference, NoDestructor, NativeAccessSpecifierPublic)
+	class FText                                   HintText;                                          // 0x0130(0x0018)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	TDelegate<void()>                             HintTextDelegate;                                  // 0x0148(0x0010)(ZeroConstructor, InstancedReference, NoDestructor, NativeAccessSpecifierPublic)
+	struct FEditableTextStyle                     WidgetStyle;                                       // 0x0158(0x0220)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	class USlateWidgetStyleAsset*                 Style;                                             // 0x0378(0x0008)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class USlateBrushAsset*                       BackgroundImageSelected;                           // 0x0380(0x0008)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class USlateBrushAsset*                       BackgroundImageComposing;                          // 0x0388(0x0008)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class USlateBrushAsset*                       CaretImage;                                        // 0x0390(0x0008)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FSlateFontInfo                         Font;                                              // 0x0398(0x0058)(Deprecated, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FSlateColor                            ColorAndOpacity;                                   // 0x03F0(0x0028)(Deprecated, NativeAccessSpecifierPublic)
+	bool                                          IsReadOnly;                                        // 0x0418(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsPassword;                                        // 0x0419(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_41A[0x2];                                      // 0x041A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         MinimumDesiredWidth;                               // 0x041C(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          IsCaretMovedWhenGainFocus;                         // 0x0420(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          SelectAllTextWhenFocused;                          // 0x0421(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          RevertTextOnEscape;                                // 0x0422(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ClearKeyboardFocusOnCommit;                        // 0x0423(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          SelectAllTextOnCommit;                             // 0x0424(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          AllowContextMenu;                                  // 0x0425(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EVirtualKeyboardType                          KeyboardType;                                      // 0x0426(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVirtualKeyboardOptions                VirtualKeyboardOptions;                            // 0x0427(0x0001)(Edit, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
+	EVirtualKeyboardTrigger                       VirtualKeyboardTrigger;                            // 0x0428(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EVirtualKeyboardDismissAction                 VirtualKeyboardDismissAction;                      // 0x0429(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ETextJustify                                  Justification;                                     // 0x042A(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FShapedTextOptions                     ShapedTextOptions;                                 // 0x042B(0x0003)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
+	uint8                                         Pad_42E[0x2];                                      // 0x042E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void(const class FText& Text)> OnTextChanged;                           // 0x0430(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const class FText& Text, ETextCommit CommitMethod)> OnTextCommitted; // 0x0440(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	uint8                                         Pad_450[0x10];                                     // 0x0450(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void SetHintText(const class FText& InHintText);
+	void SetIsPassword(bool InbIsPassword);
+	void SetIsReadOnly(bool InbIsReadyOnly);
+	void SetJustification(ETextJustify InJustification);
+	void SetText(const class FText& InText);
+
+	class FText GetText() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"EditableText">();
+	}
+	static class UEditableText* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UEditableText>();
+	}
+};
+static_assert(alignof(UEditableText) == 0x000008, "Wrong alignment on UEditableText");
+static_assert(sizeof(UEditableText) == 0x000460, "Wrong size on UEditableText");
+static_assert(offsetof(UEditableText, Text) == 0x000108, "Member 'UEditableText::Text' has a wrong offset!");
+static_assert(offsetof(UEditableText, TextDelegate) == 0x000120, "Member 'UEditableText::TextDelegate' has a wrong offset!");
+static_assert(offsetof(UEditableText, HintText) == 0x000130, "Member 'UEditableText::HintText' has a wrong offset!");
+static_assert(offsetof(UEditableText, HintTextDelegate) == 0x000148, "Member 'UEditableText::HintTextDelegate' has a wrong offset!");
+static_assert(offsetof(UEditableText, WidgetStyle) == 0x000158, "Member 'UEditableText::WidgetStyle' has a wrong offset!");
+static_assert(offsetof(UEditableText, Style) == 0x000378, "Member 'UEditableText::Style' has a wrong offset!");
+static_assert(offsetof(UEditableText, BackgroundImageSelected) == 0x000380, "Member 'UEditableText::BackgroundImageSelected' has a wrong offset!");
+static_assert(offsetof(UEditableText, BackgroundImageComposing) == 0x000388, "Member 'UEditableText::BackgroundImageComposing' has a wrong offset!");
+static_assert(offsetof(UEditableText, CaretImage) == 0x000390, "Member 'UEditableText::CaretImage' has a wrong offset!");
+static_assert(offsetof(UEditableText, Font) == 0x000398, "Member 'UEditableText::Font' has a wrong offset!");
+static_assert(offsetof(UEditableText, ColorAndOpacity) == 0x0003F0, "Member 'UEditableText::ColorAndOpacity' has a wrong offset!");
+static_assert(offsetof(UEditableText, IsReadOnly) == 0x000418, "Member 'UEditableText::IsReadOnly' has a wrong offset!");
+static_assert(offsetof(UEditableText, IsPassword) == 0x000419, "Member 'UEditableText::IsPassword' has a wrong offset!");
+static_assert(offsetof(UEditableText, MinimumDesiredWidth) == 0x00041C, "Member 'UEditableText::MinimumDesiredWidth' has a wrong offset!");
+static_assert(offsetof(UEditableText, IsCaretMovedWhenGainFocus) == 0x000420, "Member 'UEditableText::IsCaretMovedWhenGainFocus' has a wrong offset!");
+static_assert(offsetof(UEditableText, SelectAllTextWhenFocused) == 0x000421, "Member 'UEditableText::SelectAllTextWhenFocused' has a wrong offset!");
+static_assert(offsetof(UEditableText, RevertTextOnEscape) == 0x000422, "Member 'UEditableText::RevertTextOnEscape' has a wrong offset!");
+static_assert(offsetof(UEditableText, ClearKeyboardFocusOnCommit) == 0x000423, "Member 'UEditableText::ClearKeyboardFocusOnCommit' has a wrong offset!");
+static_assert(offsetof(UEditableText, SelectAllTextOnCommit) == 0x000424, "Member 'UEditableText::SelectAllTextOnCommit' has a wrong offset!");
+static_assert(offsetof(UEditableText, AllowContextMenu) == 0x000425, "Member 'UEditableText::AllowContextMenu' has a wrong offset!");
+static_assert(offsetof(UEditableText, KeyboardType) == 0x000426, "Member 'UEditableText::KeyboardType' has a wrong offset!");
+static_assert(offsetof(UEditableText, VirtualKeyboardOptions) == 0x000427, "Member 'UEditableText::VirtualKeyboardOptions' has a wrong offset!");
+static_assert(offsetof(UEditableText, VirtualKeyboardTrigger) == 0x000428, "Member 'UEditableText::VirtualKeyboardTrigger' has a wrong offset!");
+static_assert(offsetof(UEditableText, VirtualKeyboardDismissAction) == 0x000429, "Member 'UEditableText::VirtualKeyboardDismissAction' has a wrong offset!");
+static_assert(offsetof(UEditableText, Justification) == 0x00042A, "Member 'UEditableText::Justification' has a wrong offset!");
+static_assert(offsetof(UEditableText, ShapedTextOptions) == 0x00042B, "Member 'UEditableText::ShapedTextOptions' has a wrong offset!");
+static_assert(offsetof(UEditableText, OnTextChanged) == 0x000430, "Member 'UEditableText::OnTextChanged' has a wrong offset!");
+static_assert(offsetof(UEditableText, OnTextCommitted) == 0x000440, "Member 'UEditableText::OnTextCommitted' has a wrong offset!");
+
+// Class UMG.FloatBinding
+// 0x0000 (0x0060 - 0x0060)
+class UFloatBinding final : public UPropertyBinding
+{
+public:
+	float GetValue() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"FloatBinding">();
+	}
+	static class UFloatBinding* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UFloatBinding>();
+	}
+};
+static_assert(alignof(UFloatBinding) == 0x000008, "Wrong alignment on UFloatBinding");
+static_assert(sizeof(UFloatBinding) == 0x000060, "Wrong size on UFloatBinding");
+
+// Class UMG.GridSlot
+// 0x0038 (0x0070 - 0x0038)
+class UGridSlot final : public UPanelSlot
+{
+public:
+	struct FMargin                                Padding;                                           // 0x0038(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	EHorizontalAlignment                          HorizontalAlignment;                               // 0x0048(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EVerticalAlignment                            VerticalAlignment;                                 // 0x0049(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4A[0x2];                                       // 0x004A(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Row;                                               // 0x004C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         RowSpan;                                           // 0x0050(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Column;                                            // 0x0054(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ColumnSpan;                                        // 0x0058(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Layer;                                             // 0x005C(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector2D                              Nudge;                                             // 0x0060(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_68[0x8];                                       // 0x0068(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void SetColumn(int32 InColumn);
+	void SetColumnSpan(int32 InColumnSpan);
+	void SetHorizontalAlignment(EHorizontalAlignment InHorizontalAlignment);
+	void SetLayer(int32 InLayer);
+	void SetNudge(const struct FVector2D& InNudge);
+	void SetPadding(const struct FMargin& InPadding);
+	void SetRow(int32 InRow);
+	void SetRowSpan(int32 InRowSpan);
+	void SetVerticalAlignment(EVerticalAlignment InVerticalAlignment);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"GridSlot">();
+	}
+	static class UGridSlot* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UGridSlot>();
+	}
+};
+static_assert(alignof(UGridSlot) == 0x000008, "Wrong alignment on UGridSlot");
+static_assert(sizeof(UGridSlot) == 0x000070, "Wrong size on UGridSlot");
+static_assert(offsetof(UGridSlot, Padding) == 0x000038, "Member 'UGridSlot::Padding' has a wrong offset!");
+static_assert(offsetof(UGridSlot, HorizontalAlignment) == 0x000048, "Member 'UGridSlot::HorizontalAlignment' has a wrong offset!");
+static_assert(offsetof(UGridSlot, VerticalAlignment) == 0x000049, "Member 'UGridSlot::VerticalAlignment' has a wrong offset!");
+static_assert(offsetof(UGridSlot, Row) == 0x00004C, "Member 'UGridSlot::Row' has a wrong offset!");
+static_assert(offsetof(UGridSlot, RowSpan) == 0x000050, "Member 'UGridSlot::RowSpan' has a wrong offset!");
+static_assert(offsetof(UGridSlot, Column) == 0x000054, "Member 'UGridSlot::Column' has a wrong offset!");
+static_assert(offsetof(UGridSlot, ColumnSpan) == 0x000058, "Member 'UGridSlot::ColumnSpan' has a wrong offset!");
+static_assert(offsetof(UGridSlot, Layer) == 0x00005C, "Member 'UGridSlot::Layer' has a wrong offset!");
+static_assert(offsetof(UGridSlot, Nudge) == 0x000060, "Member 'UGridSlot::Nudge' has a wrong offset!");
+
+// Class UMG.HorizontalBoxSlot
+// 0x0028 (0x0060 - 0x0038)
+class UHorizontalBoxSlot final : public UPanelSlot
+{
+public:
+	uint8                                         Pad_38[0x8];                                       // 0x0038(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FMargin                                Padding;                                           // 0x0040(0x0010)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	struct FSlateChildSize                        Size;                                              // 0x0050(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, NoDestructor, NativeAccessSpecifierPublic)
+	EHorizontalAlignment                          HorizontalAlignment;                               // 0x0058(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EVerticalAlignment                            VerticalAlignment;                                 // 0x0059(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5A[0x6];                                       // 0x005A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void SetHorizontalAlignment(EHorizontalAlignment InHorizontalAlignment);
+	void SetPadding(const struct FMargin& InPadding);
+	void SetSize(const struct FSlateChildSize& InSize);
+	void SetVerticalAlignment(EVerticalAlignment InVerticalAlignment);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"HorizontalBoxSlot">();
+	}
+	static class UHorizontalBoxSlot* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UHorizontalBoxSlot>();
+	}
+};
+static_assert(alignof(UHorizontalBoxSlot) == 0x000008, "Wrong alignment on UHorizontalBoxSlot");
+static_assert(sizeof(UHorizontalBoxSlot) == 0x000060, "Wrong size on UHorizontalBoxSlot");
+static_assert(offsetof(UHorizontalBoxSlot, Padding) == 0x000040, "Member 'UHorizontalBoxSlot::Padding' has a wrong offset!");
+static_assert(offsetof(UHorizontalBoxSlot, Size) == 0x000050, "Member 'UHorizontalBoxSlot::Size' has a wrong offset!");
+static_assert(offsetof(UHorizontalBoxSlot, HorizontalAlignment) == 0x000058, "Member 'UHorizontalBoxSlot::HorizontalAlignment' has a wrong offset!");
+static_assert(offsetof(UHorizontalBoxSlot, VerticalAlignment) == 0x000059, "Member 'UHorizontalBoxSlot::VerticalAlignment' has a wrong offset!");
+
 // Class UMG.InputKeySelector
 // 0x05F8 (0x0700 - 0x0108)
 class UInputKeySelector final : public UWidget
@@ -2441,55 +2372,27 @@ static_assert(offsetof(UInputKeySelector, EscapeKeys) == 0x0006C0, "Member 'UInp
 static_assert(offsetof(UInputKeySelector, OnKeySelected) == 0x0006D0, "Member 'UInputKeySelector::OnKeySelected' has a wrong offset!");
 static_assert(offsetof(UInputKeySelector, OnIsSelectingKeyChanged) == 0x0006E0, "Member 'UInputKeySelector::OnIsSelectingKeyChanged' has a wrong offset!");
 
-// Class UMG.Int32Binding
-// 0x0000 (0x0060 - 0x0060)
-class UInt32Binding final : public UPropertyBinding
+// Class UMG.UserListEntryLibrary
+// 0x0000 (0x0028 - 0x0028)
+class UUserListEntryLibrary final : public UBlueprintFunctionLibrary
 {
 public:
-	int32 GetValue() const;
+	static class UListViewBase* GetOwningListView(TScriptInterface<class IUserListEntry> UserListEntry);
+	static bool IsListItemExpanded(TScriptInterface<class IUserListEntry> UserListEntry);
+	static bool IsListItemSelected(TScriptInterface<class IUserListEntry> UserListEntry);
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"Int32Binding">();
+		return StaticClassImpl<"UserListEntryLibrary">();
 	}
-	static class UInt32Binding* GetDefaultObj()
+	static class UUserListEntryLibrary* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UInt32Binding>();
+		return GetDefaultObjImpl<UUserListEntryLibrary>();
 	}
 };
-static_assert(alignof(UInt32Binding) == 0x000008, "Wrong alignment on UInt32Binding");
-static_assert(sizeof(UInt32Binding) == 0x000060, "Wrong size on UInt32Binding");
-
-// Class UMG.InvalidationBox
-// 0x0018 (0x0138 - 0x0120)
-class UInvalidationBox final : public UContentWidget
-{
-public:
-	bool                                          bCanCache;                                         // 0x0120(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          CacheRelativeTransforms;                           // 0x0121(0x0001)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_122[0x16];                                     // 0x0122(0x0016)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void InvalidateCache();
-	void SetCanCache(bool CanCache);
-
-	bool GetCanCache() const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"InvalidationBox">();
-	}
-	static class UInvalidationBox* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UInvalidationBox>();
-	}
-};
-static_assert(alignof(UInvalidationBox) == 0x000008, "Wrong alignment on UInvalidationBox");
-static_assert(sizeof(UInvalidationBox) == 0x000138, "Wrong size on UInvalidationBox");
-static_assert(offsetof(UInvalidationBox, bCanCache) == 0x000120, "Member 'UInvalidationBox::bCanCache' has a wrong offset!");
-static_assert(offsetof(UInvalidationBox, CacheRelativeTransforms) == 0x000121, "Member 'UInvalidationBox::CacheRelativeTransforms' has a wrong offset!");
+static_assert(alignof(UUserListEntryLibrary) == 0x000008, "Wrong alignment on UUserListEntryLibrary");
+static_assert(sizeof(UUserListEntryLibrary) == 0x000028, "Wrong size on UUserListEntryLibrary");
 
 // Class UMG.UserObjectListEntry
 // 0x0000 (0x0000 - 0x0000)
@@ -2519,26 +2422,6 @@ public:
 };
 static_assert(alignof(IUserObjectListEntry) == 0x000001, "Wrong alignment on IUserObjectListEntry");
 static_assert(sizeof(IUserObjectListEntry) == 0x000001, "Wrong size on IUserObjectListEntry");
-
-// Class UMG.UserObjectListEntryLibrary
-// 0x0000 (0x0028 - 0x0028)
-class UUserObjectListEntryLibrary final : public UBlueprintFunctionLibrary
-{
-public:
-	static class UObject* GetListItemObject(TScriptInterface<class IUserObjectListEntry> UserObjectListEntry);
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"UserObjectListEntryLibrary">();
-	}
-	static class UUserObjectListEntryLibrary* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UUserObjectListEntryLibrary>();
-	}
-};
-static_assert(alignof(UUserObjectListEntryLibrary) == 0x000008, "Wrong alignment on UUserObjectListEntryLibrary");
-static_assert(sizeof(UUserObjectListEntryLibrary) == 0x000028, "Wrong size on UUserObjectListEntryLibrary");
 
 // Class UMG.ListView
 // 0x0150 (0x0368 - 0x0218)
@@ -2617,109 +2500,6 @@ static_assert(offsetof(UListView, BP_OnItemIsHoveredChanged) == 0x000338, "Membe
 static_assert(offsetof(UListView, BP_OnItemSelectionChanged) == 0x000348, "Member 'UListView::BP_OnItemSelectionChanged' has a wrong offset!");
 static_assert(offsetof(UListView, BP_OnItemScrolledIntoView) == 0x000358, "Member 'UListView::BP_OnItemScrolledIntoView' has a wrong offset!");
 
-// Class UMG.ListViewDesignerPreviewItem
-// 0x0000 (0x0028 - 0x0028)
-class UListViewDesignerPreviewItem final : public UObject
-{
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"ListViewDesignerPreviewItem">();
-	}
-	static class UListViewDesignerPreviewItem* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UListViewDesignerPreviewItem>();
-	}
-};
-static_assert(alignof(UListViewDesignerPreviewItem) == 0x000008, "Wrong alignment on UListViewDesignerPreviewItem");
-static_assert(sizeof(UListViewDesignerPreviewItem) == 0x000028, "Wrong size on UListViewDesignerPreviewItem");
-
-// Class UMG.MenuAnchor
-// 0x0050 (0x0170 - 0x0120)
-class UMenuAnchor final : public UContentWidget
-{
-public:
-	TSubclassOf<class UUserWidget>                MenuClass;                                         // 0x0120(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TDelegate<void()>                             OnGetMenuContentEvent;                             // 0x0128(0x0010)(Edit, ZeroConstructor, InstancedReference, NoDestructor, NativeAccessSpecifierPublic)
-	TDelegate<void()>                             OnGetUserMenuContentEvent;                         // 0x0138(0x0010)(Edit, ZeroConstructor, InstancedReference, NoDestructor, NativeAccessSpecifierPublic)
-	EMenuPlacement                                Placement;                                         // 0x0148(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bFitInWindow;                                      // 0x0149(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ShouldDeferPaintingAfterWindowContent;             // 0x014A(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          UseApplicationMenuStack;                           // 0x014B(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14C[0x4];                                      // 0x014C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	TMulticastInlineDelegate<void(bool bIsOpen)>  OnMenuOpenChanged;                                 // 0x0150(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
-	uint8                                         Pad_160[0x10];                                     // 0x0160(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
-public:
-	void Close();
-	void FitInWindow(bool bFit);
-	void Open(bool bFocusMenu);
-	void SetPlacement(EMenuPlacement InPlacement);
-	void ToggleOpen(bool bFocusOnOpen);
-
-	struct FVector2D GetMenuPosition() const;
-	bool HasOpenSubMenus() const;
-	bool IsOpen() const;
-	bool ShouldOpenDueToClick() const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"MenuAnchor">();
-	}
-	static class UMenuAnchor* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMenuAnchor>();
-	}
-};
-static_assert(alignof(UMenuAnchor) == 0x000008, "Wrong alignment on UMenuAnchor");
-static_assert(sizeof(UMenuAnchor) == 0x000170, "Wrong size on UMenuAnchor");
-static_assert(offsetof(UMenuAnchor, MenuClass) == 0x000120, "Member 'UMenuAnchor::MenuClass' has a wrong offset!");
-static_assert(offsetof(UMenuAnchor, OnGetMenuContentEvent) == 0x000128, "Member 'UMenuAnchor::OnGetMenuContentEvent' has a wrong offset!");
-static_assert(offsetof(UMenuAnchor, OnGetUserMenuContentEvent) == 0x000138, "Member 'UMenuAnchor::OnGetUserMenuContentEvent' has a wrong offset!");
-static_assert(offsetof(UMenuAnchor, Placement) == 0x000148, "Member 'UMenuAnchor::Placement' has a wrong offset!");
-static_assert(offsetof(UMenuAnchor, bFitInWindow) == 0x000149, "Member 'UMenuAnchor::bFitInWindow' has a wrong offset!");
-static_assert(offsetof(UMenuAnchor, ShouldDeferPaintingAfterWindowContent) == 0x00014A, "Member 'UMenuAnchor::ShouldDeferPaintingAfterWindowContent' has a wrong offset!");
-static_assert(offsetof(UMenuAnchor, UseApplicationMenuStack) == 0x00014B, "Member 'UMenuAnchor::UseApplicationMenuStack' has a wrong offset!");
-static_assert(offsetof(UMenuAnchor, OnMenuOpenChanged) == 0x000150, "Member 'UMenuAnchor::OnMenuOpenChanged' has a wrong offset!");
-
-// Class UMG.MouseCursorBinding
-// 0x0000 (0x0060 - 0x0060)
-class UMouseCursorBinding final : public UPropertyBinding
-{
-public:
-	EMouseCursor GetValue() const;
-
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"MouseCursorBinding">();
-	}
-	static class UMouseCursorBinding* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMouseCursorBinding>();
-	}
-};
-static_assert(alignof(UMouseCursorBinding) == 0x000008, "Wrong alignment on UMouseCursorBinding");
-static_assert(sizeof(UMouseCursorBinding) == 0x000060, "Wrong size on UMouseCursorBinding");
-
-// Class UMG.MovieScene2DTransformPropertySystem
-// 0x0000 (0x0058 - 0x0058)
-class UMovieScene2DTransformPropertySystem final : public UMovieScenePropertySystem
-{
-public:
-	static class UClass* StaticClass()
-	{
-		return StaticClassImpl<"MovieScene2DTransformPropertySystem">();
-	}
-	static class UMovieScene2DTransformPropertySystem* GetDefaultObj()
-	{
-		return GetDefaultObjImpl<UMovieScene2DTransformPropertySystem>();
-	}
-};
-static_assert(alignof(UMovieScene2DTransformPropertySystem) == 0x000008, "Wrong alignment on UMovieScene2DTransformPropertySystem");
-static_assert(sizeof(UMovieScene2DTransformPropertySystem) == 0x000058, "Wrong size on UMovieScene2DTransformPropertySystem");
-
 // Class UMG.MovieScene2DTransformSection
 // 0x0470 (0x0558 - 0x00E8)
 class UMovieScene2DTransformSection final : public UMovieSceneSection
@@ -2768,33 +2548,107 @@ public:
 static_assert(alignof(UMovieSceneMarginPropertySystem) == 0x000008, "Wrong alignment on UMovieSceneMarginPropertySystem");
 static_assert(sizeof(UMovieSceneMarginPropertySystem) == 0x000058, "Wrong size on UMovieSceneMarginPropertySystem");
 
-// Class UMG.MovieSceneMarginSection
-// 0x0288 (0x0370 - 0x00E8)
-class UMovieSceneMarginSection final : public UMovieSceneSection
+// Class UMG.MovieSceneMarginTrack
+// 0x0000 (0x00C0 - 0x00C0)
+class UMovieSceneMarginTrack final : public UMovieScenePropertyTrack
 {
 public:
-	uint8                                         Pad_E8[0x8];                                       // 0x00E8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FMovieSceneFloatChannel                TopCurve;                                          // 0x00F0(0x00A0)(NativeAccessSpecifierPublic)
-	struct FMovieSceneFloatChannel                LeftCurve;                                         // 0x0190(0x00A0)(NativeAccessSpecifierPublic)
-	struct FMovieSceneFloatChannel                RightCurve;                                        // 0x0230(0x00A0)(NativeAccessSpecifierPublic)
-	struct FMovieSceneFloatChannel                BottomCurve;                                       // 0x02D0(0x00A0)(NativeAccessSpecifierPublic)
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"MovieSceneMarginTrack">();
+	}
+	static class UMovieSceneMarginTrack* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMovieSceneMarginTrack>();
+	}
+};
+static_assert(alignof(UMovieSceneMarginTrack) == 0x000008, "Wrong alignment on UMovieSceneMarginTrack");
+static_assert(sizeof(UMovieSceneMarginTrack) == 0x0000C0, "Wrong size on UMovieSceneMarginTrack");
+
+// Class UMG.MovieSceneWidgetMaterialTrack
+// 0x0020 (0x00C0 - 0x00A0)
+class UMovieSceneWidgetMaterialTrack final : public UMovieSceneMaterialTrack
+{
+public:
+	uint8                                         Pad_A0[0x8];                                       // 0x00A0(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	TArray<class FName>                           BrushPropertyNamePath;                             // 0x00A8(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
+	class FName                                   TrackName;                                         // 0x00B8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 
 public:
 	static class UClass* StaticClass()
 	{
-		return StaticClassImpl<"MovieSceneMarginSection">();
+		return StaticClassImpl<"MovieSceneWidgetMaterialTrack">();
 	}
-	static class UMovieSceneMarginSection* GetDefaultObj()
+	static class UMovieSceneWidgetMaterialTrack* GetDefaultObj()
 	{
-		return GetDefaultObjImpl<UMovieSceneMarginSection>();
+		return GetDefaultObjImpl<UMovieSceneWidgetMaterialTrack>();
 	}
 };
-static_assert(alignof(UMovieSceneMarginSection) == 0x000008, "Wrong alignment on UMovieSceneMarginSection");
-static_assert(sizeof(UMovieSceneMarginSection) == 0x000370, "Wrong size on UMovieSceneMarginSection");
-static_assert(offsetof(UMovieSceneMarginSection, TopCurve) == 0x0000F0, "Member 'UMovieSceneMarginSection::TopCurve' has a wrong offset!");
-static_assert(offsetof(UMovieSceneMarginSection, LeftCurve) == 0x000190, "Member 'UMovieSceneMarginSection::LeftCurve' has a wrong offset!");
-static_assert(offsetof(UMovieSceneMarginSection, RightCurve) == 0x000230, "Member 'UMovieSceneMarginSection::RightCurve' has a wrong offset!");
-static_assert(offsetof(UMovieSceneMarginSection, BottomCurve) == 0x0002D0, "Member 'UMovieSceneMarginSection::BottomCurve' has a wrong offset!");
+static_assert(alignof(UMovieSceneWidgetMaterialTrack) == 0x000008, "Wrong alignment on UMovieSceneWidgetMaterialTrack");
+static_assert(sizeof(UMovieSceneWidgetMaterialTrack) == 0x0000C0, "Wrong size on UMovieSceneWidgetMaterialTrack");
+static_assert(offsetof(UMovieSceneWidgetMaterialTrack, BrushPropertyNamePath) == 0x0000A8, "Member 'UMovieSceneWidgetMaterialTrack::BrushPropertyNamePath' has a wrong offset!");
+static_assert(offsetof(UMovieSceneWidgetMaterialTrack, TrackName) == 0x0000B8, "Member 'UMovieSceneWidgetMaterialTrack::TrackName' has a wrong offset!");
+
+// Class UMG.MultiLineEditableText
+// 0x0348 (0x0470 - 0x0128)
+class UMultiLineEditableText final : public UTextLayoutWidget
+{
+public:
+	class FText                                   Text;                                              // 0x0128(0x0018)(Edit, NativeAccessSpecifierPublic)
+	class FText                                   HintText;                                          // 0x0140(0x0018)(Edit, NativeAccessSpecifierPublic)
+	TDelegate<void()>                             HintTextDelegate;                                  // 0x0158(0x0010)(ZeroConstructor, InstancedReference, NoDestructor, NativeAccessSpecifierPublic)
+	struct FTextBlockStyle                        WidgetStyle;                                       // 0x0168(0x0270)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	bool                                          bIsReadOnly;                                       // 0x03D8(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3D9[0x7];                                      // 0x03D9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSlateFontInfo                         Font;                                              // 0x03E0(0x0058)(Deprecated, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          SelectAllTextWhenFocused;                          // 0x0438(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ClearTextSelectionOnFocusLoss;                     // 0x0439(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          RevertTextOnEscape;                                // 0x043A(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ClearKeyboardFocusOnCommit;                        // 0x043B(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          AllowContextMenu;                                  // 0x043C(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVirtualKeyboardOptions                VirtualKeyboardOptions;                            // 0x043D(0x0001)(Edit, NoDestructor, AdvancedDisplay, NativeAccessSpecifierPublic)
+	EVirtualKeyboardDismissAction                 VirtualKeyboardDismissAction;                      // 0x043E(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_43F[0x1];                                      // 0x043F(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	TMulticastInlineDelegate<void(const class FText& Text)> OnTextChanged;                           // 0x0440(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(const class FText& Text, ETextCommit CommitMethod)> OnTextCommitted; // 0x0450(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	uint8                                         Pad_460[0x10];                                     // 0x0460(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void SetHintText(const class FText& InHintText);
+	void SetIsReadOnly(bool bReadOnly);
+	void SetText(const class FText& InText);
+	void SetWidgetStyle(const struct FTextBlockStyle& InWidgetStyle);
+
+	class FText GetHintText() const;
+	class FText GetText() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"MultiLineEditableText">();
+	}
+	static class UMultiLineEditableText* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UMultiLineEditableText>();
+	}
+};
+static_assert(alignof(UMultiLineEditableText) == 0x000008, "Wrong alignment on UMultiLineEditableText");
+static_assert(sizeof(UMultiLineEditableText) == 0x000470, "Wrong size on UMultiLineEditableText");
+static_assert(offsetof(UMultiLineEditableText, Text) == 0x000128, "Member 'UMultiLineEditableText::Text' has a wrong offset!");
+static_assert(offsetof(UMultiLineEditableText, HintText) == 0x000140, "Member 'UMultiLineEditableText::HintText' has a wrong offset!");
+static_assert(offsetof(UMultiLineEditableText, HintTextDelegate) == 0x000158, "Member 'UMultiLineEditableText::HintTextDelegate' has a wrong offset!");
+static_assert(offsetof(UMultiLineEditableText, WidgetStyle) == 0x000168, "Member 'UMultiLineEditableText::WidgetStyle' has a wrong offset!");
+static_assert(offsetof(UMultiLineEditableText, bIsReadOnly) == 0x0003D8, "Member 'UMultiLineEditableText::bIsReadOnly' has a wrong offset!");
+static_assert(offsetof(UMultiLineEditableText, Font) == 0x0003E0, "Member 'UMultiLineEditableText::Font' has a wrong offset!");
+static_assert(offsetof(UMultiLineEditableText, SelectAllTextWhenFocused) == 0x000438, "Member 'UMultiLineEditableText::SelectAllTextWhenFocused' has a wrong offset!");
+static_assert(offsetof(UMultiLineEditableText, ClearTextSelectionOnFocusLoss) == 0x000439, "Member 'UMultiLineEditableText::ClearTextSelectionOnFocusLoss' has a wrong offset!");
+static_assert(offsetof(UMultiLineEditableText, RevertTextOnEscape) == 0x00043A, "Member 'UMultiLineEditableText::RevertTextOnEscape' has a wrong offset!");
+static_assert(offsetof(UMultiLineEditableText, ClearKeyboardFocusOnCommit) == 0x00043B, "Member 'UMultiLineEditableText::ClearKeyboardFocusOnCommit' has a wrong offset!");
+static_assert(offsetof(UMultiLineEditableText, AllowContextMenu) == 0x00043C, "Member 'UMultiLineEditableText::AllowContextMenu' has a wrong offset!");
+static_assert(offsetof(UMultiLineEditableText, VirtualKeyboardOptions) == 0x00043D, "Member 'UMultiLineEditableText::VirtualKeyboardOptions' has a wrong offset!");
+static_assert(offsetof(UMultiLineEditableText, VirtualKeyboardDismissAction) == 0x00043E, "Member 'UMultiLineEditableText::VirtualKeyboardDismissAction' has a wrong offset!");
+static_assert(offsetof(UMultiLineEditableText, OnTextChanged) == 0x000440, "Member 'UMultiLineEditableText::OnTextChanged' has a wrong offset!");
+static_assert(offsetof(UMultiLineEditableText, OnTextCommitted) == 0x000450, "Member 'UMultiLineEditableText::OnTextCommitted' has a wrong offset!");
 
 // Class UMG.NamedSlot
 // 0x0010 (0x0130 - 0x0120)
@@ -3133,6 +2987,44 @@ static_assert(offsetof(UScaleBoxSlot, Padding) == 0x000038, "Member 'UScaleBoxSl
 static_assert(offsetof(UScaleBoxSlot, HorizontalAlignment) == 0x000048, "Member 'UScaleBoxSlot::HorizontalAlignment' has a wrong offset!");
 static_assert(offsetof(UScaleBoxSlot, VerticalAlignment) == 0x000049, "Member 'UScaleBoxSlot::VerticalAlignment' has a wrong offset!");
 
+// Class UMG.ScrollBar
+// 0x0508 (0x0610 - 0x0108)
+class UScrollBar final : public UWidget
+{
+public:
+	struct FScrollBarStyle                        WidgetStyle;                                       // 0x0108(0x04D0)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	class USlateWidgetStyleAsset*                 Style;                                             // 0x05D8(0x0008)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bAlwaysShowScrollbar;                              // 0x05E0(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bAlwaysShowScrollbarTrack;                         // 0x05E1(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EOrientation                                  Orientation;                                       // 0x05E2(0x0001)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5E3[0x1];                                      // 0x05E3(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector2D                              Thickness;                                         // 0x05E4(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FMargin                                Padding;                                           // 0x05EC(0x0010)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5FC[0x14];                                     // 0x05FC(0x0014)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void SetState(float InOffsetFraction, float InThumbSizeFraction);
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"ScrollBar">();
+	}
+	static class UScrollBar* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<UScrollBar>();
+	}
+};
+static_assert(alignof(UScrollBar) == 0x000008, "Wrong alignment on UScrollBar");
+static_assert(sizeof(UScrollBar) == 0x000610, "Wrong size on UScrollBar");
+static_assert(offsetof(UScrollBar, WidgetStyle) == 0x000108, "Member 'UScrollBar::WidgetStyle' has a wrong offset!");
+static_assert(offsetof(UScrollBar, Style) == 0x0005D8, "Member 'UScrollBar::Style' has a wrong offset!");
+static_assert(offsetof(UScrollBar, bAlwaysShowScrollbar) == 0x0005E0, "Member 'UScrollBar::bAlwaysShowScrollbar' has a wrong offset!");
+static_assert(offsetof(UScrollBar, bAlwaysShowScrollbarTrack) == 0x0005E1, "Member 'UScrollBar::bAlwaysShowScrollbarTrack' has a wrong offset!");
+static_assert(offsetof(UScrollBar, Orientation) == 0x0005E2, "Member 'UScrollBar::Orientation' has a wrong offset!");
+static_assert(offsetof(UScrollBar, Thickness) == 0x0005E4, "Member 'UScrollBar::Thickness' has a wrong offset!");
+static_assert(offsetof(UScrollBar, Padding) == 0x0005EC, "Member 'UScrollBar::Padding' has a wrong offset!");
+
 // Class UMG.ScrollBoxSlot
 // 0x0020 (0x0058 - 0x0038)
 class UScrollBoxSlot final : public UPanelSlot
@@ -3455,6 +3347,108 @@ public:
 static_assert(alignof(USpacer) == 0x000008, "Wrong alignment on USpacer");
 static_assert(sizeof(USpacer) == 0x000120, "Wrong size on USpacer");
 static_assert(offsetof(USpacer, Size) == 0x000108, "Member 'USpacer::Size' has a wrong offset!");
+
+// Class UMG.SpinBox
+// 0x0418 (0x0520 - 0x0108)
+class USpinBox final : public UWidget
+{
+public:
+	float                                         Value;                                             // 0x0108(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TDelegate<void()>                             ValueDelegate;                                     // 0x010C(0x0010)(ZeroConstructor, InstancedReference, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11C[0x4];                                      // 0x011C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSpinBoxStyle                          WidgetStyle;                                       // 0x0120(0x02E8)(Edit, BlueprintVisible, NativeAccessSpecifierPublic)
+	class USlateWidgetStyleAsset*                 Style;                                             // 0x0408(0x0008)(ZeroConstructor, Deprecated, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MinFractionalDigits;                               // 0x0410(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         MaxFractionalDigits;                               // 0x0414(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bAlwaysUsesDeltaSnap;                              // 0x0418(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_419[0x3];                                      // 0x0419(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         Delta;                                             // 0x041C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         SliderExponent;                                    // 0x0420(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_424[0x4];                                      // 0x0424(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSlateFontInfo                         Font;                                              // 0x0428(0x0058)(Edit, BlueprintVisible, BlueprintReadOnly, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ETextJustify                                  Justification;                                     // 0x0480(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_481[0x3];                                      // 0x0481(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         MinDesiredWidth;                                   // 0x0484(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ClearKeyboardFocusOnCommit;                        // 0x0488(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          SelectAllTextOnCommit;                             // 0x0489(0x0001)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_48A[0x6];                                      // 0x048A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSlateColor                            ForegroundColor;                                   // 0x0490(0x0028)(Edit, BlueprintVisible, BlueprintReadOnly, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(float InValue)> OnValueChanged;                                    // 0x04B8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(float InValue, ETextCommit CommitMethod)> OnValueCommitted;        // 0x04C8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void()>              OnBeginSliderMovement;                             // 0x04D8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	TMulticastInlineDelegate<void(float InValue)> OnEndSliderMovement;                               // 0x04E8(0x0010)(ZeroConstructor, InstancedReference, BlueprintAssignable, NativeAccessSpecifierPublic)
+	uint8                                         bOverride_MinValue : 1;                            // 0x04F8(0x0001)(BitIndex: 0x00, PropSize: 0x0001 (Edit, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected))
+	uint8                                         bOverride_MaxValue : 1;                            // 0x04F8(0x0001)(BitIndex: 0x01, PropSize: 0x0001 (Edit, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected))
+	uint8                                         bOverride_MinSliderValue : 1;                      // 0x04F8(0x0001)(BitIndex: 0x02, PropSize: 0x0001 (Edit, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected))
+	uint8                                         bOverride_MaxSliderValue : 1;                      // 0x04F8(0x0001)(BitIndex: 0x03, PropSize: 0x0001 (Edit, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected))
+	uint8                                         Pad_4F9[0x3];                                      // 0x04F9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         MinValue;                                          // 0x04FC(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         MaxValue;                                          // 0x0500(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         MinSliderValue;                                    // 0x0504(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	float                                         MaxSliderValue;                                    // 0x0508(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	uint8                                         Pad_50C[0x14];                                     // 0x050C(0x0014)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
+public:
+	void ClearMaxSliderValue();
+	void ClearMaxValue();
+	void ClearMinSliderValue();
+	void ClearMinValue();
+	void SetAlwaysUsesDeltaSnap(bool bNewValue);
+	void SetDelta(float NewValue);
+	void SetForegroundColor(const struct FSlateColor& InForegroundColor);
+	void SetMaxFractionalDigits(int32 NewValue);
+	void SetMaxSliderValue(float NewValue);
+	void SetMaxValue(float NewValue);
+	void SetMinFractionalDigits(int32 NewValue);
+	void SetMinSliderValue(float NewValue);
+	void SetMinValue(float NewValue);
+	void SetValue(float NewValue);
+
+	bool GetAlwaysUsesDeltaSnap() const;
+	float GetDelta() const;
+	int32 GetMaxFractionalDigits() const;
+	float GetMaxSliderValue() const;
+	float GetMaxValue() const;
+	int32 GetMinFractionalDigits() const;
+	float GetMinSliderValue() const;
+	float GetMinValue() const;
+	float GetValue() const;
+
+public:
+	static class UClass* StaticClass()
+	{
+		return StaticClassImpl<"SpinBox">();
+	}
+	static class USpinBox* GetDefaultObj()
+	{
+		return GetDefaultObjImpl<USpinBox>();
+	}
+};
+static_assert(alignof(USpinBox) == 0x000008, "Wrong alignment on USpinBox");
+static_assert(sizeof(USpinBox) == 0x000520, "Wrong size on USpinBox");
+static_assert(offsetof(USpinBox, Value) == 0x000108, "Member 'USpinBox::Value' has a wrong offset!");
+static_assert(offsetof(USpinBox, ValueDelegate) == 0x00010C, "Member 'USpinBox::ValueDelegate' has a wrong offset!");
+static_assert(offsetof(USpinBox, WidgetStyle) == 0x000120, "Member 'USpinBox::WidgetStyle' has a wrong offset!");
+static_assert(offsetof(USpinBox, Style) == 0x000408, "Member 'USpinBox::Style' has a wrong offset!");
+static_assert(offsetof(USpinBox, MinFractionalDigits) == 0x000410, "Member 'USpinBox::MinFractionalDigits' has a wrong offset!");
+static_assert(offsetof(USpinBox, MaxFractionalDigits) == 0x000414, "Member 'USpinBox::MaxFractionalDigits' has a wrong offset!");
+static_assert(offsetof(USpinBox, bAlwaysUsesDeltaSnap) == 0x000418, "Member 'USpinBox::bAlwaysUsesDeltaSnap' has a wrong offset!");
+static_assert(offsetof(USpinBox, Delta) == 0x00041C, "Member 'USpinBox::Delta' has a wrong offset!");
+static_assert(offsetof(USpinBox, SliderExponent) == 0x000420, "Member 'USpinBox::SliderExponent' has a wrong offset!");
+static_assert(offsetof(USpinBox, Font) == 0x000428, "Member 'USpinBox::Font' has a wrong offset!");
+static_assert(offsetof(USpinBox, Justification) == 0x000480, "Member 'USpinBox::Justification' has a wrong offset!");
+static_assert(offsetof(USpinBox, MinDesiredWidth) == 0x000484, "Member 'USpinBox::MinDesiredWidth' has a wrong offset!");
+static_assert(offsetof(USpinBox, ClearKeyboardFocusOnCommit) == 0x000488, "Member 'USpinBox::ClearKeyboardFocusOnCommit' has a wrong offset!");
+static_assert(offsetof(USpinBox, SelectAllTextOnCommit) == 0x000489, "Member 'USpinBox::SelectAllTextOnCommit' has a wrong offset!");
+static_assert(offsetof(USpinBox, ForegroundColor) == 0x000490, "Member 'USpinBox::ForegroundColor' has a wrong offset!");
+static_assert(offsetof(USpinBox, OnValueChanged) == 0x0004B8, "Member 'USpinBox::OnValueChanged' has a wrong offset!");
+static_assert(offsetof(USpinBox, OnValueCommitted) == 0x0004C8, "Member 'USpinBox::OnValueCommitted' has a wrong offset!");
+static_assert(offsetof(USpinBox, OnBeginSliderMovement) == 0x0004D8, "Member 'USpinBox::OnBeginSliderMovement' has a wrong offset!");
+static_assert(offsetof(USpinBox, OnEndSliderMovement) == 0x0004E8, "Member 'USpinBox::OnEndSliderMovement' has a wrong offset!");
+static_assert(offsetof(USpinBox, MinValue) == 0x0004FC, "Member 'USpinBox::MinValue' has a wrong offset!");
+static_assert(offsetof(USpinBox, MaxValue) == 0x000500, "Member 'USpinBox::MaxValue' has a wrong offset!");
+static_assert(offsetof(USpinBox, MinSliderValue) == 0x000504, "Member 'USpinBox::MinSliderValue' has a wrong offset!");
+static_assert(offsetof(USpinBox, MaxSliderValue) == 0x000508, "Member 'USpinBox::MaxSliderValue' has a wrong offset!");
 
 // Class UMG.TextBinding
 // 0x0008 (0x0068 - 0x0060)

@@ -12,274 +12,20 @@
 
 #include "BrickRigs_classes.hpp"
 #include "BrickRigs_parameters.hpp"
-#include <windows.h>
 
 
 namespace SDK
 {
 
-// Function BrickRigs.BrickBorder.SetBrushStyle
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// EBrickUIBrushStyle                      NewStyle                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function BrickRigs.PagedListEntryWidget.InitializeEntry
+// (Native, Event, Protected, BlueprintEvent)
 
-void UBrickBorder::SetBrushStyle(EBrickUIBrushStyle NewStyle)
+void UPagedListEntryWidget::InitializeEntry()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BrickBorder", "SetBrushStyle");
-
-	Params::BrickBorder_SetBrushStyle Parms{};
-
-	Parms.NewStyle = NewStyle;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.BrickBorder.SetColorStyle
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// EBrickUIColorStyle                      NewStyle                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UBrickBorder::SetColorStyle(EBrickUIColorStyle NewStyle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickBorder", "SetColorStyle");
-
-	Params::BrickBorder_SetColorStyle Parms{};
-
-	Parms.NewStyle = NewStyle;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.BrickBorder.SetPaddingStyle
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// EBrickUIPaddingStyle                    NewStyle                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UBrickBorder::SetPaddingStyle(EBrickUIPaddingStyle NewStyle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickBorder", "SetPaddingStyle");
-
-	Params::BrickBorder_SetPaddingStyle Parms{};
-
-	Parms.NewStyle = NewStyle;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.BrickBorder.SetStyleState
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// EBrickUIStyleState                      NewState                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UBrickBorder::SetStyleState(EBrickUIStyleState NewState)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickBorder", "SetStyleState");
-
-	Params::BrickBorder_SetStyleState Parms{};
-
-	Parms.NewState = NewState;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.PopupWidget.CancelPopup
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UPopupWidget::CancelPopup()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PopupWidget", "CancelPopup");
-
-	Params::PopupWidget_CancelPopup Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.PopupWidget.ClosePopup
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// EPopupResult                            Result                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UPopupWidget::ClosePopup(EPopupResult Result)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PopupWidget", "ClosePopup");
-
-	Params::PopupWidget_ClosePopup Parms{};
-
-	Parms.Result = Result;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.PopupWidget.ConfirmPopup
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UPopupWidget::ConfirmPopup()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PopupWidget", "ConfirmPopup");
-
-	Params::PopupWidget_ConfirmPopup Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.PopupWidget.GetPopupParams
-// (Final, Native, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// TSubclassOf<class UPopupParams>         Class_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UPopupParams*                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UPopupParams* UPopupWidget::GetPopupParams(TSubclassOf<class UPopupParams> Class_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PopupWidget", "GetPopupParams");
-
-	Params::PopupWidget_GetPopupParams Parms{};
-
-	Parms.Class_0 = Class_0;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.PopupWidget.GetWidgetToFocus
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// class UWidget*                          ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UWidget* UPopupWidget::GetWidgetToFocus()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PopupWidget", "GetWidgetToFocus");
-
-	Params::PopupWidget_GetWidgetToFocus Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.PopupWidget.StepBack
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UPopupWidget::StepBack()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PopupWidget", "StepBack");
-
-	Params::PopupWidget_StepBack Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.PopupWidget.UpdatePopupTitle
-// (Final, Native, Public, BlueprintCallable)
-
-void UPopupWidget::UpdatePopupTitle()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PopupWidget", "UpdatePopupTitle");
+		Func = Class->GetFunction("PagedListEntryWidget", "InitializeEntry");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -290,242 +36,15 @@ void UPopupWidget::UpdatePopupTitle()
 }
 
 
-// Function BrickRigs.PopupWidget.CanPopupBeClosed
-// (Native, Event, Public, BlueprintEvent, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function BrickRigs.PagedListEntryWidget.OnClickedEntry
+// (Final, Native, Protected, BlueprintCallable)
 
-bool UPopupWidget::CanPopupBeClosed() const
+void UPagedListEntryWidget::OnClickedEntry()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PopupWidget", "CanPopupBeClosed");
-
-	Params::PopupWidget_CanPopupBeClosed Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.PopupWidget.GetButtonPanel
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class UMenuButtonPanelWidget*           ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UMenuButtonPanelWidget* UPopupWidget::GetButtonPanel() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PopupWidget", "GetButtonPanel");
-
-	Params::PopupWidget_GetButtonPanel Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.PopupWidget.GetPopupContainer
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class UPopupContainerWidget*            ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UPopupContainerWidget* UPopupWidget::GetPopupContainer() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PopupWidget", "GetPopupContainer");
-
-	Params::PopupWidget_GetPopupContainer Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.PopupWidget.GetPopupSizeRule
-// (Native, Event, Public, BlueprintEvent, Const)
-// Parameters:
-// EPopupSizeRule                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-EPopupSizeRule UPopupWidget::GetPopupSizeRule() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PopupWidget", "GetPopupSizeRule");
-
-	Params::PopupWidget_GetPopupSizeRule Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.PopupWidget.GetPopupTitle
-// (Native, Event, Public, BlueprintEvent, Const)
-// Parameters:
-// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-
-class FText UPopupWidget::GetPopupTitle() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PopupWidget", "GetPopupTitle");
-
-	Params::PopupWidget_GetPopupTitle Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.PopupWidget.ShouldBeVisibleInPopupContainer
-// (Native, Event, Public, BlueprintEvent, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UPopupWidget::ShouldBeVisibleInPopupContainer() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PopupWidget", "ShouldBeVisibleInPopupContainer");
-
-	Params::PopupWidget_ShouldBeVisibleInPopupContainer Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.AdminLoginWidget.OnTextChanged
-// (Final, Native, Private, HasOutParams)
-// Parameters:
-// const class FText&                      Text                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// EValueChangedEventType                  EventType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAdminLoginWidget::OnTextChanged(const class FText& Text, EValueChangedEventType EventType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AdminLoginWidget", "OnTextChanged");
-
-	Params::AdminLoginWidget_OnTextChanged Parms{};
-
-	Parms.Text = std::move(Text);
-	Parms.EventType = EventType;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.AdminLoginWidget.UpdateCanEverBeAdmin
-// (Native, Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bCanBeAdmin                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAdminLoginWidget::UpdateCanEverBeAdmin(bool bCanBeAdmin)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AdminLoginWidget", "UpdateCanEverBeAdmin");
-
-	Params::AdminLoginWidget_UpdateCanEverBeAdmin Parms{};
-
-	Parms.bCanBeAdmin = bCanBeAdmin;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.AdminLoginWidget.UpdateIsAdmin
-// (Native, Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bNewIsAdmin                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAdminLoginWidget::UpdateIsAdmin(bool bNewIsAdmin)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AdminLoginWidget", "UpdateIsAdmin");
-
-	Params::AdminLoginWidget_UpdateIsAdmin Parms{};
-
-	Parms.bNewIsAdmin = bNewIsAdmin;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.BrickBuilding.OnRep_bCollapsed
-// (Final, Native, Protected)
-
-void ABrickBuilding::OnRep_bCollapsed()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickBuilding", "OnRep_bCollapsed");
+		Func = Class->GetFunction("PagedListEntryWidget", "OnClickedEntry");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -536,90 +55,15 @@ void ABrickBuilding::OnRep_bCollapsed()
 }
 
 
-// Function BrickRigs.MenuPageWidget.StepBack
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function BrickRigs.PagedListEntryWidget.OnDoubleClickedEntry
+// (Final, Native, Protected, BlueprintCallable)
 
-bool UMenuPageWidget::StepBack()
+void UPagedListEntryWidget::OnDoubleClickedEntry()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("MenuPageWidget", "StepBack");
-
-	Params::MenuPageWidget_StepBack Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.MenuPageWidget.GetMenuWidget
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class UMenuWidget*                      ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UMenuWidget* UMenuPageWidget::GetMenuWidget() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MenuPageWidget", "GetMenuWidget");
-
-	Params::MenuPageWidget_GetMenuWidget Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.MenuPageWidget.GetWidgetToFocus
-// (Native, Event, Public, BlueprintEvent, Const)
-// Parameters:
-// class UWidget*                          ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UWidget* UMenuPageWidget::GetWidgetToFocus() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MenuPageWidget", "GetWidgetToFocus");
-
-	Params::MenuPageWidget_GetWidgetToFocus Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.MenuSettingsPageWidget.AddProperties
-// (Native, Event, Protected, BlueprintEvent)
-
-void UMenuSettingsPageWidget::AddProperties()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MenuSettingsPageWidget", "AddProperties");
+		Func = Class->GetFunction("PagedListEntryWidget", "OnDoubleClickedEntry");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -630,167 +74,19 @@ void UMenuSettingsPageWidget::AddProperties()
 }
 
 
-// Function BrickRigs.InputSettingsPageWidget.RevertInputMappings
-// (Final, Native, Public, BlueprintCallable)
-
-void UInputSettingsPageWidget::RevertInputMappings()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InputSettingsPageWidget", "RevertInputMappings");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.ButtonWidgetBase.OnUpdateContentStyle
+// Function BrickRigs.PagedListEntryWidget.UpdateButtonSelected
 // (Native, Event, Protected, BlueprintEvent)
-// Parameters:
-// EBrickUIColorStyle                      InColorStyle                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EBrickUIStyleState                      InStyleState                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UButtonWidgetBase::OnUpdateContentStyle(EBrickUIColorStyle InColorStyle, EBrickUIStyleState InStyleState)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ButtonWidgetBase", "OnUpdateContentStyle");
-
-	Params::ButtonWidgetBase_OnUpdateContentStyle Parms{};
-
-	Parms.InColorStyle = InColorStyle;
-	Parms.InStyleState = InStyleState;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.ButtonWidgetBase.SetBrushStyle
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// EBrickUIBrushStyle                      NewBrushStyle                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UButtonWidgetBase::SetBrushStyle(EBrickUIBrushStyle NewBrushStyle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ButtonWidgetBase", "SetBrushStyle");
-
-	Params::ButtonWidgetBase_SetBrushStyle Parms{};
-
-	Parms.NewBrushStyle = NewBrushStyle;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.ButtonWidgetBase.SetColorStyle
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// EBrickUIColorStyle                      NewColorStyle                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UButtonWidgetBase::SetColorStyle(EBrickUIColorStyle NewColorStyle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ButtonWidgetBase", "SetColorStyle");
-
-	Params::ButtonWidgetBase_SetColorStyle Parms{};
-
-	Parms.NewColorStyle = NewColorStyle;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.ButtonWidgetBase.SetCustomFocus
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    bNewUseCustomFocus                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bNewFocused                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UButtonWidgetBase::SetCustomFocus(bool bNewUseCustomFocus, bool bNewFocused)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ButtonWidgetBase", "SetCustomFocus");
-
-	Params::ButtonWidgetBase_SetCustomFocus Parms{};
-
-	Parms.bNewUseCustomFocus = bNewUseCustomFocus;
-	Parms.bNewFocused = bNewFocused;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.ButtonWidgetBase.SetHiddenWhileUnfocused
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    bNewHidden                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UButtonWidgetBase::SetHiddenWhileUnfocused(bool bNewHidden)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ButtonWidgetBase", "SetHiddenWhileUnfocused");
-
-	Params::ButtonWidgetBase_SetHiddenWhileUnfocused Parms{};
-
-	Parms.bNewHidden = bNewHidden;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.ButtonWidgetBase.SetIsSelected
-// (Final, Native, Public, BlueprintCallable)
 // Parameters:
 // bool                                    bNewSelected                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UButtonWidgetBase::SetIsSelected(bool bNewSelected)
+void UPagedListEntryWidget::UpdateButtonSelected(bool bNewSelected)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ButtonWidgetBase", "SetIsSelected");
+		Func = Class->GetFunction("PagedListEntryWidget", "UpdateButtonSelected");
 
-	Params::ButtonWidgetBase_SetIsSelected Parms{};
+	Params::PagedListEntryWidget_UpdateButtonSelected Parms{};
 
 	Parms.bNewSelected = bNewSelected;
 
@@ -800,374 +96,6 @@ void UButtonWidgetBase::SetIsSelected(bool bNewSelected)
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.ButtonWidgetBase.UpdateContentStyle
-// (Final, Native, Public, BlueprintCallable)
-
-void UButtonWidgetBase::UpdateContentStyle()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ButtonWidgetBase", "UpdateContentStyle");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.ButtonWidgetBase.GetButtonStyleState
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// EBrickUIStyleState                      ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-EBrickUIStyleState UButtonWidgetBase::GetButtonStyleState() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ButtonWidgetBase", "GetButtonStyleState");
-
-	Params::ButtonWidgetBase_GetButtonStyleState Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.ButtonWidgetBase.GetContentStyleState
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// EBrickUIStyleState                      ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-EBrickUIStyleState UButtonWidgetBase::GetContentStyleState() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ButtonWidgetBase", "GetContentStyleState");
-
-	Params::ButtonWidgetBase_GetContentStyleState Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.BrickSliderWidget.OnMeasurementSystemChanged
-// (Final, Native, Private)
-// Parameters:
-// EMeasurementSystem                      NewSystem                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UBrickSliderWidget::OnMeasurementSystemChanged(EMeasurementSystem NewSystem)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickSliderWidget", "OnMeasurementSystemChanged");
-
-	Params::BrickSliderWidget_OnMeasurementSystemChanged Parms{};
-
-	Parms.NewSystem = NewSystem;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.BrickSliderWidget.OnTextChanged
-// (Final, Native, Private, HasOutParams)
-// Parameters:
-// const class FText&                      NewText                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// EValueChangedEventType                  EventType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UBrickSliderWidget::OnTextChanged(const class FText& NewText, EValueChangedEventType EventType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickSliderWidget", "OnTextChanged");
-
-	Params::BrickSliderWidget_OnTextChanged Parms{};
-
-	Parms.NewText = std::move(NewText);
-	Parms.EventType = EventType;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.BrickSliderWidget.SetCustomTextFormat
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const class FText&                      InFormat                                               (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UBrickSliderWidget::SetCustomTextFormat(const class FText& InFormat)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickSliderWidget", "SetCustomTextFormat");
-
-	Params::BrickSliderWidget_SetCustomTextFormat Parms{};
-
-	Parms.InFormat = std::move(InFormat);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.BrickSliderWidget.SetGridSnapMode
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// const EBrickSliderGridSnapMode          NewMode                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UBrickSliderWidget::SetGridSnapMode(const EBrickSliderGridSnapMode NewMode)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickSliderWidget", "SetGridSnapMode");
-
-	Params::BrickSliderWidget_SetGridSnapMode Parms{};
-
-	Parms.NewMode = NewMode;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.BrickSliderWidget.SetIsMarquee
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    bInMarquee                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UBrickSliderWidget::SetIsMarquee(bool bInMarquee)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickSliderWidget", "SetIsMarquee");
-
-	Params::BrickSliderWidget_SetIsMarquee Parms{};
-
-	Parms.bInMarquee = bInMarquee;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.BrickSliderWidget.SetIsReadOnly
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    bInReadOnly                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UBrickSliderWidget::SetIsReadOnly(bool bInReadOnly)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickSliderWidget", "SetIsReadOnly");
-
-	Params::BrickSliderWidget_SetIsReadOnly Parms{};
-
-	Parms.bInReadOnly = bInReadOnly;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.BrickSliderWidget.SetMaxFractionalDigits
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// int32                                   InMaxDigits                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UBrickSliderWidget::SetMaxFractionalDigits(int32 InMaxDigits)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickSliderWidget", "SetMaxFractionalDigits");
-
-	Params::BrickSliderWidget_SetMaxFractionalDigits Parms{};
-
-	Parms.InMaxDigits = InMaxDigits;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.BrickSliderWidget.SetValue
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UBrickSliderWidget::SetValue(float NewValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickSliderWidget", "SetValue");
-
-	Params::BrickSliderWidget_SetValue Parms{};
-
-	Parms.NewValue = NewValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.BrickSliderWidget.SetValueRange
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   InMinValue                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   InMaxValue                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UBrickSliderWidget::SetValueRange(float InMinValue, float InMaxValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickSliderWidget", "SetValueRange");
-
-	Params::BrickSliderWidget_SetValueRange Parms{};
-
-	Parms.InMinValue = InMinValue;
-	Parms.InMaxValue = InMaxValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.BrickSliderWidget.SetValueType
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// ENumericValueType                       InType                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UBrickSliderWidget::SetValueType(ENumericValueType InType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickSliderWidget", "SetValueType");
-
-	Params::BrickSliderWidget_SetValueType Parms{};
-
-	Parms.InType = InType;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.BrickSliderWidget.UpdateSliderPosition
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// float                                   NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UBrickSliderWidget::UpdateSliderPosition(float NewValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickSliderWidget", "UpdateSliderPosition");
-
-	Params::BrickSliderWidget_UpdateSliderPosition Parms{};
-
-	Parms.NewValue = NewValue;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.BrickSliderWidget.GetValue
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UBrickSliderWidget::GetValue() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickSliderWidget", "GetValue");
-
-	Params::BrickSliderWidget_GetValue Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
@@ -1726,210 +654,6 @@ bool UBrickEditorObject::IsSpawned() const
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.BrickButtonWidget.AddContentWidget
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class UWidget*                          InWidget                                               (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UBrickButtonWidget::AddContentWidget(class UWidget* InWidget)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickButtonWidget", "AddContentWidget");
-
-	Params::BrickButtonWidget_AddContentWidget Parms{};
-
-	Parms.InWidget = InWidget;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.BrickButtonWidget.SetContentHorizontalAlignment
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// EHorizontalAlignment                    InAlignment                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UBrickButtonWidget::SetContentHorizontalAlignment(EHorizontalAlignment InAlignment)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickButtonWidget", "SetContentHorizontalAlignment");
-
-	Params::BrickButtonWidget_SetContentHorizontalAlignment Parms{};
-
-	Parms.InAlignment = InAlignment;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.BrickButtonWidget.SetContentPadding
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const struct FMargin&                   InPadding                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-
-void UBrickButtonWidget::SetContentPadding(const struct FMargin& InPadding)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickButtonWidget", "SetContentPadding");
-
-	Params::BrickButtonWidget_SetContentPadding Parms{};
-
-	Parms.InPadding = std::move(InPadding);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.BrickButtonWidget.SetContentPaddingStyle
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// EBrickUIPaddingStyle                    InStyle                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UBrickButtonWidget::SetContentPaddingStyle(EBrickUIPaddingStyle InStyle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickButtonWidget", "SetContentPaddingStyle");
-
-	Params::BrickButtonWidget_SetContentPaddingStyle Parms{};
-
-	Parms.InStyle = InStyle;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.BrickButtonWidget.SetContentVerticalAlignment
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// EVerticalAlignment                      InAlignment                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UBrickButtonWidget::SetContentVerticalAlignment(EVerticalAlignment InAlignment)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickButtonWidget", "SetContentVerticalAlignment");
-
-	Params::BrickButtonWidget_SetContentVerticalAlignment Parms{};
-
-	Parms.InAlignment = InAlignment;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.KickPlayerPopupWidget.RevokeKick
-// (Final, Native, Public, BlueprintCallable)
-
-void UKickPlayerPopupWidget::RevokeKick()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KickPlayerPopupWidget", "RevokeKick");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.KickPlayerPopupWidget.UpdateCanConfirmKick
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bNewCanConfirm                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UKickPlayerPopupWidget::UpdateCanConfirmKick(bool bNewCanConfirm)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KickPlayerPopupWidget", "UpdateCanConfirmKick");
-
-	Params::KickPlayerPopupWidget_UpdateCanConfirmKick Parms{};
-
-	Parms.bNewCanConfirm = bNewCanConfirm;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.KickPlayerPopupWidget.UpdateCanRevokeKick
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bCanRevoke                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UKickPlayerPopupWidget::UpdateCanRevokeKick(bool bCanRevoke)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KickPlayerPopupWidget", "UpdateCanRevokeKick");
-
-	Params::KickPlayerPopupWidget_UpdateCanRevokeKick Parms{};
-
-	Parms.bCanRevoke = bCanRevoke;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.KickPlayerPopupWidget.UpdateIsLoadingKick
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bNewLoading                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UKickPlayerPopupWidget::UpdateIsLoadingKick(bool bNewLoading)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("KickPlayerPopupWidget", "UpdateIsLoadingKick");
-
-	Params::KickPlayerPopupWidget_UpdateIsLoadingKick Parms{};
-
-	Parms.bNewLoading = bNewLoading;
-
-	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -2642,6 +1366,1169 @@ bool UBrick::ShouldTick() const
 }
 
 
+// Function BrickRigs.BrickBorder.SetBrushStyle
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// EBrickUIBrushStyle                      NewStyle                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UBrickBorder::SetBrushStyle(EBrickUIBrushStyle NewStyle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickBorder", "SetBrushStyle");
+
+	Params::BrickBorder_SetBrushStyle Parms{};
+
+	Parms.NewStyle = NewStyle;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.BrickBorder.SetColorStyle
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// EBrickUIColorStyle                      NewStyle                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UBrickBorder::SetColorStyle(EBrickUIColorStyle NewStyle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickBorder", "SetColorStyle");
+
+	Params::BrickBorder_SetColorStyle Parms{};
+
+	Parms.NewStyle = NewStyle;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.BrickBorder.SetPaddingStyle
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// EBrickUIPaddingStyle                    NewStyle                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UBrickBorder::SetPaddingStyle(EBrickUIPaddingStyle NewStyle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickBorder", "SetPaddingStyle");
+
+	Params::BrickBorder_SetPaddingStyle Parms{};
+
+	Parms.NewStyle = NewStyle;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.BrickBorder.SetStyleState
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// EBrickUIStyleState                      NewState                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UBrickBorder::SetStyleState(EBrickUIStyleState NewState)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickBorder", "SetStyleState");
+
+	Params::BrickBorder_SetStyleState Parms{};
+
+	Parms.NewState = NewState;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.CameraBrickWidget.UpdateTargetRange
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bHitSomething                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   Distance                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCameraBrickWidget::UpdateTargetRange(bool bHitSomething, float Distance)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CameraBrickWidget", "UpdateTargetRange");
+
+	Params::CameraBrickWidget_UpdateTargetRange Parms{};
+
+	Parms.bHitSomething = bHitSomething;
+	Parms.Distance = Distance;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.HUDIconWidget.InitializeIcon
+// (Native, Event, Public, BlueprintEvent)
+
+void UHUDIconWidget::InitializeIcon()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("HUDIconWidget", "InitializeIcon");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.HUDIconWidget.PostInitializeIcon
+// (Native, Event, Public, BlueprintEvent)
+
+void UHUDIconWidget::PostInitializeIcon()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("HUDIconWidget", "PostInitializeIcon");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.HUDIconWidget.SetIconColorStyle
+// (Final, Native, Protected, BlueprintCallable)
+// Parameters:
+// EBrickUIColorStyle                      NewColorStyle                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UHUDIconWidget::SetIconColorStyle(EBrickUIColorStyle NewColorStyle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("HUDIconWidget", "SetIconColorStyle");
+
+	Params::HUDIconWidget_SetIconColorStyle Parms{};
+
+	Parms.NewColorStyle = NewColorStyle;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.HUDIconWidget.SetIconSlot
+// (Final, Native, Protected, BlueprintCallable)
+// Parameters:
+// const struct FBrickUIIconSlot&          NewSlot                                                (Parm, NoDestructor, NativeAccessSpecifierPublic)
+
+void UHUDIconWidget::SetIconSlot(const struct FBrickUIIconSlot& NewSlot)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("HUDIconWidget", "SetIconSlot");
+
+	Params::HUDIconWidget_SetIconSlot Parms{};
+
+	Parms.NewSlot = std::move(NewSlot);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.HUDIconWidget.UninitializeIcon
+// (Native, Event, Public, BlueprintEvent)
+
+void UHUDIconWidget::UninitializeIcon()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("HUDIconWidget", "UninitializeIcon");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.HUDIconWidget.UpdateIconRotation
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// float                                   NewRotation                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UHUDIconWidget::UpdateIconRotation(float NewRotation)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("HUDIconWidget", "UpdateIconRotation");
+
+	Params::HUDIconWidget_UpdateIconRotation Parms{};
+
+	Parms.NewRotation = NewRotation;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.HUDIconWidget.UpdateIconStyle
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// EBrickUIColorStyle                      InColorStyle                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EBrickUIStyleState                      InStyleState                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UHUDIconWidget::UpdateIconStyle(EBrickUIColorStyle InColorStyle, EBrickUIStyleState InStyleState)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("HUDIconWidget", "UpdateIconStyle");
+
+	Params::HUDIconWidget_UpdateIconStyle Parms{};
+
+	Parms.InColorStyle = InColorStyle;
+	Parms.InStyleState = InStyleState;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.HUDIconWidget.UpdateNameText
+// (Final, Native, Protected, BlueprintCallable)
+
+void UHUDIconWidget::UpdateNameText()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("HUDIconWidget", "UpdateNameText");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.HUDIconWidget.GetIconDisplayName
+// (Native, Event, Public, BlueprintEvent, Const)
+// Parameters:
+// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+class FText UHUDIconWidget::GetIconDisplayName() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("HUDIconWidget", "GetIconDisplayName");
+
+	Params::HUDIconWidget_GetIconDisplayName Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.HUDIconWidget.GetIconWorldRotation
+// (Native, Event, Public, HasOutParams, BlueprintEvent, Const)
+// Parameters:
+// float*                                  OutRotation                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UHUDIconWidget::GetIconWorldRotation(float* OutRotation) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("HUDIconWidget", "GetIconWorldRotation");
+
+	Params::HUDIconWidget_GetIconWorldRotation Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutRotation != nullptr)
+		*OutRotation = Parms.OutRotation;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.AdminLoginWidget.OnTextChanged
+// (Final, Native, Private, HasOutParams)
+// Parameters:
+// const class FText&                      Text                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// EValueChangedEventType                  EventType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAdminLoginWidget::OnTextChanged(const class FText& Text, EValueChangedEventType EventType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AdminLoginWidget", "OnTextChanged");
+
+	Params::AdminLoginWidget_OnTextChanged Parms{};
+
+	Parms.Text = std::move(Text);
+	Parms.EventType = EventType;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.AdminLoginWidget.UpdateCanEverBeAdmin
+// (Native, Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bCanBeAdmin                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAdminLoginWidget::UpdateCanEverBeAdmin(bool bCanBeAdmin)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AdminLoginWidget", "UpdateCanEverBeAdmin");
+
+	Params::AdminLoginWidget_UpdateCanEverBeAdmin Parms{};
+
+	Parms.bCanBeAdmin = bCanBeAdmin;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.AdminLoginWidget.UpdateIsAdmin
+// (Native, Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bNewIsAdmin                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAdminLoginWidget::UpdateIsAdmin(bool bNewIsAdmin)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AdminLoginWidget", "UpdateIsAdmin");
+
+	Params::AdminLoginWidget_UpdateIsAdmin Parms{};
+
+	Parms.bNewIsAdmin = bNewIsAdmin;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.BrickBuilding.OnRep_bCollapsed
+// (Final, Native, Protected)
+
+void ABrickBuilding::OnRep_bCollapsed()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickBuilding", "OnRep_bCollapsed");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.ButtonWidgetBase.OnUpdateContentStyle
+// (Native, Event, Protected, BlueprintEvent)
+// Parameters:
+// EBrickUIColorStyle                      InColorStyle                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EBrickUIStyleState                      InStyleState                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UButtonWidgetBase::OnUpdateContentStyle(EBrickUIColorStyle InColorStyle, EBrickUIStyleState InStyleState)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ButtonWidgetBase", "OnUpdateContentStyle");
+
+	Params::ButtonWidgetBase_OnUpdateContentStyle Parms{};
+
+	Parms.InColorStyle = InColorStyle;
+	Parms.InStyleState = InStyleState;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.ButtonWidgetBase.SetBrushStyle
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// EBrickUIBrushStyle                      NewBrushStyle                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UButtonWidgetBase::SetBrushStyle(EBrickUIBrushStyle NewBrushStyle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ButtonWidgetBase", "SetBrushStyle");
+
+	Params::ButtonWidgetBase_SetBrushStyle Parms{};
+
+	Parms.NewBrushStyle = NewBrushStyle;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.ButtonWidgetBase.SetColorStyle
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// EBrickUIColorStyle                      NewColorStyle                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UButtonWidgetBase::SetColorStyle(EBrickUIColorStyle NewColorStyle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ButtonWidgetBase", "SetColorStyle");
+
+	Params::ButtonWidgetBase_SetColorStyle Parms{};
+
+	Parms.NewColorStyle = NewColorStyle;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.ButtonWidgetBase.SetCustomFocus
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bNewUseCustomFocus                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bNewFocused                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UButtonWidgetBase::SetCustomFocus(bool bNewUseCustomFocus, bool bNewFocused)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ButtonWidgetBase", "SetCustomFocus");
+
+	Params::ButtonWidgetBase_SetCustomFocus Parms{};
+
+	Parms.bNewUseCustomFocus = bNewUseCustomFocus;
+	Parms.bNewFocused = bNewFocused;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.ButtonWidgetBase.SetHiddenWhileUnfocused
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bNewHidden                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UButtonWidgetBase::SetHiddenWhileUnfocused(bool bNewHidden)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ButtonWidgetBase", "SetHiddenWhileUnfocused");
+
+	Params::ButtonWidgetBase_SetHiddenWhileUnfocused Parms{};
+
+	Parms.bNewHidden = bNewHidden;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.ButtonWidgetBase.SetIsSelected
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bNewSelected                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UButtonWidgetBase::SetIsSelected(bool bNewSelected)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ButtonWidgetBase", "SetIsSelected");
+
+	Params::ButtonWidgetBase_SetIsSelected Parms{};
+
+	Parms.bNewSelected = bNewSelected;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.ButtonWidgetBase.UpdateContentStyle
+// (Final, Native, Public, BlueprintCallable)
+
+void UButtonWidgetBase::UpdateContentStyle()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ButtonWidgetBase", "UpdateContentStyle");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.ButtonWidgetBase.GetButtonStyleState
+// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// EBrickUIStyleState                      ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EBrickUIStyleState UButtonWidgetBase::GetButtonStyleState() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ButtonWidgetBase", "GetButtonStyleState");
+
+	Params::ButtonWidgetBase_GetButtonStyleState Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.ButtonWidgetBase.GetContentStyleState
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// EBrickUIStyleState                      ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EBrickUIStyleState UButtonWidgetBase::GetContentStyleState() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ButtonWidgetBase", "GetContentStyleState");
+
+	Params::ButtonWidgetBase_GetContentStyleState Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.BrickButtonWidget.AddContentWidget
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class UWidget*                          InWidget                                               (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UBrickButtonWidget::AddContentWidget(class UWidget* InWidget)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickButtonWidget", "AddContentWidget");
+
+	Params::BrickButtonWidget_AddContentWidget Parms{};
+
+	Parms.InWidget = InWidget;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.BrickButtonWidget.SetContentHorizontalAlignment
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// EHorizontalAlignment                    InAlignment                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UBrickButtonWidget::SetContentHorizontalAlignment(EHorizontalAlignment InAlignment)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickButtonWidget", "SetContentHorizontalAlignment");
+
+	Params::BrickButtonWidget_SetContentHorizontalAlignment Parms{};
+
+	Parms.InAlignment = InAlignment;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.BrickButtonWidget.SetContentPadding
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const struct FMargin&                   InPadding                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+
+void UBrickButtonWidget::SetContentPadding(const struct FMargin& InPadding)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickButtonWidget", "SetContentPadding");
+
+	Params::BrickButtonWidget_SetContentPadding Parms{};
+
+	Parms.InPadding = std::move(InPadding);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.BrickButtonWidget.SetContentPaddingStyle
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// EBrickUIPaddingStyle                    InStyle                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UBrickButtonWidget::SetContentPaddingStyle(EBrickUIPaddingStyle InStyle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickButtonWidget", "SetContentPaddingStyle");
+
+	Params::BrickButtonWidget_SetContentPaddingStyle Parms{};
+
+	Parms.InStyle = InStyle;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.BrickButtonWidget.SetContentVerticalAlignment
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// EVerticalAlignment                      InAlignment                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UBrickButtonWidget::SetContentVerticalAlignment(EVerticalAlignment InAlignment)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickButtonWidget", "SetContentVerticalAlignment");
+
+	Params::BrickButtonWidget_SetContentVerticalAlignment Parms{};
+
+	Parms.InAlignment = InAlignment;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.PopupWidget.CancelPopup
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UPopupWidget::CancelPopup()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PopupWidget", "CancelPopup");
+
+	Params::PopupWidget_CancelPopup Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.PopupWidget.ClosePopup
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// EPopupResult                            Result                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UPopupWidget::ClosePopup(EPopupResult Result)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PopupWidget", "ClosePopup");
+
+	Params::PopupWidget_ClosePopup Parms{};
+
+	Parms.Result = Result;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.PopupWidget.ConfirmPopup
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UPopupWidget::ConfirmPopup()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PopupWidget", "ConfirmPopup");
+
+	Params::PopupWidget_ConfirmPopup Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.PopupWidget.GetPopupParams
+// (Final, Native, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// TSubclassOf<class UPopupParams>         Class_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UPopupParams*                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UPopupParams* UPopupWidget::GetPopupParams(TSubclassOf<class UPopupParams> Class_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PopupWidget", "GetPopupParams");
+
+	Params::PopupWidget_GetPopupParams Parms{};
+
+	Parms.Class_0 = Class_0;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.PopupWidget.GetWidgetToFocus
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// class UWidget*                          ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UWidget* UPopupWidget::GetWidgetToFocus()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PopupWidget", "GetWidgetToFocus");
+
+	Params::PopupWidget_GetWidgetToFocus Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.PopupWidget.StepBack
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UPopupWidget::StepBack()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PopupWidget", "StepBack");
+
+	Params::PopupWidget_StepBack Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.PopupWidget.UpdatePopupTitle
+// (Final, Native, Public, BlueprintCallable)
+
+void UPopupWidget::UpdatePopupTitle()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PopupWidget", "UpdatePopupTitle");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.PopupWidget.CanPopupBeClosed
+// (Native, Event, Public, BlueprintEvent, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UPopupWidget::CanPopupBeClosed() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PopupWidget", "CanPopupBeClosed");
+
+	Params::PopupWidget_CanPopupBeClosed Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.PopupWidget.GetButtonPanel
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UMenuButtonPanelWidget*           ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UMenuButtonPanelWidget* UPopupWidget::GetButtonPanel() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PopupWidget", "GetButtonPanel");
+
+	Params::PopupWidget_GetButtonPanel Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.PopupWidget.GetPopupContainer
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UPopupContainerWidget*            ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UPopupContainerWidget* UPopupWidget::GetPopupContainer() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PopupWidget", "GetPopupContainer");
+
+	Params::PopupWidget_GetPopupContainer Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.PopupWidget.GetPopupSizeRule
+// (Native, Event, Public, BlueprintEvent, Const)
+// Parameters:
+// EPopupSizeRule                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EPopupSizeRule UPopupWidget::GetPopupSizeRule() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PopupWidget", "GetPopupSizeRule");
+
+	Params::PopupWidget_GetPopupSizeRule Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.PopupWidget.GetPopupTitle
+// (Native, Event, Public, BlueprintEvent, Const)
+// Parameters:
+// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+class FText UPopupWidget::GetPopupTitle() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PopupWidget", "GetPopupTitle");
+
+	Params::PopupWidget_GetPopupTitle Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.PopupWidget.ShouldBeVisibleInPopupContainer
+// (Native, Event, Public, BlueprintEvent, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UPopupWidget::ShouldBeVisibleInPopupContainer() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PopupWidget", "ShouldBeVisibleInPopupContainer");
+
+	Params::PopupWidget_ShouldBeVisibleInPopupContainer Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.InventoryPopupWidget.OnDropButtonClicked
+// (Final, Native, Protected, BlueprintCallable)
+
+void UInventoryPopupWidget::OnDropButtonClicked()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InventoryPopupWidget", "OnDropButtonClicked");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.InventoryPopupWidget.UpdateDropArea
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bInIsDragging                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bInCanDrop                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bInIsDragOver                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UInventoryPopupWidget::UpdateDropArea(bool bInIsDragging, bool bInCanDrop, bool bInIsDragOver)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InventoryPopupWidget", "UpdateDropArea");
+
+	Params::InventoryPopupWidget_UpdateDropArea Parms{};
+
+	Parms.bInIsDragging = bInIsDragging;
+	Parms.bInCanDrop = bInCanDrop;
+	Parms.bInIsDragOver = bInIsDragOver;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BrickRigs.ActuatorBrick.Interact_Actuate
 // (Final, Native, Private)
 // Parameters:
@@ -2688,126 +2575,19 @@ void UActuatorBrick::OnRep_ActuatorState()
 }
 
 
-// Function BrickRigs.BrickCheatManager.AddMoney
-// (Final, Exec, Native, Public)
+// Function BrickRigs.MenuPageWidget.StepBack
+// (Native, Event, Public, BlueprintEvent)
 // Parameters:
-// float                                   Amount                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UBrickCheatManager::AddMoney(float Amount)
+bool UMenuPageWidget::StepBack()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BrickCheatManager", "AddMoney");
+		Func = Class->GetFunction("MenuPageWidget", "StepBack");
 
-	Params::BrickCheatManager_AddMoney Parms{};
-
-	Parms.Amount = Amount;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.BrickCheatManager.AddScore
-// (Final, Exec, Native, Public)
-// Parameters:
-// float                                   Amount                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UBrickCheatManager::AddScore(float Amount)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickCheatManager", "AddScore");
-
-	Params::BrickCheatManager_AddScore Parms{};
-
-	Parms.Amount = Amount;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.BrickCheatManager.ForceSpectate
-// (Final, Exec, Native, Public)
-
-void UBrickCheatManager::ForceSpectate()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickCheatManager", "ForceSpectate");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.BrickCheatManager.SetTargetOnFire
-// (Final, Exec, Native, Public)
-
-void UBrickCheatManager::SetTargetOnFire()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickCheatManager", "SetTargetOnFire");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.MainWidgetBase.OnFadedOut
-// (Final, Native, Private)
-
-void UMainWidgetBase::OnFadedOut()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MainWidgetBase", "OnFadedOut");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.MainWidgetBase.GetButtonPanel
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class UMenuButtonPanelWidget*           ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UMenuButtonPanelWidget* UMainWidgetBase::GetButtonPanel() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MainWidgetBase", "GetButtonPanel");
-
-	Params::MainWidgetBase_GetButtonPanel Parms{};
+	Params::MenuPageWidget_StepBack Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2820,44 +2600,44 @@ class UMenuButtonPanelWidget* UMainWidgetBase::GetButtonPanel() const
 }
 
 
-// Function BrickRigs.MainWidgetBase.GetWidgetToFocus
+// Function BrickRigs.MenuPageWidget.GetMenuWidget
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UMenuWidget*                      ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UMenuWidget* UMenuPageWidget::GetMenuWidget() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MenuPageWidget", "GetMenuWidget");
+
+	Params::MenuPageWidget_GetMenuWidget Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.MenuPageWidget.GetWidgetToFocus
 // (Native, Event, Public, BlueprintEvent, Const)
 // Parameters:
 // class UWidget*                          ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UWidget* UMainWidgetBase::GetWidgetToFocus() const
+class UWidget* UMenuPageWidget::GetWidgetToFocus() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("MainWidgetBase", "GetWidgetToFocus");
+		Func = Class->GetFunction("MenuPageWidget", "GetWidgetToFocus");
 
-	Params::MainWidgetBase_GetWidgetToFocus Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.MainWidgetBase.GetWindowManager
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class UWindowManagerWidget*             ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UWindowManagerWidget* UMainWidgetBase::GetWindowManager() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MainWidgetBase", "GetWindowManager");
-
-	Params::MainWidgetBase_GetWindowManager Parms{};
+	Params::MenuPageWidget_GetWidgetToFocus Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -2867,1839 +2647,6 @@ class UWindowManagerWidget* UMainWidgetBase::GetWindowManager() const
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
-}
-
-void ULoadoutInventoryComponent::SetLoadoutAccessor(UObject* InAccsessor) {
-	uintptr_t ULoadoutInventoryComponent_SetLoadoutAccessor = (uintptr_t)GetModuleHandle(NULL) + 0x0CE2AD0;
-
-	using SetLoadoutAccessorFn = bool(__fastcall*)(ULoadoutInventoryComponent* This, UObject* inAccessor);
-	SetLoadoutAccessorFn OnSetLoadoutAccessor = reinterpret_cast<SetLoadoutAccessorFn>(ULoadoutInventoryComponent_SetLoadoutAccessor);
-
-	OnSetLoadoutAccessor(this, InAccsessor);
-}
-
-
-// Function BrickRigs.LoadingScreenWidget.SetBackgroundColor
-// (Event, Protected, HasOutParams, HasDefaults, BlueprintEvent)
-// Parameters:
-// const struct FLinearColor&              InColor                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ULoadingScreenWidget::SetBackgroundColor(const struct FLinearColor& InColor)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("LoadingScreenWidget", "SetBackgroundColor");
-
-	Params::LoadingScreenWidget_SetBackgroundColor Parms{};
-
-	Parms.InColor = std::move(InColor);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.LoadingScreenWidget.SetLoadingText
-// (Event, Public, HasOutParams, BlueprintEvent)
-// Parameters:
-// const class FText&                      Text                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void ULoadingScreenWidget::SetLoadingText(const class FText& Text)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("LoadingScreenWidget", "SetLoadingText");
-
-	Params::LoadingScreenWidget_SetLoadingText Parms{};
-
-	Parms.Text = std::move(Text);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.AdminMenuWidget.EditKick
-// (Final, Native, Protected, BlueprintCallable)
-
-void UAdminMenuWidget::EditKick()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AdminMenuWidget", "EditKick");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.AdminMenuWidget.KickPlayerById
-// (Final, Native, Protected, BlueprintCallable)
-
-void UAdminMenuWidget::KickPlayerById()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AdminMenuWidget", "KickPlayerById");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.AdminMenuWidget.OnListEntrySelected
-// (Final, Native, Private)
-// Parameters:
-// class UPagedListEntryWidget*            Widget                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bDoubleClick                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAdminMenuWidget::OnListEntrySelected(class UPagedListEntryWidget* Widget, bool bDoubleClick)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AdminMenuWidget", "OnListEntrySelected");
-
-	Params::AdminMenuWidget_OnListEntrySelected Parms{};
-
-	Parms.Widget = Widget;
-	Parms.bDoubleClick = bDoubleClick;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.AdminMenuWidget.OnLoadListPage
-// (Final, Native, Private)
-// Parameters:
-// int32                                   NewPage                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAdminMenuWidget::OnLoadListPage(int32 NewPage)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AdminMenuWidget", "OnLoadListPage");
-
-	Params::AdminMenuWidget_OnLoadListPage Parms{};
-
-	Parms.NewPage = NewPage;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.AdminMenuWidget.RefreshPlayerList
-// (Final, Native, Protected, BlueprintCallable)
-
-void UAdminMenuWidget::RefreshPlayerList()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AdminMenuWidget", "RefreshPlayerList");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.AdminMenuWidget.ShowPlayerProfile
-// (Final, Native, Protected, BlueprintCallable)
-
-void UAdminMenuWidget::ShowPlayerProfile()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AdminMenuWidget", "ShowPlayerProfile");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.AdminMenuWidget.UpdateCanViewAndEditKicks
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bNewCanViewAndEdit                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAdminMenuWidget::UpdateCanViewAndEditKicks(bool bNewCanViewAndEdit)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AdminMenuWidget", "UpdateCanViewAndEditKicks");
-
-	Params::AdminMenuWidget_UpdateCanViewAndEditKicks Parms{};
-
-	Parms.bNewCanViewAndEdit = bNewCanViewAndEdit;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.AdminMenuWidget.UpdateHasSelectedKick
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bNewSelected                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UAdminMenuWidget::UpdateHasSelectedKick(bool bNewSelected)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("AdminMenuWidget", "UpdateHasSelectedKick");
-
-	Params::AdminMenuWidget_UpdateHasSelectedKick Parms{};
-
-	Parms.bNewSelected = bNewSelected;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.BrickUserWidget.GetTooltipContent
-// (Native, Event, Protected, HasOutParams, BlueprintEvent)
-// Parameters:
-// struct FTooltipContent*                 OutContent                                             (Parm, OutParm, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UBrickUserWidget::GetTooltipContent(struct FTooltipContent* OutContent)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickUserWidget", "GetTooltipContent");
-
-	Params::BrickUserWidget_GetTooltipContent Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (OutContent != nullptr)
-		*OutContent = std::move(Parms.OutContent);
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.BrickUserWidget.InitializeTooltip
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// class UTooltipWidget*                   Tooltip                                                (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UBrickUserWidget::InitializeTooltip(class UTooltipWidget* Tooltip)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickUserWidget", "InitializeTooltip");
-
-	Params::BrickUserWidget_InitializeTooltip Parms{};
-
-	Parms.Tooltip = Tooltip;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.BrickUserWidget.GetTooltipClass
-// (Event, Protected, BlueprintEvent, Const)
-// Parameters:
-// class UClass*                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UClass* UBrickUserWidget::GetTooltipClass() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickUserWidget", "GetTooltipClass");
-
-	Params::BrickUserWidget_GetTooltipClass Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.InventoryItem.GetInteractionOptions
-// (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// class ABrickPlayerController*           PC                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FInteractionOptions*             OutOptions                                             (Parm, OutParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
-
-void AInventoryItem::GetInteractionOptions(class ABrickPlayerController* PC, struct FInteractionOptions* OutOptions)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InventoryItem", "GetInteractionOptions");
-
-	Params::InventoryItem_GetInteractionOptions Parms{};
-
-	Parms.PC = PC;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (OutOptions != nullptr)
-		*OutOptions = std::move(Parms.OutOptions);
-}
-
-
-// Function BrickRigs.InventoryItem.Interact_PickUp
-// (Final, Native, Protected)
-// Parameters:
-// class ABrickPlayerController*           PC                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AInventoryItem::Interact_PickUp(class ABrickPlayerController* PC)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InventoryItem", "Interact_PickUp");
-
-	Params::InventoryItem_Interact_PickUp Parms{};
-
-	Parms.PC = PC;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.InventoryItem.OnDropped
-// (Native, Event, Public, BlueprintEvent)
-
-void AInventoryItem::OnDropped()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InventoryItem", "OnDropped");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.InventoryItem.OnEquipped
-// (Native, Event, Public, BlueprintEvent)
-
-void AInventoryItem::OnEquipped()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InventoryItem", "OnEquipped");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.InventoryItem.OnPickedUp
-// (Native, Event, Public, BlueprintEvent)
-
-void AInventoryItem::OnPickedUp()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InventoryItem", "OnPickedUp");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.InventoryItem.OnStaticMeshSleep
-// (Final, Native, Protected)
-// Parameters:
-// class UPrimitiveComponent*              Primitive                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             BoneName                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AInventoryItem::OnStaticMeshSleep(class UPrimitiveComponent* Primitive, class FName BoneName)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InventoryItem", "OnStaticMeshSleep");
-
-	Params::InventoryItem_OnStaticMeshSleep Parms{};
-
-	Parms.Primitive = Primitive;
-	Parms.BoneName = BoneName;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.InventoryItem.OnUnequipped
-// (Native, Event, Public, BlueprintEvent)
-
-void AInventoryItem::OnUnequipped()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InventoryItem", "OnUnequipped");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.InventoryItem.SetIsFiring
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    bNewFiring                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AInventoryItem::SetIsFiring(bool bNewFiring)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InventoryItem", "SetIsFiring");
-
-	Params::InventoryItem_SetIsFiring Parms{};
-
-	Parms.bNewFiring = bNewFiring;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.InventoryItem.SetNumItems
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// int32                                   Num                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AInventoryItem::SetNumItems(int32 Num)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InventoryItem", "SetNumItems");
-
-	Params::InventoryItem_SetNumItems Parms{};
-
-	Parms.Num = Num;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.InventoryItem.CanBePickedUp
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool AInventoryItem::CanBePickedUp() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InventoryItem", "CanBePickedUp");
-
-	Params::InventoryItem_CanBePickedUp Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.InventoryItem.GetCharacter
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class ABrickCharacter*                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class ABrickCharacter* AInventoryItem::GetCharacter() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InventoryItem", "GetCharacter");
-
-	Params::InventoryItem_GetCharacter Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.InventoryItem.GetDisplayName
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-
-class FText AInventoryItem::GetDisplayName() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InventoryItem", "GetDisplayName");
-
-	Params::InventoryItem_GetDisplayName Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.InventoryItem.GetInventoryComponent
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class UInventoryComponent*              ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UInventoryComponent* AInventoryItem::GetInventoryComponent() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InventoryItem", "GetInventoryComponent");
-
-	Params::InventoryItem_GetInventoryComponent Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.InventoryItem.GetItemPrice
-// (Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float AInventoryItem::GetItemPrice() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InventoryItem", "GetItemPrice");
-
-	Params::InventoryItem_GetItemPrice Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.InventoryItem.GetNumDefaultItems
-// (Native, Event, Public, BlueprintEvent, Const)
-// Parameters:
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 AInventoryItem::GetNumDefaultItems() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InventoryItem", "GetNumDefaultItems");
-
-	Params::InventoryItem_GetNumDefaultItems Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.InventoryItem.GetNumItems
-// (Native, Event, Public, BlueprintEvent, Const)
-// Parameters:
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 AInventoryItem::GetNumItems() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InventoryItem", "GetNumItems");
-
-	Params::InventoryItem_GetNumItems Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.InventoryItem.GetOwningInventory
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class UInventoryComponent*              ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UInventoryComponent* AInventoryItem::GetOwningInventory() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InventoryItem", "GetOwningInventory");
-
-	Params::InventoryItem_GetOwningInventory Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.InventoryItem.GetStaticInfo
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// const class UItemStaticInfo*            ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-const class UItemStaticInfo* AInventoryItem::GetStaticInfo() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InventoryItem", "GetStaticInfo");
-
-	Params::InventoryItem_GetStaticInfo Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.InventoryItem.GetViewingPlayer
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class APlayerController*                ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class APlayerController* AInventoryItem::GetViewingPlayer() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InventoryItem", "GetViewingPlayer");
-
-	Params::InventoryItem_GetViewingPlayer Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.InventoryItem.IsDropped
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool AInventoryItem::IsDropped() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InventoryItem", "IsDropped");
-
-	Params::InventoryItem_IsDropped Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.InventoryItem.NeedsThumbnailMID
-// (Native, Event, Public, BlueprintEvent, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool AInventoryItem::NeedsThumbnailMID() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InventoryItem", "NeedsThumbnailMID");
-
-	Params::InventoryItem_NeedsThumbnailMID Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.InventoryItem.UpdateThumbnailMID
-// (Native, Event, Public, BlueprintEvent, Const)
-// Parameters:
-// class UMaterialInstanceDynamic*         InMID                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AInventoryItem::UpdateThumbnailMID(class UMaterialInstanceDynamic* InMID) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InventoryItem", "UpdateThumbnailMID");
-
-	Params::InventoryItem_UpdateThumbnailMID Parms{};
-
-	Parms.InMID = InMID;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.PagedListEntryWidget.InitializeEntry
-// (Native, Event, Protected, BlueprintEvent)
-
-void UPagedListEntryWidget::InitializeEntry()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PagedListEntryWidget", "InitializeEntry");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.PagedListEntryWidget.OnClickedEntry
-// (Final, Native, Protected, BlueprintCallable)
-
-void UPagedListEntryWidget::OnClickedEntry()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PagedListEntryWidget", "OnClickedEntry");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.PagedListEntryWidget.OnDoubleClickedEntry
-// (Final, Native, Protected, BlueprintCallable)
-
-void UPagedListEntryWidget::OnDoubleClickedEntry()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PagedListEntryWidget", "OnDoubleClickedEntry");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.PagedListEntryWidget.UpdateButtonSelected
-// (Native, Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bNewSelected                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UPagedListEntryWidget::UpdateButtonSelected(bool bNewSelected)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PagedListEntryWidget", "UpdateButtonSelected");
-
-	Params::PagedListEntryWidget_UpdateButtonSelected Parms{};
-
-	Parms.bNewSelected = bNewSelected;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.BrickComboBoxItemContainerWidget.AddItemWidget
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// class UBrickComboBoxItemWidget*         Widget                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UBrickComboBoxItemContainerWidget::AddItemWidget(class UBrickComboBoxItemWidget* Widget)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickComboBoxItemContainerWidget", "AddItemWidget");
-
-	Params::BrickComboBoxItemContainerWidget_AddItemWidget Parms{};
-
-	Parms.Widget = Widget;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.BrickComboBoxItemContainerWidget.OnUpdateButtonContentStyle
-// (Final, Native, Private)
-// Parameters:
-// EBrickUIColorStyle                      InColorStyle                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EBrickUIStyleState                      InContentStyleState                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UBrickComboBoxItemContainerWidget::OnUpdateButtonContentStyle(EBrickUIColorStyle InColorStyle, EBrickUIStyleState InContentStyleState)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickComboBoxItemContainerWidget", "OnUpdateButtonContentStyle");
-
-	Params::BrickComboBoxItemContainerWidget_OnUpdateButtonContentStyle Parms{};
-
-	Parms.InColorStyle = InColorStyle;
-	Parms.InContentStyleState = InContentStyleState;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.BrickComboBoxItemContainerWidget.SelectItem
-// (Final, Native, Public, BlueprintCallable)
-
-void UBrickComboBoxItemContainerWidget::SelectItem()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickComboBoxItemContainerWidget", "SelectItem");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.BrickComboBoxItemContainerWidget.UpdateIsSelected
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bNewSelected                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UBrickComboBoxItemContainerWidget::UpdateIsSelected(bool bNewSelected)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickComboBoxItemContainerWidget", "UpdateIsSelected");
-
-	Params::BrickComboBoxItemContainerWidget_UpdateIsSelected Parms{};
-
-	Parms.bNewSelected = bNewSelected;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.BrickComboBoxItemContainerWidget.GetWidgetToFocus
-// (Native, Event, Public, BlueprintEvent, Const)
-// Parameters:
-// class UWidget*                          ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UWidget* UBrickComboBoxItemContainerWidget::GetWidgetToFocus() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickComboBoxItemContainerWidget", "GetWidgetToFocus");
-
-	Params::BrickComboBoxItemContainerWidget_GetWidgetToFocus Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.BrickComboBoxItemWidget.InitializeItem
-// (Native, Event, Protected, HasOutParams, BlueprintEvent)
-// Parameters:
-// int32                                   InItem                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FBrickComboBoxItemParams&  Params_0                                               (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UBrickComboBoxItemWidget::InitializeItem(int32 InItem, const struct FBrickComboBoxItemParams& Params_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickComboBoxItemWidget", "InitializeItem");
-
-	Params::BrickComboBoxItemWidget_InitializeItem Parms{};
-
-	Parms.InItem = InItem;
-	Parms.Params_0 = std::move(Params_0);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.BrickComboBoxItemWidget.SetNoItemBrush
-// (Event, Protected, BlueprintEvent)
-
-void UBrickComboBoxItemWidget::SetNoItemBrush()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickComboBoxItemWidget", "SetNoItemBrush");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BrickRigs.BrickComboBoxItemWidget.UpdateIconVisibility
-// (Native, Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bNewVisible                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UBrickComboBoxItemWidget::UpdateIconVisibility(bool bNewVisible)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickComboBoxItemWidget", "UpdateIconVisibility");
-
-	Params::BrickComboBoxItemWidget_UpdateIconVisibility Parms{};
-
-	Parms.bNewVisible = bNewVisible;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.BrickComboBoxItemWidget.UpdateItemStyle
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// EBrickUIColorStyle                      InColorStyle                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EBrickUIStyleState                      InStyleState                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UBrickComboBoxItemWidget::UpdateItemStyle(EBrickUIColorStyle InColorStyle, EBrickUIStyleState InStyleState)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickComboBoxItemWidget", "UpdateItemStyle");
-
-	Params::BrickComboBoxItemWidget_UpdateItemStyle Parms{};
-
-	Parms.InColorStyle = InColorStyle;
-	Parms.InStyleState = InStyleState;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.BrickComboBoxItemWidget.UpdateTextVisibility
-// (Native, Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bNewVisible                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UBrickComboBoxItemWidget::UpdateTextVisibility(bool bNewVisible)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickComboBoxItemWidget", "UpdateTextVisibility");
-
-	Params::BrickComboBoxItemWidget_UpdateTextVisibility Parms{};
-
-	Parms.bNewVisible = bNewVisible;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.MenuAnchorWidget.CloseMenu
-// (Final, Native, Public, BlueprintCallable)
-
-void UMenuAnchorWidget::CloseMenu()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MenuAnchorWidget", "CloseMenu");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.MenuAnchorWidget.GetWidgetToFocus
-// (Native, Event, Public, BlueprintEvent, Const)
-// Parameters:
-// class UWidget*                          ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UWidget* UMenuAnchorWidget::GetWidgetToFocus() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MenuAnchorWidget", "GetWidgetToFocus");
-
-	Params::MenuAnchorWidget_GetWidgetToFocus Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.ModHook.BeginPlay
-// (Event, Public, BlueprintEvent)
-
-void UModHook::BeginPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ModHook", "BeginPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BrickRigs.ModHook.EndPlay
-// (Event, Public, BlueprintEvent)
-
-void UModHook::EndPlay()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ModHook", "EndPlay");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BrickRigs.ModHook.OnCharacterBeginPlay
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// class ABaseCharacter*                   Character                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UModHook::OnCharacterBeginPlay(class ABaseCharacter* Character)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ModHook", "OnCharacterBeginPlay");
-
-	Params::ModHook_OnCharacterBeginPlay Parms{};
-
-	Parms.Character = Character;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.ModHook.OnPlayerControllerBeginPlay
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// class ABasePlayerController*            PC                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UModHook::OnPlayerControllerBeginPlay(class ABasePlayerController* PC)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ModHook", "OnPlayerControllerBeginPlay");
-
-	Params::ModHook_OnPlayerControllerBeginPlay Parms{};
-
-	Parms.PC = PC;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.ModHook.OnSpectatorBeginPlay
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// class ABrickSpectatorPawn*              Pawn                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UModHook::OnSpectatorBeginPlay(class ABrickSpectatorPawn* Pawn)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ModHook", "OnSpectatorBeginPlay");
-
-	Params::ModHook_OnSpectatorBeginPlay Parms{};
-
-	Parms.Pawn = Pawn;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.ModHook.OnVehicleBeginPlay
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// class ABrickVehicle*                    Vehicle                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UModHook::OnVehicleBeginPlay(class ABrickVehicle* Vehicle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ModHook", "OnVehicleBeginPlay");
-
-	Params::ModHook_OnVehicleBeginPlay Parms{};
-
-	Parms.Vehicle = Vehicle;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.ModHook.OverrideBillboardTexture
-// (Native, Event, Public, HasOutParams, BlueprintEvent)
-// Parameters:
-// const TSoftObjectPtr<class UTexture2D>& Texture                                                (ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class ABillboard*                       Billboard                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TSoftObjectPtr<class UTexture2D>        ReturnValue                                            (Parm, OutParm, ReturnParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-TSoftObjectPtr<class UTexture2D> UModHook::OverrideBillboardTexture(const TSoftObjectPtr<class UTexture2D>& Texture, class ABillboard* Billboard)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ModHook", "OverrideBillboardTexture");
-
-	Params::ModHook_OverrideBillboardTexture Parms{};
-
-	Parms.Texture = Texture;
-	Parms.Billboard = Billboard;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.ModHook.OverrideCharacterLoadout
-// (Native, Event, Public, HasOutParams, BlueprintEvent)
-// Parameters:
-// const struct FInventoryLoadout&         Loadout                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// class ABaseCharacter*                   Character                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FInventoryLoadout                ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-
-struct FInventoryLoadout UModHook::OverrideCharacterLoadout(const struct FInventoryLoadout& Loadout, class ABaseCharacter* Character)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ModHook", "OverrideCharacterLoadout");
-
-	Params::ModHook_OverrideCharacterLoadout Parms{};
-
-	Parms.Loadout = std::move(Loadout);
-	Parms.Character = Character;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.ModHook.OverrideGameModeClass
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// TSubclassOf<class AGameModeBase>        GameModeClass                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FString&                    MapName                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FString&                    Options                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FString&                    Portal                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TSubclassOf<class AGameModeBase>        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-TSubclassOf<class AGameModeBase> UModHook::OverrideGameModeClass(TSubclassOf<class AGameModeBase> GameModeClass, const class FString& MapName, const class FString& Options, const class FString& Portal)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ModHook", "OverrideGameModeClass");
-
-	Params::ModHook_OverrideGameModeClass Parms{};
-
-	Parms.GameModeClass = GameModeClass;
-	Parms.MapName = std::move(MapName);
-	Parms.Options = std::move(Options);
-	Parms.Portal = std::move(Portal);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.ModHook.OverrideGameStateClass
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// TSubclassOf<class AGameStateBase>       GameStateClass                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TSubclassOf<class AGameStateBase>       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-TSubclassOf<class AGameStateBase> UModHook::OverrideGameStateClass(TSubclassOf<class AGameStateBase> GameStateClass)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ModHook", "OverrideGameStateClass");
-
-	Params::ModHook_OverrideGameStateClass Parms{};
-
-	Parms.GameStateClass = GameStateClass;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.ModHook.OverrideLoadoutContainerItems
-// (Native, Event, Public, HasOutParams, BlueprintEvent)
-// Parameters:
-// const TArray<TSubclassOf<class AInventoryItem>>&ItemClasses                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, UObjectWrapper, NativeAccessSpecifierPublic)
-// TArray<TSubclassOf<class AInventoryItem>>ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, UObjectWrapper, NativeAccessSpecifierPublic)
-
-TArray<TSubclassOf<class AInventoryItem>> UModHook::OverrideLoadoutContainerItems(const TArray<TSubclassOf<class AInventoryItem>>& ItemClasses)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ModHook", "OverrideLoadoutContainerItems");
-
-	Params::ModHook_OverrideLoadoutContainerItems Parms{};
-
-	Parms.ItemClasses = std::move(ItemClasses);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.ModHook.OverrideLoadSubLevel
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    bLoadLevel                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FString&                    LevelName                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UGameModeInfo*                    GameMode                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UModHook::OverrideLoadSubLevel(bool bLoadLevel, const class FString& LevelName, class UGameModeInfo* GameMode)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ModHook", "OverrideLoadSubLevel");
-
-	Params::ModHook_OverrideLoadSubLevel Parms{};
-
-	Parms.bLoadLevel = bLoadLevel;
-	Parms.LevelName = std::move(LevelName);
-	Parms.GameMode = GameMode;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.ModHook.OverrideMenu
-// (Native, Event, Public, HasOutParams, BlueprintEvent)
-// Parameters:
-// class UMenuWidget*                      Widget                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const class FName&                      Context                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UModHook::OverrideMenu(class UMenuWidget* Widget, const class FName& Context)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ModHook", "OverrideMenu");
-
-	Params::ModHook_OverrideMenu Parms{};
-
-	Parms.Widget = Widget;
-	Parms.Context = Context;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.ModHook.OverrideMenuSequence
-// (Native, Event, Public, HasOutParams, BlueprintEvent)
-// Parameters:
-// const TSoftClassPtr<class UClass>&      SequenceClass                                          (ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TSoftClassPtr<class UClass>             ReturnValue                                            (Parm, OutParm, ReturnParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-TSoftClassPtr<class UClass> UModHook::OverrideMenuSequence(const TSoftClassPtr<class UClass>& SequenceClass)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ModHook", "OverrideMenuSequence");
-
-	Params::ModHook_OverrideMenuSequence Parms{};
-
-	Parms.SequenceClass = SequenceClass;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.ModHook.OverrideMenuWorldSetupParams
-// (Native, Event, Public, HasOutParams, BlueprintEvent)
-// Parameters:
-// const struct FWorldSetupParams&         Params_0                                               (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FWorldSetupParams                ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-
-struct FWorldSetupParams UModHook::OverrideMenuWorldSetupParams(const struct FWorldSetupParams& Params_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ModHook", "OverrideMenuWorldSetupParams");
-
-	Params::ModHook_OverrideMenuWorldSetupParams Parms{};
-
-	Parms.Params_0 = std::move(Params_0);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.ModHook.OverridePawnClass
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// TSubclassOf<class APawn>                PawnClass                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AController*                      Controller                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TSubclassOf<class APawn>                ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-TSubclassOf<class APawn> UModHook::OverridePawnClass(TSubclassOf<class APawn> PawnClass, class AController* Controller)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ModHook", "OverridePawnClass");
-
-	Params::ModHook_OverridePawnClass Parms{};
-
-	Parms.PawnClass = PawnClass;
-	Parms.Controller = Controller;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.ModHook.OverridePlayerCameraManagerClass
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// TSubclassOf<class APlayerCameraManager> PlayerCameraManagerClass                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class ABasePlayerController*            PC                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TSubclassOf<class APlayerCameraManager> ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-TSubclassOf<class APlayerCameraManager> UModHook::OverridePlayerCameraManagerClass(TSubclassOf<class APlayerCameraManager> PlayerCameraManagerClass, class ABasePlayerController* PC)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ModHook", "OverridePlayerCameraManagerClass");
-
-	Params::ModHook_OverridePlayerCameraManagerClass Parms{};
-
-	Parms.PlayerCameraManagerClass = PlayerCameraManagerClass;
-	Parms.PC = PC;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.ModHook.OverridePlayerControllerClass
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// TSubclassOf<class APlayerController>    PlayerControllerClass                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TSubclassOf<class APlayerController>    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-TSubclassOf<class APlayerController> UModHook::OverridePlayerControllerClass(TSubclassOf<class APlayerController> PlayerControllerClass)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ModHook", "OverridePlayerControllerClass");
-
-	Params::ModHook_OverridePlayerControllerClass Parms{};
-
-	Parms.PlayerControllerClass = PlayerControllerClass;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.ModHook.OverrideReplayPlayerControllerClass
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// TSubclassOf<class APlayerController>    PlayerControllerClass                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TSubclassOf<class APlayerController>    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-TSubclassOf<class APlayerController> UModHook::OverrideReplayPlayerControllerClass(TSubclassOf<class APlayerController> PlayerControllerClass)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ModHook", "OverrideReplayPlayerControllerClass");
-
-	Params::ModHook_OverrideReplayPlayerControllerClass Parms{};
-
-	Parms.PlayerControllerClass = PlayerControllerClass;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.ModHook.OverrideSpectatorClass
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// TSubclassOf<class ASpectatorPawn>       SpectatorClass                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TSubclassOf<class ASpectatorPawn>       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-TSubclassOf<class ASpectatorPawn> UModHook::OverrideSpectatorClass(TSubclassOf<class ASpectatorPawn> SpectatorClass)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ModHook", "OverrideSpectatorClass");
-
-	Params::ModHook_OverrideSpectatorClass Parms{};
-
-	Parms.SpectatorClass = SpectatorClass;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.ModHook.OverrideTrainClass
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// TSubclassOf<class ATrain>               TrainClass                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TSubclassOf<class ATrain>               ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-TSubclassOf<class ATrain> UModHook::OverrideTrainClass(TSubclassOf<class ATrain> TrainClass)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ModHook", "OverrideTrainClass");
-
-	Params::ModHook_OverrideTrainClass Parms{};
-
-	Parms.TrainClass = TrainClass;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.ModHook.OverrideVehicleClass
-// (Native, Event, Public, HasOutParams, BlueprintEvent)
-// Parameters:
-// TSubclassOf<class ABrickVehicle>        VehicleClass                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class ABrickPlayerController*           PC                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FPlayerSpawnRequest&       SpawnRequest                                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// TSubclassOf<class ABrickVehicle>        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-TSubclassOf<class ABrickVehicle> UModHook::OverrideVehicleClass(TSubclassOf<class ABrickVehicle> VehicleClass, class ABrickPlayerController* PC, const struct FPlayerSpawnRequest& SpawnRequest)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ModHook", "OverrideVehicleClass");
-
-	Params::ModHook_OverrideVehicleClass Parms{};
-
-	Parms.VehicleClass = VehicleClass;
-	Parms.PC = PC;
-	Parms.SpawnRequest = std::move(SpawnRequest);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.ModHook.PostSpawnPawn
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// class APawn*                            Pawn                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UModHook::PostSpawnPawn(class APawn* Pawn)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ModHook", "PostSpawnPawn");
-
-	Params::ModHook_PostSpawnPawn Parms{};
-
-	Parms.Pawn = Pawn;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.ModHook.PostSpawnPlayerController
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// class APlayerController*                PC                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UModHook::PostSpawnPlayerController(class APlayerController* PC)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ModHook", "PostSpawnPlayerController");
-
-	Params::ModHook_PostSpawnPlayerController Parms{};
-
-	Parms.PC = PC;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.ModHook.PostSpawnSpectatorPawn
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// class ASpectatorPawn*                   Pawn                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UModHook::PostSpawnSpectatorPawn(class ASpectatorPawn* Pawn)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ModHook", "PostSpawnSpectatorPawn");
-
-	Params::ModHook_PostSpawnSpectatorPawn Parms{};
-
-	Parms.Pawn = Pawn;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.ModHook.PostSpawnVehicle
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// class ABrickVehicle*                    Vehicle                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UModHook::PostSpawnVehicle(class ABrickVehicle* Vehicle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ModHook", "PostSpawnVehicle");
-
-	Params::ModHook_PostSpawnVehicle Parms{};
-
-	Parms.Vehicle = Vehicle;
-
-	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -6036,15 +3983,65 @@ bool UPawnInputComponent::GetInventoryEnabled(bool bInSecondaryAction) const
 }
 
 
-// Function BrickRigs.PlayerPawnInputComponent.OnHeldCycleExplosives
-// (Final, Native, Protected)
+// Function BrickRigs.BrickCheatManager.AddMoney
+// (Final, Exec, Native, Public)
+// Parameters:
+// float                                   Amount                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPlayerPawnInputComponent::OnHeldCycleExplosives()
+void UBrickCheatManager::AddMoney(float Amount)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PlayerPawnInputComponent", "OnHeldCycleExplosives");
+		Func = Class->GetFunction("BrickCheatManager", "AddMoney");
+
+	Params::BrickCheatManager_AddMoney Parms{};
+
+	Parms.Amount = Amount;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.BrickCheatManager.AddScore
+// (Final, Exec, Native, Public)
+// Parameters:
+// float                                   Amount                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UBrickCheatManager::AddScore(float Amount)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickCheatManager", "AddScore");
+
+	Params::BrickCheatManager_AddScore Parms{};
+
+	Parms.Amount = Amount;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.BrickCheatManager.ForceSpectate
+// (Final, Exec, Native, Public)
+
+void UBrickCheatManager::ForceSpectate()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickCheatManager", "ForceSpectate");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -6055,15 +4052,15 @@ void UPlayerPawnInputComponent::OnHeldCycleExplosives()
 }
 
 
-// Function BrickRigs.PlayerPawnInputComponent.OnHeldCycleSlots
-// (Final, Native, Protected)
+// Function BrickRigs.BrickCheatManager.SetTargetOnFire
+// (Final, Exec, Native, Public)
 
-void UPlayerPawnInputComponent::OnHeldCycleSlots()
+void UBrickCheatManager::SetTargetOnFire()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PlayerPawnInputComponent", "OnHeldCycleSlots");
+		Func = Class->GetFunction("BrickCheatManager", "SetTargetOnFire");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -6074,15 +4071,15 @@ void UPlayerPawnInputComponent::OnHeldCycleSlots()
 }
 
 
-// Function BrickRigs.PlayerPawnInputComponent.OnHeldKill
-// (Final, Native, Protected)
+// Function BrickRigs.AdminMenuWidget.EditKick
+// (Final, Native, Protected, BlueprintCallable)
 
-void UPlayerPawnInputComponent::OnHeldKill()
+void UAdminMenuWidget::EditKick()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PlayerPawnInputComponent", "OnHeldKill");
+		Func = Class->GetFunction("AdminMenuWidget", "EditKick");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -6093,15 +4090,15 @@ void UPlayerPawnInputComponent::OnHeldKill()
 }
 
 
-// Function BrickRigs.PlayerPawnInputComponent.OnPressedAim
-// (Final, Native, Protected)
+// Function BrickRigs.AdminMenuWidget.KickPlayerById
+// (Final, Native, Protected, BlueprintCallable)
 
-void UPlayerPawnInputComponent::OnPressedAim()
+void UAdminMenuWidget::KickPlayerById()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PlayerPawnInputComponent", "OnPressedAim");
+		Func = Class->GetFunction("AdminMenuWidget", "KickPlayerById");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -6112,15 +4109,67 @@ void UPlayerPawnInputComponent::OnPressedAim()
 }
 
 
-// Function BrickRigs.PlayerPawnInputComponent.OnPressedCycleExplosives
-// (Final, Native, Protected)
+// Function BrickRigs.AdminMenuWidget.OnListEntrySelected
+// (Final, Native, Private)
+// Parameters:
+// class UPagedListEntryWidget*            Widget                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bDoubleClick                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPlayerPawnInputComponent::OnPressedCycleExplosives()
+void UAdminMenuWidget::OnListEntrySelected(class UPagedListEntryWidget* Widget, bool bDoubleClick)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PlayerPawnInputComponent", "OnPressedCycleExplosives");
+		Func = Class->GetFunction("AdminMenuWidget", "OnListEntrySelected");
+
+	Params::AdminMenuWidget_OnListEntrySelected Parms{};
+
+	Parms.Widget = Widget;
+	Parms.bDoubleClick = bDoubleClick;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.AdminMenuWidget.OnLoadListPage
+// (Final, Native, Private)
+// Parameters:
+// int32                                   NewPage                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAdminMenuWidget::OnLoadListPage(int32 NewPage)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AdminMenuWidget", "OnLoadListPage");
+
+	Params::AdminMenuWidget_OnLoadListPage Parms{};
+
+	Parms.NewPage = NewPage;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.AdminMenuWidget.RefreshPlayerList
+// (Final, Native, Protected, BlueprintCallable)
+
+void UAdminMenuWidget::RefreshPlayerList()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AdminMenuWidget", "RefreshPlayerList");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -6131,15 +4180,15 @@ void UPlayerPawnInputComponent::OnPressedCycleExplosives()
 }
 
 
-// Function BrickRigs.PlayerPawnInputComponent.OnPressedCycleFireMode
-// (Final, Native, Protected)
+// Function BrickRigs.AdminMenuWidget.ShowPlayerProfile
+// (Final, Native, Protected, BlueprintCallable)
 
-void UPlayerPawnInputComponent::OnPressedCycleFireMode()
+void UAdminMenuWidget::ShowPlayerProfile()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PlayerPawnInputComponent", "OnPressedCycleFireMode");
+		Func = Class->GetFunction("AdminMenuWidget", "ShowPlayerProfile");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -6150,15 +4199,55 @@ void UPlayerPawnInputComponent::OnPressedCycleFireMode()
 }
 
 
-// Function BrickRigs.PlayerPawnInputComponent.OnPressedCycleSlots
-// (Final, Native, Protected)
+// Function BrickRigs.AdminMenuWidget.UpdateCanViewAndEditKicks
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bNewCanViewAndEdit                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPlayerPawnInputComponent::OnPressedCycleSlots()
+void UAdminMenuWidget::UpdateCanViewAndEditKicks(bool bNewCanViewAndEdit)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PlayerPawnInputComponent", "OnPressedCycleSlots");
+		Func = Class->GetFunction("AdminMenuWidget", "UpdateCanViewAndEditKicks");
+
+	Params::AdminMenuWidget_UpdateCanViewAndEditKicks Parms{};
+
+	Parms.bNewCanViewAndEdit = bNewCanViewAndEdit;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.AdminMenuWidget.UpdateHasSelectedKick
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bNewSelected                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UAdminMenuWidget::UpdateHasSelectedKick(bool bNewSelected)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("AdminMenuWidget", "UpdateHasSelectedKick");
+
+	Params::AdminMenuWidget_UpdateHasSelectedKick Parms{};
+
+	Parms.bNewSelected = bNewSelected;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.KickPlayerPopupWidget.RevokeKick
+// (Final, Native, Public, BlueprintCallable)
+
+void UKickPlayerPopupWidget::RevokeKick()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KickPlayerPopupWidget", "RevokeKick");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -6169,15 +4258,198 @@ void UPlayerPawnInputComponent::OnPressedCycleSlots()
 }
 
 
-// Function BrickRigs.PlayerPawnInputComponent.OnPressedFire
-// (Final, Native, Protected)
+// Function BrickRigs.KickPlayerPopupWidget.UpdateCanConfirmKick
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bNewCanConfirm                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPlayerPawnInputComponent::OnPressedFire()
+void UKickPlayerPopupWidget::UpdateCanConfirmKick(bool bNewCanConfirm)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PlayerPawnInputComponent", "OnPressedFire");
+		Func = Class->GetFunction("KickPlayerPopupWidget", "UpdateCanConfirmKick");
+
+	Params::KickPlayerPopupWidget_UpdateCanConfirmKick Parms{};
+
+	Parms.bNewCanConfirm = bNewCanConfirm;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.KickPlayerPopupWidget.UpdateCanRevokeKick
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bCanRevoke                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKickPlayerPopupWidget::UpdateCanRevokeKick(bool bCanRevoke)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KickPlayerPopupWidget", "UpdateCanRevokeKick");
+
+	Params::KickPlayerPopupWidget_UpdateCanRevokeKick Parms{};
+
+	Parms.bCanRevoke = bCanRevoke;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.KickPlayerPopupWidget.UpdateIsLoadingKick
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bNewLoading                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UKickPlayerPopupWidget::UpdateIsLoadingKick(bool bNewLoading)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("KickPlayerPopupWidget", "UpdateIsLoadingKick");
+
+	Params::KickPlayerPopupWidget_UpdateIsLoadingKick Parms{};
+
+	Parms.bNewLoading = bNewLoading;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.BrickUserWidget.GetTooltipContent
+// (Native, Event, Protected, HasOutParams, BlueprintEvent)
+// Parameters:
+// struct FTooltipContent*                 OutContent                                             (Parm, OutParm, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UBrickUserWidget::GetTooltipContent(struct FTooltipContent* OutContent)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickUserWidget", "GetTooltipContent");
+
+	Params::BrickUserWidget_GetTooltipContent Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutContent != nullptr)
+		*OutContent = std::move(Parms.OutContent);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.BrickUserWidget.InitializeTooltip
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// class UTooltipWidget*                   Tooltip                                                (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UBrickUserWidget::InitializeTooltip(class UTooltipWidget* Tooltip)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickUserWidget", "InitializeTooltip");
+
+	Params::BrickUserWidget_InitializeTooltip Parms{};
+
+	Parms.Tooltip = Tooltip;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.BrickUserWidget.GetTooltipClass
+// (Event, Protected, BlueprintEvent, Const)
+// Parameters:
+// class UClass*                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UClass* UBrickUserWidget::GetTooltipClass() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickUserWidget", "GetTooltipClass");
+
+	Params::BrickUserWidget_GetTooltipClass Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.InventoryItem.GetInteractionOptions
+// (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class ABrickPlayerController*           PC                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FInteractionOptions*             OutOptions                                             (Parm, OutParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+
+void AInventoryItem::GetInteractionOptions(class ABrickPlayerController* PC, struct FInteractionOptions* OutOptions)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InventoryItem", "GetInteractionOptions");
+
+	Params::InventoryItem_GetInteractionOptions Parms{};
+
+	Parms.PC = PC;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutOptions != nullptr)
+		*OutOptions = std::move(Parms.OutOptions);
+}
+
+
+// Function BrickRigs.InventoryItem.Interact_PickUp
+// (Final, Native, Protected)
+// Parameters:
+// class ABrickPlayerController*           PC                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AInventoryItem::Interact_PickUp(class ABrickPlayerController* PC)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InventoryItem", "Interact_PickUp");
+
+	Params::InventoryItem_Interact_PickUp Parms{};
+
+	Parms.PC = PC;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.InventoryItem.OnDropped
+// (Native, Event, Public, BlueprintEvent)
+
+void AInventoryItem::OnDropped()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InventoryItem", "OnDropped");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -6188,15 +4460,15 @@ void UPlayerPawnInputComponent::OnPressedFire()
 }
 
 
-// Function BrickRigs.PlayerPawnInputComponent.OnPressedKill
-// (Final, Native, Protected)
+// Function BrickRigs.InventoryItem.OnEquipped
+// (Native, Event, Public, BlueprintEvent)
 
-void UPlayerPawnInputComponent::OnPressedKill()
+void AInventoryItem::OnEquipped()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PlayerPawnInputComponent", "OnPressedKill");
+		Func = Class->GetFunction("InventoryItem", "OnEquipped");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -6207,15 +4479,15 @@ void UPlayerPawnInputComponent::OnPressedKill()
 }
 
 
-// Function BrickRigs.PlayerPawnInputComponent.OnPressedPrimarySlot
-// (Final, Native, Protected)
+// Function BrickRigs.InventoryItem.OnPickedUp
+// (Native, Event, Public, BlueprintEvent)
 
-void UPlayerPawnInputComponent::OnPressedPrimarySlot()
+void AInventoryItem::OnPickedUp()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PlayerPawnInputComponent", "OnPressedPrimarySlot");
+		Func = Class->GetFunction("InventoryItem", "OnPickedUp");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -6226,15 +4498,42 @@ void UPlayerPawnInputComponent::OnPressedPrimarySlot()
 }
 
 
-// Function BrickRigs.PlayerPawnInputComponent.OnPressedReload
+// Function BrickRigs.InventoryItem.OnStaticMeshSleep
 // (Final, Native, Protected)
+// Parameters:
+// class UPrimitiveComponent*              Primitive                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             BoneName                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPlayerPawnInputComponent::OnPressedReload()
+void AInventoryItem::OnStaticMeshSleep(class UPrimitiveComponent* Primitive, class FName BoneName)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PlayerPawnInputComponent", "OnPressedReload");
+		Func = Class->GetFunction("InventoryItem", "OnStaticMeshSleep");
+
+	Params::InventoryItem_OnStaticMeshSleep Parms{};
+
+	Parms.Primitive = Primitive;
+	Parms.BoneName = BoneName;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.InventoryItem.OnUnequipped
+// (Native, Event, Public, BlueprintEvent)
+
+void AInventoryItem::OnUnequipped()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InventoryItem", "OnUnequipped");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -6245,15 +4544,437 @@ void UPlayerPawnInputComponent::OnPressedReload()
 }
 
 
-// Function BrickRigs.PlayerPawnInputComponent.OnPressedSecondarySlot
-// (Final, Native, Protected)
+// Function BrickRigs.InventoryItem.SetIsFiring
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bNewFiring                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPlayerPawnInputComponent::OnPressedSecondarySlot()
+void AInventoryItem::SetIsFiring(bool bNewFiring)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PlayerPawnInputComponent", "OnPressedSecondarySlot");
+		Func = Class->GetFunction("InventoryItem", "SetIsFiring");
+
+	Params::InventoryItem_SetIsFiring Parms{};
+
+	Parms.bNewFiring = bNewFiring;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.InventoryItem.SetNumItems
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// int32                                   Num                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AInventoryItem::SetNumItems(int32 Num)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InventoryItem", "SetNumItems");
+
+	Params::InventoryItem_SetNumItems Parms{};
+
+	Parms.Num = Num;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.InventoryItem.CanBePickedUp
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AInventoryItem::CanBePickedUp() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InventoryItem", "CanBePickedUp");
+
+	Params::InventoryItem_CanBePickedUp Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.InventoryItem.GetCharacter
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class ABrickCharacter*                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class ABrickCharacter* AInventoryItem::GetCharacter() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InventoryItem", "GetCharacter");
+
+	Params::InventoryItem_GetCharacter Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.InventoryItem.GetDisplayName
+// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+class FText AInventoryItem::GetDisplayName() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InventoryItem", "GetDisplayName");
+
+	Params::InventoryItem_GetDisplayName Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.InventoryItem.GetInventoryComponent
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UInventoryComponent*              ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UInventoryComponent* AInventoryItem::GetInventoryComponent() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InventoryItem", "GetInventoryComponent");
+
+	Params::InventoryItem_GetInventoryComponent Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.InventoryItem.GetItemPrice
+// (Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float AInventoryItem::GetItemPrice() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InventoryItem", "GetItemPrice");
+
+	Params::InventoryItem_GetItemPrice Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.InventoryItem.GetNumDefaultItems
+// (Native, Event, Public, BlueprintEvent, Const)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 AInventoryItem::GetNumDefaultItems() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InventoryItem", "GetNumDefaultItems");
+
+	Params::InventoryItem_GetNumDefaultItems Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.InventoryItem.GetNumItems
+// (Native, Event, Public, BlueprintEvent, Const)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 AInventoryItem::GetNumItems() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InventoryItem", "GetNumItems");
+
+	Params::InventoryItem_GetNumItems Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.InventoryItem.GetOwningInventory
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UInventoryComponent*              ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UInventoryComponent* AInventoryItem::GetOwningInventory() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InventoryItem", "GetOwningInventory");
+
+	Params::InventoryItem_GetOwningInventory Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.InventoryItem.GetStaticInfo
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const class UItemStaticInfo*            ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+const class UItemStaticInfo* AInventoryItem::GetStaticInfo() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InventoryItem", "GetStaticInfo");
+
+	Params::InventoryItem_GetStaticInfo Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.InventoryItem.GetViewingPlayer
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class APlayerController*                ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class APlayerController* AInventoryItem::GetViewingPlayer() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InventoryItem", "GetViewingPlayer");
+
+	Params::InventoryItem_GetViewingPlayer Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.InventoryItem.IsDropped
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AInventoryItem::IsDropped() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InventoryItem", "IsDropped");
+
+	Params::InventoryItem_IsDropped Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.InventoryItem.NeedsThumbnailMID
+// (Native, Event, Public, BlueprintEvent, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AInventoryItem::NeedsThumbnailMID() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InventoryItem", "NeedsThumbnailMID");
+
+	Params::InventoryItem_NeedsThumbnailMID Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.InventoryItem.UpdateThumbnailMID
+// (Native, Event, Public, BlueprintEvent, Const)
+// Parameters:
+// class UMaterialInstanceDynamic*         InMID                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AInventoryItem::UpdateThumbnailMID(class UMaterialInstanceDynamic* InMID) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InventoryItem", "UpdateThumbnailMID");
+
+	Params::InventoryItem_UpdateThumbnailMID Parms{};
+
+	Parms.InMID = InMID;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.BrickComboBoxItemContainerWidget.AddItemWidget
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// class UBrickComboBoxItemWidget*         Widget                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UBrickComboBoxItemContainerWidget::AddItemWidget(class UBrickComboBoxItemWidget* Widget)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickComboBoxItemContainerWidget", "AddItemWidget");
+
+	Params::BrickComboBoxItemContainerWidget_AddItemWidget Parms{};
+
+	Parms.Widget = Widget;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.BrickComboBoxItemContainerWidget.OnUpdateButtonContentStyle
+// (Final, Native, Private)
+// Parameters:
+// EBrickUIColorStyle                      InColorStyle                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EBrickUIStyleState                      InContentStyleState                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UBrickComboBoxItemContainerWidget::OnUpdateButtonContentStyle(EBrickUIColorStyle InColorStyle, EBrickUIStyleState InContentStyleState)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickComboBoxItemContainerWidget", "OnUpdateButtonContentStyle");
+
+	Params::BrickComboBoxItemContainerWidget_OnUpdateButtonContentStyle Parms{};
+
+	Parms.InColorStyle = InColorStyle;
+	Parms.InContentStyleState = InContentStyleState;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.BrickComboBoxItemContainerWidget.SelectItem
+// (Final, Native, Public, BlueprintCallable)
+
+void UBrickComboBoxItemContainerWidget::SelectItem()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickComboBoxItemContainerWidget", "SelectItem");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -6264,15 +4985,178 @@ void UPlayerPawnInputComponent::OnPressedSecondarySlot()
 }
 
 
-// Function BrickRigs.PlayerPawnInputComponent.OnPressedSpecialSlot
-// (Final, Native, Protected)
+// Function BrickRigs.BrickComboBoxItemContainerWidget.UpdateIsSelected
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bNewSelected                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPlayerPawnInputComponent::OnPressedSpecialSlot()
+void UBrickComboBoxItemContainerWidget::UpdateIsSelected(bool bNewSelected)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PlayerPawnInputComponent", "OnPressedSpecialSlot");
+		Func = Class->GetFunction("BrickComboBoxItemContainerWidget", "UpdateIsSelected");
+
+	Params::BrickComboBoxItemContainerWidget_UpdateIsSelected Parms{};
+
+	Parms.bNewSelected = bNewSelected;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.BrickComboBoxItemContainerWidget.GetWidgetToFocus
+// (Native, Event, Public, BlueprintEvent, Const)
+// Parameters:
+// class UWidget*                          ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UWidget* UBrickComboBoxItemContainerWidget::GetWidgetToFocus() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickComboBoxItemContainerWidget", "GetWidgetToFocus");
+
+	Params::BrickComboBoxItemContainerWidget_GetWidgetToFocus Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.BrickComboBoxItemWidget.InitializeItem
+// (Native, Event, Protected, HasOutParams, BlueprintEvent)
+// Parameters:
+// int32                                   InItem                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FBrickComboBoxItemParams&  Params_0                                               (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UBrickComboBoxItemWidget::InitializeItem(int32 InItem, const struct FBrickComboBoxItemParams& Params_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickComboBoxItemWidget", "InitializeItem");
+
+	Params::BrickComboBoxItemWidget_InitializeItem Parms{};
+
+	Parms.InItem = InItem;
+	Parms.Params_0 = std::move(Params_0);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.BrickComboBoxItemWidget.SetNoItemBrush
+// (Event, Protected, BlueprintEvent)
+
+void UBrickComboBoxItemWidget::SetNoItemBrush()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickComboBoxItemWidget", "SetNoItemBrush");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BrickRigs.BrickComboBoxItemWidget.UpdateIconVisibility
+// (Native, Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bNewVisible                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UBrickComboBoxItemWidget::UpdateIconVisibility(bool bNewVisible)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickComboBoxItemWidget", "UpdateIconVisibility");
+
+	Params::BrickComboBoxItemWidget_UpdateIconVisibility Parms{};
+
+	Parms.bNewVisible = bNewVisible;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.BrickComboBoxItemWidget.UpdateItemStyle
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// EBrickUIColorStyle                      InColorStyle                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EBrickUIStyleState                      InStyleState                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UBrickComboBoxItemWidget::UpdateItemStyle(EBrickUIColorStyle InColorStyle, EBrickUIStyleState InStyleState)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickComboBoxItemWidget", "UpdateItemStyle");
+
+	Params::BrickComboBoxItemWidget_UpdateItemStyle Parms{};
+
+	Parms.InColorStyle = InColorStyle;
+	Parms.InStyleState = InStyleState;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.BrickComboBoxItemWidget.UpdateTextVisibility
+// (Native, Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bNewVisible                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UBrickComboBoxItemWidget::UpdateTextVisibility(bool bNewVisible)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickComboBoxItemWidget", "UpdateTextVisibility");
+
+	Params::BrickComboBoxItemWidget_UpdateTextVisibility Parms{};
+
+	Parms.bNewVisible = bNewVisible;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.MatchEndWidget.OnClickedContinue
+// (Final, Native, Protected, BlueprintCallable)
+
+void UMatchEndWidget::OnClickedContinue()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MatchEndWidget", "OnClickedContinue");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -6283,15 +5167,278 @@ void UPlayerPawnInputComponent::OnPressedSpecialSlot()
 }
 
 
-// Function BrickRigs.PlayerPawnInputComponent.OnPressedThrowItem
-// (Final, Native, Protected)
+// Function BrickRigs.MatchEndWidget.UpdateContinueButton
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// int32                                   TimeRemaining                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bIsHost                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPlayerPawnInputComponent::OnPressedThrowItem()
+void UMatchEndWidget::UpdateContinueButton(int32 TimeRemaining, bool bIsHost)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PlayerPawnInputComponent", "OnPressedThrowItem");
+		Func = Class->GetFunction("MatchEndWidget", "UpdateContinueButton");
+
+	Params::MatchEndWidget_UpdateContinueButton Parms{};
+
+	Parms.TimeRemaining = TimeRemaining;
+	Parms.bIsHost = bIsHost;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.MatchEndWidget.UpdateMatchWinner
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// class UBrickTeam*                       WinnerTeam                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ETeamAttitude                           TeamAttitude                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMatchEndWidget::UpdateMatchWinner(class UBrickTeam* WinnerTeam, ETeamAttitude TeamAttitude)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MatchEndWidget", "UpdateMatchWinner");
+
+	Params::MatchEndWidget_UpdateMatchWinner Parms{};
+
+	Parms.WinnerTeam = WinnerTeam;
+	Parms.TeamAttitude = TeamAttitude;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.MatchEndWidget.GetWidgetToFocus
+// (Event, Protected, BlueprintEvent, Const)
+// Parameters:
+// class UWidget*                          ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UWidget* UMatchEndWidget::GetWidgetToFocus() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MatchEndWidget", "GetWidgetToFocus");
+
+	Params::MatchEndWidget_GetWidgetToFocus Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.InventoryComponent.IsSlotCompatible
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
+// Parameters:
+// const struct FInventorySlot&            InSlot                                                 (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const struct FInventoryItemRef&         InItem                                                 (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UInventoryComponent::IsSlotCompatible(const struct FInventorySlot& InSlot, const struct FInventoryItemRef& InItem)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("InventoryComponent", "IsSlotCompatible");
+
+	Params::InventoryComponent_IsSlotCompatible Parms{};
+
+	Parms.InSlot = std::move(InSlot);
+	Parms.InItem = std::move(InItem);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.InventoryComponent.MoveItems
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const struct FMoveInventoryItemParams&  Params_0                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// TArray<class AInventoryItem*>*          OutDroppedItems                                        (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UInventoryComponent::MoveItems(const struct FMoveInventoryItemParams& Params_0, TArray<class AInventoryItem*>* OutDroppedItems)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("InventoryComponent", "MoveItems");
+
+	Params::InventoryComponent_MoveItems Parms{};
+
+	Parms.Params_0 = std::move(Params_0);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutDroppedItems != nullptr)
+		*OutDroppedItems = std::move(Parms.OutDroppedItems);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.InventoryComponent.ConsumeAmmo
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const struct FAmmoInfo&                 InAmmo                                                 (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// int32                                   NumRequired                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UInventoryComponent::ConsumeAmmo(const struct FAmmoInfo& InAmmo, int32 NumRequired)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InventoryComponent", "ConsumeAmmo");
+
+	Params::InventoryComponent_ConsumeAmmo Parms{};
+
+	Parms.InAmmo = std::move(InAmmo);
+	Parms.NumRequired = NumRequired;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.InventoryComponent.ConsumeItems
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const struct FInventorySlotID&          SlotID                                                 (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Amount                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UInventoryComponent::ConsumeItems(const struct FInventorySlotID& SlotID, int32 Amount)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InventoryComponent", "ConsumeItems");
+
+	Params::InventoryComponent_ConsumeItems Parms{};
+
+	Parms.SlotID = std::move(SlotID);
+	Parms.Amount = Amount;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.InventoryComponent.DebugSpawnItems
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class AInventoryItem>       ItemClass                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Amount                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UInventoryComponent::DebugSpawnItems(TSubclassOf<class AInventoryItem> ItemClass, int32 Amount)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InventoryComponent", "DebugSpawnItems");
+
+	Params::InventoryComponent_DebugSpawnItems Parms{};
+
+	Parms.ItemClass = ItemClass;
+	Parms.Amount = Amount;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.InventoryComponent.EmptyInventory
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bCallDelegates                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UInventoryComponent::EmptyInventory(bool bCallDelegates)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InventoryComponent", "EmptyInventory");
+
+	Params::InventoryComponent_EmptyInventory Parms{};
+
+	Parms.bCallDelegates = bCallDelegates;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.InventoryComponent.Interact_Inventory
+// (Final, Native, Public)
+// Parameters:
+// class ABrickPlayerController*           PC                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UInventoryComponent::Interact_Inventory(class ABrickPlayerController* PC)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InventoryComponent", "Interact_Inventory");
+
+	Params::InventoryComponent_Interact_Inventory Parms{};
+
+	Parms.PC = PC;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.InventoryComponent.MulticastOnPickedUpItems
+// (Net, NetReliable, Native, Event, NetMulticast, Protected)
+
+void UInventoryComponent::MulticastOnPickedUpItems()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InventoryComponent", "MulticastOnPickedUpItems");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -6302,15 +5449,699 @@ void UPlayerPawnInputComponent::OnPressedThrowItem()
 }
 
 
-// Function BrickRigs.PlayerPawnInputComponent.OnPressedUnequipItem
-// (Final, Native, Protected)
+// Function BrickRigs.InventoryComponent.SetContentHidden
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bHidden                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPlayerPawnInputComponent::OnPressedUnequipItem()
+void UInventoryComponent::SetContentHidden(bool bHidden)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PlayerPawnInputComponent", "OnPressedUnequipItem");
+		Func = Class->GetFunction("InventoryComponent", "SetContentHidden");
+
+	Params::InventoryComponent_SetContentHidden Parms{};
+
+	Parms.bHidden = bHidden;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.InventoryComponent.SetInventoryProperties
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const struct FInventoryProperties&      InProps                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UInventoryComponent::SetInventoryProperties(const struct FInventoryProperties& InProps)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InventoryComponent", "SetInventoryProperties");
+
+	Params::InventoryComponent_SetInventoryProperties Parms{};
+
+	Parms.InProps = std::move(InProps);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.InventoryComponent.SetSpecialSlotAttachParent
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// class USceneComponent*                  NewAttachParent                                        (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UInventoryComponent::SetSpecialSlotAttachParent(class USceneComponent* NewAttachParent)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InventoryComponent", "SetSpecialSlotAttachParent");
+
+	Params::InventoryComponent_SetSpecialSlotAttachParent Parms{};
+
+	Parms.NewAttachParent = NewAttachParent;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.InventoryComponent.SpawnInventoryLoadout
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const struct FInventoryLoadout&         Loadout                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UInventoryComponent::SpawnInventoryLoadout(const struct FInventoryLoadout& Loadout)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InventoryComponent", "SpawnInventoryLoadout");
+
+	Params::InventoryComponent_SpawnInventoryLoadout Parms{};
+
+	Parms.Loadout = std::move(Loadout);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.InventoryComponent.SpawnItems
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// TSubclassOf<class AInventoryItem>       ItemClass                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Amount                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UInventoryComponent::SpawnItems(TSubclassOf<class AInventoryItem> ItemClass, int32 Amount)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InventoryComponent", "SpawnItems");
+
+	Params::InventoryComponent_SpawnItems Parms{};
+
+	Parms.ItemClass = ItemClass;
+	Parms.Amount = Amount;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.InventoryComponent.DoesSpecialSlotSupportItem
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const class AInventoryItem*             InItem                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   SlotIndex                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UInventoryComponent::DoesSpecialSlotSupportItem(const class AInventoryItem* InItem, int32 SlotIndex) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InventoryComponent", "DoesSpecialSlotSupportItem");
+
+	Params::InventoryComponent_DoesSpecialSlotSupportItem Parms{};
+
+	Parms.InItem = InItem;
+	Parms.SlotIndex = SlotIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.InventoryComponent.FindFreeSlotID
+// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const struct FInventoryItemRef&         InItem                                                 (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// bool                                    bTryToReplace                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FInventorySlotID                 ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FInventorySlotID UInventoryComponent::FindFreeSlotID(const struct FInventoryItemRef& InItem, bool bTryToReplace) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InventoryComponent", "FindFreeSlotID");
+
+	Params::InventoryComponent_FindFreeSlotID Parms{};
+
+	Parms.InItem = std::move(InItem);
+	Parms.bTryToReplace = bTryToReplace;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.InventoryComponent.FindFreeSpecialSlotID
+// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const struct FInventoryItemRef&         InItem                                                 (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const TSet<struct FInventorySlotID>&    InSlotIDs                                              (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// struct FInventorySlotID                 ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FInventorySlotID UInventoryComponent::FindFreeSpecialSlotID(const struct FInventoryItemRef& InItem, const TSet<struct FInventorySlotID>& InSlotIDs) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InventoryComponent", "FindFreeSpecialSlotID");
+
+	Params::InventoryComponent_FindFreeSpecialSlotID Parms{};
+
+	Parms.InItem = std::move(InItem);
+	Parms.InSlotIDs = std::move(InSlotIDs);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.InventoryComponent.FindFreeWildcardSlotID
+// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const struct FInventoryItemRef&         InItem                                                 (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// struct FInventorySlotID                 ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FInventorySlotID UInventoryComponent::FindFreeWildcardSlotID(const struct FInventoryItemRef& InItem) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InventoryComponent", "FindFreeWildcardSlotID");
+
+	Params::InventoryComponent_FindFreeWildcardSlotID Parms{};
+
+	Parms.InItem = std::move(InItem);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.InventoryComponent.GetAmmo
+// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const TArray<struct FAmmoInfo>&         InAmmoTypes                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UInventoryComponent::GetAmmo(const TArray<struct FAmmoInfo>& InAmmoTypes) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InventoryComponent", "GetAmmo");
+
+	Params::InventoryComponent_GetAmmo Parms{};
+
+	Parms.InAmmoTypes = std::move(InAmmoTypes);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.InventoryComponent.GetDisplayName
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+class FText UInventoryComponent::GetDisplayName() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InventoryComponent", "GetDisplayName");
+
+	Params::InventoryComponent_GetDisplayName Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.InventoryComponent.GetInventory
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const struct FInventory                 ReturnValue                                            (ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+const struct FInventory UInventoryComponent::GetInventory() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InventoryComponent", "GetInventory");
+
+	Params::InventoryComponent_GetInventory Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.InventoryComponent.GetInventorySlots
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const TArray<struct FInventorySlot>     ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+const TArray<struct FInventorySlot> UInventoryComponent::GetInventorySlots() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InventoryComponent", "GetInventorySlots");
+
+	Params::InventoryComponent_GetInventorySlots Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.InventoryComponent.GetNumItemsOfClass
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UClass*                           InClass                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UInventoryComponent::GetNumItemsOfClass(class UClass* InClass) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InventoryComponent", "GetNumItemsOfClass");
+
+	Params::InventoryComponent_GetNumItemsOfClass Parms{};
+
+	Parms.InClass = InClass;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.InventoryComponent.GetSpecialSlotID
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FInventorySlotID                 ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FInventorySlotID UInventoryComponent::GetSpecialSlotID(int32 Index_0) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InventoryComponent", "GetSpecialSlotID");
+
+	Params::InventoryComponent_GetSpecialSlotID Parms{};
+
+	Parms.Index_0 = Index_0;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.InventoryComponent.GetWildcardSlotID
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FInventorySlotID                 ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FInventorySlotID UInventoryComponent::GetWildcardSlotID(int32 Index_0) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InventoryComponent", "GetWildcardSlotID");
+
+	Params::InventoryComponent_GetWildcardSlotID Parms{};
+
+	Parms.Index_0 = Index_0;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.InventoryComponent.HasInfiniteAmmo
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UInventoryComponent::HasInfiniteAmmo() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InventoryComponent", "HasInfiniteAmmo");
+
+	Params::InventoryComponent_HasInfiniteAmmo Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.InventoryComponent.HasInventorySlot
+// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const struct FInventorySlotID&          InSlotID                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UInventoryComponent::HasInventorySlot(const struct FInventorySlotID& InSlotID) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InventoryComponent", "HasInventorySlot");
+
+	Params::InventoryComponent_HasInventorySlot Parms{};
+
+	Parms.InSlotID = std::move(InSlotID);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.InventoryComponent.IsContentHidden
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UInventoryComponent::IsContentHidden() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InventoryComponent", "IsContentHidden");
+
+	Params::InventoryComponent_IsContentHidden Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.InventoryComponent.IsEmpty
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UInventoryComponent::IsEmpty() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InventoryComponent", "IsEmpty");
+
+	Params::InventoryComponent_IsEmpty Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.InventoryComponent.IsSlotFreeOrCompatible
+// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const struct FInventorySlotID&          InSlotID                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FInventoryItemRef&         InItem                                                 (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UInventoryComponent::IsSlotFreeOrCompatible(const struct FInventorySlotID& InSlotID, const struct FInventoryItemRef& InItem) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InventoryComponent", "IsSlotFreeOrCompatible");
+
+	Params::InventoryComponent_IsSlotFreeOrCompatible Parms{};
+
+	Parms.InSlotID = std::move(InSlotID);
+	Parms.InItem = std::move(InItem);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.InventoryComponent.IsSpecialSlotID
+// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const struct FInventorySlotID&          InSlotID                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UInventoryComponent::IsSpecialSlotID(const struct FInventorySlotID& InSlotID) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InventoryComponent", "IsSpecialSlotID");
+
+	Params::InventoryComponent_IsSpecialSlotID Parms{};
+
+	Parms.InSlotID = std::move(InSlotID);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.InventoryComponent.IsValidSlotID
+// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const struct FInventorySlotID&          InSlotID                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UInventoryComponent::IsValidSlotID(const struct FInventorySlotID& InSlotID) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InventoryComponent", "IsValidSlotID");
+
+	Params::InventoryComponent_IsValidSlotID Parms{};
+
+	Parms.InSlotID = std::move(InSlotID);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.InventoryComponent.IsWildcardSlotID
+// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const struct FInventorySlotID&          InSlotID                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UInventoryComponent::IsWildcardSlotID(const struct FInventorySlotID& InSlotID) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InventoryComponent", "IsWildcardSlotID");
+
+	Params::InventoryComponent_IsWildcardSlotID Parms{};
+
+	Parms.InSlotID = std::move(InSlotID);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.InventoryComponent.RequiresSpecialSlot
+// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const class AInventoryItem*             InItem                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSet<struct FInventorySlotID>*          OutSlots                                               (Parm, OutParm, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UInventoryComponent::RequiresSpecialSlot(const class AInventoryItem* InItem, TSet<struct FInventorySlotID>* OutSlots) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InventoryComponent", "RequiresSpecialSlot");
+
+	Params::InventoryComponent_RequiresSpecialSlot Parms{};
+
+	Parms.InItem = InItem;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutSlots != nullptr)
+		*OutSlots = std::move(Parms.OutSlots);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.MenuAnchorWidget.CloseMenu
+// (Final, Native, Public, BlueprintCallable)
+
+void UMenuAnchorWidget::CloseMenu()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MenuAnchorWidget", "CloseMenu");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -6321,153 +6152,303 @@ void UPlayerPawnInputComponent::OnPressedUnequipItem()
 }
 
 
-// Function BrickRigs.PlayerPawnInputComponent.OnReleasedAim
-// (Final, Native, Protected)
+// Function BrickRigs.MenuAnchorWidget.GetWidgetToFocus
+// (Native, Event, Public, BlueprintEvent, Const)
+// Parameters:
+// class UWidget*                          ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPlayerPawnInputComponent::OnReleasedAim()
+class UWidget* UMenuAnchorWidget::GetWidgetToFocus() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PlayerPawnInputComponent", "OnReleasedAim");
+		Func = Class->GetFunction("MenuAnchorWidget", "GetWidgetToFocus");
+
+	Params::MenuAnchorWidget_GetWidgetToFocus Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.LegacyBuilding.ConstructBuildingPart
+// (Final, Native, Protected, HasDefaults, BlueprintCallable)
+// Parameters:
+// int32                                   NumX                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   NumY                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Floors                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   Location                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UBuildingPart*                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UBuildingPart* ALegacyBuilding::ConstructBuildingPart(int32 NumX, int32 NumY, int32 Floors, const struct FVector& Location)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LegacyBuilding", "ConstructBuildingPart");
+
+	Params::LegacyBuilding_ConstructBuildingPart Parms{};
+
+	Parms.NumX = NumX;
+	Parms.NumY = NumY;
+	Parms.Floors = Floors;
+	Parms.Location = std::move(Location);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.LegacyBuilding.ConstructFlatRoof
+// (Final, Native, Protected, BlueprintCallable)
+// Parameters:
+// class UBuildingPart*                    Part                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// uint8                                   Mesh                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ALegacyBuilding::ConstructFlatRoof(class UBuildingPart* Part, uint8 Mesh)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LegacyBuilding", "ConstructFlatRoof");
+
+	Params::LegacyBuilding_ConstructFlatRoof Parms{};
+
+	Parms.Part = Part;
+	Parms.Mesh = Mesh;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }
 
 
-// Function BrickRigs.PlayerPawnInputComponent.OnReleasedCycleExplosives
-// (Final, Native, Protected)
+// Function BrickRigs.LegacyBuilding.ConstructIndustrialRoof
+// (Final, Native, Protected, BlueprintCallable)
+// Parameters:
+// class UBuildingPart*                    Part                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// uint8                                   RoofSlopeMesh                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// uint8                                   RoofMesh                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// uint8                                   WallMesh                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPlayerPawnInputComponent::OnReleasedCycleExplosives()
+void ALegacyBuilding::ConstructIndustrialRoof(class UBuildingPart* Part, uint8 RoofSlopeMesh, uint8 RoofMesh, uint8 WallMesh)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PlayerPawnInputComponent", "OnReleasedCycleExplosives");
+		Func = Class->GetFunction("LegacyBuilding", "ConstructIndustrialRoof");
+
+	Params::LegacyBuilding_ConstructIndustrialRoof Parms{};
+
+	Parms.Part = Part;
+	Parms.RoofSlopeMesh = RoofSlopeMesh;
+	Parms.RoofMesh = RoofMesh;
+	Parms.WallMesh = WallMesh;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }
 
 
-// Function BrickRigs.PlayerPawnInputComponent.OnReleasedCycleSlots
-// (Final, Native, Protected)
+// Function BrickRigs.LegacyBuilding.ConstructRoof
+// (Final, Native, Protected, BlueprintCallable)
+// Parameters:
+// class UBuildingPart*                    Part                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// uint8                                   RoofGableMesh                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// uint8                                   RoofMesh                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bRotate                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPlayerPawnInputComponent::OnReleasedCycleSlots()
+void ALegacyBuilding::ConstructRoof(class UBuildingPart* Part, uint8 RoofGableMesh, uint8 RoofMesh, bool bRotate)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PlayerPawnInputComponent", "OnReleasedCycleSlots");
+		Func = Class->GetFunction("LegacyBuilding", "ConstructRoof");
+
+	Params::LegacyBuilding_ConstructRoof Parms{};
+
+	Parms.Part = Part;
+	Parms.RoofGableMesh = RoofGableMesh;
+	Parms.RoofMesh = RoofMesh;
+	Parms.bRotate = bRotate;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }
 
 
-// Function BrickRigs.PlayerPawnInputComponent.OnReleasedFire
-// (Final, Native, Protected)
+// Function BrickRigs.LegacyBuilding.SpawnBuildingPart
+// (Final, Native, Protected, BlueprintCallable)
+// Parameters:
+// class UBuildingPart*                    Part                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPlayerPawnInputComponent::OnReleasedFire()
+void ALegacyBuilding::SpawnBuildingPart(class UBuildingPart* Part)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PlayerPawnInputComponent", "OnReleasedFire");
+		Func = Class->GetFunction("LegacyBuilding", "SpawnBuildingPart");
+
+	Params::LegacyBuilding_SpawnBuildingPart Parms{};
+
+	Parms.Part = Part;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }
 
 
-// Function BrickRigs.PlayerPawnInputComponent.OnReleasedKill
-// (Final, Native, Protected)
+// Function BrickRigs.PropertyWidget.UpdateIsReadOnly
+// (Native, Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bNewReadOnly                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPlayerPawnInputComponent::OnReleasedKill()
+void UPropertyWidget::UpdateIsReadOnly(bool bNewReadOnly)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PlayerPawnInputComponent", "OnReleasedKill");
+		Func = Class->GetFunction("PropertyWidget", "UpdateIsReadOnly");
+
+	Params::PropertyWidget_UpdateIsReadOnly Parms{};
+
+	Parms.bNewReadOnly = bNewReadOnly;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }
 
 
-// Function BrickRigs.PlayerPawnInputComponent.OnTappedCycleExplosives
-// (Final, Native, Protected)
+// Function BrickRigs.PropertyWidget.GetFocusedSubProperty
+// (Event, Public, HasOutParams, BlueprintEvent, Const)
+// Parameters:
+// const struct FWidgetPathWrapper&        WidgetPath                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class FName                             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPlayerPawnInputComponent::OnTappedCycleExplosives()
+class FName UPropertyWidget::GetFocusedSubProperty(const struct FWidgetPathWrapper& WidgetPath) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PlayerPawnInputComponent", "OnTappedCycleExplosives");
+		Func = Class->GetFunction("PropertyWidget", "GetFocusedSubProperty");
 
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
+	Params::PropertyWidget_GetFocusedSubProperty Parms{};
 
-	UObject::ProcessEvent(Func, nullptr);
+	Parms.WidgetPath = std::move(WidgetPath);
 
-	Func->FunctionFlags = Flgs;
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
 }
 
 
-// Function BrickRigs.PlayerPawnInputComponent.OnTappedCycleSlots
-// (Final, Native, Protected)
+// Function BrickRigs.PropertyWidget.GetPropertyContainerWidget
+// (Final, Native, Protected, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UPropertyContainerWidget*         ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPlayerPawnInputComponent::OnTappedCycleSlots()
+class UPropertyContainerWidget* UPropertyWidget::GetPropertyContainerWidget() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PlayerPawnInputComponent", "OnTappedCycleSlots");
+		Func = Class->GetFunction("PropertyWidget", "GetPropertyContainerWidget");
+
+	Params::PropertyWidget_GetPropertyContainerWidget Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
-// Function BrickRigs.PlayerPawnInputComponent.OnTappedKill
-// (Final, Native, Protected)
+// Function BrickRigs.ObjectPropertyWidget.InitializeItem
+// (Native, Protected, HasOutParams)
+// Parameters:
+// int32                                   Item                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FBrickComboBoxItemParams*        OutParams                                              (Parm, OutParm, NativeAccessSpecifierPublic)
 
-void UPlayerPawnInputComponent::OnTappedKill()
+void UObjectPropertyWidget::InitializeItem(int32 Item, struct FBrickComboBoxItemParams* OutParams)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PlayerPawnInputComponent", "OnTappedKill");
+		Func = Class->GetFunction("ObjectPropertyWidget", "InitializeItem");
+
+	Params::ObjectPropertyWidget_InitializeItem Parms{};
+
+	Parms.Item = Item;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutParams != nullptr)
+		*OutParams = std::move(Parms.OutParams);
+}
+
+
+// Function BrickRigs.ObjectPropertyWidget.OnItemSelected
+// (Final, Native, Protected)
+// Parameters:
+// int32                                   Item                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EValueChangedEventType                  EventType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UObjectPropertyWidget::OnItemSelected(int32 Item, EValueChangedEventType EventType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ObjectPropertyWidget", "OnItemSelected");
+
+	Params::ObjectPropertyWidget_OnItemSelected Parms{};
+
+	Parms.Item = Item;
+	Parms.EventType = EventType;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -6860,26 +6841,6 @@ bool UBrickComboBoxWidget::IsComboBoxExpanded() const
 }
 
 
-// Function BrickRigs.FlashSequenceItemWidget.UpdateIsLit
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bNewLit                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UFlashSequenceItemWidget::UpdateIsLit(bool bNewLit)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("FlashSequenceItemWidget", "UpdateIsLit");
-
-	Params::FlashSequenceItemWidget_UpdateIsLit Parms{};
-
-	Parms.bNewLit = bNewLit;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function BrickRigs.BrickVehicle.ConstructVehicle
 // (Final, BlueprintAuthorityOnly, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
@@ -7043,31 +7004,6 @@ void ABrickVehicle::Interact_ScrapVehicleFromMap(class ABrickPlayerController* O
 }
 
 
-// Function BrickRigs.BrickVehicle.OnRep_FuelLevel
-// (Final, Native, Private, HasOutParams)
-// Parameters:
-// const struct FFuelLevel&                PrevFuelLevel                                          (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void ABrickVehicle::OnRep_FuelLevel(const struct FFuelLevel& PrevFuelLevel)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickVehicle", "OnRep_FuelLevel");
-
-	Params::BrickVehicle_OnRep_FuelLevel Parms{};
-
-	Parms.PrevFuelLevel = std::move(PrevFuelLevel);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function BrickRigs.BrickVehicle.OnRep_PassengerTeamIds
 // (Final, Native, Private)
 
@@ -7096,6 +7032,25 @@ void ABrickVehicle::OnRep_PinMode()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("BrickVehicle", "OnRep_PinMode");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.BrickVehicle.OnRep_RepFuelLevelRatio
+// (Final, Native, Private)
+
+void ABrickVehicle::OnRep_RepFuelLevelRatio()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickVehicle", "OnRep_RepFuelLevelRatio");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -7325,6 +7280,31 @@ void ABrickVehicle::SetPinMode(EVehiclePinMode NewMode)
 	Params::BrickVehicle_SetPinMode Parms{};
 
 	Parms.NewMode = NewMode;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.BrickVehicle.SetRelativeFuelLevel
+// (Final, BlueprintAuthorityOnly, Native, Protected, BlueprintCallable)
+// Parameters:
+// const float                             NewLevel                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ABrickVehicle::SetRelativeFuelLevel(const float NewLevel)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickVehicle", "SetRelativeFuelLevel");
+
+	Params::BrickVehicle_SetRelativeFuelLevel Parms{};
+
+	Parms.NewLevel = NewLevel;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -7836,6 +7816,31 @@ class UBrickVehicleComponent* ABrickVehicle::GetVehicleComponent() const
 }
 
 
+// Function BrickRigs.BrickVehicle.GetVehicleDisplayName
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+class FText ABrickVehicle::GetVehicleDisplayName() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickVehicle", "GetVehicleDisplayName");
+
+	Params::BrickVehicle_GetVehicleDisplayName Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function BrickRigs.BrickVehicle.GetVehicleFileInfo
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
@@ -7985,11 +7990,29 @@ bool ABrickVehicle::IsVehicleConstructed() const
 	return Parms.ReturnValue;
 }
 
-void ABrickVehicle::QueueBrickConnectionsToBreak(SDK::TArray<class UBrickConnection*>* connections)
+
+// Function BrickRigs.MyUserSettings.Get
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// class UMyUserSettings*                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UMyUserSettings* UMyUserSettings::Get()
 {
-	using fn_t = void(__fastcall*)(ABrickVehicle*, TArray<class UBrickConnection*>*);
-	static fn_t fn = (fn_t)(reinterpret_cast<uintptr_t>(GetModuleHandle(NULL)) + 0xE08560);
-	fn(this, connections);
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("MyUserSettings", "Get");
+
+	Params::MyUserSettings_Get Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -8015,6 +8038,471 @@ class AFirearm* AAttachment::GetFirearm() const
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.ChatWidget.GetWidgetToFocus
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// class UWidget*                          ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UWidget* UChatWidget::GetWidgetToFocus()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ChatWidget", "GetWidgetToFocus");
+
+	Params::ChatWidget_GetWidgetToFocus Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.ChatWidget.OnTextChanged
+// (Final, Native, Private, HasOutParams)
+// Parameters:
+// const class FText&                      Text                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// EValueChangedEventType                  EventType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UChatWidget::OnTextChanged(const class FText& Text, EValueChangedEventType EventType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ChatWidget", "OnTextChanged");
+
+	Params::ChatWidget_OnTextChanged Parms{};
+
+	Parms.Text = std::move(Text);
+	Parms.EventType = EventType;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.ChatWidget.UpdateIsFocused
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bNewFocused                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UChatWidget::UpdateIsFocused(bool bNewFocused)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ChatWidget", "UpdateIsFocused");
+
+	Params::ChatWidget_UpdateIsFocused Parms{};
+
+	Parms.bNewFocused = bNewFocused;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.ChatWidget.UpdateIsTyping
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bNewTyping                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UChatWidget::UpdateIsTyping(bool bNewTyping)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ChatWidget", "UpdateIsTyping");
+
+	Params::ChatWidget_UpdateIsTyping Parms{};
+
+	Parms.bNewTyping = bNewTyping;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.ChatWidget.UpdateScrollBoxVisibility
+// (Native, Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bNewVisible                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UChatWidget::UpdateScrollBoxVisibility(bool bNewVisible)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ChatWidget", "UpdateScrollBoxVisibility");
+
+	Params::ChatWidget_UpdateScrollBoxVisibility Parms{};
+
+	Parms.bNewVisible = bNewVisible;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.MainWidgetBase.OnFadedOut
+// (Final, Native, Private)
+
+void UMainWidgetBase::OnFadedOut()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MainWidgetBase", "OnFadedOut");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.MainWidgetBase.GetButtonPanel
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UMenuButtonPanelWidget*           ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UMenuButtonPanelWidget* UMainWidgetBase::GetButtonPanel() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MainWidgetBase", "GetButtonPanel");
+
+	Params::MainWidgetBase_GetButtonPanel Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.MainWidgetBase.GetWidgetToFocus
+// (Native, Event, Public, BlueprintEvent, Const)
+// Parameters:
+// class UWidget*                          ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UWidget* UMainWidgetBase::GetWidgetToFocus() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MainWidgetBase", "GetWidgetToFocus");
+
+	Params::MainWidgetBase_GetWidgetToFocus Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.MainWidgetBase.GetWindowManager
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UWindowManagerWidget*             ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UWindowManagerWidget* UMainWidgetBase::GetWindowManager() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MainWidgetBase", "GetWindowManager");
+
+	Params::MainWidgetBase_GetWindowManager Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.LoadingScreenWidget.SetBackgroundColor
+// (Event, Protected, HasOutParams, HasDefaults, BlueprintEvent)
+// Parameters:
+// const struct FLinearColor&              InColor                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ULoadingScreenWidget::SetBackgroundColor(const struct FLinearColor& InColor)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LoadingScreenWidget", "SetBackgroundColor");
+
+	Params::LoadingScreenWidget_SetBackgroundColor Parms{};
+
+	Parms.InColor = std::move(InColor);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.LoadingScreenWidget.SetLoadingText
+// (Event, Public, HasOutParams, BlueprintEvent)
+// Parameters:
+// const class FText&                      Text                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void ULoadingScreenWidget::SetLoadingText(const class FText& Text)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("LoadingScreenWidget", "SetLoadingText");
+
+	Params::LoadingScreenWidget_SetLoadingText Parms{};
+
+	Parms.Text = std::move(Text);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.PhysicsConstraintConnection.OnConstraintBroken
+// (Final, Native, Protected)
+// Parameters:
+// int32                                   ConstraintIndex                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UPhysicsConstraintConnection::OnConstraintBroken(int32 ConstraintIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PhysicsConstraintConnection", "OnConstraintBroken");
+
+	Params::PhysicsConstraintConnection_OnConstraintBroken Parms{};
+
+	Parms.ConstraintIndex = ConstraintIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.FuelTank.OnRep_bHasExploded
+// (Final, Native, Private)
+
+void AFuelTank::OnRep_bHasExploded()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("FuelTank", "OnRep_bHasExploded");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.FuelTank.ShouldSpawnLeakOnHit
+// (Event, Protected, HasOutParams, BlueprintEvent)
+// Parameters:
+// const struct FHitResult&                Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AFuelTank::ShouldSpawnLeakOnHit(const struct FHitResult& Hit)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("FuelTank", "ShouldSpawnLeakOnHit");
+
+	Params::FuelTank_ShouldSpawnLeakOnHit Parms{};
+
+	Parms.Hit = std::move(Hit);
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.BrickViewportClient.Get
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UBrickViewportClient*             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UBrickViewportClient* UBrickViewportClient::Get(const class UObject* WorldContextObject)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("BrickViewportClient", "Get");
+
+	Params::BrickViewportClient_Get Parms{};
+
+	Parms.WorldContextObject = WorldContextObject;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.MenuButtonWidget.OnClicked
+// (Final, Native, Protected, BlueprintCallable)
+
+void UMenuButtonWidget::OnClicked()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MenuButtonWidget", "OnClicked");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.MenuButtonWidget.SetColorStyle
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// EBrickUIColorStyle                      InColorStyle                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMenuButtonWidget::SetColorStyle(EBrickUIColorStyle InColorStyle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MenuButtonWidget", "SetColorStyle");
+
+	Params::MenuButtonWidget_SetColorStyle Parms{};
+
+	Parms.InColorStyle = InColorStyle;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.MenuButtonWidget.SetDisplayIcon
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   InIconIndex                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMenuButtonWidget::SetDisplayIcon(int32 InIconIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MenuButtonWidget", "SetDisplayIcon");
+
+	Params::MenuButtonWidget_SetDisplayIcon Parms{};
+
+	Parms.InIconIndex = InIconIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.MenuButtonWidget.SetDisplayText
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const class FText&                      InText                                                 (Parm, NativeAccessSpecifierPublic)
+
+void UMenuButtonWidget::SetDisplayText(const class FText& InText)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MenuButtonWidget", "SetDisplayText");
+
+	Params::MenuButtonWidget_SetDisplayText Parms{};
+
+	Parms.InText = std::move(InText);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.MenuButtonWidget.UpdateDisplayText
+// (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// const class FText&                      InText                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UMenuButtonWidget::UpdateDisplayText(const class FText& InText)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MenuButtonWidget", "UpdateDisplayText");
+
+	Params::MenuButtonWidget_UpdateDisplayText Parms{};
+
+	Parms.InText = std::move(InText);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -8058,106 +8546,6 @@ void UMatchStateWidget::UpdateMatchState(const class FText& NewDisplayText, EBri
 	Parms.bFadeOut = bFadeOut;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.PhysicsConstraintConnection.OnConstraintBroken
-// (Final, Native, Protected)
-// Parameters:
-// int32                                   ConstraintIndex                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UPhysicsConstraintConnection::OnConstraintBroken(int32 ConstraintIndex)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PhysicsConstraintConnection", "OnConstraintBroken");
-
-	Params::PhysicsConstraintConnection_OnConstraintBroken Parms{};
-
-	Parms.ConstraintIndex = ConstraintIndex;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.Garage.Interact_EnterEditor
-// (Final, Native, Private)
-// Parameters:
-// class ABrickPlayerController*           PC                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AGarage::Interact_EnterEditor(class ABrickPlayerController* PC)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Garage", "Interact_EnterEditor");
-
-	Params::Garage_Interact_EnterEditor Parms{};
-
-	Parms.PC = PC;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.Garage.Interact_Inventory
-// (Final, Native, Private)
-// Parameters:
-// class ABrickPlayerController*           PC                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AGarage::Interact_Inventory(class ABrickPlayerController* PC)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Garage", "Interact_Inventory");
-
-	Params::Garage_Interact_Inventory Parms{};
-
-	Parms.PC = PC;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.Garage.Interact_SpawnVehicle
-// (Final, Native, Private)
-// Parameters:
-// class ABrickPlayerController*           PC                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AGarage::Interact_SpawnVehicle(class ABrickPlayerController* PC)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Garage", "Interact_SpawnVehicle");
-
-	Params::Garage_Interact_SpawnVehicle Parms{};
-
-	Parms.PC = PC;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
@@ -8250,6 +8638,63 @@ bool ABaseCharacter::IsPerformingMeleeAction()
 }
 
 
+// Function BrickRigs.BaseCharacter.OnHealingStateChanged
+// (Native, Protected)
+
+void ABaseCharacter::OnHealingStateChanged()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BaseCharacter", "OnHealingStateChanged");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.BaseCharacter.OnHealthChanged
+// (Native, Protected)
+
+void ABaseCharacter::OnHealthChanged()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BaseCharacter", "OnHealthChanged");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.BaseCharacter.OnIsOnFireChanged
+// (Final, Native, Protected)
+
+void ABaseCharacter::OnIsOnFireChanged()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BaseCharacter", "OnIsOnFireChanged");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function BrickRigs.BaseCharacter.OnMeshHit
 // (Final, Native, Protected, HasOutParams, HasDefaults)
 // Parameters:
@@ -8283,40 +8728,15 @@ void ABaseCharacter::OnMeshHit(class UPrimitiveComponent* HitComponent, class AA
 }
 
 
-// Function BrickRigs.BaseCharacter.OnRep_CharacterHealth
-// (Final, Native, Protected, HasOutParams)
-// Parameters:
-// const struct FCharacterHealth&          OldHealth                                              (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void ABaseCharacter::OnRep_CharacterHealth(const struct FCharacterHealth& OldHealth)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BaseCharacter", "OnRep_CharacterHealth");
-
-	Params::BaseCharacter_OnRep_CharacterHealth Parms{};
-
-	Parms.OldHealth = std::move(OldHealth);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.BaseCharacter.OnRep_IsOnFire
+// Function BrickRigs.BaseCharacter.OnRep_RepHealth
 // (Final, Native, Protected)
 
-void ABaseCharacter::OnRep_IsOnFire()
+void ABaseCharacter::OnRep_RepHealth()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BaseCharacter", "OnRep_IsOnFire");
+		Func = Class->GetFunction("BaseCharacter", "OnRep_RepHealth");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -8355,6 +8775,25 @@ void ABaseCharacter::OnRep_TeamId()
 
 	if (Func == nullptr)
 		Func = Class->GetFunction("BaseCharacter", "OnRep_TeamId");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.BaseCharacter.OnStateOfHealthChanged
+// (Native, Protected)
+
+void ABaseCharacter::OnStateOfHealthChanged()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BaseCharacter", "OnStateOfHealthChanged");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -8474,6 +8913,127 @@ bool ABaseCharacter::IsConscious() const
 		Func = Class->GetFunction("BaseCharacter", "IsConscious");
 
 	Params::BaseCharacter_IsConscious Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.NumericPropertyWidget.AddSliderWidget
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// class UBrickSliderWidget*               Slider                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UNumericPropertyWidget::AddSliderWidget(class UBrickSliderWidget* Slider)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("NumericPropertyWidget", "AddSliderWidget");
+
+	Params::NumericPropertyWidget_AddSliderWidget Parms{};
+
+	Parms.Slider = Slider;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.NumericPropertyWidget.LockAxes
+// (Final, Native, Protected, BlueprintCallable)
+// Parameters:
+// const bool                              bLock                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UNumericPropertyWidget::LockAxes(const bool bLock)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("NumericPropertyWidget", "LockAxes");
+
+	Params::NumericPropertyWidget_LockAxes Parms{};
+
+	Parms.bLock = bLock;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.NumericPropertyWidget.OnSliderValueChanged
+// (Final, Native, Private)
+// Parameters:
+// const float                             NewValue                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const EValueChangedEventType            EventType                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             Index_0                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UNumericPropertyWidget::OnSliderValueChanged(const float NewValue, const EValueChangedEventType EventType, const int32 Index_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("NumericPropertyWidget", "OnSliderValueChanged");
+
+	Params::NumericPropertyWidget_OnSliderValueChanged Parms{};
+
+	Parms.NewValue = NewValue;
+	Parms.EventType = EventType;
+	Parms.Index_0 = Index_0;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.NumericPropertyWidget.UpdateNumericProperty
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// const ENumericValueType                 ValueType                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             NumAxes                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UNumericPropertyWidget::UpdateNumericProperty(const ENumericValueType ValueType, const int32 NumAxes)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("NumericPropertyWidget", "UpdateNumericProperty");
+
+	Params::NumericPropertyWidget_UpdateNumericProperty Parms{};
+
+	Parms.ValueType = ValueType;
+	Parms.NumAxes = NumAxes;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.NumericPropertyWidget.AreAxesLocked
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UNumericPropertyWidget::AreAxesLocked() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("NumericPropertyWidget", "AreAxesLocked");
+
+	Params::NumericPropertyWidget_AreAxesLocked Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -9465,560 +10025,15 @@ bool ABrickGameMode::IsReadyToStartWarmup() const
 }
 
 
-// Function BrickRigs.PagedListHeaderWidget.OnMeasurementSystemChanged
+// Function BrickRigs.BrickTeam.OnRep_MaxScore
 // (Final, Native, Private)
-// Parameters:
-// EMeasurementSystem                      NewSystem                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPagedListHeaderWidget::OnMeasurementSystemChanged(EMeasurementSystem NewSystem)
+void UBrickTeam::OnRep_MaxScore()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PagedListHeaderWidget", "OnMeasurementSystemChanged");
-
-	Params::PagedListHeaderWidget_OnMeasurementSystemChanged Parms{};
-
-	Parms.NewSystem = NewSystem;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.PagedListHeaderWidget.UpdateDimensions
-// (Event, Protected, HasOutParams, HasDefaults, BlueprintEvent)
-// Parameters:
-// const struct FVector&                   InDimensions                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FVector&                   InMaxDimensions                                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UPagedListHeaderWidget::UpdateDimensions(const struct FVector& InDimensions, const struct FVector& InMaxDimensions)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PagedListHeaderWidget", "UpdateDimensions");
-
-	Params::PagedListHeaderWidget_UpdateDimensions Parms{};
-
-	Parms.InDimensions = std::move(InDimensions);
-	Parms.InMaxDimensions = std::move(InMaxDimensions);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.PagedListHeaderWidget.UpdateEntry
-// (Event, Protected, HasOutParams, BlueprintEvent)
-// Parameters:
-// const class FText&                      InTitleText                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// bool                                    bInHasEntry                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bInHasUnsavedChanges                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UPagedListHeaderWidget::UpdateEntry(const class FText& InTitleText, bool bInHasEntry, bool bInHasUnsavedChanges)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PagedListHeaderWidget", "UpdateEntry");
-
-	Params::PagedListHeaderWidget_UpdateEntry Parms{};
-
-	Parms.InTitleText = std::move(InTitleText);
-	Parms.bInHasEntry = bInHasEntry;
-	Parms.bInHasUnsavedChanges = bInHasUnsavedChanges;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.PagedListHeaderWidget.UpdateMass
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// float                                   InMass                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   InMaxMass                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UPagedListHeaderWidget::UpdateMass(float InMass, float InMaxMass)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PagedListHeaderWidget", "UpdateMass");
-
-	Params::PagedListHeaderWidget_UpdateMass Parms{};
-
-	Parms.InMass = InMass;
-	Parms.InMaxMass = InMaxMass;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.PagedListHeaderWidget.UpdateNumObjects
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// int32                                   InNumObjects                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   InMaxNumObjects                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   InNumHiddenObjects                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   InNumObjectsWithAerodynamics                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UPagedListHeaderWidget::UpdateNumObjects(int32 InNumObjects, int32 InMaxNumObjects, int32 InNumHiddenObjects, int32 InNumObjectsWithAerodynamics)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PagedListHeaderWidget", "UpdateNumObjects");
-
-	Params::PagedListHeaderWidget_UpdateNumObjects Parms{};
-
-	Parms.InNumObjects = InNumObjects;
-	Parms.InMaxNumObjects = InMaxNumObjects;
-	Parms.InNumHiddenObjects = InNumHiddenObjects;
-	Parms.InNumObjectsWithAerodynamics = InNumObjectsWithAerodynamics;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.PagedListHeaderWidget.UpdatePrice
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// float                                   InPrice                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   InMoney                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UPagedListHeaderWidget::UpdatePrice(float InPrice, float InMoney)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PagedListHeaderWidget", "UpdatePrice");
-
-	Params::PagedListHeaderWidget_UpdatePrice Parms{};
-
-	Parms.InPrice = InPrice;
-	Parms.InMoney = InMoney;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.BrickTextBoxWidget.OnTextChanged
-// (Final, Native, Private, HasOutParams)
-// Parameters:
-// const class FText&                      NewText                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UBrickTextBoxWidget::OnTextChanged(const class FText& NewText)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickTextBoxWidget", "OnTextChanged");
-
-	Params::BrickTextBoxWidget_OnTextChanged Parms{};
-
-	Parms.NewText = std::move(NewText);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.BrickTextBoxWidget.SetAllowMultiLine
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    bInAllowMultiLine                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UBrickTextBoxWidget::SetAllowMultiLine(bool bInAllowMultiLine)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickTextBoxWidget", "SetAllowMultiLine");
-
-	Params::BrickTextBoxWidget_SetAllowMultiLine Parms{};
-
-	Parms.bInAllowMultiLine = bInAllowMultiLine;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.BrickTextBoxWidget.SetBrushStyle
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// EBrickUIBrushStyle                      InBrushStyle                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UBrickTextBoxWidget::SetBrushStyle(EBrickUIBrushStyle InBrushStyle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickTextBoxWidget", "SetBrushStyle");
-
-	Params::BrickTextBoxWidget_SetBrushStyle Parms{};
-
-	Parms.InBrushStyle = InBrushStyle;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.BrickTextBoxWidget.SetColorStyle
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// EBrickUIColorStyle                      InColorStyle                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UBrickTextBoxWidget::SetColorStyle(EBrickUIColorStyle InColorStyle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickTextBoxWidget", "SetColorStyle");
-
-	Params::BrickTextBoxWidget_SetColorStyle Parms{};
-
-	Parms.InColorStyle = InColorStyle;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.BrickTextBoxWidget.SetCustomFocus
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    bNewUseCustomFocus                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bNewFocused                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UBrickTextBoxWidget::SetCustomFocus(bool bNewUseCustomFocus, bool bNewFocused)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickTextBoxWidget", "SetCustomFocus");
-
-	Params::BrickTextBoxWidget_SetCustomFocus Parms{};
-
-	Parms.bNewUseCustomFocus = bNewUseCustomFocus;
-	Parms.bNewFocused = bNewFocused;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.BrickTextBoxWidget.SetHintText
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const class FText&                      InText                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UBrickTextBoxWidget::SetHintText(const class FText& InText)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickTextBoxWidget", "SetHintText");
-
-	Params::BrickTextBoxWidget_SetHintText Parms{};
-
-	Parms.InText = std::move(InText);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.BrickTextBoxWidget.SetIsMarquee
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    bNewMarquee                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UBrickTextBoxWidget::SetIsMarquee(bool bNewMarquee)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickTextBoxWidget", "SetIsMarquee");
-
-	Params::BrickTextBoxWidget_SetIsMarquee Parms{};
-
-	Parms.bNewMarquee = bNewMarquee;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.BrickTextBoxWidget.SetIsPassword
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    bNewIsPassword                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UBrickTextBoxWidget::SetIsPassword(bool bNewIsPassword)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickTextBoxWidget", "SetIsPassword");
-
-	Params::BrickTextBoxWidget_SetIsPassword Parms{};
-
-	Parms.bNewIsPassword = bNewIsPassword;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.BrickTextBoxWidget.SetIsReadOnly
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    bNewReadOnly                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UBrickTextBoxWidget::SetIsReadOnly(bool bNewReadOnly)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickTextBoxWidget", "SetIsReadOnly");
-
-	Params::BrickTextBoxWidget_SetIsReadOnly Parms{};
-
-	Parms.bNewReadOnly = bNewReadOnly;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.BrickTextBoxWidget.SetJustification
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// ETextJustify                            NewJustification                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UBrickTextBoxWidget::SetJustification(ETextJustify NewJustification)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickTextBoxWidget", "SetJustification");
-
-	Params::BrickTextBoxWidget_SetJustification Parms{};
-
-	Parms.NewJustification = NewJustification;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.BrickTextBoxWidget.SetMaxTextLength
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// int32                                   InMaxLength                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UBrickTextBoxWidget::SetMaxTextLength(int32 InMaxLength)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickTextBoxWidget", "SetMaxTextLength");
-
-	Params::BrickTextBoxWidget_SetMaxTextLength Parms{};
-
-	Parms.InMaxLength = InMaxLength;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.BrickTextBoxWidget.SetPaddingStyle
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// EBrickUIPaddingStyle                    InPaddingStyle                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UBrickTextBoxWidget::SetPaddingStyle(EBrickUIPaddingStyle InPaddingStyle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickTextBoxWidget", "SetPaddingStyle");
-
-	Params::BrickTextBoxWidget_SetPaddingStyle Parms{};
-
-	Parms.InPaddingStyle = InPaddingStyle;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.BrickTextBoxWidget.SetPasswordVisible
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    bNewVisible                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UBrickTextBoxWidget::SetPasswordVisible(bool bNewVisible)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickTextBoxWidget", "SetPasswordVisible");
-
-	Params::BrickTextBoxWidget_SetPasswordVisible Parms{};
-
-	Parms.bNewVisible = bNewVisible;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.BrickTextBoxWidget.SetText
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const class FText&                      InText                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// bool                                    bValidateText                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UBrickTextBoxWidget::SetText(const class FText& InText, bool bValidateText)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickTextBoxWidget", "SetText");
-
-	Params::BrickTextBoxWidget_SetText Parms{};
-
-	Parms.InText = std::move(InText);
-	Parms.bValidateText = bValidateText;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.BrickTextBoxWidget.SetTextStyle
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// EBrickUITextStyle                       InTextStyle                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UBrickTextBoxWidget::SetTextStyle(EBrickUITextStyle InTextStyle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickTextBoxWidget", "SetTextStyle");
-
-	Params::BrickTextBoxWidget_SetTextStyle Parms{};
-
-	Parms.InTextStyle = InTextStyle;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.BrickTextBoxWidget.StartTyping
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    bSelectAllText                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UBrickTextBoxWidget::StartTyping(bool bSelectAllText)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickTextBoxWidget", "StartTyping");
-
-	Params::BrickTextBoxWidget_StartTyping Parms{};
-
-	Parms.bSelectAllText = bSelectAllText;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.BrickTextBoxWidget.TogglePasswordVisible
-// (Final, Native, Public, BlueprintCallable)
-
-void UBrickTextBoxWidget::TogglePasswordVisible()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickTextBoxWidget", "TogglePasswordVisible");
+		Func = Class->GetFunction("BrickTeam", "OnRep_MaxScore");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -10029,59 +10044,138 @@ void UBrickTextBoxWidget::TogglePasswordVisible()
 }
 
 
-// Function BrickRigs.BrickTextBoxWidget.UpdateIsPassword
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bNewIsPassword                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function BrickRigs.BrickTeam.OnRep_Score
+// (Final, Native, Private)
 
-void UBrickTextBoxWidget::UpdateIsPassword(bool bNewIsPassword)
+void UBrickTeam::OnRep_Score()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BrickTextBoxWidget", "UpdateIsPassword");
+		Func = Class->GetFunction("BrickTeam", "OnRep_Score");
 
-	Params::BrickTextBoxWidget_UpdateIsPassword Parms{};
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
 
-	Parms.bNewIsPassword = bNewIsPassword;
+	UObject::ProcessEvent(Func, nullptr);
 
-	UObject::ProcessEvent(Func, &Parms);
+	Func->FunctionFlags = Flgs;
 }
 
 
-// Function BrickRigs.BrickTextBoxWidget.UpdatePasswordVisible
-// (Event, Protected, BlueprintEvent)
+// Function BrickRigs.BrickTeam.SetMaxScore
+// (Final, BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
 // Parameters:
-// bool                                    bNewVisible                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   NewMaxScore                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UBrickTextBoxWidget::UpdatePasswordVisible(bool bNewVisible)
+void UBrickTeam::SetMaxScore(int32 NewMaxScore)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BrickTextBoxWidget", "UpdatePasswordVisible");
+		Func = Class->GetFunction("BrickTeam", "SetMaxScore");
 
-	Params::BrickTextBoxWidget_UpdatePasswordVisible Parms{};
+	Params::BrickTeam_SetMaxScore Parms{};
 
-	Parms.bNewVisible = bNewVisible;
+	Parms.NewMaxScore = NewMaxScore;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
-// Function BrickRigs.BrickTextBoxWidget.GetText
+// Function BrickRigs.BrickTeam.SetScore
+// (Final, BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   NewScore                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UBrickTeam::SetScore(int32 NewScore)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickTeam", "SetScore");
+
+	Params::BrickTeam_SetScore Parms{};
+
+	Parms.NewScore = NewScore;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.BrickTeam.GetMaxScore
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UBrickTeam::GetMaxScore() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickTeam", "GetMaxScore");
+
+	Params::BrickTeam_GetMaxScore Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.BrickTeam.GetScore
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UBrickTeam::GetScore() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickTeam", "GetScore");
+
+	Params::BrickTeam_GetScore Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.BrickTeam.GetTeamDisplayName
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
-class FText UBrickTextBoxWidget::GetText() const
+class FText UBrickTeam::GetTeamDisplayName() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BrickTextBoxWidget", "GetText");
+		Func = Class->GetFunction("BrickTeam", "GetTeamDisplayName");
 
-	Params::BrickTextBoxWidget_GetText Parms{};
+	Params::BrickTeam_GetTeamDisplayName Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -10094,19 +10188,19 @@ class FText UBrickTextBoxWidget::GetText() const
 }
 
 
-// Function BrickRigs.BrickTextBoxWidget.IsMarquee
+// Function BrickRigs.BrickTeam.GetTeamId
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FGenericTeamId             ReturnValue                                            (ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UBrickTextBoxWidget::IsMarquee() const
+const struct FGenericTeamId UBrickTeam::GetTeamId() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BrickTextBoxWidget", "IsMarquee");
+		Func = Class->GetFunction("BrickTeam", "GetTeamId");
 
-	Params::BrickTextBoxWidget_IsMarquee Parms{};
+	Params::BrickTeam_GetTeamId Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -10119,19 +10213,21 @@ bool UBrickTextBoxWidget::IsMarquee() const
 }
 
 
-// Function BrickRigs.BrickTextBoxWidget.IsPasswordVisible
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Function BrickRigs.BrickSpacer.SetColorStyle
+// (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EBrickUIColorStyle                      NewStyle                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UBrickTextBoxWidget::IsPasswordVisible() const
+void UBrickSpacer::SetColorStyle(EBrickUIColorStyle NewStyle)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BrickTextBoxWidget", "IsPasswordVisible");
+		Func = Class->GetFunction("BrickSpacer", "SetColorStyle");
 
-	Params::BrickTextBoxWidget_IsPasswordVisible Parms{};
+	Params::BrickSpacer_SetColorStyle Parms{};
+
+	Parms.NewStyle = NewStyle;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -10139,58 +10235,6 @@ bool UBrickTextBoxWidget::IsPasswordVisible() const
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.BrickTextBoxWidget.IsReadOnly
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UBrickTextBoxWidget::IsReadOnly() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickTextBoxWidget", "IsReadOnly");
-
-	Params::BrickTextBoxWidget_IsReadOnly Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.BrickTextBoxWidget.IsTyping
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UBrickTextBoxWidget::IsTyping() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickTextBoxWidget", "IsTyping");
-
-	Params::BrickTextBoxWidget_IsTyping Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
@@ -10278,180 +10322,22 @@ class ABasePlayerController* UPopupParams::GetOwningPlayer() const
 }
 
 
-// Function BrickRigs.ChatMessageWidget.OpenContextMenu
-// (Final, Native, Public, BlueprintCallable)
-
-void UChatMessageWidget::OpenContextMenu()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ChatMessageWidget", "OpenContextMenu");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.ChatMessageWidget.UpdateColorStyle
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// EBrickUIColorStyle                      NewColorStyle                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UChatMessageWidget::UpdateColorStyle(EBrickUIColorStyle NewColorStyle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ChatMessageWidget", "UpdateColorStyle");
-
-	Params::ChatMessageWidget_UpdateColorStyle Parms{};
-
-	Parms.NewColorStyle = NewColorStyle;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.ChatMessageWidget.UpdateMessageText
-// (Event, Public, HasOutParams, BlueprintEvent)
-// Parameters:
-// const class FText&                      NewText                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UChatMessageWidget::UpdateMessageText(const class FText& NewText)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ChatMessageWidget", "UpdateMessageText");
-
-	Params::ChatMessageWidget_UpdateMessageText Parms{};
-
-	Parms.NewText = std::move(NewText);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.BrickUnitsSliderWidget.CycleUnitsDisplayMode
-// (Final, Native, Public, BlueprintCallable)
-
-void UBrickUnitsSliderWidget::CycleUnitsDisplayMode()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickUnitsSliderWidget", "CycleUnitsDisplayMode");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.BrickUnitsSliderWidget.OnSliderValueChanged
+// Function BrickRigs.BrickVehicleDownloadReplicator.OnRep_DownloadProgress
 // (Final, Native, Private)
-// Parameters:
-// float                                   NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EValueChangedEventType                  EventType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UBrickUnitsSliderWidget::OnSliderValueChanged(float NewValue, EValueChangedEventType EventType)
+void ABrickVehicleDownloadReplicator::OnRep_DownloadProgress()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BrickUnitsSliderWidget", "OnSliderValueChanged");
-
-	Params::BrickUnitsSliderWidget_OnSliderValueChanged Parms{};
-
-	Parms.NewValue = NewValue;
-	Parms.EventType = EventType;
+		Func = Class->GetFunction("BrickVehicleDownloadReplicator", "OnRep_DownloadProgress");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.BrickUnitsSliderWidget.SetValue
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const struct FBrickUnits&               NewValue                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void UBrickUnitsSliderWidget::SetValue(const struct FBrickUnits& NewValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickUnitsSliderWidget", "SetValue");
-
-	Params::BrickUnitsSliderWidget_SetValue Parms{};
-
-	Parms.NewValue = std::move(NewValue);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.BrickUnitsSliderWidget.SetValueRange
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const struct FBrickUnits&               InMinValue                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// const struct FBrickUnits&               InMaxValue                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void UBrickUnitsSliderWidget::SetValueRange(const struct FBrickUnits& InMinValue, const struct FBrickUnits& InMaxValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickUnitsSliderWidget", "SetValueRange");
-
-	Params::BrickUnitsSliderWidget_SetValueRange Parms{};
-
-	Parms.InMinValue = std::move(InMinValue);
-	Parms.InMaxValue = std::move(InMaxValue);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.BrickUnitsSliderWidget.UpdateUnitsDisplayMode
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// const EBrickUnitsDisplayMode            NewMode                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UBrickUnitsSliderWidget::UpdateUnitsDisplayMode(const EBrickUnitsDisplayMode NewMode)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickUnitsSliderWidget", "UpdateUnitsDisplayMode");
-
-	Params::BrickUnitsSliderWidget_UpdateUnitsDisplayMode Parms{};
-
-	Parms.NewMode = NewMode;
-
-	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -10516,31 +10402,6 @@ void UBindKeyPopupWidget::UpdateIsBindingKey(bool bNewIsBinding)
 }
 
 
-// Function BrickRigs.PropertyWidget.UpdateIsReadOnly
-// (Native, Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bNewReadOnly                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UPropertyWidget::UpdateIsReadOnly(bool bNewReadOnly)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PropertyWidget", "UpdateIsReadOnly");
-
-	Params::PropertyWidget_UpdateIsReadOnly Parms{};
-
-	Parms.bNewReadOnly = bNewReadOnly;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function BrickRigs.BoolPropertyWidget.InitializeItem
 // (Final, Native, Private, HasOutParams)
 // Parameters:
@@ -10597,6 +10458,81 @@ void UBoolPropertyWidget::OnItemSelected(int32 Item, EValueChangedEventType Even
 }
 
 
+// Function BrickRigs.BrickTextBlock.SetColorStyle
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// EBrickUIColorStyle                      NewStyle                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UBrickTextBlock::SetColorStyle(EBrickUIColorStyle NewStyle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickTextBlock", "SetColorStyle");
+
+	Params::BrickTextBlock_SetColorStyle Parms{};
+
+	Parms.NewStyle = NewStyle;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.BrickTextBlock.SetStyleState
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// EBrickUIStyleState                      NewState                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UBrickTextBlock::SetStyleState(EBrickUIStyleState NewState)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickTextBlock", "SetStyleState");
+
+	Params::BrickTextBlock_SetStyleState Parms{};
+
+	Parms.NewState = NewState;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.BrickTextBlock.SetTextStyle
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// EBrickUITextStyle                       NewStyle                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UBrickTextBlock::SetTextStyle(EBrickUITextStyle NewStyle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickTextBlock", "SetTextStyle");
+
+	Params::BrickTextBlock_SetTextStyle Parms{};
+
+	Parms.NewStyle = NewStyle;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function BrickRigs.BrickAssetManager.Get
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
@@ -10619,31 +10555,6 @@ class UBrickAssetManager* UBrickAssetManager::Get()
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.BrickVerticalBox.SetSlotSpacingStyle
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// EBrickUISpacingStyle                    NewStyle                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UBrickVerticalBox::SetSlotSpacingStyle(EBrickUISpacingStyle NewStyle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickVerticalBox", "SetSlotSpacingStyle");
-
-	Params::BrickVerticalBox_SetSlotSpacingStyle Parms{};
-
-	Parms.NewStyle = NewStyle;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
@@ -11887,21 +11798,23 @@ bool ABrickCharacter::ShouldFire() const
 }
 
 
-// Function BrickRigs.VehicleInputComponent.Brake
-// (Final, Native, Protected)
+// Function BrickRigs.CarWheelBrick.OnRootComponentWake
+// (Final, Native, Private)
 // Parameters:
-// float                                   Val                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UPrimitiveComponent*              SleepingComponent                                      (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             BoneName                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVehicleInputComponent::Brake(float Val)
+void UCarWheelBrick::OnRootComponentWake(class UPrimitiveComponent* SleepingComponent, class FName BoneName)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleInputComponent", "Brake");
+		Func = Class->GetFunction("CarWheelBrick", "OnRootComponentWake");
 
-	Params::VehicleInputComponent_Brake Parms{};
+	Params::CarWheelBrick_OnRootComponentWake Parms{};
 
-	Parms.Val = Val;
+	Parms.SleepingComponent = SleepingComponent;
+	Parms.BoneName = BoneName;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -11912,15 +11825,15 @@ void UVehicleInputComponent::Brake(float Val)
 }
 
 
-// Function BrickRigs.VehicleInputComponent.OnHeldCycleCamera
-// (Final, Native, Protected)
+// Function BrickRigs.JoinSessionPopupWidget.CancelJoinSession
+// (Final, Native, Public, BlueprintCallable)
 
-void UVehicleInputComponent::OnHeldCycleCamera()
+void UJoinSessionPopupWidget::CancelJoinSession()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleInputComponent", "OnHeldCycleCamera");
+		Func = Class->GetFunction("JoinSessionPopupWidget", "CancelJoinSession");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -11931,15 +11844,15 @@ void UVehicleInputComponent::OnHeldCycleCamera()
 }
 
 
-// Function BrickRigs.VehicleInputComponent.OnHeldCycleFireActionMode
-// (Final, Native, Protected)
+// Function BrickRigs.JoinSessionPopupWidget.JoinSession
+// (Final, Native, Public, BlueprintCallable)
 
-void UVehicleInputComponent::OnHeldCycleFireActionMode()
+void UJoinSessionPopupWidget::JoinSession()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleInputComponent", "OnHeldCycleFireActionMode");
+		Func = Class->GetFunction("JoinSessionPopupWidget", "JoinSession");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -11950,1028 +11863,23 @@ void UVehicleInputComponent::OnHeldCycleFireActionMode()
 }
 
 
-// Function BrickRigs.VehicleInputComponent.OnHeldCycleSeats
-// (Final, Native, Protected)
-
-void UVehicleInputComponent::OnHeldCycleSeats()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleInputComponent", "OnHeldCycleSeats");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.VehicleInputComponent.OnHeldCycleSiren
-// (Final, Native, Protected)
-
-void UVehicleInputComponent::OnHeldCycleSiren()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleInputComponent", "OnHeldCycleSiren");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.VehicleInputComponent.OnHeldPinVehicle
-// (Final, Native, Protected)
-
-void UVehicleInputComponent::OnHeldPinVehicle()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleInputComponent", "OnHeldPinVehicle");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.VehicleInputComponent.OnHeldToggleSteering
-// (Final, Native, Protected)
-
-void UVehicleInputComponent::OnHeldToggleSteering()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleInputComponent", "OnHeldToggleSteering");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.VehicleInputComponent.OnPressedAction1
-// (Final, Native, Protected)
-
-void UVehicleInputComponent::OnPressedAction1()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleInputComponent", "OnPressedAction1");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.VehicleInputComponent.OnPressedAction2
-// (Final, Native, Protected)
-
-void UVehicleInputComponent::OnPressedAction2()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleInputComponent", "OnPressedAction2");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.VehicleInputComponent.OnPressedAction3
-// (Final, Native, Protected)
-
-void UVehicleInputComponent::OnPressedAction3()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleInputComponent", "OnPressedAction3");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.VehicleInputComponent.OnPressedAction4
-// (Final, Native, Protected)
-
-void UVehicleInputComponent::OnPressedAction4()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleInputComponent", "OnPressedAction4");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.VehicleInputComponent.OnPressedAction5
-// (Final, Native, Protected)
-
-void UVehicleInputComponent::OnPressedAction5()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleInputComponent", "OnPressedAction5");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.VehicleInputComponent.OnPressedAction6
-// (Final, Native, Protected)
-
-void UVehicleInputComponent::OnPressedAction6()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleInputComponent", "OnPressedAction6");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.VehicleInputComponent.OnPressedAction7
-// (Final, Native, Protected)
-
-void UVehicleInputComponent::OnPressedAction7()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleInputComponent", "OnPressedAction7");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.VehicleInputComponent.OnPressedAction8
-// (Final, Native, Protected)
-
-void UVehicleInputComponent::OnPressedAction8()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleInputComponent", "OnPressedAction8");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.VehicleInputComponent.OnPressedBeacon
-// (Final, Native, Protected)
-
-void UVehicleInputComponent::OnPressedBeacon()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleInputComponent", "OnPressedBeacon");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.VehicleInputComponent.OnPressedCaptureVehicleThumbnail
-// (Final, Native, Protected)
-
-void UVehicleInputComponent::OnPressedCaptureVehicleThumbnail()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleInputComponent", "OnPressedCaptureVehicleThumbnail");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.VehicleInputComponent.OnPressedCycleCamera
-// (Final, Native, Protected)
-
-void UVehicleInputComponent::OnPressedCycleCamera()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleInputComponent", "OnPressedCycleCamera");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.VehicleInputComponent.OnPressedCycleCameraMode
-// (Final, Native, Protected)
-
-void UVehicleInputComponent::OnPressedCycleCameraMode()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleInputComponent", "OnPressedCycleCameraMode");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.VehicleInputComponent.OnPressedCycleFireActionMode
-// (Final, Native, Protected)
-
-void UVehicleInputComponent::OnPressedCycleFireActionMode()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleInputComponent", "OnPressedCycleFireActionMode");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.VehicleInputComponent.OnPressedCycleSeats
-// (Final, Native, Protected)
-
-void UVehicleInputComponent::OnPressedCycleSeats()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleInputComponent", "OnPressedCycleSeats");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.VehicleInputComponent.OnPressedCycleSiren
-// (Final, Native, Protected)
-
-void UVehicleInputComponent::OnPressedCycleSiren()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleInputComponent", "OnPressedCycleSiren");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.VehicleInputComponent.OnPressedExitVehicle
-// (Final, Native, Protected)
-
-void UVehicleInputComponent::OnPressedExitVehicle()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleInputComponent", "OnPressedExitVehicle");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.VehicleInputComponent.OnPressedHandBrake
-// (Final, Native, Protected)
-
-void UVehicleInputComponent::OnPressedHandBrake()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleInputComponent", "OnPressedHandBrake");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.VehicleInputComponent.OnPressedHeadlight
-// (Final, Native, Protected)
-
-void UVehicleInputComponent::OnPressedHeadlight()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleInputComponent", "OnPressedHeadlight");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.VehicleInputComponent.OnPressedHorn
-// (Final, Native, Protected)
-
-void UVehicleInputComponent::OnPressedHorn()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleInputComponent", "OnPressedHorn");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.VehicleInputComponent.OnPressedOperationMode
-// (Final, Native, Protected)
-
-void UVehicleInputComponent::OnPressedOperationMode()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleInputComponent", "OnPressedOperationMode");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.VehicleInputComponent.OnPressedPinVehicle
-// (Final, Native, Protected)
-
-void UVehicleInputComponent::OnPressedPinVehicle()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleInputComponent", "OnPressedPinVehicle");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.VehicleInputComponent.OnPressedShiftDown
-// (Final, Native, Protected)
-
-void UVehicleInputComponent::OnPressedShiftDown()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleInputComponent", "OnPressedShiftDown");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.VehicleInputComponent.OnPressedShiftUp
-// (Final, Native, Protected)
-
-void UVehicleInputComponent::OnPressedShiftUp()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleInputComponent", "OnPressedShiftUp");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.VehicleInputComponent.OnPressedToggleSteering
-// (Final, Native, Protected)
-
-void UVehicleInputComponent::OnPressedToggleSteering()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleInputComponent", "OnPressedToggleSteering");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.VehicleInputComponent.OnPressedWarningLight
-// (Final, Native, Protected)
-
-void UVehicleInputComponent::OnPressedWarningLight()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleInputComponent", "OnPressedWarningLight");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.VehicleInputComponent.OnReleasedAction1
-// (Final, Native, Protected)
-
-void UVehicleInputComponent::OnReleasedAction1()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleInputComponent", "OnReleasedAction1");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.VehicleInputComponent.OnReleasedAction2
-// (Final, Native, Protected)
-
-void UVehicleInputComponent::OnReleasedAction2()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleInputComponent", "OnReleasedAction2");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.VehicleInputComponent.OnReleasedAction3
-// (Final, Native, Protected)
-
-void UVehicleInputComponent::OnReleasedAction3()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleInputComponent", "OnReleasedAction3");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.VehicleInputComponent.OnReleasedAction4
-// (Final, Native, Protected)
-
-void UVehicleInputComponent::OnReleasedAction4()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleInputComponent", "OnReleasedAction4");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.VehicleInputComponent.OnReleasedAction5
-// (Final, Native, Protected)
-
-void UVehicleInputComponent::OnReleasedAction5()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleInputComponent", "OnReleasedAction5");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.VehicleInputComponent.OnReleasedAction6
-// (Final, Native, Protected)
-
-void UVehicleInputComponent::OnReleasedAction6()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleInputComponent", "OnReleasedAction6");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.VehicleInputComponent.OnReleasedAction7
-// (Final, Native, Protected)
-
-void UVehicleInputComponent::OnReleasedAction7()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleInputComponent", "OnReleasedAction7");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.VehicleInputComponent.OnReleasedAction8
-// (Final, Native, Protected)
-
-void UVehicleInputComponent::OnReleasedAction8()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleInputComponent", "OnReleasedAction8");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.VehicleInputComponent.OnReleasedCycleCamera
-// (Final, Native, Protected)
-
-void UVehicleInputComponent::OnReleasedCycleCamera()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleInputComponent", "OnReleasedCycleCamera");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.VehicleInputComponent.OnReleasedCycleFireActionMode
-// (Final, Native, Protected)
-
-void UVehicleInputComponent::OnReleasedCycleFireActionMode()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleInputComponent", "OnReleasedCycleFireActionMode");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.VehicleInputComponent.OnReleasedCycleSeats
-// (Final, Native, Protected)
-
-void UVehicleInputComponent::OnReleasedCycleSeats()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleInputComponent", "OnReleasedCycleSeats");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.VehicleInputComponent.OnReleasedCycleSiren
-// (Final, Native, Protected)
-
-void UVehicleInputComponent::OnReleasedCycleSiren()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleInputComponent", "OnReleasedCycleSiren");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.VehicleInputComponent.OnReleasedHandBrake
-// (Final, Native, Protected)
-
-void UVehicleInputComponent::OnReleasedHandBrake()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleInputComponent", "OnReleasedHandBrake");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.VehicleInputComponent.OnReleasedHorn
-// (Final, Native, Protected)
-
-void UVehicleInputComponent::OnReleasedHorn()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleInputComponent", "OnReleasedHorn");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.VehicleInputComponent.OnReleasedOperationMode
-// (Final, Native, Protected)
-
-void UVehicleInputComponent::OnReleasedOperationMode()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleInputComponent", "OnReleasedOperationMode");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.VehicleInputComponent.OnReleasedPinVehicle
-// (Final, Native, Protected)
-
-void UVehicleInputComponent::OnReleasedPinVehicle()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleInputComponent", "OnReleasedPinVehicle");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.VehicleInputComponent.OnReleasedToggleSteering
-// (Final, Native, Protected)
-
-void UVehicleInputComponent::OnReleasedToggleSteering()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleInputComponent", "OnReleasedToggleSteering");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.VehicleInputComponent.OnTappedCycleCamera
-// (Final, Native, Protected)
-
-void UVehicleInputComponent::OnTappedCycleCamera()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleInputComponent", "OnTappedCycleCamera");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.VehicleInputComponent.OnTappedCycleFireActionMode
-// (Final, Native, Protected)
-
-void UVehicleInputComponent::OnTappedCycleFireActionMode()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleInputComponent", "OnTappedCycleFireActionMode");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.VehicleInputComponent.OnTappedCycleSeats
-// (Final, Native, Protected)
-
-void UVehicleInputComponent::OnTappedCycleSeats()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleInputComponent", "OnTappedCycleSeats");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.VehicleInputComponent.OnTappedCycleSiren
-// (Final, Native, Protected)
-
-void UVehicleInputComponent::OnTappedCycleSiren()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleInputComponent", "OnTappedCycleSiren");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.VehicleInputComponent.OnTappedPinVehicle
-// (Final, Native, Protected)
-
-void UVehicleInputComponent::OnTappedPinVehicle()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleInputComponent", "OnTappedPinVehicle");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.VehicleInputComponent.OnTappedToggleSteering
-// (Final, Native, Protected)
-
-void UVehicleInputComponent::OnTappedToggleSteering()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleInputComponent", "OnTappedToggleSteering");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.VehicleInputComponent.OnToggleOperationMode
-// (Final, Native, Protected)
-
-void UVehicleInputComponent::OnToggleOperationMode()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleInputComponent", "OnToggleOperationMode");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.VehicleInputComponent.Pitch
-// (Final, Native, Protected)
+// Function BrickRigs.JoinSessionPopupWidget.OnPasswordChanged
+// (Final, Native, Private, HasOutParams)
 // Parameters:
-// float                                   Val                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FText&                      NewText                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// EValueChangedEventType                  EventType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVehicleInputComponent::Pitch(float Val)
+void UJoinSessionPopupWidget::OnPasswordChanged(const class FText& NewText, EValueChangedEventType EventType)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleInputComponent", "Pitch");
+		Func = Class->GetFunction("JoinSessionPopupWidget", "OnPasswordChanged");
 
-	Params::VehicleInputComponent_Pitch Parms{};
+	Params::JoinSessionPopupWidget_OnPasswordChanged Parms{};
 
-	Parms.Val = Val;
+	Parms.NewText = std::move(NewText);
+	Parms.EventType = EventType;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -12982,21 +11890,140 @@ void UVehicleInputComponent::Pitch(float Val)
 }
 
 
-// Function BrickRigs.VehicleInputComponent.Steering
-// (Final, Native, Protected)
+// Function BrickRigs.JoinSessionPopupWidget.UpdateJoinState
+// (Event, Protected, BlueprintEvent)
 // Parameters:
-// float                                   Val                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EJoinSessionState                       InJoinState                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bInPasswordRequired                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bInHasPassword                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVehicleInputComponent::Steering(float Val)
+void UJoinSessionPopupWidget::UpdateJoinState(EJoinSessionState InJoinState, bool bInPasswordRequired, bool bInHasPassword)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleInputComponent", "Steering");
+		Func = Class->GetFunction("JoinSessionPopupWidget", "UpdateJoinState");
 
-	Params::VehicleInputComponent_Steering Parms{};
+	Params::JoinSessionPopupWidget_UpdateJoinState Parms{};
 
-	Parms.Val = Val;
+	Parms.InJoinState = InJoinState;
+	Parms.bInPasswordRequired = bInPasswordRequired;
+	Parms.bInHasPassword = bInHasPassword;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.BrickPlayerState.OnRep_Deaths
+// (Final, Native, Private)
+
+void ABrickPlayerState::OnRep_Deaths()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickPlayerState", "OnRep_Deaths");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.BrickPlayerState.OnRep_IsAdmin
+// (Final, Native, Private)
+
+void ABrickPlayerState::OnRep_IsAdmin()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickPlayerState", "OnRep_IsAdmin");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.BrickPlayerState.OnRep_IsAlive
+// (Final, Native, Private)
+
+void ABrickPlayerState::OnRep_IsAlive()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickPlayerState", "OnRep_IsAlive");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.BrickPlayerState.OnRep_IsTeamLeader
+// (Final, Native, Private)
+
+void ABrickPlayerState::OnRep_IsTeamLeader()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickPlayerState", "OnRep_IsTeamLeader");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.BrickPlayerState.OnRep_Kills
+// (Final, Native, Private)
+
+void ABrickPlayerState::OnRep_Kills()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickPlayerState", "OnRep_Kills");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.BrickPlayerState.OnRep_Money
+// (Final, Native, Private)
+// Parameters:
+// float                                   PrevValue                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ABrickPlayerState::OnRep_Money(float PrevValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickPlayerState", "OnRep_Money");
+
+	Params::BrickPlayerState_OnRep_Money Parms{};
+
+	Parms.PrevValue = PrevValue;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -13007,21 +12034,40 @@ void UVehicleInputComponent::Steering(float Val)
 }
 
 
-// Function BrickRigs.VehicleInputComponent.Throttle
-// (Final, Native, Protected)
-// Parameters:
-// float                                   Val                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function BrickRigs.BrickPlayerState.OnRep_TeamId
+// (Final, Native, Private)
 
-void UVehicleInputComponent::Throttle(float Val)
+void ABrickPlayerState::OnRep_TeamId()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleInputComponent", "Throttle");
+		Func = Class->GetFunction("BrickPlayerState", "OnRep_TeamId");
 
-	Params::VehicleInputComponent_Throttle Parms{};
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
 
-	Parms.Val = Val;
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.BrickPlayerState.SetDeaths
+// (Final, BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   NewDeaths                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ABrickPlayerState::SetDeaths(int32 NewDeaths)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickPlayerState", "SetDeaths");
+
+	Params::BrickPlayerState_SetDeaths Parms{};
+
+	Parms.NewDeaths = NewDeaths;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -13032,21 +12078,21 @@ void UVehicleInputComponent::Throttle(float Val)
 }
 
 
-// Function BrickRigs.VehicleInputComponent.ViewPitch
-// (Final, Native, Protected)
+// Function BrickRigs.BrickPlayerState.SetIsAdmin
+// (Final, BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
 // Parameters:
-// float                                   Val                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bNewIsAdmin                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVehicleInputComponent::ViewPitch(float Val)
+void ABrickPlayerState::SetIsAdmin(bool bNewIsAdmin)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleInputComponent", "ViewPitch");
+		Func = Class->GetFunction("BrickPlayerState", "SetIsAdmin");
 
-	Params::VehicleInputComponent_ViewPitch Parms{};
+	Params::BrickPlayerState_SetIsAdmin Parms{};
 
-	Parms.Val = Val;
+	Parms.bNewIsAdmin = bNewIsAdmin;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -13057,21 +12103,21 @@ void UVehicleInputComponent::ViewPitch(float Val)
 }
 
 
-// Function BrickRigs.VehicleInputComponent.ViewYaw
-// (Final, Native, Protected)
+// Function BrickRigs.BrickPlayerState.SetIsAlive
+// (Final, BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
 // Parameters:
-// float                                   Val                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bInIsAlive                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVehicleInputComponent::ViewYaw(float Val)
+void ABrickPlayerState::SetIsAlive(bool bInIsAlive)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleInputComponent", "ViewYaw");
+		Func = Class->GetFunction("BrickPlayerState", "SetIsAlive");
 
-	Params::VehicleInputComponent_ViewYaw Parms{};
+	Params::BrickPlayerState_SetIsAlive Parms{};
 
-	Parms.Val = Val;
+	Parms.bInIsAlive = bInIsAlive;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -13082,19 +12128,319 @@ void UVehicleInputComponent::ViewYaw(float Val)
 }
 
 
-// Function BrickRigs.VehicleInputComponent.GetCycleCameraModeValueText
-// (Final, Native, Protected, Const)
+// Function BrickRigs.BrickPlayerState.SetIsTeamLeader
+// (Final, BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bNewLeader                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ABrickPlayerState::SetIsTeamLeader(bool bNewLeader)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickPlayerState", "SetIsTeamLeader");
+
+	Params::BrickPlayerState_SetIsTeamLeader Parms{};
+
+	Parms.bNewLeader = bNewLeader;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.BrickPlayerState.SetKills
+// (Final, BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   NewKills                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ABrickPlayerState::SetKills(int32 NewKills)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickPlayerState", "SetKills");
+
+	Params::BrickPlayerState_SetKills Parms{};
+
+	Parms.NewKills = NewKills;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.BrickPlayerState.SetMoney
+// (Final, BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ABrickPlayerState::SetMoney(float NewValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickPlayerState", "SetMoney");
+
+	Params::BrickPlayerState_SetMoney Parms{};
+
+	Parms.NewValue = NewValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.BrickPlayerState.SetScore
+// (Final, BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   NewScore                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ABrickPlayerState::SetScore(float NewScore)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickPlayerState", "SetScore");
+
+	Params::BrickPlayerState_SetScore Parms{};
+
+	Parms.NewScore = NewScore;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.BrickPlayerState.GetDeaths
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 ABrickPlayerState::GetDeaths() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickPlayerState", "GetDeaths");
+
+	Params::BrickPlayerState_GetDeaths Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.BrickPlayerState.GetKills
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 ABrickPlayerState::GetKills() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickPlayerState", "GetKills");
+
+	Params::BrickPlayerState_GetKills Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.BrickPlayerState.GetMoney
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float ABrickPlayerState::GetMoney() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickPlayerState", "GetMoney");
+
+	Params::BrickPlayerState_GetMoney Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.BrickPlayerState.GetPlayerNameText
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
-class FText UVehicleInputComponent::GetCycleCameraModeValueText() const
+class FText ABrickPlayerState::GetPlayerNameText() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleInputComponent", "GetCycleCameraModeValueText");
+		Func = Class->GetFunction("BrickPlayerState", "GetPlayerNameText");
 
-	Params::VehicleInputComponent_GetCycleCameraModeValueText Parms{};
+	Params::BrickPlayerState_GetPlayerNameText Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.BrickPlayerState.GetUncompressedPing
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 ABrickPlayerState::GetUncompressedPing() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickPlayerState", "GetUncompressedPing");
+
+	Params::BrickPlayerState_GetUncompressedPing Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.BrickPlayerState.IsAdmin
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool ABrickPlayerState::IsAdmin() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickPlayerState", "IsAdmin");
+
+	Params::BrickPlayerState_IsAdmin Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.BrickPlayerState.IsAlive
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool ABrickPlayerState::IsAlive() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickPlayerState", "IsAlive");
+
+	Params::BrickPlayerState_IsAlive Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.BrickPlayerState.IsHost
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool ABrickPlayerState::IsHost() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickPlayerState", "IsHost");
+
+	Params::BrickPlayerState_IsHost Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.BrickPlayerState.IsTeamLeader
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool ABrickPlayerState::IsTeamLeader() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickPlayerState", "IsTeamLeader");
+
+	Params::BrickPlayerState_IsTeamLeader Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -13193,15 +12539,15 @@ class FText UBrickDataSingleton::GetColorDisplayName(const struct FLinearColor& 
 }
 
 
-// Function BrickRigs.HUDIconWidget.InitializeIcon
-// (Native, Event, Public, BlueprintEvent)
+// Function BrickRigs.CapturePoint.OnCapturedByChanged
+// (Final, Native, Private)
 
-void UHUDIconWidget::InitializeIcon()
+void ACapturePoint::OnCapturedByChanged()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("HUDIconWidget", "InitializeIcon");
+		Func = Class->GetFunction("CapturePoint", "OnCapturedByChanged");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -13212,15 +12558,15 @@ void UHUDIconWidget::InitializeIcon()
 }
 
 
-// Function BrickRigs.HUDIconWidget.PostInitializeIcon
-// (Native, Event, Public, BlueprintEvent)
+// Function BrickRigs.CapturePoint.OnCapturingTeamChanged
+// (Final, Native, Private)
 
-void UHUDIconWidget::PostInitializeIcon()
+void ACapturePoint::OnCapturingTeamChanged()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("HUDIconWidget", "PostInitializeIcon");
+		Func = Class->GetFunction("CapturePoint", "OnCapturingTeamChanged");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -13231,65 +12577,15 @@ void UHUDIconWidget::PostInitializeIcon()
 }
 
 
-// Function BrickRigs.HUDIconWidget.SetIconColorStyle
-// (Final, Native, Protected, BlueprintCallable)
-// Parameters:
-// EBrickUIColorStyle                      NewColorStyle                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function BrickRigs.CapturePoint.OnRep_CaptureRatio
+// (Final, Native, Private)
 
-void UHUDIconWidget::SetIconColorStyle(EBrickUIColorStyle NewColorStyle)
+void ACapturePoint::OnRep_CaptureRatio()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("HUDIconWidget", "SetIconColorStyle");
-
-	Params::HUDIconWidget_SetIconColorStyle Parms{};
-
-	Parms.NewColorStyle = NewColorStyle;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.HUDIconWidget.SetIconSlot
-// (Final, Native, Protected, BlueprintCallable)
-// Parameters:
-// const struct FBrickUIIconSlot&          NewSlot                                                (Parm, NoDestructor, NativeAccessSpecifierPublic)
-
-void UHUDIconWidget::SetIconSlot(const struct FBrickUIIconSlot& NewSlot)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("HUDIconWidget", "SetIconSlot");
-
-	Params::HUDIconWidget_SetIconSlot Parms{};
-
-	Parms.NewSlot = std::move(NewSlot);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.HUDIconWidget.UninitializeIcon
-// (Native, Event, Public, BlueprintEvent)
-
-void UHUDIconWidget::UninitializeIcon()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("HUDIconWidget", "UninitializeIcon");
+		Func = Class->GetFunction("CapturePoint", "OnRep_CaptureRatio");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -13300,21 +12596,31 @@ void UHUDIconWidget::UninitializeIcon()
 }
 
 
-// Function BrickRigs.HUDIconWidget.UpdateIconRotation
-// (Native, Event, Public, BlueprintEvent)
+// Function BrickRigs.CapturePoint.OnTriggerBeginOverlap
+// (Final, Native, Private, HasOutParams)
 // Parameters:
-// float                                   NewRotation                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UPrimitiveComponent*              OverlappedComponent                                    (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           OtherActor                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   OtherBodyIndex                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bFromSweep                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FHitResult&                SweepResult                                            (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 
-void UHUDIconWidget::UpdateIconRotation(float NewRotation)
+void ACapturePoint::OnTriggerBeginOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("HUDIconWidget", "UpdateIconRotation");
+		Func = Class->GetFunction("CapturePoint", "OnTriggerBeginOverlap");
 
-	Params::HUDIconWidget_UpdateIconRotation Parms{};
+	Params::CapturePoint_OnTriggerBeginOverlap Parms{};
 
-	Parms.NewRotation = NewRotation;
+	Parms.OverlappedComponent = OverlappedComponent;
+	Parms.OtherActor = OtherActor;
+	Parms.OtherComp = OtherComp;
+	Parms.OtherBodyIndex = OtherBodyIndex;
+	Parms.bFromSweep = bFromSweep;
+	Parms.SweepResult = std::move(SweepResult);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -13325,23 +12631,27 @@ void UHUDIconWidget::UpdateIconRotation(float NewRotation)
 }
 
 
-// Function BrickRigs.HUDIconWidget.UpdateIconStyle
-// (Native, Event, Public, BlueprintEvent)
+// Function BrickRigs.CapturePoint.OnTriggerEndOverlap
+// (Final, Native, Private)
 // Parameters:
-// EBrickUIColorStyle                      InColorStyle                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EBrickUIStyleState                      InStyleState                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UPrimitiveComponent*              OverlappedComponent                                    (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           OtherActor                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   OtherBodyIndex                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UHUDIconWidget::UpdateIconStyle(EBrickUIColorStyle InColorStyle, EBrickUIStyleState InStyleState)
+void ACapturePoint::OnTriggerEndOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("HUDIconWidget", "UpdateIconStyle");
+		Func = Class->GetFunction("CapturePoint", "OnTriggerEndOverlap");
 
-	Params::HUDIconWidget_UpdateIconStyle Parms{};
+	Params::CapturePoint_OnTriggerEndOverlap Parms{};
 
-	Parms.InColorStyle = InColorStyle;
-	Parms.InStyleState = InStyleState;
+	Parms.OverlappedComponent = OverlappedComponent;
+	Parms.OtherActor = OtherActor;
+	Parms.OtherComp = OtherComp;
+	Parms.OtherBodyIndex = OtherBodyIndex;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -13352,38 +12662,24 @@ void UHUDIconWidget::UpdateIconStyle(EBrickUIColorStyle InColorStyle, EBrickUISt
 }
 
 
-// Function BrickRigs.HUDIconWidget.UpdateNameText
-// (Final, Native, Protected, BlueprintCallable)
-
-void UHUDIconWidget::UpdateNameText()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("HUDIconWidget", "UpdateNameText");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.HUDIconWidget.GetIconDisplayName
-// (Native, Event, Public, BlueprintEvent, Const)
+// Function BrickRigs.CapturePoint.SetCapturedBy
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+// const struct FGenericTeamId&            TeamID                                                 (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bNewHasBeenCaptured                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class FText UHUDIconWidget::GetIconDisplayName() const
+bool ACapturePoint::SetCapturedBy(const struct FGenericTeamId& TeamID, bool bNewHasBeenCaptured)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("HUDIconWidget", "GetIconDisplayName");
+		Func = Class->GetFunction("CapturePoint", "SetCapturedBy");
 
-	Params::HUDIconWidget_GetIconDisplayName Parms{};
+	Params::CapturePoint_SetCapturedBy Parms{};
+
+	Parms.TeamID = std::move(TeamID);
+	Parms.bNewHasBeenCaptured = bNewHasBeenCaptured;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -13396,20 +12692,22 @@ class FText UHUDIconWidget::GetIconDisplayName() const
 }
 
 
-// Function BrickRigs.HUDIconWidget.GetIconWorldRotation
-// (Native, Event, Public, HasOutParams, BlueprintEvent, Const)
+// Function BrickRigs.CapturePoint.SetCaptureRatio
+// (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// float*                                  OutRotation                                            (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   NewRatio                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UHUDIconWidget::GetIconWorldRotation(float* OutRotation) const
+bool ACapturePoint::SetCaptureRatio(float NewRatio)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("HUDIconWidget", "GetIconWorldRotation");
+		Func = Class->GetFunction("CapturePoint", "SetCaptureRatio");
 
-	Params::HUDIconWidget_GetIconWorldRotation Parms{};
+	Params::CapturePoint_SetCaptureRatio Parms{};
+
+	Parms.NewRatio = NewRatio;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -13418,8 +12716,214 @@ bool UHUDIconWidget::GetIconWorldRotation(float* OutRotation) const
 
 	Func->FunctionFlags = Flgs;
 
-	if (OutRotation != nullptr)
-		*OutRotation = Parms.OutRotation;
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.CapturePoint.SetCapturingTeam
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const struct FGenericTeamId&            TeamID                                                 (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool ACapturePoint::SetCapturingTeam(const struct FGenericTeamId& TeamID)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CapturePoint", "SetCapturingTeam");
+
+	Params::CapturePoint_SetCapturingTeam Parms{};
+
+	Parms.TeamID = std::move(TeamID);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.CapturePoint.GetCapturedBy
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const struct FGenericTeamId             ReturnValue                                            (ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+const struct FGenericTeamId ACapturePoint::GetCapturedBy() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CapturePoint", "GetCapturedBy");
+
+	Params::CapturePoint_GetCapturedBy Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.CapturePoint.GetCapturePointShortDisplayName
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+class FText ACapturePoint::GetCapturePointShortDisplayName() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CapturePoint", "GetCapturePointShortDisplayName");
+
+	Params::CapturePoint_GetCapturePointShortDisplayName Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.CapturePoint.GetCaptureRatio
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float ACapturePoint::GetCaptureRatio() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CapturePoint", "GetCaptureRatio");
+
+	Params::CapturePoint_GetCaptureRatio Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.CapturePoint.GetCapturingTeam
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const struct FGenericTeamId             ReturnValue                                            (ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+const struct FGenericTeamId ACapturePoint::GetCapturingTeam() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CapturePoint", "GetCapturingTeam");
+
+	Params::CapturePoint_GetCapturingTeam Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.CapturePoint.HasBeenCaptured
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool ACapturePoint::HasBeenCaptured() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CapturePoint", "HasBeenCaptured");
+
+	Params::CapturePoint_HasBeenCaptured Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.CapturePoint.IsCapturePointOnBuilding
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// const class ABrickBuilding*             InBuilding                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool ACapturePoint::IsCapturePointOnBuilding(const class ABrickBuilding* InBuilding) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CapturePoint", "IsCapturePointOnBuilding");
+
+	Params::CapturePoint_IsCapturePointOnBuilding Parms{};
+
+	Parms.InBuilding = InBuilding;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.CapturePoint.IsCharacterOnCapturePoint
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class ABaseCharacter*                   InCharacter                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool ACapturePoint::IsCharacterOnCapturePoint(class ABaseCharacter* InCharacter) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CapturePoint", "IsCharacterOnCapturePoint");
+
+	Params::CapturePoint_IsCharacterOnCapturePoint Parms{};
+
+	Parms.InCharacter = InCharacter;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 }
@@ -13550,23 +13054,21 @@ void UBrickEditorArrowComponent::SetLinearArrowLength(float NewLength)
 }
 
 
-// Function BrickRigs.BrickSizePropertyWidget.OnXSliderValueChanged
-// (Final, Native, Private, HasOutParams)
+// Function BrickRigs.CouplingBrick.Interact_DisengageCoupling
+// (Final, Native, Private)
 // Parameters:
-// const struct FBrickUnits&               NewValue                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// EValueChangedEventType                  EventType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class ABrickPlayerController*           PC                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UBrickSizePropertyWidget::OnXSliderValueChanged(const struct FBrickUnits& NewValue, EValueChangedEventType EventType)
+void UCouplingBrick::Interact_DisengageCoupling(class ABrickPlayerController* PC)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BrickSizePropertyWidget", "OnXSliderValueChanged");
+		Func = Class->GetFunction("CouplingBrick", "Interact_DisengageCoupling");
 
-	Params::BrickSizePropertyWidget_OnXSliderValueChanged Parms{};
+	Params::CouplingBrick_Interact_DisengageCoupling Parms{};
 
-	Parms.NewValue = std::move(NewValue);
-	Parms.EventType = EventType;
+	Parms.PC = PC;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -13577,23 +13079,21 @@ void UBrickSizePropertyWidget::OnXSliderValueChanged(const struct FBrickUnits& N
 }
 
 
-// Function BrickRigs.BrickSizePropertyWidget.OnYSliderValueChanged
-// (Final, Native, Private, HasOutParams)
+// Function BrickRigs.CouplingBrick.Interact_EngageCoupling
+// (Final, Native, Private)
 // Parameters:
-// const struct FBrickUnits&               NewValue                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// EValueChangedEventType                  EventType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class ABrickPlayerController*           PC                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UBrickSizePropertyWidget::OnYSliderValueChanged(const struct FBrickUnits& NewValue, EValueChangedEventType EventType)
+void UCouplingBrick::Interact_EngageCoupling(class ABrickPlayerController* PC)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BrickSizePropertyWidget", "OnYSliderValueChanged");
+		Func = Class->GetFunction("CouplingBrick", "Interact_EngageCoupling");
 
-	Params::BrickSizePropertyWidget_OnYSliderValueChanged Parms{};
+	Params::CouplingBrick_Interact_EngageCoupling Parms{};
 
-	Parms.NewValue = std::move(NewValue);
-	Parms.EventType = EventType;
+	Parms.PC = PC;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -13604,42 +13104,15 @@ void UBrickSizePropertyWidget::OnYSliderValueChanged(const struct FBrickUnits& N
 }
 
 
-// Function BrickRigs.BrickSizePropertyWidget.OnZSliderValueChanged
-// (Final, Native, Private, HasOutParams)
-// Parameters:
-// const struct FBrickUnits&               NewValue                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// EValueChangedEventType                  EventType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UBrickSizePropertyWidget::OnZSliderValueChanged(const struct FBrickUnits& NewValue, EValueChangedEventType EventType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickSizePropertyWidget", "OnZSliderValueChanged");
-
-	Params::BrickSizePropertyWidget_OnZSliderValueChanged Parms{};
-
-	Parms.NewValue = std::move(NewValue);
-	Parms.EventType = EventType;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.BrickEditorMirrorModeWidget.OnClicked
+// Function BrickRigs.BrickEditorMirrorAxisWidget.OnClicked
 // (Final, Native, Protected, BlueprintCallable)
 
-void UBrickEditorMirrorModeWidget::OnClicked()
+void UBrickEditorMirrorAxisWidget::OnClicked()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BrickEditorMirrorModeWidget", "OnClicked");
+		Func = Class->GetFunction("BrickEditorMirrorAxisWidget", "OnClicked");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -13650,19 +13123,19 @@ void UBrickEditorMirrorModeWidget::OnClicked()
 }
 
 
-// Function BrickRigs.BrickEditorMirrorModeWidget.UpdateCanBeSelected
+// Function BrickRigs.BrickEditorMirrorAxisWidget.UpdateCanBeSelected
 // (Event, Protected, BlueprintEvent)
 // Parameters:
 // bool                                    bNewCanBeSelected                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UBrickEditorMirrorModeWidget::UpdateCanBeSelected(bool bNewCanBeSelected)
+void UBrickEditorMirrorAxisWidget::UpdateCanBeSelected(bool bNewCanBeSelected)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BrickEditorMirrorModeWidget", "UpdateCanBeSelected");
+		Func = Class->GetFunction("BrickEditorMirrorAxisWidget", "UpdateCanBeSelected");
 
-	Params::BrickEditorMirrorModeWidget_UpdateCanBeSelected Parms{};
+	Params::BrickEditorMirrorAxisWidget_UpdateCanBeSelected Parms{};
 
 	Parms.bNewCanBeSelected = bNewCanBeSelected;
 
@@ -13670,19 +13143,19 @@ void UBrickEditorMirrorModeWidget::UpdateCanBeSelected(bool bNewCanBeSelected)
 }
 
 
-// Function BrickRigs.BrickEditorMirrorModeWidget.UpdateIsSelected
+// Function BrickRigs.BrickEditorMirrorAxisWidget.UpdateIsSelected
 // (Event, Protected, BlueprintEvent)
 // Parameters:
 // bool                                    bNewSelected                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UBrickEditorMirrorModeWidget::UpdateIsSelected(bool bNewSelected)
+void UBrickEditorMirrorAxisWidget::UpdateIsSelected(bool bNewSelected)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BrickEditorMirrorModeWidget", "UpdateIsSelected");
+		Func = Class->GetFunction("BrickEditorMirrorAxisWidget", "UpdateIsSelected");
 
-	Params::BrickEditorMirrorModeWidget_UpdateIsSelected Parms{};
+	Params::BrickEditorMirrorAxisWidget_UpdateIsSelected Parms{};
 
 	Parms.bNewSelected = bNewSelected;
 
@@ -13690,108 +13163,21 @@ void UBrickEditorMirrorModeWidget::UpdateIsSelected(bool bNewSelected)
 }
 
 
-// Function BrickRigs.BrickEditorMirrorModeWidget.UpdateMirrorMode
+// Function BrickRigs.BrickEditorMirrorAxisWidget.UpdateMirrorAxis
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// EBrickEditorMirrorMode                  InMirrorMode                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EAxis                                   InAxis                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UBrickEditorMirrorModeWidget::UpdateMirrorMode(EBrickEditorMirrorMode InMirrorMode)
+void UBrickEditorMirrorAxisWidget::UpdateMirrorAxis(EAxis InAxis)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BrickEditorMirrorModeWidget", "UpdateMirrorMode");
+		Func = Class->GetFunction("BrickEditorMirrorAxisWidget", "UpdateMirrorAxis");
 
-	Params::BrickEditorMirrorModeWidget_UpdateMirrorMode Parms{};
+	Params::BrickEditorMirrorAxisWidget_UpdateMirrorAxis Parms{};
 
-	Parms.InMirrorMode = InMirrorMode;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.CrosshairWidget.OnHUDVisibilityChanged
-// (Final, Native, Private)
-// Parameters:
-// EHUDVisibility                          NewVisibility                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrosshairWidget::OnHUDVisibilityChanged(EHUDVisibility NewVisibility)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrosshairWidget", "OnHUDVisibilityChanged");
-
-	Params::CrosshairWidget_OnHUDVisibilityChanged Parms{};
-
-	Parms.NewVisibility = NewVisibility;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.CrosshairWidget.PlayHitAnimation
-// (Event, Protected, HasOutParams, BlueprintEvent)
-// Parameters:
-// const struct FClientDamageInfo&         DamageInfo                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void UCrosshairWidget::PlayHitAnimation(const struct FClientDamageInfo& DamageInfo)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrosshairWidget", "PlayHitAnimation");
-
-	Params::CrosshairWidget_PlayHitAnimation Parms{};
-
-	Parms.DamageInfo = std::move(DamageInfo);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.CrosshairWidget.UpdateIsAttachingWinch
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bNewAttaching                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrosshairWidget::UpdateIsAttachingWinch(bool bNewAttaching)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrosshairWidget", "UpdateIsAttachingWinch");
-
-	Params::CrosshairWidget_UpdateIsAttachingWinch Parms{};
-
-	Parms.bNewAttaching = bNewAttaching;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.CrosshairWidget.UpdateWinchAttachment
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bBlockingHit                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bWithinRange                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCrosshairWidget::UpdateWinchAttachment(bool bBlockingHit, bool bWithinRange)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CrosshairWidget", "UpdateWinchAttachment");
-
-	Params::CrosshairWidget_UpdateWinchAttachment Parms{};
-
-	Parms.bBlockingHit = bBlockingHit;
-	Parms.bWithinRange = bWithinRange;
+	Parms.InAxis = InAxis;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -14802,6 +14188,165 @@ bool UBaseEditorInputComponent::GetUploadItemEnabled() const
 }
 
 
+// Function BrickRigs.ExplosiveItem.Explode
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// float                                   DamageAmount                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FDamageEvent&              DamageEvent                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// class AController*                      EventInstigator                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AActor*                           DamageCauser                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AExplosiveItem::Explode(float DamageAmount, const struct FDamageEvent& DamageEvent, class AController* EventInstigator, class AActor* DamageCauser)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ExplosiveItem", "Explode");
+
+	Params::ExplosiveItem_Explode Parms{};
+
+	Parms.DamageAmount = DamageAmount;
+	Parms.DamageEvent = std::move(DamageEvent);
+	Parms.EventInstigator = EventInstigator;
+	Parms.DamageCauser = DamageCauser;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.ExplosiveItem.OnRep_ExplosiveState
+// (Final, Native, Protected)
+
+void AExplosiveItem::OnRep_ExplosiveState()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ExplosiveItem", "OnRep_ExplosiveState");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.ExplosiveItem.PrimeExplosive
+// (Final, Native, Public, BlueprintCallable)
+
+void AExplosiveItem::PrimeExplosive()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ExplosiveItem", "PrimeExplosive");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.ExplosiveItem.SetExplosiveState
+// (Final, BlueprintAuthorityOnly, Native, Protected, BlueprintCallable)
+// Parameters:
+// EExplosiveItemState                     NewState                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AExplosiveItem::SetExplosiveState(EExplosiveItemState NewState)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ExplosiveItem", "SetExplosiveState");
+
+	Params::ExplosiveItem_SetExplosiveState Parms{};
+
+	Parms.NewState = NewState;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.ExplosiveItem.IsPrimed
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool AExplosiveItem::IsPrimed() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ExplosiveItem", "IsPrimed");
+
+	Params::ExplosiveItem_IsPrimed Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.DashboardSliderWidget.UpdateColorStyle
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// EBrickUIColorStyle                      NewStyle                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UDashboardSliderWidget::UpdateColorStyle(EBrickUIColorStyle NewStyle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("DashboardSliderWidget", "UpdateColorStyle");
+
+	Params::DashboardSliderWidget_UpdateColorStyle Parms{};
+
+	Parms.NewStyle = NewStyle;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.DashboardSliderWidget.UpdateIcon
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// int32                                   IconIndex                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UDashboardSliderWidget::UpdateIcon(int32 IconIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("DashboardSliderWidget", "UpdateIcon");
+
+	Params::DashboardSliderWidget_UpdateIcon Parms{};
+
+	Parms.IconIndex = IconIndex;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BrickRigs.BrickEditorObjectPropertyWidget.ClearSelection
 // (Final, Native, Public, BlueprintCallable)
 
@@ -14908,79 +14453,82 @@ void UBrickEditorParticleComponent::OnSystemFinishedCallback(class UParticleSyst
 }
 
 
-// Function BrickRigs.DashboardWidget.AddIconWidget
-// (Event, Protected, BlueprintEvent)
+// Function BrickRigs.GravelSilo.Interact_CloseSilo
+// (Final, Native, Private)
 // Parameters:
-// class UDashboardIconWidget*             Widget                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class ABrickPlayerController*           PC                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UDashboardWidget::AddIconWidget(class UDashboardIconWidget* Widget, int32 Index_0)
+void AGravelSilo::Interact_CloseSilo(class ABrickPlayerController* PC)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("DashboardWidget", "AddIconWidget");
+		Func = Class->GetFunction("GravelSilo", "Interact_CloseSilo");
 
-	Params::DashboardWidget_AddIconWidget Parms{};
+	Params::GravelSilo_Interact_CloseSilo Parms{};
 
-	Parms.Widget = Widget;
-	Parms.Index_0 = Index_0;
+	Parms.PC = PC;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
-// Function BrickRigs.DashboardWidget.AddSliderWidget
-// (Event, Protected, BlueprintEvent)
+// Function BrickRigs.GravelSilo.Interact_OpenSilo
+// (Final, Native, Private)
 // Parameters:
-// class UDashboardSliderWidget*           Widget                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class ABrickPlayerController*           PC                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UDashboardWidget::AddSliderWidget(class UDashboardSliderWidget* Widget)
+void AGravelSilo::Interact_OpenSilo(class ABrickPlayerController* PC)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("DashboardWidget", "AddSliderWidget");
+		Func = Class->GetFunction("GravelSilo", "Interact_OpenSilo");
 
-	Params::DashboardWidget_AddSliderWidget Parms{};
+	Params::GravelSilo_Interact_OpenSilo Parms{};
 
-	Parms.Widget = Widget;
+	Parms.PC = PC;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
-// Function BrickRigs.DashboardWidget.UpdateSliderWidgetSlot
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// class UDashboardSliderWidget*           Widget                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   NumSliders                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function BrickRigs.GravelSilo.OnRep_bIsSiloOpen
+// (Final, Native, Private)
 
-void UDashboardWidget::UpdateSliderWidgetSlot(class UDashboardSliderWidget* Widget, int32 Index_0, int32 NumSliders)
+void AGravelSilo::OnRep_bIsSiloOpen()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("DashboardWidget", "UpdateSliderWidgetSlot");
+		Func = Class->GetFunction("GravelSilo", "OnRep_bIsSiloOpen");
 
-	Params::DashboardWidget_UpdateSliderWidgetSlot Parms{};
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
 
-	Parms.Widget = Widget;
-	Parms.Index_0 = Index_0;
-	Parms.NumSliders = NumSliders;
+	UObject::ProcessEvent(Func, nullptr);
 
-	UObject::ProcessEvent(Func, &Parms);
+	Func->FunctionFlags = Flgs;
 }
 
 
 // Function BrickRigs.BrickEditorWidget.AddMirrorModeWidget
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// class UBrickEditorMirrorModeWidget*     Widget                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UBrickEditorMirrorAxisWidget*     Widget                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UBrickEditorWidget::AddMirrorModeWidget(class UBrickEditorMirrorModeWidget* Widget, int32 Index_0)
+void UBrickEditorWidget::AddMirrorModeWidget(class UBrickEditorMirrorAxisWidget* Widget, int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
@@ -15169,6 +14717,46 @@ void UBrickEditorWidget::UpdateSelection(const class FText& SelectionName, bool 
 }
 
 
+// Function BrickRigs.HUDContainerWidget.AddGameOverlayWidget
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// class UGameOverlayWidget*               Widget                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UHUDContainerWidget::AddGameOverlayWidget(class UGameOverlayWidget* Widget)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("HUDContainerWidget", "AddGameOverlayWidget");
+
+	Params::HUDContainerWidget_AddGameOverlayWidget Parms{};
+
+	Parms.Widget = Widget;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.HUDContainerWidget.AddHUDWidget
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// class UUserWidget*                      Widget                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UHUDContainerWidget::AddHUDWidget(class UUserWidget* Widget)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("HUDContainerWidget", "AddHUDWidget");
+
+	Params::HUDContainerWidget_AddHUDWidget Parms{};
+
+	Parms.Widget = Widget;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BrickRigs.BrickGameInstance.Get
 // (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
@@ -15200,11 +14788,11 @@ class UBrickGameInstance* UBrickGameInstance::Get(const class UObject* WorldCont
 // Function BrickRigs.BrickGameInstance.ClosePopup
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FPopupHandle*                    Handle                                                 (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
+// struct FPopupHandle&                    Handle                                                 (Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // EPopupResult                            Result                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UBrickGameInstance::ClosePopup(struct FPopupHandle* Handle, EPopupResult Result)
+bool UBrickGameInstance::ClosePopup(struct FPopupHandle& Handle, EPopupResult Result)
 {
 	static class UFunction* Func = nullptr;
 
@@ -15213,6 +14801,7 @@ bool UBrickGameInstance::ClosePopup(struct FPopupHandle* Handle, EPopupResult Re
 
 	Params::BrickGameInstance_ClosePopup Parms{};
 
+	Parms.Handle = std::move(Handle);
 	Parms.Result = Result;
 
 	auto Flgs = Func->FunctionFlags;
@@ -15222,8 +14811,7 @@ bool UBrickGameInstance::ClosePopup(struct FPopupHandle* Handle, EPopupResult Re
 
 	Func->FunctionFlags = Flgs;
 
-	if (Handle != nullptr)
-		*Handle = std::move(Parms.Handle);
+	Handle = std::move(Parms.Handle);
 
 	return Parms.ReturnValue;
 }
@@ -15285,13 +14873,13 @@ void UBrickGameInstance::OpenMainMenu(bool bForceExit)
 // Function BrickRigs.BrickGameInstance.OpenMessagePopup
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FPopupHandle*                    Handle                                                 (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
+// struct FPopupHandle&                    Handle                                                 (Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // const class FText&                      Message                                                (Parm, NativeAccessSpecifierPublic)
 // bool                                    bCanCancel                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // TDelegate<void(EPopupResult Result)>    ClosedDelegate                                         (Parm, ZeroConstructor, NoDestructor, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UBrickGameInstance::OpenMessagePopup(struct FPopupHandle* Handle, const class FText& Message, bool bCanCancel, TDelegate<void(EPopupResult Result)> ClosedDelegate)
+bool UBrickGameInstance::OpenMessagePopup(struct FPopupHandle& Handle, const class FText& Message, bool bCanCancel, TDelegate<void(EPopupResult Result)> ClosedDelegate)
 {
 	static class UFunction* Func = nullptr;
 
@@ -15300,6 +14888,7 @@ bool UBrickGameInstance::OpenMessagePopup(struct FPopupHandle* Handle, const cla
 
 	Params::BrickGameInstance_OpenMessagePopup Parms{};
 
+	Parms.Handle = std::move(Handle);
 	Parms.Message = std::move(Message);
 	Parms.bCanCancel = bCanCancel;
 	Parms.ClosedDelegate = ClosedDelegate;
@@ -15311,8 +14900,7 @@ bool UBrickGameInstance::OpenMessagePopup(struct FPopupHandle* Handle, const cla
 
 	Func->FunctionFlags = Flgs;
 
-	if (Handle != nullptr)
-		*Handle = std::move(Parms.Handle);
+	Handle = std::move(Parms.Handle);
 
 	return Parms.ReturnValue;
 }
@@ -15321,12 +14909,12 @@ bool UBrickGameInstance::OpenMessagePopup(struct FPopupHandle* Handle, const cla
 // Function BrickRigs.BrickGameInstance.OpenPopup
 // (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// struct FPopupHandle*                    Handle                                                 (Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
+// struct FPopupHandle&                    Handle                                                 (Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 // class UPopupParams*                     PopupParams                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    bToggleOpen                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UBrickGameInstance::OpenPopup(struct FPopupHandle* Handle, class UPopupParams* PopupParams, bool bToggleOpen)
+bool UBrickGameInstance::OpenPopup(struct FPopupHandle& Handle, class UPopupParams* PopupParams, bool bToggleOpen)
 {
 	static class UFunction* Func = nullptr;
 
@@ -15335,6 +14923,7 @@ bool UBrickGameInstance::OpenPopup(struct FPopupHandle* Handle, class UPopupPara
 
 	Params::BrickGameInstance_OpenPopup Parms{};
 
+	Parms.Handle = std::move(Handle);
 	Parms.PopupParams = PopupParams;
 	Parms.bToggleOpen = bToggleOpen;
 
@@ -15345,8 +14934,7 @@ bool UBrickGameInstance::OpenPopup(struct FPopupHandle* Handle, class UPopupPara
 
 	Func->FunctionFlags = Flgs;
 
-	if (Handle != nullptr)
-		*Handle = std::move(Parms.Handle);
+	Handle = std::move(Parms.Handle);
 
 	return Parms.ReturnValue;
 }
@@ -15405,6 +14993,126 @@ bool UBrickGameInstance::IsPopupOpen(const struct FPopupHandle& Handle) const
 }
 
 
+// Function BrickRigs.CurrentItemWidget.FadeIn
+// (Event, Public, BlueprintEvent)
+
+void UCurrentItemWidget::FadeIn()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CurrentItemWidget", "FadeIn");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BrickRigs.CurrentItemWidget.FadeOut
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bImmediate                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCurrentItemWidget::FadeOut(bool bImmediate)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CurrentItemWidget", "FadeOut");
+
+	Params::CurrentItemWidget_FadeOut Parms{};
+
+	Parms.bImmediate = bImmediate;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.CurrentItemWidget.UpdateAmmo
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// int32                                   Current                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Capacity                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Ammo                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCurrentItemWidget::UpdateAmmo(int32 Current, int32 Capacity, int32 Ammo)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CurrentItemWidget", "UpdateAmmo");
+
+	Params::CurrentItemWidget_UpdateAmmo Parms{};
+
+	Parms.Current = Current;
+	Parms.Capacity = Capacity;
+	Parms.Ammo = Ammo;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.CurrentItemWidget.UpdateAmmoType
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// EAmmoType                               NewType                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCurrentItemWidget::UpdateAmmoType(EAmmoType NewType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CurrentItemWidget", "UpdateAmmoType");
+
+	Params::CurrentItemWidget_UpdateAmmoType Parms{};
+
+	Parms.NewType = NewType;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.CurrentItemWidget.UpdateFireMode
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// const EFireMode                         NewMode                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bHasFirearm                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCurrentItemWidget::UpdateFireMode(const EFireMode NewMode, const bool bHasFirearm)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CurrentItemWidget", "UpdateFireMode");
+
+	Params::CurrentItemWidget_UpdateFireMode Parms{};
+
+	Parms.NewMode = NewMode;
+	Parms.bHasFirearm = bHasFirearm;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.CurrentItemWidget.UpdateItemName
+// (Event, Protected, HasOutParams, BlueprintEvent)
+// Parameters:
+// const class FText&                      NewName                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UCurrentItemWidget::UpdateItemName(const class FText& NewName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CurrentItemWidget", "UpdateItemName");
+
+	Params::CurrentItemWidget_UpdateItemName Parms{};
+
+	Parms.NewName = std::move(NewName);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BrickRigs.BrickGameSession.Get
 // (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
@@ -15430,16 +15138,6 @@ class ABrickGameSession* ABrickGameSession::Get(const class UObject* WorldContex
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
-}
-
-void ABrickGameSession::AddChatMessage(FBrickChatMessage* NewMessage)
-{
-	uintptr_t AddChatMessageP = (uintptr_t)GetModuleHandle(NULL) + 0x0CF5390;
-
-	using SetLoadoutAccessorFn = bool(__fastcall*)(SDK::ABrickGameSession* Context, SDK::FBrickChatMessage* NewMessage);
-	SetLoadoutAccessorFn OnAddChatMessage = reinterpret_cast<SetLoadoutAccessorFn>(AddChatMessageP);
-
-	OnAddChatMessage(this, NewMessage);
 }
 
 
@@ -16183,12 +15881,62 @@ class UBrickTeam* ABrickGameState::GetZombieTeam() const
 }
 
 
+// Function BrickRigs.BrickGridPanel.SetDefaultColumnFill
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const float                             Coefficient                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UBrickGridPanel::SetDefaultColumnFill(const float Coefficient)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickGridPanel", "SetDefaultColumnFill");
+
+	Params::BrickGridPanel_SetDefaultColumnFill Parms{};
+
+	Parms.Coefficient = Coefficient;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.BrickGridPanel.SetDefaultRowFill
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const float                             Coefficient                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UBrickGridPanel::SetDefaultRowFill(const float Coefficient)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickGridPanel", "SetDefaultRowFill");
+
+	Params::BrickGridPanel_SetDefaultRowFill Parms{};
+
+	Parms.Coefficient = Coefficient;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
 // Function BrickRigs.BrickGridPanel.SetSlotSpacingStyle
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// EBrickUISpacingStyle                    NewStyle                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const EBrickUISpacingStyle              NewStyle                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UBrickGridPanel::SetSlotSpacingStyle(EBrickUISpacingStyle NewStyle)
+void UBrickGridPanel::SetSlotSpacingStyle(const EBrickUISpacingStyle NewStyle)
 {
 	static class UFunction* Func = nullptr;
 
@@ -16198,62 +15946,6 @@ void UBrickGridPanel::SetSlotSpacingStyle(EBrickUISpacingStyle NewStyle)
 	Params::BrickGridPanel_SetSlotSpacingStyle Parms{};
 
 	Parms.NewStyle = NewStyle;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.EnumPropertyWidget.InitializeItem
-// (Final, Native, Private, HasOutParams)
-// Parameters:
-// int32                                   Item                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FBrickComboBoxItemParams*        OutParams                                              (Parm, OutParm, NativeAccessSpecifierPublic)
-
-void UEnumPropertyWidget::InitializeItem(int32 Item, struct FBrickComboBoxItemParams* OutParams)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("EnumPropertyWidget", "InitializeItem");
-
-	Params::EnumPropertyWidget_InitializeItem Parms{};
-
-	Parms.Item = Item;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (OutParams != nullptr)
-		*OutParams = std::move(Parms.OutParams);
-}
-
-
-// Function BrickRigs.EnumPropertyWidget.OnItemSelected
-// (Final, Native, Private)
-// Parameters:
-// int32                                   Item                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EValueChangedEventType                  EventType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UEnumPropertyWidget::OnItemSelected(int32 Item, EValueChangedEventType EventType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("EnumPropertyWidget", "OnItemSelected");
-
-	Params::EnumPropertyWidget_OnItemSelected Parms{};
-
-	Parms.Item = Item;
-	Parms.EventType = EventType;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -16485,21 +16177,41 @@ bool UBrickImage::IsLoadingImage() const
 }
 
 
-// Function BrickRigs.EditorInputComponent.MoveForward
-// (Final, Native, Protected)
+// Function BrickRigs.DragStrip.CreateTreeMID
+// (Event, Public, BlueprintEvent)
 // Parameters:
-// float                                   Val                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UMaterialInstanceDynamic*         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UEditorInputComponent::MoveForward(float Val)
+class UMaterialInstanceDynamic* ADragStrip::CreateTreeMID()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("EditorInputComponent", "MoveForward");
+		Func = Class->GetFunction("DragStrip", "CreateTreeMID");
 
-	Params::EditorInputComponent_MoveForward Parms{};
+	Params::DragStrip_CreateTreeMID Parms{};
 
-	Parms.Val = Val;
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.DragStrip.Interact_StartRace
+// (Final, Native, Private)
+// Parameters:
+// class ABrickPlayerController*           PC                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ADragStrip::Interact_StartRace(class ABrickPlayerController* PC)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("DragStrip", "Interact_StartRace");
+
+	Params::DragStrip_Interact_StartRace Parms{};
+
+	Parms.PC = PC;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -16510,53 +16222,80 @@ void UEditorInputComponent::MoveForward(float Val)
 }
 
 
-// Function BrickRigs.EditorInputComponent.MoveRight
-// (Final, Native, Protected)
-// Parameters:
-// float                                   Val                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function BrickRigs.DragStrip.OnRep_LeftLaneState
+// (Final, Native, Public)
 
-void UEditorInputComponent::MoveRight(float Val)
+void ADragStrip::OnRep_LeftLaneState()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("EditorInputComponent", "MoveRight");
-
-	Params::EditorInputComponent_MoveRight Parms{};
-
-	Parms.Val = Val;
+		Func = Class->GetFunction("DragStrip", "OnRep_LeftLaneState");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }
 
 
-// Function BrickRigs.EditorInputComponent.MoveUp
-// (Final, Native, Protected)
-// Parameters:
-// float                                   Val                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function BrickRigs.DragStrip.OnRep_RaceState
+// (Final, Native, Public)
 
-void UEditorInputComponent::MoveUp(float Val)
+void ADragStrip::OnRep_RaceState()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("EditorInputComponent", "MoveUp");
-
-	Params::EditorInputComponent_MoveUp Parms{};
-
-	Parms.Val = Val;
+		Func = Class->GetFunction("DragStrip", "OnRep_RaceState");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.DragStrip.OnRep_RightLaneState
+// (Final, Native, Public)
+
+void ADragStrip::OnRep_RightLaneState()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("DragStrip", "OnRep_RightLaneState");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.DragStrip.GetInteractionLocation
+// (Event, Public, HasDefaults, BlueprintEvent, Const)
+// Parameters:
+// struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FVector ADragStrip::GetInteractionLocation() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("DragStrip", "GetInteractionLocation");
+
+	Params::DragStrip_GetInteractionLocation Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
 }
 
 
@@ -16592,10 +16331,10 @@ class UBrickObjectPool* UBrickObjectPool::Get(const class UObject* WorldContextO
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
 // const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TSubclassOf<class UUserWidget>          WidgetClass                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const TSubclassOf<class UUserWidget>    WidgetClass                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // class UUserWidget*                      ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UUserWidget* UBrickObjectPool::GetWidget(const class UObject* WorldContextObject, TSubclassOf<class UUserWidget> WidgetClass)
+class UUserWidget* UBrickObjectPool::GetWidget(const class UObject* WorldContextObject, const TSubclassOf<class UUserWidget> WidgetClass)
 {
 	static class UFunction* Func = nullptr;
 
@@ -16643,329 +16382,191 @@ void UBrickObjectPool::PoolWidget(class UUserWidget* Widget)
 }
 
 
-// Function BrickRigs.ColorPropertyWidget.OnAlphaChanged
-// (Final, Native, Private)
+// Function BrickRigs.BrickObjectPool.PoolWidgets
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// float                                   NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EValueChangedEventType                  EventType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<class UUserWidget*>&             Widgets                                                (Parm, OutParm, ZeroConstructor, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const int32                             NumToKeep                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UColorPropertyWidget::OnAlphaChanged(float NewValue, EValueChangedEventType EventType)
+void UBrickObjectPool::PoolWidgets(TArray<class UUserWidget*>& Widgets, const int32 NumToKeep)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ColorPropertyWidget", "OnAlphaChanged");
+		Func = StaticClass()->GetFunction("BrickObjectPool", "PoolWidgets");
 
-	Params::ColorPropertyWidget_OnAlphaChanged Parms{};
+	Params::BrickObjectPool_PoolWidgets Parms{};
 
-	Parms.NewValue = NewValue;
-	Parms.EventType = EventType;
+	Parms.Widgets = std::move(Widgets);
+	Parms.NumToKeep = NumToKeep;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	Widgets = std::move(Parms.Widgets);
 }
 
 
-// Function BrickRigs.ColorPropertyWidget.OnHueChanged
-// (Final, Native, Private)
+// Function BrickRigs.BrickObjectPool.RecycleWidget
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// float                                   NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EValueChangedEventType                  EventType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TArray<class UUserWidget*>&             Widgets                                                (Parm, OutParm, ZeroConstructor, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const TSubclassOf<class UUserWidget>    WidgetClass                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             Index_0                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool*                                   bOutRecycled                                           (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UUserWidget*                      ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UColorPropertyWidget::OnHueChanged(float NewValue, EValueChangedEventType EventType)
+class UUserWidget* UBrickObjectPool::RecycleWidget(const class UObject* WorldContextObject, TArray<class UUserWidget*>& Widgets, const TSubclassOf<class UUserWidget> WidgetClass, const int32 Index_0, bool* bOutRecycled)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ColorPropertyWidget", "OnHueChanged");
+		Func = StaticClass()->GetFunction("BrickObjectPool", "RecycleWidget");
 
-	Params::ColorPropertyWidget_OnHueChanged Parms{};
+	Params::BrickObjectPool_RecycleWidget Parms{};
 
-	Parms.NewValue = NewValue;
-	Parms.EventType = EventType;
+	Parms.WorldContextObject = WorldContextObject;
+	Parms.Widgets = std::move(Widgets);
+	Parms.WidgetClass = WidgetClass;
+	Parms.Index_0 = Index_0;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-}
 
+	Widgets = std::move(Parms.Widgets);
 
-// Function BrickRigs.ColorPropertyWidget.OnPaletteColorChanged
-// (Final, Native, Private, HasOutParams, HasDefaults)
-// Parameters:
-// const struct FLinearColor&              NewColor                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EValueChangedEventType                  EventType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UColorPropertyWidget::OnPaletteColorChanged(const struct FLinearColor& NewColor, EValueChangedEventType EventType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ColorPropertyWidget", "OnPaletteColorChanged");
-
-	Params::ColorPropertyWidget_OnPaletteColorChanged Parms{};
-
-	Parms.NewColor = std::move(NewColor);
-	Parms.EventType = EventType;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.ColorPropertyWidget.OnSaturationChanged
-// (Final, Native, Private)
-// Parameters:
-// float                                   NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EValueChangedEventType                  EventType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UColorPropertyWidget::OnSaturationChanged(float NewValue, EValueChangedEventType EventType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ColorPropertyWidget", "OnSaturationChanged");
-
-	Params::ColorPropertyWidget_OnSaturationChanged Parms{};
-
-	Parms.NewValue = NewValue;
-	Parms.EventType = EventType;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.ColorPropertyWidget.OnValueChanged
-// (Final, Native, Private)
-// Parameters:
-// float                                   NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EValueChangedEventType                  EventType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UColorPropertyWidget::OnValueChanged(float NewValue, EValueChangedEventType EventType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ColorPropertyWidget", "OnValueChanged");
-
-	Params::ColorPropertyWidget_OnValueChanged Parms{};
-
-	Parms.NewValue = NewValue;
-	Parms.EventType = EventType;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.ColorPropertyWidget.OnWheelColorChanged
-// (Final, Native, Private, HasOutParams, HasDefaults)
-// Parameters:
-// const struct FLinearColor&              NewColor                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EValueChangedEventType                  EventType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UColorPropertyWidget::OnWheelColorChanged(const struct FLinearColor& NewColor, EValueChangedEventType EventType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ColorPropertyWidget", "OnWheelColorChanged");
-
-	Params::ColorPropertyWidget_OnWheelColorChanged Parms{};
-
-	Parms.NewColor = std::move(NewColor);
-	Parms.EventType = EventType;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.ColorPropertyWidget.UpdateAlphaSliderVisibility
-// (Native, Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bNewVisible                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UColorPropertyWidget::UpdateAlphaSliderVisibility(bool bNewVisible)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ColorPropertyWidget", "UpdateAlphaSliderVisibility");
-
-	Params::ColorPropertyWidget_UpdateAlphaSliderVisibility Parms{};
-
-	Parms.bNewVisible = bNewVisible;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.ColorPropertyWidget.UpdateCurrentColor
-// (Event, Protected, HasOutParams, HasDefaults, BlueprintEvent)
-// Parameters:
-// const struct FLinearColor&              NewColor                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UColorPropertyWidget::UpdateCurrentColor(const struct FLinearColor& NewColor)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ColorPropertyWidget", "UpdateCurrentColor");
-
-	Params::ColorPropertyWidget_UpdateCurrentColor Parms{};
-
-	Parms.NewColor = std::move(NewColor);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.ExplosiveItem.Explode
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// float                                   DamageAmount                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FDamageEvent&              DamageEvent                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// class AController*                      EventInstigator                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                           DamageCauser                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AExplosiveItem::Explode(float DamageAmount, const struct FDamageEvent& DamageEvent, class AController* EventInstigator, class AActor* DamageCauser)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ExplosiveItem", "Explode");
-
-	Params::ExplosiveItem_Explode Parms{};
-
-	Parms.DamageAmount = DamageAmount;
-	Parms.DamageEvent = std::move(DamageEvent);
-	Parms.EventInstigator = EventInstigator;
-	Parms.DamageCauser = DamageCauser;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.ExplosiveItem.OnRep_ExplosiveState
-// (Final, Native, Protected)
-
-void AExplosiveItem::OnRep_ExplosiveState()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ExplosiveItem", "OnRep_ExplosiveState");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.ExplosiveItem.PrimeExplosive
-// (Final, Native, Public, BlueprintCallable)
-
-void AExplosiveItem::PrimeExplosive()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ExplosiveItem", "PrimeExplosive");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.ExplosiveItem.SetExplosiveState
-// (Final, BlueprintAuthorityOnly, Native, Protected, BlueprintCallable)
-// Parameters:
-// EExplosiveItemState                     NewState                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AExplosiveItem::SetExplosiveState(EExplosiveItemState NewState)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ExplosiveItem", "SetExplosiveState");
-
-	Params::ExplosiveItem_SetExplosiveState Parms{};
-
-	Parms.NewState = NewState;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.ExplosiveItem.IsPrimed
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool AExplosiveItem::IsPrimed() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ExplosiveItem", "IsPrimed");
-
-	Params::ExplosiveItem_IsPrimed Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
+	if (bOutRecycled != nullptr)
+		*bOutRecycled = Parms.bOutRecycled;
 
 	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.DetonatorBrick.Interact_Detonate
+// (Final, Native, Private)
+// Parameters:
+// class ABrickPlayerController*           PC                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UDetonatorBrick::Interact_Detonate(class ABrickPlayerController* PC)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("DetonatorBrick", "Interact_Detonate");
+
+	Params::DetonatorBrick_Interact_Detonate Parms{};
+
+	Parms.PC = PC;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.ConnectorSpacingPropertyWidget.SetConnectorSpacing
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const struct FScalableBrickConnectorSpacing&NewSpacing                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void UConnectorSpacingPropertyWidget::SetConnectorSpacing(const struct FScalableBrickConnectorSpacing& NewSpacing)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ConnectorSpacingPropertyWidget", "SetConnectorSpacing");
+
+	Params::ConnectorSpacingPropertyWidget_SetConnectorSpacing Parms{};
+
+	Parms.NewSpacing = std::move(NewSpacing);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.ConnectorSpacingPropertyWidget.UpdateConnectorSpacing
+// (Event, Protected, HasOutParams, BlueprintEvent)
+// Parameters:
+// const struct FScalableBrickConnectorSpacing&NewSpacing                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const uint8                             AxisFlags                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UConnectorSpacingPropertyWidget::UpdateConnectorSpacing(const struct FScalableBrickConnectorSpacing& NewSpacing, const uint8 AxisFlags)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ConnectorSpacingPropertyWidget", "UpdateConnectorSpacing");
+
+	Params::ConnectorSpacingPropertyWidget_UpdateConnectorSpacing Parms{};
+
+	Parms.NewSpacing = std::move(NewSpacing);
+	Parms.AxisFlags = AxisFlags;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.ContextMenuWidget.OnActionTriggered
+// (Final, Native, Private, HasOutParams)
+// Parameters:
+// const class FName&                      ActionName                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bReleased                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UContextMenuWidget::OnActionTriggered(const class FName& ActionName, bool bReleased)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ContextMenuWidget", "OnActionTriggered");
+
+	Params::ContextMenuWidget_OnActionTriggered Parms{};
+
+	Parms.ActionName = ActionName;
+	Parms.bReleased = bReleased;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.ContextMenuWidget.UpdateTitleText
+// (Event, Protected, HasOutParams, BlueprintEvent)
+// Parameters:
+// const class FText&                      InText                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UContextMenuWidget::UpdateTitleText(const class FText& InText)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ContextMenuWidget", "UpdateTitleText");
+
+	Params::ContextMenuWidget_UpdateTitleText Parms{};
+
+	Parms.InText = std::move(InText);
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -18377,6 +17978,31 @@ void ABrickPlayerController::ServerKillCharacter()
 	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.BrickPlayerController.ServerOnAnyVehicleConstructed
+// (Final, Net, NetReliable, Native, Event, Private, NetServer, NetValidate)
+// Parameters:
+// class ABrickVehicle*                    InVehicle                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void ABrickPlayerController::ServerOnAnyVehicleConstructed(class ABrickVehicle* InVehicle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickPlayerController", "ServerOnAnyVehicleConstructed");
+
+	Params::BrickPlayerController_ServerOnAnyVehicleConstructed Parms{};
+
+	Parms.InVehicle = InVehicle;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -20309,21 +19935,21 @@ bool ABrickPlayerController::IsInventoryOpen() const
 }
 
 
-// Function BrickRigs.ControlHintWidget.OnInputMethodChanged
+// Function BrickRigs.Elevator.Interact_ElevatorDown
 // (Final, Native, Private)
 // Parameters:
-// EInputMethod                            NewInputMethod                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class ABrickPlayerController*           PC                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UControlHintWidget::OnInputMethodChanged(EInputMethod NewInputMethod)
+void AElevator::Interact_ElevatorDown(class ABrickPlayerController* PC)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ControlHintWidget", "OnInputMethodChanged");
+		Func = Class->GetFunction("Elevator", "Interact_ElevatorDown");
 
-	Params::ControlHintWidget_OnInputMethodChanged Parms{};
+	Params::Elevator_Interact_ElevatorDown Parms{};
 
-	Parms.NewInputMethod = NewInputMethod;
+	Parms.PC = PC;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -20334,23 +19960,21 @@ void UControlHintWidget::OnInputMethodChanged(EInputMethod NewInputMethod)
 }
 
 
-// Function BrickRigs.ControlHintWidget.SetAction
-// (Final, Native, Public, BlueprintCallable)
+// Function BrickRigs.Elevator.Interact_ElevatorUp
+// (Final, Native, Private)
 // Parameters:
-// class FName                             InActionName                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EInputActionTriggerType                 InTriggerType                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class ABrickPlayerController*           PC                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UControlHintWidget::SetAction(class FName InActionName, EInputActionTriggerType InTriggerType)
+void AElevator::Interact_ElevatorUp(class ABrickPlayerController* PC)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ControlHintWidget", "SetAction");
+		Func = Class->GetFunction("Elevator", "Interact_ElevatorUp");
 
-	Params::ControlHintWidget_SetAction Parms{};
+	Params::Elevator_Interact_ElevatorUp Parms{};
 
-	Parms.InActionName = InActionName;
-	Parms.InTriggerType = InTriggerType;
+	Parms.PC = PC;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -20361,21 +19985,21 @@ void UControlHintWidget::SetAction(class FName InActionName, EInputActionTrigger
 }
 
 
-// Function BrickRigs.ControlHintWidget.SetColorStyle
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Function BrickRigs.Elevator.Interact_StopElevator
+// (Final, Native, Private)
 // Parameters:
-// EBrickUIColorStyle                      NewStyle                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class ABrickPlayerController*           PC                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UControlHintWidget::SetColorStyle(EBrickUIColorStyle NewStyle)
+void AElevator::Interact_StopElevator(class ABrickPlayerController* PC)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ControlHintWidget", "SetColorStyle");
+		Func = Class->GetFunction("Elevator", "Interact_StopElevator");
 
-	Params::ControlHintWidget_SetColorStyle Parms{};
+	Params::Elevator_Interact_StopElevator Parms{};
 
-	Parms.NewStyle = NewStyle;
+	Parms.PC = PC;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -20386,357 +20010,35 @@ void UControlHintWidget::SetColorStyle(EBrickUIColorStyle NewStyle)
 }
 
 
-// Function BrickRigs.ControlHintWidget.SetDisplayInfo
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const struct FDisplayInfo&              InDisplayInfo                                          (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UControlHintWidget::SetDisplayInfo(const struct FDisplayInfo& InDisplayInfo)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ControlHintWidget", "SetDisplayInfo");
-
-	Params::ControlHintWidget_SetDisplayInfo Parms{};
-
-	Parms.InDisplayInfo = std::move(InDisplayInfo);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.ControlHintWidget.SetDisplayInfoMode
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// EControlHintDisplayInfoMode             NewMode                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UControlHintWidget::SetDisplayInfoMode(EControlHintDisplayInfoMode NewMode)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ControlHintWidget", "SetDisplayInfoMode");
-
-	Params::ControlHintWidget_SetDisplayInfoMode Parms{};
-
-	Parms.NewMode = NewMode;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.ControlHintWidget.SetInputChordScale
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// float                                   InScale                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UControlHintWidget::SetInputChordScale(float InScale)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ControlHintWidget", "SetInputChordScale");
-
-	Params::ControlHintWidget_SetInputChordScale Parms{};
-
-	Parms.InScale = InScale;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.ControlHintWidget.SetShowInputChord
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    bShow                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UControlHintWidget::SetShowInputChord(bool bShow)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ControlHintWidget", "SetShowInputChord");
-
-	Params::ControlHintWidget_SetShowInputChord Parms{};
-
-	Parms.bShow = bShow;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.ControlHintWidget.SetShowUnboundKey
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    bShow                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UControlHintWidget::SetShowUnboundKey(bool bShow)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ControlHintWidget", "SetShowUnboundKey");
-
-	Params::ControlHintWidget_SetShowUnboundKey Parms{};
-
-	Parms.bShow = bShow;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.ControlHintWidget.SetStyleState
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// EBrickUIStyleState                      NewState                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UControlHintWidget::SetStyleState(EBrickUIStyleState NewState)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ControlHintWidget", "SetStyleState");
-
-	Params::ControlHintWidget_SetStyleState Parms{};
-
-	Parms.NewState = NewState;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.ControlHintWidget.SetTextStyle
-// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// EBrickUITextStyle                       NewStyle                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UControlHintWidget::SetTextStyle(EBrickUITextStyle NewStyle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ControlHintWidget", "SetTextStyle");
-
-	Params::ControlHintWidget_SetTextStyle Parms{};
-
-	Parms.NewStyle = NewStyle;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.ControlHintWidget.UpdateDisplayInfo
-// (Native, Event, Protected, HasOutParams, BlueprintEvent)
-// Parameters:
-// const struct FDisplayInfo&              NewDisplayInfo                                         (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UControlHintWidget::UpdateDisplayInfo(const struct FDisplayInfo& NewDisplayInfo)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ControlHintWidget", "UpdateDisplayInfo");
-
-	Params::ControlHintWidget_UpdateDisplayInfo Parms{};
-
-	Parms.NewDisplayInfo = std::move(NewDisplayInfo);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.ControlHintWidget.UpdateHoldProgress
+// Function BrickRigs.Elevator.OnElevatorStateChanged
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// float                                   InHoldProgress                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FElevatorState&            NewState                                               (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
 
-void UControlHintWidget::UpdateHoldProgress(float InHoldProgress)
+void AElevator::OnElevatorStateChanged(const struct FElevatorState& NewState)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ControlHintWidget", "UpdateHoldProgress");
+		Func = Class->GetFunction("Elevator", "OnElevatorStateChanged");
 
-	Params::ControlHintWidget_UpdateHoldProgress Parms{};
+	Params::Elevator_OnElevatorStateChanged Parms{};
 
-	Parms.InHoldProgress = InHoldProgress;
+	Parms.NewState = std::move(NewState);
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function BrickRigs.ControlHintWidget.UpdateIconVisibility
-// (Native, Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bNewVisible                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UControlHintWidget::UpdateIconVisibility(bool bNewVisible)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ControlHintWidget", "UpdateIconVisibility");
-
-	Params::ControlHintWidget_UpdateIconVisibility Parms{};
-
-	Parms.bNewVisible = bNewVisible;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.ControlHintWidget.UpdateInputChordStyleState
-// (Native, Event, Protected, BlueprintEvent)
-// Parameters:
-// EBrickUIStyleState                      InStyleState                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bInIsHoldAction                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UControlHintWidget::UpdateInputChordStyleState(EBrickUIStyleState InStyleState, bool bInIsHoldAction)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ControlHintWidget", "UpdateInputChordStyleState");
-
-	Params::ControlHintWidget_UpdateInputChordStyleState Parms{};
-
-	Parms.InStyleState = InStyleState;
-	Parms.bInIsHoldAction = bInIsHoldAction;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.ControlHintWidget.UpdateInputChordVisibility
-// (Native, Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bNewVisible                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UControlHintWidget::UpdateInputChordVisibility(bool bNewVisible)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ControlHintWidget", "UpdateInputChordVisibility");
-
-	Params::ControlHintWidget_UpdateInputChordVisibility Parms{};
-
-	Parms.bNewVisible = bNewVisible;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.ControlHintWidget.UpdateIsHoldAction
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bIsHoldAction                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UControlHintWidget::UpdateIsHoldAction(bool bIsHoldAction)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ControlHintWidget", "UpdateIsHoldAction");
-
-	Params::ControlHintWidget_UpdateIsHoldAction Parms{};
-
-	Parms.bIsHoldAction = bIsHoldAction;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.ControlHintWidget.UpdateTextVisibility
-// (Native, Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bNewVisible                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UControlHintWidget::UpdateTextVisibility(bool bNewVisible)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ControlHintWidget", "UpdateTextVisibility");
-
-	Params::ControlHintWidget_UpdateTextVisibility Parms{};
-
-	Parms.bNewVisible = bNewVisible;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.BrickPlayerState.OnRep_Deaths
+// Function BrickRigs.Elevator.OnRep_RepElevatorState
 // (Final, Native, Private)
 
-void ABrickPlayerState::OnRep_Deaths()
+void AElevator::OnRep_RepElevatorState()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BrickPlayerState", "OnRep_Deaths");
+		Func = Class->GetFunction("Elevator", "OnRep_RepElevatorState");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -20747,141 +20049,21 @@ void ABrickPlayerState::OnRep_Deaths()
 }
 
 
-// Function BrickRigs.BrickPlayerState.OnRep_IsAdmin
-// (Final, Native, Private)
-
-void ABrickPlayerState::OnRep_IsAdmin()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickPlayerState", "OnRep_IsAdmin");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.BrickPlayerState.OnRep_IsAlive
-// (Final, Native, Private)
-
-void ABrickPlayerState::OnRep_IsAlive()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickPlayerState", "OnRep_IsAlive");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.BrickPlayerState.OnRep_IsTeamLeader
-// (Final, Native, Private)
-
-void ABrickPlayerState::OnRep_IsTeamLeader()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickPlayerState", "OnRep_IsTeamLeader");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.BrickPlayerState.OnRep_Kills
-// (Final, Native, Private)
-
-void ABrickPlayerState::OnRep_Kills()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickPlayerState", "OnRep_Kills");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.BrickPlayerState.OnRep_Money
-// (Final, Native, Private)
-// Parameters:
-// float                                   PrevValue                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ABrickPlayerState::OnRep_Money(float PrevValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickPlayerState", "OnRep_Money");
-
-	Params::BrickPlayerState_OnRep_Money Parms{};
-
-	Parms.PrevValue = PrevValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.BrickPlayerState.OnRep_TeamId
-// (Final, Native, Private)
-
-void ABrickPlayerState::OnRep_TeamId()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickPlayerState", "OnRep_TeamId");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.BrickPlayerState.SetDeaths
+// Function BrickRigs.Elevator.SetElevatorDirection
 // (Final, BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
 // Parameters:
-// int32                                   NewDeaths                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const EElevatorDirection                Dir                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ABrickPlayerState::SetDeaths(int32 NewDeaths)
+void AElevator::SetElevatorDirection(const EElevatorDirection Dir)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BrickPlayerState", "SetDeaths");
+		Func = Class->GetFunction("Elevator", "SetElevatorDirection");
 
-	Params::BrickPlayerState_SetDeaths Parms{};
+	Params::Elevator_SetElevatorDirection Parms{};
 
-	Parms.NewDeaths = NewDeaths;
+	Parms.Dir = Dir;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -20892,21 +20074,21 @@ void ABrickPlayerState::SetDeaths(int32 NewDeaths)
 }
 
 
-// Function BrickRigs.BrickPlayerState.SetIsAdmin
-// (Final, BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
+// Function BrickRigs.Elevator.SetElevatorState
+// (Final, Native, Protected, HasOutParams, BlueprintCallable)
 // Parameters:
-// bool                                    bNewIsAdmin                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FElevatorState&            NewState                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 
-void ABrickPlayerState::SetIsAdmin(bool bNewIsAdmin)
+void AElevator::SetElevatorState(const struct FElevatorState& NewState)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BrickPlayerState", "SetIsAdmin");
+		Func = Class->GetFunction("Elevator", "SetElevatorState");
 
-	Params::BrickPlayerState_SetIsAdmin Parms{};
+	Params::Elevator_SetElevatorState Parms{};
 
-	Parms.bNewIsAdmin = bNewIsAdmin;
+	Parms.NewState = std::move(NewState);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -20917,351 +20099,24 @@ void ABrickPlayerState::SetIsAdmin(bool bNewIsAdmin)
 }
 
 
-// Function BrickRigs.BrickPlayerState.SetIsAlive
-// (Final, BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
+// Function BrickRigs.Elevator.GetInteractionLocation
+// (Event, Protected, HasDefaults, BlueprintEvent, Const)
 // Parameters:
-// bool                                    bInIsAlive                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void ABrickPlayerState::SetIsAlive(bool bInIsAlive)
+struct FVector AElevator::GetInteractionLocation(int32 Index_0) const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BrickPlayerState", "SetIsAlive");
+		Func = Class->GetFunction("Elevator", "GetInteractionLocation");
 
-	Params::BrickPlayerState_SetIsAlive Parms{};
+	Params::Elevator_GetInteractionLocation Parms{};
 
-	Parms.bInIsAlive = bInIsAlive;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
+	Parms.Index_0 = Index_0;
 
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.BrickPlayerState.SetIsTeamLeader
-// (Final, BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    bNewLeader                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ABrickPlayerState::SetIsTeamLeader(bool bNewLeader)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickPlayerState", "SetIsTeamLeader");
-
-	Params::BrickPlayerState_SetIsTeamLeader Parms{};
-
-	Parms.bNewLeader = bNewLeader;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.BrickPlayerState.SetKills
-// (Final, BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
-// Parameters:
-// int32                                   NewKills                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ABrickPlayerState::SetKills(int32 NewKills)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickPlayerState", "SetKills");
-
-	Params::BrickPlayerState_SetKills Parms{};
-
-	Parms.NewKills = NewKills;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.BrickPlayerState.SetMoney
-// (Final, BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ABrickPlayerState::SetMoney(float NewValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickPlayerState", "SetMoney");
-
-	Params::BrickPlayerState_SetMoney Parms{};
-
-	Parms.NewValue = NewValue;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.BrickPlayerState.SetScore
-// (Final, BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   NewScore                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ABrickPlayerState::SetScore(float NewScore)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickPlayerState", "SetScore");
-
-	Params::BrickPlayerState_SetScore Parms{};
-
-	Parms.NewScore = NewScore;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.BrickPlayerState.GetDeaths
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 ABrickPlayerState::GetDeaths() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickPlayerState", "GetDeaths");
-
-	Params::BrickPlayerState_GetDeaths Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.BrickPlayerState.GetKills
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 ABrickPlayerState::GetKills() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickPlayerState", "GetKills");
-
-	Params::BrickPlayerState_GetKills Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.BrickPlayerState.GetMoney
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float ABrickPlayerState::GetMoney() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickPlayerState", "GetMoney");
-
-	Params::BrickPlayerState_GetMoney Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.BrickPlayerState.GetPlayerNameText
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-
-class FText ABrickPlayerState::GetPlayerNameText() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickPlayerState", "GetPlayerNameText");
-
-	Params::BrickPlayerState_GetPlayerNameText Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.BrickPlayerState.GetUncompressedPing
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 ABrickPlayerState::GetUncompressedPing() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickPlayerState", "GetUncompressedPing");
-
-	Params::BrickPlayerState_GetUncompressedPing Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.BrickPlayerState.IsAdmin
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool ABrickPlayerState::IsAdmin() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickPlayerState", "IsAdmin");
-
-	Params::BrickPlayerState_IsAdmin Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.BrickPlayerState.IsAlive
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool ABrickPlayerState::IsAlive() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickPlayerState", "IsAlive");
-
-	Params::BrickPlayerState_IsAlive Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.BrickPlayerState.IsHost
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool ABrickPlayerState::IsHost() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickPlayerState", "IsHost");
-
-	Params::BrickPlayerState_IsHost Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.BrickPlayerState.IsTeamLeader
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool ABrickPlayerState::IsTeamLeader() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickPlayerState", "IsTeamLeader");
-
-	Params::BrickPlayerState_IsTeamLeader Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 }
@@ -21292,20 +20147,20 @@ void ABrickProjectile::OnRep_SeekingTarget(class AActor* OldTarget)
 }
 
 
-// Function BrickRigs.WorldSetupActor.Get
+// Function BrickRigs.WindowManagerWidget.Get
 // (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
 // const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AWorldSetupActor*                 ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UWindowManagerWidget*             ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class AWorldSetupActor* AWorldSetupActor::Get(const class UObject* WorldContextObject)
+class UWindowManagerWidget* UWindowManagerWidget::Get(const class UObject* WorldContextObject)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("WorldSetupActor", "Get");
+		Func = StaticClass()->GetFunction("WindowManagerWidget", "Get");
 
-	Params::WorldSetupActor_Get Parms{};
+	Params::WindowManagerWidget_Get Parms{};
 
 	Parms.WorldContextObject = WorldContextObject;
 
@@ -21313,6 +20168,123 @@ class AWorldSetupActor* AWorldSetupActor::Get(const class UObject* WorldContextO
 	Func->FunctionFlags |= 0x400;
 
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.WindowManagerWidget.AddActiveWidget
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// class UMainWidgetBase*                  Widget                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UWindowManagerWidget::AddActiveWidget(class UMainWidgetBase* Widget)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WindowManagerWidget", "AddActiveWidget");
+
+	Params::WindowManagerWidget_AddActiveWidget Parms{};
+
+	Parms.Widget = Widget;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.WindowManagerWidget.OnIntroSequenceFinished
+// (Final, Native, Public, BlueprintCallable)
+
+void UWindowManagerWidget::OnIntroSequenceFinished()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WindowManagerWidget", "OnIntroSequenceFinished");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.WindowManagerWidget.SetMenuOpen
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bOpen                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UWindowManagerWidget::SetMenuOpen(bool bOpen)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WindowManagerWidget", "SetMenuOpen");
+
+	Params::WindowManagerWidget_SetMenuOpen Parms{};
+
+	Parms.bOpen = bOpen;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.WindowManagerWidget.CanOpenOrCloseMenu
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    bOpen                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UWindowManagerWidget::CanOpenOrCloseMenu(bool bOpen) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WindowManagerWidget", "CanOpenOrCloseMenu");
+
+	Params::WindowManagerWidget_CanOpenOrCloseMenu Parms{};
+
+	Parms.bOpen = bOpen;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.WindowManagerWidget.IsMenuOpen
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UWindowManagerWidget::IsMenuOpen() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WindowManagerWidget", "IsMenuOpen");
+
+	Params::WindowManagerWidget_IsMenuOpen Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 
@@ -21345,21 +20317,23 @@ void UBrickScrollBox::SetSlotSpacingStyle(EBrickUISpacingStyle NewStyle)
 }
 
 
-// Function BrickRigs.BrickSpacer.SetColorStyle
-// (Final, Native, Public, BlueprintCallable)
+// Function BrickRigs.BrickSliderWidget.OnTextChanged
+// (Final, Native, Private, HasOutParams)
 // Parameters:
-// EBrickUIColorStyle                      NewStyle                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FText&                      NewText                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// EValueChangedEventType                  EventType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UBrickSpacer::SetColorStyle(EBrickUIColorStyle NewStyle)
+void UBrickSliderWidget::OnTextChanged(const class FText& NewText, EValueChangedEventType EventType)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BrickSpacer", "SetColorStyle");
+		Func = Class->GetFunction("BrickSliderWidget", "OnTextChanged");
 
-	Params::BrickSpacer_SetColorStyle Parms{};
+	Params::BrickSliderWidget_OnTextChanged Parms{};
 
-	Parms.NewStyle = NewStyle;
+	Parms.NewText = std::move(NewText);
+	Parms.EventType = EventType;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -21367,6 +20341,303 @@ void UBrickSpacer::SetColorStyle(EBrickUIColorStyle NewStyle)
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.BrickSliderWidget.SetCustomTextFormat
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FText&                      InFormat                                               (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UBrickSliderWidget::SetCustomTextFormat(const class FText& InFormat)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickSliderWidget", "SetCustomTextFormat");
+
+	Params::BrickSliderWidget_SetCustomTextFormat Parms{};
+
+	Parms.InFormat = std::move(InFormat);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.BrickSliderWidget.SetGridSnapMode
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const EBrickSliderGridSnapMode          NewMode                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UBrickSliderWidget::SetGridSnapMode(const EBrickSliderGridSnapMode NewMode)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickSliderWidget", "SetGridSnapMode");
+
+	Params::BrickSliderWidget_SetGridSnapMode Parms{};
+
+	Parms.NewMode = NewMode;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.BrickSliderWidget.SetIsMarquee
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bInMarquee                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UBrickSliderWidget::SetIsMarquee(bool bInMarquee)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickSliderWidget", "SetIsMarquee");
+
+	Params::BrickSliderWidget_SetIsMarquee Parms{};
+
+	Parms.bInMarquee = bInMarquee;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.BrickSliderWidget.SetIsReadOnly
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bInReadOnly                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UBrickSliderWidget::SetIsReadOnly(bool bInReadOnly)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickSliderWidget", "SetIsReadOnly");
+
+	Params::BrickSliderWidget_SetIsReadOnly Parms{};
+
+	Parms.bInReadOnly = bInReadOnly;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.BrickSliderWidget.SetMaxFractionalDigits
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   InMaxDigits                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UBrickSliderWidget::SetMaxFractionalDigits(int32 InMaxDigits)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickSliderWidget", "SetMaxFractionalDigits");
+
+	Params::BrickSliderWidget_SetMaxFractionalDigits Parms{};
+
+	Parms.InMaxDigits = InMaxDigits;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.BrickSliderWidget.SetValue
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UBrickSliderWidget::SetValue(float NewValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickSliderWidget", "SetValue");
+
+	Params::BrickSliderWidget_SetValue Parms{};
+
+	Parms.NewValue = NewValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.BrickSliderWidget.SetValueRange
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// float                                   InMinValue                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   InMaxValue                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UBrickSliderWidget::SetValueRange(float InMinValue, float InMaxValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickSliderWidget", "SetValueRange");
+
+	Params::BrickSliderWidget_SetValueRange Parms{};
+
+	Parms.InMinValue = InMinValue;
+	Parms.InMaxValue = InMaxValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.BrickSliderWidget.SetValueType
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// ENumericValueType                       InType                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UBrickSliderWidget::SetValueType(ENumericValueType InType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickSliderWidget", "SetValueType");
+
+	Params::BrickSliderWidget_SetValueType Parms{};
+
+	Parms.InType = InType;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.BrickSliderWidget.UpdateIsDragging
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// const bool                              bIsDragging                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UBrickSliderWidget::UpdateIsDragging(const bool bIsDragging)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickSliderWidget", "UpdateIsDragging");
+
+	Params::BrickSliderWidget_UpdateIsDragging Parms{};
+
+	Parms.bIsDragging = bIsDragging;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.BrickSliderWidget.UpdateSliderPosition
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// float                                   NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UBrickSliderWidget::UpdateSliderPosition(float NewValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickSliderWidget", "UpdateSliderPosition");
+
+	Params::BrickSliderWidget_UpdateSliderPosition Parms{};
+
+	Parms.NewValue = NewValue;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.BrickSliderWidget.GetValue
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UBrickSliderWidget::GetValue() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickSliderWidget", "GetValue");
+
+	Params::BrickSliderWidget_GetValue Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.BrickStatics.ColorToHex
+// (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure)
+// Parameters:
+// const struct FLinearColor&              Color                                                  (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bIncludeAlpha                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FString                           ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class FString UBrickStatics::ColorToHex(const struct FLinearColor& Color, const bool bIncludeAlpha)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("BrickStatics", "ColorToHex");
+
+	Params::BrickStatics_ColorToHex Parms{};
+
+	Parms.Color = std::move(Color);
+	Parms.bIncludeAlpha = bIncludeAlpha;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -21481,6 +20752,64 @@ class FString UBrickStatics::GetProjectVersion()
 }
 
 
+// Function BrickRigs.BrickStatics.GetScalableBrickConnectorSpacingAxis
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
+// Parameters:
+// const struct FScalableBrickConnectorSpacing&ConnectorSpacing                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const EFluAxisSigned                    Axis                                                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EConnectorSpacing                       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EConnectorSpacing UBrickStatics::GetScalableBrickConnectorSpacingAxis(const struct FScalableBrickConnectorSpacing& ConnectorSpacing, const EFluAxisSigned Axis)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("BrickStatics", "GetScalableBrickConnectorSpacingAxis");
+
+	Params::BrickStatics_GetScalableBrickConnectorSpacingAxis Parms{};
+
+	Parms.ConnectorSpacing = std::move(ConnectorSpacing);
+	Parms.Axis = Axis;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.BrickStatics.HexToColor
+// (Final, Native, Static, Public, HasDefaults, BlueprintCallable, BlueprintPure)
+// Parameters:
+// const class FString&                    Hex                                                    (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FLinearColor                     ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FLinearColor UBrickStatics::HexToColor(const class FString& Hex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("BrickStatics", "HexToColor");
+
+	Params::BrickStatics_HexToColor Parms{};
+
+	Parms.Hex = std::move(Hex);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function BrickRigs.BrickStatics.IsModdedAsset
 // (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
@@ -21497,34 +20826,6 @@ bool UBrickStatics::IsModdedAsset(const class UObject* Asset)
 	Params::BrickStatics_IsModdedAsset Parms{};
 
 	Parms.Asset = Asset;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.BrickStatics.QuatToNiceRotator
-// (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure)
-// Parameters:
-// const struct FQuat&                     Quat                                                   (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-// struct FRotator                         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-
-struct FRotator UBrickStatics::QuatToNiceRotator(const struct FQuat& Quat)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("BrickStatics", "QuatToNiceRotator");
-
-	Params::BrickStatics_QuatToNiceRotator Parms{};
-
-	Parms.Quat = std::move(Quat);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -21566,6 +20867,37 @@ bool UBrickStatics::SetActorOnFire(const struct FHitResult& Hit, class APawn* In
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.BrickStatics.SetScalableBrickConnectorSpacingAxis
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// struct FScalableBrickConnectorSpacing&  ConnectorSpacing                                       (Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// const EFluAxisSigned                    Axis                                                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const EConnectorSpacing                 NewSpacing                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UBrickStatics::SetScalableBrickConnectorSpacingAxis(struct FScalableBrickConnectorSpacing& ConnectorSpacing, const EFluAxisSigned Axis, const EConnectorSpacing NewSpacing)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("BrickStatics", "SetScalableBrickConnectorSpacingAxis");
+
+	Params::BrickStatics_SetScalableBrickConnectorSpacingAxis Parms{};
+
+	Parms.ConnectorSpacing = std::move(ConnectorSpacing);
+	Parms.Axis = Axis;
+	Parms.NewSpacing = NewSpacing;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	ConnectorSpacing = std::move(Parms.ConnectorSpacing);
 }
 
 
@@ -21704,103 +21036,419 @@ class FString UBrickStatics::UniqueNetIdToString(const struct FUniqueNetIdRepl& 
 }
 
 
-// Function BrickRigs.BrickStatics.Vector2DAngle
-// (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure)
+// Function BrickRigs.BrickTextBoxWidget.OnTextChanged
+// (Final, Native, Private, HasOutParams)
 // Parameters:
-// const struct FVector2D&                 Vector                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FText&                      NewText                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-float UBrickStatics::Vector2DAngle(const struct FVector2D& Vector)
+void UBrickTextBoxWidget::OnTextChanged(const class FText& NewText)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("BrickStatics", "Vector2DAngle");
+		Func = Class->GetFunction("BrickTextBoxWidget", "OnTextChanged");
 
-	Params::BrickStatics_Vector2DAngle Parms{};
+	Params::BrickTextBoxWidget_OnTextChanged Parms{};
 
-	Parms.Vector = std::move(Vector);
+	Parms.NewText = std::move(NewText);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
-// Function BrickRigs.BrickStatics.Vector2DAngle2
-// (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure)
+// Function BrickRigs.BrickTextBoxWidget.SetAllowMultiLine
+// (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// const struct FVector2D&                 A                                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FVector2D&                 B                                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bInAllowMultiLine                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-float UBrickStatics::Vector2DAngle2(const struct FVector2D& A, const struct FVector2D& B)
+void UBrickTextBoxWidget::SetAllowMultiLine(bool bInAllowMultiLine)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("BrickStatics", "Vector2DAngle2");
+		Func = Class->GetFunction("BrickTextBoxWidget", "SetAllowMultiLine");
 
-	Params::BrickStatics_Vector2DAngle2 Parms{};
+	Params::BrickTextBoxWidget_SetAllowMultiLine Parms{};
 
-	Parms.A = std::move(A);
-	Parms.B = std::move(B);
+	Parms.bInAllowMultiLine = bInAllowMultiLine;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
-// Function BrickRigs.BrickStatics.WrapIndex
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Function BrickRigs.BrickTextBoxWidget.SetBrushStyle
+// (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// int32                                   Value                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Num                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EBrickUIBrushStyle                      InBrushStyle                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-int32 UBrickStatics::WrapIndex(int32 Value, int32 Num)
+void UBrickTextBoxWidget::SetBrushStyle(EBrickUIBrushStyle InBrushStyle)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("BrickStatics", "WrapIndex");
+		Func = Class->GetFunction("BrickTextBoxWidget", "SetBrushStyle");
 
-	Params::BrickStatics_WrapIndex Parms{};
+	Params::BrickTextBoxWidget_SetBrushStyle Parms{};
 
-	Parms.Value = Value;
-	Parms.Num = Num;
+	Parms.InBrushStyle = InBrushStyle;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
-// Function BrickRigs.BrickTeam.OnRep_MaxScore
-// (Final, Native, Private)
+// Function BrickRigs.BrickTextBoxWidget.SetColorStyle
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// EBrickUIColorStyle                      InColorStyle                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UBrickTeam::OnRep_MaxScore()
+void UBrickTextBoxWidget::SetColorStyle(EBrickUIColorStyle InColorStyle)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BrickTeam", "OnRep_MaxScore");
+		Func = Class->GetFunction("BrickTextBoxWidget", "SetColorStyle");
+
+	Params::BrickTextBoxWidget_SetColorStyle Parms{};
+
+	Parms.InColorStyle = InColorStyle;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.BrickTextBoxWidget.SetCustomFocus
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bNewUseCustomFocus                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bNewFocused                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UBrickTextBoxWidget::SetCustomFocus(bool bNewUseCustomFocus, bool bNewFocused)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickTextBoxWidget", "SetCustomFocus");
+
+	Params::BrickTextBoxWidget_SetCustomFocus Parms{};
+
+	Parms.bNewUseCustomFocus = bNewUseCustomFocus;
+	Parms.bNewFocused = bNewFocused;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.BrickTextBoxWidget.SetHintText
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FText&                      InText                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UBrickTextBoxWidget::SetHintText(const class FText& InText)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickTextBoxWidget", "SetHintText");
+
+	Params::BrickTextBoxWidget_SetHintText Parms{};
+
+	Parms.InText = std::move(InText);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.BrickTextBoxWidget.SetIsMarquee
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bNewMarquee                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UBrickTextBoxWidget::SetIsMarquee(bool bNewMarquee)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickTextBoxWidget", "SetIsMarquee");
+
+	Params::BrickTextBoxWidget_SetIsMarquee Parms{};
+
+	Parms.bNewMarquee = bNewMarquee;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.BrickTextBoxWidget.SetIsPassword
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bNewIsPassword                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UBrickTextBoxWidget::SetIsPassword(bool bNewIsPassword)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickTextBoxWidget", "SetIsPassword");
+
+	Params::BrickTextBoxWidget_SetIsPassword Parms{};
+
+	Parms.bNewIsPassword = bNewIsPassword;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.BrickTextBoxWidget.SetIsReadOnly
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bNewReadOnly                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UBrickTextBoxWidget::SetIsReadOnly(bool bNewReadOnly)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickTextBoxWidget", "SetIsReadOnly");
+
+	Params::BrickTextBoxWidget_SetIsReadOnly Parms{};
+
+	Parms.bNewReadOnly = bNewReadOnly;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.BrickTextBoxWidget.SetJustification
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// ETextJustify                            NewJustification                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UBrickTextBoxWidget::SetJustification(ETextJustify NewJustification)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickTextBoxWidget", "SetJustification");
+
+	Params::BrickTextBoxWidget_SetJustification Parms{};
+
+	Parms.NewJustification = NewJustification;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.BrickTextBoxWidget.SetMaxTextLength
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// int32                                   InMaxLength                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UBrickTextBoxWidget::SetMaxTextLength(int32 InMaxLength)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickTextBoxWidget", "SetMaxTextLength");
+
+	Params::BrickTextBoxWidget_SetMaxTextLength Parms{};
+
+	Parms.InMaxLength = InMaxLength;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.BrickTextBoxWidget.SetPaddingStyle
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// EBrickUIPaddingStyle                    InPaddingStyle                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UBrickTextBoxWidget::SetPaddingStyle(EBrickUIPaddingStyle InPaddingStyle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickTextBoxWidget", "SetPaddingStyle");
+
+	Params::BrickTextBoxWidget_SetPaddingStyle Parms{};
+
+	Parms.InPaddingStyle = InPaddingStyle;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.BrickTextBoxWidget.SetPasswordVisible
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bNewVisible                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UBrickTextBoxWidget::SetPasswordVisible(bool bNewVisible)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickTextBoxWidget", "SetPasswordVisible");
+
+	Params::BrickTextBoxWidget_SetPasswordVisible Parms{};
+
+	Parms.bNewVisible = bNewVisible;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.BrickTextBoxWidget.SetText
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class FText&                      InText                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// bool                                    bValidateText                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UBrickTextBoxWidget::SetText(const class FText& InText, bool bValidateText)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickTextBoxWidget", "SetText");
+
+	Params::BrickTextBoxWidget_SetText Parms{};
+
+	Parms.InText = std::move(InText);
+	Parms.bValidateText = bValidateText;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.BrickTextBoxWidget.SetTextStyle
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// EBrickUITextStyle                       InTextStyle                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UBrickTextBoxWidget::SetTextStyle(EBrickUITextStyle InTextStyle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickTextBoxWidget", "SetTextStyle");
+
+	Params::BrickTextBoxWidget_SetTextStyle Parms{};
+
+	Parms.InTextStyle = InTextStyle;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.BrickTextBoxWidget.StartTyping
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bSelectAllText                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UBrickTextBoxWidget::StartTyping(bool bSelectAllText)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickTextBoxWidget", "StartTyping");
+
+	Params::BrickTextBoxWidget_StartTyping Parms{};
+
+	Parms.bSelectAllText = bSelectAllText;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.BrickTextBoxWidget.TogglePasswordVisible
+// (Final, Native, Public, BlueprintCallable)
+
+void UBrickTextBoxWidget::TogglePasswordVisible()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickTextBoxWidget", "TogglePasswordVisible");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -21811,138 +21459,59 @@ void UBrickTeam::OnRep_MaxScore()
 }
 
 
-// Function BrickRigs.BrickTeam.OnRep_Score
-// (Final, Native, Private)
-
-void UBrickTeam::OnRep_Score()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickTeam", "OnRep_Score");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.BrickTeam.SetMaxScore
-// (Final, BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
+// Function BrickRigs.BrickTextBoxWidget.UpdateIsPassword
+// (Event, Protected, BlueprintEvent)
 // Parameters:
-// int32                                   NewMaxScore                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bNewIsPassword                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UBrickTeam::SetMaxScore(int32 NewMaxScore)
+void UBrickTextBoxWidget::UpdateIsPassword(bool bNewIsPassword)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BrickTeam", "SetMaxScore");
+		Func = Class->GetFunction("BrickTextBoxWidget", "UpdateIsPassword");
 
-	Params::BrickTeam_SetMaxScore Parms{};
+	Params::BrickTextBoxWidget_UpdateIsPassword Parms{};
 
-	Parms.NewMaxScore = NewMaxScore;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
+	Parms.bNewIsPassword = bNewIsPassword;
 
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
-// Function BrickRigs.BrickTeam.SetScore
-// (Final, BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
+// Function BrickRigs.BrickTextBoxWidget.UpdatePasswordVisible
+// (Event, Protected, BlueprintEvent)
 // Parameters:
-// int32                                   NewScore                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bNewVisible                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UBrickTeam::SetScore(int32 NewScore)
+void UBrickTextBoxWidget::UpdatePasswordVisible(bool bNewVisible)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BrickTeam", "SetScore");
+		Func = Class->GetFunction("BrickTextBoxWidget", "UpdatePasswordVisible");
 
-	Params::BrickTeam_SetScore Parms{};
+	Params::BrickTextBoxWidget_UpdatePasswordVisible Parms{};
 
-	Parms.NewScore = NewScore;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
+	Parms.bNewVisible = bNewVisible;
 
 	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
-// Function BrickRigs.BrickTeam.GetMaxScore
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 UBrickTeam::GetMaxScore() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickTeam", "GetMaxScore");
-
-	Params::BrickTeam_GetMaxScore Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.BrickTeam.GetScore
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 UBrickTeam::GetScore() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickTeam", "GetScore");
-
-	Params::BrickTeam_GetScore Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.BrickTeam.GetTeamDisplayName
+// Function BrickRigs.BrickTextBoxWidget.GetText
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
 // class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 
-class FText UBrickTeam::GetTeamDisplayName() const
+class FText UBrickTextBoxWidget::GetText() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BrickTeam", "GetTeamDisplayName");
+		Func = Class->GetFunction("BrickTextBoxWidget", "GetText");
 
-	Params::BrickTeam_GetTeamDisplayName Parms{};
+	Params::BrickTextBoxWidget_GetText Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -21955,19 +21524,19 @@ class FText UBrickTeam::GetTeamDisplayName() const
 }
 
 
-// Function BrickRigs.BrickTeam.GetTeamId
+// Function BrickRigs.BrickTextBoxWidget.IsMarquee
 // (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// const struct FGenericTeamId             ReturnValue                                            (ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-const struct FGenericTeamId UBrickTeam::GetTeamId() const
+bool UBrickTextBoxWidget::IsMarquee() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BrickTeam", "GetTeamId");
+		Func = Class->GetFunction("BrickTextBoxWidget", "IsMarquee");
 
-	Params::BrickTeam_GetTeamId Parms{};
+	Params::BrickTextBoxWidget_IsMarquee Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -21980,21 +21549,19 @@ const struct FGenericTeamId UBrickTeam::GetTeamId() const
 }
 
 
-// Function BrickRigs.BrickTextBlock.SetColorStyle
-// (Final, Native, Public, BlueprintCallable)
+// Function BrickRigs.BrickTextBoxWidget.IsPasswordVisible
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// EBrickUIColorStyle                      NewStyle                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UBrickTextBlock::SetColorStyle(EBrickUIColorStyle NewStyle)
+bool UBrickTextBoxWidget::IsPasswordVisible() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BrickTextBlock", "SetColorStyle");
+		Func = Class->GetFunction("BrickTextBoxWidget", "IsPasswordVisible");
 
-	Params::BrickTextBlock_SetColorStyle Parms{};
-
-	Parms.NewStyle = NewStyle;
+	Params::BrickTextBoxWidget_IsPasswordVisible Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -22002,24 +21569,24 @@ void UBrickTextBlock::SetColorStyle(EBrickUIColorStyle NewStyle)
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
-// Function BrickRigs.BrickTextBlock.SetStyleState
-// (Final, Native, Public, BlueprintCallable)
+// Function BrickRigs.BrickTextBoxWidget.IsReadOnly
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// EBrickUIStyleState                      NewState                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UBrickTextBlock::SetStyleState(EBrickUIStyleState NewState)
+bool UBrickTextBoxWidget::IsReadOnly() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BrickTextBlock", "SetStyleState");
+		Func = Class->GetFunction("BrickTextBoxWidget", "IsReadOnly");
 
-	Params::BrickTextBlock_SetStyleState Parms{};
-
-	Parms.NewState = NewState;
+	Params::BrickTextBoxWidget_IsReadOnly Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -22027,24 +21594,24 @@ void UBrickTextBlock::SetStyleState(EBrickUIStyleState NewState)
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
-// Function BrickRigs.BrickTextBlock.SetTextStyle
-// (Final, Native, Public, BlueprintCallable)
+// Function BrickRigs.BrickTextBoxWidget.IsTyping
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// EBrickUITextStyle                       NewStyle                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UBrickTextBlock::SetTextStyle(EBrickUITextStyle NewStyle)
+bool UBrickTextBoxWidget::IsTyping() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BrickTextBlock", "SetTextStyle");
+		Func = Class->GetFunction("BrickTextBoxWidget", "IsTyping");
 
-	Params::BrickTextBlock_SetTextStyle Parms{};
-
-	Parms.NewStyle = NewStyle;
+	Params::BrickTextBoxWidget_IsTyping Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -22052,6 +21619,8 @@ void UBrickTextBlock::SetTextStyle(EBrickUITextStyle NewStyle)
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -22581,33 +22150,6 @@ const struct FTextBlockStyle UBrickUIStyle::GetTextStyle(EBrickUITextStyle TextS
 }
 
 
-// Function BrickRigs.BrickUnitsPropertyWidget.OnSliderValueChanged
-// (Final, Native, Private, HasOutParams)
-// Parameters:
-// const struct FBrickUnits&               NewValue                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// EValueChangedEventType                  EventType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UBrickUnitsPropertyWidget::OnSliderValueChanged(const struct FBrickUnits& NewValue, EValueChangedEventType EventType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("BrickUnitsPropertyWidget", "OnSliderValueChanged");
-
-	Params::BrickUnitsPropertyWidget_OnSliderValueChanged Parms{};
-
-	Parms.NewValue = std::move(NewValue);
-	Parms.EventType = EventType;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function BrickRigs.BrickUserSettings.GetUserSettings
 // (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
@@ -22633,15 +22175,15 @@ class UBrickUserSettings* UBrickUserSettings::GetUserSettings()
 }
 
 
-// Function BrickRigs.BrickVehicleDownloadReplicator.OnRep_DownloadProgress
-// (Final, Native, Private)
+// Function BrickRigs.BrickUserSettings.CycleBrickUnitsDisplayMode
+// (Final, Native, Public, BlueprintCallable)
 
-void ABrickVehicleDownloadReplicator::OnRep_DownloadProgress()
+void UBrickUserSettings::CycleBrickUnitsDisplayMode()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("BrickVehicleDownloadReplicator", "OnRep_DownloadProgress");
+		Func = Class->GetFunction("BrickUserSettings", "CycleBrickUnitsDisplayMode");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -22652,31 +22194,128 @@ void ABrickVehicleDownloadReplicator::OnRep_DownloadProgress()
 }
 
 
-// Function BrickRigs.BrickViewportClient.Get
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Function BrickRigs.BrickUserSettings.SetBrickUnitsDisplayMode
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UBrickViewportClient*             ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const EBrickUnitsDisplayMode&           NewMode                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-class UBrickViewportClient* UBrickViewportClient::Get(const class UObject* WorldContextObject)
+void UBrickUserSettings::SetBrickUnitsDisplayMode(const EBrickUnitsDisplayMode& NewMode)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("BrickViewportClient", "Get");
+		Func = Class->GetFunction("BrickUserSettings", "SetBrickUnitsDisplayMode");
 
-	Params::BrickViewportClient_Get Parms{};
+	Params::BrickUserSettings_SetBrickUnitsDisplayMode Parms{};
 
-	Parms.WorldContextObject = WorldContextObject;
+	Parms.NewMode = NewMode;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.BrickUserSettings.SetColorDisplayMode
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const EColorDisplayMode                 NewMode                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UBrickUserSettings::SetColorDisplayMode(const EColorDisplayMode NewMode)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickUserSettings", "SetColorDisplayMode");
+
+	Params::BrickUserSettings_SetColorDisplayMode Parms{};
+
+	Parms.NewMode = NewMode;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.BrickUserSettings.GetBrickUnitsDisplayMode
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// EBrickUnitsDisplayMode                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EBrickUnitsDisplayMode UBrickUserSettings::GetBrickUnitsDisplayMode() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickUserSettings", "GetBrickUnitsDisplayMode");
+
+	Params::BrickUserSettings_GetBrickUnitsDisplayMode Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.BrickUserSettings.GetColorDisplayMode
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// EColorDisplayMode                       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EColorDisplayMode UBrickUserSettings::GetColorDisplayMode() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickUserSettings", "GetColorDisplayMode");
+
+	Params::BrickUserSettings_GetColorDisplayMode Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.BrickVerticalBox.SetSlotSpacingStyle
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// EBrickUISpacingStyle                    NewStyle                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UBrickVerticalBox::SetSlotSpacingStyle(EBrickUISpacingStyle NewStyle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("BrickVerticalBox", "SetSlotSpacingStyle");
+
+	Params::BrickVerticalBox_SetSlotSpacingStyle Parms{};
+
+	Parms.NewStyle = NewStyle;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -22758,408 +22397,438 @@ void ABrickWorldSettings::RemoveHeatSeekingTarget(class AActor* Target)
 }
 
 
-// Function BrickRigs.CameraBrickWidget.UpdateTargetRange
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bHitSomething                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   Distance                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function BrickRigs.PlayerPawnInputComponent.OnHeldCycleExplosives
+// (Final, Native, Protected)
 
-void UCameraBrickWidget::UpdateTargetRange(bool bHitSomething, float Distance)
+void UPlayerPawnInputComponent::OnHeldCycleExplosives()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CameraBrickWidget", "UpdateTargetRange");
-
-	Params::CameraBrickWidget_UpdateTargetRange Parms{};
-
-	Parms.bHitSomething = bHitSomething;
-	Parms.Distance = Distance;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.CapturePoint.OnRep_CapturePointState
-// (Final, Native, Private, HasOutParams)
-// Parameters:
-// const struct FCapturePointState&        OldState                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void ACapturePoint::OnRep_CapturePointState(const struct FCapturePointState& OldState)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CapturePoint", "OnRep_CapturePointState");
-
-	Params::CapturePoint_OnRep_CapturePointState Parms{};
-
-	Parms.OldState = std::move(OldState);
+		Func = Class->GetFunction("PlayerPawnInputComponent", "OnHeldCycleExplosives");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }
 
 
-// Function BrickRigs.CapturePoint.OnTriggerBeginOverlap
-// (Final, Native, Private, HasOutParams)
-// Parameters:
-// class UPrimitiveComponent*              OverlappedComponent                                    (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                           OtherActor                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   OtherBodyIndex                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bFromSweep                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FHitResult&                SweepResult                                            (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// Function BrickRigs.PlayerPawnInputComponent.OnHeldCycleSlots
+// (Final, Native, Protected)
 
-void ACapturePoint::OnTriggerBeginOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const struct FHitResult& SweepResult)
+void UPlayerPawnInputComponent::OnHeldCycleSlots()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CapturePoint", "OnTriggerBeginOverlap");
-
-	Params::CapturePoint_OnTriggerBeginOverlap Parms{};
-
-	Parms.OverlappedComponent = OverlappedComponent;
-	Parms.OtherActor = OtherActor;
-	Parms.OtherComp = OtherComp;
-	Parms.OtherBodyIndex = OtherBodyIndex;
-	Parms.bFromSweep = bFromSweep;
-	Parms.SweepResult = std::move(SweepResult);
+		Func = Class->GetFunction("PlayerPawnInputComponent", "OnHeldCycleSlots");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }
 
 
-// Function BrickRigs.CapturePoint.OnTriggerEndOverlap
-// (Final, Native, Private)
-// Parameters:
-// class UPrimitiveComponent*              OverlappedComponent                                    (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class AActor*                           OtherActor                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UPrimitiveComponent*              OtherComp                                              (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   OtherBodyIndex                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function BrickRigs.PlayerPawnInputComponent.OnHeldKill
+// (Final, Native, Protected)
 
-void ACapturePoint::OnTriggerEndOverlap(class UPrimitiveComponent* OverlappedComponent, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
+void UPlayerPawnInputComponent::OnHeldKill()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CapturePoint", "OnTriggerEndOverlap");
-
-	Params::CapturePoint_OnTriggerEndOverlap Parms{};
-
-	Parms.OverlappedComponent = OverlappedComponent;
-	Parms.OtherActor = OtherActor;
-	Parms.OtherComp = OtherComp;
-	Parms.OtherBodyIndex = OtherBodyIndex;
+		Func = Class->GetFunction("PlayerPawnInputComponent", "OnHeldKill");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }
 
 
-// Function BrickRigs.CapturePoint.SetCapturedBy
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const struct FGenericTeamId&            TeamID                                                 (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bNewHasBeenCaptured                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function BrickRigs.PlayerPawnInputComponent.OnPressedAim
+// (Final, Native, Protected)
 
-bool ACapturePoint::SetCapturedBy(const struct FGenericTeamId& TeamID, bool bNewHasBeenCaptured)
+void UPlayerPawnInputComponent::OnPressedAim()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CapturePoint", "SetCapturedBy");
-
-	Params::CapturePoint_SetCapturedBy Parms{};
-
-	Parms.TeamID = std::move(TeamID);
-	Parms.bNewHasBeenCaptured = bNewHasBeenCaptured;
+		Func = Class->GetFunction("PlayerPawnInputComponent", "OnPressedAim");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
-// Function BrickRigs.CapturePoint.SetCaptureRatio
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// float                                   NewRatio                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function BrickRigs.PlayerPawnInputComponent.OnPressedCycleExplosives
+// (Final, Native, Protected)
 
-bool ACapturePoint::SetCaptureRatio(float NewRatio)
+void UPlayerPawnInputComponent::OnPressedCycleExplosives()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CapturePoint", "SetCaptureRatio");
-
-	Params::CapturePoint_SetCaptureRatio Parms{};
-
-	Parms.NewRatio = NewRatio;
+		Func = Class->GetFunction("PlayerPawnInputComponent", "OnPressedCycleExplosives");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
-// Function BrickRigs.CapturePoint.SetCapturingTeam
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const struct FGenericTeamId&            TeamID                                                 (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function BrickRigs.PlayerPawnInputComponent.OnPressedCycleFireMode
+// (Final, Native, Protected)
 
-bool ACapturePoint::SetCapturingTeam(const struct FGenericTeamId& TeamID)
+void UPlayerPawnInputComponent::OnPressedCycleFireMode()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CapturePoint", "SetCapturingTeam");
-
-	Params::CapturePoint_SetCapturingTeam Parms{};
-
-	Parms.TeamID = std::move(TeamID);
+		Func = Class->GetFunction("PlayerPawnInputComponent", "OnPressedCycleFireMode");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
-// Function BrickRigs.CapturePoint.GetCapturedBy
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// const struct FGenericTeamId             ReturnValue                                            (ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function BrickRigs.PlayerPawnInputComponent.OnPressedCycleSlots
+// (Final, Native, Protected)
 
-const struct FGenericTeamId ACapturePoint::GetCapturedBy() const
+void UPlayerPawnInputComponent::OnPressedCycleSlots()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CapturePoint", "GetCapturedBy");
-
-	Params::CapturePoint_GetCapturedBy Parms{};
+		Func = Class->GetFunction("PlayerPawnInputComponent", "OnPressedCycleSlots");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
-// Function BrickRigs.CapturePoint.GetCapturePointShortDisplayName
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+// Function BrickRigs.PlayerPawnInputComponent.OnPressedFire
+// (Final, Native, Protected)
 
-class FText ACapturePoint::GetCapturePointShortDisplayName() const
+void UPlayerPawnInputComponent::OnPressedFire()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CapturePoint", "GetCapturePointShortDisplayName");
-
-	Params::CapturePoint_GetCapturePointShortDisplayName Parms{};
+		Func = Class->GetFunction("PlayerPawnInputComponent", "OnPressedFire");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
-// Function BrickRigs.CapturePoint.GetCaptureRatio
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function BrickRigs.PlayerPawnInputComponent.OnPressedKill
+// (Final, Native, Protected)
 
-float ACapturePoint::GetCaptureRatio() const
+void UPlayerPawnInputComponent::OnPressedKill()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CapturePoint", "GetCaptureRatio");
-
-	Params::CapturePoint_GetCaptureRatio Parms{};
+		Func = Class->GetFunction("PlayerPawnInputComponent", "OnPressedKill");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
-// Function BrickRigs.CapturePoint.GetCapturingTeam
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// const struct FGenericTeamId             ReturnValue                                            (ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function BrickRigs.PlayerPawnInputComponent.OnPressedPrimarySlot
+// (Final, Native, Protected)
 
-const struct FGenericTeamId ACapturePoint::GetCapturingTeam() const
+void UPlayerPawnInputComponent::OnPressedPrimarySlot()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CapturePoint", "GetCapturingTeam");
-
-	Params::CapturePoint_GetCapturingTeam Parms{};
+		Func = Class->GetFunction("PlayerPawnInputComponent", "OnPressedPrimarySlot");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
-// Function BrickRigs.CapturePoint.HasBeenCaptured
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function BrickRigs.PlayerPawnInputComponent.OnPressedReload
+// (Final, Native, Protected)
 
-bool ACapturePoint::HasBeenCaptured() const
+void UPlayerPawnInputComponent::OnPressedReload()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CapturePoint", "HasBeenCaptured");
-
-	Params::CapturePoint_HasBeenCaptured Parms{};
+		Func = Class->GetFunction("PlayerPawnInputComponent", "OnPressedReload");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
-// Function BrickRigs.CapturePoint.IsCapturePointOnBuilding
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// const class ABrickBuilding*             InBuilding                                             (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function BrickRigs.PlayerPawnInputComponent.OnPressedSecondarySlot
+// (Final, Native, Protected)
 
-bool ACapturePoint::IsCapturePointOnBuilding(const class ABrickBuilding* InBuilding) const
+void UPlayerPawnInputComponent::OnPressedSecondarySlot()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CapturePoint", "IsCapturePointOnBuilding");
-
-	Params::CapturePoint_IsCapturePointOnBuilding Parms{};
-
-	Parms.InBuilding = InBuilding;
+		Func = Class->GetFunction("PlayerPawnInputComponent", "OnPressedSecondarySlot");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
-// Function BrickRigs.CapturePoint.IsCharacterOnCapturePoint
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class ABaseCharacter*                   InCharacter                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function BrickRigs.PlayerPawnInputComponent.OnPressedSpecialSlot
+// (Final, Native, Protected)
 
-bool ACapturePoint::IsCharacterOnCapturePoint(class ABaseCharacter* InCharacter) const
+void UPlayerPawnInputComponent::OnPressedSpecialSlot()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CapturePoint", "IsCharacterOnCapturePoint");
-
-	Params::CapturePoint_IsCharacterOnCapturePoint Parms{};
-
-	Parms.InCharacter = InCharacter;
+		Func = Class->GetFunction("PlayerPawnInputComponent", "OnPressedSpecialSlot");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
-// Function BrickRigs.CarWheelBrick.OnRootComponentWake
-// (Final, Native, Private)
-// Parameters:
-// class UPrimitiveComponent*              SleepingComponent                                      (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class FName                             BoneName                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function BrickRigs.PlayerPawnInputComponent.OnPressedThrowItem
+// (Final, Native, Protected)
 
-void UCarWheelBrick::OnRootComponentWake(class UPrimitiveComponent* SleepingComponent, class FName BoneName)
+void UPlayerPawnInputComponent::OnPressedThrowItem()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CarWheelBrick", "OnRootComponentWake");
-
-	Params::CarWheelBrick_OnRootComponentWake Parms{};
-
-	Parms.SleepingComponent = SleepingComponent;
-	Parms.BoneName = BoneName;
+		Func = Class->GetFunction("PlayerPawnInputComponent", "OnPressedThrowItem");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.PlayerPawnInputComponent.OnPressedUnequipItem
+// (Final, Native, Protected)
+
+void UPlayerPawnInputComponent::OnPressedUnequipItem()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlayerPawnInputComponent", "OnPressedUnequipItem");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.PlayerPawnInputComponent.OnReleasedAim
+// (Final, Native, Protected)
+
+void UPlayerPawnInputComponent::OnReleasedAim()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlayerPawnInputComponent", "OnReleasedAim");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.PlayerPawnInputComponent.OnReleasedCycleExplosives
+// (Final, Native, Protected)
+
+void UPlayerPawnInputComponent::OnReleasedCycleExplosives()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlayerPawnInputComponent", "OnReleasedCycleExplosives");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.PlayerPawnInputComponent.OnReleasedCycleSlots
+// (Final, Native, Protected)
+
+void UPlayerPawnInputComponent::OnReleasedCycleSlots()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlayerPawnInputComponent", "OnReleasedCycleSlots");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.PlayerPawnInputComponent.OnReleasedFire
+// (Final, Native, Protected)
+
+void UPlayerPawnInputComponent::OnReleasedFire()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlayerPawnInputComponent", "OnReleasedFire");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.PlayerPawnInputComponent.OnReleasedKill
+// (Final, Native, Protected)
+
+void UPlayerPawnInputComponent::OnReleasedKill()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlayerPawnInputComponent", "OnReleasedKill");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.PlayerPawnInputComponent.OnTappedCycleExplosives
+// (Final, Native, Protected)
+
+void UPlayerPawnInputComponent::OnTappedCycleExplosives()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlayerPawnInputComponent", "OnTappedCycleExplosives");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.PlayerPawnInputComponent.OnTappedCycleSlots
+// (Final, Native, Protected)
+
+void UPlayerPawnInputComponent::OnTappedCycleSlots()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlayerPawnInputComponent", "OnTappedCycleSlots");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.PlayerPawnInputComponent.OnTappedKill
+// (Final, Native, Protected)
+
+void UPlayerPawnInputComponent::OnTappedKill()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlayerPawnInputComponent", "OnTappedKill");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -23348,24 +23017,22 @@ void UCharacterInputComponent::WalkRight(float Val)
 }
 
 
-// Function BrickRigs.InventoryComponent.IsSlotCompatible
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
+// Function BrickRigs.WorldSetupActor.Get
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
-// const struct FInventorySlot&            InSlot                                                 (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// const struct FInventoryItemRef&         InItem                                                 (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AWorldSetupActor*                 ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UInventoryComponent::IsSlotCompatible(const struct FInventorySlot& InSlot, const struct FInventoryItemRef& InItem)
+class AWorldSetupActor* AWorldSetupActor::Get(const class UObject* WorldContextObject)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("InventoryComponent", "IsSlotCompatible");
+		Func = StaticClass()->GetFunction("WorldSetupActor", "Get");
 
-	Params::InventoryComponent_IsSlotCompatible Parms{};
+	Params::WorldSetupActor_Get Parms{};
 
-	Parms.InSlot = std::move(InSlot);
-	Parms.InItem = std::move(InItem);
+	Parms.WorldContextObject = WorldContextObject;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -23373,878 +23040,6 @@ bool UInventoryComponent::IsSlotCompatible(const struct FInventorySlot& InSlot, 
 	GetDefaultObj()->ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.InventoryComponent.MoveItems
-// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const struct FMoveInventoryItemParams&  Params_0                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-// TArray<class AInventoryItem*>*          OutDroppedItems                                        (Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 UInventoryComponent::MoveItems(const struct FMoveInventoryItemParams& Params_0, TArray<class AInventoryItem*>* OutDroppedItems)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("InventoryComponent", "MoveItems");
-
-	Params::InventoryComponent_MoveItems Parms{};
-
-	Parms.Params_0 = std::move(Params_0);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (OutDroppedItems != nullptr)
-		*OutDroppedItems = std::move(Parms.OutDroppedItems);
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.InventoryComponent.ConsumeAmmo
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const struct FAmmoInfo&                 InAmmo                                                 (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// int32                                   NumRequired                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 UInventoryComponent::ConsumeAmmo(const struct FAmmoInfo& InAmmo, int32 NumRequired)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InventoryComponent", "ConsumeAmmo");
-
-	Params::InventoryComponent_ConsumeAmmo Parms{};
-
-	Parms.InAmmo = std::move(InAmmo);
-	Parms.NumRequired = NumRequired;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.InventoryComponent.ConsumeItems
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const struct FInventorySlotID&          SlotID                                                 (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Amount                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 UInventoryComponent::ConsumeItems(const struct FInventorySlotID& SlotID, int32 Amount)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InventoryComponent", "ConsumeItems");
-
-	Params::InventoryComponent_ConsumeItems Parms{};
-
-	Parms.SlotID = std::move(SlotID);
-	Parms.Amount = Amount;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.InventoryComponent.DebugSpawnItems
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// TSubclassOf<class AInventoryItem>       ItemClass                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Amount                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UInventoryComponent::DebugSpawnItems(TSubclassOf<class AInventoryItem> ItemClass, int32 Amount)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InventoryComponent", "DebugSpawnItems");
-
-	Params::InventoryComponent_DebugSpawnItems Parms{};
-
-	Parms.ItemClass = ItemClass;
-	Parms.Amount = Amount;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.InventoryComponent.EmptyInventory
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    bCallDelegates                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UInventoryComponent::EmptyInventory(bool bCallDelegates)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InventoryComponent", "EmptyInventory");
-
-	Params::InventoryComponent_EmptyInventory Parms{};
-
-	Parms.bCallDelegates = bCallDelegates;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.InventoryComponent.Interact_Inventory
-// (Final, Native, Public)
-// Parameters:
-// class ABrickPlayerController*           PC                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UInventoryComponent::Interact_Inventory(class ABrickPlayerController* PC)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InventoryComponent", "Interact_Inventory");
-
-	Params::InventoryComponent_Interact_Inventory Parms{};
-
-	Parms.PC = PC;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.InventoryComponent.MulticastOnPickedUpItems
-// (Net, NetReliable, Native, Event, NetMulticast, Protected)
-
-void UInventoryComponent::MulticastOnPickedUpItems()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InventoryComponent", "MulticastOnPickedUpItems");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.InventoryComponent.SetContentHidden
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    bHidden                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UInventoryComponent::SetContentHidden(bool bHidden)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InventoryComponent", "SetContentHidden");
-
-	Params::InventoryComponent_SetContentHidden Parms{};
-
-	Parms.bHidden = bHidden;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.InventoryComponent.SetInventoryProperties
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const struct FInventoryProperties&      InProps                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UInventoryComponent::SetInventoryProperties(const struct FInventoryProperties& InProps)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InventoryComponent", "SetInventoryProperties");
-
-	Params::InventoryComponent_SetInventoryProperties Parms{};
-
-	Parms.InProps = std::move(InProps);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.InventoryComponent.SetSpecialSlotAttachParent
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// class USceneComponent*                  NewAttachParent                                        (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UInventoryComponent::SetSpecialSlotAttachParent(class USceneComponent* NewAttachParent)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InventoryComponent", "SetSpecialSlotAttachParent");
-
-	Params::InventoryComponent_SetSpecialSlotAttachParent Parms{};
-
-	Parms.NewAttachParent = NewAttachParent;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.InventoryComponent.SpawnInventoryLoadout
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const struct FInventoryLoadout&         Loadout                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UInventoryComponent::SpawnInventoryLoadout(const struct FInventoryLoadout& Loadout)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InventoryComponent", "SpawnInventoryLoadout");
-
-	Params::InventoryComponent_SpawnInventoryLoadout Parms{};
-
-	Parms.Loadout = std::move(Loadout);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.InventoryComponent.SpawnItems
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// TSubclassOf<class AInventoryItem>       ItemClass                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Amount                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 UInventoryComponent::SpawnItems(TSubclassOf<class AInventoryItem> ItemClass, int32 Amount)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InventoryComponent", "SpawnItems");
-
-	Params::InventoryComponent_SpawnItems Parms{};
-
-	Parms.ItemClass = ItemClass;
-	Parms.Amount = Amount;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.InventoryComponent.DoesSpecialSlotSupportItem
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// const class AInventoryItem*             InItem                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   SlotIndex                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UInventoryComponent::DoesSpecialSlotSupportItem(const class AInventoryItem* InItem, int32 SlotIndex) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InventoryComponent", "DoesSpecialSlotSupportItem");
-
-	Params::InventoryComponent_DoesSpecialSlotSupportItem Parms{};
-
-	Parms.InItem = InItem;
-	Parms.SlotIndex = SlotIndex;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.InventoryComponent.FindFreeSlotID
-// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// const struct FInventoryItemRef&         InItem                                                 (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// bool                                    bTryToReplace                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FInventorySlotID                 ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FInventorySlotID UInventoryComponent::FindFreeSlotID(const struct FInventoryItemRef& InItem, bool bTryToReplace) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InventoryComponent", "FindFreeSlotID");
-
-	Params::InventoryComponent_FindFreeSlotID Parms{};
-
-	Parms.InItem = std::move(InItem);
-	Parms.bTryToReplace = bTryToReplace;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.InventoryComponent.FindFreeSpecialSlotID
-// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// const struct FInventoryItemRef&         InItem                                                 (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// const TSet<struct FInventorySlotID>&    InSlotIDs                                              (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// struct FInventorySlotID                 ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FInventorySlotID UInventoryComponent::FindFreeSpecialSlotID(const struct FInventoryItemRef& InItem, const TSet<struct FInventorySlotID>& InSlotIDs) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InventoryComponent", "FindFreeSpecialSlotID");
-
-	Params::InventoryComponent_FindFreeSpecialSlotID Parms{};
-
-	Parms.InItem = std::move(InItem);
-	Parms.InSlotIDs = std::move(InSlotIDs);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.InventoryComponent.FindFreeWildcardSlotID
-// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// const struct FInventoryItemRef&         InItem                                                 (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// struct FInventorySlotID                 ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FInventorySlotID UInventoryComponent::FindFreeWildcardSlotID(const struct FInventoryItemRef& InItem) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InventoryComponent", "FindFreeWildcardSlotID");
-
-	Params::InventoryComponent_FindFreeWildcardSlotID Parms{};
-
-	Parms.InItem = std::move(InItem);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.InventoryComponent.GetAmmo
-// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// const TArray<struct FAmmoInfo>&         InAmmoTypes                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 UInventoryComponent::GetAmmo(const TArray<struct FAmmoInfo>& InAmmoTypes) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InventoryComponent", "GetAmmo");
-
-	Params::InventoryComponent_GetAmmo Parms{};
-
-	Parms.InAmmoTypes = std::move(InAmmoTypes);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.InventoryComponent.GetDisplayName
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-
-class FText UInventoryComponent::GetDisplayName() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InventoryComponent", "GetDisplayName");
-
-	Params::InventoryComponent_GetDisplayName Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.InventoryComponent.GetInventory
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// const struct FInventory                 ReturnValue                                            (ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-const struct FInventory UInventoryComponent::GetInventory() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InventoryComponent", "GetInventory");
-
-	Params::InventoryComponent_GetInventory Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.InventoryComponent.GetInventorySlots
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// const TArray<struct FInventorySlot>     ReturnValue                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-const TArray<struct FInventorySlot> UInventoryComponent::GetInventorySlots() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InventoryComponent", "GetInventorySlots");
-
-	Params::InventoryComponent_GetInventorySlots Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.InventoryComponent.GetNumItemsOfClass
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// class UClass*                           InClass                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-int32 UInventoryComponent::GetNumItemsOfClass(class UClass* InClass) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InventoryComponent", "GetNumItemsOfClass");
-
-	Params::InventoryComponent_GetNumItemsOfClass Parms{};
-
-	Parms.InClass = InClass;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.InventoryComponent.GetSpecialSlotID
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FInventorySlotID                 ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FInventorySlotID UInventoryComponent::GetSpecialSlotID(int32 Index_0) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InventoryComponent", "GetSpecialSlotID");
-
-	Params::InventoryComponent_GetSpecialSlotID Parms{};
-
-	Parms.Index_0 = Index_0;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.InventoryComponent.GetWildcardSlotID
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FInventorySlotID                 ReturnValue                                            (Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FInventorySlotID UInventoryComponent::GetWildcardSlotID(int32 Index_0) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InventoryComponent", "GetWildcardSlotID");
-
-	Params::InventoryComponent_GetWildcardSlotID Parms{};
-
-	Parms.Index_0 = Index_0;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.InventoryComponent.HasInfiniteAmmo
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UInventoryComponent::HasInfiniteAmmo() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InventoryComponent", "HasInfiniteAmmo");
-
-	Params::InventoryComponent_HasInfiniteAmmo Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.InventoryComponent.HasInventorySlot
-// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// const struct FInventorySlotID&          InSlotID                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UInventoryComponent::HasInventorySlot(const struct FInventorySlotID& InSlotID) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InventoryComponent", "HasInventorySlot");
-
-	Params::InventoryComponent_HasInventorySlot Parms{};
-
-	Parms.InSlotID = std::move(InSlotID);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.InventoryComponent.IsContentHidden
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UInventoryComponent::IsContentHidden() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InventoryComponent", "IsContentHidden");
-
-	Params::InventoryComponent_IsContentHidden Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.InventoryComponent.IsEmpty
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UInventoryComponent::IsEmpty() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InventoryComponent", "IsEmpty");
-
-	Params::InventoryComponent_IsEmpty Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.InventoryComponent.IsSlotFreeOrCompatible
-// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// const struct FInventorySlotID&          InSlotID                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FInventoryItemRef&         InItem                                                 (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UInventoryComponent::IsSlotFreeOrCompatible(const struct FInventorySlotID& InSlotID, const struct FInventoryItemRef& InItem) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InventoryComponent", "IsSlotFreeOrCompatible");
-
-	Params::InventoryComponent_IsSlotFreeOrCompatible Parms{};
-
-	Parms.InSlotID = std::move(InSlotID);
-	Parms.InItem = std::move(InItem);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.InventoryComponent.IsSpecialSlotID
-// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// const struct FInventorySlotID&          InSlotID                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UInventoryComponent::IsSpecialSlotID(const struct FInventorySlotID& InSlotID) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InventoryComponent", "IsSpecialSlotID");
-
-	Params::InventoryComponent_IsSpecialSlotID Parms{};
-
-	Parms.InSlotID = std::move(InSlotID);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.InventoryComponent.IsValidSlotID
-// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// const struct FInventorySlotID&          InSlotID                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UInventoryComponent::IsValidSlotID(const struct FInventorySlotID& InSlotID) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InventoryComponent", "IsValidSlotID");
-
-	Params::InventoryComponent_IsValidSlotID Parms{};
-
-	Parms.InSlotID = std::move(InSlotID);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.InventoryComponent.IsWildcardSlotID
-// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// const struct FInventorySlotID&          InSlotID                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UInventoryComponent::IsWildcardSlotID(const struct FInventorySlotID& InSlotID) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InventoryComponent", "IsWildcardSlotID");
-
-	Params::InventoryComponent_IsWildcardSlotID Parms{};
-
-	Parms.InSlotID = std::move(InSlotID);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.InventoryComponent.RequiresSpecialSlot
-// (Final, Native, Public, HasOutParams, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// const class AInventoryItem*             InItem                                                 (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// TSet<struct FInventorySlotID>*          OutSlots                                               (Parm, OutParm, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UInventoryComponent::RequiresSpecialSlot(const class AInventoryItem* InItem, TSet<struct FInventorySlotID>* OutSlots) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InventoryComponent", "RequiresSpecialSlot");
-
-	Params::InventoryComponent_RequiresSpecialSlot Parms{};
-
-	Parms.InItem = InItem;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (OutSlots != nullptr)
-		*OutSlots = std::move(Parms.OutSlots);
 
 	return Parms.ReturnValue;
 }
@@ -24313,47 +23108,81 @@ bool UChatMessageInputComponent::GetKickPlayerEnabled() const
 }
 
 
-// Function BrickRigs.ChatWidget.GetWidgetToFocus
-// (Native, Event, Public, BlueprintEvent)
-// Parameters:
-// class UWidget*                          ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function BrickRigs.ChatMessageWidget.OpenContextMenu
+// (Final, Native, Public, BlueprintCallable)
 
-class UWidget* UChatWidget::GetWidgetToFocus()
+void UChatMessageWidget::OpenContextMenu()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ChatWidget", "GetWidgetToFocus");
-
-	Params::ChatWidget_GetWidgetToFocus Parms{};
+		Func = Class->GetFunction("ChatMessageWidget", "OpenContextMenu");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
 }
 
 
-// Function BrickRigs.ChatWidget.OnTextChanged
-// (Final, Native, Private, HasOutParams)
+// Function BrickRigs.ChatMessageWidget.UpdateColorStyle
+// (Event, Public, BlueprintEvent)
 // Parameters:
-// const class FText&                      Text                                                   (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// EValueChangedEventType                  EventType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EBrickUIColorStyle                      NewColorStyle                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UChatWidget::OnTextChanged(const class FText& Text, EValueChangedEventType EventType)
+void UChatMessageWidget::UpdateColorStyle(EBrickUIColorStyle NewColorStyle)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ChatWidget", "OnTextChanged");
+		Func = Class->GetFunction("ChatMessageWidget", "UpdateColorStyle");
 
-	Params::ChatWidget_OnTextChanged Parms{};
+	Params::ChatMessageWidget_UpdateColorStyle Parms{};
 
-	Parms.Text = std::move(Text);
+	Parms.NewColorStyle = NewColorStyle;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.ChatMessageWidget.UpdateMessageText
+// (Event, Public, HasOutParams, BlueprintEvent)
+// Parameters:
+// const class FText&                      NewText                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UChatMessageWidget::UpdateMessageText(const class FText& NewText)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ChatMessageWidget", "UpdateMessageText");
+
+	Params::ChatMessageWidget_UpdateMessageText Parms{};
+
+	Parms.NewText = std::move(NewText);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.ColorPropertyWidget.SetColorPropertyValue
+// (Final, Native, Public, HasDefaults, BlueprintCallable)
+// Parameters:
+// const struct FColor&                    Color                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const EValueChangedEventType            EventType                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UColorPropertyWidget::SetColorPropertyValue(const struct FColor& Color, const EValueChangedEventType EventType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ColorPropertyWidget", "SetColorPropertyValue");
+
+	Params::ColorPropertyWidget_SetColorPropertyValue Parms{};
+
+	Parms.Color = std::move(Color);
 	Parms.EventType = EventType;
 
 	auto Flgs = Func->FunctionFlags;
@@ -24365,61 +23194,41 @@ void UChatWidget::OnTextChanged(const class FText& Text, EValueChangedEventType 
 }
 
 
-// Function BrickRigs.ChatWidget.UpdateIsFocused
-// (Event, Protected, BlueprintEvent)
+// Function BrickRigs.ColorPropertyWidget.UpdateColorPropertyValue
+// (Event, Protected, HasOutParams, HasDefaults, BlueprintEvent)
 // Parameters:
-// bool                                    bNewFocused                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FColor&                    NewColor                                               (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bValueChanged                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UChatWidget::UpdateIsFocused(bool bNewFocused)
+void UColorPropertyWidget::UpdateColorPropertyValue(const struct FColor& NewColor, const bool bValueChanged)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ChatWidget", "UpdateIsFocused");
+		Func = Class->GetFunction("ColorPropertyWidget", "UpdateColorPropertyValue");
 
-	Params::ChatWidget_UpdateIsFocused Parms{};
+	Params::ColorPropertyWidget_UpdateColorPropertyValue Parms{};
 
-	Parms.bNewFocused = bNewFocused;
+	Parms.NewColor = std::move(NewColor);
+	Parms.bValueChanged = bValueChanged;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function BrickRigs.ChatWidget.UpdateIsTyping
-// (Event, Protected, BlueprintEvent)
+// Function BrickRigs.ColorPropertyWidget.HasAlphaChannel
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
 // Parameters:
-// bool                                    bNewTyping                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UChatWidget::UpdateIsTyping(bool bNewTyping)
+bool UColorPropertyWidget::HasAlphaChannel() const
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ChatWidget", "UpdateIsTyping");
+		Func = Class->GetFunction("ColorPropertyWidget", "HasAlphaChannel");
 
-	Params::ChatWidget_UpdateIsTyping Parms{};
-
-	Parms.bNewTyping = bNewTyping;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.ChatWidget.UpdateScrollBoxVisibility
-// (Native, Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bNewVisible                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UChatWidget::UpdateScrollBoxVisibility(bool bNewVisible)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ChatWidget", "UpdateScrollBoxVisibility");
-
-	Params::ChatWidget_UpdateScrollBoxVisibility Parms{};
-
-	Parms.bNewVisible = bNewVisible;
+	Params::ColorPropertyWidget_HasAlphaChannel Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -24427,6 +23236,8 @@ void UChatWidget::UpdateScrollBoxVisibility(bool bNewVisible)
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -24455,23 +23266,48 @@ void UColorWheelWidget::SetColor(const struct FLinearColor& NewColor)
 }
 
 
-// Function BrickRigs.ConnectorSpacingPropertyWidget.CycleAxisSpacing
+// Function BrickRigs.ControlHintWidget.OnInputMethodChanged
+// (Final, Native, Private)
+// Parameters:
+// EInputMethod                            NewInputMethod                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UControlHintWidget::OnInputMethodChanged(EInputMethod NewInputMethod)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ControlHintWidget", "OnInputMethodChanged");
+
+	Params::ControlHintWidget_OnInputMethodChanged Parms{};
+
+	Parms.NewInputMethod = NewInputMethod;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.ControlHintWidget.SetAction
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// const int32                             Axis                                                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const bool                              bPositiveAxis                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FName                             InActionName                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EInputActionTriggerType                 InTriggerType                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UConnectorSpacingPropertyWidget::CycleAxisSpacing(const int32 Axis, const bool bPositiveAxis)
+void UControlHintWidget::SetAction(class FName InActionName, EInputActionTriggerType InTriggerType)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ConnectorSpacingPropertyWidget", "CycleAxisSpacing");
+		Func = Class->GetFunction("ControlHintWidget", "SetAction");
 
-	Params::ConnectorSpacingPropertyWidget_CycleAxisSpacing Parms{};
+	Params::ControlHintWidget_SetAction Parms{};
 
-	Parms.Axis = Axis;
-	Parms.bPositiveAxis = bPositiveAxis;
+	Parms.InActionName = InActionName;
+	Parms.InTriggerType = InTriggerType;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -24482,102 +23318,21 @@ void UConnectorSpacingPropertyWidget::CycleAxisSpacing(const int32 Axis, const b
 }
 
 
-// Function BrickRigs.ConnectorSpacingPropertyWidget.UpdateAxisSpacing
-// (Event, Protected, BlueprintEvent)
+// Function BrickRigs.ControlHintWidget.SetColorStyle
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// const int32                             Axis                                                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const bool                              bPositiveAxis                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const EConnectorSpacing                 Spacing                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EBrickUIColorStyle                      NewStyle                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UConnectorSpacingPropertyWidget::UpdateAxisSpacing(const int32 Axis, const bool bPositiveAxis, const EConnectorSpacing Spacing)
+void UControlHintWidget::SetColorStyle(EBrickUIColorStyle NewStyle)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ConnectorSpacingPropertyWidget", "UpdateAxisSpacing");
+		Func = Class->GetFunction("ControlHintWidget", "SetColorStyle");
 
-	Params::ConnectorSpacingPropertyWidget_UpdateAxisSpacing Parms{};
+	Params::ControlHintWidget_SetColorStyle Parms{};
 
-	Parms.Axis = Axis;
-	Parms.bPositiveAxis = bPositiveAxis;
-	Parms.Spacing = Spacing;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.ConnectorSpacingPropertyWidget.GetAxisSpacing
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// const int32                             Axis                                                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const bool                              bPositiveAxis                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EConnectorSpacing                       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-EConnectorSpacing UConnectorSpacingPropertyWidget::GetAxisSpacing(const int32 Axis, const bool bPositiveAxis) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ConnectorSpacingPropertyWidget", "GetAxisSpacing");
-
-	Params::ConnectorSpacingPropertyWidget_GetAxisSpacing Parms{};
-
-	Parms.Axis = Axis;
-	Parms.bPositiveAxis = bPositiveAxis;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.ConnectorSpacingPropertyWidget.GetAxisWidget
-// (Event, Protected, BlueprintEvent, Const)
-// Parameters:
-// const int32                             Axis                                                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const bool                              bPositiveAxis                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UWidget*                          ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UWidget* UConnectorSpacingPropertyWidget::GetAxisWidget(const int32 Axis, const bool bPositiveAxis) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ConnectorSpacingPropertyWidget", "GetAxisWidget");
-
-	Params::ConnectorSpacingPropertyWidget_GetAxisWidget Parms{};
-
-	Parms.Axis = Axis;
-	Parms.bPositiveAxis = bPositiveAxis;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.ContextMenuWidget.OnActionTriggered
-// (Final, Native, Private, HasOutParams)
-// Parameters:
-// const class FName&                      ActionName                                             (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bReleased                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UContextMenuWidget::OnActionTriggered(const class FName& ActionName, bool bReleased)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ContextMenuWidget", "OnActionTriggered");
-
-	Params::ContextMenuWidget_OnActionTriggered Parms{};
-
-	Parms.ActionName = ActionName;
-	Parms.bReleased = bReleased;
+	Parms.NewStyle = NewStyle;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -24588,41 +23343,21 @@ void UContextMenuWidget::OnActionTriggered(const class FName& ActionName, bool b
 }
 
 
-// Function BrickRigs.ContextMenuWidget.UpdateTitleText
-// (Event, Protected, HasOutParams, BlueprintEvent)
+// Function BrickRigs.ControlHintWidget.SetDisplayInfo
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
 // Parameters:
-// const class FText&                      InText                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FDisplayInfo&              InDisplayInfo                                          (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 
-void UContextMenuWidget::UpdateTitleText(const class FText& InText)
+void UControlHintWidget::SetDisplayInfo(const struct FDisplayInfo& InDisplayInfo)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ContextMenuWidget", "UpdateTitleText");
+		Func = Class->GetFunction("ControlHintWidget", "SetDisplayInfo");
 
-	Params::ContextMenuWidget_UpdateTitleText Parms{};
+	Params::ControlHintWidget_SetDisplayInfo Parms{};
 
-	Parms.InText = std::move(InText);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.CouplingBrick.Interact_DisengageCoupling
-// (Final, Native, Private)
-// Parameters:
-// class ABrickPlayerController*           PC                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCouplingBrick::Interact_DisengageCoupling(class ABrickPlayerController* PC)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CouplingBrick", "Interact_DisengageCoupling");
-
-	Params::CouplingBrick_Interact_DisengageCoupling Parms{};
-
-	Parms.PC = PC;
+	Parms.InDisplayInfo = std::move(InDisplayInfo);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -24633,144 +23368,405 @@ void UCouplingBrick::Interact_DisengageCoupling(class ABrickPlayerController* PC
 }
 
 
-// Function BrickRigs.CouplingBrick.Interact_EngageCoupling
-// (Final, Native, Private)
+// Function BrickRigs.ControlHintWidget.SetDisplayInfoMode
+// (Final, Native, Public, BlueprintCallable)
 // Parameters:
-// class ABrickPlayerController*           PC                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EControlHintDisplayInfoMode             NewMode                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCouplingBrick::Interact_EngageCoupling(class ABrickPlayerController* PC)
+void UControlHintWidget::SetDisplayInfoMode(EControlHintDisplayInfoMode NewMode)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CouplingBrick", "Interact_EngageCoupling");
+		Func = Class->GetFunction("ControlHintWidget", "SetDisplayInfoMode");
 
-	Params::CouplingBrick_Interact_EngageCoupling Parms{};
-
-	Parms.PC = PC;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.CurrentItemWidget.FadeIn
-// (Event, Public, BlueprintEvent)
-
-void UCurrentItemWidget::FadeIn()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CurrentItemWidget", "FadeIn");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BrickRigs.CurrentItemWidget.FadeOut
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    bImmediate                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCurrentItemWidget::FadeOut(bool bImmediate)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CurrentItemWidget", "FadeOut");
-
-	Params::CurrentItemWidget_FadeOut Parms{};
-
-	Parms.bImmediate = bImmediate;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.CurrentItemWidget.UpdateAmmo
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// int32                                   Current                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Capacity                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Ammo                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCurrentItemWidget::UpdateAmmo(int32 Current, int32 Capacity, int32 Ammo)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CurrentItemWidget", "UpdateAmmo");
-
-	Params::CurrentItemWidget_UpdateAmmo Parms{};
-
-	Parms.Current = Current;
-	Parms.Capacity = Capacity;
-	Parms.Ammo = Ammo;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.CurrentItemWidget.UpdateAmmoType
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// EAmmoType                               NewType                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCurrentItemWidget::UpdateAmmoType(EAmmoType NewType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CurrentItemWidget", "UpdateAmmoType");
-
-	Params::CurrentItemWidget_UpdateAmmoType Parms{};
-
-	Parms.NewType = NewType;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.CurrentItemWidget.UpdateFireMode
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// EFireMode                               NewMode                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UCurrentItemWidget::UpdateFireMode(EFireMode NewMode)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("CurrentItemWidget", "UpdateFireMode");
-
-	Params::CurrentItemWidget_UpdateFireMode Parms{};
+	Params::ControlHintWidget_SetDisplayInfoMode Parms{};
 
 	Parms.NewMode = NewMode;
 
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
 	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
-// Function BrickRigs.CurrentItemWidget.UpdateItemName
-// (Event, Protected, HasOutParams, BlueprintEvent)
+// Function BrickRigs.ControlHintWidget.SetInputChordScale
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// const class FText&                      NewName                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// float                                   InScale                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UCurrentItemWidget::UpdateItemName(const class FText& NewName)
+void UControlHintWidget::SetInputChordScale(float InScale)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("CurrentItemWidget", "UpdateItemName");
+		Func = Class->GetFunction("ControlHintWidget", "SetInputChordScale");
 
-	Params::CurrentItemWidget_UpdateItemName Parms{};
+	Params::ControlHintWidget_SetInputChordScale Parms{};
 
-	Parms.NewName = std::move(NewName);
+	Parms.InScale = InScale;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.ControlHintWidget.SetShowInputChord
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bShow                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UControlHintWidget::SetShowInputChord(bool bShow)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ControlHintWidget", "SetShowInputChord");
+
+	Params::ControlHintWidget_SetShowInputChord Parms{};
+
+	Parms.bShow = bShow;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.ControlHintWidget.SetShowUnboundKey
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bShow                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UControlHintWidget::SetShowUnboundKey(bool bShow)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ControlHintWidget", "SetShowUnboundKey");
+
+	Params::ControlHintWidget_SetShowUnboundKey Parms{};
+
+	Parms.bShow = bShow;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.ControlHintWidget.SetStyleState
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// EBrickUIStyleState                      NewState                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UControlHintWidget::SetStyleState(EBrickUIStyleState NewState)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ControlHintWidget", "SetStyleState");
+
+	Params::ControlHintWidget_SetStyleState Parms{};
+
+	Parms.NewState = NewState;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.ControlHintWidget.SetTextStyle
+// (Native, Event, Public, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// EBrickUITextStyle                       NewStyle                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UControlHintWidget::SetTextStyle(EBrickUITextStyle NewStyle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ControlHintWidget", "SetTextStyle");
+
+	Params::ControlHintWidget_SetTextStyle Parms{};
+
+	Parms.NewStyle = NewStyle;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.ControlHintWidget.UpdateDisplayInfo
+// (Native, Event, Protected, HasOutParams, BlueprintEvent)
+// Parameters:
+// const struct FDisplayInfo&              NewDisplayInfo                                         (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UControlHintWidget::UpdateDisplayInfo(const struct FDisplayInfo& NewDisplayInfo)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ControlHintWidget", "UpdateDisplayInfo");
+
+	Params::ControlHintWidget_UpdateDisplayInfo Parms{};
+
+	Parms.NewDisplayInfo = std::move(NewDisplayInfo);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.ControlHintWidget.UpdateHoldProgress
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// float                                   InHoldProgress                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UControlHintWidget::UpdateHoldProgress(float InHoldProgress)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ControlHintWidget", "UpdateHoldProgress");
+
+	Params::ControlHintWidget_UpdateHoldProgress Parms{};
+
+	Parms.InHoldProgress = InHoldProgress;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.ControlHintWidget.UpdateIconVisibility
+// (Native, Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bNewVisible                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UControlHintWidget::UpdateIconVisibility(bool bNewVisible)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ControlHintWidget", "UpdateIconVisibility");
+
+	Params::ControlHintWidget_UpdateIconVisibility Parms{};
+
+	Parms.bNewVisible = bNewVisible;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.ControlHintWidget.UpdateInputChordStyleState
+// (Native, Event, Protected, BlueprintEvent)
+// Parameters:
+// EBrickUIStyleState                      InStyleState                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bInIsHoldAction                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UControlHintWidget::UpdateInputChordStyleState(EBrickUIStyleState InStyleState, bool bInIsHoldAction)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ControlHintWidget", "UpdateInputChordStyleState");
+
+	Params::ControlHintWidget_UpdateInputChordStyleState Parms{};
+
+	Parms.InStyleState = InStyleState;
+	Parms.bInIsHoldAction = bInIsHoldAction;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.ControlHintWidget.UpdateInputChordVisibility
+// (Native, Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bNewVisible                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UControlHintWidget::UpdateInputChordVisibility(bool bNewVisible)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ControlHintWidget", "UpdateInputChordVisibility");
+
+	Params::ControlHintWidget_UpdateInputChordVisibility Parms{};
+
+	Parms.bNewVisible = bNewVisible;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.ControlHintWidget.UpdateIsHoldAction
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bIsHoldAction                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UControlHintWidget::UpdateIsHoldAction(bool bIsHoldAction)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ControlHintWidget", "UpdateIsHoldAction");
+
+	Params::ControlHintWidget_UpdateIsHoldAction Parms{};
+
+	Parms.bIsHoldAction = bIsHoldAction;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.ControlHintWidget.UpdateTextVisibility
+// (Native, Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bNewVisible                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UControlHintWidget::UpdateTextVisibility(bool bNewVisible)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ControlHintWidget", "UpdateTextVisibility");
+
+	Params::ControlHintWidget_UpdateTextVisibility Parms{};
+
+	Parms.bNewVisible = bNewVisible;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.CrosshairWidget.OnHUDVisibilityChanged
+// (Final, Native, Private)
+// Parameters:
+// EHUDVisibility                          NewVisibility                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrosshairWidget::OnHUDVisibilityChanged(EHUDVisibility NewVisibility)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrosshairWidget", "OnHUDVisibilityChanged");
+
+	Params::CrosshairWidget_OnHUDVisibilityChanged Parms{};
+
+	Parms.NewVisibility = NewVisibility;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.CrosshairWidget.PlayHitAnimation
+// (Event, Protected, HasOutParams, BlueprintEvent)
+// Parameters:
+// const struct FClientDamageInfo&         DamageInfo                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void UCrosshairWidget::PlayHitAnimation(const struct FClientDamageInfo& DamageInfo)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrosshairWidget", "PlayHitAnimation");
+
+	Params::CrosshairWidget_PlayHitAnimation Parms{};
+
+	Parms.DamageInfo = std::move(DamageInfo);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.CrosshairWidget.UpdateIsAttachingWinch
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bNewAttaching                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrosshairWidget::UpdateIsAttachingWinch(bool bNewAttaching)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrosshairWidget", "UpdateIsAttachingWinch");
+
+	Params::CrosshairWidget_UpdateIsAttachingWinch Parms{};
+
+	Parms.bNewAttaching = bNewAttaching;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.CrosshairWidget.UpdateWinchAttachment
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bBlockingHit                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bWithinRange                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UCrosshairWidget::UpdateWinchAttachment(bool bBlockingHit, bool bWithinRange)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("CrosshairWidget", "UpdateWinchAttachment");
+
+	Params::CrosshairWidget_UpdateWinchAttachment Parms{};
+
+	Parms.bBlockingHit = bBlockingHit;
+	Parms.bWithinRange = bWithinRange;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -24800,61 +23796,87 @@ void UDashboardIconWidget::UpdateIconImage(bool bInVisible, EBrickUIColorStyle I
 }
 
 
-// Function BrickRigs.DashboardSliderWidget.UpdateColorStyle
+// Function BrickRigs.DashboardWidget.AddIconWidget
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// EBrickUIColorStyle                      NewStyle                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UDashboardIconWidget*             Widget                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UDashboardSliderWidget::UpdateColorStyle(EBrickUIColorStyle NewStyle)
+void UDashboardWidget::AddIconWidget(class UDashboardIconWidget* Widget, int32 Index_0)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("DashboardSliderWidget", "UpdateColorStyle");
+		Func = Class->GetFunction("DashboardWidget", "AddIconWidget");
 
-	Params::DashboardSliderWidget_UpdateColorStyle Parms{};
+	Params::DashboardWidget_AddIconWidget Parms{};
 
-	Parms.NewStyle = NewStyle;
+	Parms.Widget = Widget;
+	Parms.Index_0 = Index_0;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function BrickRigs.DashboardSliderWidget.UpdateIcon
+// Function BrickRigs.DashboardWidget.AddSliderWidget
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// int32                                   IconIndex                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UDashboardSliderWidget*           Widget                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UDashboardSliderWidget::UpdateIcon(int32 IconIndex)
+void UDashboardWidget::AddSliderWidget(class UDashboardSliderWidget* Widget)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("DashboardSliderWidget", "UpdateIcon");
+		Func = Class->GetFunction("DashboardWidget", "AddSliderWidget");
 
-	Params::DashboardSliderWidget_UpdateIcon Parms{};
+	Params::DashboardWidget_AddSliderWidget Parms{};
 
-	Parms.IconIndex = IconIndex;
+	Parms.Widget = Widget;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function BrickRigs.DetonatorBrick.Interact_Detonate
-// (Final, Native, Private)
+// Function BrickRigs.DashboardWidget.UpdateSliderWidgetSlot
+// (Event, Protected, BlueprintEvent)
 // Parameters:
-// class ABrickPlayerController*           PC                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UDashboardSliderWidget*           Widget                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   NumSliders                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UDetonatorBrick::Interact_Detonate(class ABrickPlayerController* PC)
+void UDashboardWidget::UpdateSliderWidgetSlot(class UDashboardSliderWidget* Widget, int32 Index_0, int32 NumSliders)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("DetonatorBrick", "Interact_Detonate");
+		Func = Class->GetFunction("DashboardWidget", "UpdateSliderWidgetSlot");
 
-	Params::DetonatorBrick_Interact_Detonate Parms{};
+	Params::DashboardWidget_UpdateSliderWidgetSlot Parms{};
 
-	Parms.PC = PC;
+	Parms.Widget = Widget;
+	Parms.Index_0 = Index_0;
+	Parms.NumSliders = NumSliders;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.VehicleInputComponent.Brake
+// (Final, Native, Protected)
+// Parameters:
+// float                                   Val                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UVehicleInputComponent::Brake(float Val)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleInputComponent", "Brake");
+
+	Params::VehicleInputComponent_Brake Parms{};
+
+	Parms.Val = Val;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -24865,60 +23887,15 @@ void UDetonatorBrick::Interact_Detonate(class ABrickPlayerController* PC)
 }
 
 
-// Function BrickRigs.DragStrip.CreateTreeMID
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// class UMaterialInstanceDynamic*         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function BrickRigs.VehicleInputComponent.OnHeldCycleCamera
+// (Final, Native, Protected)
 
-class UMaterialInstanceDynamic* ADragStrip::CreateTreeMID()
+void UVehicleInputComponent::OnHeldCycleCamera()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("DragStrip", "CreateTreeMID");
-
-	Params::DragStrip_CreateTreeMID Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.DragStrip.Interact_StartRace
-// (Final, Native, Private)
-// Parameters:
-// class ABrickPlayerController*           PC                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ADragStrip::Interact_StartRace(class ABrickPlayerController* PC)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("DragStrip", "Interact_StartRace");
-
-	Params::DragStrip_Interact_StartRace Parms{};
-
-	Parms.PC = PC;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.DragStrip.OnRep_LeftLaneState
-// (Final, Native, Public)
-
-void ADragStrip::OnRep_LeftLaneState()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("DragStrip", "OnRep_LeftLaneState");
+		Func = Class->GetFunction("VehicleInputComponent", "OnHeldCycleCamera");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -24929,15 +23906,15 @@ void ADragStrip::OnRep_LeftLaneState()
 }
 
 
-// Function BrickRigs.DragStrip.OnRep_RaceState
-// (Final, Native, Public)
+// Function BrickRigs.VehicleInputComponent.OnHeldCycleFireActionMode
+// (Final, Native, Protected)
 
-void ADragStrip::OnRep_RaceState()
+void UVehicleInputComponent::OnHeldCycleFireActionMode()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("DragStrip", "OnRep_RaceState");
+		Func = Class->GetFunction("VehicleInputComponent", "OnHeldCycleFireActionMode");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -24948,15 +23925,15 @@ void ADragStrip::OnRep_RaceState()
 }
 
 
-// Function BrickRigs.DragStrip.OnRep_RightLaneState
-// (Final, Native, Public)
+// Function BrickRigs.VehicleInputComponent.OnHeldCycleSeats
+// (Final, Native, Protected)
 
-void ADragStrip::OnRep_RightLaneState()
+void UVehicleInputComponent::OnHeldCycleSeats()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("DragStrip", "OnRep_RightLaneState");
+		Func = Class->GetFunction("VehicleInputComponent", "OnHeldCycleSeats");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -24967,21 +23944,1139 @@ void ADragStrip::OnRep_RightLaneState()
 }
 
 
-// Function BrickRigs.DragStrip.GetInteractionLocation
-// (Event, Public, HasDefaults, BlueprintEvent, Const)
+// Function BrickRigs.VehicleInputComponent.OnHeldCycleSiren
+// (Final, Native, Protected)
+
+void UVehicleInputComponent::OnHeldCycleSiren()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleInputComponent", "OnHeldCycleSiren");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.VehicleInputComponent.OnHeldPinVehicle
+// (Final, Native, Protected)
+
+void UVehicleInputComponent::OnHeldPinVehicle()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleInputComponent", "OnHeldPinVehicle");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.VehicleInputComponent.OnHeldToggleSteering
+// (Final, Native, Protected)
+
+void UVehicleInputComponent::OnHeldToggleSteering()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleInputComponent", "OnHeldToggleSteering");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.VehicleInputComponent.OnPressedAction1
+// (Final, Native, Protected)
+
+void UVehicleInputComponent::OnPressedAction1()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleInputComponent", "OnPressedAction1");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.VehicleInputComponent.OnPressedAction2
+// (Final, Native, Protected)
+
+void UVehicleInputComponent::OnPressedAction2()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleInputComponent", "OnPressedAction2");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.VehicleInputComponent.OnPressedAction3
+// (Final, Native, Protected)
+
+void UVehicleInputComponent::OnPressedAction3()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleInputComponent", "OnPressedAction3");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.VehicleInputComponent.OnPressedAction4
+// (Final, Native, Protected)
+
+void UVehicleInputComponent::OnPressedAction4()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleInputComponent", "OnPressedAction4");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.VehicleInputComponent.OnPressedAction5
+// (Final, Native, Protected)
+
+void UVehicleInputComponent::OnPressedAction5()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleInputComponent", "OnPressedAction5");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.VehicleInputComponent.OnPressedAction6
+// (Final, Native, Protected)
+
+void UVehicleInputComponent::OnPressedAction6()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleInputComponent", "OnPressedAction6");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.VehicleInputComponent.OnPressedAction7
+// (Final, Native, Protected)
+
+void UVehicleInputComponent::OnPressedAction7()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleInputComponent", "OnPressedAction7");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.VehicleInputComponent.OnPressedAction8
+// (Final, Native, Protected)
+
+void UVehicleInputComponent::OnPressedAction8()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleInputComponent", "OnPressedAction8");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.VehicleInputComponent.OnPressedBeacon
+// (Final, Native, Protected)
+
+void UVehicleInputComponent::OnPressedBeacon()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleInputComponent", "OnPressedBeacon");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.VehicleInputComponent.OnPressedCaptureVehicleThumbnail
+// (Final, Native, Protected)
+
+void UVehicleInputComponent::OnPressedCaptureVehicleThumbnail()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleInputComponent", "OnPressedCaptureVehicleThumbnail");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.VehicleInputComponent.OnPressedCycleCamera
+// (Final, Native, Protected)
+
+void UVehicleInputComponent::OnPressedCycleCamera()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleInputComponent", "OnPressedCycleCamera");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.VehicleInputComponent.OnPressedCycleCameraMode
+// (Final, Native, Protected)
+
+void UVehicleInputComponent::OnPressedCycleCameraMode()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleInputComponent", "OnPressedCycleCameraMode");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.VehicleInputComponent.OnPressedCycleFireActionMode
+// (Final, Native, Protected)
+
+void UVehicleInputComponent::OnPressedCycleFireActionMode()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleInputComponent", "OnPressedCycleFireActionMode");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.VehicleInputComponent.OnPressedCycleSeats
+// (Final, Native, Protected)
+
+void UVehicleInputComponent::OnPressedCycleSeats()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleInputComponent", "OnPressedCycleSeats");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.VehicleInputComponent.OnPressedCycleSiren
+// (Final, Native, Protected)
+
+void UVehicleInputComponent::OnPressedCycleSiren()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleInputComponent", "OnPressedCycleSiren");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.VehicleInputComponent.OnPressedExitVehicle
+// (Final, Native, Protected)
+
+void UVehicleInputComponent::OnPressedExitVehicle()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleInputComponent", "OnPressedExitVehicle");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.VehicleInputComponent.OnPressedHandBrake
+// (Final, Native, Protected)
+
+void UVehicleInputComponent::OnPressedHandBrake()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleInputComponent", "OnPressedHandBrake");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.VehicleInputComponent.OnPressedHeadlight
+// (Final, Native, Protected)
+
+void UVehicleInputComponent::OnPressedHeadlight()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleInputComponent", "OnPressedHeadlight");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.VehicleInputComponent.OnPressedHorn
+// (Final, Native, Protected)
+
+void UVehicleInputComponent::OnPressedHorn()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleInputComponent", "OnPressedHorn");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.VehicleInputComponent.OnPressedOperationMode
+// (Final, Native, Protected)
+
+void UVehicleInputComponent::OnPressedOperationMode()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleInputComponent", "OnPressedOperationMode");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.VehicleInputComponent.OnPressedPinVehicle
+// (Final, Native, Protected)
+
+void UVehicleInputComponent::OnPressedPinVehicle()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleInputComponent", "OnPressedPinVehicle");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.VehicleInputComponent.OnPressedShiftDown
+// (Final, Native, Protected)
+
+void UVehicleInputComponent::OnPressedShiftDown()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleInputComponent", "OnPressedShiftDown");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.VehicleInputComponent.OnPressedShiftUp
+// (Final, Native, Protected)
+
+void UVehicleInputComponent::OnPressedShiftUp()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleInputComponent", "OnPressedShiftUp");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.VehicleInputComponent.OnPressedToggleSteering
+// (Final, Native, Protected)
+
+void UVehicleInputComponent::OnPressedToggleSteering()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleInputComponent", "OnPressedToggleSteering");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.VehicleInputComponent.OnPressedWarningLight
+// (Final, Native, Protected)
+
+void UVehicleInputComponent::OnPressedWarningLight()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleInputComponent", "OnPressedWarningLight");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.VehicleInputComponent.OnReleasedAction1
+// (Final, Native, Protected)
+
+void UVehicleInputComponent::OnReleasedAction1()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleInputComponent", "OnReleasedAction1");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.VehicleInputComponent.OnReleasedAction2
+// (Final, Native, Protected)
+
+void UVehicleInputComponent::OnReleasedAction2()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleInputComponent", "OnReleasedAction2");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.VehicleInputComponent.OnReleasedAction3
+// (Final, Native, Protected)
+
+void UVehicleInputComponent::OnReleasedAction3()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleInputComponent", "OnReleasedAction3");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.VehicleInputComponent.OnReleasedAction4
+// (Final, Native, Protected)
+
+void UVehicleInputComponent::OnReleasedAction4()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleInputComponent", "OnReleasedAction4");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.VehicleInputComponent.OnReleasedAction5
+// (Final, Native, Protected)
+
+void UVehicleInputComponent::OnReleasedAction5()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleInputComponent", "OnReleasedAction5");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.VehicleInputComponent.OnReleasedAction6
+// (Final, Native, Protected)
+
+void UVehicleInputComponent::OnReleasedAction6()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleInputComponent", "OnReleasedAction6");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.VehicleInputComponent.OnReleasedAction7
+// (Final, Native, Protected)
+
+void UVehicleInputComponent::OnReleasedAction7()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleInputComponent", "OnReleasedAction7");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.VehicleInputComponent.OnReleasedAction8
+// (Final, Native, Protected)
+
+void UVehicleInputComponent::OnReleasedAction8()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleInputComponent", "OnReleasedAction8");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.VehicleInputComponent.OnReleasedCycleCamera
+// (Final, Native, Protected)
+
+void UVehicleInputComponent::OnReleasedCycleCamera()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleInputComponent", "OnReleasedCycleCamera");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.VehicleInputComponent.OnReleasedCycleFireActionMode
+// (Final, Native, Protected)
+
+void UVehicleInputComponent::OnReleasedCycleFireActionMode()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleInputComponent", "OnReleasedCycleFireActionMode");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.VehicleInputComponent.OnReleasedCycleSeats
+// (Final, Native, Protected)
+
+void UVehicleInputComponent::OnReleasedCycleSeats()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleInputComponent", "OnReleasedCycleSeats");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.VehicleInputComponent.OnReleasedCycleSiren
+// (Final, Native, Protected)
+
+void UVehicleInputComponent::OnReleasedCycleSiren()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleInputComponent", "OnReleasedCycleSiren");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.VehicleInputComponent.OnReleasedHandBrake
+// (Final, Native, Protected)
+
+void UVehicleInputComponent::OnReleasedHandBrake()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleInputComponent", "OnReleasedHandBrake");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.VehicleInputComponent.OnReleasedHorn
+// (Final, Native, Protected)
+
+void UVehicleInputComponent::OnReleasedHorn()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleInputComponent", "OnReleasedHorn");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.VehicleInputComponent.OnReleasedOperationMode
+// (Final, Native, Protected)
+
+void UVehicleInputComponent::OnReleasedOperationMode()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleInputComponent", "OnReleasedOperationMode");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.VehicleInputComponent.OnReleasedPinVehicle
+// (Final, Native, Protected)
+
+void UVehicleInputComponent::OnReleasedPinVehicle()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleInputComponent", "OnReleasedPinVehicle");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.VehicleInputComponent.OnReleasedToggleSteering
+// (Final, Native, Protected)
+
+void UVehicleInputComponent::OnReleasedToggleSteering()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleInputComponent", "OnReleasedToggleSteering");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.VehicleInputComponent.OnTappedCycleCamera
+// (Final, Native, Protected)
+
+void UVehicleInputComponent::OnTappedCycleCamera()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleInputComponent", "OnTappedCycleCamera");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.VehicleInputComponent.OnTappedCycleFireActionMode
+// (Final, Native, Protected)
+
+void UVehicleInputComponent::OnTappedCycleFireActionMode()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleInputComponent", "OnTappedCycleFireActionMode");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.VehicleInputComponent.OnTappedCycleSeats
+// (Final, Native, Protected)
+
+void UVehicleInputComponent::OnTappedCycleSeats()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleInputComponent", "OnTappedCycleSeats");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.VehicleInputComponent.OnTappedCycleSiren
+// (Final, Native, Protected)
+
+void UVehicleInputComponent::OnTappedCycleSiren()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleInputComponent", "OnTappedCycleSiren");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.VehicleInputComponent.OnTappedPinVehicle
+// (Final, Native, Protected)
+
+void UVehicleInputComponent::OnTappedPinVehicle()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleInputComponent", "OnTappedPinVehicle");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.VehicleInputComponent.OnTappedToggleSteering
+// (Final, Native, Protected)
+
+void UVehicleInputComponent::OnTappedToggleSteering()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleInputComponent", "OnTappedToggleSteering");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.VehicleInputComponent.OnToggleOperationMode
+// (Final, Native, Protected)
+
+void UVehicleInputComponent::OnToggleOperationMode()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleInputComponent", "OnToggleOperationMode");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.VehicleInputComponent.Pitch
+// (Final, Native, Protected)
 // Parameters:
-// struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   Val                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-struct FVector ADragStrip::GetInteractionLocation() const
+void UVehicleInputComponent::Pitch(float Val)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("DragStrip", "GetInteractionLocation");
+		Func = Class->GetFunction("VehicleInputComponent", "Pitch");
 
-	Params::DragStrip_GetInteractionLocation Parms{};
+	Params::VehicleInputComponent_Pitch Parms{};
+
+	Parms.Val = Val;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.VehicleInputComponent.Steering
+// (Final, Native, Protected)
+// Parameters:
+// float                                   Val                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UVehicleInputComponent::Steering(float Val)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleInputComponent", "Steering");
+
+	Params::VehicleInputComponent_Steering Parms{};
+
+	Parms.Val = Val;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.VehicleInputComponent.Throttle
+// (Final, Native, Protected)
+// Parameters:
+// float                                   Val                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UVehicleInputComponent::Throttle(float Val)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleInputComponent", "Throttle");
+
+	Params::VehicleInputComponent_Throttle Parms{};
+
+	Parms.Val = Val;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.VehicleInputComponent.ViewPitch
+// (Final, Native, Protected)
+// Parameters:
+// float                                   Val                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UVehicleInputComponent::ViewPitch(float Val)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleInputComponent", "ViewPitch");
+
+	Params::VehicleInputComponent_ViewPitch Parms{};
+
+	Parms.Val = Val;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.VehicleInputComponent.ViewYaw
+// (Final, Native, Protected)
+// Parameters:
+// float                                   Val                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UVehicleInputComponent::ViewYaw(float Val)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleInputComponent", "ViewYaw");
+
+	Params::VehicleInputComponent_ViewYaw Parms{};
+
+	Parms.Val = Val;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.VehicleInputComponent.GetCycleCameraModeValueText
+// (Final, Native, Protected, Const)
+// Parameters:
+// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+class FText UVehicleInputComponent::GetCycleCameraModeValueText() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleInputComponent", "GetCycleCameraModeValueText");
+
+	Params::VehicleInputComponent_GetCycleCameraModeValueText Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
 }
@@ -25075,21 +25170,127 @@ class FText UDriverInputComponent::GetToggleAutoCounterSteeringValueText() const
 }
 
 
-// Function BrickRigs.Elevator.Interact_ElevatorDown
+// Function BrickRigs.EditorInputComponent.MoveForward
+// (Final, Native, Protected)
+// Parameters:
+// float                                   Val                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UEditorInputComponent::MoveForward(float Val)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("EditorInputComponent", "MoveForward");
+
+	Params::EditorInputComponent_MoveForward Parms{};
+
+	Parms.Val = Val;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.EditorInputComponent.MoveRight
+// (Final, Native, Protected)
+// Parameters:
+// float                                   Val                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UEditorInputComponent::MoveRight(float Val)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("EditorInputComponent", "MoveRight");
+
+	Params::EditorInputComponent_MoveRight Parms{};
+
+	Parms.Val = Val;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.EditorInputComponent.MoveUp
+// (Final, Native, Protected)
+// Parameters:
+// float                                   Val                                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UEditorInputComponent::MoveUp(float Val)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("EditorInputComponent", "MoveUp");
+
+	Params::EditorInputComponent_MoveUp Parms{};
+
+	Parms.Val = Val;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.EnumPropertyWidget.InitializeItem
+// (Final, Native, Private, HasOutParams)
+// Parameters:
+// int32                                   Item                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FBrickComboBoxItemParams*        OutParams                                              (Parm, OutParm, NativeAccessSpecifierPublic)
+
+void UEnumPropertyWidget::InitializeItem(int32 Item, struct FBrickComboBoxItemParams* OutParams)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("EnumPropertyWidget", "InitializeItem");
+
+	Params::EnumPropertyWidget_InitializeItem Parms{};
+
+	Parms.Item = Item;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutParams != nullptr)
+		*OutParams = std::move(Parms.OutParams);
+}
+
+
+// Function BrickRigs.EnumPropertyWidget.OnItemSelected
 // (Final, Native, Private)
 // Parameters:
-// class ABrickPlayerController*           PC                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Item                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EValueChangedEventType                  EventType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AElevator::Interact_ElevatorDown(class ABrickPlayerController* PC)
+void UEnumPropertyWidget::OnItemSelected(int32 Item, EValueChangedEventType EventType)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("Elevator", "Interact_ElevatorDown");
+		Func = Class->GetFunction("EnumPropertyWidget", "OnItemSelected");
 
-	Params::Elevator_Interact_ElevatorDown Parms{};
+	Params::EnumPropertyWidget_OnItemSelected Parms{};
 
-	Parms.PC = PC;
+	Parms.Item = Item;
+	Parms.EventType = EventType;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -25097,168 +25298,6 @@ void AElevator::Interact_ElevatorDown(class ABrickPlayerController* PC)
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.Elevator.Interact_ElevatorUp
-// (Final, Native, Private)
-// Parameters:
-// class ABrickPlayerController*           PC                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AElevator::Interact_ElevatorUp(class ABrickPlayerController* PC)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Elevator", "Interact_ElevatorUp");
-
-	Params::Elevator_Interact_ElevatorUp Parms{};
-
-	Parms.PC = PC;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.Elevator.Interact_StopElevator
-// (Final, Native, Private)
-// Parameters:
-// class ABrickPlayerController*           PC                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AElevator::Interact_StopElevator(class ABrickPlayerController* PC)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Elevator", "Interact_StopElevator");
-
-	Params::Elevator_Interact_StopElevator Parms{};
-
-	Parms.PC = PC;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.Elevator.OnElevatorStateChanged
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// const struct FElevatorState&            NewState                                               (ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
-
-void AElevator::OnElevatorStateChanged(const struct FElevatorState& NewState)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Elevator", "OnElevatorStateChanged");
-
-	Params::Elevator_OnElevatorStateChanged Parms{};
-
-	Parms.NewState = std::move(NewState);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.Elevator.OnRep_RepElevatorState
-// (Final, Native, Private)
-
-void AElevator::OnRep_RepElevatorState()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Elevator", "OnRep_RepElevatorState");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.Elevator.SetElevatorDirection
-// (Final, BlueprintAuthorityOnly, Native, Public, BlueprintCallable)
-// Parameters:
-// const EElevatorDirection                Dir                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AElevator::SetElevatorDirection(const EElevatorDirection Dir)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Elevator", "SetElevatorDirection");
-
-	Params::Elevator_SetElevatorDirection Parms{};
-
-	Parms.Dir = Dir;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.Elevator.SetElevatorState
-// (Final, Native, Protected, HasOutParams, BlueprintCallable)
-// Parameters:
-// const struct FElevatorState&            NewState                                               (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void AElevator::SetElevatorState(const struct FElevatorState& NewState)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Elevator", "SetElevatorState");
-
-	Params::Elevator_SetElevatorState Parms{};
-
-	Parms.NewState = std::move(NewState);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.Elevator.GetInteractionLocation
-// (Event, Protected, HasDefaults, BlueprintEvent, Const)
-// Parameters:
-// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FVector                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-struct FVector AElevator::GetInteractionLocation(int32 Index_0) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("Elevator", "GetInteractionLocation");
-
-	Params::Elevator_GetInteractionLocation Parms{};
-
-	Parms.Index_0 = Index_0;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
 }
 
 
@@ -25948,150 +25987,6 @@ bool AFirearm::IsFiring() const
 }
 
 
-// Function BrickRigs.FirearmComponent.OnRep_FirearmState
-// (Final, Native, Private, HasOutParams)
-// Parameters:
-// const struct FFirearmState&             PrevState                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-
-void UFirearmComponent::OnRep_FirearmState(const struct FFirearmState& PrevState)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("FirearmComponent", "OnRep_FirearmState");
-
-	Params::FirearmComponent_OnRep_FirearmState Parms{};
-
-	Parms.PrevState = std::move(PrevState);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-bool UFirearmComponent::Fire()
-{
-	/*
-	HOW TO REVERSE THE FUNCTION POINTER!
-	STEP 1: FIND FUNCTION IN GHIRDRA OR IDA:
-	STEP 2: USE TOP ASM TO FIND ADDRESS: IN THIS CASE LOOKS LIKE: 140c76a50 40 53 PUSH RBX (PUSH RBX IS FUNCTION START IM ASM)(ALSO THE FUNCTIONS ADDRESS ITSELF WORKS)
-	STEP 3: TAKE NOTE OF ADDRESS AND CONVERT TO CPP: 0x140C76A50
-	STEP 4: CHOP OFF THE BASE(NEEDED DUE TO NOW UE COMPILER WORKS): 0x0C76A50
-	STEP 5: USE THE (uintptr_t)GetModuleHandle(NUll) TO GET BASE OF PROGRAM THEN ADD TO EXISTING FUNCTION POINTER: uintptr_t UFirearmComponent_Fire = (uintptr_t)GetModuleHandle(NULL) + 0x0C76A50;
-	STEP 6: DONE!
-	*/
-
-	uintptr_t UFirearmComponent_Fire = (uintptr_t)GetModuleHandle(NULL) + 0x0C76A50;
-
-	using FireFn = bool(__fastcall*)(UFirearmComponent* This);
-	FireFn OnFire = reinterpret_cast<FireFn>(UFirearmComponent_Fire);
-
-	return OnFire(this);
-}
-
-void UFirearmComponent::OnFire(bool bWasAuto, float FireTime)
-{
-	uintptr_t UFirearmComponent_OnFire = (uintptr_t)GetModuleHandle(NULL) + 0x0C84A30;
-
-	using FireFn = bool(__fastcall*)(UFirearmComponent* This, bool wasAuto, float firetime);
-	FireFn OnOnFire = reinterpret_cast<FireFn>(UFirearmComponent_OnFire);
-
-	OnOnFire(this, bWasAuto, FireTime);
-}
-
-void UFirearmComponent::OnFirearmStateChange(const FFirearmState* state)
-{
-	uintptr_t UFirearmComponent_OnFirearmStateChange = (uintptr_t)GetModuleHandle(NULL) + 0x0C84ED0;
-
-	using FireFn = bool(__fastcall*)(UFirearmComponent* This, const FFirearmState* state);
-	FireFn OnOnFirearmStateChange = reinterpret_cast<FireFn>(UFirearmComponent_OnFirearmStateChange);
-
-	OnOnFirearmStateChange(this, state);
-}
-
-void UFirearmComponent::SetFireMode(SDK::EFireMode mode)
-{
-	uintptr_t UFirearmComponent_SetFireMode = (uintptr_t)GetModuleHandle(NULL) + 0x0C91A10;
-
-	using SetFireModeFn = bool(__fastcall*)(UFirearmComponent* This, SDK::EFireMode mode);
-	SetFireModeFn OnSetFireMode = reinterpret_cast<SetFireModeFn>(UFirearmComponent_SetFireMode);
-
-	OnSetFireMode(this, mode);
-}
-
-void UFirearmComponent::InitializeFirearm(const FFirearmProperties* InProperties, const FMuzzleEffectAttachment* InEffectAttachment, bool bStartCocked, int InSpreadRandomSeed)
-{
-	uintptr_t UFirearmComponent_InitializeFirearm = (uintptr_t)GetModuleHandle(NULL) + 0x0C80530;
-
-	using InitializeFirearmFn = bool(__fastcall*)(UFirearmComponent* This, const FFirearmProperties* InProperties, const FMuzzleEffectAttachment* InEffectAttachment, bool bStartCocked, int InSpreadRandomSeed);
-	InitializeFirearmFn OnInitializeFirearm = reinterpret_cast<InitializeFirearmFn>(UFirearmComponent_InitializeFirearm);
-
-	OnInitializeFirearm(this, InProperties, InEffectAttachment, bStartCocked, InSpreadRandomSeed);
-}
-
-
-
-// Function BrickRigs.PlacableObjectWidget.OnButtonClicked
-// (Final, Native, Public, BlueprintCallable)
-
-void UPlacableObjectWidget::OnButtonClicked()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PlacableObjectWidget", "OnButtonClicked");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.PlacableObjectWidget.OpenContextMenu
-// (Final, Native, Public, BlueprintCallable)
-
-void UPlacableObjectWidget::OpenContextMenu()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PlacableObjectWidget", "OpenContextMenu");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.PlacableObjectWidget.UpdateIsFilterWidget
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bNewIsFilter                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UPlacableObjectWidget::UpdateIsFilterWidget(bool bNewIsFilter)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PlacableObjectWidget", "UpdateIsFilterWidget");
-
-	Params::PlacableObjectWidget_UpdateIsFilterWidget Parms{};
-
-	Parms.bNewIsFilter = bNewIsFilter;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function BrickRigs.PingIndicatorWidget.SetColorStyle
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -26267,29 +26162,28 @@ void UPingIndicatorWidget::UpdatePing(int32 InPing)
 }
 
 
-// Function BrickRigs.PlayerIconWidget.UpdatePlayerIcon
-// (Event, Protected, BlueprintEvent)
+// Function BrickRigs.FirearmComponent.OnRep_FirearmState
+// (Final, Native, Private, HasOutParams)
 // Parameters:
-// bool                                    bNewIsLocalPlayer                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bNewIsTeamLeader                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// ECharacterStateOfHealth                 NewStateOfHealth                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bNewCanBeDamaged                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FFirearmState&             PrevState                                              (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 
-void UPlayerIconWidget::UpdatePlayerIcon(bool bNewIsLocalPlayer, bool bNewIsTeamLeader, ECharacterStateOfHealth NewStateOfHealth, bool bNewCanBeDamaged)
+void UFirearmComponent::OnRep_FirearmState(const struct FFirearmState& PrevState)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PlayerIconWidget", "UpdatePlayerIcon");
+		Func = Class->GetFunction("FirearmComponent", "OnRep_FirearmState");
 
-	Params::PlayerIconWidget_UpdatePlayerIcon Parms{};
+	Params::FirearmComponent_OnRep_FirearmState Parms{};
 
-	Parms.bNewIsLocalPlayer = bNewIsLocalPlayer;
-	Parms.bNewIsTeamLeader = bNewIsTeamLeader;
-	Parms.NewStateOfHealth = NewStateOfHealth;
-	Parms.bNewCanBeDamaged = bNewCanBeDamaged;
+	Parms.PrevState = std::move(PrevState);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -26523,103 +26417,61 @@ void UPopupContainerWidget::UpdateTitleText(const class FText& NewTitle)
 }
 
 
-// Function BrickRigs.PropertyListInterface.AddPropertyContainerWidget
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// class UPropertyContainerWidget*         Widget                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function BrickRigs.PlacableObjectWidget.OnButtonClicked
+// (Final, Native, Public, BlueprintCallable)
 
-void IPropertyListInterface::AddPropertyContainerWidget(class UPropertyContainerWidget* Widget)
+void UPlacableObjectWidget::OnButtonClicked()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("PropertyListInterface", "AddPropertyContainerWidget");
-
-	Params::PropertyListInterface_AddPropertyContainerWidget Parms{};
-
-	Parms.Widget = Widget;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.PropertyListInterface.UpdatePropertyContainerWidgetSlot
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// class UPropertyContainerWidget*         Widget                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   NumPerRow                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void IPropertyListInterface::UpdatePropertyContainerWidgetSlot(class UPropertyContainerWidget* Widget, int32 Index_0, int32 NumPerRow)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = AsUObject()->Class->GetFunction("PropertyListInterface", "UpdatePropertyContainerWidgetSlot");
-
-	Params::PropertyListInterface_UpdatePropertyContainerWidgetSlot Parms{};
-
-	Parms.Widget = Widget;
-	Parms.Index_0 = Index_0;
-	Parms.NumPerRow = NumPerRow;
-
-	AsUObject()->ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.ObjectPropertyWidget.InitializeItem
-// (Native, Protected, HasOutParams)
-// Parameters:
-// int32                                   Item                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FBrickComboBoxItemParams*        OutParams                                              (Parm, OutParm, NativeAccessSpecifierPublic)
-
-void UObjectPropertyWidget::InitializeItem(int32 Item, struct FBrickComboBoxItemParams* OutParams)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ObjectPropertyWidget", "InitializeItem");
-
-	Params::ObjectPropertyWidget_InitializeItem Parms{};
-
-	Parms.Item = Item;
+		Func = Class->GetFunction("PlacableObjectWidget", "OnButtonClicked");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
-
-	if (OutParams != nullptr)
-		*OutParams = std::move(Parms.OutParams);
 }
 
 
-// Function BrickRigs.ObjectPropertyWidget.OnItemSelected
-// (Final, Native, Protected)
-// Parameters:
-// int32                                   Item                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EValueChangedEventType                  EventType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function BrickRigs.PlacableObjectWidget.OpenContextMenu
+// (Final, Native, Public, BlueprintCallable)
 
-void UObjectPropertyWidget::OnItemSelected(int32 Item, EValueChangedEventType EventType)
+void UPlacableObjectWidget::OpenContextMenu()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ObjectPropertyWidget", "OnItemSelected");
-
-	Params::ObjectPropertyWidget_OnItemSelected Parms{};
-
-	Parms.Item = Item;
-	Parms.EventType = EventType;
+		Func = Class->GetFunction("PlacableObjectWidget", "OpenContextMenu");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.PlacableObjectWidget.UpdateIsFilterWidget
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bNewIsFilter                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UPlacableObjectWidget::UpdateIsFilterWidget(bool bNewIsFilter)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlacableObjectWidget", "UpdateIsFilterWidget");
+
+	Params::PlacableObjectWidget_UpdateIsFilterWidget Parms{};
+
+	Parms.bNewIsFilter = bNewIsFilter;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -26877,15 +26729,110 @@ bool UPropertyContainerInputComponent::GetSelectByValueEnabled() const
 }
 
 
-// Function BrickRigs.FuelTank.OnRep_bHasExploded
-// (Final, Native, Private)
+// Function BrickRigs.FlashSequenceItemWidget.UpdateIsLit
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bNewLit                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void AFuelTank::OnRep_bHasExploded()
+void UFlashSequenceItemWidget::UpdateIsLit(bool bNewLit)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("FuelTank", "OnRep_bHasExploded");
+		Func = Class->GetFunction("FlashSequenceItemWidget", "UpdateIsLit");
+
+	Params::FlashSequenceItemWidget_UpdateIsLit Parms{};
+
+	Parms.bNewLit = bNewLit;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.PlayerIconWidget.UpdatePlayerIcon
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bNewIsLocalPlayer                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bNewIsTeamLeader                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ECharacterStateOfHealth                 NewStateOfHealth                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bNewCanBeDamaged                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UPlayerIconWidget::UpdatePlayerIcon(bool bNewIsLocalPlayer, bool bNewIsTeamLeader, ECharacterStateOfHealth NewStateOfHealth, bool bNewCanBeDamaged)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PlayerIconWidget", "UpdatePlayerIcon");
+
+	Params::PlayerIconWidget_UpdatePlayerIcon Parms{};
+
+	Parms.bNewIsLocalPlayer = bNewIsLocalPlayer;
+	Parms.bNewIsTeamLeader = bNewIsTeamLeader;
+	Parms.NewStateOfHealth = NewStateOfHealth;
+	Parms.bNewCanBeDamaged = bNewCanBeDamaged;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.PropertiesPanelWidget.AddCategoryWidget
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// class UPropertyCategoryWidget*          Widget                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UPropertiesPanelWidget::AddCategoryWidget(class UPropertyCategoryWidget* Widget, int32 Index_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PropertiesPanelWidget", "AddCategoryWidget");
+
+	Params::PropertiesPanelWidget_AddCategoryWidget Parms{};
+
+	Parms.Widget = Widget;
+	Parms.Index_0 = Index_0;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.PropertiesPanelWidget.AddProperties
+// (Final, Native, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const TArray<class UObject*>&           InContainers                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+// const struct FBrickPropertyReflectionFilter&InFilter                                               (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UPropertiesPanelWidget::AddProperties(const TArray<class UObject*>& InContainers, const struct FBrickPropertyReflectionFilter& InFilter)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PropertiesPanelWidget", "AddProperties");
+
+	Params::PropertiesPanelWidget_AddProperties Parms{};
+
+	Parms.InContainers = std::move(InContainers);
+	Parms.InFilter = std::move(InFilter);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.PropertiesPanelWidget.ClearProperties
+// (Final, Native, Public, BlueprintCallable)
+
+void UPropertiesPanelWidget::ClearProperties()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PropertiesPanelWidget", "ClearProperties");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -26896,26 +26843,599 @@ void AFuelTank::OnRep_bHasExploded()
 }
 
 
-// Function BrickRigs.FuelTank.ShouldSpawnLeakOnHit
-// (Event, Protected, HasOutParams, BlueprintEvent)
-// Parameters:
-// const struct FHitResult&                Hit                                                    (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function BrickRigs.PropertiesPanelWidget.UpdateProperties
+// (Final, Native, Public, BlueprintCallable)
 
-bool AFuelTank::ShouldSpawnLeakOnHit(const struct FHitResult& Hit)
+void UPropertiesPanelWidget::UpdateProperties()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("FuelTank", "ShouldSpawnLeakOnHit");
+		Func = Class->GetFunction("PropertiesPanelWidget", "UpdateProperties");
 
-	Params::FuelTank_ShouldSpawnLeakOnHit Parms{};
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
 
-	Parms.Hit = std::move(Hit);
+	UObject::ProcessEvent(Func, nullptr);
 
-	UObject::ProcessEvent(Func, &Parms);
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.FluMathStatics.AxisToIndex
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// const EAxis                             Axis                                                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UFluMathStatics::AxisToIndex(const EAxis Axis)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("FluMathStatics", "AxisToIndex");
+
+	Params::FluMathStatics_AxisToIndex Parms{};
+
+	Parms.Axis = Axis;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.FluMathStatics.BitmaskHasFlag
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// const int32                             BitMask                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const uint8                             Index_0                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UFluMathStatics::BitmaskHasFlag(const int32 BitMask, const uint8 Index_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("FluMathStatics", "BitmaskHasFlag");
+
+	Params::FluMathStatics_BitmaskHasFlag Parms{};
+
+	Parms.BitMask = BitMask;
+	Parms.Index_0 = Index_0;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.FluMathStatics.BitmaskSetFlag
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// const int32                             BitMask                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const uint8                             Index_0                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bFlag                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UFluMathStatics::BitmaskSetFlag(const int32 BitMask, const uint8 Index_0, const bool bFlag)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("FluMathStatics", "BitmaskSetFlag");
+
+	Params::FluMathStatics_BitmaskSetFlag Parms{};
+
+	Parms.BitMask = BitMask;
+	Parms.Index_0 = Index_0;
+	Parms.bFlag = bFlag;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.FluMathStatics.IndexToAxis
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// const int32                             Index_0                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EAxis                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EAxis UFluMathStatics::IndexToAxis(const int32 Index_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("FluMathStatics", "IndexToAxis");
+
+	Params::FluMathStatics_IndexToAxis Parms{};
+
+	Parms.Index_0 = Index_0;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.FluMathStatics.IntegrateEllipseArcLength
+// (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure)
+// Parameters:
+// const struct FVector2D&                 Radius                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const float                             AngleRad                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             Steps                                                  (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UFluMathStatics::IntegrateEllipseArcLength(const struct FVector2D& Radius, const float AngleRad, const int32 Steps)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("FluMathStatics", "IntegrateEllipseArcLength");
+
+	Params::FluMathStatics_IntegrateEllipseArcLength Parms{};
+
+	Parms.Radius = std::move(Radius);
+	Parms.AngleRad = AngleRad;
+	Parms.Steps = Steps;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.FluMathStatics.IsAxisSignedPositive
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// const EFluAxisSigned                    Axis                                                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UFluMathStatics::IsAxisSignedPositive(const EFluAxisSigned Axis)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("FluMathStatics", "IsAxisSignedPositive");
+
+	Params::FluMathStatics_IsAxisSignedPositive Parms{};
+
+	Parms.Axis = Axis;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.FluMathStatics.MakeAxisSigned
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// const EAxis                             Axis                                                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bPositiveAxis                                          (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EFluAxisSigned                          ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EFluAxisSigned UFluMathStatics::MakeAxisSigned(const EAxis Axis, const bool bPositiveAxis)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("FluMathStatics", "MakeAxisSigned");
+
+	Params::FluMathStatics_MakeAxisSigned Parms{};
+
+	Parms.Axis = Axis;
+	Parms.bPositiveAxis = bPositiveAxis;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.FluMathStatics.MakeBitmask
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// const uint8                             Index_0                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UFluMathStatics::MakeBitmask(const uint8 Index_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("FluMathStatics", "MakeBitmask");
+
+	Params::FluMathStatics_MakeBitmask Parms{};
+
+	Parms.Index_0 = Index_0;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.FluMathStatics.QuatToNiceRotator
+// (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure)
+// Parameters:
+// const struct FQuat&                     Quat                                                   (ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+// struct FRotator                         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+
+struct FRotator UFluMathStatics::QuatToNiceRotator(const struct FQuat& Quat)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("FluMathStatics", "QuatToNiceRotator");
+
+	Params::FluMathStatics_QuatToNiceRotator Parms{};
+
+	Parms.Quat = std::move(Quat);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.FluMathStatics.RemapAxisLockAxis
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// const EFluAxisLock                      AxisLock                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const EAxis                             Axis                                                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EAxis                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+EAxis UFluMathStatics::RemapAxisLockAxis(const EFluAxisLock AxisLock, const EAxis Axis)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("FluMathStatics", "RemapAxisLockAxis");
+
+	Params::FluMathStatics_RemapAxisLockAxis Parms{};
+
+	Parms.AxisLock = AxisLock;
+	Parms.Axis = Axis;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.FluMathStatics.RemapAxisLockIndex
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// const EFluAxisLock                      AxisLock                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             AxisIndex                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UFluMathStatics::RemapAxisLockIndex(const EFluAxisLock AxisLock, const int32 AxisIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("FluMathStatics", "RemapAxisLockIndex");
+
+	Params::FluMathStatics_RemapAxisLockIndex Parms{};
+
+	Parms.AxisLock = AxisLock;
+	Parms.AxisIndex = AxisIndex;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.FluMathStatics.RotateVector2D90
+// (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure)
+// Parameters:
+// const struct FVector2D&                 Vector                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             NumFlips                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FVector2D                        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+struct FVector2D UFluMathStatics::RotateVector2D90(const struct FVector2D& Vector, const int32 NumFlips)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("FluMathStatics", "RotateVector2D90");
+
+	Params::FluMathStatics_RotateVector2D90 Parms{};
+
+	Parms.Vector = std::move(Vector);
+	Parms.NumFlips = NumFlips;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.FluMathStatics.SplitAxisSigned
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable, BlueprintPure)
+// Parameters:
+// const EFluAxisSigned                    Axis                                                   (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EAxis*                                  OutAxis                                                (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool*                                   bOutPositiveAxis                                       (Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UFluMathStatics::SplitAxisSigned(const EFluAxisSigned Axis, EAxis* OutAxis, bool* bOutPositiveAxis)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("FluMathStatics", "SplitAxisSigned");
+
+	Params::FluMathStatics_SplitAxisSigned Parms{};
+
+	Parms.Axis = Axis;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutAxis != nullptr)
+		*OutAxis = Parms.OutAxis;
+
+	if (bOutPositiveAxis != nullptr)
+		*bOutPositiveAxis = Parms.bOutPositiveAxis;
+}
+
+
+// Function BrickRigs.FluMathStatics.Vector2DAngle2Deg
+// (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure)
+// Parameters:
+// const struct FVector2D&                 A                                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector2D&                 B                                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UFluMathStatics::Vector2DAngle2Deg(const struct FVector2D& A, const struct FVector2D& B)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("FluMathStatics", "Vector2DAngle2Deg");
+
+	Params::FluMathStatics_Vector2DAngle2Deg Parms{};
+
+	Parms.A = std::move(A);
+	Parms.B = std::move(B);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.FluMathStatics.Vector2DAngle2Rad
+// (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure)
+// Parameters:
+// const struct FVector2D&                 A                                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector2D&                 B                                                      (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UFluMathStatics::Vector2DAngle2Rad(const struct FVector2D& A, const struct FVector2D& B)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("FluMathStatics", "Vector2DAngle2Rad");
+
+	Params::FluMathStatics_Vector2DAngle2Rad Parms{};
+
+	Parms.A = std::move(A);
+	Parms.B = std::move(B);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.FluMathStatics.Vector2DAngleDeg
+// (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure)
+// Parameters:
+// const struct FVector2D&                 Vector                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UFluMathStatics::Vector2DAngleDeg(const struct FVector2D& Vector)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("FluMathStatics", "Vector2DAngleDeg");
+
+	Params::FluMathStatics_Vector2DAngleDeg Parms{};
+
+	Parms.Vector = std::move(Vector);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.FluMathStatics.Vector2DAngleRad
+// (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure)
+// Parameters:
+// const struct FVector2D&                 Vector                                                 (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+float UFluMathStatics::Vector2DAngleRad(const struct FVector2D& Vector)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("FluMathStatics", "Vector2DAngleRad");
+
+	Params::FluMathStatics_Vector2DAngleRad Parms{};
+
+	Parms.Vector = std::move(Vector);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.FluMathStatics.WrapIndex
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// const int32                             Index_0                                                (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const int32                             Num                                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+int32 UFluMathStatics::WrapIndex(const int32 Index_0, const int32 Num)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("FluMathStatics", "WrapIndex");
+
+	Params::FluMathStatics_WrapIndex Parms{};
+
+	Parms.Index_0 = Index_0;
+	Parms.Num = Num;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.PropertyListInterface.AddPropertyContainerWidget
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// class UPropertyContainerWidget*         Widget                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IPropertyListInterface::AddPropertyContainerWidget(class UPropertyContainerWidget* Widget)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("PropertyListInterface", "AddPropertyContainerWidget");
+
+	Params::PropertyListInterface_AddPropertyContainerWidget Parms{};
+
+	Parms.Widget = Widget;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.PropertyListInterface.UpdatePropertyContainerWidgetSlot
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// class UPropertyContainerWidget*         Widget                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   NumPerRow                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void IPropertyListInterface::UpdatePropertyContainerWidgetSlot(class UPropertyContainerWidget* Widget, int32 Index_0, int32 NumPerRow)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = AsUObject()->Class->GetFunction("PropertyListInterface", "UpdatePropertyContainerWidgetSlot");
+
+	Params::PropertyListInterface_UpdatePropertyContainerWidgetSlot Parms{};
+
+	Parms.Widget = Widget;
+	Parms.Index_0 = Index_0;
+	Parms.NumPerRow = NumPerRow;
+
+	AsUObject()->ProcessEvent(Func, &Parms);
 }
 
 
@@ -27479,15 +27999,38 @@ void UGameOverlayWidget::UpdateVehicleCameraNotification(class UHUDNotificationW
 }
 
 
+// Function BrickRigs.GameOverlayWidget.UpdateVehicleConstructionNotification
+// (Event, Protected, HasOutParams, BlueprintEvent)
+// Parameters:
+// class UHUDNotificationWidget*           Widget                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FText&                      VehicleDisplayName                                     (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// float                                   Progress                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UGameOverlayWidget::UpdateVehicleConstructionNotification(class UHUDNotificationWidget* Widget, const class FText& VehicleDisplayName, float Progress)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GameOverlayWidget", "UpdateVehicleConstructionNotification");
+
+	Params::GameOverlayWidget_UpdateVehicleConstructionNotification Parms{};
+
+	Parms.Widget = Widget;
+	Parms.VehicleDisplayName = std::move(VehicleDisplayName);
+	Parms.Progress = Progress;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BrickRigs.GameOverlayWidget.UpdateVehicleDownloadNotification
 // (Event, Protected, HasOutParams, BlueprintEvent)
 // Parameters:
 // class UHUDNotificationWidget*           Widget                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // const class FText&                      VehicleDisplayName                                     (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// bool                                    bIsDownloading                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 // float                                   Progress                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UGameOverlayWidget::UpdateVehicleDownloadNotification(class UHUDNotificationWidget* Widget, const class FText& VehicleDisplayName, bool bIsDownloading, float Progress)
+void UGameOverlayWidget::UpdateVehicleDownloadNotification(class UHUDNotificationWidget* Widget, const class FText& VehicleDisplayName, float Progress)
 {
 	static class UFunction* Func = nullptr;
 
@@ -27498,10 +28041,106 @@ void UGameOverlayWidget::UpdateVehicleDownloadNotification(class UHUDNotificatio
 
 	Parms.Widget = Widget;
 	Parms.VehicleDisplayName = std::move(VehicleDisplayName);
-	Parms.bIsDownloading = bIsDownloading;
 	Parms.Progress = Progress;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.GameOverlayWidget.UpdateVehicleSeatNotification
+// (Event, Protected, HasOutParams, BlueprintEvent)
+// Parameters:
+// class UHUDNotificationWidget*           Widget                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FText&                      SeatDisplayName                                        (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+
+void UGameOverlayWidget::UpdateVehicleSeatNotification(class UHUDNotificationWidget* Widget, const class FText& SeatDisplayName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("GameOverlayWidget", "UpdateVehicleSeatNotification");
+
+	Params::GameOverlayWidget_UpdateVehicleSeatNotification Parms{};
+
+	Parms.Widget = Widget;
+	Parms.SeatDisplayName = std::move(SeatDisplayName);
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.Garage.Interact_EnterEditor
+// (Final, Native, Private)
+// Parameters:
+// class ABrickPlayerController*           PC                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGarage::Interact_EnterEditor(class ABrickPlayerController* PC)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Garage", "Interact_EnterEditor");
+
+	Params::Garage_Interact_EnterEditor Parms{};
+
+	Parms.PC = PC;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.Garage.Interact_Inventory
+// (Final, Native, Private)
+// Parameters:
+// class ABrickPlayerController*           PC                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGarage::Interact_Inventory(class ABrickPlayerController* PC)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Garage", "Interact_Inventory");
+
+	Params::Garage_Interact_Inventory Parms{};
+
+	Parms.PC = PC;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.Garage.Interact_SpawnVehicle
+// (Final, Native, Private)
+// Parameters:
+// class ABrickPlayerController*           PC                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void AGarage::Interact_SpawnVehicle(class ABrickPlayerController* PC)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("Garage", "Interact_SpawnVehicle");
+
+	Params::Garage_Interact_SpawnVehicle Parms{};
+
+	Parms.PC = PC;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
 }
 
 
@@ -27532,65 +28171,15 @@ void UGenericPropertyWidget::OnTextChanged(const class FText& Text, EValueChange
 }
 
 
-// Function BrickRigs.GravelSilo.Interact_CloseSilo
-// (Final, Native, Private)
-// Parameters:
-// class ABrickPlayerController*           PC                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function BrickRigs.ReuploadPopupWidget.ViewOriginalAuthorInBrowser
+// (Final, Native, Public, BlueprintCallable)
 
-void AGravelSilo::Interact_CloseSilo(class ABrickPlayerController* PC)
+void UReuploadPopupWidget::ViewOriginalAuthorInBrowser()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("GravelSilo", "Interact_CloseSilo");
-
-	Params::GravelSilo_Interact_CloseSilo Parms{};
-
-	Parms.PC = PC;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.GravelSilo.Interact_OpenSilo
-// (Final, Native, Private)
-// Parameters:
-// class ABrickPlayerController*           PC                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void AGravelSilo::Interact_OpenSilo(class ABrickPlayerController* PC)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GravelSilo", "Interact_OpenSilo");
-
-	Params::GravelSilo_Interact_OpenSilo Parms{};
-
-	Parms.PC = PC;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.GravelSilo.OnRep_bIsSiloOpen
-// (Final, Native, Private)
-
-void AGravelSilo::OnRep_bIsSiloOpen()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("GravelSilo", "OnRep_bIsSiloOpen");
+		Func = Class->GetFunction("ReuploadPopupWidget", "ViewOriginalAuthorInBrowser");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -27601,90 +28190,118 @@ void AGravelSilo::OnRep_bIsSiloOpen()
 }
 
 
-// Function BrickRigs.PropertiesPanelWidget.AddCategoryWidget
+// Function BrickRigs.ReuploadPopupWidget.ViewOriginalItemInBrowser
+// (Final, Native, Public, BlueprintCallable)
+
+void UReuploadPopupWidget::ViewOriginalItemInBrowser()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ReuploadPopupWidget", "ViewOriginalItemInBrowser");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.ReuploadPopupWidget.GetOriginalAuthorName
+// (Final, Native, Protected, HasOutParams, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class FText*                            OutName                                                (Parm, OutParm, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UReuploadPopupWidget::GetOriginalAuthorName(class FText* OutName) const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ReuploadPopupWidget", "GetOriginalAuthorName");
+
+	Params::ReuploadPopupWidget_GetOriginalAuthorName Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutName != nullptr)
+		*OutName = std::move(Parms.OutName);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.RestrictedAreaWidget.OnFadedOut
+// (Final, Native, Public, BlueprintCallable)
+
+void URestrictedAreaWidget::OnFadedOut()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("RestrictedAreaWidget", "OnFadedOut");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.RestrictedAreaWidget.PlayFadeInAnim
+// (Event, Protected, BlueprintEvent)
+
+void URestrictedAreaWidget::PlayFadeInAnim()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("RestrictedAreaWidget", "PlayFadeInAnim");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BrickRigs.RestrictedAreaWidget.PlayFadeOutAnim
+// (Event, Protected, BlueprintEvent)
+
+void URestrictedAreaWidget::PlayFadeOutAnim()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("RestrictedAreaWidget", "PlayFadeOutAnim");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BrickRigs.RestrictedAreaWidget.UpdateTimerRemaining
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// class UPropertyCategoryWidget*          Widget                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   TimeRemaining                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UPropertiesPanelWidget::AddCategoryWidget(class UPropertyCategoryWidget* Widget, int32 Index_0)
+void URestrictedAreaWidget::UpdateTimerRemaining(float TimeRemaining)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("PropertiesPanelWidget", "AddCategoryWidget");
+		Func = Class->GetFunction("RestrictedAreaWidget", "UpdateTimerRemaining");
 
-	Params::PropertiesPanelWidget_AddCategoryWidget Parms{};
+	Params::RestrictedAreaWidget_UpdateTimerRemaining Parms{};
 
-	Parms.Widget = Widget;
-	Parms.Index_0 = Index_0;
+	Parms.TimeRemaining = TimeRemaining;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.PropertiesPanelWidget.AddProperties
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const TArray<class UObject*>&           InContainers                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-// const struct FBrickPropertyReflectionFilter&InFilter                                               (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UPropertiesPanelWidget::AddProperties(const TArray<class UObject*>& InContainers, const struct FBrickPropertyReflectionFilter& InFilter)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PropertiesPanelWidget", "AddProperties");
-
-	Params::PropertiesPanelWidget_AddProperties Parms{};
-
-	Parms.InContainers = std::move(InContainers);
-	Parms.InFilter = std::move(InFilter);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.PropertiesPanelWidget.ClearProperties
-// (Final, Native, Public, BlueprintCallable)
-
-void UPropertiesPanelWidget::ClearProperties()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PropertiesPanelWidget", "ClearProperties");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.PropertiesPanelWidget.UpdateProperties
-// (Final, Native, Public, BlueprintCallable)
-
-void UPropertiesPanelWidget::UpdateProperties()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("PropertiesPanelWidget", "UpdateProperties");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
@@ -27773,15 +28390,15 @@ void UHealthBarWidget::UpdateHealth(float NewHealth)
 }
 
 
-// Function BrickRigs.ReuploadPopupWidget.ViewOriginalAuthorInBrowser
-// (Final, Native, Public, BlueprintCallable)
+// Function BrickRigs.MenuSettingsPageWidget.AddProperties
+// (Native, Event, Protected, BlueprintEvent)
 
-void UReuploadPopupWidget::ViewOriginalAuthorInBrowser()
+void UMenuSettingsPageWidget::AddProperties()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ReuploadPopupWidget", "ViewOriginalAuthorInBrowser");
+		Func = Class->GetFunction("MenuSettingsPageWidget", "AddProperties");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -27792,15 +28409,15 @@ void UReuploadPopupWidget::ViewOriginalAuthorInBrowser()
 }
 
 
-// Function BrickRigs.ReuploadPopupWidget.ViewOriginalItemInBrowser
+// Function BrickRigs.ScoreboardPlayerWidget.OnButtonClicked
 // (Final, Native, Public, BlueprintCallable)
 
-void UReuploadPopupWidget::ViewOriginalItemInBrowser()
+void UScoreboardPlayerWidget::OnButtonClicked()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ReuploadPopupWidget", "ViewOriginalItemInBrowser");
+		Func = Class->GetFunction("ScoreboardPlayerWidget", "OnButtonClicked");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -27811,20 +28428,25 @@ void UReuploadPopupWidget::ViewOriginalItemInBrowser()
 }
 
 
-// Function BrickRigs.ReuploadPopupWidget.GetOriginalAuthorName
-// (Final, Native, Protected, HasOutParams, BlueprintCallable, BlueprintPure, Const)
+// Function BrickRigs.ScoreboardPlayerWidget.UpdateButtonStyle
+// (Native, Event, Protected, BlueprintEvent)
 // Parameters:
-// class FText*                            OutName                                                (Parm, OutParm, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bNewSelected                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bIsLocalPlayer                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ETeamAttitude                           TeamAttitude                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-bool UReuploadPopupWidget::GetOriginalAuthorName(class FText* OutName) const
+void UScoreboardPlayerWidget::UpdateButtonStyle(bool bNewSelected, bool bIsLocalPlayer, ETeamAttitude TeamAttitude)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("ReuploadPopupWidget", "GetOriginalAuthorName");
+		Func = Class->GetFunction("ScoreboardPlayerWidget", "UpdateButtonStyle");
 
-	Params::ReuploadPopupWidget_GetOriginalAuthorName Parms{};
+	Params::ScoreboardPlayerWidget_UpdateButtonStyle Parms{};
+
+	Parms.bNewSelected = bNewSelected;
+	Parms.bIsLocalPlayer = bIsLocalPlayer;
+	Parms.TeamAttitude = TeamAttitude;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -27832,11 +28454,46 @@ bool UReuploadPopupWidget::GetOriginalAuthorName(class FText* OutName) const
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+}
 
-	if (OutName != nullptr)
-		*OutName = std::move(Parms.OutName);
 
-	return Parms.ReturnValue;
+// Function BrickRigs.ScoreboardPlayerWidget.UpdateIsAdmin
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bIsAdmin                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UScoreboardPlayerWidget::UpdateIsAdmin(bool bIsAdmin)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ScoreboardPlayerWidget", "UpdateIsAdmin");
+
+	Params::ScoreboardPlayerWidget_UpdateIsAdmin Parms{};
+
+	Parms.bIsAdmin = bIsAdmin;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.ScoreboardPlayerWidget.UpdateIsAlive
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bIsAlive                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UScoreboardPlayerWidget::UpdateIsAlive(bool bIsAlive)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ScoreboardPlayerWidget", "UpdateIsAlive");
+
+	Params::ScoreboardPlayerWidget_UpdateIsAlive Parms{};
+
+	Parms.bIsAlive = bIsAlive;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -27876,127 +28533,6 @@ void UHostGamePageWidget::UpdatePlayButton(bool bCanPlay, bool bIsOnline)
 
 	Parms.bCanPlay = bCanPlay;
 	Parms.bIsOnline = bIsOnline;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.ScoreboardTeamWidget.JoinTeam
-// (Final, Native, Public, BlueprintCallable)
-
-void UScoreboardTeamWidget::JoinTeam()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ScoreboardTeamWidget", "JoinTeam");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.ScoreboardTeamWidget.UpdateCanEverJoinTeam
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bCanJoin                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UScoreboardTeamWidget::UpdateCanEverJoinTeam(bool bCanJoin)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ScoreboardTeamWidget", "UpdateCanEverJoinTeam");
-
-	Params::ScoreboardTeamWidget_UpdateCanEverJoinTeam Parms{};
-
-	Parms.bCanJoin = bCanJoin;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.ScoreboardTeamWidget.UpdateCanJoinTeam
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bCanJoin                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UScoreboardTeamWidget::UpdateCanJoinTeam(bool bCanJoin)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ScoreboardTeamWidget", "UpdateCanJoinTeam");
-
-	Params::ScoreboardTeamWidget_UpdateCanJoinTeam Parms{};
-
-	Parms.bCanJoin = bCanJoin;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.ScoreboardTeamWidget.UpdateTeamAttitude
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bIsOwnTeam                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// ETeamAttitude                           NewAttitude                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UScoreboardTeamWidget::UpdateTeamAttitude(bool bIsOwnTeam, ETeamAttitude NewAttitude)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ScoreboardTeamWidget", "UpdateTeamAttitude");
-
-	Params::ScoreboardTeamWidget_UpdateTeamAttitude Parms{};
-
-	Parms.bIsOwnTeam = bIsOwnTeam;
-	Parms.NewAttitude = NewAttitude;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.HUDContainerWidget.AddGameOverlayWidget
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// class UGameOverlayWidget*               Widget                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UHUDContainerWidget::AddGameOverlayWidget(class UGameOverlayWidget* Widget)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("HUDContainerWidget", "AddGameOverlayWidget");
-
-	Params::HUDContainerWidget_AddGameOverlayWidget Parms{};
-
-	Parms.Widget = Widget;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.HUDContainerWidget.AddHUDWidget
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// class UUserWidget*                      Widget                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UHUDContainerWidget::AddHUDWidget(class UUserWidget* Widget)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("HUDContainerWidget", "AddHUDWidget");
-
-	Params::HUDContainerWidget_AddHUDWidget Parms{};
-
-	Parms.Widget = Widget;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -28238,73 +28774,6 @@ void UHUDIconComponent::SetShouldIconBeVisibleDelegate(TDelegate<void(class ABri
 	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.RestrictedAreaWidget.OnFadedOut
-// (Final, Native, Public, BlueprintCallable)
-
-void URestrictedAreaWidget::OnFadedOut()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("RestrictedAreaWidget", "OnFadedOut");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.RestrictedAreaWidget.PlayFadeInAnim
-// (Event, Protected, BlueprintEvent)
-
-void URestrictedAreaWidget::PlayFadeInAnim()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("RestrictedAreaWidget", "PlayFadeInAnim");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BrickRigs.RestrictedAreaWidget.PlayFadeOutAnim
-// (Event, Protected, BlueprintEvent)
-
-void URestrictedAreaWidget::PlayFadeOutAnim()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("RestrictedAreaWidget", "PlayFadeOutAnim");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function BrickRigs.RestrictedAreaWidget.UpdateTimerRemaining
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// float                                   TimeRemaining                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void URestrictedAreaWidget::UpdateTimerRemaining(float TimeRemaining)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("RestrictedAreaWidget", "UpdateTimerRemaining");
-
-	Params::RestrictedAreaWidget_UpdateTimerRemaining Parms{};
-
-	Parms.TimeRemaining = TimeRemaining;
-
-	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -28563,94 +29032,6 @@ void UHUDNotificationWidget::UpdateIsThumbnailNotification(bool bNewIsThumbnail)
 }
 
 
-// Function BrickRigs.ScoreboardPlayerWidget.OnButtonClicked
-// (Final, Native, Public, BlueprintCallable)
-
-void UScoreboardPlayerWidget::OnButtonClicked()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ScoreboardPlayerWidget", "OnButtonClicked");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.ScoreboardPlayerWidget.UpdateButtonStyle
-// (Native, Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bNewSelected                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bIsLocalPlayer                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// ETeamAttitude                           TeamAttitude                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UScoreboardPlayerWidget::UpdateButtonStyle(bool bNewSelected, bool bIsLocalPlayer, ETeamAttitude TeamAttitude)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ScoreboardPlayerWidget", "UpdateButtonStyle");
-
-	Params::ScoreboardPlayerWidget_UpdateButtonStyle Parms{};
-
-	Parms.bNewSelected = bNewSelected;
-	Parms.bIsLocalPlayer = bIsLocalPlayer;
-	Parms.TeamAttitude = TeamAttitude;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.ScoreboardPlayerWidget.UpdateIsAdmin
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bIsAdmin                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UScoreboardPlayerWidget::UpdateIsAdmin(bool bIsAdmin)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ScoreboardPlayerWidget", "UpdateIsAdmin");
-
-	Params::ScoreboardPlayerWidget_UpdateIsAdmin Parms{};
-
-	Parms.bIsAdmin = bIsAdmin;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.ScoreboardPlayerWidget.UpdateIsAlive
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bIsAlive                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UScoreboardPlayerWidget::UpdateIsAlive(bool bIsAlive)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ScoreboardPlayerWidget", "UpdateIsAlive");
-
-	Params::ScoreboardPlayerWidget_UpdateIsAlive Parms{};
-
-	Parms.bIsAlive = bIsAlive;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function BrickRigs.HUDWidgetInterface.AddGameOverlayWidget
 // (Event, Public, BlueprintEvent)
 // Parameters:
@@ -28685,6 +29066,87 @@ void UHurtMarkerWidget::PlayHurtMarkerAnimation()
 		Func = Class->GetFunction("HurtMarkerWidget", "PlayHurtMarkerAnimation");
 
 	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BrickRigs.ScoreboardTeamWidget.JoinTeam
+// (Final, Native, Public, BlueprintCallable)
+
+void UScoreboardTeamWidget::JoinTeam()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ScoreboardTeamWidget", "JoinTeam");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.ScoreboardTeamWidget.UpdateCanEverJoinTeam
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bCanJoin                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UScoreboardTeamWidget::UpdateCanEverJoinTeam(bool bCanJoin)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ScoreboardTeamWidget", "UpdateCanEverJoinTeam");
+
+	Params::ScoreboardTeamWidget_UpdateCanEverJoinTeam Parms{};
+
+	Parms.bCanJoin = bCanJoin;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.ScoreboardTeamWidget.UpdateCanJoinTeam
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bCanJoin                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UScoreboardTeamWidget::UpdateCanJoinTeam(bool bCanJoin)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ScoreboardTeamWidget", "UpdateCanJoinTeam");
+
+	Params::ScoreboardTeamWidget_UpdateCanJoinTeam Parms{};
+
+	Parms.bCanJoin = bCanJoin;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.ScoreboardTeamWidget.UpdateTeamAttitude
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bIsOwnTeam                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// ETeamAttitude                           NewAttitude                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UScoreboardTeamWidget::UpdateTeamAttitude(bool bIsOwnTeam, ETeamAttitude NewAttitude)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ScoreboardTeamWidget", "UpdateTeamAttitude");
+
+	Params::ScoreboardTeamWidget_UpdateTeamAttitude Parms{};
+
+	Parms.bIsOwnTeam = bIsOwnTeam;
+	Parms.NewAttitude = NewAttitude;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -29432,330 +29894,6 @@ class UWidget* UInputHelpWidget::GetWidgetToFocus() const
 }
 
 
-// Function BrickRigs.WinchBrick.Interact_AttachWinch
-// (Final, Native, Private)
-// Parameters:
-// class ABrickPlayerController*           OtherPC                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UWinchBrick::Interact_AttachWinch(class ABrickPlayerController* OtherPC)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WinchBrick", "Interact_AttachWinch");
-
-	Params::WinchBrick_Interact_AttachWinch Parms{};
-
-	Parms.OtherPC = OtherPC;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.WinchBrick.Interact_DetachWinch
-// (Final, Native, Private)
-// Parameters:
-// class ABrickPlayerController*           OtherPC                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UWinchBrick::Interact_DetachWinch(class ABrickPlayerController* OtherPC)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WinchBrick", "Interact_DetachWinch");
-
-	Params::WinchBrick_Interact_DetachWinch Parms{};
-
-	Parms.OtherPC = OtherPC;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.WinchBrick.OnRep_AttachTarget
-// (Final, Native, Private, HasOutParams)
-// Parameters:
-// const struct FWinchAttachTarget&        PrevAttachTarget                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-
-void UWinchBrick::OnRep_AttachTarget(const struct FWinchAttachTarget& PrevAttachTarget)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WinchBrick", "OnRep_AttachTarget");
-
-	Params::WinchBrick_OnRep_AttachTarget Parms{};
-
-	Parms.PrevAttachTarget = std::move(PrevAttachTarget);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.WinchBrick.OnRep_RepRopeLength
-// (Final, Native, Private)
-
-void UWinchBrick::OnRep_RepRopeLength()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WinchBrick", "OnRep_RepRopeLength");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.InputKeyWidget.SetKey
-// (Final, Native, Public, HasOutParams, BlueprintCallable)
-// Parameters:
-// const struct FKey&                      InKey                                                  (ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bInUsedAsModifier                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UInputKeyWidget::SetKey(const struct FKey& InKey, bool bInUsedAsModifier)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InputKeyWidget", "SetKey");
-
-	Params::InputKeyWidget_SetKey Parms{};
-
-	Parms.InKey = std::move(InKey);
-	Parms.bInUsedAsModifier = bInUsedAsModifier;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.InputKeyWidget.UpdateDisplayInfo
-// (Event, Protected, HasOutParams, BlueprintEvent)
-// Parameters:
-// const struct FKeyDisplayTableRow&       DisplayInfo                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// bool                                    bIsGamepadKey                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UInputKeyWidget::UpdateDisplayInfo(const struct FKeyDisplayTableRow& DisplayInfo, bool bIsGamepadKey)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InputKeyWidget", "UpdateDisplayInfo");
-
-	Params::InputKeyWidget_UpdateDisplayInfo Parms{};
-
-	Parms.DisplayInfo = std::move(DisplayInfo);
-	Parms.bIsGamepadKey = bIsGamepadKey;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.InputMappingKeyWidget.OnClickedButton
-// (Final, Native, Private)
-
-void UInputMappingKeyWidget::OnClickedButton()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InputMappingKeyWidget", "OnClickedButton");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.InputMappingKeyWidget.UpdateConflictedState
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bNewConflicted                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UInputMappingKeyWidget::UpdateConflictedState(bool bNewConflicted)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InputMappingKeyWidget", "UpdateConflictedState");
-
-	Params::InputMappingKeyWidget_UpdateConflictedState Parms{};
-
-	Parms.bNewConflicted = bNewConflicted;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.InputMappingPropertyWidget.AddKeyWidget
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// class UInputMappingKeyWidget*           Widget                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UInputMappingPropertyWidget::AddKeyWidget(class UInputMappingKeyWidget* Widget, int32 Index_0)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InputMappingPropertyWidget", "AddKeyWidget");
-
-	Params::InputMappingPropertyWidget_AddKeyWidget Parms{};
-
-	Parms.Widget = Widget;
-	Parms.Index_0 = Index_0;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.InputMappingPropertyWidget.AddMapping
-// (Final, Native, Public, BlueprintCallable)
-
-void UInputMappingPropertyWidget::AddMapping()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InputMappingPropertyWidget", "AddMapping");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.InputMappingPropertyWidget.UpdateCanAddMapping
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bCanAdd                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UInputMappingPropertyWidget::UpdateCanAddMapping(bool bCanAdd)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InputMappingPropertyWidget", "UpdateCanAddMapping");
-
-	Params::InputMappingPropertyWidget_UpdateCanAddMapping Parms{};
-
-	Parms.bCanAdd = bCanAdd;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.InteractionOptionWidget.OnClickedInteract
-// (Final, Native, Protected, BlueprintCallable)
-
-void UInteractionOptionWidget::OnClickedInteract()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InteractionOptionWidget", "OnClickedInteract");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.InteractionOptionWidget.UpdateCanBeClicked
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bInCanBeClicked                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UInteractionOptionWidget::UpdateCanBeClicked(bool bInCanBeClicked)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InteractionOptionWidget", "UpdateCanBeClicked");
-
-	Params::InteractionOptionWidget_UpdateCanBeClicked Parms{};
-
-	Parms.bInCanBeClicked = bInCanBeClicked;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.InteractionOptionWidget.UpdateColorStyle
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// EBrickUIColorStyle                      InColorStyle                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UInteractionOptionWidget::UpdateColorStyle(EBrickUIColorStyle InColorStyle)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InteractionOptionWidget", "UpdateColorStyle");
-
-	Params::InteractionOptionWidget_UpdateColorStyle Parms{};
-
-	Parms.InColorStyle = InColorStyle;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.InteractionWidget.AddOptionWidget
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// class UInteractionOptionWidget*         Widget                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   OptionIndex                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UInteractionWidget::AddOptionWidget(class UInteractionOptionWidget* Widget, int32 OptionIndex)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InteractionWidget", "AddOptionWidget");
-
-	Params::InteractionWidget_AddOptionWidget Parms{};
-
-	Parms.Widget = Widget;
-	Parms.OptionIndex = OptionIndex;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function BrickRigs.SpectatorInputComponent.MoveForward
 // (Final, Native, Protected)
 // Parameters:
@@ -29989,6 +30127,349 @@ void USpectatorInputComponent::RotatePawnCW(float Val)
 }
 
 
+// Function BrickRigs.InputKeyWidget.SetKey
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// const struct FKey&                      InKey                                                  (ConstParm, Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bInUsedAsModifier                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UInputKeyWidget::SetKey(const struct FKey& InKey, bool bInUsedAsModifier)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InputKeyWidget", "SetKey");
+
+	Params::InputKeyWidget_SetKey Parms{};
+
+	Parms.InKey = std::move(InKey);
+	Parms.bInUsedAsModifier = bInUsedAsModifier;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.InputKeyWidget.UpdateDisplayInfo
+// (Event, Protected, HasOutParams, BlueprintEvent)
+// Parameters:
+// const struct FKeyDisplayTableRow&       DisplayInfo                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// bool                                    bIsGamepadKey                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UInputKeyWidget::UpdateDisplayInfo(const struct FKeyDisplayTableRow& DisplayInfo, bool bIsGamepadKey)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InputKeyWidget", "UpdateDisplayInfo");
+
+	Params::InputKeyWidget_UpdateDisplayInfo Parms{};
+
+	Parms.DisplayInfo = std::move(DisplayInfo);
+	Parms.bIsGamepadKey = bIsGamepadKey;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.InputMappingKeyWidget.OnClickedButton
+// (Final, Native, Private)
+
+void UInputMappingKeyWidget::OnClickedButton()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InputMappingKeyWidget", "OnClickedButton");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.InputMappingKeyWidget.UpdateConflictedState
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bNewConflicted                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UInputMappingKeyWidget::UpdateConflictedState(bool bNewConflicted)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InputMappingKeyWidget", "UpdateConflictedState");
+
+	Params::InputMappingKeyWidget_UpdateConflictedState Parms{};
+
+	Parms.bNewConflicted = bNewConflicted;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.WinchBrick.Interact_AttachWinch
+// (Final, Native, Private)
+// Parameters:
+// class ABrickPlayerController*           OtherPC                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UWinchBrick::Interact_AttachWinch(class ABrickPlayerController* OtherPC)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WinchBrick", "Interact_AttachWinch");
+
+	Params::WinchBrick_Interact_AttachWinch Parms{};
+
+	Parms.OtherPC = OtherPC;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.WinchBrick.Interact_DetachWinch
+// (Final, Native, Private)
+// Parameters:
+// class ABrickPlayerController*           OtherPC                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UWinchBrick::Interact_DetachWinch(class ABrickPlayerController* OtherPC)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WinchBrick", "Interact_DetachWinch");
+
+	Params::WinchBrick_Interact_DetachWinch Parms{};
+
+	Parms.OtherPC = OtherPC;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.WinchBrick.OnRep_AttachTarget
+// (Final, Native, Private, HasOutParams)
+// Parameters:
+// const struct FWinchAttachTarget&        PrevAttachTarget                                       (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+
+void UWinchBrick::OnRep_AttachTarget(const struct FWinchAttachTarget& PrevAttachTarget)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WinchBrick", "OnRep_AttachTarget");
+
+	Params::WinchBrick_OnRep_AttachTarget Parms{};
+
+	Parms.PrevAttachTarget = std::move(PrevAttachTarget);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.WinchBrick.OnRep_RepRopeLength
+// (Final, Native, Private)
+
+void UWinchBrick::OnRep_RepRopeLength()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WinchBrick", "OnRep_RepRopeLength");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.InputMappingPropertyWidget.AddKeyWidget
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// class UInputMappingKeyWidget*           Widget                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Index_0                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UInputMappingPropertyWidget::AddKeyWidget(class UInputMappingKeyWidget* Widget, int32 Index_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InputMappingPropertyWidget", "AddKeyWidget");
+
+	Params::InputMappingPropertyWidget_AddKeyWidget Parms{};
+
+	Parms.Widget = Widget;
+	Parms.Index_0 = Index_0;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.InputMappingPropertyWidget.AddMapping
+// (Final, Native, Public, BlueprintCallable)
+
+void UInputMappingPropertyWidget::AddMapping()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InputMappingPropertyWidget", "AddMapping");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.InputMappingPropertyWidget.UpdateCanAddMapping
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bCanAdd                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UInputMappingPropertyWidget::UpdateCanAddMapping(bool bCanAdd)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InputMappingPropertyWidget", "UpdateCanAddMapping");
+
+	Params::InputMappingPropertyWidget_UpdateCanAddMapping Parms{};
+
+	Parms.bCanAdd = bCanAdd;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.InputSettingsPageWidget.RevertInputMappings
+// (Final, Native, Public, BlueprintCallable)
+
+void UInputSettingsPageWidget::RevertInputMappings()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InputSettingsPageWidget", "RevertInputMappings");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.InteractionOptionWidget.OnClickedInteract
+// (Final, Native, Protected, BlueprintCallable)
+
+void UInteractionOptionWidget::OnClickedInteract()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InteractionOptionWidget", "OnClickedInteract");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.InteractionOptionWidget.UpdateCanBeClicked
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bInCanBeClicked                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UInteractionOptionWidget::UpdateCanBeClicked(bool bInCanBeClicked)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InteractionOptionWidget", "UpdateCanBeClicked");
+
+	Params::InteractionOptionWidget_UpdateCanBeClicked Parms{};
+
+	Parms.bInCanBeClicked = bInCanBeClicked;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.InteractionOptionWidget.UpdateColorStyle
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// EBrickUIColorStyle                      InColorStyle                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UInteractionOptionWidget::UpdateColorStyle(EBrickUIColorStyle InColorStyle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InteractionOptionWidget", "UpdateColorStyle");
+
+	Params::InteractionOptionWidget_UpdateColorStyle Parms{};
+
+	Parms.InColorStyle = InColorStyle;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.InteractionWidget.AddOptionWidget
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// class UInteractionOptionWidget*         Widget                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   OptionIndex                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UInteractionWidget::AddOptionWidget(class UInteractionOptionWidget* Widget, int32 OptionIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("InteractionWidget", "AddOptionWidget");
+
+	Params::InteractionWidget_AddOptionWidget Parms{};
+
+	Parms.Widget = Widget;
+	Parms.OptionIndex = OptionIndex;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BrickRigs.InventoryContainerWidget.UpdateHasInventory
 // (Event, Protected, BlueprintEvent)
 // Parameters:
@@ -30024,49 +30505,6 @@ void UInventoryContainerWidget::UpdateOwnerMoney(float NewMoney)
 	Params::InventoryContainerWidget_UpdateOwnerMoney Parms{};
 
 	Parms.NewMoney = NewMoney;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.InventoryPopupWidget.OnDropButtonClicked
-// (Final, Native, Protected, BlueprintCallable)
-
-void UInventoryPopupWidget::OnDropButtonClicked()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InventoryPopupWidget", "OnDropButtonClicked");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.InventoryPopupWidget.UpdateDropArea
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bInIsDragging                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bInCanDrop                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bInIsDragOver                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UInventoryPopupWidget::UpdateDropArea(bool bInIsDragging, bool bInCanDrop, bool bInIsDragOver)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("InventoryPopupWidget", "UpdateDropArea");
-
-	Params::InventoryPopupWidget_UpdateDropArea Parms{};
-
-	Parms.bInIsDragging = bInIsDragging;
-	Parms.bInCanDrop = bInCanDrop;
-	Parms.bInIsDragOver = bInIsDragOver;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -30175,90 +30613,81 @@ void UInventorySlotWidget::UpdateSlotApperance(bool bInIsDragWidget, bool bInIsS
 }
 
 
-// Function BrickRigs.JoinSessionPopupWidget.CancelJoinSession
-// (Final, Native, Public, BlueprintCallable)
-
-void UJoinSessionPopupWidget::CancelJoinSession()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("JoinSessionPopupWidget", "CancelJoinSession");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.JoinSessionPopupWidget.JoinSession
-// (Final, Native, Public, BlueprintCallable)
-
-void UJoinSessionPopupWidget::JoinSession()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("JoinSessionPopupWidget", "JoinSession");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.JoinSessionPopupWidget.OnPasswordChanged
-// (Final, Native, Private, HasOutParams)
-// Parameters:
-// const class FText&                      NewText                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-// EValueChangedEventType                  EventType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UJoinSessionPopupWidget::OnPasswordChanged(const class FText& NewText, EValueChangedEventType EventType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("JoinSessionPopupWidget", "OnPasswordChanged");
-
-	Params::JoinSessionPopupWidget_OnPasswordChanged Parms{};
-
-	Parms.NewText = std::move(NewText);
-	Parms.EventType = EventType;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.JoinSessionPopupWidget.UpdateJoinState
+// Function BrickRigs.TargetMarkerIconWidget.UpdateAmmoType
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// EJoinSessionState                       InJoinState                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bInPasswordRequired                                    (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bInHasPassword                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EAmmoType                               NewType                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UJoinSessionPopupWidget::UpdateJoinState(EJoinSessionState InJoinState, bool bInPasswordRequired, bool bInHasPassword)
+void UTargetMarkerIconWidget::UpdateAmmoType(EAmmoType NewType)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("JoinSessionPopupWidget", "UpdateJoinState");
+		Func = Class->GetFunction("TargetMarkerIconWidget", "UpdateAmmoType");
 
-	Params::JoinSessionPopupWidget_UpdateJoinState Parms{};
+	Params::TargetMarkerIconWidget_UpdateAmmoType Parms{};
 
-	Parms.InJoinState = InJoinState;
-	Parms.bInPasswordRequired = bInPasswordRequired;
-	Parms.bInHasPassword = bInHasPassword;
+	Parms.NewType = NewType;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.TargetMarkerIconWidget.UpdateFireAction
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// int32                                   NewActionIndex                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UTargetMarkerIconWidget::UpdateFireAction(int32 NewActionIndex)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TargetMarkerIconWidget", "UpdateFireAction");
+
+	Params::TargetMarkerIconWidget_UpdateFireAction Parms{};
+
+	Parms.NewActionIndex = NewActionIndex;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.TargetMarkerIconWidget.UpdateHasValidTarget
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bNewHasValidTarget                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UTargetMarkerIconWidget::UpdateHasValidTarget(bool bNewHasValidTarget)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TargetMarkerIconWidget", "UpdateHasValidTarget");
+
+	Params::TargetMarkerIconWidget_UpdateHasValidTarget Parms{};
+
+	Parms.bNewHasValidTarget = bNewHasValidTarget;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.TargetMarkerIconWidget.UpdateTargetDistance
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// float                                   NewDist                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UTargetMarkerIconWidget::UpdateTargetDistance(float NewDist)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("TargetMarkerIconWidget", "UpdateTargetDistance");
+
+	Params::TargetMarkerIconWidget_UpdateTargetDistance Parms{};
+
+	Parms.NewDist = NewDist;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -30409,149 +30838,20 @@ void UBuildingPart::Rect(EBuildingSide Side, int32 StartFloor, int32 EndFloor, i
 }
 
 
-// Function BrickRigs.LegacyBuilding.ConstructBuildingPart
-// (Final, Native, Protected, HasDefaults, BlueprintCallable)
-// Parameters:
-// int32                                   NumX                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   NumY                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// int32                                   Floors                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// const struct FVector&                   Location                                               (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UBuildingPart*                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// Function BrickRigs.ThrusterBrick.OnRep_RepAccumulatedInput
+// (Final, Native, Private)
 
-class UBuildingPart* ALegacyBuilding::ConstructBuildingPart(int32 NumX, int32 NumY, int32 Floors, const struct FVector& Location)
+void UThrusterBrick::OnRep_RepAccumulatedInput()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("LegacyBuilding", "ConstructBuildingPart");
-
-	Params::LegacyBuilding_ConstructBuildingPart Parms{};
-
-	Parms.NumX = NumX;
-	Parms.NumY = NumY;
-	Parms.Floors = Floors;
-	Parms.Location = std::move(Location);
+		Func = Class->GetFunction("ThrusterBrick", "OnRep_RepAccumulatedInput");
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.LegacyBuilding.ConstructFlatRoof
-// (Final, Native, Protected, BlueprintCallable)
-// Parameters:
-// class UBuildingPart*                    Part                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// uint8                                   Mesh                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ALegacyBuilding::ConstructFlatRoof(class UBuildingPart* Part, uint8 Mesh)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("LegacyBuilding", "ConstructFlatRoof");
-
-	Params::LegacyBuilding_ConstructFlatRoof Parms{};
-
-	Parms.Part = Part;
-	Parms.Mesh = Mesh;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.LegacyBuilding.ConstructIndustrialRoof
-// (Final, Native, Protected, BlueprintCallable)
-// Parameters:
-// class UBuildingPart*                    Part                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// uint8                                   RoofSlopeMesh                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// uint8                                   RoofMesh                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// uint8                                   WallMesh                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ALegacyBuilding::ConstructIndustrialRoof(class UBuildingPart* Part, uint8 RoofSlopeMesh, uint8 RoofMesh, uint8 WallMesh)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("LegacyBuilding", "ConstructIndustrialRoof");
-
-	Params::LegacyBuilding_ConstructIndustrialRoof Parms{};
-
-	Parms.Part = Part;
-	Parms.RoofSlopeMesh = RoofSlopeMesh;
-	Parms.RoofMesh = RoofMesh;
-	Parms.WallMesh = WallMesh;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.LegacyBuilding.ConstructRoof
-// (Final, Native, Protected, BlueprintCallable)
-// Parameters:
-// class UBuildingPart*                    Part                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// uint8                                   RoofGableMesh                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// uint8                                   RoofMesh                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bRotate                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ALegacyBuilding::ConstructRoof(class UBuildingPart* Part, uint8 RoofGableMesh, uint8 RoofMesh, bool bRotate)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("LegacyBuilding", "ConstructRoof");
-
-	Params::LegacyBuilding_ConstructRoof Parms{};
-
-	Parms.Part = Part;
-	Parms.RoofGableMesh = RoofGableMesh;
-	Parms.RoofMesh = RoofMesh;
-	Parms.bRotate = bRotate;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.LegacyBuilding.SpawnBuildingPart
-// (Final, Native, Protected, BlueprintCallable)
-// Parameters:
-// class UBuildingPart*                    Part                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void ALegacyBuilding::SpawnBuildingPart(class UBuildingPart* Part)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("LegacyBuilding", "SpawnBuildingPart");
-
-	Params::LegacyBuilding_SpawnBuildingPart Parms{};
-
-	Parms.Part = Part;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 
 	Func->FunctionFlags = Flgs;
 }
@@ -30637,396 +30937,6 @@ void UMapCrosshairWidget::SetStyleState(EBrickUIStyleState NewState)
 	Params::MapCrosshairWidget_SetStyleState Parms{};
 
 	Parms.NewState = NewState;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.TargetMarkerIconWidget.UpdateAmmoType
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// EAmmoType                               NewType                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UTargetMarkerIconWidget::UpdateAmmoType(EAmmoType NewType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TargetMarkerIconWidget", "UpdateAmmoType");
-
-	Params::TargetMarkerIconWidget_UpdateAmmoType Parms{};
-
-	Parms.NewType = NewType;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.TargetMarkerIconWidget.UpdateFireAction
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// int32                                   NewActionIndex                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UTargetMarkerIconWidget::UpdateFireAction(int32 NewActionIndex)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TargetMarkerIconWidget", "UpdateFireAction");
-
-	Params::TargetMarkerIconWidget_UpdateFireAction Parms{};
-
-	Parms.NewActionIndex = NewActionIndex;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.TargetMarkerIconWidget.UpdateHasValidTarget
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bNewHasValidTarget                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UTargetMarkerIconWidget::UpdateHasValidTarget(bool bNewHasValidTarget)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TargetMarkerIconWidget", "UpdateHasValidTarget");
-
-	Params::TargetMarkerIconWidget_UpdateHasValidTarget Parms{};
-
-	Parms.bNewHasValidTarget = bNewHasValidTarget;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.TargetMarkerIconWidget.UpdateTargetDistance
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// float                                   NewDist                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UTargetMarkerIconWidget::UpdateTargetDistance(float NewDist)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("TargetMarkerIconWidget", "UpdateTargetDistance");
-
-	Params::TargetMarkerIconWidget_UpdateTargetDistance Parms{};
-
-	Parms.NewDist = NewDist;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.MapWidget.OnMeasurementSystemChanged
-// (Final, Native, Private)
-// Parameters:
-// EMeasurementSystem                      NewSystem                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMapWidget::OnMeasurementSystemChanged(EMeasurementSystem NewSystem)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MapWidget", "OnMeasurementSystemChanged");
-
-	Params::MapWidget_OnMeasurementSystemChanged Parms{};
-
-	Parms.NewSystem = NewSystem;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.MapWidget.ResetPanAndZoom
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    bInitialize                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMapWidget::ResetPanAndZoom(bool bInitialize)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MapWidget", "ResetPanAndZoom");
-
-	Params::MapWidget_ResetPanAndZoom Parms{};
-
-	Parms.bInitialize = bInitialize;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.MapWidget.UpdateViewportPannedOrZoomed
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bValue                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMapWidget::UpdateViewportPannedOrZoomed(bool bValue)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MapWidget", "UpdateViewportPannedOrZoomed");
-
-	Params::MapWidget_UpdateViewportPannedOrZoomed Parms{};
-
-	Parms.bValue = bValue;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.MapWidget.CreateMapMID
-// (Event, Protected, BlueprintEvent, Const)
-// Parameters:
-// class UMaterialInstanceDynamic*         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UMaterialInstanceDynamic* UMapWidget::CreateMapMID() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MapWidget", "CreateMapMID");
-
-	Params::MapWidget_CreateMapMID Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.MapWidget.GetWidgetToFocus
-// (Native, Event, Public, BlueprintEvent, Const)
-// Parameters:
-// class UWidget*                          ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UWidget* UMapWidget::GetWidgetToFocus() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MapWidget", "GetWidgetToFocus");
-
-	Params::MapWidget_GetWidgetToFocus Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.MatchEndWidget.OnClickedContinue
-// (Final, Native, Protected, BlueprintCallable)
-
-void UMatchEndWidget::OnClickedContinue()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MatchEndWidget", "OnClickedContinue");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.MatchEndWidget.UpdateContinueButton
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// int32                                   TimeRemaining                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bIsHost                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMatchEndWidget::UpdateContinueButton(int32 TimeRemaining, bool bIsHost)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MatchEndWidget", "UpdateContinueButton");
-
-	Params::MatchEndWidget_UpdateContinueButton Parms{};
-
-	Parms.TimeRemaining = TimeRemaining;
-	Parms.bIsHost = bIsHost;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.MatchEndWidget.UpdateMatchWinner
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// class UBrickTeam*                       WinnerTeam                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// ETeamAttitude                           TeamAttitude                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMatchEndWidget::UpdateMatchWinner(class UBrickTeam* WinnerTeam, ETeamAttitude TeamAttitude)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MatchEndWidget", "UpdateMatchWinner");
-
-	Params::MatchEndWidget_UpdateMatchWinner Parms{};
-
-	Parms.WinnerTeam = WinnerTeam;
-	Parms.TeamAttitude = TeamAttitude;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.MatchEndWidget.GetWidgetToFocus
-// (Event, Protected, BlueprintEvent, Const)
-// Parameters:
-// class UWidget*                          ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UWidget* UMatchEndWidget::GetWidgetToFocus() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MatchEndWidget", "GetWidgetToFocus");
-
-	Params::MatchEndWidget_GetWidgetToFocus Parms{};
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.MatchMenuWidget.RestartMatch
-// (Final, Native, Public, BlueprintCallable)
-
-void UMatchMenuWidget::RestartMatch()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MatchMenuWidget", "RestartMatch");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.MatchMenuWidget.UpdateIsAdmin
-// (Native, Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bNewIsAdmin                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMatchMenuWidget::UpdateIsAdmin(bool bNewIsAdmin)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MatchMenuWidget", "UpdateIsAdmin");
-
-	Params::MatchMenuWidget_UpdateIsAdmin Parms{};
-
-	Parms.bNewIsAdmin = bNewIsAdmin;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.MatchMenuWidget.UpdateRestartMatchButton
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bCanRestart                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bSameLevelAndMode                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMatchMenuWidget::UpdateRestartMatchButton(bool bCanRestart, bool bSameLevelAndMode)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MatchMenuWidget", "UpdateRestartMatchButton");
-
-	Params::MatchMenuWidget_UpdateRestartMatchButton Parms{};
-
-	Parms.bCanRestart = bCanRestart;
-	Parms.bSameLevelAndMode = bSameLevelAndMode;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.UGCItemWidget.UpdateItemWidget
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// bool                                    bInIsSelected                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bInIsLegacyFile                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bInHasAutoSave                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bInIsDedicatedAutoSave                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUGCItemWidget::UpdateItemWidget(bool bInIsSelected, bool bInIsLegacyFile, bool bInHasAutoSave, bool bInIsDedicatedAutoSave)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UGCItemWidget", "UpdateItemWidget");
-
-	Params::UGCItemWidget_UpdateItemWidget Parms{};
-
-	Parms.bInIsSelected = bInIsSelected;
-	Parms.bInIsLegacyFile = bInIsLegacyFile;
-	Parms.bInHasAutoSave = bInHasAutoSave;
-	Parms.bInIsDedicatedAutoSave = bInIsDedicatedAutoSave;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.MatchTimerWidget.UpdateTimer
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// int32                                   NewTime                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UMatchTimerWidget::UpdateTimer(int32 NewTime)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MatchTimerWidget", "UpdateTimer");
-
-	Params::MatchTimerWidget_UpdateTimer Parms{};
-
-	Parms.NewTime = NewTime;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -31177,6 +31087,207 @@ class URadioButtonWidget* URadioButtonPanel::GetSelectedWidget() const
 }
 
 
+// Function BrickRigs.MapWidget.OnMeasurementSystemChanged
+// (Final, Native, Private)
+// Parameters:
+// EMeasurementSystem                      NewSystem                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMapWidget::OnMeasurementSystemChanged(EMeasurementSystem NewSystem)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MapWidget", "OnMeasurementSystemChanged");
+
+	Params::MapWidget_OnMeasurementSystemChanged Parms{};
+
+	Parms.NewSystem = NewSystem;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.MapWidget.ResetPanAndZoom
+// (Final, Native, Public, BlueprintCallable)
+// Parameters:
+// bool                                    bInitialize                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMapWidget::ResetPanAndZoom(bool bInitialize)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MapWidget", "ResetPanAndZoom");
+
+	Params::MapWidget_ResetPanAndZoom Parms{};
+
+	Parms.bInitialize = bInitialize;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.MapWidget.UpdateViewportPannedOrZoomed
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bValue                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMapWidget::UpdateViewportPannedOrZoomed(bool bValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MapWidget", "UpdateViewportPannedOrZoomed");
+
+	Params::MapWidget_UpdateViewportPannedOrZoomed Parms{};
+
+	Parms.bValue = bValue;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.MapWidget.CreateMapMID
+// (Event, Protected, BlueprintEvent, Const)
+// Parameters:
+// class UMaterialInstanceDynamic*         ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UMaterialInstanceDynamic* UMapWidget::CreateMapMID() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MapWidget", "CreateMapMID");
+
+	Params::MapWidget_CreateMapMID Parms{};
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.MapWidget.GetWidgetToFocus
+// (Native, Event, Public, BlueprintEvent, Const)
+// Parameters:
+// class UWidget*                          ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UWidget* UMapWidget::GetWidgetToFocus() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MapWidget", "GetWidgetToFocus");
+
+	Params::MapWidget_GetWidgetToFocus Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.MatchMenuWidget.RestartMatch
+// (Final, Native, Public, BlueprintCallable)
+
+void UMatchMenuWidget::RestartMatch()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MatchMenuWidget", "RestartMatch");
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, nullptr);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.MatchMenuWidget.UpdateIsAdmin
+// (Native, Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bNewIsAdmin                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMatchMenuWidget::UpdateIsAdmin(bool bNewIsAdmin)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MatchMenuWidget", "UpdateIsAdmin");
+
+	Params::MatchMenuWidget_UpdateIsAdmin Parms{};
+
+	Parms.bNewIsAdmin = bNewIsAdmin;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+}
+
+
+// Function BrickRigs.MatchMenuWidget.UpdateRestartMatchButton
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bCanRestart                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bSameLevelAndMode                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMatchMenuWidget::UpdateRestartMatchButton(bool bCanRestart, bool bSameLevelAndMode)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MatchMenuWidget", "UpdateRestartMatchButton");
+
+	Params::MatchMenuWidget_UpdateRestartMatchButton Parms{};
+
+	Parms.bCanRestart = bCanRestart;
+	Parms.bSameLevelAndMode = bSameLevelAndMode;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.MatchTimerWidget.UpdateTimer
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// int32                                   NewTime                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UMatchTimerWidget::UpdateTimer(int32 NewTime)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("MatchTimerWidget", "UpdateTimer");
+
+	Params::MatchTimerWidget_UpdateTimer Parms{};
+
+	Parms.NewTime = NewTime;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BrickRigs.MenuButtonPanelWidget.ClearButtons
 // (Final, Native, Public, BlueprintCallable)
 // Parameters:
@@ -31303,40 +31414,110 @@ class UWidget* UMenuButtonPanelWidget::GetWidgetToFocus() const
 }
 
 
-// Function BrickRigs.MenuButtonWidget.OnClicked
-// (Final, Native, Protected, BlueprintCallable)
+// Function BrickRigs.UGCTagsPropertyWidget.InitializeDepartmentItem
+// (Final, Native, Private, HasOutParams)
+// Parameters:
+// int32                                   Item                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FBrickComboBoxItemParams*        OutParams                                              (Parm, OutParm, NativeAccessSpecifierPublic)
 
-void UMenuButtonWidget::OnClicked()
+void UUGCTagsPropertyWidget::InitializeDepartmentItem(int32 Item, struct FBrickComboBoxItemParams* OutParams)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("MenuButtonWidget", "OnClicked");
+		Func = Class->GetFunction("UGCTagsPropertyWidget", "InitializeDepartmentItem");
+
+	Params::UGCTagsPropertyWidget_InitializeDepartmentItem Parms{};
+
+	Parms.Item = Item;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, &Parms);
 
 	Func->FunctionFlags = Flgs;
+
+	if (OutParams != nullptr)
+		*OutParams = std::move(Parms.OutParams);
 }
 
 
-// Function BrickRigs.MenuButtonWidget.SetColorStyle
-// (Final, Native, Public, BlueprintCallable)
+// Function BrickRigs.UGCTagsPropertyWidget.InitializeEraItem
+// (Final, Native, Private, HasOutParams)
 // Parameters:
-// EBrickUIColorStyle                      InColorStyle                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Item                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FBrickComboBoxItemParams*        OutParams                                              (Parm, OutParm, NativeAccessSpecifierPublic)
 
-void UMenuButtonWidget::SetColorStyle(EBrickUIColorStyle InColorStyle)
+void UUGCTagsPropertyWidget::InitializeEraItem(int32 Item, struct FBrickComboBoxItemParams* OutParams)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("MenuButtonWidget", "SetColorStyle");
+		Func = Class->GetFunction("UGCTagsPropertyWidget", "InitializeEraItem");
 
-	Params::MenuButtonWidget_SetColorStyle Parms{};
+	Params::UGCTagsPropertyWidget_InitializeEraItem Parms{};
 
-	Parms.InColorStyle = InColorStyle;
+	Parms.Item = Item;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutParams != nullptr)
+		*OutParams = std::move(Parms.OutParams);
+}
+
+
+// Function BrickRigs.UGCTagsPropertyWidget.InitializeTypeItem
+// (Final, Native, Private, HasOutParams)
+// Parameters:
+// int32                                   Item                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FBrickComboBoxItemParams*        OutParams                                              (Parm, OutParm, NativeAccessSpecifierPublic)
+
+void UUGCTagsPropertyWidget::InitializeTypeItem(int32 Item, struct FBrickComboBoxItemParams* OutParams)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UGCTagsPropertyWidget", "InitializeTypeItem");
+
+	Params::UGCTagsPropertyWidget_InitializeTypeItem Parms{};
+
+	Parms.Item = Item;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	if (OutParams != nullptr)
+		*OutParams = std::move(Parms.OutParams);
+}
+
+
+// Function BrickRigs.UGCTagsPropertyWidget.OnDepartmentItemSelected
+// (Final, Native, Private)
+// Parameters:
+// int32                                   Item                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EValueChangedEventType                  EventType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUGCTagsPropertyWidget::OnDepartmentItemSelected(int32 Item, EValueChangedEventType EventType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UGCTagsPropertyWidget", "OnDepartmentItemSelected");
+
+	Params::UGCTagsPropertyWidget_OnDepartmentItemSelected Parms{};
+
+	Parms.Item = Item;
+	Parms.EventType = EventType;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -31347,21 +31528,23 @@ void UMenuButtonWidget::SetColorStyle(EBrickUIColorStyle InColorStyle)
 }
 
 
-// Function BrickRigs.MenuButtonWidget.SetDisplayIcon
-// (Final, Native, Public, BlueprintCallable)
+// Function BrickRigs.UGCTagsPropertyWidget.OnEraItemSelected
+// (Final, Native, Private)
 // Parameters:
-// int32                                   InIconIndex                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   Item                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EValueChangedEventType                  EventType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMenuButtonWidget::SetDisplayIcon(int32 InIconIndex)
+void UUGCTagsPropertyWidget::OnEraItemSelected(int32 Item, EValueChangedEventType EventType)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("MenuButtonWidget", "SetDisplayIcon");
+		Func = Class->GetFunction("UGCTagsPropertyWidget", "OnEraItemSelected");
 
-	Params::MenuButtonWidget_SetDisplayIcon Parms{};
+	Params::UGCTagsPropertyWidget_OnEraItemSelected Parms{};
 
-	Parms.InIconIndex = InIconIndex;
+	Parms.Item = Item;
+	Parms.EventType = EventType;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -31372,46 +31555,23 @@ void UMenuButtonWidget::SetDisplayIcon(int32 InIconIndex)
 }
 
 
-// Function BrickRigs.MenuButtonWidget.SetDisplayText
-// (Final, Native, Public, BlueprintCallable)
+// Function BrickRigs.UGCTagsPropertyWidget.OnTypeItemSelected
+// (Final, Native, Private)
 // Parameters:
-// const class FText&                      InText                                                 (Parm, NativeAccessSpecifierPublic)
+// int32                                   Item                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EValueChangedEventType                  EventType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UMenuButtonWidget::SetDisplayText(const class FText& InText)
+void UUGCTagsPropertyWidget::OnTypeItemSelected(int32 Item, EValueChangedEventType EventType)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("MenuButtonWidget", "SetDisplayText");
+		Func = Class->GetFunction("UGCTagsPropertyWidget", "OnTypeItemSelected");
 
-	Params::MenuButtonWidget_SetDisplayText Parms{};
+	Params::UGCTagsPropertyWidget_OnTypeItemSelected Parms{};
 
-	Parms.InText = std::move(InText);
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.MenuButtonWidget.UpdateDisplayText
-// (Native, Event, Protected, HasOutParams, BlueprintCallable, BlueprintEvent)
-// Parameters:
-// const class FText&                      InText                                                 (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-
-void UMenuButtonWidget::UpdateDisplayText(const class FText& InText)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("MenuButtonWidget", "UpdateDisplayText");
-
-	Params::MenuButtonWidget_UpdateDisplayText Parms{};
-
-	Parms.InText = std::move(InText);
+	Parms.Item = Item;
+	Parms.EventType = EventType;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -32414,6 +32574,666 @@ bool UMenuWidget::IsMainMenu() const
 }
 
 
+// Function BrickRigs.ModHook.BeginPlay
+// (Event, Public, BlueprintEvent)
+
+void UModHook::BeginPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ModHook", "BeginPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BrickRigs.ModHook.EndPlay
+// (Event, Public, BlueprintEvent)
+
+void UModHook::EndPlay()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ModHook", "EndPlay");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BrickRigs.ModHook.OnCharacterBeginPlay
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// class ABaseCharacter*                   Character                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UModHook::OnCharacterBeginPlay(class ABaseCharacter* Character)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ModHook", "OnCharacterBeginPlay");
+
+	Params::ModHook_OnCharacterBeginPlay Parms{};
+
+	Parms.Character = Character;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.ModHook.OnPlayerControllerBeginPlay
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// class ABasePlayerController*            PC                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UModHook::OnPlayerControllerBeginPlay(class ABasePlayerController* PC)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ModHook", "OnPlayerControllerBeginPlay");
+
+	Params::ModHook_OnPlayerControllerBeginPlay Parms{};
+
+	Parms.PC = PC;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.ModHook.OnSpectatorBeginPlay
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// class ABrickSpectatorPawn*              Pawn                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UModHook::OnSpectatorBeginPlay(class ABrickSpectatorPawn* Pawn)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ModHook", "OnSpectatorBeginPlay");
+
+	Params::ModHook_OnSpectatorBeginPlay Parms{};
+
+	Parms.Pawn = Pawn;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.ModHook.OnVehicleBeginPlay
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// class ABrickVehicle*                    Vehicle                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UModHook::OnVehicleBeginPlay(class ABrickVehicle* Vehicle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ModHook", "OnVehicleBeginPlay");
+
+	Params::ModHook_OnVehicleBeginPlay Parms{};
+
+	Parms.Vehicle = Vehicle;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.ModHook.OverrideBillboardTexture
+// (Native, Event, Public, HasOutParams, BlueprintEvent)
+// Parameters:
+// const TSoftObjectPtr<class UTexture2D>& Texture                                                (ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class ABillboard*                       Billboard                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSoftObjectPtr<class UTexture2D>        ReturnValue                                            (Parm, OutParm, ReturnParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+TSoftObjectPtr<class UTexture2D> UModHook::OverrideBillboardTexture(const TSoftObjectPtr<class UTexture2D>& Texture, class ABillboard* Billboard)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ModHook", "OverrideBillboardTexture");
+
+	Params::ModHook_OverrideBillboardTexture Parms{};
+
+	Parms.Texture = Texture;
+	Parms.Billboard = Billboard;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.ModHook.OverrideCharacterLoadout
+// (Native, Event, Public, HasOutParams, BlueprintEvent)
+// Parameters:
+// const struct FInventoryLoadout&         Loadout                                                (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// class ABaseCharacter*                   Character                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// struct FInventoryLoadout                ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+struct FInventoryLoadout UModHook::OverrideCharacterLoadout(const struct FInventoryLoadout& Loadout, class ABaseCharacter* Character)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ModHook", "OverrideCharacterLoadout");
+
+	Params::ModHook_OverrideCharacterLoadout Parms{};
+
+	Parms.Loadout = std::move(Loadout);
+	Parms.Character = Character;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.ModHook.OverrideGameModeClass
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// TSubclassOf<class AGameModeBase>        GameModeClass                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    MapName                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Options                                                (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    Portal                                                 (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSubclassOf<class AGameModeBase>        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+TSubclassOf<class AGameModeBase> UModHook::OverrideGameModeClass(TSubclassOf<class AGameModeBase> GameModeClass, const class FString& MapName, const class FString& Options, const class FString& Portal)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ModHook", "OverrideGameModeClass");
+
+	Params::ModHook_OverrideGameModeClass Parms{};
+
+	Parms.GameModeClass = GameModeClass;
+	Parms.MapName = std::move(MapName);
+	Parms.Options = std::move(Options);
+	Parms.Portal = std::move(Portal);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.ModHook.OverrideGameStateClass
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// TSubclassOf<class AGameStateBase>       GameStateClass                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSubclassOf<class AGameStateBase>       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+TSubclassOf<class AGameStateBase> UModHook::OverrideGameStateClass(TSubclassOf<class AGameStateBase> GameStateClass)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ModHook", "OverrideGameStateClass");
+
+	Params::ModHook_OverrideGameStateClass Parms{};
+
+	Parms.GameStateClass = GameStateClass;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.ModHook.OverrideLoadoutContainerItems
+// (Native, Event, Public, HasOutParams, BlueprintEvent)
+// Parameters:
+// const TArray<TSubclassOf<class AInventoryItem>>&ItemClasses                                            (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, UObjectWrapper, NativeAccessSpecifierPublic)
+// TArray<TSubclassOf<class AInventoryItem>>ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, UObjectWrapper, NativeAccessSpecifierPublic)
+
+TArray<TSubclassOf<class AInventoryItem>> UModHook::OverrideLoadoutContainerItems(const TArray<TSubclassOf<class AInventoryItem>>& ItemClasses)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ModHook", "OverrideLoadoutContainerItems");
+
+	Params::ModHook_OverrideLoadoutContainerItems Parms{};
+
+	Parms.ItemClasses = std::move(ItemClasses);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.ModHook.OverrideLoadSubLevel
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bLoadLevel                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FString&                    LevelName                                              (Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UGameModeInfo*                    GameMode                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UModHook::OverrideLoadSubLevel(bool bLoadLevel, const class FString& LevelName, class UGameModeInfo* GameMode)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ModHook", "OverrideLoadSubLevel");
+
+	Params::ModHook_OverrideLoadSubLevel Parms{};
+
+	Parms.bLoadLevel = bLoadLevel;
+	Parms.LevelName = std::move(LevelName);
+	Parms.GameMode = GameMode;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.ModHook.OverrideMenu
+// (Native, Event, Public, HasOutParams, BlueprintEvent)
+// Parameters:
+// class UMenuWidget*                      Widget                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const class FName&                      Context                                                (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UModHook::OverrideMenu(class UMenuWidget* Widget, const class FName& Context)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ModHook", "OverrideMenu");
+
+	Params::ModHook_OverrideMenu Parms{};
+
+	Parms.Widget = Widget;
+	Parms.Context = Context;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.ModHook.OverrideMenuSequence
+// (Native, Event, Public, HasOutParams, BlueprintEvent)
+// Parameters:
+// const TSoftClassPtr<class UClass>&      SequenceClass                                          (ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSoftClassPtr<class UClass>             ReturnValue                                            (Parm, OutParm, ReturnParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+TSoftClassPtr<class UClass> UModHook::OverrideMenuSequence(const TSoftClassPtr<class UClass>& SequenceClass)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ModHook", "OverrideMenuSequence");
+
+	Params::ModHook_OverrideMenuSequence Parms{};
+
+	Parms.SequenceClass = SequenceClass;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.ModHook.OverrideMenuWorldSetupParams
+// (Native, Event, Public, HasOutParams, BlueprintEvent)
+// Parameters:
+// const struct FWorldSetupParams&         Params_0                                               (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// struct FWorldSetupParams                ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+struct FWorldSetupParams UModHook::OverrideMenuWorldSetupParams(const struct FWorldSetupParams& Params_0)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ModHook", "OverrideMenuWorldSetupParams");
+
+	Params::ModHook_OverrideMenuWorldSetupParams Parms{};
+
+	Parms.Params_0 = std::move(Params_0);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.ModHook.OverridePawnClass
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// TSubclassOf<class APawn>                PawnClass                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class AController*                      Controller                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSubclassOf<class APawn>                ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+TSubclassOf<class APawn> UModHook::OverridePawnClass(TSubclassOf<class APawn> PawnClass, class AController* Controller)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ModHook", "OverridePawnClass");
+
+	Params::ModHook_OverridePawnClass Parms{};
+
+	Parms.PawnClass = PawnClass;
+	Parms.Controller = Controller;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.ModHook.OverridePlayerCameraManagerClass
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// TSubclassOf<class APlayerCameraManager> PlayerCameraManagerClass                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class ABasePlayerController*            PC                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSubclassOf<class APlayerCameraManager> ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+TSubclassOf<class APlayerCameraManager> UModHook::OverridePlayerCameraManagerClass(TSubclassOf<class APlayerCameraManager> PlayerCameraManagerClass, class ABasePlayerController* PC)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ModHook", "OverridePlayerCameraManagerClass");
+
+	Params::ModHook_OverridePlayerCameraManagerClass Parms{};
+
+	Parms.PlayerCameraManagerClass = PlayerCameraManagerClass;
+	Parms.PC = PC;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.ModHook.OverridePlayerControllerClass
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// TSubclassOf<class APlayerController>    PlayerControllerClass                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSubclassOf<class APlayerController>    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+TSubclassOf<class APlayerController> UModHook::OverridePlayerControllerClass(TSubclassOf<class APlayerController> PlayerControllerClass)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ModHook", "OverridePlayerControllerClass");
+
+	Params::ModHook_OverridePlayerControllerClass Parms{};
+
+	Parms.PlayerControllerClass = PlayerControllerClass;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.ModHook.OverrideReplayPlayerControllerClass
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// TSubclassOf<class APlayerController>    PlayerControllerClass                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSubclassOf<class APlayerController>    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+TSubclassOf<class APlayerController> UModHook::OverrideReplayPlayerControllerClass(TSubclassOf<class APlayerController> PlayerControllerClass)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ModHook", "OverrideReplayPlayerControllerClass");
+
+	Params::ModHook_OverrideReplayPlayerControllerClass Parms{};
+
+	Parms.PlayerControllerClass = PlayerControllerClass;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.ModHook.OverrideSpectatorClass
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// TSubclassOf<class ASpectatorPawn>       SpectatorClass                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSubclassOf<class ASpectatorPawn>       ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+TSubclassOf<class ASpectatorPawn> UModHook::OverrideSpectatorClass(TSubclassOf<class ASpectatorPawn> SpectatorClass)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ModHook", "OverrideSpectatorClass");
+
+	Params::ModHook_OverrideSpectatorClass Parms{};
+
+	Parms.SpectatorClass = SpectatorClass;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.ModHook.OverrideTrainClass
+// (Native, Event, Public, BlueprintEvent)
+// Parameters:
+// TSubclassOf<class ATrain>               TrainClass                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// TSubclassOf<class ATrain>               ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+TSubclassOf<class ATrain> UModHook::OverrideTrainClass(TSubclassOf<class ATrain> TrainClass)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ModHook", "OverrideTrainClass");
+
+	Params::ModHook_OverrideTrainClass Parms{};
+
+	Parms.TrainClass = TrainClass;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.ModHook.OverrideVehicleClass
+// (Native, Event, Public, HasOutParams, BlueprintEvent)
+// Parameters:
+// TSubclassOf<class ABrickVehicle>        VehicleClass                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class ABrickPlayerController*           PC                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FPlayerSpawnRequest&       SpawnRequest                                           (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// TSubclassOf<class ABrickVehicle>        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+TSubclassOf<class ABrickVehicle> UModHook::OverrideVehicleClass(TSubclassOf<class ABrickVehicle> VehicleClass, class ABrickPlayerController* PC, const struct FPlayerSpawnRequest& SpawnRequest)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ModHook", "OverrideVehicleClass");
+
+	Params::ModHook_OverrideVehicleClass Parms{};
+
+	Parms.VehicleClass = VehicleClass;
+	Parms.PC = PC;
+	Parms.SpawnRequest = std::move(SpawnRequest);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.ModHook.PostSpawnPawn
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// class APawn*                            Pawn                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UModHook::PostSpawnPawn(class APawn* Pawn)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ModHook", "PostSpawnPawn");
+
+	Params::ModHook_PostSpawnPawn Parms{};
+
+	Parms.Pawn = Pawn;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.ModHook.PostSpawnPlayerController
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// class APlayerController*                PC                                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UModHook::PostSpawnPlayerController(class APlayerController* PC)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ModHook", "PostSpawnPlayerController");
+
+	Params::ModHook_PostSpawnPlayerController Parms{};
+
+	Parms.PC = PC;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.ModHook.PostSpawnSpectatorPawn
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// class ASpectatorPawn*                   Pawn                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UModHook::PostSpawnSpectatorPawn(class ASpectatorPawn* Pawn)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ModHook", "PostSpawnSpectatorPawn");
+
+	Params::ModHook_PostSpawnSpectatorPawn Parms{};
+
+	Parms.Pawn = Pawn;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.ModHook.PostSpawnVehicle
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// class ABrickVehicle*                    Vehicle                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UModHook::PostSpawnVehicle(class ABrickVehicle* Vehicle)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("ModHook", "PostSpawnVehicle");
+
+	Params::ModHook_PostSpawnVehicle Parms{};
+
+	Parms.Vehicle = Vehicle;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BrickRigs.ModHookSubsystem.GetModHookByClass
 // (Final, Native, Static, Public, BlueprintCallable)
 // Parameters:
@@ -32444,238 +33264,29 @@ class UModHook* UModHookSubsystem::GetModHookByClass(const class UObject* WorldC
 }
 
 
-// Function BrickRigs.UGCTaskPopupWidget.UpdateIsFinished
+// Function BrickRigs.UGCItemWidget.UpdateItemWidget
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// bool                                    bNewFinished                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bNewSuccess                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bInIsSelected                                          (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bInIsLegacyFile                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bInHasAutoSave                                         (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bInIsDedicatedAutoSave                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UUGCTaskPopupWidget::UpdateIsFinished(bool bNewFinished, bool bNewSuccess)
+void UUGCItemWidget::UpdateItemWidget(bool bInIsSelected, bool bInIsLegacyFile, bool bInHasAutoSave, bool bInIsDedicatedAutoSave)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("UGCTaskPopupWidget", "UpdateIsFinished");
+		Func = Class->GetFunction("UGCItemWidget", "UpdateItemWidget");
 
-	Params::UGCTaskPopupWidget_UpdateIsFinished Parms{};
+	Params::UGCItemWidget_UpdateItemWidget Parms{};
 
-	Parms.bNewFinished = bNewFinished;
-	Parms.bNewSuccess = bNewSuccess;
+	Parms.bInIsSelected = bInIsSelected;
+	Parms.bInIsLegacyFile = bInIsLegacyFile;
+	Parms.bInHasAutoSave = bInHasAutoSave;
+	Parms.bInIsDedicatedAutoSave = bInIsDedicatedAutoSave;
 
 	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.UGCTaskPopupWidget.UpdateProgress
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// float                                   NewProgress                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUGCTaskPopupWidget::UpdateProgress(float NewProgress)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UGCTaskPopupWidget", "UpdateProgress");
-
-	Params::UGCTaskPopupWidget_UpdateProgress Parms{};
-
-	Parms.NewProgress = NewProgress;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.MyUserSettings.Get
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// class UMyUserSettings*                  ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UMyUserSettings* UMyUserSettings::Get()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("MyUserSettings", "Get");
-
-	Params::MyUserSettings_Get Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.UGCTagsPropertyWidget.InitializeDepartmentItem
-// (Final, Native, Private, HasOutParams)
-// Parameters:
-// int32                                   Item                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FBrickComboBoxItemParams*        OutParams                                              (Parm, OutParm, NativeAccessSpecifierPublic)
-
-void UUGCTagsPropertyWidget::InitializeDepartmentItem(int32 Item, struct FBrickComboBoxItemParams* OutParams)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UGCTagsPropertyWidget", "InitializeDepartmentItem");
-
-	Params::UGCTagsPropertyWidget_InitializeDepartmentItem Parms{};
-
-	Parms.Item = Item;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (OutParams != nullptr)
-		*OutParams = std::move(Parms.OutParams);
-}
-
-
-// Function BrickRigs.UGCTagsPropertyWidget.InitializeEraItem
-// (Final, Native, Private, HasOutParams)
-// Parameters:
-// int32                                   Item                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FBrickComboBoxItemParams*        OutParams                                              (Parm, OutParm, NativeAccessSpecifierPublic)
-
-void UUGCTagsPropertyWidget::InitializeEraItem(int32 Item, struct FBrickComboBoxItemParams* OutParams)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UGCTagsPropertyWidget", "InitializeEraItem");
-
-	Params::UGCTagsPropertyWidget_InitializeEraItem Parms{};
-
-	Parms.Item = Item;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (OutParams != nullptr)
-		*OutParams = std::move(Parms.OutParams);
-}
-
-
-// Function BrickRigs.UGCTagsPropertyWidget.InitializeTypeItem
-// (Final, Native, Private, HasOutParams)
-// Parameters:
-// int32                                   Item                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// struct FBrickComboBoxItemParams*        OutParams                                              (Parm, OutParm, NativeAccessSpecifierPublic)
-
-void UUGCTagsPropertyWidget::InitializeTypeItem(int32 Item, struct FBrickComboBoxItemParams* OutParams)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UGCTagsPropertyWidget", "InitializeTypeItem");
-
-	Params::UGCTagsPropertyWidget_InitializeTypeItem Parms{};
-
-	Parms.Item = Item;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	if (OutParams != nullptr)
-		*OutParams = std::move(Parms.OutParams);
-}
-
-
-// Function BrickRigs.UGCTagsPropertyWidget.OnDepartmentItemSelected
-// (Final, Native, Private)
-// Parameters:
-// int32                                   Item                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EValueChangedEventType                  EventType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUGCTagsPropertyWidget::OnDepartmentItemSelected(int32 Item, EValueChangedEventType EventType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UGCTagsPropertyWidget", "OnDepartmentItemSelected");
-
-	Params::UGCTagsPropertyWidget_OnDepartmentItemSelected Parms{};
-
-	Parms.Item = Item;
-	Parms.EventType = EventType;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.UGCTagsPropertyWidget.OnEraItemSelected
-// (Final, Native, Private)
-// Parameters:
-// int32                                   Item                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EValueChangedEventType                  EventType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUGCTagsPropertyWidget::OnEraItemSelected(int32 Item, EValueChangedEventType EventType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UGCTagsPropertyWidget", "OnEraItemSelected");
-
-	Params::UGCTagsPropertyWidget_OnEraItemSelected Parms{};
-
-	Parms.Item = Item;
-	Parms.EventType = EventType;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.UGCTagsPropertyWidget.OnTypeItemSelected
-// (Final, Native, Private)
-// Parameters:
-// int32                                   Item                                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EValueChangedEventType                  EventType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UUGCTagsPropertyWidget::OnTypeItemSelected(int32 Item, EValueChangedEventType EventType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("UGCTagsPropertyWidget", "OnTypeItemSelected");
-
-	Params::UGCTagsPropertyWidget_OnTypeItemSelected Parms{};
-
-	Parms.Item = Item;
-	Parms.EventType = EventType;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
@@ -32724,23 +33335,21 @@ void UNewItemCountWidget::UpdateNumItems(int32 NewNum)
 }
 
 
-// Function BrickRigs.NumericPropertyWidget.OnSliderValueChanged
+// Function BrickRigs.PagedListHeaderWidget.OnMeasurementSystemChanged
 // (Final, Native, Private)
 // Parameters:
-// float                                   NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EValueChangedEventType                  EventType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EMeasurementSystem                      NewSystem                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UNumericPropertyWidget::OnSliderValueChanged(float NewValue, EValueChangedEventType EventType)
+void UPagedListHeaderWidget::OnMeasurementSystemChanged(EMeasurementSystem NewSystem)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("NumericPropertyWidget", "OnSliderValueChanged");
+		Func = Class->GetFunction("PagedListHeaderWidget", "OnMeasurementSystemChanged");
 
-	Params::NumericPropertyWidget_OnSliderValueChanged Parms{};
+	Params::PagedListHeaderWidget_OnMeasurementSystemChanged Parms{};
 
-	Parms.NewValue = NewValue;
-	Parms.EventType = EventType;
+	Parms.NewSystem = NewSystem;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -32751,27 +33360,147 @@ void UNumericPropertyWidget::OnSliderValueChanged(float NewValue, EValueChangedE
 }
 
 
-// Function BrickRigs.VehicleIconWidget.UpdateVehicleIcon
-// (Event, Protected, BlueprintEvent)
+// Function BrickRigs.PagedListHeaderWidget.UpdateDimensions
+// (Event, Protected, HasOutParams, HasDefaults, BlueprintEvent)
 // Parameters:
-// bool                                    bNewIsLocalPlayer                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    bNewCanBeDamaged                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EVehiclePinMode                         NewPinMode                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   InDimensions                                           (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FVector&                   InMaxDimensions                                        (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 
-void UVehicleIconWidget::UpdateVehicleIcon(bool bNewIsLocalPlayer, bool bNewCanBeDamaged, EVehiclePinMode NewPinMode)
+void UPagedListHeaderWidget::UpdateDimensions(const struct FVector& InDimensions, const struct FVector& InMaxDimensions)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("VehicleIconWidget", "UpdateVehicleIcon");
+		Func = Class->GetFunction("PagedListHeaderWidget", "UpdateDimensions");
 
-	Params::VehicleIconWidget_UpdateVehicleIcon Parms{};
+	Params::PagedListHeaderWidget_UpdateDimensions Parms{};
 
-	Parms.bNewIsLocalPlayer = bNewIsLocalPlayer;
-	Parms.bNewCanBeDamaged = bNewCanBeDamaged;
-	Parms.NewPinMode = NewPinMode;
+	Parms.InDimensions = std::move(InDimensions);
+	Parms.InMaxDimensions = std::move(InMaxDimensions);
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.PagedListHeaderWidget.UpdateEntry
+// (Event, Protected, HasOutParams, BlueprintEvent)
+// Parameters:
+// const class FText&                      InTitleText                                            (ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+// bool                                    bInHasEntry                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bInHasUnsavedChanges                                   (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UPagedListHeaderWidget::UpdateEntry(const class FText& InTitleText, bool bInHasEntry, bool bInHasUnsavedChanges)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PagedListHeaderWidget", "UpdateEntry");
+
+	Params::PagedListHeaderWidget_UpdateEntry Parms{};
+
+	Parms.InTitleText = std::move(InTitleText);
+	Parms.bInHasEntry = bInHasEntry;
+	Parms.bInHasUnsavedChanges = bInHasUnsavedChanges;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.PagedListHeaderWidget.UpdateMass
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// float                                   InMass                                                 (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   InMaxMass                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UPagedListHeaderWidget::UpdateMass(float InMass, float InMaxMass)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PagedListHeaderWidget", "UpdateMass");
+
+	Params::PagedListHeaderWidget_UpdateMass Parms{};
+
+	Parms.InMass = InMass;
+	Parms.InMaxMass = InMaxMass;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.PagedListHeaderWidget.UpdateNumObjects
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// int32                                   InNumObjects                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   InMaxNumObjects                                        (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   InNumHiddenObjects                                     (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// int32                                   InNumObjectsWithAerodynamics                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UPagedListHeaderWidget::UpdateNumObjects(int32 InNumObjects, int32 InMaxNumObjects, int32 InNumHiddenObjects, int32 InNumObjectsWithAerodynamics)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PagedListHeaderWidget", "UpdateNumObjects");
+
+	Params::PagedListHeaderWidget_UpdateNumObjects Parms{};
+
+	Parms.InNumObjects = InNumObjects;
+	Parms.InMaxNumObjects = InMaxNumObjects;
+	Parms.InNumHiddenObjects = InNumHiddenObjects;
+	Parms.InNumObjectsWithAerodynamics = InNumObjectsWithAerodynamics;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.PagedListHeaderWidget.UpdatePrice
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// float                                   InPrice                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// float                                   InMoney                                                (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UPagedListHeaderWidget::UpdatePrice(float InPrice, float InMoney)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PagedListHeaderWidget", "UpdatePrice");
+
+	Params::PagedListHeaderWidget_UpdatePrice Parms{};
+
+	Parms.InPrice = InPrice;
+	Parms.InMoney = InMoney;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.VehicleResourceSubsystem.Get
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class UVehicleResourceSubsystem*        ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UVehicleResourceSubsystem* UVehicleResourceSubsystem::Get(const class UObject* WorldContextObject)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("VehicleResourceSubsystem", "Get");
+
+	Params::VehicleResourceSubsystem_Get Parms{};
+
+	Parms.WorldContextObject = WorldContextObject;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -33163,87 +33892,6 @@ int32 UPageSelectorWidget::GetCurrentPage() const
 	Func->FunctionFlags = Flgs;
 
 	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.VectorPropertyWidget.OnXSliderValueChanged
-// (Final, Native, Private)
-// Parameters:
-// float                                   NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EValueChangedEventType                  EventType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UVectorPropertyWidget::OnXSliderValueChanged(float NewValue, EValueChangedEventType EventType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("VectorPropertyWidget", "OnXSliderValueChanged");
-
-	Params::VectorPropertyWidget_OnXSliderValueChanged Parms{};
-
-	Parms.NewValue = NewValue;
-	Parms.EventType = EventType;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.VectorPropertyWidget.OnYSliderValueChanged
-// (Final, Native, Private)
-// Parameters:
-// float                                   NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EValueChangedEventType                  EventType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UVectorPropertyWidget::OnYSliderValueChanged(float NewValue, EValueChangedEventType EventType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("VectorPropertyWidget", "OnYSliderValueChanged");
-
-	Params::VectorPropertyWidget_OnYSliderValueChanged Parms{};
-
-	Parms.NewValue = NewValue;
-	Parms.EventType = EventType;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.VectorPropertyWidget.OnZSliderValueChanged
-// (Final, Native, Private)
-// Parameters:
-// float                                   NewValue                                               (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// EValueChangedEventType                  EventType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UVectorPropertyWidget::OnZSliderValueChanged(float NewValue, EValueChangedEventType EventType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("VectorPropertyWidget", "OnZSliderValueChanged");
-
-	Params::VectorPropertyWidget_OnZSliderValueChanged Parms{};
-
-	Parms.NewValue = NewValue;
-	Parms.EventType = EventType;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
 }
 
 
@@ -33762,6 +34410,34 @@ bool UPropertyContainerWidget::OpenContextMenu()
 }
 
 
+// Function BrickRigs.PropertyContainerWidget.PostAddPropertyButtons
+// (Event, Protected, BlueprintEvent)
+
+void UPropertyContainerWidget::PostAddPropertyButtons()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PropertyContainerWidget", "PostAddPropertyButtons");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
+// Function BrickRigs.PropertyContainerWidget.PreAddPropertyButtons
+// (Event, Protected, BlueprintEvent)
+
+void UPropertyContainerWidget::PreAddPropertyButtons()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PropertyContainerWidget", "PreAddPropertyButtons");
+
+	UObject::ProcessEvent(Func, nullptr);
+}
+
+
 // Function BrickRigs.PropertyContainerWidget.UpdateColorStyle
 // (Event, Protected, BlueprintEvent)
 // Parameters:
@@ -33819,6 +34495,31 @@ void UPropertyContainerWidget::UpdateOrientation(EOrientation InOrientation)
 	Parms.InOrientation = InOrientation;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.PropertyContainerWidget.GetMenuButtonPanelWidget
+// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
+// Parameters:
+// class UMenuButtonPanelWidget*           ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UMenuButtonPanelWidget* UPropertyContainerWidget::GetMenuButtonPanelWidget() const
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("PropertyContainerWidget", "GetMenuButtonPanelWidget");
+
+	Params::PropertyContainerWidget_GetMenuButtonPanelWidget Parms{};
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
 }
 
 
@@ -34316,25 +35017,6 @@ void UTeamScoreWidget::UpdateTeamName(const class FText& NewName)
 }
 
 
-// Function BrickRigs.ThrusterBrick.OnRep_RepAccumulatedInput
-// (Final, Native, Private)
-
-void UThrusterBrick::OnRep_RepAccumulatedInput()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("ThrusterBrick", "OnRep_RepAccumulatedInput");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
 // Function BrickRigs.TimespanPropertyWidget.SetTimespanPropertyValue
 // (Final, Native, Public, HasOutParams, HasDefaults, BlueprintCallable)
 // Parameters:
@@ -34514,6 +35196,48 @@ void UUGCPropertyWidget::UpdateItemsText(int32 NumSelected)
 }
 
 
+// Function BrickRigs.UGCTaskPopupWidget.UpdateIsFinished
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bNewFinished                                           (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bNewSuccess                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUGCTaskPopupWidget::UpdateIsFinished(bool bNewFinished, bool bNewSuccess)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UGCTaskPopupWidget", "UpdateIsFinished");
+
+	Params::UGCTaskPopupWidget_UpdateIsFinished Parms{};
+
+	Parms.bNewFinished = bNewFinished;
+	Parms.bNewSuccess = bNewSuccess;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function BrickRigs.UGCTaskPopupWidget.UpdateProgress
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// float                                   NewProgress                                            (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UUGCTaskPopupWidget::UpdateProgress(float NewProgress)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("UGCTaskPopupWidget", "UpdateProgress");
+
+	Params::UGCTaskPopupWidget_UpdateProgress Parms{};
+
+	Parms.NewProgress = NewProgress;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BrickRigs.UIFunctionLibrary.BoolAsText
 // (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
@@ -34530,6 +35254,66 @@ class FText UUIFunctionLibrary::BoolAsText(bool bValue)
 	Params::UIFunctionLibrary_BoolAsText Parms{};
 
 	Parms.bValue = bValue;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.UIFunctionLibrary.BrickSizeToText
+// (Final, Native, Static, Public, HasOutParams, HasDefaults, BlueprintCallable, BlueprintPure)
+// Parameters:
+// const struct FVector&                   Size                                                   (ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bZeroAsUndetermined                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+class FText UUIFunctionLibrary::BrickSizeToText(const struct FVector& Size, const bool bZeroAsUndetermined)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("UIFunctionLibrary", "BrickSizeToText");
+
+	Params::UIFunctionLibrary_BrickSizeToText Parms{};
+
+	Parms.Size = std::move(Size);
+	Parms.bZeroAsUndetermined = bZeroAsUndetermined;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.UIFunctionLibrary.BrickUnitsToText
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// const float                             UnrealUnits                                            (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const bool                              bZeroAsUndetermined                                    (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+class FText UUIFunctionLibrary::BrickUnitsToText(const float UnrealUnits, const bool bZeroAsUndetermined)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("UIFunctionLibrary", "BrickUnitsToText");
+
+	Params::UIFunctionLibrary_BrickUnitsToText Parms{};
+
+	Parms.UnrealUnits = UnrealUnits;
+	Parms.bZeroAsUndetermined = bZeroAsUndetermined;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -34666,6 +35450,36 @@ bool UUIFunctionLibrary::FilterTextForURLs(const class FText& InText, class FTex
 }
 
 
+// Function BrickRigs.UIFunctionLibrary.FindFirstWidgetInWidgetPath
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const TArray<class UWidget*>&           Widgets                                                (ConstParm, Parm, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+// const struct FWidgetPathWrapper&        WidgetPath                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// class UWidget*                          ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+class UWidget* UUIFunctionLibrary::FindFirstWidgetInWidgetPath(const TArray<class UWidget*>& Widgets, const struct FWidgetPathWrapper& WidgetPath)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("UIFunctionLibrary", "FindFirstWidgetInWidgetPath");
+
+	Params::UIFunctionLibrary_FindFirstWidgetInWidgetPath Parms{};
+
+	Parms.Widgets = std::move(Widgets);
+	Parms.WidgetPath = std::move(WidgetPath);
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function BrickRigs.UIFunctionLibrary.GetAmmoTypeDisplayText
 // (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
@@ -34712,34 +35526,6 @@ class FText UUIFunctionLibrary::GetCameraModeDisplayText(ECameraMode InCameraMod
 	Params::UIFunctionLibrary_GetCameraModeDisplayText Parms{};
 
 	Parms.InCameraMode = InCameraMode;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.UIFunctionLibrary.GetDefaultValueStep
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// ENumericValueType                       ValueType                                              (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// float                                   ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-float UUIFunctionLibrary::GetDefaultValueStep(ENumericValueType ValueType)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("UIFunctionLibrary", "GetDefaultValueStep");
-
-	Params::UIFunctionLibrary_GetDefaultValueStep Parms{};
-
-	Parms.ValueType = ValueType;
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -34808,6 +35594,34 @@ class FText UUIFunctionLibrary::GetHUDVisibilityDisplayText(EHUDVisibility InHUD
 }
 
 
+// Function BrickRigs.UIFunctionLibrary.GetMultidimensionalNumberDelimiter
+// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
+// Parameters:
+// const ENumericValueType                 ValueType                                              (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// class FText                             ReturnValue                                            (Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+
+class FText UUIFunctionLibrary::GetMultidimensionalNumberDelimiter(const ENumericValueType ValueType)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("UIFunctionLibrary", "GetMultidimensionalNumberDelimiter");
+
+	Params::UIFunctionLibrary_GetMultidimensionalNumberDelimiter Parms{};
+
+	Parms.ValueType = ValueType;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
 // Function BrickRigs.UIFunctionLibrary.GetUnitFormat
 // (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
 // Parameters:
@@ -34824,6 +35638,36 @@ class FText UUIFunctionLibrary::GetUnitFormat(ENumericValueType ValueType)
 	Params::UIFunctionLibrary_GetUnitFormat Parms{};
 
 	Parms.ValueType = ValueType;
+
+	auto Flgs = Func->FunctionFlags;
+	Func->FunctionFlags |= 0x400;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	Func->FunctionFlags = Flgs;
+
+	return Parms.ReturnValue;
+}
+
+
+// Function BrickRigs.UIFunctionLibrary.IsWidgetInWidgetPath
+// (Final, Native, Static, Public, HasOutParams, BlueprintCallable)
+// Parameters:
+// const class UWidget*                    Widget                                                 (ConstParm, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// const struct FWidgetPathWrapper&        WidgetPath                                             (ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+bool UUIFunctionLibrary::IsWidgetInWidgetPath(const class UWidget* Widget, const struct FWidgetPathWrapper& WidgetPath)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("UIFunctionLibrary", "IsWidgetInWidgetPath");
+
+	Params::UIFunctionLibrary_IsWidgetInWidgetPath Parms{};
+
+	Parms.Widget = Widget;
+	Parms.WidgetPath = std::move(WidgetPath);
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;
@@ -35013,6 +35857,30 @@ void UUserIdPropertyWidget::ViewProfileInBrowser()
 }
 
 
+// Function BrickRigs.VehicleIconWidget.UpdateVehicleIcon
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// bool                                    bNewIsLocalPlayer                                      (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// bool                                    bNewCanBeDamaged                                       (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+// EVehiclePinMode                         NewPinMode                                             (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+
+void UVehicleIconWidget::UpdateVehicleIcon(bool bNewIsLocalPlayer, bool bNewCanBeDamaged, EVehiclePinMode NewPinMode)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("VehicleIconWidget", "UpdateVehicleIcon");
+
+	Params::VehicleIconWidget_UpdateVehicleIcon Parms{};
+
+	Parms.bNewIsLocalPlayer = bNewIsLocalPlayer;
+	Parms.bNewCanBeDamaged = bNewCanBeDamaged;
+	Parms.NewPinMode = NewPinMode;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function BrickRigs.VideoSettingsPageWidget.ApplyVideoSettings
 // (Final, Native, Protected, BlueprintCallable)
 
@@ -35084,151 +35952,6 @@ bool UVideoSettingsPageWidget::AreVideoSettingsDirty() const
 		Func = Class->GetFunction("VideoSettingsPageWidget", "AreVideoSettingsDirty");
 
 	Params::VideoSettingsPageWidget_AreVideoSettingsDirty Parms{};
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.WindowManagerWidget.Get
-// (Final, Native, Static, Public, BlueprintCallable, BlueprintPure)
-// Parameters:
-// const class UObject*                    WorldContextObject                                     (ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// class UWindowManagerWidget*             ReturnValue                                            (ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-class UWindowManagerWidget* UWindowManagerWidget::Get(const class UObject* WorldContextObject)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = StaticClass()->GetFunction("WindowManagerWidget", "Get");
-
-	Params::WindowManagerWidget_Get Parms{};
-
-	Parms.WorldContextObject = WorldContextObject;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	GetDefaultObj()->ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.WindowManagerWidget.AddActiveWidget
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// class UMainWidgetBase*                  Widget                                                 (Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UWindowManagerWidget::AddActiveWidget(class UMainWidgetBase* Widget)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WindowManagerWidget", "AddActiveWidget");
-
-	Params::WindowManagerWidget_AddActiveWidget Parms{};
-
-	Parms.Widget = Widget;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function BrickRigs.WindowManagerWidget.OnIntroSequenceFinished
-// (Final, Native, Public, BlueprintCallable)
-
-void UWindowManagerWidget::OnIntroSequenceFinished()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WindowManagerWidget", "OnIntroSequenceFinished");
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, nullptr);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.WindowManagerWidget.SetMenuOpen
-// (Final, Native, Public, BlueprintCallable)
-// Parameters:
-// bool                                    bOpen                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-void UWindowManagerWidget::SetMenuOpen(bool bOpen)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WindowManagerWidget", "SetMenuOpen");
-
-	Params::WindowManagerWidget_SetMenuOpen Parms{};
-
-	Parms.bOpen = bOpen;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-}
-
-
-// Function BrickRigs.WindowManagerWidget.CanOpenOrCloseMenu
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    bOpen                                                  (Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UWindowManagerWidget::CanOpenOrCloseMenu(bool bOpen) const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WindowManagerWidget", "CanOpenOrCloseMenu");
-
-	Params::WindowManagerWidget_CanOpenOrCloseMenu Parms{};
-
-	Parms.bOpen = bOpen;
-
-	auto Flgs = Func->FunctionFlags;
-	Func->FunctionFlags |= 0x400;
-
-	UObject::ProcessEvent(Func, &Parms);
-
-	Func->FunctionFlags = Flgs;
-
-	return Parms.ReturnValue;
-}
-
-
-// Function BrickRigs.WindowManagerWidget.IsMenuOpen
-// (Final, Native, Public, BlueprintCallable, BlueprintPure, Const)
-// Parameters:
-// bool                                    ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-
-bool UWindowManagerWidget::IsMenuOpen() const
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WindowManagerWidget", "IsMenuOpen");
-
-	Params::WindowManagerWidget_IsMenuOpen Parms{};
 
 	auto Flgs = Func->FunctionFlags;
 	Func->FunctionFlags |= 0x400;

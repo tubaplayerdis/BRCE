@@ -367,5 +367,32 @@ class UMenuButtonWidget* UBP_MenuFunctionLibrary_C::CreateImportButton(class UMe
 	return Parms.ReturnValue;
 }
 
+
+// Function BP_MenuFunctionLibrary.BP_MenuFunctionLibrary_C.CreateDisplayModeButton
+// (Static, Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Parameters:
+// class UMenuButtonPanelWidget*           Widget                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const TDelegate<void()>&                Delegate                                               (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor)
+// class UObject*                          __WorldContext                                         (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UMenuButtonWidget*                ReturnValue                                            (Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+class UMenuButtonWidget* UBP_MenuFunctionLibrary_C::CreateDisplayModeButton(class UMenuButtonPanelWidget* Widget, const TDelegate<void()>& Delegate, class UObject* __WorldContext)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = StaticClass()->GetFunction("BP_MenuFunctionLibrary_C", "CreateDisplayModeButton");
+
+	Params::BP_MenuFunctionLibrary_C_CreateDisplayModeButton Parms{};
+
+	Parms.Widget = Widget;
+	Parms.Delegate = Delegate;
+	Parms.__WorldContext = __WorldContext;
+
+	GetDefaultObj()->ProcessEvent(Func, &Parms);
+
+	return Parms.ReturnValue;
+}
+
 }
 

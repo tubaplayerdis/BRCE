@@ -23,8 +23,8 @@ namespace hooks
 		bool ACMHook = AddChatMessage::Init();
 		bool BPHook = BeginPlay::Init();
 		bool OMHook = OpenMenu::Init();
-		bool SYNCHook = Functions::SynchronizeProperties::Init();
-		bool ONJHook = OnPlayerJoined::Init();
+		bool SYNCHook = Functions::SynchronizeProperties::Init();//0
+		bool ONJHook = OnPlayerJoined::Init();//0
 		auto end = std::chrono::high_resolution_clock::now();
 		std::cout << "Elapsed Time Finding Hooks: " << std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count() << std::endl;
 		if (!ACMHook || !BPHook || !OMHook || !SYNCHook || !ONJHook) {

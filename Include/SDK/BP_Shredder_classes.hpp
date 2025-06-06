@@ -31,9 +31,9 @@ public:
 	bool                                          bRamp;                                             // 0x0245(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor)
 
 public:
-	void ExecuteUbergraph_BP_Shredder(int32 EntryPoint);
-	void ReceiveTick(float DeltaSeconds);
 	void UserConstructionScript();
+	void ReceiveTick(float DeltaSeconds);
+	void ExecuteUbergraph_BP_Shredder(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

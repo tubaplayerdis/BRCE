@@ -17,41 +17,23 @@
 namespace SDK
 {
 
-// Function WBP_TeamScore.WBP_TeamScore_C.ExecuteUbergraph_WBP_TeamScore
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UWBP_TeamScore_C::ExecuteUbergraph_WBP_TeamScore(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_TeamScore_C", "ExecuteUbergraph_WBP_TeamScore");
-
-	Params::WBP_TeamScore_C_ExecuteUbergraph_WBP_TeamScore Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function WBP_TeamScore.WBP_TeamScore_C.UpdateTeamIcon
+// Function WBP_TeamScore.WBP_TeamScore_C.UpdateScore
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// class UTexture2D*                       NewIcon                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   NewScore                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   NewMaxScore                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UWBP_TeamScore_C::UpdateTeamIcon(class UTexture2D* NewIcon)
+void UWBP_TeamScore_C::UpdateScore(int32 NewScore, int32 NewMaxScore)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_TeamScore_C", "UpdateTeamIcon");
+		Func = Class->GetFunction("WBP_TeamScore_C", "UpdateScore");
 
-	Params::WBP_TeamScore_C_UpdateTeamIcon Parms{};
+	Params::WBP_TeamScore_C_UpdateScore Parms{};
 
-	Parms.NewIcon = NewIcon;
+	Parms.NewScore = NewScore;
+	Parms.NewMaxScore = NewMaxScore;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -77,23 +59,41 @@ void UWBP_TeamScore_C::UpdateTeamAttitude(ETeamAttitude NewTeamAttitude)
 }
 
 
-// Function WBP_TeamScore.WBP_TeamScore_C.UpdateScore
+// Function WBP_TeamScore.WBP_TeamScore_C.UpdateTeamIcon
 // (Event, Protected, BlueprintEvent)
 // Parameters:
-// int32                                   NewScore                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// int32                                   NewMaxScore                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UTexture2D*                       NewIcon                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UWBP_TeamScore_C::UpdateScore(int32 NewScore, int32 NewMaxScore)
+void UWBP_TeamScore_C::UpdateTeamIcon(class UTexture2D* NewIcon)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_TeamScore_C", "UpdateScore");
+		Func = Class->GetFunction("WBP_TeamScore_C", "UpdateTeamIcon");
 
-	Params::WBP_TeamScore_C_UpdateScore Parms{};
+	Params::WBP_TeamScore_C_UpdateTeamIcon Parms{};
 
-	Parms.NewScore = NewScore;
-	Parms.NewMaxScore = NewMaxScore;
+	Parms.NewIcon = NewIcon;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function WBP_TeamScore.WBP_TeamScore_C.ExecuteUbergraph_WBP_TeamScore
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UWBP_TeamScore_C::ExecuteUbergraph_WBP_TeamScore(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_TeamScore_C", "ExecuteUbergraph_WBP_TeamScore");
+
+	Params::WBP_TeamScore_C_ExecuteUbergraph_WBP_TeamScore Parms{};
+
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

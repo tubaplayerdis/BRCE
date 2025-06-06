@@ -32,11 +32,11 @@ using namespace UC;
 */
 namespace Offsets
 {
-	constexpr int32 GObjects          = 0x04373230;
-	constexpr int32 AppendString      = 0x01002F10;
-	constexpr int32 GNames            = 0x04336D80;
-	constexpr int32 GWorld            = 0x044B6808;
-	constexpr int32 ProcessEvent      = 0x012216A0;
+	constexpr int32 GObjects          = 0x043D2600;
+	constexpr int32 AppendString      = 0x01016590;
+	constexpr int32 GNames            = 0x04396180;
+	constexpr int32 GWorld            = 0x04515F18;
+	constexpr int32 ProcessEvent      = 0x012207E0;
 	constexpr int32 ProcessEventIdx   = 0x00000044;
 }
 
@@ -228,20 +228,6 @@ public:
 		
 		return ChunkPtr[InChunkIdx].Object;
 	}
-
-	inline int32 FindObjectIndex(UObject* Object) {
-		for (int32 i = 0; i < Num(); ++i)
-		{
-			UObject* Item = GetByIndex(i);
-			if (Item && Item == Object)
-			{
-				return i;
-			}
-		}
-		return -1;
-	}
-
-	
 };
 static_assert(alignof(TUObjectArray) == 0x000008, "Wrong alignment on TUObjectArray");
 static_assert(sizeof(TUObjectArray) == 0x000020, "Wrong size on TUObjectArray");
@@ -500,37 +486,6 @@ template<typename UEType>
 class TWeakObjectPtr : public FWeakObjectPtr
 {
 public:
-	TWeakObjectPtr() {}
-
-	TWeakObjectPtr(UEType* Object)
-	{
-		*this = Object;
-	}
-
-	TWeakObjectPtr& operator=(UEType* Object)
-	{
-		if (!Object)
-		{
-			ObjectIndex = -1;
-			ObjectSerialNumber = 0;
-			return *this;
-		}
-
-		int32 Index = SDK::UObject::GObjects->FindObjectIndex(Object);
-		if (Index >= 0)
-		{
-			ObjectIndex = Index;
-			ObjectSerialNumber = SDK::UObject::GObjects->GetObjectItem(Index)->SerialNumber;
-		}
-		else
-		{
-			ObjectIndex = -1;
-			ObjectSerialNumber = 0;
-		}
-
-		return *this;
-	}
-
 	UEType* Get() const
 	{
 		return static_cast<UEType*>(FWeakObjectPtr::Get());

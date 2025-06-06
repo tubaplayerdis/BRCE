@@ -14,491 +14,26 @@
 #include "UMG_structs.hpp"
 #include "BrickRigs_structs.hpp"
 #include "Engine_structs.hpp"
+#include "InputCore_structs.hpp"
+#include "AIModule_structs.hpp"
 #include "Slate_structs.hpp"
 #include "SlateCore_structs.hpp"
-#include "AIModule_structs.hpp"
-#include "InputCore_structs.hpp"
 #include "FluUGC_structs.hpp"
 
 
 namespace SDK::Params
 {
 
-// Function BrickRigs.BrickBorder.SetBrushStyle
+// Function BrickRigs.PagedListEntryWidget.UpdateButtonSelected
 // 0x0001 (0x0001 - 0x0000)
-struct BrickBorder_SetBrushStyle final
-{
-public:
-	EBrickUIBrushStyle                            NewStyle;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickBorder_SetBrushStyle) == 0x000001, "Wrong alignment on BrickBorder_SetBrushStyle");
-static_assert(sizeof(BrickBorder_SetBrushStyle) == 0x000001, "Wrong size on BrickBorder_SetBrushStyle");
-static_assert(offsetof(BrickBorder_SetBrushStyle, NewStyle) == 0x000000, "Member 'BrickBorder_SetBrushStyle::NewStyle' has a wrong offset!");
-
-// Function BrickRigs.BrickBorder.SetColorStyle
-// 0x0001 (0x0001 - 0x0000)
-struct BrickBorder_SetColorStyle final
-{
-public:
-	EBrickUIColorStyle                            NewStyle;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickBorder_SetColorStyle) == 0x000001, "Wrong alignment on BrickBorder_SetColorStyle");
-static_assert(sizeof(BrickBorder_SetColorStyle) == 0x000001, "Wrong size on BrickBorder_SetColorStyle");
-static_assert(offsetof(BrickBorder_SetColorStyle, NewStyle) == 0x000000, "Member 'BrickBorder_SetColorStyle::NewStyle' has a wrong offset!");
-
-// Function BrickRigs.BrickBorder.SetPaddingStyle
-// 0x0001 (0x0001 - 0x0000)
-struct BrickBorder_SetPaddingStyle final
-{
-public:
-	EBrickUIPaddingStyle                          NewStyle;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickBorder_SetPaddingStyle) == 0x000001, "Wrong alignment on BrickBorder_SetPaddingStyle");
-static_assert(sizeof(BrickBorder_SetPaddingStyle) == 0x000001, "Wrong size on BrickBorder_SetPaddingStyle");
-static_assert(offsetof(BrickBorder_SetPaddingStyle, NewStyle) == 0x000000, "Member 'BrickBorder_SetPaddingStyle::NewStyle' has a wrong offset!");
-
-// Function BrickRigs.BrickBorder.SetStyleState
-// 0x0001 (0x0001 - 0x0000)
-struct BrickBorder_SetStyleState final
-{
-public:
-	EBrickUIStyleState                            NewState;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickBorder_SetStyleState) == 0x000001, "Wrong alignment on BrickBorder_SetStyleState");
-static_assert(sizeof(BrickBorder_SetStyleState) == 0x000001, "Wrong size on BrickBorder_SetStyleState");
-static_assert(offsetof(BrickBorder_SetStyleState, NewState) == 0x000000, "Member 'BrickBorder_SetStyleState::NewState' has a wrong offset!");
-
-// Function BrickRigs.PopupWidget.CancelPopup
-// 0x0001 (0x0001 - 0x0000)
-struct PopupWidget_CancelPopup final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(PopupWidget_CancelPopup) == 0x000001, "Wrong alignment on PopupWidget_CancelPopup");
-static_assert(sizeof(PopupWidget_CancelPopup) == 0x000001, "Wrong size on PopupWidget_CancelPopup");
-static_assert(offsetof(PopupWidget_CancelPopup, ReturnValue) == 0x000000, "Member 'PopupWidget_CancelPopup::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.PopupWidget.ClosePopup
-// 0x0001 (0x0001 - 0x0000)
-struct PopupWidget_ClosePopup final
-{
-public:
-	EPopupResult                                  Result;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(PopupWidget_ClosePopup) == 0x000001, "Wrong alignment on PopupWidget_ClosePopup");
-static_assert(sizeof(PopupWidget_ClosePopup) == 0x000001, "Wrong size on PopupWidget_ClosePopup");
-static_assert(offsetof(PopupWidget_ClosePopup, Result) == 0x000000, "Member 'PopupWidget_ClosePopup::Result' has a wrong offset!");
-
-// Function BrickRigs.PopupWidget.ConfirmPopup
-// 0x0001 (0x0001 - 0x0000)
-struct PopupWidget_ConfirmPopup final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(PopupWidget_ConfirmPopup) == 0x000001, "Wrong alignment on PopupWidget_ConfirmPopup");
-static_assert(sizeof(PopupWidget_ConfirmPopup) == 0x000001, "Wrong size on PopupWidget_ConfirmPopup");
-static_assert(offsetof(PopupWidget_ConfirmPopup, ReturnValue) == 0x000000, "Member 'PopupWidget_ConfirmPopup::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.PopupWidget.GetPopupParams
-// 0x0010 (0x0010 - 0x0000)
-struct PopupWidget_GetPopupParams final
-{
-public:
-	TSubclassOf<class UPopupParams>               Class_0;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UPopupParams*                           ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(PopupWidget_GetPopupParams) == 0x000008, "Wrong alignment on PopupWidget_GetPopupParams");
-static_assert(sizeof(PopupWidget_GetPopupParams) == 0x000010, "Wrong size on PopupWidget_GetPopupParams");
-static_assert(offsetof(PopupWidget_GetPopupParams, Class_0) == 0x000000, "Member 'PopupWidget_GetPopupParams::Class_0' has a wrong offset!");
-static_assert(offsetof(PopupWidget_GetPopupParams, ReturnValue) == 0x000008, "Member 'PopupWidget_GetPopupParams::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.PopupWidget.GetWidgetToFocus
-// 0x0008 (0x0008 - 0x0000)
-struct PopupWidget_GetWidgetToFocus final
-{
-public:
-	class UWidget*                                ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(PopupWidget_GetWidgetToFocus) == 0x000008, "Wrong alignment on PopupWidget_GetWidgetToFocus");
-static_assert(sizeof(PopupWidget_GetWidgetToFocus) == 0x000008, "Wrong size on PopupWidget_GetWidgetToFocus");
-static_assert(offsetof(PopupWidget_GetWidgetToFocus, ReturnValue) == 0x000000, "Member 'PopupWidget_GetWidgetToFocus::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.PopupWidget.StepBack
-// 0x0001 (0x0001 - 0x0000)
-struct PopupWidget_StepBack final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(PopupWidget_StepBack) == 0x000001, "Wrong alignment on PopupWidget_StepBack");
-static_assert(sizeof(PopupWidget_StepBack) == 0x000001, "Wrong size on PopupWidget_StepBack");
-static_assert(offsetof(PopupWidget_StepBack, ReturnValue) == 0x000000, "Member 'PopupWidget_StepBack::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.PopupWidget.CanPopupBeClosed
-// 0x0001 (0x0001 - 0x0000)
-struct PopupWidget_CanPopupBeClosed final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(PopupWidget_CanPopupBeClosed) == 0x000001, "Wrong alignment on PopupWidget_CanPopupBeClosed");
-static_assert(sizeof(PopupWidget_CanPopupBeClosed) == 0x000001, "Wrong size on PopupWidget_CanPopupBeClosed");
-static_assert(offsetof(PopupWidget_CanPopupBeClosed, ReturnValue) == 0x000000, "Member 'PopupWidget_CanPopupBeClosed::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.PopupWidget.GetButtonPanel
-// 0x0008 (0x0008 - 0x0000)
-struct PopupWidget_GetButtonPanel final
-{
-public:
-	class UMenuButtonPanelWidget*                 ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(PopupWidget_GetButtonPanel) == 0x000008, "Wrong alignment on PopupWidget_GetButtonPanel");
-static_assert(sizeof(PopupWidget_GetButtonPanel) == 0x000008, "Wrong size on PopupWidget_GetButtonPanel");
-static_assert(offsetof(PopupWidget_GetButtonPanel, ReturnValue) == 0x000000, "Member 'PopupWidget_GetButtonPanel::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.PopupWidget.GetPopupContainer
-// 0x0008 (0x0008 - 0x0000)
-struct PopupWidget_GetPopupContainer final
-{
-public:
-	class UPopupContainerWidget*                  ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(PopupWidget_GetPopupContainer) == 0x000008, "Wrong alignment on PopupWidget_GetPopupContainer");
-static_assert(sizeof(PopupWidget_GetPopupContainer) == 0x000008, "Wrong size on PopupWidget_GetPopupContainer");
-static_assert(offsetof(PopupWidget_GetPopupContainer, ReturnValue) == 0x000000, "Member 'PopupWidget_GetPopupContainer::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.PopupWidget.GetPopupSizeRule
-// 0x0001 (0x0001 - 0x0000)
-struct PopupWidget_GetPopupSizeRule final
-{
-public:
-	EPopupSizeRule                                ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(PopupWidget_GetPopupSizeRule) == 0x000001, "Wrong alignment on PopupWidget_GetPopupSizeRule");
-static_assert(sizeof(PopupWidget_GetPopupSizeRule) == 0x000001, "Wrong size on PopupWidget_GetPopupSizeRule");
-static_assert(offsetof(PopupWidget_GetPopupSizeRule, ReturnValue) == 0x000000, "Member 'PopupWidget_GetPopupSizeRule::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.PopupWidget.GetPopupTitle
-// 0x0018 (0x0018 - 0x0000)
-struct PopupWidget_GetPopupTitle final
-{
-public:
-	class FText                                   ReturnValue;                                       // 0x0000(0x0018)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(PopupWidget_GetPopupTitle) == 0x000008, "Wrong alignment on PopupWidget_GetPopupTitle");
-static_assert(sizeof(PopupWidget_GetPopupTitle) == 0x000018, "Wrong size on PopupWidget_GetPopupTitle");
-static_assert(offsetof(PopupWidget_GetPopupTitle, ReturnValue) == 0x000000, "Member 'PopupWidget_GetPopupTitle::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.PopupWidget.ShouldBeVisibleInPopupContainer
-// 0x0001 (0x0001 - 0x0000)
-struct PopupWidget_ShouldBeVisibleInPopupContainer final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(PopupWidget_ShouldBeVisibleInPopupContainer) == 0x000001, "Wrong alignment on PopupWidget_ShouldBeVisibleInPopupContainer");
-static_assert(sizeof(PopupWidget_ShouldBeVisibleInPopupContainer) == 0x000001, "Wrong size on PopupWidget_ShouldBeVisibleInPopupContainer");
-static_assert(offsetof(PopupWidget_ShouldBeVisibleInPopupContainer, ReturnValue) == 0x000000, "Member 'PopupWidget_ShouldBeVisibleInPopupContainer::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.AdminLoginWidget.OnTextChanged
-// 0x0020 (0x0020 - 0x0000)
-struct AdminLoginWidget_OnTextChanged final
-{
-public:
-	class FText                                   Text;                                              // 0x0000(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	EValueChangedEventType                        EventType;                                         // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(AdminLoginWidget_OnTextChanged) == 0x000008, "Wrong alignment on AdminLoginWidget_OnTextChanged");
-static_assert(sizeof(AdminLoginWidget_OnTextChanged) == 0x000020, "Wrong size on AdminLoginWidget_OnTextChanged");
-static_assert(offsetof(AdminLoginWidget_OnTextChanged, Text) == 0x000000, "Member 'AdminLoginWidget_OnTextChanged::Text' has a wrong offset!");
-static_assert(offsetof(AdminLoginWidget_OnTextChanged, EventType) == 0x000018, "Member 'AdminLoginWidget_OnTextChanged::EventType' has a wrong offset!");
-
-// Function BrickRigs.AdminLoginWidget.UpdateCanEverBeAdmin
-// 0x0001 (0x0001 - 0x0000)
-struct AdminLoginWidget_UpdateCanEverBeAdmin final
-{
-public:
-	bool                                          bCanBeAdmin;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(AdminLoginWidget_UpdateCanEverBeAdmin) == 0x000001, "Wrong alignment on AdminLoginWidget_UpdateCanEverBeAdmin");
-static_assert(sizeof(AdminLoginWidget_UpdateCanEverBeAdmin) == 0x000001, "Wrong size on AdminLoginWidget_UpdateCanEverBeAdmin");
-static_assert(offsetof(AdminLoginWidget_UpdateCanEverBeAdmin, bCanBeAdmin) == 0x000000, "Member 'AdminLoginWidget_UpdateCanEverBeAdmin::bCanBeAdmin' has a wrong offset!");
-
-// Function BrickRigs.AdminLoginWidget.UpdateIsAdmin
-// 0x0001 (0x0001 - 0x0000)
-struct AdminLoginWidget_UpdateIsAdmin final
-{
-public:
-	bool                                          bNewIsAdmin;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(AdminLoginWidget_UpdateIsAdmin) == 0x000001, "Wrong alignment on AdminLoginWidget_UpdateIsAdmin");
-static_assert(sizeof(AdminLoginWidget_UpdateIsAdmin) == 0x000001, "Wrong size on AdminLoginWidget_UpdateIsAdmin");
-static_assert(offsetof(AdminLoginWidget_UpdateIsAdmin, bNewIsAdmin) == 0x000000, "Member 'AdminLoginWidget_UpdateIsAdmin::bNewIsAdmin' has a wrong offset!");
-
-// Function BrickRigs.MenuPageWidget.StepBack
-// 0x0001 (0x0001 - 0x0000)
-struct MenuPageWidget_StepBack final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(MenuPageWidget_StepBack) == 0x000001, "Wrong alignment on MenuPageWidget_StepBack");
-static_assert(sizeof(MenuPageWidget_StepBack) == 0x000001, "Wrong size on MenuPageWidget_StepBack");
-static_assert(offsetof(MenuPageWidget_StepBack, ReturnValue) == 0x000000, "Member 'MenuPageWidget_StepBack::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.MenuPageWidget.GetMenuWidget
-// 0x0008 (0x0008 - 0x0000)
-struct MenuPageWidget_GetMenuWidget final
-{
-public:
-	class UMenuWidget*                            ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(MenuPageWidget_GetMenuWidget) == 0x000008, "Wrong alignment on MenuPageWidget_GetMenuWidget");
-static_assert(sizeof(MenuPageWidget_GetMenuWidget) == 0x000008, "Wrong size on MenuPageWidget_GetMenuWidget");
-static_assert(offsetof(MenuPageWidget_GetMenuWidget, ReturnValue) == 0x000000, "Member 'MenuPageWidget_GetMenuWidget::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.MenuPageWidget.GetWidgetToFocus
-// 0x0008 (0x0008 - 0x0000)
-struct MenuPageWidget_GetWidgetToFocus final
-{
-public:
-	class UWidget*                                ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(MenuPageWidget_GetWidgetToFocus) == 0x000008, "Wrong alignment on MenuPageWidget_GetWidgetToFocus");
-static_assert(sizeof(MenuPageWidget_GetWidgetToFocus) == 0x000008, "Wrong size on MenuPageWidget_GetWidgetToFocus");
-static_assert(offsetof(MenuPageWidget_GetWidgetToFocus, ReturnValue) == 0x000000, "Member 'MenuPageWidget_GetWidgetToFocus::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.ButtonWidgetBase.OnUpdateContentStyle
-// 0x0002 (0x0002 - 0x0000)
-struct ButtonWidgetBase_OnUpdateContentStyle final
-{
-public:
-	EBrickUIColorStyle                            InColorStyle;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EBrickUIStyleState                            InStyleState;                                      // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(ButtonWidgetBase_OnUpdateContentStyle) == 0x000001, "Wrong alignment on ButtonWidgetBase_OnUpdateContentStyle");
-static_assert(sizeof(ButtonWidgetBase_OnUpdateContentStyle) == 0x000002, "Wrong size on ButtonWidgetBase_OnUpdateContentStyle");
-static_assert(offsetof(ButtonWidgetBase_OnUpdateContentStyle, InColorStyle) == 0x000000, "Member 'ButtonWidgetBase_OnUpdateContentStyle::InColorStyle' has a wrong offset!");
-static_assert(offsetof(ButtonWidgetBase_OnUpdateContentStyle, InStyleState) == 0x000001, "Member 'ButtonWidgetBase_OnUpdateContentStyle::InStyleState' has a wrong offset!");
-
-// Function BrickRigs.ButtonWidgetBase.SetBrushStyle
-// 0x0001 (0x0001 - 0x0000)
-struct ButtonWidgetBase_SetBrushStyle final
-{
-public:
-	EBrickUIBrushStyle                            NewBrushStyle;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(ButtonWidgetBase_SetBrushStyle) == 0x000001, "Wrong alignment on ButtonWidgetBase_SetBrushStyle");
-static_assert(sizeof(ButtonWidgetBase_SetBrushStyle) == 0x000001, "Wrong size on ButtonWidgetBase_SetBrushStyle");
-static_assert(offsetof(ButtonWidgetBase_SetBrushStyle, NewBrushStyle) == 0x000000, "Member 'ButtonWidgetBase_SetBrushStyle::NewBrushStyle' has a wrong offset!");
-
-// Function BrickRigs.ButtonWidgetBase.SetColorStyle
-// 0x0001 (0x0001 - 0x0000)
-struct ButtonWidgetBase_SetColorStyle final
-{
-public:
-	EBrickUIColorStyle                            NewColorStyle;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(ButtonWidgetBase_SetColorStyle) == 0x000001, "Wrong alignment on ButtonWidgetBase_SetColorStyle");
-static_assert(sizeof(ButtonWidgetBase_SetColorStyle) == 0x000001, "Wrong size on ButtonWidgetBase_SetColorStyle");
-static_assert(offsetof(ButtonWidgetBase_SetColorStyle, NewColorStyle) == 0x000000, "Member 'ButtonWidgetBase_SetColorStyle::NewColorStyle' has a wrong offset!");
-
-// Function BrickRigs.ButtonWidgetBase.SetCustomFocus
-// 0x0002 (0x0002 - 0x0000)
-struct ButtonWidgetBase_SetCustomFocus final
-{
-public:
-	bool                                          bNewUseCustomFocus;                                // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bNewFocused;                                       // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(ButtonWidgetBase_SetCustomFocus) == 0x000001, "Wrong alignment on ButtonWidgetBase_SetCustomFocus");
-static_assert(sizeof(ButtonWidgetBase_SetCustomFocus) == 0x000002, "Wrong size on ButtonWidgetBase_SetCustomFocus");
-static_assert(offsetof(ButtonWidgetBase_SetCustomFocus, bNewUseCustomFocus) == 0x000000, "Member 'ButtonWidgetBase_SetCustomFocus::bNewUseCustomFocus' has a wrong offset!");
-static_assert(offsetof(ButtonWidgetBase_SetCustomFocus, bNewFocused) == 0x000001, "Member 'ButtonWidgetBase_SetCustomFocus::bNewFocused' has a wrong offset!");
-
-// Function BrickRigs.ButtonWidgetBase.SetHiddenWhileUnfocused
-// 0x0001 (0x0001 - 0x0000)
-struct ButtonWidgetBase_SetHiddenWhileUnfocused final
-{
-public:
-	bool                                          bNewHidden;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(ButtonWidgetBase_SetHiddenWhileUnfocused) == 0x000001, "Wrong alignment on ButtonWidgetBase_SetHiddenWhileUnfocused");
-static_assert(sizeof(ButtonWidgetBase_SetHiddenWhileUnfocused) == 0x000001, "Wrong size on ButtonWidgetBase_SetHiddenWhileUnfocused");
-static_assert(offsetof(ButtonWidgetBase_SetHiddenWhileUnfocused, bNewHidden) == 0x000000, "Member 'ButtonWidgetBase_SetHiddenWhileUnfocused::bNewHidden' has a wrong offset!");
-
-// Function BrickRigs.ButtonWidgetBase.SetIsSelected
-// 0x0001 (0x0001 - 0x0000)
-struct ButtonWidgetBase_SetIsSelected final
+struct PagedListEntryWidget_UpdateButtonSelected final
 {
 public:
 	bool                                          bNewSelected;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(ButtonWidgetBase_SetIsSelected) == 0x000001, "Wrong alignment on ButtonWidgetBase_SetIsSelected");
-static_assert(sizeof(ButtonWidgetBase_SetIsSelected) == 0x000001, "Wrong size on ButtonWidgetBase_SetIsSelected");
-static_assert(offsetof(ButtonWidgetBase_SetIsSelected, bNewSelected) == 0x000000, "Member 'ButtonWidgetBase_SetIsSelected::bNewSelected' has a wrong offset!");
-
-// Function BrickRigs.ButtonWidgetBase.GetButtonStyleState
-// 0x0001 (0x0001 - 0x0000)
-struct ButtonWidgetBase_GetButtonStyleState final
-{
-public:
-	EBrickUIStyleState                            ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(ButtonWidgetBase_GetButtonStyleState) == 0x000001, "Wrong alignment on ButtonWidgetBase_GetButtonStyleState");
-static_assert(sizeof(ButtonWidgetBase_GetButtonStyleState) == 0x000001, "Wrong size on ButtonWidgetBase_GetButtonStyleState");
-static_assert(offsetof(ButtonWidgetBase_GetButtonStyleState, ReturnValue) == 0x000000, "Member 'ButtonWidgetBase_GetButtonStyleState::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.ButtonWidgetBase.GetContentStyleState
-// 0x0001 (0x0001 - 0x0000)
-struct ButtonWidgetBase_GetContentStyleState final
-{
-public:
-	EBrickUIStyleState                            ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(ButtonWidgetBase_GetContentStyleState) == 0x000001, "Wrong alignment on ButtonWidgetBase_GetContentStyleState");
-static_assert(sizeof(ButtonWidgetBase_GetContentStyleState) == 0x000001, "Wrong size on ButtonWidgetBase_GetContentStyleState");
-static_assert(offsetof(ButtonWidgetBase_GetContentStyleState, ReturnValue) == 0x000000, "Member 'ButtonWidgetBase_GetContentStyleState::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.BrickSliderWidget.OnMeasurementSystemChanged
-// 0x0001 (0x0001 - 0x0000)
-struct BrickSliderWidget_OnMeasurementSystemChanged final
-{
-public:
-	EMeasurementSystem                            NewSystem;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickSliderWidget_OnMeasurementSystemChanged) == 0x000001, "Wrong alignment on BrickSliderWidget_OnMeasurementSystemChanged");
-static_assert(sizeof(BrickSliderWidget_OnMeasurementSystemChanged) == 0x000001, "Wrong size on BrickSliderWidget_OnMeasurementSystemChanged");
-static_assert(offsetof(BrickSliderWidget_OnMeasurementSystemChanged, NewSystem) == 0x000000, "Member 'BrickSliderWidget_OnMeasurementSystemChanged::NewSystem' has a wrong offset!");
-
-// Function BrickRigs.BrickSliderWidget.OnTextChanged
-// 0x0020 (0x0020 - 0x0000)
-struct BrickSliderWidget_OnTextChanged final
-{
-public:
-	class FText                                   NewText;                                           // 0x0000(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	EValueChangedEventType                        EventType;                                         // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(BrickSliderWidget_OnTextChanged) == 0x000008, "Wrong alignment on BrickSliderWidget_OnTextChanged");
-static_assert(sizeof(BrickSliderWidget_OnTextChanged) == 0x000020, "Wrong size on BrickSliderWidget_OnTextChanged");
-static_assert(offsetof(BrickSliderWidget_OnTextChanged, NewText) == 0x000000, "Member 'BrickSliderWidget_OnTextChanged::NewText' has a wrong offset!");
-static_assert(offsetof(BrickSliderWidget_OnTextChanged, EventType) == 0x000018, "Member 'BrickSliderWidget_OnTextChanged::EventType' has a wrong offset!");
-
-// Function BrickRigs.BrickSliderWidget.SetCustomTextFormat
-// 0x0018 (0x0018 - 0x0000)
-struct BrickSliderWidget_SetCustomTextFormat final
-{
-public:
-	class FText                                   InFormat;                                          // 0x0000(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickSliderWidget_SetCustomTextFormat) == 0x000008, "Wrong alignment on BrickSliderWidget_SetCustomTextFormat");
-static_assert(sizeof(BrickSliderWidget_SetCustomTextFormat) == 0x000018, "Wrong size on BrickSliderWidget_SetCustomTextFormat");
-static_assert(offsetof(BrickSliderWidget_SetCustomTextFormat, InFormat) == 0x000000, "Member 'BrickSliderWidget_SetCustomTextFormat::InFormat' has a wrong offset!");
-
-// Function BrickRigs.BrickSliderWidget.SetGridSnapMode
-// 0x0001 (0x0001 - 0x0000)
-struct BrickSliderWidget_SetGridSnapMode final
-{
-public:
-	EBrickSliderGridSnapMode                      NewMode;                                           // 0x0000(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickSliderWidget_SetGridSnapMode) == 0x000001, "Wrong alignment on BrickSliderWidget_SetGridSnapMode");
-static_assert(sizeof(BrickSliderWidget_SetGridSnapMode) == 0x000001, "Wrong size on BrickSliderWidget_SetGridSnapMode");
-static_assert(offsetof(BrickSliderWidget_SetGridSnapMode, NewMode) == 0x000000, "Member 'BrickSliderWidget_SetGridSnapMode::NewMode' has a wrong offset!");
-
-// Function BrickRigs.BrickSliderWidget.SetIsMarquee
-// 0x0001 (0x0001 - 0x0000)
-struct BrickSliderWidget_SetIsMarquee final
-{
-public:
-	bool                                          bInMarquee;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickSliderWidget_SetIsMarquee) == 0x000001, "Wrong alignment on BrickSliderWidget_SetIsMarquee");
-static_assert(sizeof(BrickSliderWidget_SetIsMarquee) == 0x000001, "Wrong size on BrickSliderWidget_SetIsMarquee");
-static_assert(offsetof(BrickSliderWidget_SetIsMarquee, bInMarquee) == 0x000000, "Member 'BrickSliderWidget_SetIsMarquee::bInMarquee' has a wrong offset!");
-
-// Function BrickRigs.BrickSliderWidget.SetIsReadOnly
-// 0x0001 (0x0001 - 0x0000)
-struct BrickSliderWidget_SetIsReadOnly final
-{
-public:
-	bool                                          bInReadOnly;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickSliderWidget_SetIsReadOnly) == 0x000001, "Wrong alignment on BrickSliderWidget_SetIsReadOnly");
-static_assert(sizeof(BrickSliderWidget_SetIsReadOnly) == 0x000001, "Wrong size on BrickSliderWidget_SetIsReadOnly");
-static_assert(offsetof(BrickSliderWidget_SetIsReadOnly, bInReadOnly) == 0x000000, "Member 'BrickSliderWidget_SetIsReadOnly::bInReadOnly' has a wrong offset!");
-
-// Function BrickRigs.BrickSliderWidget.SetMaxFractionalDigits
-// 0x0004 (0x0004 - 0x0000)
-struct BrickSliderWidget_SetMaxFractionalDigits final
-{
-public:
-	int32                                         InMaxDigits;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickSliderWidget_SetMaxFractionalDigits) == 0x000004, "Wrong alignment on BrickSliderWidget_SetMaxFractionalDigits");
-static_assert(sizeof(BrickSliderWidget_SetMaxFractionalDigits) == 0x000004, "Wrong size on BrickSliderWidget_SetMaxFractionalDigits");
-static_assert(offsetof(BrickSliderWidget_SetMaxFractionalDigits, InMaxDigits) == 0x000000, "Member 'BrickSliderWidget_SetMaxFractionalDigits::InMaxDigits' has a wrong offset!");
-
-// Function BrickRigs.BrickSliderWidget.SetValue
-// 0x0004 (0x0004 - 0x0000)
-struct BrickSliderWidget_SetValue final
-{
-public:
-	float                                         NewValue;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickSliderWidget_SetValue) == 0x000004, "Wrong alignment on BrickSliderWidget_SetValue");
-static_assert(sizeof(BrickSliderWidget_SetValue) == 0x000004, "Wrong size on BrickSliderWidget_SetValue");
-static_assert(offsetof(BrickSliderWidget_SetValue, NewValue) == 0x000000, "Member 'BrickSliderWidget_SetValue::NewValue' has a wrong offset!");
-
-// Function BrickRigs.BrickSliderWidget.SetValueRange
-// 0x0008 (0x0008 - 0x0000)
-struct BrickSliderWidget_SetValueRange final
-{
-public:
-	float                                         InMinValue;                                        // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         InMaxValue;                                        // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickSliderWidget_SetValueRange) == 0x000004, "Wrong alignment on BrickSliderWidget_SetValueRange");
-static_assert(sizeof(BrickSliderWidget_SetValueRange) == 0x000008, "Wrong size on BrickSliderWidget_SetValueRange");
-static_assert(offsetof(BrickSliderWidget_SetValueRange, InMinValue) == 0x000000, "Member 'BrickSliderWidget_SetValueRange::InMinValue' has a wrong offset!");
-static_assert(offsetof(BrickSliderWidget_SetValueRange, InMaxValue) == 0x000004, "Member 'BrickSliderWidget_SetValueRange::InMaxValue' has a wrong offset!");
-
-// Function BrickRigs.BrickSliderWidget.SetValueType
-// 0x0001 (0x0001 - 0x0000)
-struct BrickSliderWidget_SetValueType final
-{
-public:
-	ENumericValueType                             InType;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickSliderWidget_SetValueType) == 0x000001, "Wrong alignment on BrickSliderWidget_SetValueType");
-static_assert(sizeof(BrickSliderWidget_SetValueType) == 0x000001, "Wrong size on BrickSliderWidget_SetValueType");
-static_assert(offsetof(BrickSliderWidget_SetValueType, InType) == 0x000000, "Member 'BrickSliderWidget_SetValueType::InType' has a wrong offset!");
-
-// Function BrickRigs.BrickSliderWidget.UpdateSliderPosition
-// 0x0004 (0x0004 - 0x0000)
-struct BrickSliderWidget_UpdateSliderPosition final
-{
-public:
-	float                                         NewValue;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickSliderWidget_UpdateSliderPosition) == 0x000004, "Wrong alignment on BrickSliderWidget_UpdateSliderPosition");
-static_assert(sizeof(BrickSliderWidget_UpdateSliderPosition) == 0x000004, "Wrong size on BrickSliderWidget_UpdateSliderPosition");
-static_assert(offsetof(BrickSliderWidget_UpdateSliderPosition, NewValue) == 0x000000, "Member 'BrickSliderWidget_UpdateSliderPosition::NewValue' has a wrong offset!");
-
-// Function BrickRigs.BrickSliderWidget.GetValue
-// 0x0004 (0x0004 - 0x0000)
-struct BrickSliderWidget_GetValue final
-{
-public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickSliderWidget_GetValue) == 0x000004, "Wrong alignment on BrickSliderWidget_GetValue");
-static_assert(sizeof(BrickSliderWidget_GetValue) == 0x000004, "Wrong size on BrickSliderWidget_GetValue");
-static_assert(offsetof(BrickSliderWidget_GetValue, ReturnValue) == 0x000000, "Member 'BrickSliderWidget_GetValue::ReturnValue' has a wrong offset!");
+static_assert(alignof(PagedListEntryWidget_UpdateButtonSelected) == 0x000001, "Wrong alignment on PagedListEntryWidget_UpdateButtonSelected");
+static_assert(sizeof(PagedListEntryWidget_UpdateButtonSelected) == 0x000001, "Wrong size on PagedListEntryWidget_UpdateButtonSelected");
+static_assert(offsetof(PagedListEntryWidget_UpdateButtonSelected, bNewSelected) == 0x000000, "Member 'PagedListEntryWidget_UpdateButtonSelected::bNewSelected' has a wrong offset!");
 
 // Function BrickRigs.BrickEditorObject.GetBodyTransform
 // 0x0030 (0x0030 - 0x0000)
@@ -746,94 +281,6 @@ public:
 static_assert(alignof(BrickEditorObject_IsSpawned) == 0x000001, "Wrong alignment on BrickEditorObject_IsSpawned");
 static_assert(sizeof(BrickEditorObject_IsSpawned) == 0x000001, "Wrong size on BrickEditorObject_IsSpawned");
 static_assert(offsetof(BrickEditorObject_IsSpawned, ReturnValue) == 0x000000, "Member 'BrickEditorObject_IsSpawned::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.BrickButtonWidget.AddContentWidget
-// 0x0008 (0x0008 - 0x0000)
-struct BrickButtonWidget_AddContentWidget final
-{
-public:
-	class UWidget*                                InWidget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickButtonWidget_AddContentWidget) == 0x000008, "Wrong alignment on BrickButtonWidget_AddContentWidget");
-static_assert(sizeof(BrickButtonWidget_AddContentWidget) == 0x000008, "Wrong size on BrickButtonWidget_AddContentWidget");
-static_assert(offsetof(BrickButtonWidget_AddContentWidget, InWidget) == 0x000000, "Member 'BrickButtonWidget_AddContentWidget::InWidget' has a wrong offset!");
-
-// Function BrickRigs.BrickButtonWidget.SetContentHorizontalAlignment
-// 0x0001 (0x0001 - 0x0000)
-struct BrickButtonWidget_SetContentHorizontalAlignment final
-{
-public:
-	EHorizontalAlignment                          InAlignment;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickButtonWidget_SetContentHorizontalAlignment) == 0x000001, "Wrong alignment on BrickButtonWidget_SetContentHorizontalAlignment");
-static_assert(sizeof(BrickButtonWidget_SetContentHorizontalAlignment) == 0x000001, "Wrong size on BrickButtonWidget_SetContentHorizontalAlignment");
-static_assert(offsetof(BrickButtonWidget_SetContentHorizontalAlignment, InAlignment) == 0x000000, "Member 'BrickButtonWidget_SetContentHorizontalAlignment::InAlignment' has a wrong offset!");
-
-// Function BrickRigs.BrickButtonWidget.SetContentPadding
-// 0x0010 (0x0010 - 0x0000)
-struct BrickButtonWidget_SetContentPadding final
-{
-public:
-	struct FMargin                                InPadding;                                         // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickButtonWidget_SetContentPadding) == 0x000004, "Wrong alignment on BrickButtonWidget_SetContentPadding");
-static_assert(sizeof(BrickButtonWidget_SetContentPadding) == 0x000010, "Wrong size on BrickButtonWidget_SetContentPadding");
-static_assert(offsetof(BrickButtonWidget_SetContentPadding, InPadding) == 0x000000, "Member 'BrickButtonWidget_SetContentPadding::InPadding' has a wrong offset!");
-
-// Function BrickRigs.BrickButtonWidget.SetContentPaddingStyle
-// 0x0001 (0x0001 - 0x0000)
-struct BrickButtonWidget_SetContentPaddingStyle final
-{
-public:
-	EBrickUIPaddingStyle                          InStyle;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickButtonWidget_SetContentPaddingStyle) == 0x000001, "Wrong alignment on BrickButtonWidget_SetContentPaddingStyle");
-static_assert(sizeof(BrickButtonWidget_SetContentPaddingStyle) == 0x000001, "Wrong size on BrickButtonWidget_SetContentPaddingStyle");
-static_assert(offsetof(BrickButtonWidget_SetContentPaddingStyle, InStyle) == 0x000000, "Member 'BrickButtonWidget_SetContentPaddingStyle::InStyle' has a wrong offset!");
-
-// Function BrickRigs.BrickButtonWidget.SetContentVerticalAlignment
-// 0x0001 (0x0001 - 0x0000)
-struct BrickButtonWidget_SetContentVerticalAlignment final
-{
-public:
-	EVerticalAlignment                            InAlignment;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickButtonWidget_SetContentVerticalAlignment) == 0x000001, "Wrong alignment on BrickButtonWidget_SetContentVerticalAlignment");
-static_assert(sizeof(BrickButtonWidget_SetContentVerticalAlignment) == 0x000001, "Wrong size on BrickButtonWidget_SetContentVerticalAlignment");
-static_assert(offsetof(BrickButtonWidget_SetContentVerticalAlignment, InAlignment) == 0x000000, "Member 'BrickButtonWidget_SetContentVerticalAlignment::InAlignment' has a wrong offset!");
-
-// Function BrickRigs.KickPlayerPopupWidget.UpdateCanConfirmKick
-// 0x0001 (0x0001 - 0x0000)
-struct KickPlayerPopupWidget_UpdateCanConfirmKick final
-{
-public:
-	bool                                          bNewCanConfirm;                                    // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(KickPlayerPopupWidget_UpdateCanConfirmKick) == 0x000001, "Wrong alignment on KickPlayerPopupWidget_UpdateCanConfirmKick");
-static_assert(sizeof(KickPlayerPopupWidget_UpdateCanConfirmKick) == 0x000001, "Wrong size on KickPlayerPopupWidget_UpdateCanConfirmKick");
-static_assert(offsetof(KickPlayerPopupWidget_UpdateCanConfirmKick, bNewCanConfirm) == 0x000000, "Member 'KickPlayerPopupWidget_UpdateCanConfirmKick::bNewCanConfirm' has a wrong offset!");
-
-// Function BrickRigs.KickPlayerPopupWidget.UpdateCanRevokeKick
-// 0x0001 (0x0001 - 0x0000)
-struct KickPlayerPopupWidget_UpdateCanRevokeKick final
-{
-public:
-	bool                                          bCanRevoke;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(KickPlayerPopupWidget_UpdateCanRevokeKick) == 0x000001, "Wrong alignment on KickPlayerPopupWidget_UpdateCanRevokeKick");
-static_assert(sizeof(KickPlayerPopupWidget_UpdateCanRevokeKick) == 0x000001, "Wrong size on KickPlayerPopupWidget_UpdateCanRevokeKick");
-static_assert(offsetof(KickPlayerPopupWidget_UpdateCanRevokeKick, bCanRevoke) == 0x000000, "Member 'KickPlayerPopupWidget_UpdateCanRevokeKick::bCanRevoke' has a wrong offset!");
-
-// Function BrickRigs.KickPlayerPopupWidget.UpdateIsLoadingKick
-// 0x0001 (0x0001 - 0x0000)
-struct KickPlayerPopupWidget_UpdateIsLoadingKick final
-{
-public:
-	bool                                          bNewLoading;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(KickPlayerPopupWidget_UpdateIsLoadingKick) == 0x000001, "Wrong alignment on KickPlayerPopupWidget_UpdateIsLoadingKick");
-static_assert(sizeof(KickPlayerPopupWidget_UpdateIsLoadingKick) == 0x000001, "Wrong size on KickPlayerPopupWidget_UpdateIsLoadingKick");
-static_assert(offsetof(KickPlayerPopupWidget_UpdateIsLoadingKick, bNewLoading) == 0x000000, "Member 'KickPlayerPopupWidget_UpdateIsLoadingKick::bNewLoading' has a wrong offset!");
 
 // Function BrickRigs.Brick.ClusterConsumeFuel
 // 0x0008 (0x0008 - 0x0000)
@@ -1124,6 +571,467 @@ static_assert(alignof(Brick_ShouldTick) == 0x000001, "Wrong alignment on Brick_S
 static_assert(sizeof(Brick_ShouldTick) == 0x000001, "Wrong size on Brick_ShouldTick");
 static_assert(offsetof(Brick_ShouldTick, ReturnValue) == 0x000000, "Member 'Brick_ShouldTick::ReturnValue' has a wrong offset!");
 
+// Function BrickRigs.BrickBorder.SetBrushStyle
+// 0x0001 (0x0001 - 0x0000)
+struct BrickBorder_SetBrushStyle final
+{
+public:
+	EBrickUIBrushStyle                            NewStyle;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickBorder_SetBrushStyle) == 0x000001, "Wrong alignment on BrickBorder_SetBrushStyle");
+static_assert(sizeof(BrickBorder_SetBrushStyle) == 0x000001, "Wrong size on BrickBorder_SetBrushStyle");
+static_assert(offsetof(BrickBorder_SetBrushStyle, NewStyle) == 0x000000, "Member 'BrickBorder_SetBrushStyle::NewStyle' has a wrong offset!");
+
+// Function BrickRigs.BrickBorder.SetColorStyle
+// 0x0001 (0x0001 - 0x0000)
+struct BrickBorder_SetColorStyle final
+{
+public:
+	EBrickUIColorStyle                            NewStyle;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickBorder_SetColorStyle) == 0x000001, "Wrong alignment on BrickBorder_SetColorStyle");
+static_assert(sizeof(BrickBorder_SetColorStyle) == 0x000001, "Wrong size on BrickBorder_SetColorStyle");
+static_assert(offsetof(BrickBorder_SetColorStyle, NewStyle) == 0x000000, "Member 'BrickBorder_SetColorStyle::NewStyle' has a wrong offset!");
+
+// Function BrickRigs.BrickBorder.SetPaddingStyle
+// 0x0001 (0x0001 - 0x0000)
+struct BrickBorder_SetPaddingStyle final
+{
+public:
+	EBrickUIPaddingStyle                          NewStyle;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickBorder_SetPaddingStyle) == 0x000001, "Wrong alignment on BrickBorder_SetPaddingStyle");
+static_assert(sizeof(BrickBorder_SetPaddingStyle) == 0x000001, "Wrong size on BrickBorder_SetPaddingStyle");
+static_assert(offsetof(BrickBorder_SetPaddingStyle, NewStyle) == 0x000000, "Member 'BrickBorder_SetPaddingStyle::NewStyle' has a wrong offset!");
+
+// Function BrickRigs.BrickBorder.SetStyleState
+// 0x0001 (0x0001 - 0x0000)
+struct BrickBorder_SetStyleState final
+{
+public:
+	EBrickUIStyleState                            NewState;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickBorder_SetStyleState) == 0x000001, "Wrong alignment on BrickBorder_SetStyleState");
+static_assert(sizeof(BrickBorder_SetStyleState) == 0x000001, "Wrong size on BrickBorder_SetStyleState");
+static_assert(offsetof(BrickBorder_SetStyleState, NewState) == 0x000000, "Member 'BrickBorder_SetStyleState::NewState' has a wrong offset!");
+
+// Function BrickRigs.CameraBrickWidget.UpdateTargetRange
+// 0x0008 (0x0008 - 0x0000)
+struct CameraBrickWidget_UpdateTargetRange final
+{
+public:
+	bool                                          bHitSomething;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         Distance;                                          // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(CameraBrickWidget_UpdateTargetRange) == 0x000004, "Wrong alignment on CameraBrickWidget_UpdateTargetRange");
+static_assert(sizeof(CameraBrickWidget_UpdateTargetRange) == 0x000008, "Wrong size on CameraBrickWidget_UpdateTargetRange");
+static_assert(offsetof(CameraBrickWidget_UpdateTargetRange, bHitSomething) == 0x000000, "Member 'CameraBrickWidget_UpdateTargetRange::bHitSomething' has a wrong offset!");
+static_assert(offsetof(CameraBrickWidget_UpdateTargetRange, Distance) == 0x000004, "Member 'CameraBrickWidget_UpdateTargetRange::Distance' has a wrong offset!");
+
+// Function BrickRigs.HUDIconWidget.SetIconColorStyle
+// 0x0001 (0x0001 - 0x0000)
+struct HUDIconWidget_SetIconColorStyle final
+{
+public:
+	EBrickUIColorStyle                            NewColorStyle;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(HUDIconWidget_SetIconColorStyle) == 0x000001, "Wrong alignment on HUDIconWidget_SetIconColorStyle");
+static_assert(sizeof(HUDIconWidget_SetIconColorStyle) == 0x000001, "Wrong size on HUDIconWidget_SetIconColorStyle");
+static_assert(offsetof(HUDIconWidget_SetIconColorStyle, NewColorStyle) == 0x000000, "Member 'HUDIconWidget_SetIconColorStyle::NewColorStyle' has a wrong offset!");
+
+// Function BrickRigs.HUDIconWidget.SetIconSlot
+// 0x0008 (0x0008 - 0x0000)
+struct HUDIconWidget_SetIconSlot final
+{
+public:
+	struct FBrickUIIconSlot                       NewSlot;                                           // 0x0000(0x0008)(Parm, NoDestructor, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(HUDIconWidget_SetIconSlot) == 0x000004, "Wrong alignment on HUDIconWidget_SetIconSlot");
+static_assert(sizeof(HUDIconWidget_SetIconSlot) == 0x000008, "Wrong size on HUDIconWidget_SetIconSlot");
+static_assert(offsetof(HUDIconWidget_SetIconSlot, NewSlot) == 0x000000, "Member 'HUDIconWidget_SetIconSlot::NewSlot' has a wrong offset!");
+
+// Function BrickRigs.HUDIconWidget.UpdateIconRotation
+// 0x0004 (0x0004 - 0x0000)
+struct HUDIconWidget_UpdateIconRotation final
+{
+public:
+	float                                         NewRotation;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(HUDIconWidget_UpdateIconRotation) == 0x000004, "Wrong alignment on HUDIconWidget_UpdateIconRotation");
+static_assert(sizeof(HUDIconWidget_UpdateIconRotation) == 0x000004, "Wrong size on HUDIconWidget_UpdateIconRotation");
+static_assert(offsetof(HUDIconWidget_UpdateIconRotation, NewRotation) == 0x000000, "Member 'HUDIconWidget_UpdateIconRotation::NewRotation' has a wrong offset!");
+
+// Function BrickRigs.HUDIconWidget.UpdateIconStyle
+// 0x0002 (0x0002 - 0x0000)
+struct HUDIconWidget_UpdateIconStyle final
+{
+public:
+	EBrickUIColorStyle                            InColorStyle;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EBrickUIStyleState                            InStyleState;                                      // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(HUDIconWidget_UpdateIconStyle) == 0x000001, "Wrong alignment on HUDIconWidget_UpdateIconStyle");
+static_assert(sizeof(HUDIconWidget_UpdateIconStyle) == 0x000002, "Wrong size on HUDIconWidget_UpdateIconStyle");
+static_assert(offsetof(HUDIconWidget_UpdateIconStyle, InColorStyle) == 0x000000, "Member 'HUDIconWidget_UpdateIconStyle::InColorStyle' has a wrong offset!");
+static_assert(offsetof(HUDIconWidget_UpdateIconStyle, InStyleState) == 0x000001, "Member 'HUDIconWidget_UpdateIconStyle::InStyleState' has a wrong offset!");
+
+// Function BrickRigs.HUDIconWidget.GetIconDisplayName
+// 0x0018 (0x0018 - 0x0000)
+struct HUDIconWidget_GetIconDisplayName final
+{
+public:
+	class FText                                   ReturnValue;                                       // 0x0000(0x0018)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(HUDIconWidget_GetIconDisplayName) == 0x000008, "Wrong alignment on HUDIconWidget_GetIconDisplayName");
+static_assert(sizeof(HUDIconWidget_GetIconDisplayName) == 0x000018, "Wrong size on HUDIconWidget_GetIconDisplayName");
+static_assert(offsetof(HUDIconWidget_GetIconDisplayName, ReturnValue) == 0x000000, "Member 'HUDIconWidget_GetIconDisplayName::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.HUDIconWidget.GetIconWorldRotation
+// 0x0008 (0x0008 - 0x0000)
+struct HUDIconWidget_GetIconWorldRotation final
+{
+public:
+	float                                         OutRotation;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(HUDIconWidget_GetIconWorldRotation) == 0x000004, "Wrong alignment on HUDIconWidget_GetIconWorldRotation");
+static_assert(sizeof(HUDIconWidget_GetIconWorldRotation) == 0x000008, "Wrong size on HUDIconWidget_GetIconWorldRotation");
+static_assert(offsetof(HUDIconWidget_GetIconWorldRotation, OutRotation) == 0x000000, "Member 'HUDIconWidget_GetIconWorldRotation::OutRotation' has a wrong offset!");
+static_assert(offsetof(HUDIconWidget_GetIconWorldRotation, ReturnValue) == 0x000004, "Member 'HUDIconWidget_GetIconWorldRotation::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.AdminLoginWidget.OnTextChanged
+// 0x0020 (0x0020 - 0x0000)
+struct AdminLoginWidget_OnTextChanged final
+{
+public:
+	class FText                                   Text;                                              // 0x0000(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	EValueChangedEventType                        EventType;                                         // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(AdminLoginWidget_OnTextChanged) == 0x000008, "Wrong alignment on AdminLoginWidget_OnTextChanged");
+static_assert(sizeof(AdminLoginWidget_OnTextChanged) == 0x000020, "Wrong size on AdminLoginWidget_OnTextChanged");
+static_assert(offsetof(AdminLoginWidget_OnTextChanged, Text) == 0x000000, "Member 'AdminLoginWidget_OnTextChanged::Text' has a wrong offset!");
+static_assert(offsetof(AdminLoginWidget_OnTextChanged, EventType) == 0x000018, "Member 'AdminLoginWidget_OnTextChanged::EventType' has a wrong offset!");
+
+// Function BrickRigs.AdminLoginWidget.UpdateCanEverBeAdmin
+// 0x0001 (0x0001 - 0x0000)
+struct AdminLoginWidget_UpdateCanEverBeAdmin final
+{
+public:
+	bool                                          bCanBeAdmin;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(AdminLoginWidget_UpdateCanEverBeAdmin) == 0x000001, "Wrong alignment on AdminLoginWidget_UpdateCanEverBeAdmin");
+static_assert(sizeof(AdminLoginWidget_UpdateCanEverBeAdmin) == 0x000001, "Wrong size on AdminLoginWidget_UpdateCanEverBeAdmin");
+static_assert(offsetof(AdminLoginWidget_UpdateCanEverBeAdmin, bCanBeAdmin) == 0x000000, "Member 'AdminLoginWidget_UpdateCanEverBeAdmin::bCanBeAdmin' has a wrong offset!");
+
+// Function BrickRigs.AdminLoginWidget.UpdateIsAdmin
+// 0x0001 (0x0001 - 0x0000)
+struct AdminLoginWidget_UpdateIsAdmin final
+{
+public:
+	bool                                          bNewIsAdmin;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(AdminLoginWidget_UpdateIsAdmin) == 0x000001, "Wrong alignment on AdminLoginWidget_UpdateIsAdmin");
+static_assert(sizeof(AdminLoginWidget_UpdateIsAdmin) == 0x000001, "Wrong size on AdminLoginWidget_UpdateIsAdmin");
+static_assert(offsetof(AdminLoginWidget_UpdateIsAdmin, bNewIsAdmin) == 0x000000, "Member 'AdminLoginWidget_UpdateIsAdmin::bNewIsAdmin' has a wrong offset!");
+
+// Function BrickRigs.ButtonWidgetBase.OnUpdateContentStyle
+// 0x0002 (0x0002 - 0x0000)
+struct ButtonWidgetBase_OnUpdateContentStyle final
+{
+public:
+	EBrickUIColorStyle                            InColorStyle;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EBrickUIStyleState                            InStyleState;                                      // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ButtonWidgetBase_OnUpdateContentStyle) == 0x000001, "Wrong alignment on ButtonWidgetBase_OnUpdateContentStyle");
+static_assert(sizeof(ButtonWidgetBase_OnUpdateContentStyle) == 0x000002, "Wrong size on ButtonWidgetBase_OnUpdateContentStyle");
+static_assert(offsetof(ButtonWidgetBase_OnUpdateContentStyle, InColorStyle) == 0x000000, "Member 'ButtonWidgetBase_OnUpdateContentStyle::InColorStyle' has a wrong offset!");
+static_assert(offsetof(ButtonWidgetBase_OnUpdateContentStyle, InStyleState) == 0x000001, "Member 'ButtonWidgetBase_OnUpdateContentStyle::InStyleState' has a wrong offset!");
+
+// Function BrickRigs.ButtonWidgetBase.SetBrushStyle
+// 0x0001 (0x0001 - 0x0000)
+struct ButtonWidgetBase_SetBrushStyle final
+{
+public:
+	EBrickUIBrushStyle                            NewBrushStyle;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ButtonWidgetBase_SetBrushStyle) == 0x000001, "Wrong alignment on ButtonWidgetBase_SetBrushStyle");
+static_assert(sizeof(ButtonWidgetBase_SetBrushStyle) == 0x000001, "Wrong size on ButtonWidgetBase_SetBrushStyle");
+static_assert(offsetof(ButtonWidgetBase_SetBrushStyle, NewBrushStyle) == 0x000000, "Member 'ButtonWidgetBase_SetBrushStyle::NewBrushStyle' has a wrong offset!");
+
+// Function BrickRigs.ButtonWidgetBase.SetColorStyle
+// 0x0001 (0x0001 - 0x0000)
+struct ButtonWidgetBase_SetColorStyle final
+{
+public:
+	EBrickUIColorStyle                            NewColorStyle;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ButtonWidgetBase_SetColorStyle) == 0x000001, "Wrong alignment on ButtonWidgetBase_SetColorStyle");
+static_assert(sizeof(ButtonWidgetBase_SetColorStyle) == 0x000001, "Wrong size on ButtonWidgetBase_SetColorStyle");
+static_assert(offsetof(ButtonWidgetBase_SetColorStyle, NewColorStyle) == 0x000000, "Member 'ButtonWidgetBase_SetColorStyle::NewColorStyle' has a wrong offset!");
+
+// Function BrickRigs.ButtonWidgetBase.SetCustomFocus
+// 0x0002 (0x0002 - 0x0000)
+struct ButtonWidgetBase_SetCustomFocus final
+{
+public:
+	bool                                          bNewUseCustomFocus;                                // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bNewFocused;                                       // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ButtonWidgetBase_SetCustomFocus) == 0x000001, "Wrong alignment on ButtonWidgetBase_SetCustomFocus");
+static_assert(sizeof(ButtonWidgetBase_SetCustomFocus) == 0x000002, "Wrong size on ButtonWidgetBase_SetCustomFocus");
+static_assert(offsetof(ButtonWidgetBase_SetCustomFocus, bNewUseCustomFocus) == 0x000000, "Member 'ButtonWidgetBase_SetCustomFocus::bNewUseCustomFocus' has a wrong offset!");
+static_assert(offsetof(ButtonWidgetBase_SetCustomFocus, bNewFocused) == 0x000001, "Member 'ButtonWidgetBase_SetCustomFocus::bNewFocused' has a wrong offset!");
+
+// Function BrickRigs.ButtonWidgetBase.SetHiddenWhileUnfocused
+// 0x0001 (0x0001 - 0x0000)
+struct ButtonWidgetBase_SetHiddenWhileUnfocused final
+{
+public:
+	bool                                          bNewHidden;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ButtonWidgetBase_SetHiddenWhileUnfocused) == 0x000001, "Wrong alignment on ButtonWidgetBase_SetHiddenWhileUnfocused");
+static_assert(sizeof(ButtonWidgetBase_SetHiddenWhileUnfocused) == 0x000001, "Wrong size on ButtonWidgetBase_SetHiddenWhileUnfocused");
+static_assert(offsetof(ButtonWidgetBase_SetHiddenWhileUnfocused, bNewHidden) == 0x000000, "Member 'ButtonWidgetBase_SetHiddenWhileUnfocused::bNewHidden' has a wrong offset!");
+
+// Function BrickRigs.ButtonWidgetBase.SetIsSelected
+// 0x0001 (0x0001 - 0x0000)
+struct ButtonWidgetBase_SetIsSelected final
+{
+public:
+	bool                                          bNewSelected;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ButtonWidgetBase_SetIsSelected) == 0x000001, "Wrong alignment on ButtonWidgetBase_SetIsSelected");
+static_assert(sizeof(ButtonWidgetBase_SetIsSelected) == 0x000001, "Wrong size on ButtonWidgetBase_SetIsSelected");
+static_assert(offsetof(ButtonWidgetBase_SetIsSelected, bNewSelected) == 0x000000, "Member 'ButtonWidgetBase_SetIsSelected::bNewSelected' has a wrong offset!");
+
+// Function BrickRigs.ButtonWidgetBase.GetButtonStyleState
+// 0x0001 (0x0001 - 0x0000)
+struct ButtonWidgetBase_GetButtonStyleState final
+{
+public:
+	EBrickUIStyleState                            ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ButtonWidgetBase_GetButtonStyleState) == 0x000001, "Wrong alignment on ButtonWidgetBase_GetButtonStyleState");
+static_assert(sizeof(ButtonWidgetBase_GetButtonStyleState) == 0x000001, "Wrong size on ButtonWidgetBase_GetButtonStyleState");
+static_assert(offsetof(ButtonWidgetBase_GetButtonStyleState, ReturnValue) == 0x000000, "Member 'ButtonWidgetBase_GetButtonStyleState::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.ButtonWidgetBase.GetContentStyleState
+// 0x0001 (0x0001 - 0x0000)
+struct ButtonWidgetBase_GetContentStyleState final
+{
+public:
+	EBrickUIStyleState                            ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ButtonWidgetBase_GetContentStyleState) == 0x000001, "Wrong alignment on ButtonWidgetBase_GetContentStyleState");
+static_assert(sizeof(ButtonWidgetBase_GetContentStyleState) == 0x000001, "Wrong size on ButtonWidgetBase_GetContentStyleState");
+static_assert(offsetof(ButtonWidgetBase_GetContentStyleState, ReturnValue) == 0x000000, "Member 'ButtonWidgetBase_GetContentStyleState::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.BrickButtonWidget.AddContentWidget
+// 0x0008 (0x0008 - 0x0000)
+struct BrickButtonWidget_AddContentWidget final
+{
+public:
+	class UWidget*                                InWidget;                                          // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickButtonWidget_AddContentWidget) == 0x000008, "Wrong alignment on BrickButtonWidget_AddContentWidget");
+static_assert(sizeof(BrickButtonWidget_AddContentWidget) == 0x000008, "Wrong size on BrickButtonWidget_AddContentWidget");
+static_assert(offsetof(BrickButtonWidget_AddContentWidget, InWidget) == 0x000000, "Member 'BrickButtonWidget_AddContentWidget::InWidget' has a wrong offset!");
+
+// Function BrickRigs.BrickButtonWidget.SetContentHorizontalAlignment
+// 0x0001 (0x0001 - 0x0000)
+struct BrickButtonWidget_SetContentHorizontalAlignment final
+{
+public:
+	EHorizontalAlignment                          InAlignment;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickButtonWidget_SetContentHorizontalAlignment) == 0x000001, "Wrong alignment on BrickButtonWidget_SetContentHorizontalAlignment");
+static_assert(sizeof(BrickButtonWidget_SetContentHorizontalAlignment) == 0x000001, "Wrong size on BrickButtonWidget_SetContentHorizontalAlignment");
+static_assert(offsetof(BrickButtonWidget_SetContentHorizontalAlignment, InAlignment) == 0x000000, "Member 'BrickButtonWidget_SetContentHorizontalAlignment::InAlignment' has a wrong offset!");
+
+// Function BrickRigs.BrickButtonWidget.SetContentPadding
+// 0x0010 (0x0010 - 0x0000)
+struct BrickButtonWidget_SetContentPadding final
+{
+public:
+	struct FMargin                                InPadding;                                         // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickButtonWidget_SetContentPadding) == 0x000004, "Wrong alignment on BrickButtonWidget_SetContentPadding");
+static_assert(sizeof(BrickButtonWidget_SetContentPadding) == 0x000010, "Wrong size on BrickButtonWidget_SetContentPadding");
+static_assert(offsetof(BrickButtonWidget_SetContentPadding, InPadding) == 0x000000, "Member 'BrickButtonWidget_SetContentPadding::InPadding' has a wrong offset!");
+
+// Function BrickRigs.BrickButtonWidget.SetContentPaddingStyle
+// 0x0001 (0x0001 - 0x0000)
+struct BrickButtonWidget_SetContentPaddingStyle final
+{
+public:
+	EBrickUIPaddingStyle                          InStyle;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickButtonWidget_SetContentPaddingStyle) == 0x000001, "Wrong alignment on BrickButtonWidget_SetContentPaddingStyle");
+static_assert(sizeof(BrickButtonWidget_SetContentPaddingStyle) == 0x000001, "Wrong size on BrickButtonWidget_SetContentPaddingStyle");
+static_assert(offsetof(BrickButtonWidget_SetContentPaddingStyle, InStyle) == 0x000000, "Member 'BrickButtonWidget_SetContentPaddingStyle::InStyle' has a wrong offset!");
+
+// Function BrickRigs.BrickButtonWidget.SetContentVerticalAlignment
+// 0x0001 (0x0001 - 0x0000)
+struct BrickButtonWidget_SetContentVerticalAlignment final
+{
+public:
+	EVerticalAlignment                            InAlignment;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickButtonWidget_SetContentVerticalAlignment) == 0x000001, "Wrong alignment on BrickButtonWidget_SetContentVerticalAlignment");
+static_assert(sizeof(BrickButtonWidget_SetContentVerticalAlignment) == 0x000001, "Wrong size on BrickButtonWidget_SetContentVerticalAlignment");
+static_assert(offsetof(BrickButtonWidget_SetContentVerticalAlignment, InAlignment) == 0x000000, "Member 'BrickButtonWidget_SetContentVerticalAlignment::InAlignment' has a wrong offset!");
+
+// Function BrickRigs.PopupWidget.CancelPopup
+// 0x0001 (0x0001 - 0x0000)
+struct PopupWidget_CancelPopup final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(PopupWidget_CancelPopup) == 0x000001, "Wrong alignment on PopupWidget_CancelPopup");
+static_assert(sizeof(PopupWidget_CancelPopup) == 0x000001, "Wrong size on PopupWidget_CancelPopup");
+static_assert(offsetof(PopupWidget_CancelPopup, ReturnValue) == 0x000000, "Member 'PopupWidget_CancelPopup::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.PopupWidget.ClosePopup
+// 0x0001 (0x0001 - 0x0000)
+struct PopupWidget_ClosePopup final
+{
+public:
+	EPopupResult                                  Result;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(PopupWidget_ClosePopup) == 0x000001, "Wrong alignment on PopupWidget_ClosePopup");
+static_assert(sizeof(PopupWidget_ClosePopup) == 0x000001, "Wrong size on PopupWidget_ClosePopup");
+static_assert(offsetof(PopupWidget_ClosePopup, Result) == 0x000000, "Member 'PopupWidget_ClosePopup::Result' has a wrong offset!");
+
+// Function BrickRigs.PopupWidget.ConfirmPopup
+// 0x0001 (0x0001 - 0x0000)
+struct PopupWidget_ConfirmPopup final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(PopupWidget_ConfirmPopup) == 0x000001, "Wrong alignment on PopupWidget_ConfirmPopup");
+static_assert(sizeof(PopupWidget_ConfirmPopup) == 0x000001, "Wrong size on PopupWidget_ConfirmPopup");
+static_assert(offsetof(PopupWidget_ConfirmPopup, ReturnValue) == 0x000000, "Member 'PopupWidget_ConfirmPopup::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.PopupWidget.GetPopupParams
+// 0x0010 (0x0010 - 0x0000)
+struct PopupWidget_GetPopupParams final
+{
+public:
+	TSubclassOf<class UPopupParams>               Class_0;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UPopupParams*                           ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(PopupWidget_GetPopupParams) == 0x000008, "Wrong alignment on PopupWidget_GetPopupParams");
+static_assert(sizeof(PopupWidget_GetPopupParams) == 0x000010, "Wrong size on PopupWidget_GetPopupParams");
+static_assert(offsetof(PopupWidget_GetPopupParams, Class_0) == 0x000000, "Member 'PopupWidget_GetPopupParams::Class_0' has a wrong offset!");
+static_assert(offsetof(PopupWidget_GetPopupParams, ReturnValue) == 0x000008, "Member 'PopupWidget_GetPopupParams::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.PopupWidget.GetWidgetToFocus
+// 0x0008 (0x0008 - 0x0000)
+struct PopupWidget_GetWidgetToFocus final
+{
+public:
+	class UWidget*                                ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(PopupWidget_GetWidgetToFocus) == 0x000008, "Wrong alignment on PopupWidget_GetWidgetToFocus");
+static_assert(sizeof(PopupWidget_GetWidgetToFocus) == 0x000008, "Wrong size on PopupWidget_GetWidgetToFocus");
+static_assert(offsetof(PopupWidget_GetWidgetToFocus, ReturnValue) == 0x000000, "Member 'PopupWidget_GetWidgetToFocus::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.PopupWidget.StepBack
+// 0x0001 (0x0001 - 0x0000)
+struct PopupWidget_StepBack final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(PopupWidget_StepBack) == 0x000001, "Wrong alignment on PopupWidget_StepBack");
+static_assert(sizeof(PopupWidget_StepBack) == 0x000001, "Wrong size on PopupWidget_StepBack");
+static_assert(offsetof(PopupWidget_StepBack, ReturnValue) == 0x000000, "Member 'PopupWidget_StepBack::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.PopupWidget.CanPopupBeClosed
+// 0x0001 (0x0001 - 0x0000)
+struct PopupWidget_CanPopupBeClosed final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(PopupWidget_CanPopupBeClosed) == 0x000001, "Wrong alignment on PopupWidget_CanPopupBeClosed");
+static_assert(sizeof(PopupWidget_CanPopupBeClosed) == 0x000001, "Wrong size on PopupWidget_CanPopupBeClosed");
+static_assert(offsetof(PopupWidget_CanPopupBeClosed, ReturnValue) == 0x000000, "Member 'PopupWidget_CanPopupBeClosed::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.PopupWidget.GetButtonPanel
+// 0x0008 (0x0008 - 0x0000)
+struct PopupWidget_GetButtonPanel final
+{
+public:
+	class UMenuButtonPanelWidget*                 ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(PopupWidget_GetButtonPanel) == 0x000008, "Wrong alignment on PopupWidget_GetButtonPanel");
+static_assert(sizeof(PopupWidget_GetButtonPanel) == 0x000008, "Wrong size on PopupWidget_GetButtonPanel");
+static_assert(offsetof(PopupWidget_GetButtonPanel, ReturnValue) == 0x000000, "Member 'PopupWidget_GetButtonPanel::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.PopupWidget.GetPopupContainer
+// 0x0008 (0x0008 - 0x0000)
+struct PopupWidget_GetPopupContainer final
+{
+public:
+	class UPopupContainerWidget*                  ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(PopupWidget_GetPopupContainer) == 0x000008, "Wrong alignment on PopupWidget_GetPopupContainer");
+static_assert(sizeof(PopupWidget_GetPopupContainer) == 0x000008, "Wrong size on PopupWidget_GetPopupContainer");
+static_assert(offsetof(PopupWidget_GetPopupContainer, ReturnValue) == 0x000000, "Member 'PopupWidget_GetPopupContainer::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.PopupWidget.GetPopupSizeRule
+// 0x0001 (0x0001 - 0x0000)
+struct PopupWidget_GetPopupSizeRule final
+{
+public:
+	EPopupSizeRule                                ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(PopupWidget_GetPopupSizeRule) == 0x000001, "Wrong alignment on PopupWidget_GetPopupSizeRule");
+static_assert(sizeof(PopupWidget_GetPopupSizeRule) == 0x000001, "Wrong size on PopupWidget_GetPopupSizeRule");
+static_assert(offsetof(PopupWidget_GetPopupSizeRule, ReturnValue) == 0x000000, "Member 'PopupWidget_GetPopupSizeRule::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.PopupWidget.GetPopupTitle
+// 0x0018 (0x0018 - 0x0000)
+struct PopupWidget_GetPopupTitle final
+{
+public:
+	class FText                                   ReturnValue;                                       // 0x0000(0x0018)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(PopupWidget_GetPopupTitle) == 0x000008, "Wrong alignment on PopupWidget_GetPopupTitle");
+static_assert(sizeof(PopupWidget_GetPopupTitle) == 0x000018, "Wrong size on PopupWidget_GetPopupTitle");
+static_assert(offsetof(PopupWidget_GetPopupTitle, ReturnValue) == 0x000000, "Member 'PopupWidget_GetPopupTitle::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.PopupWidget.ShouldBeVisibleInPopupContainer
+// 0x0001 (0x0001 - 0x0000)
+struct PopupWidget_ShouldBeVisibleInPopupContainer final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(PopupWidget_ShouldBeVisibleInPopupContainer) == 0x000001, "Wrong alignment on PopupWidget_ShouldBeVisibleInPopupContainer");
+static_assert(sizeof(PopupWidget_ShouldBeVisibleInPopupContainer) == 0x000001, "Wrong size on PopupWidget_ShouldBeVisibleInPopupContainer");
+static_assert(offsetof(PopupWidget_ShouldBeVisibleInPopupContainer, ReturnValue) == 0x000000, "Member 'PopupWidget_ShouldBeVisibleInPopupContainer::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.InventoryPopupWidget.UpdateDropArea
+// 0x0003 (0x0003 - 0x0000)
+struct InventoryPopupWidget_UpdateDropArea final
+{
+public:
+	bool                                          bInIsDragging;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bInCanDrop;                                        // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bInIsDragOver;                                     // 0x0002(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(InventoryPopupWidget_UpdateDropArea) == 0x000001, "Wrong alignment on InventoryPopupWidget_UpdateDropArea");
+static_assert(sizeof(InventoryPopupWidget_UpdateDropArea) == 0x000003, "Wrong size on InventoryPopupWidget_UpdateDropArea");
+static_assert(offsetof(InventoryPopupWidget_UpdateDropArea, bInIsDragging) == 0x000000, "Member 'InventoryPopupWidget_UpdateDropArea::bInIsDragging' has a wrong offset!");
+static_assert(offsetof(InventoryPopupWidget_UpdateDropArea, bInCanDrop) == 0x000001, "Member 'InventoryPopupWidget_UpdateDropArea::bInCanDrop' has a wrong offset!");
+static_assert(offsetof(InventoryPopupWidget_UpdateDropArea, bInIsDragOver) == 0x000002, "Member 'InventoryPopupWidget_UpdateDropArea::bInIsDragOver' has a wrong offset!");
+
 // Function BrickRigs.ActuatorBrick.Interact_Actuate
 // 0x0010 (0x0010 - 0x0000)
 struct ActuatorBrick_Interact_Actuate final
@@ -1137,6 +1045,142 @@ static_assert(alignof(ActuatorBrick_Interact_Actuate) == 0x000008, "Wrong alignm
 static_assert(sizeof(ActuatorBrick_Interact_Actuate) == 0x000010, "Wrong size on ActuatorBrick_Interact_Actuate");
 static_assert(offsetof(ActuatorBrick_Interact_Actuate, OtherPC) == 0x000000, "Member 'ActuatorBrick_Interact_Actuate::OtherPC' has a wrong offset!");
 static_assert(offsetof(ActuatorBrick_Interact_Actuate, Val) == 0x000008, "Member 'ActuatorBrick_Interact_Actuate::Val' has a wrong offset!");
+
+// Function BrickRigs.MenuPageWidget.StepBack
+// 0x0001 (0x0001 - 0x0000)
+struct MenuPageWidget_StepBack final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(MenuPageWidget_StepBack) == 0x000001, "Wrong alignment on MenuPageWidget_StepBack");
+static_assert(sizeof(MenuPageWidget_StepBack) == 0x000001, "Wrong size on MenuPageWidget_StepBack");
+static_assert(offsetof(MenuPageWidget_StepBack, ReturnValue) == 0x000000, "Member 'MenuPageWidget_StepBack::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.MenuPageWidget.GetMenuWidget
+// 0x0008 (0x0008 - 0x0000)
+struct MenuPageWidget_GetMenuWidget final
+{
+public:
+	class UMenuWidget*                            ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(MenuPageWidget_GetMenuWidget) == 0x000008, "Wrong alignment on MenuPageWidget_GetMenuWidget");
+static_assert(sizeof(MenuPageWidget_GetMenuWidget) == 0x000008, "Wrong size on MenuPageWidget_GetMenuWidget");
+static_assert(offsetof(MenuPageWidget_GetMenuWidget, ReturnValue) == 0x000000, "Member 'MenuPageWidget_GetMenuWidget::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.MenuPageWidget.GetWidgetToFocus
+// 0x0008 (0x0008 - 0x0000)
+struct MenuPageWidget_GetWidgetToFocus final
+{
+public:
+	class UWidget*                                ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(MenuPageWidget_GetWidgetToFocus) == 0x000008, "Wrong alignment on MenuPageWidget_GetWidgetToFocus");
+static_assert(sizeof(MenuPageWidget_GetWidgetToFocus) == 0x000008, "Wrong size on MenuPageWidget_GetWidgetToFocus");
+static_assert(offsetof(MenuPageWidget_GetWidgetToFocus, ReturnValue) == 0x000000, "Member 'MenuPageWidget_GetWidgetToFocus::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.BaseInputComponent.LookRight
+// 0x0004 (0x0004 - 0x0000)
+struct BaseInputComponent_LookRight final
+{
+public:
+	float                                         Val;                                               // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BaseInputComponent_LookRight) == 0x000004, "Wrong alignment on BaseInputComponent_LookRight");
+static_assert(sizeof(BaseInputComponent_LookRight) == 0x000004, "Wrong size on BaseInputComponent_LookRight");
+static_assert(offsetof(BaseInputComponent_LookRight, Val) == 0x000000, "Member 'BaseInputComponent_LookRight::Val' has a wrong offset!");
+
+// Function BrickRigs.BaseInputComponent.LookUp
+// 0x0004 (0x0004 - 0x0000)
+struct BaseInputComponent_LookUp final
+{
+public:
+	float                                         Val;                                               // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BaseInputComponent_LookUp) == 0x000004, "Wrong alignment on BaseInputComponent_LookUp");
+static_assert(sizeof(BaseInputComponent_LookUp) == 0x000004, "Wrong size on BaseInputComponent_LookUp");
+static_assert(offsetof(BaseInputComponent_LookUp, Val) == 0x000000, "Member 'BaseInputComponent_LookUp::Val' has a wrong offset!");
+
+// Function BrickRigs.BaseInputComponent.MouseMoveRight
+// 0x0004 (0x0004 - 0x0000)
+struct BaseInputComponent_MouseMoveRight final
+{
+public:
+	float                                         Val;                                               // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BaseInputComponent_MouseMoveRight) == 0x000004, "Wrong alignment on BaseInputComponent_MouseMoveRight");
+static_assert(sizeof(BaseInputComponent_MouseMoveRight) == 0x000004, "Wrong size on BaseInputComponent_MouseMoveRight");
+static_assert(offsetof(BaseInputComponent_MouseMoveRight, Val) == 0x000000, "Member 'BaseInputComponent_MouseMoveRight::Val' has a wrong offset!");
+
+// Function BrickRigs.BaseInputComponent.MouseMoveUp
+// 0x0004 (0x0004 - 0x0000)
+struct BaseInputComponent_MouseMoveUp final
+{
+public:
+	float                                         Val;                                               // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BaseInputComponent_MouseMoveUp) == 0x000004, "Wrong alignment on BaseInputComponent_MouseMoveUp");
+static_assert(sizeof(BaseInputComponent_MouseMoveUp) == 0x000004, "Wrong size on BaseInputComponent_MouseMoveUp");
+static_assert(offsetof(BaseInputComponent_MouseMoveUp, Val) == 0x000000, "Member 'BaseInputComponent_MouseMoveUp::Val' has a wrong offset!");
+
+// Function BrickRigs.BaseInputComponent.SpeedUp
+// 0x0004 (0x0004 - 0x0000)
+struct BaseInputComponent_SpeedUp final
+{
+public:
+	float                                         Val;                                               // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BaseInputComponent_SpeedUp) == 0x000004, "Wrong alignment on BaseInputComponent_SpeedUp");
+static_assert(sizeof(BaseInputComponent_SpeedUp) == 0x000004, "Wrong size on BaseInputComponent_SpeedUp");
+static_assert(offsetof(BaseInputComponent_SpeedUp, Val) == 0x000000, "Member 'BaseInputComponent_SpeedUp::Val' has a wrong offset!");
+
+// Function BrickRigs.BaseInputComponent.ZoomIn
+// 0x0004 (0x0004 - 0x0000)
+struct BaseInputComponent_ZoomIn final
+{
+public:
+	float                                         Val;                                               // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BaseInputComponent_ZoomIn) == 0x000004, "Wrong alignment on BaseInputComponent_ZoomIn");
+static_assert(sizeof(BaseInputComponent_ZoomIn) == 0x000004, "Wrong size on BaseInputComponent_ZoomIn");
+static_assert(offsetof(BaseInputComponent_ZoomIn, Val) == 0x000000, "Member 'BaseInputComponent_ZoomIn::Val' has a wrong offset!");
+
+// Function BrickRigs.BaseInputComponent.GetCycleHUDVisibilityValueText
+// 0x0018 (0x0018 - 0x0000)
+struct BaseInputComponent_GetCycleHUDVisibilityValueText final
+{
+public:
+	class FText                                   ReturnValue;                                       // 0x0000(0x0018)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BaseInputComponent_GetCycleHUDVisibilityValueText) == 0x000008, "Wrong alignment on BaseInputComponent_GetCycleHUDVisibilityValueText");
+static_assert(sizeof(BaseInputComponent_GetCycleHUDVisibilityValueText) == 0x000018, "Wrong size on BaseInputComponent_GetCycleHUDVisibilityValueText");
+static_assert(offsetof(BaseInputComponent_GetCycleHUDVisibilityValueText, ReturnValue) == 0x000000, "Member 'BaseInputComponent_GetCycleHUDVisibilityValueText::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.PawnInputComponent.GetDestroyPawnEnabled
+// 0x0002 (0x0002 - 0x0000)
+struct PawnInputComponent_GetDestroyPawnEnabled final
+{
+public:
+	bool                                          bInSecondaryAction;                                // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0001(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(PawnInputComponent_GetDestroyPawnEnabled) == 0x000001, "Wrong alignment on PawnInputComponent_GetDestroyPawnEnabled");
+static_assert(sizeof(PawnInputComponent_GetDestroyPawnEnabled) == 0x000002, "Wrong size on PawnInputComponent_GetDestroyPawnEnabled");
+static_assert(offsetof(PawnInputComponent_GetDestroyPawnEnabled, bInSecondaryAction) == 0x000000, "Member 'PawnInputComponent_GetDestroyPawnEnabled::bInSecondaryAction' has a wrong offset!");
+static_assert(offsetof(PawnInputComponent_GetDestroyPawnEnabled, ReturnValue) == 0x000001, "Member 'PawnInputComponent_GetDestroyPawnEnabled::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.PawnInputComponent.GetInventoryEnabled
+// 0x0002 (0x0002 - 0x0000)
+struct PawnInputComponent_GetInventoryEnabled final
+{
+public:
+	bool                                          bInSecondaryAction;                                // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0001(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(PawnInputComponent_GetInventoryEnabled) == 0x000001, "Wrong alignment on PawnInputComponent_GetInventoryEnabled");
+static_assert(sizeof(PawnInputComponent_GetInventoryEnabled) == 0x000002, "Wrong size on PawnInputComponent_GetInventoryEnabled");
+static_assert(offsetof(PawnInputComponent_GetInventoryEnabled, bInSecondaryAction) == 0x000000, "Member 'PawnInputComponent_GetInventoryEnabled::bInSecondaryAction' has a wrong offset!");
+static_assert(offsetof(PawnInputComponent_GetInventoryEnabled, ReturnValue) == 0x000001, "Member 'PawnInputComponent_GetInventoryEnabled::ReturnValue' has a wrong offset!");
 
 // Function BrickRigs.BrickCheatManager.AddMoney
 // 0x0004 (0x0004 - 0x0000)
@@ -1159,61 +1203,6 @@ public:
 static_assert(alignof(BrickCheatManager_AddScore) == 0x000004, "Wrong alignment on BrickCheatManager_AddScore");
 static_assert(sizeof(BrickCheatManager_AddScore) == 0x000004, "Wrong size on BrickCheatManager_AddScore");
 static_assert(offsetof(BrickCheatManager_AddScore, Amount) == 0x000000, "Member 'BrickCheatManager_AddScore::Amount' has a wrong offset!");
-
-// Function BrickRigs.MainWidgetBase.GetButtonPanel
-// 0x0008 (0x0008 - 0x0000)
-struct MainWidgetBase_GetButtonPanel final
-{
-public:
-	class UMenuButtonPanelWidget*                 ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(MainWidgetBase_GetButtonPanel) == 0x000008, "Wrong alignment on MainWidgetBase_GetButtonPanel");
-static_assert(sizeof(MainWidgetBase_GetButtonPanel) == 0x000008, "Wrong size on MainWidgetBase_GetButtonPanel");
-static_assert(offsetof(MainWidgetBase_GetButtonPanel, ReturnValue) == 0x000000, "Member 'MainWidgetBase_GetButtonPanel::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.MainWidgetBase.GetWidgetToFocus
-// 0x0008 (0x0008 - 0x0000)
-struct MainWidgetBase_GetWidgetToFocus final
-{
-public:
-	class UWidget*                                ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(MainWidgetBase_GetWidgetToFocus) == 0x000008, "Wrong alignment on MainWidgetBase_GetWidgetToFocus");
-static_assert(sizeof(MainWidgetBase_GetWidgetToFocus) == 0x000008, "Wrong size on MainWidgetBase_GetWidgetToFocus");
-static_assert(offsetof(MainWidgetBase_GetWidgetToFocus, ReturnValue) == 0x000000, "Member 'MainWidgetBase_GetWidgetToFocus::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.MainWidgetBase.GetWindowManager
-// 0x0008 (0x0008 - 0x0000)
-struct MainWidgetBase_GetWindowManager final
-{
-public:
-	class UWindowManagerWidget*                   ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(MainWidgetBase_GetWindowManager) == 0x000008, "Wrong alignment on MainWidgetBase_GetWindowManager");
-static_assert(sizeof(MainWidgetBase_GetWindowManager) == 0x000008, "Wrong size on MainWidgetBase_GetWindowManager");
-static_assert(offsetof(MainWidgetBase_GetWindowManager, ReturnValue) == 0x000000, "Member 'MainWidgetBase_GetWindowManager::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.LoadingScreenWidget.SetBackgroundColor
-// 0x0010 (0x0010 - 0x0000)
-struct LoadingScreenWidget_SetBackgroundColor final
-{
-public:
-	struct FLinearColor                           InColor;                                           // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(LoadingScreenWidget_SetBackgroundColor) == 0x000004, "Wrong alignment on LoadingScreenWidget_SetBackgroundColor");
-static_assert(sizeof(LoadingScreenWidget_SetBackgroundColor) == 0x000010, "Wrong size on LoadingScreenWidget_SetBackgroundColor");
-static_assert(offsetof(LoadingScreenWidget_SetBackgroundColor, InColor) == 0x000000, "Member 'LoadingScreenWidget_SetBackgroundColor::InColor' has a wrong offset!");
-
-// Function BrickRigs.LoadingScreenWidget.SetLoadingText
-// 0x0018 (0x0018 - 0x0000)
-struct LoadingScreenWidget_SetLoadingText final
-{
-public:
-	class FText                                   Text;                                              // 0x0000(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(LoadingScreenWidget_SetLoadingText) == 0x000008, "Wrong alignment on LoadingScreenWidget_SetLoadingText");
-static_assert(sizeof(LoadingScreenWidget_SetLoadingText) == 0x000018, "Wrong size on LoadingScreenWidget_SetLoadingText");
-static_assert(offsetof(LoadingScreenWidget_SetLoadingText, Text) == 0x000000, "Member 'LoadingScreenWidget_SetLoadingText::Text' has a wrong offset!");
 
 // Function BrickRigs.AdminMenuWidget.OnListEntrySelected
 // 0x0010 (0x0010 - 0x0000)
@@ -1261,6 +1250,39 @@ public:
 static_assert(alignof(AdminMenuWidget_UpdateHasSelectedKick) == 0x000001, "Wrong alignment on AdminMenuWidget_UpdateHasSelectedKick");
 static_assert(sizeof(AdminMenuWidget_UpdateHasSelectedKick) == 0x000001, "Wrong size on AdminMenuWidget_UpdateHasSelectedKick");
 static_assert(offsetof(AdminMenuWidget_UpdateHasSelectedKick, bNewSelected) == 0x000000, "Member 'AdminMenuWidget_UpdateHasSelectedKick::bNewSelected' has a wrong offset!");
+
+// Function BrickRigs.KickPlayerPopupWidget.UpdateCanConfirmKick
+// 0x0001 (0x0001 - 0x0000)
+struct KickPlayerPopupWidget_UpdateCanConfirmKick final
+{
+public:
+	bool                                          bNewCanConfirm;                                    // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KickPlayerPopupWidget_UpdateCanConfirmKick) == 0x000001, "Wrong alignment on KickPlayerPopupWidget_UpdateCanConfirmKick");
+static_assert(sizeof(KickPlayerPopupWidget_UpdateCanConfirmKick) == 0x000001, "Wrong size on KickPlayerPopupWidget_UpdateCanConfirmKick");
+static_assert(offsetof(KickPlayerPopupWidget_UpdateCanConfirmKick, bNewCanConfirm) == 0x000000, "Member 'KickPlayerPopupWidget_UpdateCanConfirmKick::bNewCanConfirm' has a wrong offset!");
+
+// Function BrickRigs.KickPlayerPopupWidget.UpdateCanRevokeKick
+// 0x0001 (0x0001 - 0x0000)
+struct KickPlayerPopupWidget_UpdateCanRevokeKick final
+{
+public:
+	bool                                          bCanRevoke;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KickPlayerPopupWidget_UpdateCanRevokeKick) == 0x000001, "Wrong alignment on KickPlayerPopupWidget_UpdateCanRevokeKick");
+static_assert(sizeof(KickPlayerPopupWidget_UpdateCanRevokeKick) == 0x000001, "Wrong size on KickPlayerPopupWidget_UpdateCanRevokeKick");
+static_assert(offsetof(KickPlayerPopupWidget_UpdateCanRevokeKick, bCanRevoke) == 0x000000, "Member 'KickPlayerPopupWidget_UpdateCanRevokeKick::bCanRevoke' has a wrong offset!");
+
+// Function BrickRigs.KickPlayerPopupWidget.UpdateIsLoadingKick
+// 0x0001 (0x0001 - 0x0000)
+struct KickPlayerPopupWidget_UpdateIsLoadingKick final
+{
+public:
+	bool                                          bNewLoading;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(KickPlayerPopupWidget_UpdateIsLoadingKick) == 0x000001, "Wrong alignment on KickPlayerPopupWidget_UpdateIsLoadingKick");
+static_assert(sizeof(KickPlayerPopupWidget_UpdateIsLoadingKick) == 0x000001, "Wrong size on KickPlayerPopupWidget_UpdateIsLoadingKick");
+static_assert(offsetof(KickPlayerPopupWidget_UpdateIsLoadingKick, bNewLoading) == 0x000000, "Member 'KickPlayerPopupWidget_UpdateIsLoadingKick::bNewLoading' has a wrong offset!");
 
 // Function BrickRigs.BrickUserWidget.GetTooltipContent
 // 0x0048 (0x0048 - 0x0000)
@@ -1500,17 +1522,6 @@ static_assert(alignof(InventoryItem_UpdateThumbnailMID) == 0x000008, "Wrong alig
 static_assert(sizeof(InventoryItem_UpdateThumbnailMID) == 0x000008, "Wrong size on InventoryItem_UpdateThumbnailMID");
 static_assert(offsetof(InventoryItem_UpdateThumbnailMID, InMID) == 0x000000, "Member 'InventoryItem_UpdateThumbnailMID::InMID' has a wrong offset!");
 
-// Function BrickRigs.PagedListEntryWidget.UpdateButtonSelected
-// 0x0001 (0x0001 - 0x0000)
-struct PagedListEntryWidget_UpdateButtonSelected final
-{
-public:
-	bool                                          bNewSelected;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(PagedListEntryWidget_UpdateButtonSelected) == 0x000001, "Wrong alignment on PagedListEntryWidget_UpdateButtonSelected");
-static_assert(sizeof(PagedListEntryWidget_UpdateButtonSelected) == 0x000001, "Wrong size on PagedListEntryWidget_UpdateButtonSelected");
-static_assert(offsetof(PagedListEntryWidget_UpdateButtonSelected, bNewSelected) == 0x000000, "Member 'PagedListEntryWidget_UpdateButtonSelected::bNewSelected' has a wrong offset!");
-
 // Function BrickRigs.BrickComboBoxItemContainerWidget.AddItemWidget
 // 0x0008 (0x0008 - 0x0000)
 struct BrickComboBoxItemContainerWidget_AddItemWidget final
@@ -1606,6 +1617,473 @@ static_assert(alignof(BrickComboBoxItemWidget_UpdateTextVisibility) == 0x000001,
 static_assert(sizeof(BrickComboBoxItemWidget_UpdateTextVisibility) == 0x000001, "Wrong size on BrickComboBoxItemWidget_UpdateTextVisibility");
 static_assert(offsetof(BrickComboBoxItemWidget_UpdateTextVisibility, bNewVisible) == 0x000000, "Member 'BrickComboBoxItemWidget_UpdateTextVisibility::bNewVisible' has a wrong offset!");
 
+// Function BrickRigs.MatchEndWidget.UpdateContinueButton
+// 0x0008 (0x0008 - 0x0000)
+struct MatchEndWidget_UpdateContinueButton final
+{
+public:
+	int32                                         TimeRemaining;                                     // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsHost;                                           // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(MatchEndWidget_UpdateContinueButton) == 0x000004, "Wrong alignment on MatchEndWidget_UpdateContinueButton");
+static_assert(sizeof(MatchEndWidget_UpdateContinueButton) == 0x000008, "Wrong size on MatchEndWidget_UpdateContinueButton");
+static_assert(offsetof(MatchEndWidget_UpdateContinueButton, TimeRemaining) == 0x000000, "Member 'MatchEndWidget_UpdateContinueButton::TimeRemaining' has a wrong offset!");
+static_assert(offsetof(MatchEndWidget_UpdateContinueButton, bIsHost) == 0x000004, "Member 'MatchEndWidget_UpdateContinueButton::bIsHost' has a wrong offset!");
+
+// Function BrickRigs.MatchEndWidget.UpdateMatchWinner
+// 0x0010 (0x0010 - 0x0000)
+struct MatchEndWidget_UpdateMatchWinner final
+{
+public:
+	class UBrickTeam*                             WinnerTeam;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ETeamAttitude                                 TeamAttitude;                                      // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(MatchEndWidget_UpdateMatchWinner) == 0x000008, "Wrong alignment on MatchEndWidget_UpdateMatchWinner");
+static_assert(sizeof(MatchEndWidget_UpdateMatchWinner) == 0x000010, "Wrong size on MatchEndWidget_UpdateMatchWinner");
+static_assert(offsetof(MatchEndWidget_UpdateMatchWinner, WinnerTeam) == 0x000000, "Member 'MatchEndWidget_UpdateMatchWinner::WinnerTeam' has a wrong offset!");
+static_assert(offsetof(MatchEndWidget_UpdateMatchWinner, TeamAttitude) == 0x000008, "Member 'MatchEndWidget_UpdateMatchWinner::TeamAttitude' has a wrong offset!");
+
+// Function BrickRigs.MatchEndWidget.GetWidgetToFocus
+// 0x0008 (0x0008 - 0x0000)
+struct MatchEndWidget_GetWidgetToFocus final
+{
+public:
+	class UWidget*                                ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(MatchEndWidget_GetWidgetToFocus) == 0x000008, "Wrong alignment on MatchEndWidget_GetWidgetToFocus");
+static_assert(sizeof(MatchEndWidget_GetWidgetToFocus) == 0x000008, "Wrong size on MatchEndWidget_GetWidgetToFocus");
+static_assert(offsetof(MatchEndWidget_GetWidgetToFocus, ReturnValue) == 0x000000, "Member 'MatchEndWidget_GetWidgetToFocus::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.InventoryComponent.IsSlotCompatible
+// 0x0048 (0x0048 - 0x0000)
+struct InventoryComponent_IsSlotCompatible final
+{
+public:
+	struct FInventorySlot                         InSlot;                                            // 0x0000(0x0030)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FInventoryItemRef                      InItem;                                            // 0x0030(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0040(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_41[0x7];                                       // 0x0041(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(InventoryComponent_IsSlotCompatible) == 0x000008, "Wrong alignment on InventoryComponent_IsSlotCompatible");
+static_assert(sizeof(InventoryComponent_IsSlotCompatible) == 0x000048, "Wrong size on InventoryComponent_IsSlotCompatible");
+static_assert(offsetof(InventoryComponent_IsSlotCompatible, InSlot) == 0x000000, "Member 'InventoryComponent_IsSlotCompatible::InSlot' has a wrong offset!");
+static_assert(offsetof(InventoryComponent_IsSlotCompatible, InItem) == 0x000030, "Member 'InventoryComponent_IsSlotCompatible::InItem' has a wrong offset!");
+static_assert(offsetof(InventoryComponent_IsSlotCompatible, ReturnValue) == 0x000040, "Member 'InventoryComponent_IsSlotCompatible::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.InventoryComponent.MoveItems
+// 0x0040 (0x0040 - 0x0000)
+struct InventoryComponent_MoveItems final
+{
+public:
+	struct FMoveInventoryItemParams               Params_0;                                          // 0x0000(0x0028)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	TArray<class AInventoryItem*>                 OutDroppedItems;                                   // 0x0028(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x0038(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(InventoryComponent_MoveItems) == 0x000008, "Wrong alignment on InventoryComponent_MoveItems");
+static_assert(sizeof(InventoryComponent_MoveItems) == 0x000040, "Wrong size on InventoryComponent_MoveItems");
+static_assert(offsetof(InventoryComponent_MoveItems, Params_0) == 0x000000, "Member 'InventoryComponent_MoveItems::Params_0' has a wrong offset!");
+static_assert(offsetof(InventoryComponent_MoveItems, OutDroppedItems) == 0x000028, "Member 'InventoryComponent_MoveItems::OutDroppedItems' has a wrong offset!");
+static_assert(offsetof(InventoryComponent_MoveItems, ReturnValue) == 0x000038, "Member 'InventoryComponent_MoveItems::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.InventoryComponent.ConsumeAmmo
+// 0x0014 (0x0014 - 0x0000)
+struct InventoryComponent_ConsumeAmmo final
+{
+public:
+	struct FAmmoInfo                              InAmmo;                                            // 0x0000(0x000C)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	int32                                         NumRequired;                                       // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(InventoryComponent_ConsumeAmmo) == 0x000004, "Wrong alignment on InventoryComponent_ConsumeAmmo");
+static_assert(sizeof(InventoryComponent_ConsumeAmmo) == 0x000014, "Wrong size on InventoryComponent_ConsumeAmmo");
+static_assert(offsetof(InventoryComponent_ConsumeAmmo, InAmmo) == 0x000000, "Member 'InventoryComponent_ConsumeAmmo::InAmmo' has a wrong offset!");
+static_assert(offsetof(InventoryComponent_ConsumeAmmo, NumRequired) == 0x00000C, "Member 'InventoryComponent_ConsumeAmmo::NumRequired' has a wrong offset!");
+static_assert(offsetof(InventoryComponent_ConsumeAmmo, ReturnValue) == 0x000010, "Member 'InventoryComponent_ConsumeAmmo::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.InventoryComponent.ConsumeItems
+// 0x000C (0x000C - 0x0000)
+struct InventoryComponent_ConsumeItems final
+{
+public:
+	struct FInventorySlotID                       SlotID;                                            // 0x0000(0x0004)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Amount;                                            // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(InventoryComponent_ConsumeItems) == 0x000004, "Wrong alignment on InventoryComponent_ConsumeItems");
+static_assert(sizeof(InventoryComponent_ConsumeItems) == 0x00000C, "Wrong size on InventoryComponent_ConsumeItems");
+static_assert(offsetof(InventoryComponent_ConsumeItems, SlotID) == 0x000000, "Member 'InventoryComponent_ConsumeItems::SlotID' has a wrong offset!");
+static_assert(offsetof(InventoryComponent_ConsumeItems, Amount) == 0x000004, "Member 'InventoryComponent_ConsumeItems::Amount' has a wrong offset!");
+static_assert(offsetof(InventoryComponent_ConsumeItems, ReturnValue) == 0x000008, "Member 'InventoryComponent_ConsumeItems::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.InventoryComponent.DebugSpawnItems
+// 0x0010 (0x0010 - 0x0000)
+struct InventoryComponent_DebugSpawnItems final
+{
+public:
+	TSubclassOf<class AInventoryItem>             ItemClass;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Amount;                                            // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(InventoryComponent_DebugSpawnItems) == 0x000008, "Wrong alignment on InventoryComponent_DebugSpawnItems");
+static_assert(sizeof(InventoryComponent_DebugSpawnItems) == 0x000010, "Wrong size on InventoryComponent_DebugSpawnItems");
+static_assert(offsetof(InventoryComponent_DebugSpawnItems, ItemClass) == 0x000000, "Member 'InventoryComponent_DebugSpawnItems::ItemClass' has a wrong offset!");
+static_assert(offsetof(InventoryComponent_DebugSpawnItems, Amount) == 0x000008, "Member 'InventoryComponent_DebugSpawnItems::Amount' has a wrong offset!");
+
+// Function BrickRigs.InventoryComponent.EmptyInventory
+// 0x0001 (0x0001 - 0x0000)
+struct InventoryComponent_EmptyInventory final
+{
+public:
+	bool                                          bCallDelegates;                                    // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(InventoryComponent_EmptyInventory) == 0x000001, "Wrong alignment on InventoryComponent_EmptyInventory");
+static_assert(sizeof(InventoryComponent_EmptyInventory) == 0x000001, "Wrong size on InventoryComponent_EmptyInventory");
+static_assert(offsetof(InventoryComponent_EmptyInventory, bCallDelegates) == 0x000000, "Member 'InventoryComponent_EmptyInventory::bCallDelegates' has a wrong offset!");
+
+// Function BrickRigs.InventoryComponent.Interact_Inventory
+// 0x0008 (0x0008 - 0x0000)
+struct InventoryComponent_Interact_Inventory final
+{
+public:
+	class ABrickPlayerController*                 PC;                                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(InventoryComponent_Interact_Inventory) == 0x000008, "Wrong alignment on InventoryComponent_Interact_Inventory");
+static_assert(sizeof(InventoryComponent_Interact_Inventory) == 0x000008, "Wrong size on InventoryComponent_Interact_Inventory");
+static_assert(offsetof(InventoryComponent_Interact_Inventory, PC) == 0x000000, "Member 'InventoryComponent_Interact_Inventory::PC' has a wrong offset!");
+
+// Function BrickRigs.InventoryComponent.SetContentHidden
+// 0x0001 (0x0001 - 0x0000)
+struct InventoryComponent_SetContentHidden final
+{
+public:
+	bool                                          bHidden;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(InventoryComponent_SetContentHidden) == 0x000001, "Wrong alignment on InventoryComponent_SetContentHidden");
+static_assert(sizeof(InventoryComponent_SetContentHidden) == 0x000001, "Wrong size on InventoryComponent_SetContentHidden");
+static_assert(offsetof(InventoryComponent_SetContentHidden, bHidden) == 0x000000, "Member 'InventoryComponent_SetContentHidden::bHidden' has a wrong offset!");
+
+// Function BrickRigs.InventoryComponent.SetInventoryProperties
+// 0x0060 (0x0060 - 0x0000)
+struct InventoryComponent_SetInventoryProperties final
+{
+public:
+	struct FInventoryProperties                   InProps;                                           // 0x0000(0x0060)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(InventoryComponent_SetInventoryProperties) == 0x000008, "Wrong alignment on InventoryComponent_SetInventoryProperties");
+static_assert(sizeof(InventoryComponent_SetInventoryProperties) == 0x000060, "Wrong size on InventoryComponent_SetInventoryProperties");
+static_assert(offsetof(InventoryComponent_SetInventoryProperties, InProps) == 0x000000, "Member 'InventoryComponent_SetInventoryProperties::InProps' has a wrong offset!");
+
+// Function BrickRigs.InventoryComponent.SetSpecialSlotAttachParent
+// 0x0008 (0x0008 - 0x0000)
+struct InventoryComponent_SetSpecialSlotAttachParent final
+{
+public:
+	class USceneComponent*                        NewAttachParent;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(InventoryComponent_SetSpecialSlotAttachParent) == 0x000008, "Wrong alignment on InventoryComponent_SetSpecialSlotAttachParent");
+static_assert(sizeof(InventoryComponent_SetSpecialSlotAttachParent) == 0x000008, "Wrong size on InventoryComponent_SetSpecialSlotAttachParent");
+static_assert(offsetof(InventoryComponent_SetSpecialSlotAttachParent, NewAttachParent) == 0x000000, "Member 'InventoryComponent_SetSpecialSlotAttachParent::NewAttachParent' has a wrong offset!");
+
+// Function BrickRigs.InventoryComponent.SpawnInventoryLoadout
+// 0x0010 (0x0010 - 0x0000)
+struct InventoryComponent_SpawnInventoryLoadout final
+{
+public:
+	struct FInventoryLoadout                      Loadout;                                           // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(InventoryComponent_SpawnInventoryLoadout) == 0x000008, "Wrong alignment on InventoryComponent_SpawnInventoryLoadout");
+static_assert(sizeof(InventoryComponent_SpawnInventoryLoadout) == 0x000010, "Wrong size on InventoryComponent_SpawnInventoryLoadout");
+static_assert(offsetof(InventoryComponent_SpawnInventoryLoadout, Loadout) == 0x000000, "Member 'InventoryComponent_SpawnInventoryLoadout::Loadout' has a wrong offset!");
+
+// Function BrickRigs.InventoryComponent.SpawnItems
+// 0x0010 (0x0010 - 0x0000)
+struct InventoryComponent_SpawnItems final
+{
+public:
+	TSubclassOf<class AInventoryItem>             ItemClass;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Amount;                                            // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x000C(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(InventoryComponent_SpawnItems) == 0x000008, "Wrong alignment on InventoryComponent_SpawnItems");
+static_assert(sizeof(InventoryComponent_SpawnItems) == 0x000010, "Wrong size on InventoryComponent_SpawnItems");
+static_assert(offsetof(InventoryComponent_SpawnItems, ItemClass) == 0x000000, "Member 'InventoryComponent_SpawnItems::ItemClass' has a wrong offset!");
+static_assert(offsetof(InventoryComponent_SpawnItems, Amount) == 0x000008, "Member 'InventoryComponent_SpawnItems::Amount' has a wrong offset!");
+static_assert(offsetof(InventoryComponent_SpawnItems, ReturnValue) == 0x00000C, "Member 'InventoryComponent_SpawnItems::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.InventoryComponent.DoesSpecialSlotSupportItem
+// 0x0010 (0x0010 - 0x0000)
+struct InventoryComponent_DoesSpecialSlotSupportItem final
+{
+public:
+	const class AInventoryItem*                   InItem;                                            // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         SlotIndex;                                         // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x000C(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(InventoryComponent_DoesSpecialSlotSupportItem) == 0x000008, "Wrong alignment on InventoryComponent_DoesSpecialSlotSupportItem");
+static_assert(sizeof(InventoryComponent_DoesSpecialSlotSupportItem) == 0x000010, "Wrong size on InventoryComponent_DoesSpecialSlotSupportItem");
+static_assert(offsetof(InventoryComponent_DoesSpecialSlotSupportItem, InItem) == 0x000000, "Member 'InventoryComponent_DoesSpecialSlotSupportItem::InItem' has a wrong offset!");
+static_assert(offsetof(InventoryComponent_DoesSpecialSlotSupportItem, SlotIndex) == 0x000008, "Member 'InventoryComponent_DoesSpecialSlotSupportItem::SlotIndex' has a wrong offset!");
+static_assert(offsetof(InventoryComponent_DoesSpecialSlotSupportItem, ReturnValue) == 0x00000C, "Member 'InventoryComponent_DoesSpecialSlotSupportItem::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.InventoryComponent.FindFreeSlotID
+// 0x0018 (0x0018 - 0x0000)
+struct InventoryComponent_FindFreeSlotID final
+{
+public:
+	struct FInventoryItemRef                      InItem;                                            // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          bTryToReplace;                                     // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FInventorySlotID                       ReturnValue;                                       // 0x0014(0x0004)(Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(InventoryComponent_FindFreeSlotID) == 0x000008, "Wrong alignment on InventoryComponent_FindFreeSlotID");
+static_assert(sizeof(InventoryComponent_FindFreeSlotID) == 0x000018, "Wrong size on InventoryComponent_FindFreeSlotID");
+static_assert(offsetof(InventoryComponent_FindFreeSlotID, InItem) == 0x000000, "Member 'InventoryComponent_FindFreeSlotID::InItem' has a wrong offset!");
+static_assert(offsetof(InventoryComponent_FindFreeSlotID, bTryToReplace) == 0x000010, "Member 'InventoryComponent_FindFreeSlotID::bTryToReplace' has a wrong offset!");
+static_assert(offsetof(InventoryComponent_FindFreeSlotID, ReturnValue) == 0x000014, "Member 'InventoryComponent_FindFreeSlotID::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.InventoryComponent.FindFreeSpecialSlotID
+// 0x0068 (0x0068 - 0x0000)
+struct InventoryComponent_FindFreeSpecialSlotID final
+{
+public:
+	struct FInventoryItemRef                      InItem;                                            // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	TSet<struct FInventorySlotID>                 InSlotIDs;                                         // 0x0010(0x0050)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	struct FInventorySlotID                       ReturnValue;                                       // 0x0060(0x0004)(Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_64[0x4];                                       // 0x0064(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(InventoryComponent_FindFreeSpecialSlotID) == 0x000008, "Wrong alignment on InventoryComponent_FindFreeSpecialSlotID");
+static_assert(sizeof(InventoryComponent_FindFreeSpecialSlotID) == 0x000068, "Wrong size on InventoryComponent_FindFreeSpecialSlotID");
+static_assert(offsetof(InventoryComponent_FindFreeSpecialSlotID, InItem) == 0x000000, "Member 'InventoryComponent_FindFreeSpecialSlotID::InItem' has a wrong offset!");
+static_assert(offsetof(InventoryComponent_FindFreeSpecialSlotID, InSlotIDs) == 0x000010, "Member 'InventoryComponent_FindFreeSpecialSlotID::InSlotIDs' has a wrong offset!");
+static_assert(offsetof(InventoryComponent_FindFreeSpecialSlotID, ReturnValue) == 0x000060, "Member 'InventoryComponent_FindFreeSpecialSlotID::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.InventoryComponent.FindFreeWildcardSlotID
+// 0x0018 (0x0018 - 0x0000)
+struct InventoryComponent_FindFreeWildcardSlotID final
+{
+public:
+	struct FInventoryItemRef                      InItem;                                            // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FInventorySlotID                       ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(InventoryComponent_FindFreeWildcardSlotID) == 0x000008, "Wrong alignment on InventoryComponent_FindFreeWildcardSlotID");
+static_assert(sizeof(InventoryComponent_FindFreeWildcardSlotID) == 0x000018, "Wrong size on InventoryComponent_FindFreeWildcardSlotID");
+static_assert(offsetof(InventoryComponent_FindFreeWildcardSlotID, InItem) == 0x000000, "Member 'InventoryComponent_FindFreeWildcardSlotID::InItem' has a wrong offset!");
+static_assert(offsetof(InventoryComponent_FindFreeWildcardSlotID, ReturnValue) == 0x000010, "Member 'InventoryComponent_FindFreeWildcardSlotID::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.InventoryComponent.GetAmmo
+// 0x0018 (0x0018 - 0x0000)
+struct InventoryComponent_GetAmmo final
+{
+public:
+	TArray<struct FAmmoInfo>                      InAmmoTypes;                                       // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(InventoryComponent_GetAmmo) == 0x000008, "Wrong alignment on InventoryComponent_GetAmmo");
+static_assert(sizeof(InventoryComponent_GetAmmo) == 0x000018, "Wrong size on InventoryComponent_GetAmmo");
+static_assert(offsetof(InventoryComponent_GetAmmo, InAmmoTypes) == 0x000000, "Member 'InventoryComponent_GetAmmo::InAmmoTypes' has a wrong offset!");
+static_assert(offsetof(InventoryComponent_GetAmmo, ReturnValue) == 0x000010, "Member 'InventoryComponent_GetAmmo::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.InventoryComponent.GetDisplayName
+// 0x0018 (0x0018 - 0x0000)
+struct InventoryComponent_GetDisplayName final
+{
+public:
+	class FText                                   ReturnValue;                                       // 0x0000(0x0018)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(InventoryComponent_GetDisplayName) == 0x000008, "Wrong alignment on InventoryComponent_GetDisplayName");
+static_assert(sizeof(InventoryComponent_GetDisplayName) == 0x000018, "Wrong size on InventoryComponent_GetDisplayName");
+static_assert(offsetof(InventoryComponent_GetDisplayName, ReturnValue) == 0x000000, "Member 'InventoryComponent_GetDisplayName::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.InventoryComponent.GetInventory
+// 0x0120 (0x0120 - 0x0000)
+struct InventoryComponent_GetInventory final
+{
+public:
+	struct FInventory                             ReturnValue;                                       // 0x0000(0x0120)(ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(InventoryComponent_GetInventory) == 0x000008, "Wrong alignment on InventoryComponent_GetInventory");
+static_assert(sizeof(InventoryComponent_GetInventory) == 0x000120, "Wrong size on InventoryComponent_GetInventory");
+static_assert(offsetof(InventoryComponent_GetInventory, ReturnValue) == 0x000000, "Member 'InventoryComponent_GetInventory::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.InventoryComponent.GetInventorySlots
+// 0x0010 (0x0010 - 0x0000)
+struct InventoryComponent_GetInventorySlots final
+{
+public:
+	TArray<struct FInventorySlot>                 ReturnValue;                                       // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(InventoryComponent_GetInventorySlots) == 0x000008, "Wrong alignment on InventoryComponent_GetInventorySlots");
+static_assert(sizeof(InventoryComponent_GetInventorySlots) == 0x000010, "Wrong size on InventoryComponent_GetInventorySlots");
+static_assert(offsetof(InventoryComponent_GetInventorySlots, ReturnValue) == 0x000000, "Member 'InventoryComponent_GetInventorySlots::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.InventoryComponent.GetNumItemsOfClass
+// 0x0010 (0x0010 - 0x0000)
+struct InventoryComponent_GetNumItemsOfClass final
+{
+public:
+	class UClass*                                 InClass;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(InventoryComponent_GetNumItemsOfClass) == 0x000008, "Wrong alignment on InventoryComponent_GetNumItemsOfClass");
+static_assert(sizeof(InventoryComponent_GetNumItemsOfClass) == 0x000010, "Wrong size on InventoryComponent_GetNumItemsOfClass");
+static_assert(offsetof(InventoryComponent_GetNumItemsOfClass, InClass) == 0x000000, "Member 'InventoryComponent_GetNumItemsOfClass::InClass' has a wrong offset!");
+static_assert(offsetof(InventoryComponent_GetNumItemsOfClass, ReturnValue) == 0x000008, "Member 'InventoryComponent_GetNumItemsOfClass::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.InventoryComponent.GetSpecialSlotID
+// 0x0008 (0x0008 - 0x0000)
+struct InventoryComponent_GetSpecialSlotID final
+{
+public:
+	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FInventorySlotID                       ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(InventoryComponent_GetSpecialSlotID) == 0x000004, "Wrong alignment on InventoryComponent_GetSpecialSlotID");
+static_assert(sizeof(InventoryComponent_GetSpecialSlotID) == 0x000008, "Wrong size on InventoryComponent_GetSpecialSlotID");
+static_assert(offsetof(InventoryComponent_GetSpecialSlotID, Index_0) == 0x000000, "Member 'InventoryComponent_GetSpecialSlotID::Index_0' has a wrong offset!");
+static_assert(offsetof(InventoryComponent_GetSpecialSlotID, ReturnValue) == 0x000004, "Member 'InventoryComponent_GetSpecialSlotID::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.InventoryComponent.GetWildcardSlotID
+// 0x0008 (0x0008 - 0x0000)
+struct InventoryComponent_GetWildcardSlotID final
+{
+public:
+	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FInventorySlotID                       ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(InventoryComponent_GetWildcardSlotID) == 0x000004, "Wrong alignment on InventoryComponent_GetWildcardSlotID");
+static_assert(sizeof(InventoryComponent_GetWildcardSlotID) == 0x000008, "Wrong size on InventoryComponent_GetWildcardSlotID");
+static_assert(offsetof(InventoryComponent_GetWildcardSlotID, Index_0) == 0x000000, "Member 'InventoryComponent_GetWildcardSlotID::Index_0' has a wrong offset!");
+static_assert(offsetof(InventoryComponent_GetWildcardSlotID, ReturnValue) == 0x000004, "Member 'InventoryComponent_GetWildcardSlotID::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.InventoryComponent.HasInfiniteAmmo
+// 0x0001 (0x0001 - 0x0000)
+struct InventoryComponent_HasInfiniteAmmo final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(InventoryComponent_HasInfiniteAmmo) == 0x000001, "Wrong alignment on InventoryComponent_HasInfiniteAmmo");
+static_assert(sizeof(InventoryComponent_HasInfiniteAmmo) == 0x000001, "Wrong size on InventoryComponent_HasInfiniteAmmo");
+static_assert(offsetof(InventoryComponent_HasInfiniteAmmo, ReturnValue) == 0x000000, "Member 'InventoryComponent_HasInfiniteAmmo::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.InventoryComponent.HasInventorySlot
+// 0x0008 (0x0008 - 0x0000)
+struct InventoryComponent_HasInventorySlot final
+{
+public:
+	struct FInventorySlotID                       InSlotID;                                          // 0x0000(0x0004)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(InventoryComponent_HasInventorySlot) == 0x000004, "Wrong alignment on InventoryComponent_HasInventorySlot");
+static_assert(sizeof(InventoryComponent_HasInventorySlot) == 0x000008, "Wrong size on InventoryComponent_HasInventorySlot");
+static_assert(offsetof(InventoryComponent_HasInventorySlot, InSlotID) == 0x000000, "Member 'InventoryComponent_HasInventorySlot::InSlotID' has a wrong offset!");
+static_assert(offsetof(InventoryComponent_HasInventorySlot, ReturnValue) == 0x000004, "Member 'InventoryComponent_HasInventorySlot::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.InventoryComponent.IsContentHidden
+// 0x0001 (0x0001 - 0x0000)
+struct InventoryComponent_IsContentHidden final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(InventoryComponent_IsContentHidden) == 0x000001, "Wrong alignment on InventoryComponent_IsContentHidden");
+static_assert(sizeof(InventoryComponent_IsContentHidden) == 0x000001, "Wrong size on InventoryComponent_IsContentHidden");
+static_assert(offsetof(InventoryComponent_IsContentHidden, ReturnValue) == 0x000000, "Member 'InventoryComponent_IsContentHidden::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.InventoryComponent.IsEmpty
+// 0x0001 (0x0001 - 0x0000)
+struct InventoryComponent_IsEmpty final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(InventoryComponent_IsEmpty) == 0x000001, "Wrong alignment on InventoryComponent_IsEmpty");
+static_assert(sizeof(InventoryComponent_IsEmpty) == 0x000001, "Wrong size on InventoryComponent_IsEmpty");
+static_assert(offsetof(InventoryComponent_IsEmpty, ReturnValue) == 0x000000, "Member 'InventoryComponent_IsEmpty::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.InventoryComponent.IsSlotFreeOrCompatible
+// 0x0020 (0x0020 - 0x0000)
+struct InventoryComponent_IsSlotFreeOrCompatible final
+{
+public:
+	struct FInventorySlotID                       InSlotID;                                          // 0x0000(0x0004)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FInventoryItemRef                      InItem;                                            // 0x0008(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(InventoryComponent_IsSlotFreeOrCompatible) == 0x000008, "Wrong alignment on InventoryComponent_IsSlotFreeOrCompatible");
+static_assert(sizeof(InventoryComponent_IsSlotFreeOrCompatible) == 0x000020, "Wrong size on InventoryComponent_IsSlotFreeOrCompatible");
+static_assert(offsetof(InventoryComponent_IsSlotFreeOrCompatible, InSlotID) == 0x000000, "Member 'InventoryComponent_IsSlotFreeOrCompatible::InSlotID' has a wrong offset!");
+static_assert(offsetof(InventoryComponent_IsSlotFreeOrCompatible, InItem) == 0x000008, "Member 'InventoryComponent_IsSlotFreeOrCompatible::InItem' has a wrong offset!");
+static_assert(offsetof(InventoryComponent_IsSlotFreeOrCompatible, ReturnValue) == 0x000018, "Member 'InventoryComponent_IsSlotFreeOrCompatible::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.InventoryComponent.IsSpecialSlotID
+// 0x0008 (0x0008 - 0x0000)
+struct InventoryComponent_IsSpecialSlotID final
+{
+public:
+	struct FInventorySlotID                       InSlotID;                                          // 0x0000(0x0004)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(InventoryComponent_IsSpecialSlotID) == 0x000004, "Wrong alignment on InventoryComponent_IsSpecialSlotID");
+static_assert(sizeof(InventoryComponent_IsSpecialSlotID) == 0x000008, "Wrong size on InventoryComponent_IsSpecialSlotID");
+static_assert(offsetof(InventoryComponent_IsSpecialSlotID, InSlotID) == 0x000000, "Member 'InventoryComponent_IsSpecialSlotID::InSlotID' has a wrong offset!");
+static_assert(offsetof(InventoryComponent_IsSpecialSlotID, ReturnValue) == 0x000004, "Member 'InventoryComponent_IsSpecialSlotID::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.InventoryComponent.IsValidSlotID
+// 0x0008 (0x0008 - 0x0000)
+struct InventoryComponent_IsValidSlotID final
+{
+public:
+	struct FInventorySlotID                       InSlotID;                                          // 0x0000(0x0004)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(InventoryComponent_IsValidSlotID) == 0x000004, "Wrong alignment on InventoryComponent_IsValidSlotID");
+static_assert(sizeof(InventoryComponent_IsValidSlotID) == 0x000008, "Wrong size on InventoryComponent_IsValidSlotID");
+static_assert(offsetof(InventoryComponent_IsValidSlotID, InSlotID) == 0x000000, "Member 'InventoryComponent_IsValidSlotID::InSlotID' has a wrong offset!");
+static_assert(offsetof(InventoryComponent_IsValidSlotID, ReturnValue) == 0x000004, "Member 'InventoryComponent_IsValidSlotID::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.InventoryComponent.IsWildcardSlotID
+// 0x0008 (0x0008 - 0x0000)
+struct InventoryComponent_IsWildcardSlotID final
+{
+public:
+	struct FInventorySlotID                       InSlotID;                                          // 0x0000(0x0004)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(InventoryComponent_IsWildcardSlotID) == 0x000004, "Wrong alignment on InventoryComponent_IsWildcardSlotID");
+static_assert(sizeof(InventoryComponent_IsWildcardSlotID) == 0x000008, "Wrong size on InventoryComponent_IsWildcardSlotID");
+static_assert(offsetof(InventoryComponent_IsWildcardSlotID, InSlotID) == 0x000000, "Member 'InventoryComponent_IsWildcardSlotID::InSlotID' has a wrong offset!");
+static_assert(offsetof(InventoryComponent_IsWildcardSlotID, ReturnValue) == 0x000004, "Member 'InventoryComponent_IsWildcardSlotID::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.InventoryComponent.RequiresSpecialSlot
+// 0x0060 (0x0060 - 0x0000)
+struct InventoryComponent_RequiresSpecialSlot final
+{
+public:
+	const class AInventoryItem*                   InItem;                                            // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSet<struct FInventorySlotID>                 OutSlots;                                          // 0x0008(0x0050)(Parm, OutParm, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0058(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_59[0x7];                                       // 0x0059(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(InventoryComponent_RequiresSpecialSlot) == 0x000008, "Wrong alignment on InventoryComponent_RequiresSpecialSlot");
+static_assert(sizeof(InventoryComponent_RequiresSpecialSlot) == 0x000060, "Wrong size on InventoryComponent_RequiresSpecialSlot");
+static_assert(offsetof(InventoryComponent_RequiresSpecialSlot, InItem) == 0x000000, "Member 'InventoryComponent_RequiresSpecialSlot::InItem' has a wrong offset!");
+static_assert(offsetof(InventoryComponent_RequiresSpecialSlot, OutSlots) == 0x000008, "Member 'InventoryComponent_RequiresSpecialSlot::OutSlots' has a wrong offset!");
+static_assert(offsetof(InventoryComponent_RequiresSpecialSlot, ReturnValue) == 0x000058, "Member 'InventoryComponent_RequiresSpecialSlot::ReturnValue' has a wrong offset!");
+
 // Function BrickRigs.MenuAnchorWidget.GetWidgetToFocus
 // 0x0008 (0x0008 - 0x0000)
 struct MenuAnchorWidget_GetWidgetToFocus final
@@ -1617,431 +2095,148 @@ static_assert(alignof(MenuAnchorWidget_GetWidgetToFocus) == 0x000008, "Wrong ali
 static_assert(sizeof(MenuAnchorWidget_GetWidgetToFocus) == 0x000008, "Wrong size on MenuAnchorWidget_GetWidgetToFocus");
 static_assert(offsetof(MenuAnchorWidget_GetWidgetToFocus, ReturnValue) == 0x000000, "Member 'MenuAnchorWidget_GetWidgetToFocus::ReturnValue' has a wrong offset!");
 
-// Function BrickRigs.ModHook.OnCharacterBeginPlay
-// 0x0008 (0x0008 - 0x0000)
-struct ModHook_OnCharacterBeginPlay final
-{
-public:
-	class ABaseCharacter*                         Character;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(ModHook_OnCharacterBeginPlay) == 0x000008, "Wrong alignment on ModHook_OnCharacterBeginPlay");
-static_assert(sizeof(ModHook_OnCharacterBeginPlay) == 0x000008, "Wrong size on ModHook_OnCharacterBeginPlay");
-static_assert(offsetof(ModHook_OnCharacterBeginPlay, Character) == 0x000000, "Member 'ModHook_OnCharacterBeginPlay::Character' has a wrong offset!");
-
-// Function BrickRigs.ModHook.OnPlayerControllerBeginPlay
-// 0x0008 (0x0008 - 0x0000)
-struct ModHook_OnPlayerControllerBeginPlay final
-{
-public:
-	class ABasePlayerController*                  PC;                                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(ModHook_OnPlayerControllerBeginPlay) == 0x000008, "Wrong alignment on ModHook_OnPlayerControllerBeginPlay");
-static_assert(sizeof(ModHook_OnPlayerControllerBeginPlay) == 0x000008, "Wrong size on ModHook_OnPlayerControllerBeginPlay");
-static_assert(offsetof(ModHook_OnPlayerControllerBeginPlay, PC) == 0x000000, "Member 'ModHook_OnPlayerControllerBeginPlay::PC' has a wrong offset!");
-
-// Function BrickRigs.ModHook.OnSpectatorBeginPlay
-// 0x0008 (0x0008 - 0x0000)
-struct ModHook_OnSpectatorBeginPlay final
-{
-public:
-	class ABrickSpectatorPawn*                    Pawn;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(ModHook_OnSpectatorBeginPlay) == 0x000008, "Wrong alignment on ModHook_OnSpectatorBeginPlay");
-static_assert(sizeof(ModHook_OnSpectatorBeginPlay) == 0x000008, "Wrong size on ModHook_OnSpectatorBeginPlay");
-static_assert(offsetof(ModHook_OnSpectatorBeginPlay, Pawn) == 0x000000, "Member 'ModHook_OnSpectatorBeginPlay::Pawn' has a wrong offset!");
-
-// Function BrickRigs.ModHook.OnVehicleBeginPlay
-// 0x0008 (0x0008 - 0x0000)
-struct ModHook_OnVehicleBeginPlay final
-{
-public:
-	class ABrickVehicle*                          Vehicle;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(ModHook_OnVehicleBeginPlay) == 0x000008, "Wrong alignment on ModHook_OnVehicleBeginPlay");
-static_assert(sizeof(ModHook_OnVehicleBeginPlay) == 0x000008, "Wrong size on ModHook_OnVehicleBeginPlay");
-static_assert(offsetof(ModHook_OnVehicleBeginPlay, Vehicle) == 0x000000, "Member 'ModHook_OnVehicleBeginPlay::Vehicle' has a wrong offset!");
-
-// Function BrickRigs.ModHook.OverrideBillboardTexture
-// 0x0058 (0x0058 - 0x0000)
-struct ModHook_OverrideBillboardTexture final
-{
-public:
-	TSoftObjectPtr<class UTexture2D>              Texture;                                           // 0x0000(0x0028)(ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class ABillboard*                             Billboard;                                         // 0x0028(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSoftObjectPtr<class UTexture2D>              ReturnValue;                                       // 0x0030(0x0028)(Parm, OutParm, ReturnParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(ModHook_OverrideBillboardTexture) == 0x000008, "Wrong alignment on ModHook_OverrideBillboardTexture");
-static_assert(sizeof(ModHook_OverrideBillboardTexture) == 0x000058, "Wrong size on ModHook_OverrideBillboardTexture");
-static_assert(offsetof(ModHook_OverrideBillboardTexture, Texture) == 0x000000, "Member 'ModHook_OverrideBillboardTexture::Texture' has a wrong offset!");
-static_assert(offsetof(ModHook_OverrideBillboardTexture, Billboard) == 0x000028, "Member 'ModHook_OverrideBillboardTexture::Billboard' has a wrong offset!");
-static_assert(offsetof(ModHook_OverrideBillboardTexture, ReturnValue) == 0x000030, "Member 'ModHook_OverrideBillboardTexture::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.ModHook.OverrideCharacterLoadout
-// 0x0028 (0x0028 - 0x0000)
-struct ModHook_OverrideCharacterLoadout final
-{
-public:
-	struct FInventoryLoadout                      Loadout;                                           // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	class ABaseCharacter*                         Character;                                         // 0x0010(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FInventoryLoadout                      ReturnValue;                                       // 0x0018(0x0010)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(ModHook_OverrideCharacterLoadout) == 0x000008, "Wrong alignment on ModHook_OverrideCharacterLoadout");
-static_assert(sizeof(ModHook_OverrideCharacterLoadout) == 0x000028, "Wrong size on ModHook_OverrideCharacterLoadout");
-static_assert(offsetof(ModHook_OverrideCharacterLoadout, Loadout) == 0x000000, "Member 'ModHook_OverrideCharacterLoadout::Loadout' has a wrong offset!");
-static_assert(offsetof(ModHook_OverrideCharacterLoadout, Character) == 0x000010, "Member 'ModHook_OverrideCharacterLoadout::Character' has a wrong offset!");
-static_assert(offsetof(ModHook_OverrideCharacterLoadout, ReturnValue) == 0x000018, "Member 'ModHook_OverrideCharacterLoadout::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.ModHook.OverrideGameModeClass
-// 0x0040 (0x0040 - 0x0000)
-struct ModHook_OverrideGameModeClass final
-{
-public:
-	TSubclassOf<class AGameModeBase>              GameModeClass;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 MapName;                                           // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Options;                                           // 0x0018(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 Portal;                                            // 0x0028(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSubclassOf<class AGameModeBase>              ReturnValue;                                       // 0x0038(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(ModHook_OverrideGameModeClass) == 0x000008, "Wrong alignment on ModHook_OverrideGameModeClass");
-static_assert(sizeof(ModHook_OverrideGameModeClass) == 0x000040, "Wrong size on ModHook_OverrideGameModeClass");
-static_assert(offsetof(ModHook_OverrideGameModeClass, GameModeClass) == 0x000000, "Member 'ModHook_OverrideGameModeClass::GameModeClass' has a wrong offset!");
-static_assert(offsetof(ModHook_OverrideGameModeClass, MapName) == 0x000008, "Member 'ModHook_OverrideGameModeClass::MapName' has a wrong offset!");
-static_assert(offsetof(ModHook_OverrideGameModeClass, Options) == 0x000018, "Member 'ModHook_OverrideGameModeClass::Options' has a wrong offset!");
-static_assert(offsetof(ModHook_OverrideGameModeClass, Portal) == 0x000028, "Member 'ModHook_OverrideGameModeClass::Portal' has a wrong offset!");
-static_assert(offsetof(ModHook_OverrideGameModeClass, ReturnValue) == 0x000038, "Member 'ModHook_OverrideGameModeClass::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.ModHook.OverrideGameStateClass
-// 0x0010 (0x0010 - 0x0000)
-struct ModHook_OverrideGameStateClass final
-{
-public:
-	TSubclassOf<class AGameStateBase>             GameStateClass;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSubclassOf<class AGameStateBase>             ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(ModHook_OverrideGameStateClass) == 0x000008, "Wrong alignment on ModHook_OverrideGameStateClass");
-static_assert(sizeof(ModHook_OverrideGameStateClass) == 0x000010, "Wrong size on ModHook_OverrideGameStateClass");
-static_assert(offsetof(ModHook_OverrideGameStateClass, GameStateClass) == 0x000000, "Member 'ModHook_OverrideGameStateClass::GameStateClass' has a wrong offset!");
-static_assert(offsetof(ModHook_OverrideGameStateClass, ReturnValue) == 0x000008, "Member 'ModHook_OverrideGameStateClass::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.ModHook.OverrideLoadoutContainerItems
+// Function BrickRigs.LegacyBuilding.ConstructBuildingPart
 // 0x0020 (0x0020 - 0x0000)
-struct ModHook_OverrideLoadoutContainerItems final
+struct LegacyBuilding_ConstructBuildingPart final
 {
 public:
-	TArray<TSubclassOf<class AInventoryItem>>     ItemClasses;                                       // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, UObjectWrapper, NativeAccessSpecifierPublic)
-	TArray<TSubclassOf<class AInventoryItem>>     ReturnValue;                                       // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, UObjectWrapper, NativeAccessSpecifierPublic)
+	int32                                         NumX;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         NumY;                                              // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Floors;                                            // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                Location;                                          // 0x000C(0x000C)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UBuildingPart*                          ReturnValue;                                       // 0x0018(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(ModHook_OverrideLoadoutContainerItems) == 0x000008, "Wrong alignment on ModHook_OverrideLoadoutContainerItems");
-static_assert(sizeof(ModHook_OverrideLoadoutContainerItems) == 0x000020, "Wrong size on ModHook_OverrideLoadoutContainerItems");
-static_assert(offsetof(ModHook_OverrideLoadoutContainerItems, ItemClasses) == 0x000000, "Member 'ModHook_OverrideLoadoutContainerItems::ItemClasses' has a wrong offset!");
-static_assert(offsetof(ModHook_OverrideLoadoutContainerItems, ReturnValue) == 0x000010, "Member 'ModHook_OverrideLoadoutContainerItems::ReturnValue' has a wrong offset!");
+static_assert(alignof(LegacyBuilding_ConstructBuildingPart) == 0x000008, "Wrong alignment on LegacyBuilding_ConstructBuildingPart");
+static_assert(sizeof(LegacyBuilding_ConstructBuildingPart) == 0x000020, "Wrong size on LegacyBuilding_ConstructBuildingPart");
+static_assert(offsetof(LegacyBuilding_ConstructBuildingPart, NumX) == 0x000000, "Member 'LegacyBuilding_ConstructBuildingPart::NumX' has a wrong offset!");
+static_assert(offsetof(LegacyBuilding_ConstructBuildingPart, NumY) == 0x000004, "Member 'LegacyBuilding_ConstructBuildingPart::NumY' has a wrong offset!");
+static_assert(offsetof(LegacyBuilding_ConstructBuildingPart, Floors) == 0x000008, "Member 'LegacyBuilding_ConstructBuildingPart::Floors' has a wrong offset!");
+static_assert(offsetof(LegacyBuilding_ConstructBuildingPart, Location) == 0x00000C, "Member 'LegacyBuilding_ConstructBuildingPart::Location' has a wrong offset!");
+static_assert(offsetof(LegacyBuilding_ConstructBuildingPart, ReturnValue) == 0x000018, "Member 'LegacyBuilding_ConstructBuildingPart::ReturnValue' has a wrong offset!");
 
-// Function BrickRigs.ModHook.OverrideLoadSubLevel
-// 0x0028 (0x0028 - 0x0000)
-struct ModHook_OverrideLoadSubLevel final
-{
-public:
-	bool                                          bLoadLevel;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FString                                 LevelName;                                         // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UGameModeInfo*                          GameMode;                                          // 0x0018(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0020(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(ModHook_OverrideLoadSubLevel) == 0x000008, "Wrong alignment on ModHook_OverrideLoadSubLevel");
-static_assert(sizeof(ModHook_OverrideLoadSubLevel) == 0x000028, "Wrong size on ModHook_OverrideLoadSubLevel");
-static_assert(offsetof(ModHook_OverrideLoadSubLevel, bLoadLevel) == 0x000000, "Member 'ModHook_OverrideLoadSubLevel::bLoadLevel' has a wrong offset!");
-static_assert(offsetof(ModHook_OverrideLoadSubLevel, LevelName) == 0x000008, "Member 'ModHook_OverrideLoadSubLevel::LevelName' has a wrong offset!");
-static_assert(offsetof(ModHook_OverrideLoadSubLevel, GameMode) == 0x000018, "Member 'ModHook_OverrideLoadSubLevel::GameMode' has a wrong offset!");
-static_assert(offsetof(ModHook_OverrideLoadSubLevel, ReturnValue) == 0x000020, "Member 'ModHook_OverrideLoadSubLevel::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.ModHook.OverrideMenu
-// 0x0018 (0x0018 - 0x0000)
-struct ModHook_OverrideMenu final
-{
-public:
-	class UMenuWidget*                            Widget;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   Context;                                           // 0x0008(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(ModHook_OverrideMenu) == 0x000008, "Wrong alignment on ModHook_OverrideMenu");
-static_assert(sizeof(ModHook_OverrideMenu) == 0x000018, "Wrong size on ModHook_OverrideMenu");
-static_assert(offsetof(ModHook_OverrideMenu, Widget) == 0x000000, "Member 'ModHook_OverrideMenu::Widget' has a wrong offset!");
-static_assert(offsetof(ModHook_OverrideMenu, Context) == 0x000008, "Member 'ModHook_OverrideMenu::Context' has a wrong offset!");
-static_assert(offsetof(ModHook_OverrideMenu, ReturnValue) == 0x000010, "Member 'ModHook_OverrideMenu::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.ModHook.OverrideMenuSequence
-// 0x0050 (0x0050 - 0x0000)
-struct ModHook_OverrideMenuSequence final
-{
-public:
-	TSoftClassPtr<class UClass>                   SequenceClass;                                     // 0x0000(0x0028)(ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSoftClassPtr<class UClass>                   ReturnValue;                                       // 0x0028(0x0028)(Parm, OutParm, ReturnParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(ModHook_OverrideMenuSequence) == 0x000008, "Wrong alignment on ModHook_OverrideMenuSequence");
-static_assert(sizeof(ModHook_OverrideMenuSequence) == 0x000050, "Wrong size on ModHook_OverrideMenuSequence");
-static_assert(offsetof(ModHook_OverrideMenuSequence, SequenceClass) == 0x000000, "Member 'ModHook_OverrideMenuSequence::SequenceClass' has a wrong offset!");
-static_assert(offsetof(ModHook_OverrideMenuSequence, ReturnValue) == 0x000028, "Member 'ModHook_OverrideMenuSequence::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.ModHook.OverrideMenuWorldSetupParams
-// 0x0060 (0x0060 - 0x0000)
-struct ModHook_OverrideMenuWorldSetupParams final
-{
-public:
-	struct FWorldSetupParams                      Params_0;                                          // 0x0000(0x0030)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	struct FWorldSetupParams                      ReturnValue;                                       // 0x0030(0x0030)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(ModHook_OverrideMenuWorldSetupParams) == 0x000008, "Wrong alignment on ModHook_OverrideMenuWorldSetupParams");
-static_assert(sizeof(ModHook_OverrideMenuWorldSetupParams) == 0x000060, "Wrong size on ModHook_OverrideMenuWorldSetupParams");
-static_assert(offsetof(ModHook_OverrideMenuWorldSetupParams, Params_0) == 0x000000, "Member 'ModHook_OverrideMenuWorldSetupParams::Params_0' has a wrong offset!");
-static_assert(offsetof(ModHook_OverrideMenuWorldSetupParams, ReturnValue) == 0x000030, "Member 'ModHook_OverrideMenuWorldSetupParams::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.ModHook.OverridePawnClass
-// 0x0018 (0x0018 - 0x0000)
-struct ModHook_OverridePawnClass final
-{
-public:
-	TSubclassOf<class APawn>                      PawnClass;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AController*                            Controller;                                        // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSubclassOf<class APawn>                      ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(ModHook_OverridePawnClass) == 0x000008, "Wrong alignment on ModHook_OverridePawnClass");
-static_assert(sizeof(ModHook_OverridePawnClass) == 0x000018, "Wrong size on ModHook_OverridePawnClass");
-static_assert(offsetof(ModHook_OverridePawnClass, PawnClass) == 0x000000, "Member 'ModHook_OverridePawnClass::PawnClass' has a wrong offset!");
-static_assert(offsetof(ModHook_OverridePawnClass, Controller) == 0x000008, "Member 'ModHook_OverridePawnClass::Controller' has a wrong offset!");
-static_assert(offsetof(ModHook_OverridePawnClass, ReturnValue) == 0x000010, "Member 'ModHook_OverridePawnClass::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.ModHook.OverridePlayerCameraManagerClass
-// 0x0018 (0x0018 - 0x0000)
-struct ModHook_OverridePlayerCameraManagerClass final
-{
-public:
-	TSubclassOf<class APlayerCameraManager>       PlayerCameraManagerClass;                          // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class ABasePlayerController*                  PC;                                                // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSubclassOf<class APlayerCameraManager>       ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(ModHook_OverridePlayerCameraManagerClass) == 0x000008, "Wrong alignment on ModHook_OverridePlayerCameraManagerClass");
-static_assert(sizeof(ModHook_OverridePlayerCameraManagerClass) == 0x000018, "Wrong size on ModHook_OverridePlayerCameraManagerClass");
-static_assert(offsetof(ModHook_OverridePlayerCameraManagerClass, PlayerCameraManagerClass) == 0x000000, "Member 'ModHook_OverridePlayerCameraManagerClass::PlayerCameraManagerClass' has a wrong offset!");
-static_assert(offsetof(ModHook_OverridePlayerCameraManagerClass, PC) == 0x000008, "Member 'ModHook_OverridePlayerCameraManagerClass::PC' has a wrong offset!");
-static_assert(offsetof(ModHook_OverridePlayerCameraManagerClass, ReturnValue) == 0x000010, "Member 'ModHook_OverridePlayerCameraManagerClass::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.ModHook.OverridePlayerControllerClass
+// Function BrickRigs.LegacyBuilding.ConstructFlatRoof
 // 0x0010 (0x0010 - 0x0000)
-struct ModHook_OverridePlayerControllerClass final
+struct LegacyBuilding_ConstructFlatRoof final
 {
 public:
-	TSubclassOf<class APlayerController>          PlayerControllerClass;                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSubclassOf<class APlayerController>          ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UBuildingPart*                          Part;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Mesh;                                              // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(ModHook_OverridePlayerControllerClass) == 0x000008, "Wrong alignment on ModHook_OverridePlayerControllerClass");
-static_assert(sizeof(ModHook_OverridePlayerControllerClass) == 0x000010, "Wrong size on ModHook_OverridePlayerControllerClass");
-static_assert(offsetof(ModHook_OverridePlayerControllerClass, PlayerControllerClass) == 0x000000, "Member 'ModHook_OverridePlayerControllerClass::PlayerControllerClass' has a wrong offset!");
-static_assert(offsetof(ModHook_OverridePlayerControllerClass, ReturnValue) == 0x000008, "Member 'ModHook_OverridePlayerControllerClass::ReturnValue' has a wrong offset!");
+static_assert(alignof(LegacyBuilding_ConstructFlatRoof) == 0x000008, "Wrong alignment on LegacyBuilding_ConstructFlatRoof");
+static_assert(sizeof(LegacyBuilding_ConstructFlatRoof) == 0x000010, "Wrong size on LegacyBuilding_ConstructFlatRoof");
+static_assert(offsetof(LegacyBuilding_ConstructFlatRoof, Part) == 0x000000, "Member 'LegacyBuilding_ConstructFlatRoof::Part' has a wrong offset!");
+static_assert(offsetof(LegacyBuilding_ConstructFlatRoof, Mesh) == 0x000008, "Member 'LegacyBuilding_ConstructFlatRoof::Mesh' has a wrong offset!");
 
-// Function BrickRigs.ModHook.OverrideReplayPlayerControllerClass
+// Function BrickRigs.LegacyBuilding.ConstructIndustrialRoof
 // 0x0010 (0x0010 - 0x0000)
-struct ModHook_OverrideReplayPlayerControllerClass final
+struct LegacyBuilding_ConstructIndustrialRoof final
 {
 public:
-	TSubclassOf<class APlayerController>          PlayerControllerClass;                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSubclassOf<class APlayerController>          ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UBuildingPart*                          Part;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         RoofSlopeMesh;                                     // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         RoofMesh;                                          // 0x0009(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         WallMesh;                                          // 0x000A(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_B[0x5];                                        // 0x000B(0x0005)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(ModHook_OverrideReplayPlayerControllerClass) == 0x000008, "Wrong alignment on ModHook_OverrideReplayPlayerControllerClass");
-static_assert(sizeof(ModHook_OverrideReplayPlayerControllerClass) == 0x000010, "Wrong size on ModHook_OverrideReplayPlayerControllerClass");
-static_assert(offsetof(ModHook_OverrideReplayPlayerControllerClass, PlayerControllerClass) == 0x000000, "Member 'ModHook_OverrideReplayPlayerControllerClass::PlayerControllerClass' has a wrong offset!");
-static_assert(offsetof(ModHook_OverrideReplayPlayerControllerClass, ReturnValue) == 0x000008, "Member 'ModHook_OverrideReplayPlayerControllerClass::ReturnValue' has a wrong offset!");
+static_assert(alignof(LegacyBuilding_ConstructIndustrialRoof) == 0x000008, "Wrong alignment on LegacyBuilding_ConstructIndustrialRoof");
+static_assert(sizeof(LegacyBuilding_ConstructIndustrialRoof) == 0x000010, "Wrong size on LegacyBuilding_ConstructIndustrialRoof");
+static_assert(offsetof(LegacyBuilding_ConstructIndustrialRoof, Part) == 0x000000, "Member 'LegacyBuilding_ConstructIndustrialRoof::Part' has a wrong offset!");
+static_assert(offsetof(LegacyBuilding_ConstructIndustrialRoof, RoofSlopeMesh) == 0x000008, "Member 'LegacyBuilding_ConstructIndustrialRoof::RoofSlopeMesh' has a wrong offset!");
+static_assert(offsetof(LegacyBuilding_ConstructIndustrialRoof, RoofMesh) == 0x000009, "Member 'LegacyBuilding_ConstructIndustrialRoof::RoofMesh' has a wrong offset!");
+static_assert(offsetof(LegacyBuilding_ConstructIndustrialRoof, WallMesh) == 0x00000A, "Member 'LegacyBuilding_ConstructIndustrialRoof::WallMesh' has a wrong offset!");
 
-// Function BrickRigs.ModHook.OverrideSpectatorClass
+// Function BrickRigs.LegacyBuilding.ConstructRoof
 // 0x0010 (0x0010 - 0x0000)
-struct ModHook_OverrideSpectatorClass final
+struct LegacyBuilding_ConstructRoof final
 {
 public:
-	TSubclassOf<class ASpectatorPawn>             SpectatorClass;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSubclassOf<class ASpectatorPawn>             ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UBuildingPart*                          Part;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         RoofGableMesh;                                     // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         RoofMesh;                                          // 0x0009(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bRotate;                                           // 0x000A(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_B[0x5];                                        // 0x000B(0x0005)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(ModHook_OverrideSpectatorClass) == 0x000008, "Wrong alignment on ModHook_OverrideSpectatorClass");
-static_assert(sizeof(ModHook_OverrideSpectatorClass) == 0x000010, "Wrong size on ModHook_OverrideSpectatorClass");
-static_assert(offsetof(ModHook_OverrideSpectatorClass, SpectatorClass) == 0x000000, "Member 'ModHook_OverrideSpectatorClass::SpectatorClass' has a wrong offset!");
-static_assert(offsetof(ModHook_OverrideSpectatorClass, ReturnValue) == 0x000008, "Member 'ModHook_OverrideSpectatorClass::ReturnValue' has a wrong offset!");
+static_assert(alignof(LegacyBuilding_ConstructRoof) == 0x000008, "Wrong alignment on LegacyBuilding_ConstructRoof");
+static_assert(sizeof(LegacyBuilding_ConstructRoof) == 0x000010, "Wrong size on LegacyBuilding_ConstructRoof");
+static_assert(offsetof(LegacyBuilding_ConstructRoof, Part) == 0x000000, "Member 'LegacyBuilding_ConstructRoof::Part' has a wrong offset!");
+static_assert(offsetof(LegacyBuilding_ConstructRoof, RoofGableMesh) == 0x000008, "Member 'LegacyBuilding_ConstructRoof::RoofGableMesh' has a wrong offset!");
+static_assert(offsetof(LegacyBuilding_ConstructRoof, RoofMesh) == 0x000009, "Member 'LegacyBuilding_ConstructRoof::RoofMesh' has a wrong offset!");
+static_assert(offsetof(LegacyBuilding_ConstructRoof, bRotate) == 0x00000A, "Member 'LegacyBuilding_ConstructRoof::bRotate' has a wrong offset!");
 
-// Function BrickRigs.ModHook.OverrideTrainClass
+// Function BrickRigs.LegacyBuilding.SpawnBuildingPart
+// 0x0008 (0x0008 - 0x0000)
+struct LegacyBuilding_SpawnBuildingPart final
+{
+public:
+	class UBuildingPart*                          Part;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(LegacyBuilding_SpawnBuildingPart) == 0x000008, "Wrong alignment on LegacyBuilding_SpawnBuildingPart");
+static_assert(sizeof(LegacyBuilding_SpawnBuildingPart) == 0x000008, "Wrong size on LegacyBuilding_SpawnBuildingPart");
+static_assert(offsetof(LegacyBuilding_SpawnBuildingPart, Part) == 0x000000, "Member 'LegacyBuilding_SpawnBuildingPart::Part' has a wrong offset!");
+
+// Function BrickRigs.PropertyWidget.UpdateIsReadOnly
+// 0x0001 (0x0001 - 0x0000)
+struct PropertyWidget_UpdateIsReadOnly final
+{
+public:
+	bool                                          bNewReadOnly;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(PropertyWidget_UpdateIsReadOnly) == 0x000001, "Wrong alignment on PropertyWidget_UpdateIsReadOnly");
+static_assert(sizeof(PropertyWidget_UpdateIsReadOnly) == 0x000001, "Wrong size on PropertyWidget_UpdateIsReadOnly");
+static_assert(offsetof(PropertyWidget_UpdateIsReadOnly, bNewReadOnly) == 0x000000, "Member 'PropertyWidget_UpdateIsReadOnly::bNewReadOnly' has a wrong offset!");
+
+// Function BrickRigs.PropertyWidget.GetFocusedSubProperty
 // 0x0010 (0x0010 - 0x0000)
-struct ModHook_OverrideTrainClass final
+struct PropertyWidget_GetFocusedSubProperty final
 {
 public:
-	TSubclassOf<class ATrain>                     TrainClass;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSubclassOf<class ATrain>                     ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FWidgetPathWrapper                     WidgetPath;                                        // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class FName                                   ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(ModHook_OverrideTrainClass) == 0x000008, "Wrong alignment on ModHook_OverrideTrainClass");
-static_assert(sizeof(ModHook_OverrideTrainClass) == 0x000010, "Wrong size on ModHook_OverrideTrainClass");
-static_assert(offsetof(ModHook_OverrideTrainClass, TrainClass) == 0x000000, "Member 'ModHook_OverrideTrainClass::TrainClass' has a wrong offset!");
-static_assert(offsetof(ModHook_OverrideTrainClass, ReturnValue) == 0x000008, "Member 'ModHook_OverrideTrainClass::ReturnValue' has a wrong offset!");
+static_assert(alignof(PropertyWidget_GetFocusedSubProperty) == 0x000008, "Wrong alignment on PropertyWidget_GetFocusedSubProperty");
+static_assert(sizeof(PropertyWidget_GetFocusedSubProperty) == 0x000010, "Wrong size on PropertyWidget_GetFocusedSubProperty");
+static_assert(offsetof(PropertyWidget_GetFocusedSubProperty, WidgetPath) == 0x000000, "Member 'PropertyWidget_GetFocusedSubProperty::WidgetPath' has a wrong offset!");
+static_assert(offsetof(PropertyWidget_GetFocusedSubProperty, ReturnValue) == 0x000008, "Member 'PropertyWidget_GetFocusedSubProperty::ReturnValue' has a wrong offset!");
 
-// Function BrickRigs.ModHook.OverrideVehicleClass
-// 0x0130 (0x0130 - 0x0000)
-struct ModHook_OverrideVehicleClass final
-{
-public:
-	TSubclassOf<class ABrickVehicle>              VehicleClass;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class ABrickPlayerController*                 PC;                                                // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FPlayerSpawnRequest                    SpawnRequest;                                      // 0x0010(0x0118)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	TSubclassOf<class ABrickVehicle>              ReturnValue;                                       // 0x0128(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(ModHook_OverrideVehicleClass) == 0x000008, "Wrong alignment on ModHook_OverrideVehicleClass");
-static_assert(sizeof(ModHook_OverrideVehicleClass) == 0x000130, "Wrong size on ModHook_OverrideVehicleClass");
-static_assert(offsetof(ModHook_OverrideVehicleClass, VehicleClass) == 0x000000, "Member 'ModHook_OverrideVehicleClass::VehicleClass' has a wrong offset!");
-static_assert(offsetof(ModHook_OverrideVehicleClass, PC) == 0x000008, "Member 'ModHook_OverrideVehicleClass::PC' has a wrong offset!");
-static_assert(offsetof(ModHook_OverrideVehicleClass, SpawnRequest) == 0x000010, "Member 'ModHook_OverrideVehicleClass::SpawnRequest' has a wrong offset!");
-static_assert(offsetof(ModHook_OverrideVehicleClass, ReturnValue) == 0x000128, "Member 'ModHook_OverrideVehicleClass::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.ModHook.PostSpawnPawn
+// Function BrickRigs.PropertyWidget.GetPropertyContainerWidget
 // 0x0008 (0x0008 - 0x0000)
-struct ModHook_PostSpawnPawn final
+struct PropertyWidget_GetPropertyContainerWidget final
 {
 public:
-	class APawn*                                  Pawn;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UPropertyContainerWidget*               ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(ModHook_PostSpawnPawn) == 0x000008, "Wrong alignment on ModHook_PostSpawnPawn");
-static_assert(sizeof(ModHook_PostSpawnPawn) == 0x000008, "Wrong size on ModHook_PostSpawnPawn");
-static_assert(offsetof(ModHook_PostSpawnPawn, Pawn) == 0x000000, "Member 'ModHook_PostSpawnPawn::Pawn' has a wrong offset!");
+static_assert(alignof(PropertyWidget_GetPropertyContainerWidget) == 0x000008, "Wrong alignment on PropertyWidget_GetPropertyContainerWidget");
+static_assert(sizeof(PropertyWidget_GetPropertyContainerWidget) == 0x000008, "Wrong size on PropertyWidget_GetPropertyContainerWidget");
+static_assert(offsetof(PropertyWidget_GetPropertyContainerWidget, ReturnValue) == 0x000000, "Member 'PropertyWidget_GetPropertyContainerWidget::ReturnValue' has a wrong offset!");
 
-// Function BrickRigs.ModHook.PostSpawnPlayerController
+// Function BrickRigs.ObjectPropertyWidget.InitializeItem
+// 0x0148 (0x0148 - 0x0000)
+struct ObjectPropertyWidget_InitializeItem final
+{
+public:
+	int32                                         Item;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FBrickComboBoxItemParams               OutParams;                                         // 0x0008(0x0140)(Parm, OutParm, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ObjectPropertyWidget_InitializeItem) == 0x000008, "Wrong alignment on ObjectPropertyWidget_InitializeItem");
+static_assert(sizeof(ObjectPropertyWidget_InitializeItem) == 0x000148, "Wrong size on ObjectPropertyWidget_InitializeItem");
+static_assert(offsetof(ObjectPropertyWidget_InitializeItem, Item) == 0x000000, "Member 'ObjectPropertyWidget_InitializeItem::Item' has a wrong offset!");
+static_assert(offsetof(ObjectPropertyWidget_InitializeItem, OutParams) == 0x000008, "Member 'ObjectPropertyWidget_InitializeItem::OutParams' has a wrong offset!");
+
+// Function BrickRigs.ObjectPropertyWidget.OnItemSelected
 // 0x0008 (0x0008 - 0x0000)
-struct ModHook_PostSpawnPlayerController final
+struct ObjectPropertyWidget_OnItemSelected final
 {
 public:
-	class APlayerController*                      PC;                                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Item;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EValueChangedEventType                        EventType;                                         // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(ModHook_PostSpawnPlayerController) == 0x000008, "Wrong alignment on ModHook_PostSpawnPlayerController");
-static_assert(sizeof(ModHook_PostSpawnPlayerController) == 0x000008, "Wrong size on ModHook_PostSpawnPlayerController");
-static_assert(offsetof(ModHook_PostSpawnPlayerController, PC) == 0x000000, "Member 'ModHook_PostSpawnPlayerController::PC' has a wrong offset!");
-
-// Function BrickRigs.ModHook.PostSpawnSpectatorPawn
-// 0x0008 (0x0008 - 0x0000)
-struct ModHook_PostSpawnSpectatorPawn final
-{
-public:
-	class ASpectatorPawn*                         Pawn;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(ModHook_PostSpawnSpectatorPawn) == 0x000008, "Wrong alignment on ModHook_PostSpawnSpectatorPawn");
-static_assert(sizeof(ModHook_PostSpawnSpectatorPawn) == 0x000008, "Wrong size on ModHook_PostSpawnSpectatorPawn");
-static_assert(offsetof(ModHook_PostSpawnSpectatorPawn, Pawn) == 0x000000, "Member 'ModHook_PostSpawnSpectatorPawn::Pawn' has a wrong offset!");
-
-// Function BrickRigs.ModHook.PostSpawnVehicle
-// 0x0008 (0x0008 - 0x0000)
-struct ModHook_PostSpawnVehicle final
-{
-public:
-	class ABrickVehicle*                          Vehicle;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(ModHook_PostSpawnVehicle) == 0x000008, "Wrong alignment on ModHook_PostSpawnVehicle");
-static_assert(sizeof(ModHook_PostSpawnVehicle) == 0x000008, "Wrong size on ModHook_PostSpawnVehicle");
-static_assert(offsetof(ModHook_PostSpawnVehicle, Vehicle) == 0x000000, "Member 'ModHook_PostSpawnVehicle::Vehicle' has a wrong offset!");
-
-// Function BrickRigs.BaseInputComponent.LookRight
-// 0x0004 (0x0004 - 0x0000)
-struct BaseInputComponent_LookRight final
-{
-public:
-	float                                         Val;                                               // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BaseInputComponent_LookRight) == 0x000004, "Wrong alignment on BaseInputComponent_LookRight");
-static_assert(sizeof(BaseInputComponent_LookRight) == 0x000004, "Wrong size on BaseInputComponent_LookRight");
-static_assert(offsetof(BaseInputComponent_LookRight, Val) == 0x000000, "Member 'BaseInputComponent_LookRight::Val' has a wrong offset!");
-
-// Function BrickRigs.BaseInputComponent.LookUp
-// 0x0004 (0x0004 - 0x0000)
-struct BaseInputComponent_LookUp final
-{
-public:
-	float                                         Val;                                               // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BaseInputComponent_LookUp) == 0x000004, "Wrong alignment on BaseInputComponent_LookUp");
-static_assert(sizeof(BaseInputComponent_LookUp) == 0x000004, "Wrong size on BaseInputComponent_LookUp");
-static_assert(offsetof(BaseInputComponent_LookUp, Val) == 0x000000, "Member 'BaseInputComponent_LookUp::Val' has a wrong offset!");
-
-// Function BrickRigs.BaseInputComponent.MouseMoveRight
-// 0x0004 (0x0004 - 0x0000)
-struct BaseInputComponent_MouseMoveRight final
-{
-public:
-	float                                         Val;                                               // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BaseInputComponent_MouseMoveRight) == 0x000004, "Wrong alignment on BaseInputComponent_MouseMoveRight");
-static_assert(sizeof(BaseInputComponent_MouseMoveRight) == 0x000004, "Wrong size on BaseInputComponent_MouseMoveRight");
-static_assert(offsetof(BaseInputComponent_MouseMoveRight, Val) == 0x000000, "Member 'BaseInputComponent_MouseMoveRight::Val' has a wrong offset!");
-
-// Function BrickRigs.BaseInputComponent.MouseMoveUp
-// 0x0004 (0x0004 - 0x0000)
-struct BaseInputComponent_MouseMoveUp final
-{
-public:
-	float                                         Val;                                               // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BaseInputComponent_MouseMoveUp) == 0x000004, "Wrong alignment on BaseInputComponent_MouseMoveUp");
-static_assert(sizeof(BaseInputComponent_MouseMoveUp) == 0x000004, "Wrong size on BaseInputComponent_MouseMoveUp");
-static_assert(offsetof(BaseInputComponent_MouseMoveUp, Val) == 0x000000, "Member 'BaseInputComponent_MouseMoveUp::Val' has a wrong offset!");
-
-// Function BrickRigs.BaseInputComponent.SpeedUp
-// 0x0004 (0x0004 - 0x0000)
-struct BaseInputComponent_SpeedUp final
-{
-public:
-	float                                         Val;                                               // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BaseInputComponent_SpeedUp) == 0x000004, "Wrong alignment on BaseInputComponent_SpeedUp");
-static_assert(sizeof(BaseInputComponent_SpeedUp) == 0x000004, "Wrong size on BaseInputComponent_SpeedUp");
-static_assert(offsetof(BaseInputComponent_SpeedUp, Val) == 0x000000, "Member 'BaseInputComponent_SpeedUp::Val' has a wrong offset!");
-
-// Function BrickRigs.BaseInputComponent.ZoomIn
-// 0x0004 (0x0004 - 0x0000)
-struct BaseInputComponent_ZoomIn final
-{
-public:
-	float                                         Val;                                               // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BaseInputComponent_ZoomIn) == 0x000004, "Wrong alignment on BaseInputComponent_ZoomIn");
-static_assert(sizeof(BaseInputComponent_ZoomIn) == 0x000004, "Wrong size on BaseInputComponent_ZoomIn");
-static_assert(offsetof(BaseInputComponent_ZoomIn, Val) == 0x000000, "Member 'BaseInputComponent_ZoomIn::Val' has a wrong offset!");
-
-// Function BrickRigs.BaseInputComponent.GetCycleHUDVisibilityValueText
-// 0x0018 (0x0018 - 0x0000)
-struct BaseInputComponent_GetCycleHUDVisibilityValueText final
-{
-public:
-	class FText                                   ReturnValue;                                       // 0x0000(0x0018)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BaseInputComponent_GetCycleHUDVisibilityValueText) == 0x000008, "Wrong alignment on BaseInputComponent_GetCycleHUDVisibilityValueText");
-static_assert(sizeof(BaseInputComponent_GetCycleHUDVisibilityValueText) == 0x000018, "Wrong size on BaseInputComponent_GetCycleHUDVisibilityValueText");
-static_assert(offsetof(BaseInputComponent_GetCycleHUDVisibilityValueText, ReturnValue) == 0x000000, "Member 'BaseInputComponent_GetCycleHUDVisibilityValueText::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.PawnInputComponent.GetDestroyPawnEnabled
-// 0x0002 (0x0002 - 0x0000)
-struct PawnInputComponent_GetDestroyPawnEnabled final
-{
-public:
-	bool                                          bInSecondaryAction;                                // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0001(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(PawnInputComponent_GetDestroyPawnEnabled) == 0x000001, "Wrong alignment on PawnInputComponent_GetDestroyPawnEnabled");
-static_assert(sizeof(PawnInputComponent_GetDestroyPawnEnabled) == 0x000002, "Wrong size on PawnInputComponent_GetDestroyPawnEnabled");
-static_assert(offsetof(PawnInputComponent_GetDestroyPawnEnabled, bInSecondaryAction) == 0x000000, "Member 'PawnInputComponent_GetDestroyPawnEnabled::bInSecondaryAction' has a wrong offset!");
-static_assert(offsetof(PawnInputComponent_GetDestroyPawnEnabled, ReturnValue) == 0x000001, "Member 'PawnInputComponent_GetDestroyPawnEnabled::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.PawnInputComponent.GetInventoryEnabled
-// 0x0002 (0x0002 - 0x0000)
-struct PawnInputComponent_GetInventoryEnabled final
-{
-public:
-	bool                                          bInSecondaryAction;                                // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0001(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(PawnInputComponent_GetInventoryEnabled) == 0x000001, "Wrong alignment on PawnInputComponent_GetInventoryEnabled");
-static_assert(sizeof(PawnInputComponent_GetInventoryEnabled) == 0x000002, "Wrong size on PawnInputComponent_GetInventoryEnabled");
-static_assert(offsetof(PawnInputComponent_GetInventoryEnabled, bInSecondaryAction) == 0x000000, "Member 'PawnInputComponent_GetInventoryEnabled::bInSecondaryAction' has a wrong offset!");
-static_assert(offsetof(PawnInputComponent_GetInventoryEnabled, ReturnValue) == 0x000001, "Member 'PawnInputComponent_GetInventoryEnabled::ReturnValue' has a wrong offset!");
+static_assert(alignof(ObjectPropertyWidget_OnItemSelected) == 0x000004, "Wrong alignment on ObjectPropertyWidget_OnItemSelected");
+static_assert(sizeof(ObjectPropertyWidget_OnItemSelected) == 0x000008, "Wrong size on ObjectPropertyWidget_OnItemSelected");
+static_assert(offsetof(ObjectPropertyWidget_OnItemSelected, Item) == 0x000000, "Member 'ObjectPropertyWidget_OnItemSelected::Item' has a wrong offset!");
+static_assert(offsetof(ObjectPropertyWidget_OnItemSelected, EventType) == 0x000004, "Member 'ObjectPropertyWidget_OnItemSelected::EventType' has a wrong offset!");
 
 // Function BrickRigs.BrickComboBoxWidget.AddItemContainerWidget
 // 0x0010 (0x0010 - 0x0000)
@@ -2219,17 +2414,6 @@ static_assert(alignof(BrickComboBoxWidget_IsComboBoxExpanded) == 0x000001, "Wron
 static_assert(sizeof(BrickComboBoxWidget_IsComboBoxExpanded) == 0x000001, "Wrong size on BrickComboBoxWidget_IsComboBoxExpanded");
 static_assert(offsetof(BrickComboBoxWidget_IsComboBoxExpanded, ReturnValue) == 0x000000, "Member 'BrickComboBoxWidget_IsComboBoxExpanded::ReturnValue' has a wrong offset!");
 
-// Function BrickRigs.FlashSequenceItemWidget.UpdateIsLit
-// 0x0001 (0x0001 - 0x0000)
-struct FlashSequenceItemWidget_UpdateIsLit final
-{
-public:
-	bool                                          bNewLit;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FlashSequenceItemWidget_UpdateIsLit) == 0x000001, "Wrong alignment on FlashSequenceItemWidget_UpdateIsLit");
-static_assert(sizeof(FlashSequenceItemWidget_UpdateIsLit) == 0x000001, "Wrong size on FlashSequenceItemWidget_UpdateIsLit");
-static_assert(offsetof(FlashSequenceItemWidget_UpdateIsLit, bNewLit) == 0x000000, "Member 'FlashSequenceItemWidget_UpdateIsLit::bNewLit' has a wrong offset!");
-
 // Function BrickRigs.BrickVehicle.ConstructVehicle
 // 0x0100 (0x0100 - 0x0000)
 struct BrickVehicle_ConstructVehicle final
@@ -2280,17 +2464,6 @@ public:
 static_assert(alignof(BrickVehicle_Interact_ScrapVehicleFromMap) == 0x000008, "Wrong alignment on BrickVehicle_Interact_ScrapVehicleFromMap");
 static_assert(sizeof(BrickVehicle_Interact_ScrapVehicleFromMap) == 0x000008, "Wrong size on BrickVehicle_Interact_ScrapVehicleFromMap");
 static_assert(offsetof(BrickVehicle_Interact_ScrapVehicleFromMap, OtherPC) == 0x000000, "Member 'BrickVehicle_Interact_ScrapVehicleFromMap::OtherPC' has a wrong offset!");
-
-// Function BrickRigs.BrickVehicle.OnRep_FuelLevel
-// 0x0008 (0x0008 - 0x0000)
-struct BrickVehicle_OnRep_FuelLevel final
-{
-public:
-	struct FFuelLevel                             PrevFuelLevel;                                     // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickVehicle_OnRep_FuelLevel) == 0x000004, "Wrong alignment on BrickVehicle_OnRep_FuelLevel");
-static_assert(sizeof(BrickVehicle_OnRep_FuelLevel) == 0x000008, "Wrong size on BrickVehicle_OnRep_FuelLevel");
-static_assert(offsetof(BrickVehicle_OnRep_FuelLevel, PrevFuelLevel) == 0x000000, "Member 'BrickVehicle_OnRep_FuelLevel::PrevFuelLevel' has a wrong offset!");
 
 // Function BrickRigs.BrickVehicle.PlayHandlingSound
 // 0x0008 (0x0008 - 0x0000)
@@ -2389,6 +2562,17 @@ public:
 static_assert(alignof(BrickVehicle_SetPinMode) == 0x000001, "Wrong alignment on BrickVehicle_SetPinMode");
 static_assert(sizeof(BrickVehicle_SetPinMode) == 0x000001, "Wrong size on BrickVehicle_SetPinMode");
 static_assert(offsetof(BrickVehicle_SetPinMode, NewMode) == 0x000000, "Member 'BrickVehicle_SetPinMode::NewMode' has a wrong offset!");
+
+// Function BrickRigs.BrickVehicle.SetRelativeFuelLevel
+// 0x0004 (0x0004 - 0x0000)
+struct BrickVehicle_SetRelativeFuelLevel final
+{
+public:
+	float                                         NewLevel;                                          // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickVehicle_SetRelativeFuelLevel) == 0x000004, "Wrong alignment on BrickVehicle_SetRelativeFuelLevel");
+static_assert(sizeof(BrickVehicle_SetRelativeFuelLevel) == 0x000004, "Wrong size on BrickVehicle_SetRelativeFuelLevel");
+static_assert(offsetof(BrickVehicle_SetRelativeFuelLevel, NewLevel) == 0x000000, "Member 'BrickVehicle_SetRelativeFuelLevel::NewLevel' has a wrong offset!");
 
 // Function BrickRigs.BrickVehicle.GetAmmo
 // 0x0004 (0x0004 - 0x0000)
@@ -2610,6 +2794,17 @@ static_assert(alignof(BrickVehicle_GetVehicleComponent) == 0x000008, "Wrong alig
 static_assert(sizeof(BrickVehicle_GetVehicleComponent) == 0x000008, "Wrong size on BrickVehicle_GetVehicleComponent");
 static_assert(offsetof(BrickVehicle_GetVehicleComponent, ReturnValue) == 0x000000, "Member 'BrickVehicle_GetVehicleComponent::ReturnValue' has a wrong offset!");
 
+// Function BrickRigs.BrickVehicle.GetVehicleDisplayName
+// 0x0018 (0x0018 - 0x0000)
+struct BrickVehicle_GetVehicleDisplayName final
+{
+public:
+	class FText                                   ReturnValue;                                       // 0x0000(0x0018)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickVehicle_GetVehicleDisplayName) == 0x000008, "Wrong alignment on BrickVehicle_GetVehicleDisplayName");
+static_assert(sizeof(BrickVehicle_GetVehicleDisplayName) == 0x000018, "Wrong size on BrickVehicle_GetVehicleDisplayName");
+static_assert(offsetof(BrickVehicle_GetVehicleDisplayName, ReturnValue) == 0x000000, "Member 'BrickVehicle_GetVehicleDisplayName::ReturnValue' has a wrong offset!");
+
 // Function BrickRigs.BrickVehicle.GetVehicleFileInfo
 // 0x00E8 (0x00E8 - 0x0000)
 struct BrickVehicle_GetVehicleFileInfo final
@@ -2676,6 +2871,17 @@ static_assert(alignof(BrickVehicle_IsVehicleConstructed) == 0x000001, "Wrong ali
 static_assert(sizeof(BrickVehicle_IsVehicleConstructed) == 0x000001, "Wrong size on BrickVehicle_IsVehicleConstructed");
 static_assert(offsetof(BrickVehicle_IsVehicleConstructed, ReturnValue) == 0x000000, "Member 'BrickVehicle_IsVehicleConstructed::ReturnValue' has a wrong offset!");
 
+// Function BrickRigs.MyUserSettings.Get
+// 0x0008 (0x0008 - 0x0000)
+struct MyUserSettings_Get final
+{
+public:
+	class UMyUserSettings*                        ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(MyUserSettings_Get) == 0x000008, "Wrong alignment on MyUserSettings_Get");
+static_assert(sizeof(MyUserSettings_Get) == 0x000008, "Wrong size on MyUserSettings_Get");
+static_assert(offsetof(MyUserSettings_Get, ReturnValue) == 0x000000, "Member 'MyUserSettings_Get::ReturnValue' has a wrong offset!");
+
 // Function BrickRigs.Attachment.GetFirearm
 // 0x0008 (0x0008 - 0x0000)
 struct Attachment_GetFirearm final
@@ -2686,6 +2892,201 @@ public:
 static_assert(alignof(Attachment_GetFirearm) == 0x000008, "Wrong alignment on Attachment_GetFirearm");
 static_assert(sizeof(Attachment_GetFirearm) == 0x000008, "Wrong size on Attachment_GetFirearm");
 static_assert(offsetof(Attachment_GetFirearm, ReturnValue) == 0x000000, "Member 'Attachment_GetFirearm::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.ChatWidget.GetWidgetToFocus
+// 0x0008 (0x0008 - 0x0000)
+struct ChatWidget_GetWidgetToFocus final
+{
+public:
+	class UWidget*                                ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ChatWidget_GetWidgetToFocus) == 0x000008, "Wrong alignment on ChatWidget_GetWidgetToFocus");
+static_assert(sizeof(ChatWidget_GetWidgetToFocus) == 0x000008, "Wrong size on ChatWidget_GetWidgetToFocus");
+static_assert(offsetof(ChatWidget_GetWidgetToFocus, ReturnValue) == 0x000000, "Member 'ChatWidget_GetWidgetToFocus::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.ChatWidget.OnTextChanged
+// 0x0020 (0x0020 - 0x0000)
+struct ChatWidget_OnTextChanged final
+{
+public:
+	class FText                                   Text;                                              // 0x0000(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	EValueChangedEventType                        EventType;                                         // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(ChatWidget_OnTextChanged) == 0x000008, "Wrong alignment on ChatWidget_OnTextChanged");
+static_assert(sizeof(ChatWidget_OnTextChanged) == 0x000020, "Wrong size on ChatWidget_OnTextChanged");
+static_assert(offsetof(ChatWidget_OnTextChanged, Text) == 0x000000, "Member 'ChatWidget_OnTextChanged::Text' has a wrong offset!");
+static_assert(offsetof(ChatWidget_OnTextChanged, EventType) == 0x000018, "Member 'ChatWidget_OnTextChanged::EventType' has a wrong offset!");
+
+// Function BrickRigs.ChatWidget.UpdateIsFocused
+// 0x0001 (0x0001 - 0x0000)
+struct ChatWidget_UpdateIsFocused final
+{
+public:
+	bool                                          bNewFocused;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ChatWidget_UpdateIsFocused) == 0x000001, "Wrong alignment on ChatWidget_UpdateIsFocused");
+static_assert(sizeof(ChatWidget_UpdateIsFocused) == 0x000001, "Wrong size on ChatWidget_UpdateIsFocused");
+static_assert(offsetof(ChatWidget_UpdateIsFocused, bNewFocused) == 0x000000, "Member 'ChatWidget_UpdateIsFocused::bNewFocused' has a wrong offset!");
+
+// Function BrickRigs.ChatWidget.UpdateIsTyping
+// 0x0001 (0x0001 - 0x0000)
+struct ChatWidget_UpdateIsTyping final
+{
+public:
+	bool                                          bNewTyping;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ChatWidget_UpdateIsTyping) == 0x000001, "Wrong alignment on ChatWidget_UpdateIsTyping");
+static_assert(sizeof(ChatWidget_UpdateIsTyping) == 0x000001, "Wrong size on ChatWidget_UpdateIsTyping");
+static_assert(offsetof(ChatWidget_UpdateIsTyping, bNewTyping) == 0x000000, "Member 'ChatWidget_UpdateIsTyping::bNewTyping' has a wrong offset!");
+
+// Function BrickRigs.ChatWidget.UpdateScrollBoxVisibility
+// 0x0001 (0x0001 - 0x0000)
+struct ChatWidget_UpdateScrollBoxVisibility final
+{
+public:
+	bool                                          bNewVisible;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ChatWidget_UpdateScrollBoxVisibility) == 0x000001, "Wrong alignment on ChatWidget_UpdateScrollBoxVisibility");
+static_assert(sizeof(ChatWidget_UpdateScrollBoxVisibility) == 0x000001, "Wrong size on ChatWidget_UpdateScrollBoxVisibility");
+static_assert(offsetof(ChatWidget_UpdateScrollBoxVisibility, bNewVisible) == 0x000000, "Member 'ChatWidget_UpdateScrollBoxVisibility::bNewVisible' has a wrong offset!");
+
+// Function BrickRigs.MainWidgetBase.GetButtonPanel
+// 0x0008 (0x0008 - 0x0000)
+struct MainWidgetBase_GetButtonPanel final
+{
+public:
+	class UMenuButtonPanelWidget*                 ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(MainWidgetBase_GetButtonPanel) == 0x000008, "Wrong alignment on MainWidgetBase_GetButtonPanel");
+static_assert(sizeof(MainWidgetBase_GetButtonPanel) == 0x000008, "Wrong size on MainWidgetBase_GetButtonPanel");
+static_assert(offsetof(MainWidgetBase_GetButtonPanel, ReturnValue) == 0x000000, "Member 'MainWidgetBase_GetButtonPanel::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.MainWidgetBase.GetWidgetToFocus
+// 0x0008 (0x0008 - 0x0000)
+struct MainWidgetBase_GetWidgetToFocus final
+{
+public:
+	class UWidget*                                ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(MainWidgetBase_GetWidgetToFocus) == 0x000008, "Wrong alignment on MainWidgetBase_GetWidgetToFocus");
+static_assert(sizeof(MainWidgetBase_GetWidgetToFocus) == 0x000008, "Wrong size on MainWidgetBase_GetWidgetToFocus");
+static_assert(offsetof(MainWidgetBase_GetWidgetToFocus, ReturnValue) == 0x000000, "Member 'MainWidgetBase_GetWidgetToFocus::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.MainWidgetBase.GetWindowManager
+// 0x0008 (0x0008 - 0x0000)
+struct MainWidgetBase_GetWindowManager final
+{
+public:
+	class UWindowManagerWidget*                   ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(MainWidgetBase_GetWindowManager) == 0x000008, "Wrong alignment on MainWidgetBase_GetWindowManager");
+static_assert(sizeof(MainWidgetBase_GetWindowManager) == 0x000008, "Wrong size on MainWidgetBase_GetWindowManager");
+static_assert(offsetof(MainWidgetBase_GetWindowManager, ReturnValue) == 0x000000, "Member 'MainWidgetBase_GetWindowManager::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.LoadingScreenWidget.SetBackgroundColor
+// 0x0010 (0x0010 - 0x0000)
+struct LoadingScreenWidget_SetBackgroundColor final
+{
+public:
+	struct FLinearColor                           InColor;                                           // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(LoadingScreenWidget_SetBackgroundColor) == 0x000004, "Wrong alignment on LoadingScreenWidget_SetBackgroundColor");
+static_assert(sizeof(LoadingScreenWidget_SetBackgroundColor) == 0x000010, "Wrong size on LoadingScreenWidget_SetBackgroundColor");
+static_assert(offsetof(LoadingScreenWidget_SetBackgroundColor, InColor) == 0x000000, "Member 'LoadingScreenWidget_SetBackgroundColor::InColor' has a wrong offset!");
+
+// Function BrickRigs.LoadingScreenWidget.SetLoadingText
+// 0x0018 (0x0018 - 0x0000)
+struct LoadingScreenWidget_SetLoadingText final
+{
+public:
+	class FText                                   Text;                                              // 0x0000(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(LoadingScreenWidget_SetLoadingText) == 0x000008, "Wrong alignment on LoadingScreenWidget_SetLoadingText");
+static_assert(sizeof(LoadingScreenWidget_SetLoadingText) == 0x000018, "Wrong size on LoadingScreenWidget_SetLoadingText");
+static_assert(offsetof(LoadingScreenWidget_SetLoadingText, Text) == 0x000000, "Member 'LoadingScreenWidget_SetLoadingText::Text' has a wrong offset!");
+
+// Function BrickRigs.PhysicsConstraintConnection.OnConstraintBroken
+// 0x0004 (0x0004 - 0x0000)
+struct PhysicsConstraintConnection_OnConstraintBroken final
+{
+public:
+	int32                                         ConstraintIndex;                                   // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(PhysicsConstraintConnection_OnConstraintBroken) == 0x000004, "Wrong alignment on PhysicsConstraintConnection_OnConstraintBroken");
+static_assert(sizeof(PhysicsConstraintConnection_OnConstraintBroken) == 0x000004, "Wrong size on PhysicsConstraintConnection_OnConstraintBroken");
+static_assert(offsetof(PhysicsConstraintConnection_OnConstraintBroken, ConstraintIndex) == 0x000000, "Member 'PhysicsConstraintConnection_OnConstraintBroken::ConstraintIndex' has a wrong offset!");
+
+// Function BrickRigs.FuelTank.ShouldSpawnLeakOnHit
+// 0x008C (0x008C - 0x0000)
+struct FuelTank_ShouldSpawnLeakOnHit final
+{
+public:
+	struct FHitResult                             Hit;                                               // 0x0000(0x0088)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0088(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_89[0x3];                                       // 0x0089(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FuelTank_ShouldSpawnLeakOnHit) == 0x000004, "Wrong alignment on FuelTank_ShouldSpawnLeakOnHit");
+static_assert(sizeof(FuelTank_ShouldSpawnLeakOnHit) == 0x00008C, "Wrong size on FuelTank_ShouldSpawnLeakOnHit");
+static_assert(offsetof(FuelTank_ShouldSpawnLeakOnHit, Hit) == 0x000000, "Member 'FuelTank_ShouldSpawnLeakOnHit::Hit' has a wrong offset!");
+static_assert(offsetof(FuelTank_ShouldSpawnLeakOnHit, ReturnValue) == 0x000088, "Member 'FuelTank_ShouldSpawnLeakOnHit::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.BrickViewportClient.Get
+// 0x0010 (0x0010 - 0x0000)
+struct BrickViewportClient_Get final
+{
+public:
+	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UBrickViewportClient*                   ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickViewportClient_Get) == 0x000008, "Wrong alignment on BrickViewportClient_Get");
+static_assert(sizeof(BrickViewportClient_Get) == 0x000010, "Wrong size on BrickViewportClient_Get");
+static_assert(offsetof(BrickViewportClient_Get, WorldContextObject) == 0x000000, "Member 'BrickViewportClient_Get::WorldContextObject' has a wrong offset!");
+static_assert(offsetof(BrickViewportClient_Get, ReturnValue) == 0x000008, "Member 'BrickViewportClient_Get::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.MenuButtonWidget.SetColorStyle
+// 0x0001 (0x0001 - 0x0000)
+struct MenuButtonWidget_SetColorStyle final
+{
+public:
+	EBrickUIColorStyle                            InColorStyle;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(MenuButtonWidget_SetColorStyle) == 0x000001, "Wrong alignment on MenuButtonWidget_SetColorStyle");
+static_assert(sizeof(MenuButtonWidget_SetColorStyle) == 0x000001, "Wrong size on MenuButtonWidget_SetColorStyle");
+static_assert(offsetof(MenuButtonWidget_SetColorStyle, InColorStyle) == 0x000000, "Member 'MenuButtonWidget_SetColorStyle::InColorStyle' has a wrong offset!");
+
+// Function BrickRigs.MenuButtonWidget.SetDisplayIcon
+// 0x0004 (0x0004 - 0x0000)
+struct MenuButtonWidget_SetDisplayIcon final
+{
+public:
+	int32                                         InIconIndex;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(MenuButtonWidget_SetDisplayIcon) == 0x000004, "Wrong alignment on MenuButtonWidget_SetDisplayIcon");
+static_assert(sizeof(MenuButtonWidget_SetDisplayIcon) == 0x000004, "Wrong size on MenuButtonWidget_SetDisplayIcon");
+static_assert(offsetof(MenuButtonWidget_SetDisplayIcon, InIconIndex) == 0x000000, "Member 'MenuButtonWidget_SetDisplayIcon::InIconIndex' has a wrong offset!");
+
+// Function BrickRigs.MenuButtonWidget.SetDisplayText
+// 0x0018 (0x0018 - 0x0000)
+struct MenuButtonWidget_SetDisplayText final
+{
+public:
+	class FText                                   InText;                                            // 0x0000(0x0018)(Parm, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(MenuButtonWidget_SetDisplayText) == 0x000008, "Wrong alignment on MenuButtonWidget_SetDisplayText");
+static_assert(sizeof(MenuButtonWidget_SetDisplayText) == 0x000018, "Wrong size on MenuButtonWidget_SetDisplayText");
+static_assert(offsetof(MenuButtonWidget_SetDisplayText, InText) == 0x000000, "Member 'MenuButtonWidget_SetDisplayText::InText' has a wrong offset!");
+
+// Function BrickRigs.MenuButtonWidget.UpdateDisplayText
+// 0x0018 (0x0018 - 0x0000)
+struct MenuButtonWidget_UpdateDisplayText final
+{
+public:
+	class FText                                   InText;                                            // 0x0000(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(MenuButtonWidget_UpdateDisplayText) == 0x000008, "Wrong alignment on MenuButtonWidget_UpdateDisplayText");
+static_assert(sizeof(MenuButtonWidget_UpdateDisplayText) == 0x000018, "Wrong size on MenuButtonWidget_UpdateDisplayText");
+static_assert(offsetof(MenuButtonWidget_UpdateDisplayText, InText) == 0x000000, "Member 'MenuButtonWidget_UpdateDisplayText::InText' has a wrong offset!");
 
 // Function BrickRigs.MatchStateWidget.UpdateMatchState
 // 0x0020 (0x0020 - 0x0000)
@@ -2702,50 +3103,6 @@ static_assert(sizeof(MatchStateWidget_UpdateMatchState) == 0x000020, "Wrong size
 static_assert(offsetof(MatchStateWidget_UpdateMatchState, NewDisplayText) == 0x000000, "Member 'MatchStateWidget_UpdateMatchState::NewDisplayText' has a wrong offset!");
 static_assert(offsetof(MatchStateWidget_UpdateMatchState, NewColorStyle) == 0x000018, "Member 'MatchStateWidget_UpdateMatchState::NewColorStyle' has a wrong offset!");
 static_assert(offsetof(MatchStateWidget_UpdateMatchState, bFadeOut) == 0x000019, "Member 'MatchStateWidget_UpdateMatchState::bFadeOut' has a wrong offset!");
-
-// Function BrickRigs.PhysicsConstraintConnection.OnConstraintBroken
-// 0x0004 (0x0004 - 0x0000)
-struct PhysicsConstraintConnection_OnConstraintBroken final
-{
-public:
-	int32                                         ConstraintIndex;                                   // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(PhysicsConstraintConnection_OnConstraintBroken) == 0x000004, "Wrong alignment on PhysicsConstraintConnection_OnConstraintBroken");
-static_assert(sizeof(PhysicsConstraintConnection_OnConstraintBroken) == 0x000004, "Wrong size on PhysicsConstraintConnection_OnConstraintBroken");
-static_assert(offsetof(PhysicsConstraintConnection_OnConstraintBroken, ConstraintIndex) == 0x000000, "Member 'PhysicsConstraintConnection_OnConstraintBroken::ConstraintIndex' has a wrong offset!");
-
-// Function BrickRigs.Garage.Interact_EnterEditor
-// 0x0008 (0x0008 - 0x0000)
-struct Garage_Interact_EnterEditor final
-{
-public:
-	class ABrickPlayerController*                 PC;                                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(Garage_Interact_EnterEditor) == 0x000008, "Wrong alignment on Garage_Interact_EnterEditor");
-static_assert(sizeof(Garage_Interact_EnterEditor) == 0x000008, "Wrong size on Garage_Interact_EnterEditor");
-static_assert(offsetof(Garage_Interact_EnterEditor, PC) == 0x000000, "Member 'Garage_Interact_EnterEditor::PC' has a wrong offset!");
-
-// Function BrickRigs.Garage.Interact_Inventory
-// 0x0008 (0x0008 - 0x0000)
-struct Garage_Interact_Inventory final
-{
-public:
-	class ABrickPlayerController*                 PC;                                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(Garage_Interact_Inventory) == 0x000008, "Wrong alignment on Garage_Interact_Inventory");
-static_assert(sizeof(Garage_Interact_Inventory) == 0x000008, "Wrong size on Garage_Interact_Inventory");
-static_assert(offsetof(Garage_Interact_Inventory, PC) == 0x000000, "Member 'Garage_Interact_Inventory::PC' has a wrong offset!");
-
-// Function BrickRigs.Garage.Interact_SpawnVehicle
-// 0x0008 (0x0008 - 0x0000)
-struct Garage_Interact_SpawnVehicle final
-{
-public:
-	class ABrickPlayerController*                 PC;                                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(Garage_Interact_SpawnVehicle) == 0x000008, "Wrong alignment on Garage_Interact_SpawnVehicle");
-static_assert(sizeof(Garage_Interact_SpawnVehicle) == 0x000008, "Wrong size on Garage_Interact_SpawnVehicle");
-static_assert(offsetof(Garage_Interact_SpawnVehicle, PC) == 0x000000, "Member 'Garage_Interact_SpawnVehicle::PC' has a wrong offset!");
 
 // Function BrickRigs.BaseCharacter.ClientOnReceivedDamage
 // 0x000C (0x000C - 0x0000)
@@ -2800,17 +3157,6 @@ static_assert(offsetof(BaseCharacter_OnMeshHit, OtherComp) == 0x000010, "Member 
 static_assert(offsetof(BaseCharacter_OnMeshHit, NormalImpulse) == 0x000018, "Member 'BaseCharacter_OnMeshHit::NormalImpulse' has a wrong offset!");
 static_assert(offsetof(BaseCharacter_OnMeshHit, Hit) == 0x000024, "Member 'BaseCharacter_OnMeshHit::Hit' has a wrong offset!");
 
-// Function BrickRigs.BaseCharacter.OnRep_CharacterHealth
-// 0x001C (0x001C - 0x0000)
-struct BaseCharacter_OnRep_CharacterHealth final
-{
-public:
-	struct FCharacterHealth                       OldHealth;                                         // 0x0000(0x001C)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BaseCharacter_OnRep_CharacterHealth) == 0x000004, "Wrong alignment on BaseCharacter_OnRep_CharacterHealth");
-static_assert(sizeof(BaseCharacter_OnRep_CharacterHealth) == 0x00001C, "Wrong size on BaseCharacter_OnRep_CharacterHealth");
-static_assert(offsetof(BaseCharacter_OnRep_CharacterHealth, OldHealth) == 0x000000, "Member 'BaseCharacter_OnRep_CharacterHealth::OldHealth' has a wrong offset!");
-
 // Function BrickRigs.BaseCharacter.PerformMeleeAction
 // 0x0001 (0x0001 - 0x0000)
 struct BaseCharacter_PerformMeleeAction final
@@ -2856,6 +3202,69 @@ public:
 static_assert(alignof(BaseCharacter_IsConscious) == 0x000001, "Wrong alignment on BaseCharacter_IsConscious");
 static_assert(sizeof(BaseCharacter_IsConscious) == 0x000001, "Wrong size on BaseCharacter_IsConscious");
 static_assert(offsetof(BaseCharacter_IsConscious, ReturnValue) == 0x000000, "Member 'BaseCharacter_IsConscious::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.NumericPropertyWidget.AddSliderWidget
+// 0x0008 (0x0008 - 0x0000)
+struct NumericPropertyWidget_AddSliderWidget final
+{
+public:
+	class UBrickSliderWidget*                     Slider;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(NumericPropertyWidget_AddSliderWidget) == 0x000008, "Wrong alignment on NumericPropertyWidget_AddSliderWidget");
+static_assert(sizeof(NumericPropertyWidget_AddSliderWidget) == 0x000008, "Wrong size on NumericPropertyWidget_AddSliderWidget");
+static_assert(offsetof(NumericPropertyWidget_AddSliderWidget, Slider) == 0x000000, "Member 'NumericPropertyWidget_AddSliderWidget::Slider' has a wrong offset!");
+
+// Function BrickRigs.NumericPropertyWidget.LockAxes
+// 0x0001 (0x0001 - 0x0000)
+struct NumericPropertyWidget_LockAxes final
+{
+public:
+	bool                                          bLock;                                             // 0x0000(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(NumericPropertyWidget_LockAxes) == 0x000001, "Wrong alignment on NumericPropertyWidget_LockAxes");
+static_assert(sizeof(NumericPropertyWidget_LockAxes) == 0x000001, "Wrong size on NumericPropertyWidget_LockAxes");
+static_assert(offsetof(NumericPropertyWidget_LockAxes, bLock) == 0x000000, "Member 'NumericPropertyWidget_LockAxes::bLock' has a wrong offset!");
+
+// Function BrickRigs.NumericPropertyWidget.OnSliderValueChanged
+// 0x000C (0x000C - 0x0000)
+struct NumericPropertyWidget_OnSliderValueChanged final
+{
+public:
+	float                                         NewValue;                                          // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EValueChangedEventType                        EventType;                                         // 0x0004(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         Index_0;                                           // 0x0008(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(NumericPropertyWidget_OnSliderValueChanged) == 0x000004, "Wrong alignment on NumericPropertyWidget_OnSliderValueChanged");
+static_assert(sizeof(NumericPropertyWidget_OnSliderValueChanged) == 0x00000C, "Wrong size on NumericPropertyWidget_OnSliderValueChanged");
+static_assert(offsetof(NumericPropertyWidget_OnSliderValueChanged, NewValue) == 0x000000, "Member 'NumericPropertyWidget_OnSliderValueChanged::NewValue' has a wrong offset!");
+static_assert(offsetof(NumericPropertyWidget_OnSliderValueChanged, EventType) == 0x000004, "Member 'NumericPropertyWidget_OnSliderValueChanged::EventType' has a wrong offset!");
+static_assert(offsetof(NumericPropertyWidget_OnSliderValueChanged, Index_0) == 0x000008, "Member 'NumericPropertyWidget_OnSliderValueChanged::Index_0' has a wrong offset!");
+
+// Function BrickRigs.NumericPropertyWidget.UpdateNumericProperty
+// 0x0008 (0x0008 - 0x0000)
+struct NumericPropertyWidget_UpdateNumericProperty final
+{
+public:
+	ENumericValueType                             ValueType;                                         // 0x0000(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         NumAxes;                                           // 0x0004(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(NumericPropertyWidget_UpdateNumericProperty) == 0x000004, "Wrong alignment on NumericPropertyWidget_UpdateNumericProperty");
+static_assert(sizeof(NumericPropertyWidget_UpdateNumericProperty) == 0x000008, "Wrong size on NumericPropertyWidget_UpdateNumericProperty");
+static_assert(offsetof(NumericPropertyWidget_UpdateNumericProperty, ValueType) == 0x000000, "Member 'NumericPropertyWidget_UpdateNumericProperty::ValueType' has a wrong offset!");
+static_assert(offsetof(NumericPropertyWidget_UpdateNumericProperty, NumAxes) == 0x000004, "Member 'NumericPropertyWidget_UpdateNumericProperty::NumAxes' has a wrong offset!");
+
+// Function BrickRigs.NumericPropertyWidget.AreAxesLocked
+// 0x0001 (0x0001 - 0x0000)
+struct NumericPropertyWidget_AreAxesLocked final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(NumericPropertyWidget_AreAxesLocked) == 0x000001, "Wrong alignment on NumericPropertyWidget_AreAxesLocked");
+static_assert(sizeof(NumericPropertyWidget_AreAxesLocked) == 0x000001, "Wrong size on NumericPropertyWidget_AreAxesLocked");
+static_assert(offsetof(NumericPropertyWidget_AreAxesLocked, ReturnValue) == 0x000000, "Member 'NumericPropertyWidget_AreAxesLocked::ReturnValue' has a wrong offset!");
 
 // Function BrickRigs.BasePlayerController.ClientReceiveKickedPlayerList
 // 0x0020 (0x0020 - 0x0000)
@@ -3300,346 +3709,82 @@ static_assert(alignof(BrickGameMode_IsReadyToStartWarmup) == 0x000001, "Wrong al
 static_assert(sizeof(BrickGameMode_IsReadyToStartWarmup) == 0x000001, "Wrong size on BrickGameMode_IsReadyToStartWarmup");
 static_assert(offsetof(BrickGameMode_IsReadyToStartWarmup, ReturnValue) == 0x000000, "Member 'BrickGameMode_IsReadyToStartWarmup::ReturnValue' has a wrong offset!");
 
-// Function BrickRigs.PagedListHeaderWidget.OnMeasurementSystemChanged
-// 0x0001 (0x0001 - 0x0000)
-struct PagedListHeaderWidget_OnMeasurementSystemChanged final
-{
-public:
-	EMeasurementSystem                            NewSystem;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(PagedListHeaderWidget_OnMeasurementSystemChanged) == 0x000001, "Wrong alignment on PagedListHeaderWidget_OnMeasurementSystemChanged");
-static_assert(sizeof(PagedListHeaderWidget_OnMeasurementSystemChanged) == 0x000001, "Wrong size on PagedListHeaderWidget_OnMeasurementSystemChanged");
-static_assert(offsetof(PagedListHeaderWidget_OnMeasurementSystemChanged, NewSystem) == 0x000000, "Member 'PagedListHeaderWidget_OnMeasurementSystemChanged::NewSystem' has a wrong offset!");
-
-// Function BrickRigs.PagedListHeaderWidget.UpdateDimensions
-// 0x0018 (0x0018 - 0x0000)
-struct PagedListHeaderWidget_UpdateDimensions final
-{
-public:
-	struct FVector                                InDimensions;                                      // 0x0000(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                InMaxDimensions;                                   // 0x000C(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(PagedListHeaderWidget_UpdateDimensions) == 0x000004, "Wrong alignment on PagedListHeaderWidget_UpdateDimensions");
-static_assert(sizeof(PagedListHeaderWidget_UpdateDimensions) == 0x000018, "Wrong size on PagedListHeaderWidget_UpdateDimensions");
-static_assert(offsetof(PagedListHeaderWidget_UpdateDimensions, InDimensions) == 0x000000, "Member 'PagedListHeaderWidget_UpdateDimensions::InDimensions' has a wrong offset!");
-static_assert(offsetof(PagedListHeaderWidget_UpdateDimensions, InMaxDimensions) == 0x00000C, "Member 'PagedListHeaderWidget_UpdateDimensions::InMaxDimensions' has a wrong offset!");
-
-// Function BrickRigs.PagedListHeaderWidget.UpdateEntry
-// 0x0020 (0x0020 - 0x0000)
-struct PagedListHeaderWidget_UpdateEntry final
-{
-public:
-	class FText                                   InTitleText;                                       // 0x0000(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	bool                                          bInHasEntry;                                       // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bInHasUnsavedChanges;                              // 0x0019(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1A[0x6];                                       // 0x001A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(PagedListHeaderWidget_UpdateEntry) == 0x000008, "Wrong alignment on PagedListHeaderWidget_UpdateEntry");
-static_assert(sizeof(PagedListHeaderWidget_UpdateEntry) == 0x000020, "Wrong size on PagedListHeaderWidget_UpdateEntry");
-static_assert(offsetof(PagedListHeaderWidget_UpdateEntry, InTitleText) == 0x000000, "Member 'PagedListHeaderWidget_UpdateEntry::InTitleText' has a wrong offset!");
-static_assert(offsetof(PagedListHeaderWidget_UpdateEntry, bInHasEntry) == 0x000018, "Member 'PagedListHeaderWidget_UpdateEntry::bInHasEntry' has a wrong offset!");
-static_assert(offsetof(PagedListHeaderWidget_UpdateEntry, bInHasUnsavedChanges) == 0x000019, "Member 'PagedListHeaderWidget_UpdateEntry::bInHasUnsavedChanges' has a wrong offset!");
-
-// Function BrickRigs.PagedListHeaderWidget.UpdateMass
-// 0x0008 (0x0008 - 0x0000)
-struct PagedListHeaderWidget_UpdateMass final
-{
-public:
-	float                                         InMass;                                            // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         InMaxMass;                                         // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(PagedListHeaderWidget_UpdateMass) == 0x000004, "Wrong alignment on PagedListHeaderWidget_UpdateMass");
-static_assert(sizeof(PagedListHeaderWidget_UpdateMass) == 0x000008, "Wrong size on PagedListHeaderWidget_UpdateMass");
-static_assert(offsetof(PagedListHeaderWidget_UpdateMass, InMass) == 0x000000, "Member 'PagedListHeaderWidget_UpdateMass::InMass' has a wrong offset!");
-static_assert(offsetof(PagedListHeaderWidget_UpdateMass, InMaxMass) == 0x000004, "Member 'PagedListHeaderWidget_UpdateMass::InMaxMass' has a wrong offset!");
-
-// Function BrickRigs.PagedListHeaderWidget.UpdateNumObjects
-// 0x0010 (0x0010 - 0x0000)
-struct PagedListHeaderWidget_UpdateNumObjects final
-{
-public:
-	int32                                         InNumObjects;                                      // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         InMaxNumObjects;                                   // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         InNumHiddenObjects;                                // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         InNumObjectsWithAerodynamics;                      // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(PagedListHeaderWidget_UpdateNumObjects) == 0x000004, "Wrong alignment on PagedListHeaderWidget_UpdateNumObjects");
-static_assert(sizeof(PagedListHeaderWidget_UpdateNumObjects) == 0x000010, "Wrong size on PagedListHeaderWidget_UpdateNumObjects");
-static_assert(offsetof(PagedListHeaderWidget_UpdateNumObjects, InNumObjects) == 0x000000, "Member 'PagedListHeaderWidget_UpdateNumObjects::InNumObjects' has a wrong offset!");
-static_assert(offsetof(PagedListHeaderWidget_UpdateNumObjects, InMaxNumObjects) == 0x000004, "Member 'PagedListHeaderWidget_UpdateNumObjects::InMaxNumObjects' has a wrong offset!");
-static_assert(offsetof(PagedListHeaderWidget_UpdateNumObjects, InNumHiddenObjects) == 0x000008, "Member 'PagedListHeaderWidget_UpdateNumObjects::InNumHiddenObjects' has a wrong offset!");
-static_assert(offsetof(PagedListHeaderWidget_UpdateNumObjects, InNumObjectsWithAerodynamics) == 0x00000C, "Member 'PagedListHeaderWidget_UpdateNumObjects::InNumObjectsWithAerodynamics' has a wrong offset!");
-
-// Function BrickRigs.PagedListHeaderWidget.UpdatePrice
-// 0x0008 (0x0008 - 0x0000)
-struct PagedListHeaderWidget_UpdatePrice final
-{
-public:
-	float                                         InPrice;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         InMoney;                                           // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(PagedListHeaderWidget_UpdatePrice) == 0x000004, "Wrong alignment on PagedListHeaderWidget_UpdatePrice");
-static_assert(sizeof(PagedListHeaderWidget_UpdatePrice) == 0x000008, "Wrong size on PagedListHeaderWidget_UpdatePrice");
-static_assert(offsetof(PagedListHeaderWidget_UpdatePrice, InPrice) == 0x000000, "Member 'PagedListHeaderWidget_UpdatePrice::InPrice' has a wrong offset!");
-static_assert(offsetof(PagedListHeaderWidget_UpdatePrice, InMoney) == 0x000004, "Member 'PagedListHeaderWidget_UpdatePrice::InMoney' has a wrong offset!");
-
-// Function BrickRigs.BrickTextBoxWidget.OnTextChanged
-// 0x0018 (0x0018 - 0x0000)
-struct BrickTextBoxWidget_OnTextChanged final
-{
-public:
-	class FText                                   NewText;                                           // 0x0000(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickTextBoxWidget_OnTextChanged) == 0x000008, "Wrong alignment on BrickTextBoxWidget_OnTextChanged");
-static_assert(sizeof(BrickTextBoxWidget_OnTextChanged) == 0x000018, "Wrong size on BrickTextBoxWidget_OnTextChanged");
-static_assert(offsetof(BrickTextBoxWidget_OnTextChanged, NewText) == 0x000000, "Member 'BrickTextBoxWidget_OnTextChanged::NewText' has a wrong offset!");
-
-// Function BrickRigs.BrickTextBoxWidget.SetAllowMultiLine
-// 0x0001 (0x0001 - 0x0000)
-struct BrickTextBoxWidget_SetAllowMultiLine final
-{
-public:
-	bool                                          bInAllowMultiLine;                                 // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickTextBoxWidget_SetAllowMultiLine) == 0x000001, "Wrong alignment on BrickTextBoxWidget_SetAllowMultiLine");
-static_assert(sizeof(BrickTextBoxWidget_SetAllowMultiLine) == 0x000001, "Wrong size on BrickTextBoxWidget_SetAllowMultiLine");
-static_assert(offsetof(BrickTextBoxWidget_SetAllowMultiLine, bInAllowMultiLine) == 0x000000, "Member 'BrickTextBoxWidget_SetAllowMultiLine::bInAllowMultiLine' has a wrong offset!");
-
-// Function BrickRigs.BrickTextBoxWidget.SetBrushStyle
-// 0x0001 (0x0001 - 0x0000)
-struct BrickTextBoxWidget_SetBrushStyle final
-{
-public:
-	EBrickUIBrushStyle                            InBrushStyle;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickTextBoxWidget_SetBrushStyle) == 0x000001, "Wrong alignment on BrickTextBoxWidget_SetBrushStyle");
-static_assert(sizeof(BrickTextBoxWidget_SetBrushStyle) == 0x000001, "Wrong size on BrickTextBoxWidget_SetBrushStyle");
-static_assert(offsetof(BrickTextBoxWidget_SetBrushStyle, InBrushStyle) == 0x000000, "Member 'BrickTextBoxWidget_SetBrushStyle::InBrushStyle' has a wrong offset!");
-
-// Function BrickRigs.BrickTextBoxWidget.SetColorStyle
-// 0x0001 (0x0001 - 0x0000)
-struct BrickTextBoxWidget_SetColorStyle final
-{
-public:
-	EBrickUIColorStyle                            InColorStyle;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickTextBoxWidget_SetColorStyle) == 0x000001, "Wrong alignment on BrickTextBoxWidget_SetColorStyle");
-static_assert(sizeof(BrickTextBoxWidget_SetColorStyle) == 0x000001, "Wrong size on BrickTextBoxWidget_SetColorStyle");
-static_assert(offsetof(BrickTextBoxWidget_SetColorStyle, InColorStyle) == 0x000000, "Member 'BrickTextBoxWidget_SetColorStyle::InColorStyle' has a wrong offset!");
-
-// Function BrickRigs.BrickTextBoxWidget.SetCustomFocus
-// 0x0002 (0x0002 - 0x0000)
-struct BrickTextBoxWidget_SetCustomFocus final
-{
-public:
-	bool                                          bNewUseCustomFocus;                                // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bNewFocused;                                       // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickTextBoxWidget_SetCustomFocus) == 0x000001, "Wrong alignment on BrickTextBoxWidget_SetCustomFocus");
-static_assert(sizeof(BrickTextBoxWidget_SetCustomFocus) == 0x000002, "Wrong size on BrickTextBoxWidget_SetCustomFocus");
-static_assert(offsetof(BrickTextBoxWidget_SetCustomFocus, bNewUseCustomFocus) == 0x000000, "Member 'BrickTextBoxWidget_SetCustomFocus::bNewUseCustomFocus' has a wrong offset!");
-static_assert(offsetof(BrickTextBoxWidget_SetCustomFocus, bNewFocused) == 0x000001, "Member 'BrickTextBoxWidget_SetCustomFocus::bNewFocused' has a wrong offset!");
-
-// Function BrickRigs.BrickTextBoxWidget.SetHintText
-// 0x0018 (0x0018 - 0x0000)
-struct BrickTextBoxWidget_SetHintText final
-{
-public:
-	class FText                                   InText;                                            // 0x0000(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickTextBoxWidget_SetHintText) == 0x000008, "Wrong alignment on BrickTextBoxWidget_SetHintText");
-static_assert(sizeof(BrickTextBoxWidget_SetHintText) == 0x000018, "Wrong size on BrickTextBoxWidget_SetHintText");
-static_assert(offsetof(BrickTextBoxWidget_SetHintText, InText) == 0x000000, "Member 'BrickTextBoxWidget_SetHintText::InText' has a wrong offset!");
-
-// Function BrickRigs.BrickTextBoxWidget.SetIsMarquee
-// 0x0001 (0x0001 - 0x0000)
-struct BrickTextBoxWidget_SetIsMarquee final
-{
-public:
-	bool                                          bNewMarquee;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickTextBoxWidget_SetIsMarquee) == 0x000001, "Wrong alignment on BrickTextBoxWidget_SetIsMarquee");
-static_assert(sizeof(BrickTextBoxWidget_SetIsMarquee) == 0x000001, "Wrong size on BrickTextBoxWidget_SetIsMarquee");
-static_assert(offsetof(BrickTextBoxWidget_SetIsMarquee, bNewMarquee) == 0x000000, "Member 'BrickTextBoxWidget_SetIsMarquee::bNewMarquee' has a wrong offset!");
-
-// Function BrickRigs.BrickTextBoxWidget.SetIsPassword
-// 0x0001 (0x0001 - 0x0000)
-struct BrickTextBoxWidget_SetIsPassword final
-{
-public:
-	bool                                          bNewIsPassword;                                    // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickTextBoxWidget_SetIsPassword) == 0x000001, "Wrong alignment on BrickTextBoxWidget_SetIsPassword");
-static_assert(sizeof(BrickTextBoxWidget_SetIsPassword) == 0x000001, "Wrong size on BrickTextBoxWidget_SetIsPassword");
-static_assert(offsetof(BrickTextBoxWidget_SetIsPassword, bNewIsPassword) == 0x000000, "Member 'BrickTextBoxWidget_SetIsPassword::bNewIsPassword' has a wrong offset!");
-
-// Function BrickRigs.BrickTextBoxWidget.SetIsReadOnly
-// 0x0001 (0x0001 - 0x0000)
-struct BrickTextBoxWidget_SetIsReadOnly final
-{
-public:
-	bool                                          bNewReadOnly;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickTextBoxWidget_SetIsReadOnly) == 0x000001, "Wrong alignment on BrickTextBoxWidget_SetIsReadOnly");
-static_assert(sizeof(BrickTextBoxWidget_SetIsReadOnly) == 0x000001, "Wrong size on BrickTextBoxWidget_SetIsReadOnly");
-static_assert(offsetof(BrickTextBoxWidget_SetIsReadOnly, bNewReadOnly) == 0x000000, "Member 'BrickTextBoxWidget_SetIsReadOnly::bNewReadOnly' has a wrong offset!");
-
-// Function BrickRigs.BrickTextBoxWidget.SetJustification
-// 0x0001 (0x0001 - 0x0000)
-struct BrickTextBoxWidget_SetJustification final
-{
-public:
-	ETextJustify                                  NewJustification;                                  // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickTextBoxWidget_SetJustification) == 0x000001, "Wrong alignment on BrickTextBoxWidget_SetJustification");
-static_assert(sizeof(BrickTextBoxWidget_SetJustification) == 0x000001, "Wrong size on BrickTextBoxWidget_SetJustification");
-static_assert(offsetof(BrickTextBoxWidget_SetJustification, NewJustification) == 0x000000, "Member 'BrickTextBoxWidget_SetJustification::NewJustification' has a wrong offset!");
-
-// Function BrickRigs.BrickTextBoxWidget.SetMaxTextLength
+// Function BrickRigs.BrickTeam.SetMaxScore
 // 0x0004 (0x0004 - 0x0000)
-struct BrickTextBoxWidget_SetMaxTextLength final
+struct BrickTeam_SetMaxScore final
 {
 public:
-	int32                                         InMaxLength;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         NewMaxScore;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(BrickTextBoxWidget_SetMaxTextLength) == 0x000004, "Wrong alignment on BrickTextBoxWidget_SetMaxTextLength");
-static_assert(sizeof(BrickTextBoxWidget_SetMaxTextLength) == 0x000004, "Wrong size on BrickTextBoxWidget_SetMaxTextLength");
-static_assert(offsetof(BrickTextBoxWidget_SetMaxTextLength, InMaxLength) == 0x000000, "Member 'BrickTextBoxWidget_SetMaxTextLength::InMaxLength' has a wrong offset!");
+static_assert(alignof(BrickTeam_SetMaxScore) == 0x000004, "Wrong alignment on BrickTeam_SetMaxScore");
+static_assert(sizeof(BrickTeam_SetMaxScore) == 0x000004, "Wrong size on BrickTeam_SetMaxScore");
+static_assert(offsetof(BrickTeam_SetMaxScore, NewMaxScore) == 0x000000, "Member 'BrickTeam_SetMaxScore::NewMaxScore' has a wrong offset!");
 
-// Function BrickRigs.BrickTextBoxWidget.SetPaddingStyle
-// 0x0001 (0x0001 - 0x0000)
-struct BrickTextBoxWidget_SetPaddingStyle final
+// Function BrickRigs.BrickTeam.SetScore
+// 0x0004 (0x0004 - 0x0000)
+struct BrickTeam_SetScore final
 {
 public:
-	EBrickUIPaddingStyle                          InPaddingStyle;                                    // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         NewScore;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(BrickTextBoxWidget_SetPaddingStyle) == 0x000001, "Wrong alignment on BrickTextBoxWidget_SetPaddingStyle");
-static_assert(sizeof(BrickTextBoxWidget_SetPaddingStyle) == 0x000001, "Wrong size on BrickTextBoxWidget_SetPaddingStyle");
-static_assert(offsetof(BrickTextBoxWidget_SetPaddingStyle, InPaddingStyle) == 0x000000, "Member 'BrickTextBoxWidget_SetPaddingStyle::InPaddingStyle' has a wrong offset!");
+static_assert(alignof(BrickTeam_SetScore) == 0x000004, "Wrong alignment on BrickTeam_SetScore");
+static_assert(sizeof(BrickTeam_SetScore) == 0x000004, "Wrong size on BrickTeam_SetScore");
+static_assert(offsetof(BrickTeam_SetScore, NewScore) == 0x000000, "Member 'BrickTeam_SetScore::NewScore' has a wrong offset!");
 
-// Function BrickRigs.BrickTextBoxWidget.SetPasswordVisible
-// 0x0001 (0x0001 - 0x0000)
-struct BrickTextBoxWidget_SetPasswordVisible final
+// Function BrickRigs.BrickTeam.GetMaxScore
+// 0x0004 (0x0004 - 0x0000)
+struct BrickTeam_GetMaxScore final
 {
 public:
-	bool                                          bNewVisible;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(BrickTextBoxWidget_SetPasswordVisible) == 0x000001, "Wrong alignment on BrickTextBoxWidget_SetPasswordVisible");
-static_assert(sizeof(BrickTextBoxWidget_SetPasswordVisible) == 0x000001, "Wrong size on BrickTextBoxWidget_SetPasswordVisible");
-static_assert(offsetof(BrickTextBoxWidget_SetPasswordVisible, bNewVisible) == 0x000000, "Member 'BrickTextBoxWidget_SetPasswordVisible::bNewVisible' has a wrong offset!");
+static_assert(alignof(BrickTeam_GetMaxScore) == 0x000004, "Wrong alignment on BrickTeam_GetMaxScore");
+static_assert(sizeof(BrickTeam_GetMaxScore) == 0x000004, "Wrong size on BrickTeam_GetMaxScore");
+static_assert(offsetof(BrickTeam_GetMaxScore, ReturnValue) == 0x000000, "Member 'BrickTeam_GetMaxScore::ReturnValue' has a wrong offset!");
 
-// Function BrickRigs.BrickTextBoxWidget.SetText
-// 0x0020 (0x0020 - 0x0000)
-struct BrickTextBoxWidget_SetText final
+// Function BrickRigs.BrickTeam.GetScore
+// 0x0004 (0x0004 - 0x0000)
+struct BrickTeam_GetScore final
 {
 public:
-	class FText                                   InText;                                            // 0x0000(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	bool                                          bValidateText;                                     // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(BrickTextBoxWidget_SetText) == 0x000008, "Wrong alignment on BrickTextBoxWidget_SetText");
-static_assert(sizeof(BrickTextBoxWidget_SetText) == 0x000020, "Wrong size on BrickTextBoxWidget_SetText");
-static_assert(offsetof(BrickTextBoxWidget_SetText, InText) == 0x000000, "Member 'BrickTextBoxWidget_SetText::InText' has a wrong offset!");
-static_assert(offsetof(BrickTextBoxWidget_SetText, bValidateText) == 0x000018, "Member 'BrickTextBoxWidget_SetText::bValidateText' has a wrong offset!");
+static_assert(alignof(BrickTeam_GetScore) == 0x000004, "Wrong alignment on BrickTeam_GetScore");
+static_assert(sizeof(BrickTeam_GetScore) == 0x000004, "Wrong size on BrickTeam_GetScore");
+static_assert(offsetof(BrickTeam_GetScore, ReturnValue) == 0x000000, "Member 'BrickTeam_GetScore::ReturnValue' has a wrong offset!");
 
-// Function BrickRigs.BrickTextBoxWidget.SetTextStyle
-// 0x0001 (0x0001 - 0x0000)
-struct BrickTextBoxWidget_SetTextStyle final
-{
-public:
-	EBrickUITextStyle                             InTextStyle;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickTextBoxWidget_SetTextStyle) == 0x000001, "Wrong alignment on BrickTextBoxWidget_SetTextStyle");
-static_assert(sizeof(BrickTextBoxWidget_SetTextStyle) == 0x000001, "Wrong size on BrickTextBoxWidget_SetTextStyle");
-static_assert(offsetof(BrickTextBoxWidget_SetTextStyle, InTextStyle) == 0x000000, "Member 'BrickTextBoxWidget_SetTextStyle::InTextStyle' has a wrong offset!");
-
-// Function BrickRigs.BrickTextBoxWidget.StartTyping
-// 0x0001 (0x0001 - 0x0000)
-struct BrickTextBoxWidget_StartTyping final
-{
-public:
-	bool                                          bSelectAllText;                                    // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickTextBoxWidget_StartTyping) == 0x000001, "Wrong alignment on BrickTextBoxWidget_StartTyping");
-static_assert(sizeof(BrickTextBoxWidget_StartTyping) == 0x000001, "Wrong size on BrickTextBoxWidget_StartTyping");
-static_assert(offsetof(BrickTextBoxWidget_StartTyping, bSelectAllText) == 0x000000, "Member 'BrickTextBoxWidget_StartTyping::bSelectAllText' has a wrong offset!");
-
-// Function BrickRigs.BrickTextBoxWidget.UpdateIsPassword
-// 0x0001 (0x0001 - 0x0000)
-struct BrickTextBoxWidget_UpdateIsPassword final
-{
-public:
-	bool                                          bNewIsPassword;                                    // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickTextBoxWidget_UpdateIsPassword) == 0x000001, "Wrong alignment on BrickTextBoxWidget_UpdateIsPassword");
-static_assert(sizeof(BrickTextBoxWidget_UpdateIsPassword) == 0x000001, "Wrong size on BrickTextBoxWidget_UpdateIsPassword");
-static_assert(offsetof(BrickTextBoxWidget_UpdateIsPassword, bNewIsPassword) == 0x000000, "Member 'BrickTextBoxWidget_UpdateIsPassword::bNewIsPassword' has a wrong offset!");
-
-// Function BrickRigs.BrickTextBoxWidget.UpdatePasswordVisible
-// 0x0001 (0x0001 - 0x0000)
-struct BrickTextBoxWidget_UpdatePasswordVisible final
-{
-public:
-	bool                                          bNewVisible;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickTextBoxWidget_UpdatePasswordVisible) == 0x000001, "Wrong alignment on BrickTextBoxWidget_UpdatePasswordVisible");
-static_assert(sizeof(BrickTextBoxWidget_UpdatePasswordVisible) == 0x000001, "Wrong size on BrickTextBoxWidget_UpdatePasswordVisible");
-static_assert(offsetof(BrickTextBoxWidget_UpdatePasswordVisible, bNewVisible) == 0x000000, "Member 'BrickTextBoxWidget_UpdatePasswordVisible::bNewVisible' has a wrong offset!");
-
-// Function BrickRigs.BrickTextBoxWidget.GetText
+// Function BrickRigs.BrickTeam.GetTeamDisplayName
 // 0x0018 (0x0018 - 0x0000)
-struct BrickTextBoxWidget_GetText final
+struct BrickTeam_GetTeamDisplayName final
 {
 public:
 	class FText                                   ReturnValue;                                       // 0x0000(0x0018)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(BrickTextBoxWidget_GetText) == 0x000008, "Wrong alignment on BrickTextBoxWidget_GetText");
-static_assert(sizeof(BrickTextBoxWidget_GetText) == 0x000018, "Wrong size on BrickTextBoxWidget_GetText");
-static_assert(offsetof(BrickTextBoxWidget_GetText, ReturnValue) == 0x000000, "Member 'BrickTextBoxWidget_GetText::ReturnValue' has a wrong offset!");
+static_assert(alignof(BrickTeam_GetTeamDisplayName) == 0x000008, "Wrong alignment on BrickTeam_GetTeamDisplayName");
+static_assert(sizeof(BrickTeam_GetTeamDisplayName) == 0x000018, "Wrong size on BrickTeam_GetTeamDisplayName");
+static_assert(offsetof(BrickTeam_GetTeamDisplayName, ReturnValue) == 0x000000, "Member 'BrickTeam_GetTeamDisplayName::ReturnValue' has a wrong offset!");
 
-// Function BrickRigs.BrickTextBoxWidget.IsMarquee
+// Function BrickRigs.BrickTeam.GetTeamId
 // 0x0001 (0x0001 - 0x0000)
-struct BrickTextBoxWidget_IsMarquee final
+struct BrickTeam_GetTeamId final
 {
 public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGenericTeamId                         ReturnValue;                                       // 0x0000(0x0001)(ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(BrickTextBoxWidget_IsMarquee) == 0x000001, "Wrong alignment on BrickTextBoxWidget_IsMarquee");
-static_assert(sizeof(BrickTextBoxWidget_IsMarquee) == 0x000001, "Wrong size on BrickTextBoxWidget_IsMarquee");
-static_assert(offsetof(BrickTextBoxWidget_IsMarquee, ReturnValue) == 0x000000, "Member 'BrickTextBoxWidget_IsMarquee::ReturnValue' has a wrong offset!");
+static_assert(alignof(BrickTeam_GetTeamId) == 0x000001, "Wrong alignment on BrickTeam_GetTeamId");
+static_assert(sizeof(BrickTeam_GetTeamId) == 0x000001, "Wrong size on BrickTeam_GetTeamId");
+static_assert(offsetof(BrickTeam_GetTeamId, ReturnValue) == 0x000000, "Member 'BrickTeam_GetTeamId::ReturnValue' has a wrong offset!");
 
-// Function BrickRigs.BrickTextBoxWidget.IsPasswordVisible
+// Function BrickRigs.BrickSpacer.SetColorStyle
 // 0x0001 (0x0001 - 0x0000)
-struct BrickTextBoxWidget_IsPasswordVisible final
+struct BrickSpacer_SetColorStyle final
 {
 public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EBrickUIColorStyle                            NewStyle;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(BrickTextBoxWidget_IsPasswordVisible) == 0x000001, "Wrong alignment on BrickTextBoxWidget_IsPasswordVisible");
-static_assert(sizeof(BrickTextBoxWidget_IsPasswordVisible) == 0x000001, "Wrong size on BrickTextBoxWidget_IsPasswordVisible");
-static_assert(offsetof(BrickTextBoxWidget_IsPasswordVisible, ReturnValue) == 0x000000, "Member 'BrickTextBoxWidget_IsPasswordVisible::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.BrickTextBoxWidget.IsReadOnly
-// 0x0001 (0x0001 - 0x0000)
-struct BrickTextBoxWidget_IsReadOnly final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickTextBoxWidget_IsReadOnly) == 0x000001, "Wrong alignment on BrickTextBoxWidget_IsReadOnly");
-static_assert(sizeof(BrickTextBoxWidget_IsReadOnly) == 0x000001, "Wrong size on BrickTextBoxWidget_IsReadOnly");
-static_assert(offsetof(BrickTextBoxWidget_IsReadOnly, ReturnValue) == 0x000000, "Member 'BrickTextBoxWidget_IsReadOnly::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.BrickTextBoxWidget.IsTyping
-// 0x0001 (0x0001 - 0x0000)
-struct BrickTextBoxWidget_IsTyping final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickTextBoxWidget_IsTyping) == 0x000001, "Wrong alignment on BrickTextBoxWidget_IsTyping");
-static_assert(sizeof(BrickTextBoxWidget_IsTyping) == 0x000001, "Wrong size on BrickTextBoxWidget_IsTyping");
-static_assert(offsetof(BrickTextBoxWidget_IsTyping, ReturnValue) == 0x000000, "Member 'BrickTextBoxWidget_IsTyping::ReturnValue' has a wrong offset!");
+static_assert(alignof(BrickSpacer_SetColorStyle) == 0x000001, "Wrong alignment on BrickSpacer_SetColorStyle");
+static_assert(sizeof(BrickSpacer_SetColorStyle) == 0x000001, "Wrong size on BrickSpacer_SetColorStyle");
+static_assert(offsetof(BrickSpacer_SetColorStyle, NewStyle) == 0x000000, "Member 'BrickSpacer_SetColorStyle::NewStyle' has a wrong offset!");
 
 // Function BrickRigs.PopupParams.BindOnPopupClosedDelegate
 // 0x0010 (0x0010 - 0x0000)
@@ -3674,77 +3819,6 @@ static_assert(alignof(PopupParams_GetOwningPlayer) == 0x000008, "Wrong alignment
 static_assert(sizeof(PopupParams_GetOwningPlayer) == 0x000008, "Wrong size on PopupParams_GetOwningPlayer");
 static_assert(offsetof(PopupParams_GetOwningPlayer, ReturnValue) == 0x000000, "Member 'PopupParams_GetOwningPlayer::ReturnValue' has a wrong offset!");
 
-// Function BrickRigs.ChatMessageWidget.UpdateColorStyle
-// 0x0001 (0x0001 - 0x0000)
-struct ChatMessageWidget_UpdateColorStyle final
-{
-public:
-	EBrickUIColorStyle                            NewColorStyle;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(ChatMessageWidget_UpdateColorStyle) == 0x000001, "Wrong alignment on ChatMessageWidget_UpdateColorStyle");
-static_assert(sizeof(ChatMessageWidget_UpdateColorStyle) == 0x000001, "Wrong size on ChatMessageWidget_UpdateColorStyle");
-static_assert(offsetof(ChatMessageWidget_UpdateColorStyle, NewColorStyle) == 0x000000, "Member 'ChatMessageWidget_UpdateColorStyle::NewColorStyle' has a wrong offset!");
-
-// Function BrickRigs.ChatMessageWidget.UpdateMessageText
-// 0x0018 (0x0018 - 0x0000)
-struct ChatMessageWidget_UpdateMessageText final
-{
-public:
-	class FText                                   NewText;                                           // 0x0000(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(ChatMessageWidget_UpdateMessageText) == 0x000008, "Wrong alignment on ChatMessageWidget_UpdateMessageText");
-static_assert(sizeof(ChatMessageWidget_UpdateMessageText) == 0x000018, "Wrong size on ChatMessageWidget_UpdateMessageText");
-static_assert(offsetof(ChatMessageWidget_UpdateMessageText, NewText) == 0x000000, "Member 'ChatMessageWidget_UpdateMessageText::NewText' has a wrong offset!");
-
-// Function BrickRigs.BrickUnitsSliderWidget.OnSliderValueChanged
-// 0x0008 (0x0008 - 0x0000)
-struct BrickUnitsSliderWidget_OnSliderValueChanged final
-{
-public:
-	float                                         NewValue;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EValueChangedEventType                        EventType;                                         // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(BrickUnitsSliderWidget_OnSliderValueChanged) == 0x000004, "Wrong alignment on BrickUnitsSliderWidget_OnSliderValueChanged");
-static_assert(sizeof(BrickUnitsSliderWidget_OnSliderValueChanged) == 0x000008, "Wrong size on BrickUnitsSliderWidget_OnSliderValueChanged");
-static_assert(offsetof(BrickUnitsSliderWidget_OnSliderValueChanged, NewValue) == 0x000000, "Member 'BrickUnitsSliderWidget_OnSliderValueChanged::NewValue' has a wrong offset!");
-static_assert(offsetof(BrickUnitsSliderWidget_OnSliderValueChanged, EventType) == 0x000004, "Member 'BrickUnitsSliderWidget_OnSliderValueChanged::EventType' has a wrong offset!");
-
-// Function BrickRigs.BrickUnitsSliderWidget.SetValue
-// 0x0004 (0x0004 - 0x0000)
-struct BrickUnitsSliderWidget_SetValue final
-{
-public:
-	struct FBrickUnits                            NewValue;                                          // 0x0000(0x0004)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickUnitsSliderWidget_SetValue) == 0x000004, "Wrong alignment on BrickUnitsSliderWidget_SetValue");
-static_assert(sizeof(BrickUnitsSliderWidget_SetValue) == 0x000004, "Wrong size on BrickUnitsSliderWidget_SetValue");
-static_assert(offsetof(BrickUnitsSliderWidget_SetValue, NewValue) == 0x000000, "Member 'BrickUnitsSliderWidget_SetValue::NewValue' has a wrong offset!");
-
-// Function BrickRigs.BrickUnitsSliderWidget.SetValueRange
-// 0x0008 (0x0008 - 0x0000)
-struct BrickUnitsSliderWidget_SetValueRange final
-{
-public:
-	struct FBrickUnits                            InMinValue;                                        // 0x0000(0x0004)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-	struct FBrickUnits                            InMaxValue;                                        // 0x0004(0x0004)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickUnitsSliderWidget_SetValueRange) == 0x000004, "Wrong alignment on BrickUnitsSliderWidget_SetValueRange");
-static_assert(sizeof(BrickUnitsSliderWidget_SetValueRange) == 0x000008, "Wrong size on BrickUnitsSliderWidget_SetValueRange");
-static_assert(offsetof(BrickUnitsSliderWidget_SetValueRange, InMinValue) == 0x000000, "Member 'BrickUnitsSliderWidget_SetValueRange::InMinValue' has a wrong offset!");
-static_assert(offsetof(BrickUnitsSliderWidget_SetValueRange, InMaxValue) == 0x000004, "Member 'BrickUnitsSliderWidget_SetValueRange::InMaxValue' has a wrong offset!");
-
-// Function BrickRigs.BrickUnitsSliderWidget.UpdateUnitsDisplayMode
-// 0x0001 (0x0001 - 0x0000)
-struct BrickUnitsSliderWidget_UpdateUnitsDisplayMode final
-{
-public:
-	EBrickUnitsDisplayMode                        NewMode;                                           // 0x0000(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickUnitsSliderWidget_UpdateUnitsDisplayMode) == 0x000001, "Wrong alignment on BrickUnitsSliderWidget_UpdateUnitsDisplayMode");
-static_assert(sizeof(BrickUnitsSliderWidget_UpdateUnitsDisplayMode) == 0x000001, "Wrong size on BrickUnitsSliderWidget_UpdateUnitsDisplayMode");
-static_assert(offsetof(BrickUnitsSliderWidget_UpdateUnitsDisplayMode, NewMode) == 0x000000, "Member 'BrickUnitsSliderWidget_UpdateUnitsDisplayMode::NewMode' has a wrong offset!");
-
 // Function BrickRigs.BindKeyPopupWidget.UpdateConflictedMappings
 // 0x0018 (0x0018 - 0x0000)
 struct BindKeyPopupWidget_UpdateConflictedMappings final
@@ -3769,17 +3843,6 @@ public:
 static_assert(alignof(BindKeyPopupWidget_UpdateIsBindingKey) == 0x000001, "Wrong alignment on BindKeyPopupWidget_UpdateIsBindingKey");
 static_assert(sizeof(BindKeyPopupWidget_UpdateIsBindingKey) == 0x000001, "Wrong size on BindKeyPopupWidget_UpdateIsBindingKey");
 static_assert(offsetof(BindKeyPopupWidget_UpdateIsBindingKey, bNewIsBinding) == 0x000000, "Member 'BindKeyPopupWidget_UpdateIsBindingKey::bNewIsBinding' has a wrong offset!");
-
-// Function BrickRigs.PropertyWidget.UpdateIsReadOnly
-// 0x0001 (0x0001 - 0x0000)
-struct PropertyWidget_UpdateIsReadOnly final
-{
-public:
-	bool                                          bNewReadOnly;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(PropertyWidget_UpdateIsReadOnly) == 0x000001, "Wrong alignment on PropertyWidget_UpdateIsReadOnly");
-static_assert(sizeof(PropertyWidget_UpdateIsReadOnly) == 0x000001, "Wrong size on PropertyWidget_UpdateIsReadOnly");
-static_assert(offsetof(PropertyWidget_UpdateIsReadOnly, bNewReadOnly) == 0x000000, "Member 'PropertyWidget_UpdateIsReadOnly::bNewReadOnly' has a wrong offset!");
 
 // Function BrickRigs.BoolPropertyWidget.InitializeItem
 // 0x0148 (0x0148 - 0x0000)
@@ -3809,6 +3872,39 @@ static_assert(sizeof(BoolPropertyWidget_OnItemSelected) == 0x000008, "Wrong size
 static_assert(offsetof(BoolPropertyWidget_OnItemSelected, Item) == 0x000000, "Member 'BoolPropertyWidget_OnItemSelected::Item' has a wrong offset!");
 static_assert(offsetof(BoolPropertyWidget_OnItemSelected, EventType) == 0x000004, "Member 'BoolPropertyWidget_OnItemSelected::EventType' has a wrong offset!");
 
+// Function BrickRigs.BrickTextBlock.SetColorStyle
+// 0x0001 (0x0001 - 0x0000)
+struct BrickTextBlock_SetColorStyle final
+{
+public:
+	EBrickUIColorStyle                            NewStyle;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickTextBlock_SetColorStyle) == 0x000001, "Wrong alignment on BrickTextBlock_SetColorStyle");
+static_assert(sizeof(BrickTextBlock_SetColorStyle) == 0x000001, "Wrong size on BrickTextBlock_SetColorStyle");
+static_assert(offsetof(BrickTextBlock_SetColorStyle, NewStyle) == 0x000000, "Member 'BrickTextBlock_SetColorStyle::NewStyle' has a wrong offset!");
+
+// Function BrickRigs.BrickTextBlock.SetStyleState
+// 0x0001 (0x0001 - 0x0000)
+struct BrickTextBlock_SetStyleState final
+{
+public:
+	EBrickUIStyleState                            NewState;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickTextBlock_SetStyleState) == 0x000001, "Wrong alignment on BrickTextBlock_SetStyleState");
+static_assert(sizeof(BrickTextBlock_SetStyleState) == 0x000001, "Wrong size on BrickTextBlock_SetStyleState");
+static_assert(offsetof(BrickTextBlock_SetStyleState, NewState) == 0x000000, "Member 'BrickTextBlock_SetStyleState::NewState' has a wrong offset!");
+
+// Function BrickRigs.BrickTextBlock.SetTextStyle
+// 0x0001 (0x0001 - 0x0000)
+struct BrickTextBlock_SetTextStyle final
+{
+public:
+	EBrickUITextStyle                             NewStyle;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickTextBlock_SetTextStyle) == 0x000001, "Wrong alignment on BrickTextBlock_SetTextStyle");
+static_assert(sizeof(BrickTextBlock_SetTextStyle) == 0x000001, "Wrong size on BrickTextBlock_SetTextStyle");
+static_assert(offsetof(BrickTextBlock_SetTextStyle, NewStyle) == 0x000000, "Member 'BrickTextBlock_SetTextStyle::NewStyle' has a wrong offset!");
+
 // Function BrickRigs.BrickAssetManager.Get
 // 0x0008 (0x0008 - 0x0000)
 struct BrickAssetManager_Get final
@@ -3819,17 +3915,6 @@ public:
 static_assert(alignof(BrickAssetManager_Get) == 0x000008, "Wrong alignment on BrickAssetManager_Get");
 static_assert(sizeof(BrickAssetManager_Get) == 0x000008, "Wrong size on BrickAssetManager_Get");
 static_assert(offsetof(BrickAssetManager_Get, ReturnValue) == 0x000000, "Member 'BrickAssetManager_Get::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.BrickVerticalBox.SetSlotSpacingStyle
-// 0x0001 (0x0001 - 0x0000)
-struct BrickVerticalBox_SetSlotSpacingStyle final
-{
-public:
-	EBrickUISpacingStyle                          NewStyle;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickVerticalBox_SetSlotSpacingStyle) == 0x000001, "Wrong alignment on BrickVerticalBox_SetSlotSpacingStyle");
-static_assert(sizeof(BrickVerticalBox_SetSlotSpacingStyle) == 0x000001, "Wrong size on BrickVerticalBox_SetSlotSpacingStyle");
-static_assert(offsetof(BrickVerticalBox_SetSlotSpacingStyle, NewStyle) == 0x000000, "Member 'BrickVerticalBox_SetSlotSpacingStyle::NewStyle' has a wrong offset!");
 
 // Function BrickRigs.BrickCharacter.DropCarriedBrick
 // 0x0001 (0x0001 - 0x0000)
@@ -4292,82 +4377,234 @@ static_assert(alignof(BrickCharacter_ShouldFire) == 0x000001, "Wrong alignment o
 static_assert(sizeof(BrickCharacter_ShouldFire) == 0x000001, "Wrong size on BrickCharacter_ShouldFire");
 static_assert(offsetof(BrickCharacter_ShouldFire, ReturnValue) == 0x000000, "Member 'BrickCharacter_ShouldFire::ReturnValue' has a wrong offset!");
 
-// Function BrickRigs.VehicleInputComponent.Brake
-// 0x0004 (0x0004 - 0x0000)
-struct VehicleInputComponent_Brake final
+// Function BrickRigs.CarWheelBrick.OnRootComponentWake
+// 0x0010 (0x0010 - 0x0000)
+struct CarWheelBrick_OnRootComponentWake final
 {
 public:
-	float                                         Val;                                               // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UPrimitiveComponent*                    SleepingComponent;                                 // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   BoneName;                                          // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(VehicleInputComponent_Brake) == 0x000004, "Wrong alignment on VehicleInputComponent_Brake");
-static_assert(sizeof(VehicleInputComponent_Brake) == 0x000004, "Wrong size on VehicleInputComponent_Brake");
-static_assert(offsetof(VehicleInputComponent_Brake, Val) == 0x000000, "Member 'VehicleInputComponent_Brake::Val' has a wrong offset!");
+static_assert(alignof(CarWheelBrick_OnRootComponentWake) == 0x000008, "Wrong alignment on CarWheelBrick_OnRootComponentWake");
+static_assert(sizeof(CarWheelBrick_OnRootComponentWake) == 0x000010, "Wrong size on CarWheelBrick_OnRootComponentWake");
+static_assert(offsetof(CarWheelBrick_OnRootComponentWake, SleepingComponent) == 0x000000, "Member 'CarWheelBrick_OnRootComponentWake::SleepingComponent' has a wrong offset!");
+static_assert(offsetof(CarWheelBrick_OnRootComponentWake, BoneName) == 0x000008, "Member 'CarWheelBrick_OnRootComponentWake::BoneName' has a wrong offset!");
 
-// Function BrickRigs.VehicleInputComponent.Pitch
-// 0x0004 (0x0004 - 0x0000)
-struct VehicleInputComponent_Pitch final
+// Function BrickRigs.JoinSessionPopupWidget.OnPasswordChanged
+// 0x0020 (0x0020 - 0x0000)
+struct JoinSessionPopupWidget_OnPasswordChanged final
 {
 public:
-	float                                         Val;                                               // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FText                                   NewText;                                           // 0x0000(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	EValueChangedEventType                        EventType;                                         // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(VehicleInputComponent_Pitch) == 0x000004, "Wrong alignment on VehicleInputComponent_Pitch");
-static_assert(sizeof(VehicleInputComponent_Pitch) == 0x000004, "Wrong size on VehicleInputComponent_Pitch");
-static_assert(offsetof(VehicleInputComponent_Pitch, Val) == 0x000000, "Member 'VehicleInputComponent_Pitch::Val' has a wrong offset!");
+static_assert(alignof(JoinSessionPopupWidget_OnPasswordChanged) == 0x000008, "Wrong alignment on JoinSessionPopupWidget_OnPasswordChanged");
+static_assert(sizeof(JoinSessionPopupWidget_OnPasswordChanged) == 0x000020, "Wrong size on JoinSessionPopupWidget_OnPasswordChanged");
+static_assert(offsetof(JoinSessionPopupWidget_OnPasswordChanged, NewText) == 0x000000, "Member 'JoinSessionPopupWidget_OnPasswordChanged::NewText' has a wrong offset!");
+static_assert(offsetof(JoinSessionPopupWidget_OnPasswordChanged, EventType) == 0x000018, "Member 'JoinSessionPopupWidget_OnPasswordChanged::EventType' has a wrong offset!");
 
-// Function BrickRigs.VehicleInputComponent.Steering
-// 0x0004 (0x0004 - 0x0000)
-struct VehicleInputComponent_Steering final
+// Function BrickRigs.JoinSessionPopupWidget.UpdateJoinState
+// 0x0003 (0x0003 - 0x0000)
+struct JoinSessionPopupWidget_UpdateJoinState final
 {
 public:
-	float                                         Val;                                               // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EJoinSessionState                             InJoinState;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bInPasswordRequired;                               // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bInHasPassword;                                    // 0x0002(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(VehicleInputComponent_Steering) == 0x000004, "Wrong alignment on VehicleInputComponent_Steering");
-static_assert(sizeof(VehicleInputComponent_Steering) == 0x000004, "Wrong size on VehicleInputComponent_Steering");
-static_assert(offsetof(VehicleInputComponent_Steering, Val) == 0x000000, "Member 'VehicleInputComponent_Steering::Val' has a wrong offset!");
+static_assert(alignof(JoinSessionPopupWidget_UpdateJoinState) == 0x000001, "Wrong alignment on JoinSessionPopupWidget_UpdateJoinState");
+static_assert(sizeof(JoinSessionPopupWidget_UpdateJoinState) == 0x000003, "Wrong size on JoinSessionPopupWidget_UpdateJoinState");
+static_assert(offsetof(JoinSessionPopupWidget_UpdateJoinState, InJoinState) == 0x000000, "Member 'JoinSessionPopupWidget_UpdateJoinState::InJoinState' has a wrong offset!");
+static_assert(offsetof(JoinSessionPopupWidget_UpdateJoinState, bInPasswordRequired) == 0x000001, "Member 'JoinSessionPopupWidget_UpdateJoinState::bInPasswordRequired' has a wrong offset!");
+static_assert(offsetof(JoinSessionPopupWidget_UpdateJoinState, bInHasPassword) == 0x000002, "Member 'JoinSessionPopupWidget_UpdateJoinState::bInHasPassword' has a wrong offset!");
 
-// Function BrickRigs.VehicleInputComponent.Throttle
+// Function BrickRigs.BrickPlayerState.OnRep_Money
 // 0x0004 (0x0004 - 0x0000)
-struct VehicleInputComponent_Throttle final
+struct BrickPlayerState_OnRep_Money final
 {
 public:
-	float                                         Val;                                               // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         PrevValue;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(VehicleInputComponent_Throttle) == 0x000004, "Wrong alignment on VehicleInputComponent_Throttle");
-static_assert(sizeof(VehicleInputComponent_Throttle) == 0x000004, "Wrong size on VehicleInputComponent_Throttle");
-static_assert(offsetof(VehicleInputComponent_Throttle, Val) == 0x000000, "Member 'VehicleInputComponent_Throttle::Val' has a wrong offset!");
+static_assert(alignof(BrickPlayerState_OnRep_Money) == 0x000004, "Wrong alignment on BrickPlayerState_OnRep_Money");
+static_assert(sizeof(BrickPlayerState_OnRep_Money) == 0x000004, "Wrong size on BrickPlayerState_OnRep_Money");
+static_assert(offsetof(BrickPlayerState_OnRep_Money, PrevValue) == 0x000000, "Member 'BrickPlayerState_OnRep_Money::PrevValue' has a wrong offset!");
 
-// Function BrickRigs.VehicleInputComponent.ViewPitch
+// Function BrickRigs.BrickPlayerState.SetDeaths
 // 0x0004 (0x0004 - 0x0000)
-struct VehicleInputComponent_ViewPitch final
+struct BrickPlayerState_SetDeaths final
 {
 public:
-	float                                         Val;                                               // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         NewDeaths;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(VehicleInputComponent_ViewPitch) == 0x000004, "Wrong alignment on VehicleInputComponent_ViewPitch");
-static_assert(sizeof(VehicleInputComponent_ViewPitch) == 0x000004, "Wrong size on VehicleInputComponent_ViewPitch");
-static_assert(offsetof(VehicleInputComponent_ViewPitch, Val) == 0x000000, "Member 'VehicleInputComponent_ViewPitch::Val' has a wrong offset!");
+static_assert(alignof(BrickPlayerState_SetDeaths) == 0x000004, "Wrong alignment on BrickPlayerState_SetDeaths");
+static_assert(sizeof(BrickPlayerState_SetDeaths) == 0x000004, "Wrong size on BrickPlayerState_SetDeaths");
+static_assert(offsetof(BrickPlayerState_SetDeaths, NewDeaths) == 0x000000, "Member 'BrickPlayerState_SetDeaths::NewDeaths' has a wrong offset!");
 
-// Function BrickRigs.VehicleInputComponent.ViewYaw
-// 0x0004 (0x0004 - 0x0000)
-struct VehicleInputComponent_ViewYaw final
+// Function BrickRigs.BrickPlayerState.SetIsAdmin
+// 0x0001 (0x0001 - 0x0000)
+struct BrickPlayerState_SetIsAdmin final
 {
 public:
-	float                                         Val;                                               // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bNewIsAdmin;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(VehicleInputComponent_ViewYaw) == 0x000004, "Wrong alignment on VehicleInputComponent_ViewYaw");
-static_assert(sizeof(VehicleInputComponent_ViewYaw) == 0x000004, "Wrong size on VehicleInputComponent_ViewYaw");
-static_assert(offsetof(VehicleInputComponent_ViewYaw, Val) == 0x000000, "Member 'VehicleInputComponent_ViewYaw::Val' has a wrong offset!");
+static_assert(alignof(BrickPlayerState_SetIsAdmin) == 0x000001, "Wrong alignment on BrickPlayerState_SetIsAdmin");
+static_assert(sizeof(BrickPlayerState_SetIsAdmin) == 0x000001, "Wrong size on BrickPlayerState_SetIsAdmin");
+static_assert(offsetof(BrickPlayerState_SetIsAdmin, bNewIsAdmin) == 0x000000, "Member 'BrickPlayerState_SetIsAdmin::bNewIsAdmin' has a wrong offset!");
 
-// Function BrickRigs.VehicleInputComponent.GetCycleCameraModeValueText
+// Function BrickRigs.BrickPlayerState.SetIsAlive
+// 0x0001 (0x0001 - 0x0000)
+struct BrickPlayerState_SetIsAlive final
+{
+public:
+	bool                                          bInIsAlive;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickPlayerState_SetIsAlive) == 0x000001, "Wrong alignment on BrickPlayerState_SetIsAlive");
+static_assert(sizeof(BrickPlayerState_SetIsAlive) == 0x000001, "Wrong size on BrickPlayerState_SetIsAlive");
+static_assert(offsetof(BrickPlayerState_SetIsAlive, bInIsAlive) == 0x000000, "Member 'BrickPlayerState_SetIsAlive::bInIsAlive' has a wrong offset!");
+
+// Function BrickRigs.BrickPlayerState.SetIsTeamLeader
+// 0x0001 (0x0001 - 0x0000)
+struct BrickPlayerState_SetIsTeamLeader final
+{
+public:
+	bool                                          bNewLeader;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickPlayerState_SetIsTeamLeader) == 0x000001, "Wrong alignment on BrickPlayerState_SetIsTeamLeader");
+static_assert(sizeof(BrickPlayerState_SetIsTeamLeader) == 0x000001, "Wrong size on BrickPlayerState_SetIsTeamLeader");
+static_assert(offsetof(BrickPlayerState_SetIsTeamLeader, bNewLeader) == 0x000000, "Member 'BrickPlayerState_SetIsTeamLeader::bNewLeader' has a wrong offset!");
+
+// Function BrickRigs.BrickPlayerState.SetKills
+// 0x0004 (0x0004 - 0x0000)
+struct BrickPlayerState_SetKills final
+{
+public:
+	int32                                         NewKills;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickPlayerState_SetKills) == 0x000004, "Wrong alignment on BrickPlayerState_SetKills");
+static_assert(sizeof(BrickPlayerState_SetKills) == 0x000004, "Wrong size on BrickPlayerState_SetKills");
+static_assert(offsetof(BrickPlayerState_SetKills, NewKills) == 0x000000, "Member 'BrickPlayerState_SetKills::NewKills' has a wrong offset!");
+
+// Function BrickRigs.BrickPlayerState.SetMoney
+// 0x0004 (0x0004 - 0x0000)
+struct BrickPlayerState_SetMoney final
+{
+public:
+	float                                         NewValue;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickPlayerState_SetMoney) == 0x000004, "Wrong alignment on BrickPlayerState_SetMoney");
+static_assert(sizeof(BrickPlayerState_SetMoney) == 0x000004, "Wrong size on BrickPlayerState_SetMoney");
+static_assert(offsetof(BrickPlayerState_SetMoney, NewValue) == 0x000000, "Member 'BrickPlayerState_SetMoney::NewValue' has a wrong offset!");
+
+// Function BrickRigs.BrickPlayerState.SetScore
+// 0x0004 (0x0004 - 0x0000)
+struct BrickPlayerState_SetScore final
+{
+public:
+	float                                         NewScore;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickPlayerState_SetScore) == 0x000004, "Wrong alignment on BrickPlayerState_SetScore");
+static_assert(sizeof(BrickPlayerState_SetScore) == 0x000004, "Wrong size on BrickPlayerState_SetScore");
+static_assert(offsetof(BrickPlayerState_SetScore, NewScore) == 0x000000, "Member 'BrickPlayerState_SetScore::NewScore' has a wrong offset!");
+
+// Function BrickRigs.BrickPlayerState.GetDeaths
+// 0x0004 (0x0004 - 0x0000)
+struct BrickPlayerState_GetDeaths final
+{
+public:
+	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickPlayerState_GetDeaths) == 0x000004, "Wrong alignment on BrickPlayerState_GetDeaths");
+static_assert(sizeof(BrickPlayerState_GetDeaths) == 0x000004, "Wrong size on BrickPlayerState_GetDeaths");
+static_assert(offsetof(BrickPlayerState_GetDeaths, ReturnValue) == 0x000000, "Member 'BrickPlayerState_GetDeaths::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.BrickPlayerState.GetKills
+// 0x0004 (0x0004 - 0x0000)
+struct BrickPlayerState_GetKills final
+{
+public:
+	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickPlayerState_GetKills) == 0x000004, "Wrong alignment on BrickPlayerState_GetKills");
+static_assert(sizeof(BrickPlayerState_GetKills) == 0x000004, "Wrong size on BrickPlayerState_GetKills");
+static_assert(offsetof(BrickPlayerState_GetKills, ReturnValue) == 0x000000, "Member 'BrickPlayerState_GetKills::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.BrickPlayerState.GetMoney
+// 0x0004 (0x0004 - 0x0000)
+struct BrickPlayerState_GetMoney final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickPlayerState_GetMoney) == 0x000004, "Wrong alignment on BrickPlayerState_GetMoney");
+static_assert(sizeof(BrickPlayerState_GetMoney) == 0x000004, "Wrong size on BrickPlayerState_GetMoney");
+static_assert(offsetof(BrickPlayerState_GetMoney, ReturnValue) == 0x000000, "Member 'BrickPlayerState_GetMoney::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.BrickPlayerState.GetPlayerNameText
 // 0x0018 (0x0018 - 0x0000)
-struct VehicleInputComponent_GetCycleCameraModeValueText final
+struct BrickPlayerState_GetPlayerNameText final
 {
 public:
 	class FText                                   ReturnValue;                                       // 0x0000(0x0018)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(VehicleInputComponent_GetCycleCameraModeValueText) == 0x000008, "Wrong alignment on VehicleInputComponent_GetCycleCameraModeValueText");
-static_assert(sizeof(VehicleInputComponent_GetCycleCameraModeValueText) == 0x000018, "Wrong size on VehicleInputComponent_GetCycleCameraModeValueText");
-static_assert(offsetof(VehicleInputComponent_GetCycleCameraModeValueText, ReturnValue) == 0x000000, "Member 'VehicleInputComponent_GetCycleCameraModeValueText::ReturnValue' has a wrong offset!");
+static_assert(alignof(BrickPlayerState_GetPlayerNameText) == 0x000008, "Wrong alignment on BrickPlayerState_GetPlayerNameText");
+static_assert(sizeof(BrickPlayerState_GetPlayerNameText) == 0x000018, "Wrong size on BrickPlayerState_GetPlayerNameText");
+static_assert(offsetof(BrickPlayerState_GetPlayerNameText, ReturnValue) == 0x000000, "Member 'BrickPlayerState_GetPlayerNameText::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.BrickPlayerState.GetUncompressedPing
+// 0x0004 (0x0004 - 0x0000)
+struct BrickPlayerState_GetUncompressedPing final
+{
+public:
+	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickPlayerState_GetUncompressedPing) == 0x000004, "Wrong alignment on BrickPlayerState_GetUncompressedPing");
+static_assert(sizeof(BrickPlayerState_GetUncompressedPing) == 0x000004, "Wrong size on BrickPlayerState_GetUncompressedPing");
+static_assert(offsetof(BrickPlayerState_GetUncompressedPing, ReturnValue) == 0x000000, "Member 'BrickPlayerState_GetUncompressedPing::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.BrickPlayerState.IsAdmin
+// 0x0001 (0x0001 - 0x0000)
+struct BrickPlayerState_IsAdmin final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickPlayerState_IsAdmin) == 0x000001, "Wrong alignment on BrickPlayerState_IsAdmin");
+static_assert(sizeof(BrickPlayerState_IsAdmin) == 0x000001, "Wrong size on BrickPlayerState_IsAdmin");
+static_assert(offsetof(BrickPlayerState_IsAdmin, ReturnValue) == 0x000000, "Member 'BrickPlayerState_IsAdmin::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.BrickPlayerState.IsAlive
+// 0x0001 (0x0001 - 0x0000)
+struct BrickPlayerState_IsAlive final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickPlayerState_IsAlive) == 0x000001, "Wrong alignment on BrickPlayerState_IsAlive");
+static_assert(sizeof(BrickPlayerState_IsAlive) == 0x000001, "Wrong size on BrickPlayerState_IsAlive");
+static_assert(offsetof(BrickPlayerState_IsAlive, ReturnValue) == 0x000000, "Member 'BrickPlayerState_IsAlive::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.BrickPlayerState.IsHost
+// 0x0001 (0x0001 - 0x0000)
+struct BrickPlayerState_IsHost final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickPlayerState_IsHost) == 0x000001, "Wrong alignment on BrickPlayerState_IsHost");
+static_assert(sizeof(BrickPlayerState_IsHost) == 0x000001, "Wrong size on BrickPlayerState_IsHost");
+static_assert(offsetof(BrickPlayerState_IsHost, ReturnValue) == 0x000000, "Member 'BrickPlayerState_IsHost::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.BrickPlayerState.IsTeamLeader
+// 0x0001 (0x0001 - 0x0000)
+struct BrickPlayerState_IsTeamLeader final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickPlayerState_IsTeamLeader) == 0x000001, "Wrong alignment on BrickPlayerState_IsTeamLeader");
+static_assert(sizeof(BrickPlayerState_IsTeamLeader) == 0x000001, "Wrong size on BrickPlayerState_IsTeamLeader");
+static_assert(offsetof(BrickPlayerState_IsTeamLeader, ReturnValue) == 0x000000, "Member 'BrickPlayerState_IsTeamLeader::ReturnValue' has a wrong offset!");
 
 // Function BrickRigs.BrickConnectorsISMComponent.SetStyle
 // 0x0004 (0x0004 - 0x0000)
@@ -4413,76 +4650,170 @@ static_assert(offsetof(BrickDataSingleton_GetColorDisplayName, Color) == 0x00000
 static_assert(offsetof(BrickDataSingleton_GetColorDisplayName, bRoundValue) == 0x000010, "Member 'BrickDataSingleton_GetColorDisplayName::bRoundValue' has a wrong offset!");
 static_assert(offsetof(BrickDataSingleton_GetColorDisplayName, ReturnValue) == 0x000018, "Member 'BrickDataSingleton_GetColorDisplayName::ReturnValue' has a wrong offset!");
 
-// Function BrickRigs.HUDIconWidget.SetIconColorStyle
-// 0x0001 (0x0001 - 0x0000)
-struct HUDIconWidget_SetIconColorStyle final
+// Function BrickRigs.CapturePoint.OnTriggerBeginOverlap
+// 0x00A8 (0x00A8 - 0x0000)
+struct CapturePoint_OnTriggerBeginOverlap final
 {
 public:
-	EBrickUIColorStyle                            NewColorStyle;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UPrimitiveComponent*                    OverlappedComponent;                               // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 OtherActor;                                        // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UPrimitiveComponent*                    OtherComp;                                         // 0x0010(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         OtherBodyIndex;                                    // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bFromSweep;                                        // 0x001C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1D[0x3];                                       // 0x001D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FHitResult                             SweepResult;                                       // 0x0020(0x0088)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(HUDIconWidget_SetIconColorStyle) == 0x000001, "Wrong alignment on HUDIconWidget_SetIconColorStyle");
-static_assert(sizeof(HUDIconWidget_SetIconColorStyle) == 0x000001, "Wrong size on HUDIconWidget_SetIconColorStyle");
-static_assert(offsetof(HUDIconWidget_SetIconColorStyle, NewColorStyle) == 0x000000, "Member 'HUDIconWidget_SetIconColorStyle::NewColorStyle' has a wrong offset!");
+static_assert(alignof(CapturePoint_OnTriggerBeginOverlap) == 0x000008, "Wrong alignment on CapturePoint_OnTriggerBeginOverlap");
+static_assert(sizeof(CapturePoint_OnTriggerBeginOverlap) == 0x0000A8, "Wrong size on CapturePoint_OnTriggerBeginOverlap");
+static_assert(offsetof(CapturePoint_OnTriggerBeginOverlap, OverlappedComponent) == 0x000000, "Member 'CapturePoint_OnTriggerBeginOverlap::OverlappedComponent' has a wrong offset!");
+static_assert(offsetof(CapturePoint_OnTriggerBeginOverlap, OtherActor) == 0x000008, "Member 'CapturePoint_OnTriggerBeginOverlap::OtherActor' has a wrong offset!");
+static_assert(offsetof(CapturePoint_OnTriggerBeginOverlap, OtherComp) == 0x000010, "Member 'CapturePoint_OnTriggerBeginOverlap::OtherComp' has a wrong offset!");
+static_assert(offsetof(CapturePoint_OnTriggerBeginOverlap, OtherBodyIndex) == 0x000018, "Member 'CapturePoint_OnTriggerBeginOverlap::OtherBodyIndex' has a wrong offset!");
+static_assert(offsetof(CapturePoint_OnTriggerBeginOverlap, bFromSweep) == 0x00001C, "Member 'CapturePoint_OnTriggerBeginOverlap::bFromSweep' has a wrong offset!");
+static_assert(offsetof(CapturePoint_OnTriggerBeginOverlap, SweepResult) == 0x000020, "Member 'CapturePoint_OnTriggerBeginOverlap::SweepResult' has a wrong offset!");
 
-// Function BrickRigs.HUDIconWidget.SetIconSlot
+// Function BrickRigs.CapturePoint.OnTriggerEndOverlap
+// 0x0020 (0x0020 - 0x0000)
+struct CapturePoint_OnTriggerEndOverlap final
+{
+public:
+	class UPrimitiveComponent*                    OverlappedComponent;                               // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 OtherActor;                                        // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UPrimitiveComponent*                    OtherComp;                                         // 0x0010(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         OtherBodyIndex;                                    // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(CapturePoint_OnTriggerEndOverlap) == 0x000008, "Wrong alignment on CapturePoint_OnTriggerEndOverlap");
+static_assert(sizeof(CapturePoint_OnTriggerEndOverlap) == 0x000020, "Wrong size on CapturePoint_OnTriggerEndOverlap");
+static_assert(offsetof(CapturePoint_OnTriggerEndOverlap, OverlappedComponent) == 0x000000, "Member 'CapturePoint_OnTriggerEndOverlap::OverlappedComponent' has a wrong offset!");
+static_assert(offsetof(CapturePoint_OnTriggerEndOverlap, OtherActor) == 0x000008, "Member 'CapturePoint_OnTriggerEndOverlap::OtherActor' has a wrong offset!");
+static_assert(offsetof(CapturePoint_OnTriggerEndOverlap, OtherComp) == 0x000010, "Member 'CapturePoint_OnTriggerEndOverlap::OtherComp' has a wrong offset!");
+static_assert(offsetof(CapturePoint_OnTriggerEndOverlap, OtherBodyIndex) == 0x000018, "Member 'CapturePoint_OnTriggerEndOverlap::OtherBodyIndex' has a wrong offset!");
+
+// Function BrickRigs.CapturePoint.SetCapturedBy
+// 0x0003 (0x0003 - 0x0000)
+struct CapturePoint_SetCapturedBy final
+{
+public:
+	struct FGenericTeamId                         TeamID;                                            // 0x0000(0x0001)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bNewHasBeenCaptured;                               // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0002(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(CapturePoint_SetCapturedBy) == 0x000001, "Wrong alignment on CapturePoint_SetCapturedBy");
+static_assert(sizeof(CapturePoint_SetCapturedBy) == 0x000003, "Wrong size on CapturePoint_SetCapturedBy");
+static_assert(offsetof(CapturePoint_SetCapturedBy, TeamID) == 0x000000, "Member 'CapturePoint_SetCapturedBy::TeamID' has a wrong offset!");
+static_assert(offsetof(CapturePoint_SetCapturedBy, bNewHasBeenCaptured) == 0x000001, "Member 'CapturePoint_SetCapturedBy::bNewHasBeenCaptured' has a wrong offset!");
+static_assert(offsetof(CapturePoint_SetCapturedBy, ReturnValue) == 0x000002, "Member 'CapturePoint_SetCapturedBy::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.CapturePoint.SetCaptureRatio
 // 0x0008 (0x0008 - 0x0000)
-struct HUDIconWidget_SetIconSlot final
+struct CapturePoint_SetCaptureRatio final
 {
 public:
-	struct FBrickUIIconSlot                       NewSlot;                                           // 0x0000(0x0008)(Parm, NoDestructor, NativeAccessSpecifierPublic)
+	float                                         NewRatio;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(HUDIconWidget_SetIconSlot) == 0x000004, "Wrong alignment on HUDIconWidget_SetIconSlot");
-static_assert(sizeof(HUDIconWidget_SetIconSlot) == 0x000008, "Wrong size on HUDIconWidget_SetIconSlot");
-static_assert(offsetof(HUDIconWidget_SetIconSlot, NewSlot) == 0x000000, "Member 'HUDIconWidget_SetIconSlot::NewSlot' has a wrong offset!");
+static_assert(alignof(CapturePoint_SetCaptureRatio) == 0x000004, "Wrong alignment on CapturePoint_SetCaptureRatio");
+static_assert(sizeof(CapturePoint_SetCaptureRatio) == 0x000008, "Wrong size on CapturePoint_SetCaptureRatio");
+static_assert(offsetof(CapturePoint_SetCaptureRatio, NewRatio) == 0x000000, "Member 'CapturePoint_SetCaptureRatio::NewRatio' has a wrong offset!");
+static_assert(offsetof(CapturePoint_SetCaptureRatio, ReturnValue) == 0x000004, "Member 'CapturePoint_SetCaptureRatio::ReturnValue' has a wrong offset!");
 
-// Function BrickRigs.HUDIconWidget.UpdateIconRotation
-// 0x0004 (0x0004 - 0x0000)
-struct HUDIconWidget_UpdateIconRotation final
-{
-public:
-	float                                         NewRotation;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(HUDIconWidget_UpdateIconRotation) == 0x000004, "Wrong alignment on HUDIconWidget_UpdateIconRotation");
-static_assert(sizeof(HUDIconWidget_UpdateIconRotation) == 0x000004, "Wrong size on HUDIconWidget_UpdateIconRotation");
-static_assert(offsetof(HUDIconWidget_UpdateIconRotation, NewRotation) == 0x000000, "Member 'HUDIconWidget_UpdateIconRotation::NewRotation' has a wrong offset!");
-
-// Function BrickRigs.HUDIconWidget.UpdateIconStyle
+// Function BrickRigs.CapturePoint.SetCapturingTeam
 // 0x0002 (0x0002 - 0x0000)
-struct HUDIconWidget_UpdateIconStyle final
+struct CapturePoint_SetCapturingTeam final
 {
 public:
-	EBrickUIColorStyle                            InColorStyle;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EBrickUIStyleState                            InStyleState;                                      // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FGenericTeamId                         TeamID;                                            // 0x0000(0x0001)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0001(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(HUDIconWidget_UpdateIconStyle) == 0x000001, "Wrong alignment on HUDIconWidget_UpdateIconStyle");
-static_assert(sizeof(HUDIconWidget_UpdateIconStyle) == 0x000002, "Wrong size on HUDIconWidget_UpdateIconStyle");
-static_assert(offsetof(HUDIconWidget_UpdateIconStyle, InColorStyle) == 0x000000, "Member 'HUDIconWidget_UpdateIconStyle::InColorStyle' has a wrong offset!");
-static_assert(offsetof(HUDIconWidget_UpdateIconStyle, InStyleState) == 0x000001, "Member 'HUDIconWidget_UpdateIconStyle::InStyleState' has a wrong offset!");
+static_assert(alignof(CapturePoint_SetCapturingTeam) == 0x000001, "Wrong alignment on CapturePoint_SetCapturingTeam");
+static_assert(sizeof(CapturePoint_SetCapturingTeam) == 0x000002, "Wrong size on CapturePoint_SetCapturingTeam");
+static_assert(offsetof(CapturePoint_SetCapturingTeam, TeamID) == 0x000000, "Member 'CapturePoint_SetCapturingTeam::TeamID' has a wrong offset!");
+static_assert(offsetof(CapturePoint_SetCapturingTeam, ReturnValue) == 0x000001, "Member 'CapturePoint_SetCapturingTeam::ReturnValue' has a wrong offset!");
 
-// Function BrickRigs.HUDIconWidget.GetIconDisplayName
+// Function BrickRigs.CapturePoint.GetCapturedBy
+// 0x0001 (0x0001 - 0x0000)
+struct CapturePoint_GetCapturedBy final
+{
+public:
+	struct FGenericTeamId                         ReturnValue;                                       // 0x0000(0x0001)(ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(CapturePoint_GetCapturedBy) == 0x000001, "Wrong alignment on CapturePoint_GetCapturedBy");
+static_assert(sizeof(CapturePoint_GetCapturedBy) == 0x000001, "Wrong size on CapturePoint_GetCapturedBy");
+static_assert(offsetof(CapturePoint_GetCapturedBy, ReturnValue) == 0x000000, "Member 'CapturePoint_GetCapturedBy::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.CapturePoint.GetCapturePointShortDisplayName
 // 0x0018 (0x0018 - 0x0000)
-struct HUDIconWidget_GetIconDisplayName final
+struct CapturePoint_GetCapturePointShortDisplayName final
 {
 public:
 	class FText                                   ReturnValue;                                       // 0x0000(0x0018)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(HUDIconWidget_GetIconDisplayName) == 0x000008, "Wrong alignment on HUDIconWidget_GetIconDisplayName");
-static_assert(sizeof(HUDIconWidget_GetIconDisplayName) == 0x000018, "Wrong size on HUDIconWidget_GetIconDisplayName");
-static_assert(offsetof(HUDIconWidget_GetIconDisplayName, ReturnValue) == 0x000000, "Member 'HUDIconWidget_GetIconDisplayName::ReturnValue' has a wrong offset!");
+static_assert(alignof(CapturePoint_GetCapturePointShortDisplayName) == 0x000008, "Wrong alignment on CapturePoint_GetCapturePointShortDisplayName");
+static_assert(sizeof(CapturePoint_GetCapturePointShortDisplayName) == 0x000018, "Wrong size on CapturePoint_GetCapturePointShortDisplayName");
+static_assert(offsetof(CapturePoint_GetCapturePointShortDisplayName, ReturnValue) == 0x000000, "Member 'CapturePoint_GetCapturePointShortDisplayName::ReturnValue' has a wrong offset!");
 
-// Function BrickRigs.HUDIconWidget.GetIconWorldRotation
-// 0x0008 (0x0008 - 0x0000)
-struct HUDIconWidget_GetIconWorldRotation final
+// Function BrickRigs.CapturePoint.GetCaptureRatio
+// 0x0004 (0x0004 - 0x0000)
+struct CapturePoint_GetCaptureRatio final
 {
 public:
-	float                                         OutRotation;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(HUDIconWidget_GetIconWorldRotation) == 0x000004, "Wrong alignment on HUDIconWidget_GetIconWorldRotation");
-static_assert(sizeof(HUDIconWidget_GetIconWorldRotation) == 0x000008, "Wrong size on HUDIconWidget_GetIconWorldRotation");
-static_assert(offsetof(HUDIconWidget_GetIconWorldRotation, OutRotation) == 0x000000, "Member 'HUDIconWidget_GetIconWorldRotation::OutRotation' has a wrong offset!");
-static_assert(offsetof(HUDIconWidget_GetIconWorldRotation, ReturnValue) == 0x000004, "Member 'HUDIconWidget_GetIconWorldRotation::ReturnValue' has a wrong offset!");
+static_assert(alignof(CapturePoint_GetCaptureRatio) == 0x000004, "Wrong alignment on CapturePoint_GetCaptureRatio");
+static_assert(sizeof(CapturePoint_GetCaptureRatio) == 0x000004, "Wrong size on CapturePoint_GetCaptureRatio");
+static_assert(offsetof(CapturePoint_GetCaptureRatio, ReturnValue) == 0x000000, "Member 'CapturePoint_GetCaptureRatio::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.CapturePoint.GetCapturingTeam
+// 0x0001 (0x0001 - 0x0000)
+struct CapturePoint_GetCapturingTeam final
+{
+public:
+	struct FGenericTeamId                         ReturnValue;                                       // 0x0000(0x0001)(ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(CapturePoint_GetCapturingTeam) == 0x000001, "Wrong alignment on CapturePoint_GetCapturingTeam");
+static_assert(sizeof(CapturePoint_GetCapturingTeam) == 0x000001, "Wrong size on CapturePoint_GetCapturingTeam");
+static_assert(offsetof(CapturePoint_GetCapturingTeam, ReturnValue) == 0x000000, "Member 'CapturePoint_GetCapturingTeam::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.CapturePoint.HasBeenCaptured
+// 0x0001 (0x0001 - 0x0000)
+struct CapturePoint_HasBeenCaptured final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(CapturePoint_HasBeenCaptured) == 0x000001, "Wrong alignment on CapturePoint_HasBeenCaptured");
+static_assert(sizeof(CapturePoint_HasBeenCaptured) == 0x000001, "Wrong size on CapturePoint_HasBeenCaptured");
+static_assert(offsetof(CapturePoint_HasBeenCaptured, ReturnValue) == 0x000000, "Member 'CapturePoint_HasBeenCaptured::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.CapturePoint.IsCapturePointOnBuilding
+// 0x0010 (0x0010 - 0x0000)
+struct CapturePoint_IsCapturePointOnBuilding final
+{
+public:
+	const class ABrickBuilding*                   InBuilding;                                        // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(CapturePoint_IsCapturePointOnBuilding) == 0x000008, "Wrong alignment on CapturePoint_IsCapturePointOnBuilding");
+static_assert(sizeof(CapturePoint_IsCapturePointOnBuilding) == 0x000010, "Wrong size on CapturePoint_IsCapturePointOnBuilding");
+static_assert(offsetof(CapturePoint_IsCapturePointOnBuilding, InBuilding) == 0x000000, "Member 'CapturePoint_IsCapturePointOnBuilding::InBuilding' has a wrong offset!");
+static_assert(offsetof(CapturePoint_IsCapturePointOnBuilding, ReturnValue) == 0x000008, "Member 'CapturePoint_IsCapturePointOnBuilding::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.CapturePoint.IsCharacterOnCapturePoint
+// 0x0010 (0x0010 - 0x0000)
+struct CapturePoint_IsCharacterOnCapturePoint final
+{
+public:
+	class ABaseCharacter*                         InCharacter;                                       // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(CapturePoint_IsCharacterOnCapturePoint) == 0x000008, "Wrong alignment on CapturePoint_IsCharacterOnCapturePoint");
+static_assert(sizeof(CapturePoint_IsCharacterOnCapturePoint) == 0x000010, "Wrong size on CapturePoint_IsCharacterOnCapturePoint");
+static_assert(offsetof(CapturePoint_IsCharacterOnCapturePoint, InCharacter) == 0x000000, "Member 'CapturePoint_IsCharacterOnCapturePoint::InCharacter' has a wrong offset!");
+static_assert(offsetof(CapturePoint_IsCharacterOnCapturePoint, ReturnValue) == 0x000008, "Member 'CapturePoint_IsCharacterOnCapturePoint::ReturnValue' has a wrong offset!");
 
 // Function BrickRigs.BrickEditorArrowComponent.SetArrowType
 // 0x0001 (0x0001 - 0x0000)
@@ -4539,126 +4870,60 @@ static_assert(alignof(BrickEditorArrowComponent_SetLinearArrowLength) == 0x00000
 static_assert(sizeof(BrickEditorArrowComponent_SetLinearArrowLength) == 0x000004, "Wrong size on BrickEditorArrowComponent_SetLinearArrowLength");
 static_assert(offsetof(BrickEditorArrowComponent_SetLinearArrowLength, NewLength) == 0x000000, "Member 'BrickEditorArrowComponent_SetLinearArrowLength::NewLength' has a wrong offset!");
 
-// Function BrickRigs.BrickSizePropertyWidget.OnXSliderValueChanged
+// Function BrickRigs.CouplingBrick.Interact_DisengageCoupling
 // 0x0008 (0x0008 - 0x0000)
-struct BrickSizePropertyWidget_OnXSliderValueChanged final
+struct CouplingBrick_Interact_DisengageCoupling final
 {
 public:
-	struct FBrickUnits                            NewValue;                                          // 0x0000(0x0004)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-	EValueChangedEventType                        EventType;                                         // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class ABrickPlayerController*                 PC;                                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(BrickSizePropertyWidget_OnXSliderValueChanged) == 0x000004, "Wrong alignment on BrickSizePropertyWidget_OnXSliderValueChanged");
-static_assert(sizeof(BrickSizePropertyWidget_OnXSliderValueChanged) == 0x000008, "Wrong size on BrickSizePropertyWidget_OnXSliderValueChanged");
-static_assert(offsetof(BrickSizePropertyWidget_OnXSliderValueChanged, NewValue) == 0x000000, "Member 'BrickSizePropertyWidget_OnXSliderValueChanged::NewValue' has a wrong offset!");
-static_assert(offsetof(BrickSizePropertyWidget_OnXSliderValueChanged, EventType) == 0x000004, "Member 'BrickSizePropertyWidget_OnXSliderValueChanged::EventType' has a wrong offset!");
+static_assert(alignof(CouplingBrick_Interact_DisengageCoupling) == 0x000008, "Wrong alignment on CouplingBrick_Interact_DisengageCoupling");
+static_assert(sizeof(CouplingBrick_Interact_DisengageCoupling) == 0x000008, "Wrong size on CouplingBrick_Interact_DisengageCoupling");
+static_assert(offsetof(CouplingBrick_Interact_DisengageCoupling, PC) == 0x000000, "Member 'CouplingBrick_Interact_DisengageCoupling::PC' has a wrong offset!");
 
-// Function BrickRigs.BrickSizePropertyWidget.OnYSliderValueChanged
+// Function BrickRigs.CouplingBrick.Interact_EngageCoupling
 // 0x0008 (0x0008 - 0x0000)
-struct BrickSizePropertyWidget_OnYSliderValueChanged final
+struct CouplingBrick_Interact_EngageCoupling final
 {
 public:
-	struct FBrickUnits                            NewValue;                                          // 0x0000(0x0004)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-	EValueChangedEventType                        EventType;                                         // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class ABrickPlayerController*                 PC;                                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(BrickSizePropertyWidget_OnYSliderValueChanged) == 0x000004, "Wrong alignment on BrickSizePropertyWidget_OnYSliderValueChanged");
-static_assert(sizeof(BrickSizePropertyWidget_OnYSliderValueChanged) == 0x000008, "Wrong size on BrickSizePropertyWidget_OnYSliderValueChanged");
-static_assert(offsetof(BrickSizePropertyWidget_OnYSliderValueChanged, NewValue) == 0x000000, "Member 'BrickSizePropertyWidget_OnYSliderValueChanged::NewValue' has a wrong offset!");
-static_assert(offsetof(BrickSizePropertyWidget_OnYSliderValueChanged, EventType) == 0x000004, "Member 'BrickSizePropertyWidget_OnYSliderValueChanged::EventType' has a wrong offset!");
+static_assert(alignof(CouplingBrick_Interact_EngageCoupling) == 0x000008, "Wrong alignment on CouplingBrick_Interact_EngageCoupling");
+static_assert(sizeof(CouplingBrick_Interact_EngageCoupling) == 0x000008, "Wrong size on CouplingBrick_Interact_EngageCoupling");
+static_assert(offsetof(CouplingBrick_Interact_EngageCoupling, PC) == 0x000000, "Member 'CouplingBrick_Interact_EngageCoupling::PC' has a wrong offset!");
 
-// Function BrickRigs.BrickSizePropertyWidget.OnZSliderValueChanged
-// 0x0008 (0x0008 - 0x0000)
-struct BrickSizePropertyWidget_OnZSliderValueChanged final
-{
-public:
-	struct FBrickUnits                            NewValue;                                          // 0x0000(0x0004)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-	EValueChangedEventType                        EventType;                                         // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(BrickSizePropertyWidget_OnZSliderValueChanged) == 0x000004, "Wrong alignment on BrickSizePropertyWidget_OnZSliderValueChanged");
-static_assert(sizeof(BrickSizePropertyWidget_OnZSliderValueChanged) == 0x000008, "Wrong size on BrickSizePropertyWidget_OnZSliderValueChanged");
-static_assert(offsetof(BrickSizePropertyWidget_OnZSliderValueChanged, NewValue) == 0x000000, "Member 'BrickSizePropertyWidget_OnZSliderValueChanged::NewValue' has a wrong offset!");
-static_assert(offsetof(BrickSizePropertyWidget_OnZSliderValueChanged, EventType) == 0x000004, "Member 'BrickSizePropertyWidget_OnZSliderValueChanged::EventType' has a wrong offset!");
-
-// Function BrickRigs.BrickEditorMirrorModeWidget.UpdateCanBeSelected
+// Function BrickRigs.BrickEditorMirrorAxisWidget.UpdateCanBeSelected
 // 0x0001 (0x0001 - 0x0000)
-struct BrickEditorMirrorModeWidget_UpdateCanBeSelected final
+struct BrickEditorMirrorAxisWidget_UpdateCanBeSelected final
 {
 public:
 	bool                                          bNewCanBeSelected;                                 // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(BrickEditorMirrorModeWidget_UpdateCanBeSelected) == 0x000001, "Wrong alignment on BrickEditorMirrorModeWidget_UpdateCanBeSelected");
-static_assert(sizeof(BrickEditorMirrorModeWidget_UpdateCanBeSelected) == 0x000001, "Wrong size on BrickEditorMirrorModeWidget_UpdateCanBeSelected");
-static_assert(offsetof(BrickEditorMirrorModeWidget_UpdateCanBeSelected, bNewCanBeSelected) == 0x000000, "Member 'BrickEditorMirrorModeWidget_UpdateCanBeSelected::bNewCanBeSelected' has a wrong offset!");
+static_assert(alignof(BrickEditorMirrorAxisWidget_UpdateCanBeSelected) == 0x000001, "Wrong alignment on BrickEditorMirrorAxisWidget_UpdateCanBeSelected");
+static_assert(sizeof(BrickEditorMirrorAxisWidget_UpdateCanBeSelected) == 0x000001, "Wrong size on BrickEditorMirrorAxisWidget_UpdateCanBeSelected");
+static_assert(offsetof(BrickEditorMirrorAxisWidget_UpdateCanBeSelected, bNewCanBeSelected) == 0x000000, "Member 'BrickEditorMirrorAxisWidget_UpdateCanBeSelected::bNewCanBeSelected' has a wrong offset!");
 
-// Function BrickRigs.BrickEditorMirrorModeWidget.UpdateIsSelected
+// Function BrickRigs.BrickEditorMirrorAxisWidget.UpdateIsSelected
 // 0x0001 (0x0001 - 0x0000)
-struct BrickEditorMirrorModeWidget_UpdateIsSelected final
+struct BrickEditorMirrorAxisWidget_UpdateIsSelected final
 {
 public:
 	bool                                          bNewSelected;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(BrickEditorMirrorModeWidget_UpdateIsSelected) == 0x000001, "Wrong alignment on BrickEditorMirrorModeWidget_UpdateIsSelected");
-static_assert(sizeof(BrickEditorMirrorModeWidget_UpdateIsSelected) == 0x000001, "Wrong size on BrickEditorMirrorModeWidget_UpdateIsSelected");
-static_assert(offsetof(BrickEditorMirrorModeWidget_UpdateIsSelected, bNewSelected) == 0x000000, "Member 'BrickEditorMirrorModeWidget_UpdateIsSelected::bNewSelected' has a wrong offset!");
+static_assert(alignof(BrickEditorMirrorAxisWidget_UpdateIsSelected) == 0x000001, "Wrong alignment on BrickEditorMirrorAxisWidget_UpdateIsSelected");
+static_assert(sizeof(BrickEditorMirrorAxisWidget_UpdateIsSelected) == 0x000001, "Wrong size on BrickEditorMirrorAxisWidget_UpdateIsSelected");
+static_assert(offsetof(BrickEditorMirrorAxisWidget_UpdateIsSelected, bNewSelected) == 0x000000, "Member 'BrickEditorMirrorAxisWidget_UpdateIsSelected::bNewSelected' has a wrong offset!");
 
-// Function BrickRigs.BrickEditorMirrorModeWidget.UpdateMirrorMode
+// Function BrickRigs.BrickEditorMirrorAxisWidget.UpdateMirrorAxis
 // 0x0001 (0x0001 - 0x0000)
-struct BrickEditorMirrorModeWidget_UpdateMirrorMode final
+struct BrickEditorMirrorAxisWidget_UpdateMirrorAxis final
 {
 public:
-	EBrickEditorMirrorMode                        InMirrorMode;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EAxis                                         InAxis;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(BrickEditorMirrorModeWidget_UpdateMirrorMode) == 0x000001, "Wrong alignment on BrickEditorMirrorModeWidget_UpdateMirrorMode");
-static_assert(sizeof(BrickEditorMirrorModeWidget_UpdateMirrorMode) == 0x000001, "Wrong size on BrickEditorMirrorModeWidget_UpdateMirrorMode");
-static_assert(offsetof(BrickEditorMirrorModeWidget_UpdateMirrorMode, InMirrorMode) == 0x000000, "Member 'BrickEditorMirrorModeWidget_UpdateMirrorMode::InMirrorMode' has a wrong offset!");
-
-// Function BrickRigs.CrosshairWidget.OnHUDVisibilityChanged
-// 0x0001 (0x0001 - 0x0000)
-struct CrosshairWidget_OnHUDVisibilityChanged final
-{
-public:
-	EHUDVisibility                                NewVisibility;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(CrosshairWidget_OnHUDVisibilityChanged) == 0x000001, "Wrong alignment on CrosshairWidget_OnHUDVisibilityChanged");
-static_assert(sizeof(CrosshairWidget_OnHUDVisibilityChanged) == 0x000001, "Wrong size on CrosshairWidget_OnHUDVisibilityChanged");
-static_assert(offsetof(CrosshairWidget_OnHUDVisibilityChanged, NewVisibility) == 0x000000, "Member 'CrosshairWidget_OnHUDVisibilityChanged::NewVisibility' has a wrong offset!");
-
-// Function BrickRigs.CrosshairWidget.PlayHitAnimation
-// 0x000C (0x000C - 0x0000)
-struct CrosshairWidget_PlayHitAnimation final
-{
-public:
-	struct FClientDamageInfo                      DamageInfo;                                        // 0x0000(0x000C)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(CrosshairWidget_PlayHitAnimation) == 0x000004, "Wrong alignment on CrosshairWidget_PlayHitAnimation");
-static_assert(sizeof(CrosshairWidget_PlayHitAnimation) == 0x00000C, "Wrong size on CrosshairWidget_PlayHitAnimation");
-static_assert(offsetof(CrosshairWidget_PlayHitAnimation, DamageInfo) == 0x000000, "Member 'CrosshairWidget_PlayHitAnimation::DamageInfo' has a wrong offset!");
-
-// Function BrickRigs.CrosshairWidget.UpdateIsAttachingWinch
-// 0x0001 (0x0001 - 0x0000)
-struct CrosshairWidget_UpdateIsAttachingWinch final
-{
-public:
-	bool                                          bNewAttaching;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(CrosshairWidget_UpdateIsAttachingWinch) == 0x000001, "Wrong alignment on CrosshairWidget_UpdateIsAttachingWinch");
-static_assert(sizeof(CrosshairWidget_UpdateIsAttachingWinch) == 0x000001, "Wrong size on CrosshairWidget_UpdateIsAttachingWinch");
-static_assert(offsetof(CrosshairWidget_UpdateIsAttachingWinch, bNewAttaching) == 0x000000, "Member 'CrosshairWidget_UpdateIsAttachingWinch::bNewAttaching' has a wrong offset!");
-
-// Function BrickRigs.CrosshairWidget.UpdateWinchAttachment
-// 0x0002 (0x0002 - 0x0000)
-struct CrosshairWidget_UpdateWinchAttachment final
-{
-public:
-	bool                                          bBlockingHit;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bWithinRange;                                      // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(CrosshairWidget_UpdateWinchAttachment) == 0x000001, "Wrong alignment on CrosshairWidget_UpdateWinchAttachment");
-static_assert(sizeof(CrosshairWidget_UpdateWinchAttachment) == 0x000002, "Wrong size on CrosshairWidget_UpdateWinchAttachment");
-static_assert(offsetof(CrosshairWidget_UpdateWinchAttachment, bBlockingHit) == 0x000000, "Member 'CrosshairWidget_UpdateWinchAttachment::bBlockingHit' has a wrong offset!");
-static_assert(offsetof(CrosshairWidget_UpdateWinchAttachment, bWithinRange) == 0x000001, "Member 'CrosshairWidget_UpdateWinchAttachment::bWithinRange' has a wrong offset!");
+static_assert(alignof(BrickEditorMirrorAxisWidget_UpdateMirrorAxis) == 0x000001, "Wrong alignment on BrickEditorMirrorAxisWidget_UpdateMirrorAxis");
+static_assert(sizeof(BrickEditorMirrorAxisWidget_UpdateMirrorAxis) == 0x000001, "Wrong size on BrickEditorMirrorAxisWidget_UpdateMirrorAxis");
+static_assert(offsetof(BrickEditorMirrorAxisWidget_UpdateMirrorAxis, InAxis) == 0x000000, "Member 'BrickEditorMirrorAxisWidget_UpdateMirrorAxis::InAxis' has a wrong offset!");
 
 // Function BrickRigs.BaseEditorInputComponent.GetCycleViewModeValueText
 // 0x0018 (0x0018 - 0x0000)
@@ -4726,6 +4991,68 @@ static_assert(alignof(BaseEditorInputComponent_GetUploadItemEnabled) == 0x000001
 static_assert(sizeof(BaseEditorInputComponent_GetUploadItemEnabled) == 0x000001, "Wrong size on BaseEditorInputComponent_GetUploadItemEnabled");
 static_assert(offsetof(BaseEditorInputComponent_GetUploadItemEnabled, ReturnValue) == 0x000000, "Member 'BaseEditorInputComponent_GetUploadItemEnabled::ReturnValue' has a wrong offset!");
 
+// Function BrickRigs.ExplosiveItem.Explode
+// 0x0028 (0x0028 - 0x0000)
+struct ExplosiveItem_Explode final
+{
+public:
+	float                                         DamageAmount;                                      // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FDamageEvent                           DamageEvent;                                       // 0x0008(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	class AController*                            EventInstigator;                                   // 0x0018(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 DamageCauser;                                      // 0x0020(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ExplosiveItem_Explode) == 0x000008, "Wrong alignment on ExplosiveItem_Explode");
+static_assert(sizeof(ExplosiveItem_Explode) == 0x000028, "Wrong size on ExplosiveItem_Explode");
+static_assert(offsetof(ExplosiveItem_Explode, DamageAmount) == 0x000000, "Member 'ExplosiveItem_Explode::DamageAmount' has a wrong offset!");
+static_assert(offsetof(ExplosiveItem_Explode, DamageEvent) == 0x000008, "Member 'ExplosiveItem_Explode::DamageEvent' has a wrong offset!");
+static_assert(offsetof(ExplosiveItem_Explode, EventInstigator) == 0x000018, "Member 'ExplosiveItem_Explode::EventInstigator' has a wrong offset!");
+static_assert(offsetof(ExplosiveItem_Explode, DamageCauser) == 0x000020, "Member 'ExplosiveItem_Explode::DamageCauser' has a wrong offset!");
+
+// Function BrickRigs.ExplosiveItem.SetExplosiveState
+// 0x0001 (0x0001 - 0x0000)
+struct ExplosiveItem_SetExplosiveState final
+{
+public:
+	EExplosiveItemState                           NewState;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ExplosiveItem_SetExplosiveState) == 0x000001, "Wrong alignment on ExplosiveItem_SetExplosiveState");
+static_assert(sizeof(ExplosiveItem_SetExplosiveState) == 0x000001, "Wrong size on ExplosiveItem_SetExplosiveState");
+static_assert(offsetof(ExplosiveItem_SetExplosiveState, NewState) == 0x000000, "Member 'ExplosiveItem_SetExplosiveState::NewState' has a wrong offset!");
+
+// Function BrickRigs.ExplosiveItem.IsPrimed
+// 0x0001 (0x0001 - 0x0000)
+struct ExplosiveItem_IsPrimed final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ExplosiveItem_IsPrimed) == 0x000001, "Wrong alignment on ExplosiveItem_IsPrimed");
+static_assert(sizeof(ExplosiveItem_IsPrimed) == 0x000001, "Wrong size on ExplosiveItem_IsPrimed");
+static_assert(offsetof(ExplosiveItem_IsPrimed, ReturnValue) == 0x000000, "Member 'ExplosiveItem_IsPrimed::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.DashboardSliderWidget.UpdateColorStyle
+// 0x0001 (0x0001 - 0x0000)
+struct DashboardSliderWidget_UpdateColorStyle final
+{
+public:
+	EBrickUIColorStyle                            NewStyle;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(DashboardSliderWidget_UpdateColorStyle) == 0x000001, "Wrong alignment on DashboardSliderWidget_UpdateColorStyle");
+static_assert(sizeof(DashboardSliderWidget_UpdateColorStyle) == 0x000001, "Wrong size on DashboardSliderWidget_UpdateColorStyle");
+static_assert(offsetof(DashboardSliderWidget_UpdateColorStyle, NewStyle) == 0x000000, "Member 'DashboardSliderWidget_UpdateColorStyle::NewStyle' has a wrong offset!");
+
+// Function BrickRigs.DashboardSliderWidget.UpdateIcon
+// 0x0004 (0x0004 - 0x0000)
+struct DashboardSliderWidget_UpdateIcon final
+{
+public:
+	int32                                         IconIndex;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(DashboardSliderWidget_UpdateIcon) == 0x000004, "Wrong alignment on DashboardSliderWidget_UpdateIcon");
+static_assert(sizeof(DashboardSliderWidget_UpdateIcon) == 0x000004, "Wrong size on DashboardSliderWidget_UpdateIcon");
+static_assert(offsetof(DashboardSliderWidget_UpdateIcon, IconIndex) == 0x000000, "Member 'DashboardSliderWidget_UpdateIcon::IconIndex' has a wrong offset!");
+
 // Function BrickRigs.BrickEditorObjectPropertyWidget.UpdateSelectedObjects
 // 0x0020 (0x0020 - 0x0000)
 struct BrickEditorObjectPropertyWidget_UpdateSelectedObjects final
@@ -4753,52 +5080,34 @@ static_assert(alignof(BrickEditorParticleComponent_OnSystemFinishedCallback) == 
 static_assert(sizeof(BrickEditorParticleComponent_OnSystemFinishedCallback) == 0x000008, "Wrong size on BrickEditorParticleComponent_OnSystemFinishedCallback");
 static_assert(offsetof(BrickEditorParticleComponent_OnSystemFinishedCallback, InParticleComponent) == 0x000000, "Member 'BrickEditorParticleComponent_OnSystemFinishedCallback::InParticleComponent' has a wrong offset!");
 
-// Function BrickRigs.DashboardWidget.AddIconWidget
-// 0x0010 (0x0010 - 0x0000)
-struct DashboardWidget_AddIconWidget final
-{
-public:
-	class UDashboardIconWidget*                   Widget;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Index_0;                                           // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(DashboardWidget_AddIconWidget) == 0x000008, "Wrong alignment on DashboardWidget_AddIconWidget");
-static_assert(sizeof(DashboardWidget_AddIconWidget) == 0x000010, "Wrong size on DashboardWidget_AddIconWidget");
-static_assert(offsetof(DashboardWidget_AddIconWidget, Widget) == 0x000000, "Member 'DashboardWidget_AddIconWidget::Widget' has a wrong offset!");
-static_assert(offsetof(DashboardWidget_AddIconWidget, Index_0) == 0x000008, "Member 'DashboardWidget_AddIconWidget::Index_0' has a wrong offset!");
-
-// Function BrickRigs.DashboardWidget.AddSliderWidget
+// Function BrickRigs.GravelSilo.Interact_CloseSilo
 // 0x0008 (0x0008 - 0x0000)
-struct DashboardWidget_AddSliderWidget final
+struct GravelSilo_Interact_CloseSilo final
 {
 public:
-	class UDashboardSliderWidget*                 Widget;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class ABrickPlayerController*                 PC;                                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(DashboardWidget_AddSliderWidget) == 0x000008, "Wrong alignment on DashboardWidget_AddSliderWidget");
-static_assert(sizeof(DashboardWidget_AddSliderWidget) == 0x000008, "Wrong size on DashboardWidget_AddSliderWidget");
-static_assert(offsetof(DashboardWidget_AddSliderWidget, Widget) == 0x000000, "Member 'DashboardWidget_AddSliderWidget::Widget' has a wrong offset!");
+static_assert(alignof(GravelSilo_Interact_CloseSilo) == 0x000008, "Wrong alignment on GravelSilo_Interact_CloseSilo");
+static_assert(sizeof(GravelSilo_Interact_CloseSilo) == 0x000008, "Wrong size on GravelSilo_Interact_CloseSilo");
+static_assert(offsetof(GravelSilo_Interact_CloseSilo, PC) == 0x000000, "Member 'GravelSilo_Interact_CloseSilo::PC' has a wrong offset!");
 
-// Function BrickRigs.DashboardWidget.UpdateSliderWidgetSlot
-// 0x0010 (0x0010 - 0x0000)
-struct DashboardWidget_UpdateSliderWidgetSlot final
+// Function BrickRigs.GravelSilo.Interact_OpenSilo
+// 0x0008 (0x0008 - 0x0000)
+struct GravelSilo_Interact_OpenSilo final
 {
 public:
-	class UDashboardSliderWidget*                 Widget;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Index_0;                                           // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         NumSliders;                                        // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class ABrickPlayerController*                 PC;                                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(DashboardWidget_UpdateSliderWidgetSlot) == 0x000008, "Wrong alignment on DashboardWidget_UpdateSliderWidgetSlot");
-static_assert(sizeof(DashboardWidget_UpdateSliderWidgetSlot) == 0x000010, "Wrong size on DashboardWidget_UpdateSliderWidgetSlot");
-static_assert(offsetof(DashboardWidget_UpdateSliderWidgetSlot, Widget) == 0x000000, "Member 'DashboardWidget_UpdateSliderWidgetSlot::Widget' has a wrong offset!");
-static_assert(offsetof(DashboardWidget_UpdateSliderWidgetSlot, Index_0) == 0x000008, "Member 'DashboardWidget_UpdateSliderWidgetSlot::Index_0' has a wrong offset!");
-static_assert(offsetof(DashboardWidget_UpdateSliderWidgetSlot, NumSliders) == 0x00000C, "Member 'DashboardWidget_UpdateSliderWidgetSlot::NumSliders' has a wrong offset!");
+static_assert(alignof(GravelSilo_Interact_OpenSilo) == 0x000008, "Wrong alignment on GravelSilo_Interact_OpenSilo");
+static_assert(sizeof(GravelSilo_Interact_OpenSilo) == 0x000008, "Wrong size on GravelSilo_Interact_OpenSilo");
+static_assert(offsetof(GravelSilo_Interact_OpenSilo, PC) == 0x000000, "Member 'GravelSilo_Interact_OpenSilo::PC' has a wrong offset!");
 
 // Function BrickRigs.BrickEditorWidget.AddMirrorModeWidget
 // 0x0010 (0x0010 - 0x0000)
 struct BrickEditorWidget_AddMirrorModeWidget final
 {
 public:
-	class UBrickEditorMirrorModeWidget*           Widget;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UBrickEditorMirrorAxisWidget*           Widget;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	int32                                         Index_0;                                           // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
@@ -4890,6 +5199,28 @@ static_assert(sizeof(BrickEditorWidget_UpdateSelection) == 0x000020, "Wrong size
 static_assert(offsetof(BrickEditorWidget_UpdateSelection, SelectionName) == 0x000000, "Member 'BrickEditorWidget_UpdateSelection::SelectionName' has a wrong offset!");
 static_assert(offsetof(BrickEditorWidget_UpdateSelection, bAnythingSelected) == 0x000018, "Member 'BrickEditorWidget_UpdateSelection::bAnythingSelected' has a wrong offset!");
 
+// Function BrickRigs.HUDContainerWidget.AddGameOverlayWidget
+// 0x0008 (0x0008 - 0x0000)
+struct HUDContainerWidget_AddGameOverlayWidget final
+{
+public:
+	class UGameOverlayWidget*                     Widget;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(HUDContainerWidget_AddGameOverlayWidget) == 0x000008, "Wrong alignment on HUDContainerWidget_AddGameOverlayWidget");
+static_assert(sizeof(HUDContainerWidget_AddGameOverlayWidget) == 0x000008, "Wrong size on HUDContainerWidget_AddGameOverlayWidget");
+static_assert(offsetof(HUDContainerWidget_AddGameOverlayWidget, Widget) == 0x000000, "Member 'HUDContainerWidget_AddGameOverlayWidget::Widget' has a wrong offset!");
+
+// Function BrickRigs.HUDContainerWidget.AddHUDWidget
+// 0x0008 (0x0008 - 0x0000)
+struct HUDContainerWidget_AddHUDWidget final
+{
+public:
+	class UUserWidget*                            Widget;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(HUDContainerWidget_AddHUDWidget) == 0x000008, "Wrong alignment on HUDContainerWidget_AddHUDWidget");
+static_assert(sizeof(HUDContainerWidget_AddHUDWidget) == 0x000008, "Wrong size on HUDContainerWidget_AddHUDWidget");
+static_assert(offsetof(HUDContainerWidget_AddHUDWidget, Widget) == 0x000000, "Member 'HUDContainerWidget_AddHUDWidget::Widget' has a wrong offset!");
+
 // Function BrickRigs.BrickGameInstance.Get
 // 0x0010 (0x0010 - 0x0000)
 struct BrickGameInstance_Get final
@@ -4908,7 +5239,7 @@ static_assert(offsetof(BrickGameInstance_Get, ReturnValue) == 0x000008, "Member 
 struct BrickGameInstance_ClosePopup final
 {
 public:
-	struct FPopupHandle                           Handle;                                            // 0x0000(0x0004)(Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FPopupHandle                           Handle;                                            // 0x0000(0x0004)(Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	EPopupResult                                  Result;                                            // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          ReturnValue;                                       // 0x0005(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_6[0x2];                                        // 0x0006(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
@@ -4948,7 +5279,7 @@ static_assert(offsetof(BrickGameInstance_OpenMainMenu, bForceExit) == 0x000000, 
 struct BrickGameInstance_OpenMessagePopup final
 {
 public:
-	struct FPopupHandle                           Handle;                                            // 0x0000(0x0004)(Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FPopupHandle                           Handle;                                            // 0x0000(0x0004)(Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class FText                                   Message;                                           // 0x0008(0x0018)(Parm, NativeAccessSpecifierPublic)
 	bool                                          bCanCancel;                                        // 0x0020(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -4970,7 +5301,7 @@ static_assert(offsetof(BrickGameInstance_OpenMessagePopup, ReturnValue) == 0x000
 struct BrickGameInstance_OpenPopup final
 {
 public:
-	struct FPopupHandle                           Handle;                                            // 0x0000(0x0004)(Parm, OutParm, NoDestructor, NativeAccessSpecifierPublic)
+	struct FPopupHandle                           Handle;                                            // 0x0000(0x0004)(Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UPopupParams*                           PopupParams;                                       // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bToggleOpen;                                       // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -5008,6 +5339,67 @@ static_assert(alignof(BrickGameInstance_IsPopupOpen) == 0x000004, "Wrong alignme
 static_assert(sizeof(BrickGameInstance_IsPopupOpen) == 0x000008, "Wrong size on BrickGameInstance_IsPopupOpen");
 static_assert(offsetof(BrickGameInstance_IsPopupOpen, Handle) == 0x000000, "Member 'BrickGameInstance_IsPopupOpen::Handle' has a wrong offset!");
 static_assert(offsetof(BrickGameInstance_IsPopupOpen, ReturnValue) == 0x000004, "Member 'BrickGameInstance_IsPopupOpen::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.CurrentItemWidget.FadeOut
+// 0x0001 (0x0001 - 0x0000)
+struct CurrentItemWidget_FadeOut final
+{
+public:
+	bool                                          bImmediate;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(CurrentItemWidget_FadeOut) == 0x000001, "Wrong alignment on CurrentItemWidget_FadeOut");
+static_assert(sizeof(CurrentItemWidget_FadeOut) == 0x000001, "Wrong size on CurrentItemWidget_FadeOut");
+static_assert(offsetof(CurrentItemWidget_FadeOut, bImmediate) == 0x000000, "Member 'CurrentItemWidget_FadeOut::bImmediate' has a wrong offset!");
+
+// Function BrickRigs.CurrentItemWidget.UpdateAmmo
+// 0x000C (0x000C - 0x0000)
+struct CurrentItemWidget_UpdateAmmo final
+{
+public:
+	int32                                         Current;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Capacity;                                          // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Ammo;                                              // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(CurrentItemWidget_UpdateAmmo) == 0x000004, "Wrong alignment on CurrentItemWidget_UpdateAmmo");
+static_assert(sizeof(CurrentItemWidget_UpdateAmmo) == 0x00000C, "Wrong size on CurrentItemWidget_UpdateAmmo");
+static_assert(offsetof(CurrentItemWidget_UpdateAmmo, Current) == 0x000000, "Member 'CurrentItemWidget_UpdateAmmo::Current' has a wrong offset!");
+static_assert(offsetof(CurrentItemWidget_UpdateAmmo, Capacity) == 0x000004, "Member 'CurrentItemWidget_UpdateAmmo::Capacity' has a wrong offset!");
+static_assert(offsetof(CurrentItemWidget_UpdateAmmo, Ammo) == 0x000008, "Member 'CurrentItemWidget_UpdateAmmo::Ammo' has a wrong offset!");
+
+// Function BrickRigs.CurrentItemWidget.UpdateAmmoType
+// 0x0001 (0x0001 - 0x0000)
+struct CurrentItemWidget_UpdateAmmoType final
+{
+public:
+	EAmmoType                                     NewType;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(CurrentItemWidget_UpdateAmmoType) == 0x000001, "Wrong alignment on CurrentItemWidget_UpdateAmmoType");
+static_assert(sizeof(CurrentItemWidget_UpdateAmmoType) == 0x000001, "Wrong size on CurrentItemWidget_UpdateAmmoType");
+static_assert(offsetof(CurrentItemWidget_UpdateAmmoType, NewType) == 0x000000, "Member 'CurrentItemWidget_UpdateAmmoType::NewType' has a wrong offset!");
+
+// Function BrickRigs.CurrentItemWidget.UpdateFireMode
+// 0x0002 (0x0002 - 0x0000)
+struct CurrentItemWidget_UpdateFireMode final
+{
+public:
+	EFireMode                                     NewMode;                                           // 0x0000(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bHasFirearm;                                       // 0x0001(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(CurrentItemWidget_UpdateFireMode) == 0x000001, "Wrong alignment on CurrentItemWidget_UpdateFireMode");
+static_assert(sizeof(CurrentItemWidget_UpdateFireMode) == 0x000002, "Wrong size on CurrentItemWidget_UpdateFireMode");
+static_assert(offsetof(CurrentItemWidget_UpdateFireMode, NewMode) == 0x000000, "Member 'CurrentItemWidget_UpdateFireMode::NewMode' has a wrong offset!");
+static_assert(offsetof(CurrentItemWidget_UpdateFireMode, bHasFirearm) == 0x000001, "Member 'CurrentItemWidget_UpdateFireMode::bHasFirearm' has a wrong offset!");
+
+// Function BrickRigs.CurrentItemWidget.UpdateItemName
+// 0x0018 (0x0018 - 0x0000)
+struct CurrentItemWidget_UpdateItemName final
+{
+public:
+	class FText                                   NewName;                                           // 0x0000(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(CurrentItemWidget_UpdateItemName) == 0x000008, "Wrong alignment on CurrentItemWidget_UpdateItemName");
+static_assert(sizeof(CurrentItemWidget_UpdateItemName) == 0x000018, "Wrong size on CurrentItemWidget_UpdateItemName");
+static_assert(offsetof(CurrentItemWidget_UpdateItemName, NewName) == 0x000000, "Member 'CurrentItemWidget_UpdateItemName::NewName' has a wrong offset!");
 
 // Function BrickRigs.BrickGameSession.Get
 // 0x0010 (0x0010 - 0x0000)
@@ -5309,44 +5701,38 @@ static_assert(alignof(BrickGameState_GetZombieTeam) == 0x000008, "Wrong alignmen
 static_assert(sizeof(BrickGameState_GetZombieTeam) == 0x000008, "Wrong size on BrickGameState_GetZombieTeam");
 static_assert(offsetof(BrickGameState_GetZombieTeam, ReturnValue) == 0x000000, "Member 'BrickGameState_GetZombieTeam::ReturnValue' has a wrong offset!");
 
+// Function BrickRigs.BrickGridPanel.SetDefaultColumnFill
+// 0x0004 (0x0004 - 0x0000)
+struct BrickGridPanel_SetDefaultColumnFill final
+{
+public:
+	float                                         Coefficient;                                       // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickGridPanel_SetDefaultColumnFill) == 0x000004, "Wrong alignment on BrickGridPanel_SetDefaultColumnFill");
+static_assert(sizeof(BrickGridPanel_SetDefaultColumnFill) == 0x000004, "Wrong size on BrickGridPanel_SetDefaultColumnFill");
+static_assert(offsetof(BrickGridPanel_SetDefaultColumnFill, Coefficient) == 0x000000, "Member 'BrickGridPanel_SetDefaultColumnFill::Coefficient' has a wrong offset!");
+
+// Function BrickRigs.BrickGridPanel.SetDefaultRowFill
+// 0x0004 (0x0004 - 0x0000)
+struct BrickGridPanel_SetDefaultRowFill final
+{
+public:
+	float                                         Coefficient;                                       // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickGridPanel_SetDefaultRowFill) == 0x000004, "Wrong alignment on BrickGridPanel_SetDefaultRowFill");
+static_assert(sizeof(BrickGridPanel_SetDefaultRowFill) == 0x000004, "Wrong size on BrickGridPanel_SetDefaultRowFill");
+static_assert(offsetof(BrickGridPanel_SetDefaultRowFill, Coefficient) == 0x000000, "Member 'BrickGridPanel_SetDefaultRowFill::Coefficient' has a wrong offset!");
+
 // Function BrickRigs.BrickGridPanel.SetSlotSpacingStyle
 // 0x0001 (0x0001 - 0x0000)
 struct BrickGridPanel_SetSlotSpacingStyle final
 {
 public:
-	EBrickUISpacingStyle                          NewStyle;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EBrickUISpacingStyle                          NewStyle;                                          // 0x0000(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(BrickGridPanel_SetSlotSpacingStyle) == 0x000001, "Wrong alignment on BrickGridPanel_SetSlotSpacingStyle");
 static_assert(sizeof(BrickGridPanel_SetSlotSpacingStyle) == 0x000001, "Wrong size on BrickGridPanel_SetSlotSpacingStyle");
 static_assert(offsetof(BrickGridPanel_SetSlotSpacingStyle, NewStyle) == 0x000000, "Member 'BrickGridPanel_SetSlotSpacingStyle::NewStyle' has a wrong offset!");
-
-// Function BrickRigs.EnumPropertyWidget.InitializeItem
-// 0x0148 (0x0148 - 0x0000)
-struct EnumPropertyWidget_InitializeItem final
-{
-public:
-	int32                                         Item;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FBrickComboBoxItemParams               OutParams;                                         // 0x0008(0x0140)(Parm, OutParm, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(EnumPropertyWidget_InitializeItem) == 0x000008, "Wrong alignment on EnumPropertyWidget_InitializeItem");
-static_assert(sizeof(EnumPropertyWidget_InitializeItem) == 0x000148, "Wrong size on EnumPropertyWidget_InitializeItem");
-static_assert(offsetof(EnumPropertyWidget_InitializeItem, Item) == 0x000000, "Member 'EnumPropertyWidget_InitializeItem::Item' has a wrong offset!");
-static_assert(offsetof(EnumPropertyWidget_InitializeItem, OutParams) == 0x000008, "Member 'EnumPropertyWidget_InitializeItem::OutParams' has a wrong offset!");
-
-// Function BrickRigs.EnumPropertyWidget.OnItemSelected
-// 0x0008 (0x0008 - 0x0000)
-struct EnumPropertyWidget_OnItemSelected final
-{
-public:
-	int32                                         Item;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EValueChangedEventType                        EventType;                                         // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(EnumPropertyWidget_OnItemSelected) == 0x000004, "Wrong alignment on EnumPropertyWidget_OnItemSelected");
-static_assert(sizeof(EnumPropertyWidget_OnItemSelected) == 0x000008, "Wrong size on EnumPropertyWidget_OnItemSelected");
-static_assert(offsetof(EnumPropertyWidget_OnItemSelected, Item) == 0x000000, "Member 'EnumPropertyWidget_OnItemSelected::Item' has a wrong offset!");
-static_assert(offsetof(EnumPropertyWidget_OnItemSelected, EventType) == 0x000004, "Member 'EnumPropertyWidget_OnItemSelected::EventType' has a wrong offset!");
 
 // Function BrickRigs.BrickHorizontalBox.SetSlotSpacingStyle
 // 0x0001 (0x0001 - 0x0000)
@@ -5439,38 +5825,38 @@ static_assert(alignof(BrickImage_IsLoadingImage) == 0x000001, "Wrong alignment o
 static_assert(sizeof(BrickImage_IsLoadingImage) == 0x000001, "Wrong size on BrickImage_IsLoadingImage");
 static_assert(offsetof(BrickImage_IsLoadingImage, ReturnValue) == 0x000000, "Member 'BrickImage_IsLoadingImage::ReturnValue' has a wrong offset!");
 
-// Function BrickRigs.EditorInputComponent.MoveForward
-// 0x0004 (0x0004 - 0x0000)
-struct EditorInputComponent_MoveForward final
+// Function BrickRigs.DragStrip.CreateTreeMID
+// 0x0008 (0x0008 - 0x0000)
+struct DragStrip_CreateTreeMID final
 {
 public:
-	float                                         Val;                                               // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UMaterialInstanceDynamic*               ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(EditorInputComponent_MoveForward) == 0x000004, "Wrong alignment on EditorInputComponent_MoveForward");
-static_assert(sizeof(EditorInputComponent_MoveForward) == 0x000004, "Wrong size on EditorInputComponent_MoveForward");
-static_assert(offsetof(EditorInputComponent_MoveForward, Val) == 0x000000, "Member 'EditorInputComponent_MoveForward::Val' has a wrong offset!");
+static_assert(alignof(DragStrip_CreateTreeMID) == 0x000008, "Wrong alignment on DragStrip_CreateTreeMID");
+static_assert(sizeof(DragStrip_CreateTreeMID) == 0x000008, "Wrong size on DragStrip_CreateTreeMID");
+static_assert(offsetof(DragStrip_CreateTreeMID, ReturnValue) == 0x000000, "Member 'DragStrip_CreateTreeMID::ReturnValue' has a wrong offset!");
 
-// Function BrickRigs.EditorInputComponent.MoveRight
-// 0x0004 (0x0004 - 0x0000)
-struct EditorInputComponent_MoveRight final
+// Function BrickRigs.DragStrip.Interact_StartRace
+// 0x0008 (0x0008 - 0x0000)
+struct DragStrip_Interact_StartRace final
 {
 public:
-	float                                         Val;                                               // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class ABrickPlayerController*                 PC;                                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(EditorInputComponent_MoveRight) == 0x000004, "Wrong alignment on EditorInputComponent_MoveRight");
-static_assert(sizeof(EditorInputComponent_MoveRight) == 0x000004, "Wrong size on EditorInputComponent_MoveRight");
-static_assert(offsetof(EditorInputComponent_MoveRight, Val) == 0x000000, "Member 'EditorInputComponent_MoveRight::Val' has a wrong offset!");
+static_assert(alignof(DragStrip_Interact_StartRace) == 0x000008, "Wrong alignment on DragStrip_Interact_StartRace");
+static_assert(sizeof(DragStrip_Interact_StartRace) == 0x000008, "Wrong size on DragStrip_Interact_StartRace");
+static_assert(offsetof(DragStrip_Interact_StartRace, PC) == 0x000000, "Member 'DragStrip_Interact_StartRace::PC' has a wrong offset!");
 
-// Function BrickRigs.EditorInputComponent.MoveUp
-// 0x0004 (0x0004 - 0x0000)
-struct EditorInputComponent_MoveUp final
+// Function BrickRigs.DragStrip.GetInteractionLocation
+// 0x000C (0x000C - 0x0000)
+struct DragStrip_GetInteractionLocation final
 {
 public:
-	float                                         Val;                                               // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                ReturnValue;                                       // 0x0000(0x000C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(EditorInputComponent_MoveUp) == 0x000004, "Wrong alignment on EditorInputComponent_MoveUp");
-static_assert(sizeof(EditorInputComponent_MoveUp) == 0x000004, "Wrong size on EditorInputComponent_MoveUp");
-static_assert(offsetof(EditorInputComponent_MoveUp, Val) == 0x000000, "Member 'EditorInputComponent_MoveUp::Val' has a wrong offset!");
+static_assert(alignof(DragStrip_GetInteractionLocation) == 0x000004, "Wrong alignment on DragStrip_GetInteractionLocation");
+static_assert(sizeof(DragStrip_GetInteractionLocation) == 0x00000C, "Wrong size on DragStrip_GetInteractionLocation");
+static_assert(offsetof(DragStrip_GetInteractionLocation, ReturnValue) == 0x000000, "Member 'DragStrip_GetInteractionLocation::ReturnValue' has a wrong offset!");
 
 // Function BrickRigs.BrickObjectPool.Get
 // 0x0010 (0x0010 - 0x0000)
@@ -5491,7 +5877,7 @@ struct BrickObjectPool_GetWidget final
 {
 public:
 	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSubclassOf<class UUserWidget>                WidgetClass;                                       // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class UUserWidget>                WidgetClass;                                       // 0x0008(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class UUserWidget*                            ReturnValue;                                       // 0x0010(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
 static_assert(alignof(BrickObjectPool_GetWidget) == 0x000008, "Wrong alignment on BrickObjectPool_GetWidget");
@@ -5511,151 +5897,102 @@ static_assert(alignof(BrickObjectPool_PoolWidget) == 0x000008, "Wrong alignment 
 static_assert(sizeof(BrickObjectPool_PoolWidget) == 0x000008, "Wrong size on BrickObjectPool_PoolWidget");
 static_assert(offsetof(BrickObjectPool_PoolWidget, Widget) == 0x000000, "Member 'BrickObjectPool_PoolWidget::Widget' has a wrong offset!");
 
-// Function BrickRigs.ColorPropertyWidget.OnAlphaChanged
+// Function BrickRigs.BrickObjectPool.PoolWidgets
+// 0x0018 (0x0018 - 0x0000)
+struct BrickObjectPool_PoolWidgets final
+{
+public:
+	TArray<class UUserWidget*>                    Widgets;                                           // 0x0000(0x0010)(Parm, OutParm, ZeroConstructor, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	int32                                         NumToKeep;                                         // 0x0010(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(BrickObjectPool_PoolWidgets) == 0x000008, "Wrong alignment on BrickObjectPool_PoolWidgets");
+static_assert(sizeof(BrickObjectPool_PoolWidgets) == 0x000018, "Wrong size on BrickObjectPool_PoolWidgets");
+static_assert(offsetof(BrickObjectPool_PoolWidgets, Widgets) == 0x000000, "Member 'BrickObjectPool_PoolWidgets::Widgets' has a wrong offset!");
+static_assert(offsetof(BrickObjectPool_PoolWidgets, NumToKeep) == 0x000010, "Member 'BrickObjectPool_PoolWidgets::NumToKeep' has a wrong offset!");
+
+// Function BrickRigs.BrickObjectPool.RecycleWidget
+// 0x0030 (0x0030 - 0x0000)
+struct BrickObjectPool_RecycleWidget final
+{
+public:
+	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class UUserWidget*>                    Widgets;                                           // 0x0008(0x0010)(Parm, OutParm, ZeroConstructor, ReferenceParm, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	TSubclassOf<class UUserWidget>                WidgetClass;                                       // 0x0018(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Index_0;                                           // 0x0020(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bOutRecycled;                                      // 0x0024(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_25[0x3];                                       // 0x0025(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UUserWidget*                            ReturnValue;                                       // 0x0028(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickObjectPool_RecycleWidget) == 0x000008, "Wrong alignment on BrickObjectPool_RecycleWidget");
+static_assert(sizeof(BrickObjectPool_RecycleWidget) == 0x000030, "Wrong size on BrickObjectPool_RecycleWidget");
+static_assert(offsetof(BrickObjectPool_RecycleWidget, WorldContextObject) == 0x000000, "Member 'BrickObjectPool_RecycleWidget::WorldContextObject' has a wrong offset!");
+static_assert(offsetof(BrickObjectPool_RecycleWidget, Widgets) == 0x000008, "Member 'BrickObjectPool_RecycleWidget::Widgets' has a wrong offset!");
+static_assert(offsetof(BrickObjectPool_RecycleWidget, WidgetClass) == 0x000018, "Member 'BrickObjectPool_RecycleWidget::WidgetClass' has a wrong offset!");
+static_assert(offsetof(BrickObjectPool_RecycleWidget, Index_0) == 0x000020, "Member 'BrickObjectPool_RecycleWidget::Index_0' has a wrong offset!");
+static_assert(offsetof(BrickObjectPool_RecycleWidget, bOutRecycled) == 0x000024, "Member 'BrickObjectPool_RecycleWidget::bOutRecycled' has a wrong offset!");
+static_assert(offsetof(BrickObjectPool_RecycleWidget, ReturnValue) == 0x000028, "Member 'BrickObjectPool_RecycleWidget::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.DetonatorBrick.Interact_Detonate
 // 0x0008 (0x0008 - 0x0000)
-struct ColorPropertyWidget_OnAlphaChanged final
+struct DetonatorBrick_Interact_Detonate final
 {
 public:
-	float                                         NewValue;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EValueChangedEventType                        EventType;                                         // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class ABrickPlayerController*                 PC;                                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(ColorPropertyWidget_OnAlphaChanged) == 0x000004, "Wrong alignment on ColorPropertyWidget_OnAlphaChanged");
-static_assert(sizeof(ColorPropertyWidget_OnAlphaChanged) == 0x000008, "Wrong size on ColorPropertyWidget_OnAlphaChanged");
-static_assert(offsetof(ColorPropertyWidget_OnAlphaChanged, NewValue) == 0x000000, "Member 'ColorPropertyWidget_OnAlphaChanged::NewValue' has a wrong offset!");
-static_assert(offsetof(ColorPropertyWidget_OnAlphaChanged, EventType) == 0x000004, "Member 'ColorPropertyWidget_OnAlphaChanged::EventType' has a wrong offset!");
+static_assert(alignof(DetonatorBrick_Interact_Detonate) == 0x000008, "Wrong alignment on DetonatorBrick_Interact_Detonate");
+static_assert(sizeof(DetonatorBrick_Interact_Detonate) == 0x000008, "Wrong size on DetonatorBrick_Interact_Detonate");
+static_assert(offsetof(DetonatorBrick_Interact_Detonate, PC) == 0x000000, "Member 'DetonatorBrick_Interact_Detonate::PC' has a wrong offset!");
 
-// Function BrickRigs.ColorPropertyWidget.OnHueChanged
-// 0x0008 (0x0008 - 0x0000)
-struct ColorPropertyWidget_OnHueChanged final
+// Function BrickRigs.ConnectorSpacingPropertyWidget.SetConnectorSpacing
+// 0x0002 (0x0002 - 0x0000)
+struct ConnectorSpacingPropertyWidget_SetConnectorSpacing final
 {
 public:
-	float                                         NewValue;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EValueChangedEventType                        EventType;                                         // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FScalableBrickConnectorSpacing         NewSpacing;                                        // 0x0000(0x0002)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(ColorPropertyWidget_OnHueChanged) == 0x000004, "Wrong alignment on ColorPropertyWidget_OnHueChanged");
-static_assert(sizeof(ColorPropertyWidget_OnHueChanged) == 0x000008, "Wrong size on ColorPropertyWidget_OnHueChanged");
-static_assert(offsetof(ColorPropertyWidget_OnHueChanged, NewValue) == 0x000000, "Member 'ColorPropertyWidget_OnHueChanged::NewValue' has a wrong offset!");
-static_assert(offsetof(ColorPropertyWidget_OnHueChanged, EventType) == 0x000004, "Member 'ColorPropertyWidget_OnHueChanged::EventType' has a wrong offset!");
+static_assert(alignof(ConnectorSpacingPropertyWidget_SetConnectorSpacing) == 0x000002, "Wrong alignment on ConnectorSpacingPropertyWidget_SetConnectorSpacing");
+static_assert(sizeof(ConnectorSpacingPropertyWidget_SetConnectorSpacing) == 0x000002, "Wrong size on ConnectorSpacingPropertyWidget_SetConnectorSpacing");
+static_assert(offsetof(ConnectorSpacingPropertyWidget_SetConnectorSpacing, NewSpacing) == 0x000000, "Member 'ConnectorSpacingPropertyWidget_SetConnectorSpacing::NewSpacing' has a wrong offset!");
 
-// Function BrickRigs.ColorPropertyWidget.OnPaletteColorChanged
-// 0x0014 (0x0014 - 0x0000)
-struct ColorPropertyWidget_OnPaletteColorChanged final
+// Function BrickRigs.ConnectorSpacingPropertyWidget.UpdateConnectorSpacing
+// 0x0004 (0x0004 - 0x0000)
+struct ConnectorSpacingPropertyWidget_UpdateConnectorSpacing final
 {
 public:
-	struct FLinearColor                           NewColor;                                          // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EValueChangedEventType                        EventType;                                         // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FScalableBrickConnectorSpacing         NewSpacing;                                        // 0x0000(0x0002)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         AxisFlags;                                         // 0x0002(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_3[0x1];                                        // 0x0003(0x0001)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(ColorPropertyWidget_OnPaletteColorChanged) == 0x000004, "Wrong alignment on ColorPropertyWidget_OnPaletteColorChanged");
-static_assert(sizeof(ColorPropertyWidget_OnPaletteColorChanged) == 0x000014, "Wrong size on ColorPropertyWidget_OnPaletteColorChanged");
-static_assert(offsetof(ColorPropertyWidget_OnPaletteColorChanged, NewColor) == 0x000000, "Member 'ColorPropertyWidget_OnPaletteColorChanged::NewColor' has a wrong offset!");
-static_assert(offsetof(ColorPropertyWidget_OnPaletteColorChanged, EventType) == 0x000010, "Member 'ColorPropertyWidget_OnPaletteColorChanged::EventType' has a wrong offset!");
+static_assert(alignof(ConnectorSpacingPropertyWidget_UpdateConnectorSpacing) == 0x000002, "Wrong alignment on ConnectorSpacingPropertyWidget_UpdateConnectorSpacing");
+static_assert(sizeof(ConnectorSpacingPropertyWidget_UpdateConnectorSpacing) == 0x000004, "Wrong size on ConnectorSpacingPropertyWidget_UpdateConnectorSpacing");
+static_assert(offsetof(ConnectorSpacingPropertyWidget_UpdateConnectorSpacing, NewSpacing) == 0x000000, "Member 'ConnectorSpacingPropertyWidget_UpdateConnectorSpacing::NewSpacing' has a wrong offset!");
+static_assert(offsetof(ConnectorSpacingPropertyWidget_UpdateConnectorSpacing, AxisFlags) == 0x000002, "Member 'ConnectorSpacingPropertyWidget_UpdateConnectorSpacing::AxisFlags' has a wrong offset!");
 
-// Function BrickRigs.ColorPropertyWidget.OnSaturationChanged
-// 0x0008 (0x0008 - 0x0000)
-struct ColorPropertyWidget_OnSaturationChanged final
+// Function BrickRigs.ContextMenuWidget.OnActionTriggered
+// 0x000C (0x000C - 0x0000)
+struct ContextMenuWidget_OnActionTriggered final
 {
 public:
-	float                                         NewValue;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EValueChangedEventType                        EventType;                                         // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FName                                   ActionName;                                        // 0x0000(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bReleased;                                         // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(ColorPropertyWidget_OnSaturationChanged) == 0x000004, "Wrong alignment on ColorPropertyWidget_OnSaturationChanged");
-static_assert(sizeof(ColorPropertyWidget_OnSaturationChanged) == 0x000008, "Wrong size on ColorPropertyWidget_OnSaturationChanged");
-static_assert(offsetof(ColorPropertyWidget_OnSaturationChanged, NewValue) == 0x000000, "Member 'ColorPropertyWidget_OnSaturationChanged::NewValue' has a wrong offset!");
-static_assert(offsetof(ColorPropertyWidget_OnSaturationChanged, EventType) == 0x000004, "Member 'ColorPropertyWidget_OnSaturationChanged::EventType' has a wrong offset!");
+static_assert(alignof(ContextMenuWidget_OnActionTriggered) == 0x000004, "Wrong alignment on ContextMenuWidget_OnActionTriggered");
+static_assert(sizeof(ContextMenuWidget_OnActionTriggered) == 0x00000C, "Wrong size on ContextMenuWidget_OnActionTriggered");
+static_assert(offsetof(ContextMenuWidget_OnActionTriggered, ActionName) == 0x000000, "Member 'ContextMenuWidget_OnActionTriggered::ActionName' has a wrong offset!");
+static_assert(offsetof(ContextMenuWidget_OnActionTriggered, bReleased) == 0x000008, "Member 'ContextMenuWidget_OnActionTriggered::bReleased' has a wrong offset!");
 
-// Function BrickRigs.ColorPropertyWidget.OnValueChanged
-// 0x0008 (0x0008 - 0x0000)
-struct ColorPropertyWidget_OnValueChanged final
+// Function BrickRigs.ContextMenuWidget.UpdateTitleText
+// 0x0018 (0x0018 - 0x0000)
+struct ContextMenuWidget_UpdateTitleText final
 {
 public:
-	float                                         NewValue;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EValueChangedEventType                        EventType;                                         // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	class FText                                   InText;                                            // 0x0000(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(ColorPropertyWidget_OnValueChanged) == 0x000004, "Wrong alignment on ColorPropertyWidget_OnValueChanged");
-static_assert(sizeof(ColorPropertyWidget_OnValueChanged) == 0x000008, "Wrong size on ColorPropertyWidget_OnValueChanged");
-static_assert(offsetof(ColorPropertyWidget_OnValueChanged, NewValue) == 0x000000, "Member 'ColorPropertyWidget_OnValueChanged::NewValue' has a wrong offset!");
-static_assert(offsetof(ColorPropertyWidget_OnValueChanged, EventType) == 0x000004, "Member 'ColorPropertyWidget_OnValueChanged::EventType' has a wrong offset!");
-
-// Function BrickRigs.ColorPropertyWidget.OnWheelColorChanged
-// 0x0014 (0x0014 - 0x0000)
-struct ColorPropertyWidget_OnWheelColorChanged final
-{
-public:
-	struct FLinearColor                           NewColor;                                          // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EValueChangedEventType                        EventType;                                         // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x3];                                       // 0x0011(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(ColorPropertyWidget_OnWheelColorChanged) == 0x000004, "Wrong alignment on ColorPropertyWidget_OnWheelColorChanged");
-static_assert(sizeof(ColorPropertyWidget_OnWheelColorChanged) == 0x000014, "Wrong size on ColorPropertyWidget_OnWheelColorChanged");
-static_assert(offsetof(ColorPropertyWidget_OnWheelColorChanged, NewColor) == 0x000000, "Member 'ColorPropertyWidget_OnWheelColorChanged::NewColor' has a wrong offset!");
-static_assert(offsetof(ColorPropertyWidget_OnWheelColorChanged, EventType) == 0x000010, "Member 'ColorPropertyWidget_OnWheelColorChanged::EventType' has a wrong offset!");
-
-// Function BrickRigs.ColorPropertyWidget.UpdateAlphaSliderVisibility
-// 0x0001 (0x0001 - 0x0000)
-struct ColorPropertyWidget_UpdateAlphaSliderVisibility final
-{
-public:
-	bool                                          bNewVisible;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(ColorPropertyWidget_UpdateAlphaSliderVisibility) == 0x000001, "Wrong alignment on ColorPropertyWidget_UpdateAlphaSliderVisibility");
-static_assert(sizeof(ColorPropertyWidget_UpdateAlphaSliderVisibility) == 0x000001, "Wrong size on ColorPropertyWidget_UpdateAlphaSliderVisibility");
-static_assert(offsetof(ColorPropertyWidget_UpdateAlphaSliderVisibility, bNewVisible) == 0x000000, "Member 'ColorPropertyWidget_UpdateAlphaSliderVisibility::bNewVisible' has a wrong offset!");
-
-// Function BrickRigs.ColorPropertyWidget.UpdateCurrentColor
-// 0x0010 (0x0010 - 0x0000)
-struct ColorPropertyWidget_UpdateCurrentColor final
-{
-public:
-	struct FLinearColor                           NewColor;                                          // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(ColorPropertyWidget_UpdateCurrentColor) == 0x000004, "Wrong alignment on ColorPropertyWidget_UpdateCurrentColor");
-static_assert(sizeof(ColorPropertyWidget_UpdateCurrentColor) == 0x000010, "Wrong size on ColorPropertyWidget_UpdateCurrentColor");
-static_assert(offsetof(ColorPropertyWidget_UpdateCurrentColor, NewColor) == 0x000000, "Member 'ColorPropertyWidget_UpdateCurrentColor::NewColor' has a wrong offset!");
-
-// Function BrickRigs.ExplosiveItem.Explode
-// 0x0028 (0x0028 - 0x0000)
-struct ExplosiveItem_Explode final
-{
-public:
-	float                                         DamageAmount;                                      // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FDamageEvent                           DamageEvent;                                       // 0x0008(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	class AController*                            EventInstigator;                                   // 0x0018(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AActor*                                 DamageCauser;                                      // 0x0020(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(ExplosiveItem_Explode) == 0x000008, "Wrong alignment on ExplosiveItem_Explode");
-static_assert(sizeof(ExplosiveItem_Explode) == 0x000028, "Wrong size on ExplosiveItem_Explode");
-static_assert(offsetof(ExplosiveItem_Explode, DamageAmount) == 0x000000, "Member 'ExplosiveItem_Explode::DamageAmount' has a wrong offset!");
-static_assert(offsetof(ExplosiveItem_Explode, DamageEvent) == 0x000008, "Member 'ExplosiveItem_Explode::DamageEvent' has a wrong offset!");
-static_assert(offsetof(ExplosiveItem_Explode, EventInstigator) == 0x000018, "Member 'ExplosiveItem_Explode::EventInstigator' has a wrong offset!");
-static_assert(offsetof(ExplosiveItem_Explode, DamageCauser) == 0x000020, "Member 'ExplosiveItem_Explode::DamageCauser' has a wrong offset!");
-
-// Function BrickRigs.ExplosiveItem.SetExplosiveState
-// 0x0001 (0x0001 - 0x0000)
-struct ExplosiveItem_SetExplosiveState final
-{
-public:
-	EExplosiveItemState                           NewState;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(ExplosiveItem_SetExplosiveState) == 0x000001, "Wrong alignment on ExplosiveItem_SetExplosiveState");
-static_assert(sizeof(ExplosiveItem_SetExplosiveState) == 0x000001, "Wrong size on ExplosiveItem_SetExplosiveState");
-static_assert(offsetof(ExplosiveItem_SetExplosiveState, NewState) == 0x000000, "Member 'ExplosiveItem_SetExplosiveState::NewState' has a wrong offset!");
-
-// Function BrickRigs.ExplosiveItem.IsPrimed
-// 0x0001 (0x0001 - 0x0000)
-struct ExplosiveItem_IsPrimed final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(ExplosiveItem_IsPrimed) == 0x000001, "Wrong alignment on ExplosiveItem_IsPrimed");
-static_assert(sizeof(ExplosiveItem_IsPrimed) == 0x000001, "Wrong size on ExplosiveItem_IsPrimed");
-static_assert(offsetof(ExplosiveItem_IsPrimed, ReturnValue) == 0x000000, "Member 'ExplosiveItem_IsPrimed::ReturnValue' has a wrong offset!");
+static_assert(alignof(ContextMenuWidget_UpdateTitleText) == 0x000008, "Wrong alignment on ContextMenuWidget_UpdateTitleText");
+static_assert(sizeof(ContextMenuWidget_UpdateTitleText) == 0x000018, "Wrong size on ContextMenuWidget_UpdateTitleText");
+static_assert(offsetof(ContextMenuWidget_UpdateTitleText, InText) == 0x000000, "Member 'ContextMenuWidget_UpdateTitleText::InText' has a wrong offset!");
 
 // Function BrickRigs.BrickPlayerController.AccessInventory
 // 0x0008 (0x0008 - 0x0000)
@@ -6135,6 +6472,17 @@ public:
 static_assert(alignof(BrickPlayerController_ServerJoinTeam) == 0x000001, "Wrong alignment on BrickPlayerController_ServerJoinTeam");
 static_assert(sizeof(BrickPlayerController_ServerJoinTeam) == 0x000001, "Wrong size on BrickPlayerController_ServerJoinTeam");
 static_assert(offsetof(BrickPlayerController_ServerJoinTeam, InTeamId) == 0x000000, "Member 'BrickPlayerController_ServerJoinTeam::InTeamId' has a wrong offset!");
+
+// Function BrickRigs.BrickPlayerController.ServerOnAnyVehicleConstructed
+// 0x0008 (0x0008 - 0x0000)
+struct BrickPlayerController_ServerOnAnyVehicleConstructed final
+{
+public:
+	class ABrickVehicle*                          InVehicle;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickPlayerController_ServerOnAnyVehicleConstructed) == 0x000008, "Wrong alignment on BrickPlayerController_ServerOnAnyVehicleConstructed");
+static_assert(sizeof(BrickPlayerController_ServerOnAnyVehicleConstructed) == 0x000008, "Wrong size on BrickPlayerController_ServerOnAnyVehicleConstructed");
+static_assert(offsetof(BrickPlayerController_ServerOnAnyVehicleConstructed, InVehicle) == 0x000000, "Member 'BrickPlayerController_ServerOnAnyVehicleConstructed::InVehicle' has a wrong offset!");
 
 // Function BrickRigs.BrickPlayerController.ServerOnMeleeHit
 // 0x0038 (0x0038 - 0x0000)
@@ -7001,384 +7349,84 @@ static_assert(alignof(BrickPlayerController_IsInventoryOpen) == 0x000001, "Wrong
 static_assert(sizeof(BrickPlayerController_IsInventoryOpen) == 0x000001, "Wrong size on BrickPlayerController_IsInventoryOpen");
 static_assert(offsetof(BrickPlayerController_IsInventoryOpen, ReturnValue) == 0x000000, "Member 'BrickPlayerController_IsInventoryOpen::ReturnValue' has a wrong offset!");
 
-// Function BrickRigs.ControlHintWidget.OnInputMethodChanged
-// 0x0001 (0x0001 - 0x0000)
-struct ControlHintWidget_OnInputMethodChanged final
+// Function BrickRigs.Elevator.Interact_ElevatorDown
+// 0x0008 (0x0008 - 0x0000)
+struct Elevator_Interact_ElevatorDown final
 {
 public:
-	EInputMethod                                  NewInputMethod;                                    // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class ABrickPlayerController*                 PC;                                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(ControlHintWidget_OnInputMethodChanged) == 0x000001, "Wrong alignment on ControlHintWidget_OnInputMethodChanged");
-static_assert(sizeof(ControlHintWidget_OnInputMethodChanged) == 0x000001, "Wrong size on ControlHintWidget_OnInputMethodChanged");
-static_assert(offsetof(ControlHintWidget_OnInputMethodChanged, NewInputMethod) == 0x000000, "Member 'ControlHintWidget_OnInputMethodChanged::NewInputMethod' has a wrong offset!");
+static_assert(alignof(Elevator_Interact_ElevatorDown) == 0x000008, "Wrong alignment on Elevator_Interact_ElevatorDown");
+static_assert(sizeof(Elevator_Interact_ElevatorDown) == 0x000008, "Wrong size on Elevator_Interact_ElevatorDown");
+static_assert(offsetof(Elevator_Interact_ElevatorDown, PC) == 0x000000, "Member 'Elevator_Interact_ElevatorDown::PC' has a wrong offset!");
 
-// Function BrickRigs.ControlHintWidget.SetAction
+// Function BrickRigs.Elevator.Interact_ElevatorUp
+// 0x0008 (0x0008 - 0x0000)
+struct Elevator_Interact_ElevatorUp final
+{
+public:
+	class ABrickPlayerController*                 PC;                                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(Elevator_Interact_ElevatorUp) == 0x000008, "Wrong alignment on Elevator_Interact_ElevatorUp");
+static_assert(sizeof(Elevator_Interact_ElevatorUp) == 0x000008, "Wrong size on Elevator_Interact_ElevatorUp");
+static_assert(offsetof(Elevator_Interact_ElevatorUp, PC) == 0x000000, "Member 'Elevator_Interact_ElevatorUp::PC' has a wrong offset!");
+
+// Function BrickRigs.Elevator.Interact_StopElevator
+// 0x0008 (0x0008 - 0x0000)
+struct Elevator_Interact_StopElevator final
+{
+public:
+	class ABrickPlayerController*                 PC;                                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(Elevator_Interact_StopElevator) == 0x000008, "Wrong alignment on Elevator_Interact_StopElevator");
+static_assert(sizeof(Elevator_Interact_StopElevator) == 0x000008, "Wrong size on Elevator_Interact_StopElevator");
+static_assert(offsetof(Elevator_Interact_StopElevator, PC) == 0x000000, "Member 'Elevator_Interact_StopElevator::PC' has a wrong offset!");
+
+// Function BrickRigs.Elevator.OnElevatorStateChanged
 // 0x000C (0x000C - 0x0000)
-struct ControlHintWidget_SetAction final
+struct Elevator_OnElevatorStateChanged final
 {
 public:
-	class FName                                   InActionName;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EInputActionTriggerType                       InTriggerType;                                     // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FElevatorState                         NewState;                                          // 0x0000(0x000C)(ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(ControlHintWidget_SetAction) == 0x000004, "Wrong alignment on ControlHintWidget_SetAction");
-static_assert(sizeof(ControlHintWidget_SetAction) == 0x00000C, "Wrong size on ControlHintWidget_SetAction");
-static_assert(offsetof(ControlHintWidget_SetAction, InActionName) == 0x000000, "Member 'ControlHintWidget_SetAction::InActionName' has a wrong offset!");
-static_assert(offsetof(ControlHintWidget_SetAction, InTriggerType) == 0x000008, "Member 'ControlHintWidget_SetAction::InTriggerType' has a wrong offset!");
+static_assert(alignof(Elevator_OnElevatorStateChanged) == 0x000004, "Wrong alignment on Elevator_OnElevatorStateChanged");
+static_assert(sizeof(Elevator_OnElevatorStateChanged) == 0x00000C, "Wrong size on Elevator_OnElevatorStateChanged");
+static_assert(offsetof(Elevator_OnElevatorStateChanged, NewState) == 0x000000, "Member 'Elevator_OnElevatorStateChanged::NewState' has a wrong offset!");
 
-// Function BrickRigs.ControlHintWidget.SetColorStyle
+// Function BrickRigs.Elevator.SetElevatorDirection
 // 0x0001 (0x0001 - 0x0000)
-struct ControlHintWidget_SetColorStyle final
+struct Elevator_SetElevatorDirection final
 {
 public:
-	EBrickUIColorStyle                            NewStyle;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EElevatorDirection                            Dir;                                               // 0x0000(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(ControlHintWidget_SetColorStyle) == 0x000001, "Wrong alignment on ControlHintWidget_SetColorStyle");
-static_assert(sizeof(ControlHintWidget_SetColorStyle) == 0x000001, "Wrong size on ControlHintWidget_SetColorStyle");
-static_assert(offsetof(ControlHintWidget_SetColorStyle, NewStyle) == 0x000000, "Member 'ControlHintWidget_SetColorStyle::NewStyle' has a wrong offset!");
+static_assert(alignof(Elevator_SetElevatorDirection) == 0x000001, "Wrong alignment on Elevator_SetElevatorDirection");
+static_assert(sizeof(Elevator_SetElevatorDirection) == 0x000001, "Wrong size on Elevator_SetElevatorDirection");
+static_assert(offsetof(Elevator_SetElevatorDirection, Dir) == 0x000000, "Member 'Elevator_SetElevatorDirection::Dir' has a wrong offset!");
 
-// Function BrickRigs.ControlHintWidget.SetDisplayInfo
-// 0x0028 (0x0028 - 0x0000)
-struct ControlHintWidget_SetDisplayInfo final
+// Function BrickRigs.Elevator.SetElevatorState
+// 0x000C (0x000C - 0x0000)
+struct Elevator_SetElevatorState final
 {
 public:
-	struct FDisplayInfo                           InDisplayInfo;                                     // 0x0000(0x0028)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	struct FElevatorState                         NewState;                                          // 0x0000(0x000C)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(ControlHintWidget_SetDisplayInfo) == 0x000008, "Wrong alignment on ControlHintWidget_SetDisplayInfo");
-static_assert(sizeof(ControlHintWidget_SetDisplayInfo) == 0x000028, "Wrong size on ControlHintWidget_SetDisplayInfo");
-static_assert(offsetof(ControlHintWidget_SetDisplayInfo, InDisplayInfo) == 0x000000, "Member 'ControlHintWidget_SetDisplayInfo::InDisplayInfo' has a wrong offset!");
+static_assert(alignof(Elevator_SetElevatorState) == 0x000004, "Wrong alignment on Elevator_SetElevatorState");
+static_assert(sizeof(Elevator_SetElevatorState) == 0x00000C, "Wrong size on Elevator_SetElevatorState");
+static_assert(offsetof(Elevator_SetElevatorState, NewState) == 0x000000, "Member 'Elevator_SetElevatorState::NewState' has a wrong offset!");
 
-// Function BrickRigs.ControlHintWidget.SetDisplayInfoMode
-// 0x0001 (0x0001 - 0x0000)
-struct ControlHintWidget_SetDisplayInfoMode final
+// Function BrickRigs.Elevator.GetInteractionLocation
+// 0x0010 (0x0010 - 0x0000)
+struct Elevator_GetInteractionLocation final
 {
 public:
-	EControlHintDisplayInfoMode                   NewMode;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                ReturnValue;                                       // 0x0004(0x000C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(ControlHintWidget_SetDisplayInfoMode) == 0x000001, "Wrong alignment on ControlHintWidget_SetDisplayInfoMode");
-static_assert(sizeof(ControlHintWidget_SetDisplayInfoMode) == 0x000001, "Wrong size on ControlHintWidget_SetDisplayInfoMode");
-static_assert(offsetof(ControlHintWidget_SetDisplayInfoMode, NewMode) == 0x000000, "Member 'ControlHintWidget_SetDisplayInfoMode::NewMode' has a wrong offset!");
-
-// Function BrickRigs.ControlHintWidget.SetInputChordScale
-// 0x0004 (0x0004 - 0x0000)
-struct ControlHintWidget_SetInputChordScale final
-{
-public:
-	float                                         InScale;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(ControlHintWidget_SetInputChordScale) == 0x000004, "Wrong alignment on ControlHintWidget_SetInputChordScale");
-static_assert(sizeof(ControlHintWidget_SetInputChordScale) == 0x000004, "Wrong size on ControlHintWidget_SetInputChordScale");
-static_assert(offsetof(ControlHintWidget_SetInputChordScale, InScale) == 0x000000, "Member 'ControlHintWidget_SetInputChordScale::InScale' has a wrong offset!");
-
-// Function BrickRigs.ControlHintWidget.SetShowInputChord
-// 0x0001 (0x0001 - 0x0000)
-struct ControlHintWidget_SetShowInputChord final
-{
-public:
-	bool                                          bShow;                                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(ControlHintWidget_SetShowInputChord) == 0x000001, "Wrong alignment on ControlHintWidget_SetShowInputChord");
-static_assert(sizeof(ControlHintWidget_SetShowInputChord) == 0x000001, "Wrong size on ControlHintWidget_SetShowInputChord");
-static_assert(offsetof(ControlHintWidget_SetShowInputChord, bShow) == 0x000000, "Member 'ControlHintWidget_SetShowInputChord::bShow' has a wrong offset!");
-
-// Function BrickRigs.ControlHintWidget.SetShowUnboundKey
-// 0x0001 (0x0001 - 0x0000)
-struct ControlHintWidget_SetShowUnboundKey final
-{
-public:
-	bool                                          bShow;                                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(ControlHintWidget_SetShowUnboundKey) == 0x000001, "Wrong alignment on ControlHintWidget_SetShowUnboundKey");
-static_assert(sizeof(ControlHintWidget_SetShowUnboundKey) == 0x000001, "Wrong size on ControlHintWidget_SetShowUnboundKey");
-static_assert(offsetof(ControlHintWidget_SetShowUnboundKey, bShow) == 0x000000, "Member 'ControlHintWidget_SetShowUnboundKey::bShow' has a wrong offset!");
-
-// Function BrickRigs.ControlHintWidget.SetStyleState
-// 0x0001 (0x0001 - 0x0000)
-struct ControlHintWidget_SetStyleState final
-{
-public:
-	EBrickUIStyleState                            NewState;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(ControlHintWidget_SetStyleState) == 0x000001, "Wrong alignment on ControlHintWidget_SetStyleState");
-static_assert(sizeof(ControlHintWidget_SetStyleState) == 0x000001, "Wrong size on ControlHintWidget_SetStyleState");
-static_assert(offsetof(ControlHintWidget_SetStyleState, NewState) == 0x000000, "Member 'ControlHintWidget_SetStyleState::NewState' has a wrong offset!");
-
-// Function BrickRigs.ControlHintWidget.SetTextStyle
-// 0x0001 (0x0001 - 0x0000)
-struct ControlHintWidget_SetTextStyle final
-{
-public:
-	EBrickUITextStyle                             NewStyle;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(ControlHintWidget_SetTextStyle) == 0x000001, "Wrong alignment on ControlHintWidget_SetTextStyle");
-static_assert(sizeof(ControlHintWidget_SetTextStyle) == 0x000001, "Wrong size on ControlHintWidget_SetTextStyle");
-static_assert(offsetof(ControlHintWidget_SetTextStyle, NewStyle) == 0x000000, "Member 'ControlHintWidget_SetTextStyle::NewStyle' has a wrong offset!");
-
-// Function BrickRigs.ControlHintWidget.UpdateDisplayInfo
-// 0x0028 (0x0028 - 0x0000)
-struct ControlHintWidget_UpdateDisplayInfo final
-{
-public:
-	struct FDisplayInfo                           NewDisplayInfo;                                    // 0x0000(0x0028)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(ControlHintWidget_UpdateDisplayInfo) == 0x000008, "Wrong alignment on ControlHintWidget_UpdateDisplayInfo");
-static_assert(sizeof(ControlHintWidget_UpdateDisplayInfo) == 0x000028, "Wrong size on ControlHintWidget_UpdateDisplayInfo");
-static_assert(offsetof(ControlHintWidget_UpdateDisplayInfo, NewDisplayInfo) == 0x000000, "Member 'ControlHintWidget_UpdateDisplayInfo::NewDisplayInfo' has a wrong offset!");
-
-// Function BrickRigs.ControlHintWidget.UpdateHoldProgress
-// 0x0004 (0x0004 - 0x0000)
-struct ControlHintWidget_UpdateHoldProgress final
-{
-public:
-	float                                         InHoldProgress;                                    // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(ControlHintWidget_UpdateHoldProgress) == 0x000004, "Wrong alignment on ControlHintWidget_UpdateHoldProgress");
-static_assert(sizeof(ControlHintWidget_UpdateHoldProgress) == 0x000004, "Wrong size on ControlHintWidget_UpdateHoldProgress");
-static_assert(offsetof(ControlHintWidget_UpdateHoldProgress, InHoldProgress) == 0x000000, "Member 'ControlHintWidget_UpdateHoldProgress::InHoldProgress' has a wrong offset!");
-
-// Function BrickRigs.ControlHintWidget.UpdateIconVisibility
-// 0x0001 (0x0001 - 0x0000)
-struct ControlHintWidget_UpdateIconVisibility final
-{
-public:
-	bool                                          bNewVisible;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(ControlHintWidget_UpdateIconVisibility) == 0x000001, "Wrong alignment on ControlHintWidget_UpdateIconVisibility");
-static_assert(sizeof(ControlHintWidget_UpdateIconVisibility) == 0x000001, "Wrong size on ControlHintWidget_UpdateIconVisibility");
-static_assert(offsetof(ControlHintWidget_UpdateIconVisibility, bNewVisible) == 0x000000, "Member 'ControlHintWidget_UpdateIconVisibility::bNewVisible' has a wrong offset!");
-
-// Function BrickRigs.ControlHintWidget.UpdateInputChordStyleState
-// 0x0002 (0x0002 - 0x0000)
-struct ControlHintWidget_UpdateInputChordStyleState final
-{
-public:
-	EBrickUIStyleState                            InStyleState;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bInIsHoldAction;                                   // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(ControlHintWidget_UpdateInputChordStyleState) == 0x000001, "Wrong alignment on ControlHintWidget_UpdateInputChordStyleState");
-static_assert(sizeof(ControlHintWidget_UpdateInputChordStyleState) == 0x000002, "Wrong size on ControlHintWidget_UpdateInputChordStyleState");
-static_assert(offsetof(ControlHintWidget_UpdateInputChordStyleState, InStyleState) == 0x000000, "Member 'ControlHintWidget_UpdateInputChordStyleState::InStyleState' has a wrong offset!");
-static_assert(offsetof(ControlHintWidget_UpdateInputChordStyleState, bInIsHoldAction) == 0x000001, "Member 'ControlHintWidget_UpdateInputChordStyleState::bInIsHoldAction' has a wrong offset!");
-
-// Function BrickRigs.ControlHintWidget.UpdateInputChordVisibility
-// 0x0001 (0x0001 - 0x0000)
-struct ControlHintWidget_UpdateInputChordVisibility final
-{
-public:
-	bool                                          bNewVisible;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(ControlHintWidget_UpdateInputChordVisibility) == 0x000001, "Wrong alignment on ControlHintWidget_UpdateInputChordVisibility");
-static_assert(sizeof(ControlHintWidget_UpdateInputChordVisibility) == 0x000001, "Wrong size on ControlHintWidget_UpdateInputChordVisibility");
-static_assert(offsetof(ControlHintWidget_UpdateInputChordVisibility, bNewVisible) == 0x000000, "Member 'ControlHintWidget_UpdateInputChordVisibility::bNewVisible' has a wrong offset!");
-
-// Function BrickRigs.ControlHintWidget.UpdateIsHoldAction
-// 0x0001 (0x0001 - 0x0000)
-struct ControlHintWidget_UpdateIsHoldAction final
-{
-public:
-	bool                                          bIsHoldAction;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(ControlHintWidget_UpdateIsHoldAction) == 0x000001, "Wrong alignment on ControlHintWidget_UpdateIsHoldAction");
-static_assert(sizeof(ControlHintWidget_UpdateIsHoldAction) == 0x000001, "Wrong size on ControlHintWidget_UpdateIsHoldAction");
-static_assert(offsetof(ControlHintWidget_UpdateIsHoldAction, bIsHoldAction) == 0x000000, "Member 'ControlHintWidget_UpdateIsHoldAction::bIsHoldAction' has a wrong offset!");
-
-// Function BrickRigs.ControlHintWidget.UpdateTextVisibility
-// 0x0001 (0x0001 - 0x0000)
-struct ControlHintWidget_UpdateTextVisibility final
-{
-public:
-	bool                                          bNewVisible;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(ControlHintWidget_UpdateTextVisibility) == 0x000001, "Wrong alignment on ControlHintWidget_UpdateTextVisibility");
-static_assert(sizeof(ControlHintWidget_UpdateTextVisibility) == 0x000001, "Wrong size on ControlHintWidget_UpdateTextVisibility");
-static_assert(offsetof(ControlHintWidget_UpdateTextVisibility, bNewVisible) == 0x000000, "Member 'ControlHintWidget_UpdateTextVisibility::bNewVisible' has a wrong offset!");
-
-// Function BrickRigs.BrickPlayerState.OnRep_Money
-// 0x0004 (0x0004 - 0x0000)
-struct BrickPlayerState_OnRep_Money final
-{
-public:
-	float                                         PrevValue;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickPlayerState_OnRep_Money) == 0x000004, "Wrong alignment on BrickPlayerState_OnRep_Money");
-static_assert(sizeof(BrickPlayerState_OnRep_Money) == 0x000004, "Wrong size on BrickPlayerState_OnRep_Money");
-static_assert(offsetof(BrickPlayerState_OnRep_Money, PrevValue) == 0x000000, "Member 'BrickPlayerState_OnRep_Money::PrevValue' has a wrong offset!");
-
-// Function BrickRigs.BrickPlayerState.SetDeaths
-// 0x0004 (0x0004 - 0x0000)
-struct BrickPlayerState_SetDeaths final
-{
-public:
-	int32                                         NewDeaths;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickPlayerState_SetDeaths) == 0x000004, "Wrong alignment on BrickPlayerState_SetDeaths");
-static_assert(sizeof(BrickPlayerState_SetDeaths) == 0x000004, "Wrong size on BrickPlayerState_SetDeaths");
-static_assert(offsetof(BrickPlayerState_SetDeaths, NewDeaths) == 0x000000, "Member 'BrickPlayerState_SetDeaths::NewDeaths' has a wrong offset!");
-
-// Function BrickRigs.BrickPlayerState.SetIsAdmin
-// 0x0001 (0x0001 - 0x0000)
-struct BrickPlayerState_SetIsAdmin final
-{
-public:
-	bool                                          bNewIsAdmin;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickPlayerState_SetIsAdmin) == 0x000001, "Wrong alignment on BrickPlayerState_SetIsAdmin");
-static_assert(sizeof(BrickPlayerState_SetIsAdmin) == 0x000001, "Wrong size on BrickPlayerState_SetIsAdmin");
-static_assert(offsetof(BrickPlayerState_SetIsAdmin, bNewIsAdmin) == 0x000000, "Member 'BrickPlayerState_SetIsAdmin::bNewIsAdmin' has a wrong offset!");
-
-// Function BrickRigs.BrickPlayerState.SetIsAlive
-// 0x0001 (0x0001 - 0x0000)
-struct BrickPlayerState_SetIsAlive final
-{
-public:
-	bool                                          bInIsAlive;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickPlayerState_SetIsAlive) == 0x000001, "Wrong alignment on BrickPlayerState_SetIsAlive");
-static_assert(sizeof(BrickPlayerState_SetIsAlive) == 0x000001, "Wrong size on BrickPlayerState_SetIsAlive");
-static_assert(offsetof(BrickPlayerState_SetIsAlive, bInIsAlive) == 0x000000, "Member 'BrickPlayerState_SetIsAlive::bInIsAlive' has a wrong offset!");
-
-// Function BrickRigs.BrickPlayerState.SetIsTeamLeader
-// 0x0001 (0x0001 - 0x0000)
-struct BrickPlayerState_SetIsTeamLeader final
-{
-public:
-	bool                                          bNewLeader;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickPlayerState_SetIsTeamLeader) == 0x000001, "Wrong alignment on BrickPlayerState_SetIsTeamLeader");
-static_assert(sizeof(BrickPlayerState_SetIsTeamLeader) == 0x000001, "Wrong size on BrickPlayerState_SetIsTeamLeader");
-static_assert(offsetof(BrickPlayerState_SetIsTeamLeader, bNewLeader) == 0x000000, "Member 'BrickPlayerState_SetIsTeamLeader::bNewLeader' has a wrong offset!");
-
-// Function BrickRigs.BrickPlayerState.SetKills
-// 0x0004 (0x0004 - 0x0000)
-struct BrickPlayerState_SetKills final
-{
-public:
-	int32                                         NewKills;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickPlayerState_SetKills) == 0x000004, "Wrong alignment on BrickPlayerState_SetKills");
-static_assert(sizeof(BrickPlayerState_SetKills) == 0x000004, "Wrong size on BrickPlayerState_SetKills");
-static_assert(offsetof(BrickPlayerState_SetKills, NewKills) == 0x000000, "Member 'BrickPlayerState_SetKills::NewKills' has a wrong offset!");
-
-// Function BrickRigs.BrickPlayerState.SetMoney
-// 0x0004 (0x0004 - 0x0000)
-struct BrickPlayerState_SetMoney final
-{
-public:
-	float                                         NewValue;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickPlayerState_SetMoney) == 0x000004, "Wrong alignment on BrickPlayerState_SetMoney");
-static_assert(sizeof(BrickPlayerState_SetMoney) == 0x000004, "Wrong size on BrickPlayerState_SetMoney");
-static_assert(offsetof(BrickPlayerState_SetMoney, NewValue) == 0x000000, "Member 'BrickPlayerState_SetMoney::NewValue' has a wrong offset!");
-
-// Function BrickRigs.BrickPlayerState.SetScore
-// 0x0004 (0x0004 - 0x0000)
-struct BrickPlayerState_SetScore final
-{
-public:
-	float                                         NewScore;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickPlayerState_SetScore) == 0x000004, "Wrong alignment on BrickPlayerState_SetScore");
-static_assert(sizeof(BrickPlayerState_SetScore) == 0x000004, "Wrong size on BrickPlayerState_SetScore");
-static_assert(offsetof(BrickPlayerState_SetScore, NewScore) == 0x000000, "Member 'BrickPlayerState_SetScore::NewScore' has a wrong offset!");
-
-// Function BrickRigs.BrickPlayerState.GetDeaths
-// 0x0004 (0x0004 - 0x0000)
-struct BrickPlayerState_GetDeaths final
-{
-public:
-	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickPlayerState_GetDeaths) == 0x000004, "Wrong alignment on BrickPlayerState_GetDeaths");
-static_assert(sizeof(BrickPlayerState_GetDeaths) == 0x000004, "Wrong size on BrickPlayerState_GetDeaths");
-static_assert(offsetof(BrickPlayerState_GetDeaths, ReturnValue) == 0x000000, "Member 'BrickPlayerState_GetDeaths::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.BrickPlayerState.GetKills
-// 0x0004 (0x0004 - 0x0000)
-struct BrickPlayerState_GetKills final
-{
-public:
-	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickPlayerState_GetKills) == 0x000004, "Wrong alignment on BrickPlayerState_GetKills");
-static_assert(sizeof(BrickPlayerState_GetKills) == 0x000004, "Wrong size on BrickPlayerState_GetKills");
-static_assert(offsetof(BrickPlayerState_GetKills, ReturnValue) == 0x000000, "Member 'BrickPlayerState_GetKills::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.BrickPlayerState.GetMoney
-// 0x0004 (0x0004 - 0x0000)
-struct BrickPlayerState_GetMoney final
-{
-public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickPlayerState_GetMoney) == 0x000004, "Wrong alignment on BrickPlayerState_GetMoney");
-static_assert(sizeof(BrickPlayerState_GetMoney) == 0x000004, "Wrong size on BrickPlayerState_GetMoney");
-static_assert(offsetof(BrickPlayerState_GetMoney, ReturnValue) == 0x000000, "Member 'BrickPlayerState_GetMoney::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.BrickPlayerState.GetPlayerNameText
-// 0x0018 (0x0018 - 0x0000)
-struct BrickPlayerState_GetPlayerNameText final
-{
-public:
-	class FText                                   ReturnValue;                                       // 0x0000(0x0018)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickPlayerState_GetPlayerNameText) == 0x000008, "Wrong alignment on BrickPlayerState_GetPlayerNameText");
-static_assert(sizeof(BrickPlayerState_GetPlayerNameText) == 0x000018, "Wrong size on BrickPlayerState_GetPlayerNameText");
-static_assert(offsetof(BrickPlayerState_GetPlayerNameText, ReturnValue) == 0x000000, "Member 'BrickPlayerState_GetPlayerNameText::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.BrickPlayerState.GetUncompressedPing
-// 0x0004 (0x0004 - 0x0000)
-struct BrickPlayerState_GetUncompressedPing final
-{
-public:
-	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickPlayerState_GetUncompressedPing) == 0x000004, "Wrong alignment on BrickPlayerState_GetUncompressedPing");
-static_assert(sizeof(BrickPlayerState_GetUncompressedPing) == 0x000004, "Wrong size on BrickPlayerState_GetUncompressedPing");
-static_assert(offsetof(BrickPlayerState_GetUncompressedPing, ReturnValue) == 0x000000, "Member 'BrickPlayerState_GetUncompressedPing::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.BrickPlayerState.IsAdmin
-// 0x0001 (0x0001 - 0x0000)
-struct BrickPlayerState_IsAdmin final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickPlayerState_IsAdmin) == 0x000001, "Wrong alignment on BrickPlayerState_IsAdmin");
-static_assert(sizeof(BrickPlayerState_IsAdmin) == 0x000001, "Wrong size on BrickPlayerState_IsAdmin");
-static_assert(offsetof(BrickPlayerState_IsAdmin, ReturnValue) == 0x000000, "Member 'BrickPlayerState_IsAdmin::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.BrickPlayerState.IsAlive
-// 0x0001 (0x0001 - 0x0000)
-struct BrickPlayerState_IsAlive final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickPlayerState_IsAlive) == 0x000001, "Wrong alignment on BrickPlayerState_IsAlive");
-static_assert(sizeof(BrickPlayerState_IsAlive) == 0x000001, "Wrong size on BrickPlayerState_IsAlive");
-static_assert(offsetof(BrickPlayerState_IsAlive, ReturnValue) == 0x000000, "Member 'BrickPlayerState_IsAlive::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.BrickPlayerState.IsHost
-// 0x0001 (0x0001 - 0x0000)
-struct BrickPlayerState_IsHost final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickPlayerState_IsHost) == 0x000001, "Wrong alignment on BrickPlayerState_IsHost");
-static_assert(sizeof(BrickPlayerState_IsHost) == 0x000001, "Wrong size on BrickPlayerState_IsHost");
-static_assert(offsetof(BrickPlayerState_IsHost, ReturnValue) == 0x000000, "Member 'BrickPlayerState_IsHost::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.BrickPlayerState.IsTeamLeader
-// 0x0001 (0x0001 - 0x0000)
-struct BrickPlayerState_IsTeamLeader final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickPlayerState_IsTeamLeader) == 0x000001, "Wrong alignment on BrickPlayerState_IsTeamLeader");
-static_assert(sizeof(BrickPlayerState_IsTeamLeader) == 0x000001, "Wrong size on BrickPlayerState_IsTeamLeader");
-static_assert(offsetof(BrickPlayerState_IsTeamLeader, ReturnValue) == 0x000000, "Member 'BrickPlayerState_IsTeamLeader::ReturnValue' has a wrong offset!");
+static_assert(alignof(Elevator_GetInteractionLocation) == 0x000004, "Wrong alignment on Elevator_GetInteractionLocation");
+static_assert(sizeof(Elevator_GetInteractionLocation) == 0x000010, "Wrong size on Elevator_GetInteractionLocation");
+static_assert(offsetof(Elevator_GetInteractionLocation, Index_0) == 0x000000, "Member 'Elevator_GetInteractionLocation::Index_0' has a wrong offset!");
+static_assert(offsetof(Elevator_GetInteractionLocation, ReturnValue) == 0x000004, "Member 'Elevator_GetInteractionLocation::ReturnValue' has a wrong offset!");
 
 // Function BrickRigs.BrickProjectile.OnRep_SeekingTarget
 // 0x0008 (0x0008 - 0x0000)
@@ -7391,18 +7439,64 @@ static_assert(alignof(BrickProjectile_OnRep_SeekingTarget) == 0x000008, "Wrong a
 static_assert(sizeof(BrickProjectile_OnRep_SeekingTarget) == 0x000008, "Wrong size on BrickProjectile_OnRep_SeekingTarget");
 static_assert(offsetof(BrickProjectile_OnRep_SeekingTarget, OldTarget) == 0x000000, "Member 'BrickProjectile_OnRep_SeekingTarget::OldTarget' has a wrong offset!");
 
-// Function BrickRigs.WorldSetupActor.Get
+// Function BrickRigs.WindowManagerWidget.Get
 // 0x0010 (0x0010 - 0x0000)
-struct WorldSetupActor_Get final
+struct WindowManagerWidget_Get final
 {
 public:
 	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AWorldSetupActor*                       ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UWindowManagerWidget*                   ReturnValue;                                       // 0x0008(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(WorldSetupActor_Get) == 0x000008, "Wrong alignment on WorldSetupActor_Get");
-static_assert(sizeof(WorldSetupActor_Get) == 0x000010, "Wrong size on WorldSetupActor_Get");
-static_assert(offsetof(WorldSetupActor_Get, WorldContextObject) == 0x000000, "Member 'WorldSetupActor_Get::WorldContextObject' has a wrong offset!");
-static_assert(offsetof(WorldSetupActor_Get, ReturnValue) == 0x000008, "Member 'WorldSetupActor_Get::ReturnValue' has a wrong offset!");
+static_assert(alignof(WindowManagerWidget_Get) == 0x000008, "Wrong alignment on WindowManagerWidget_Get");
+static_assert(sizeof(WindowManagerWidget_Get) == 0x000010, "Wrong size on WindowManagerWidget_Get");
+static_assert(offsetof(WindowManagerWidget_Get, WorldContextObject) == 0x000000, "Member 'WindowManagerWidget_Get::WorldContextObject' has a wrong offset!");
+static_assert(offsetof(WindowManagerWidget_Get, ReturnValue) == 0x000008, "Member 'WindowManagerWidget_Get::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.WindowManagerWidget.AddActiveWidget
+// 0x0008 (0x0008 - 0x0000)
+struct WindowManagerWidget_AddActiveWidget final
+{
+public:
+	class UMainWidgetBase*                        Widget;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(WindowManagerWidget_AddActiveWidget) == 0x000008, "Wrong alignment on WindowManagerWidget_AddActiveWidget");
+static_assert(sizeof(WindowManagerWidget_AddActiveWidget) == 0x000008, "Wrong size on WindowManagerWidget_AddActiveWidget");
+static_assert(offsetof(WindowManagerWidget_AddActiveWidget, Widget) == 0x000000, "Member 'WindowManagerWidget_AddActiveWidget::Widget' has a wrong offset!");
+
+// Function BrickRigs.WindowManagerWidget.SetMenuOpen
+// 0x0001 (0x0001 - 0x0000)
+struct WindowManagerWidget_SetMenuOpen final
+{
+public:
+	bool                                          bOpen;                                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(WindowManagerWidget_SetMenuOpen) == 0x000001, "Wrong alignment on WindowManagerWidget_SetMenuOpen");
+static_assert(sizeof(WindowManagerWidget_SetMenuOpen) == 0x000001, "Wrong size on WindowManagerWidget_SetMenuOpen");
+static_assert(offsetof(WindowManagerWidget_SetMenuOpen, bOpen) == 0x000000, "Member 'WindowManagerWidget_SetMenuOpen::bOpen' has a wrong offset!");
+
+// Function BrickRigs.WindowManagerWidget.CanOpenOrCloseMenu
+// 0x0002 (0x0002 - 0x0000)
+struct WindowManagerWidget_CanOpenOrCloseMenu final
+{
+public:
+	bool                                          bOpen;                                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0001(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(WindowManagerWidget_CanOpenOrCloseMenu) == 0x000001, "Wrong alignment on WindowManagerWidget_CanOpenOrCloseMenu");
+static_assert(sizeof(WindowManagerWidget_CanOpenOrCloseMenu) == 0x000002, "Wrong size on WindowManagerWidget_CanOpenOrCloseMenu");
+static_assert(offsetof(WindowManagerWidget_CanOpenOrCloseMenu, bOpen) == 0x000000, "Member 'WindowManagerWidget_CanOpenOrCloseMenu::bOpen' has a wrong offset!");
+static_assert(offsetof(WindowManagerWidget_CanOpenOrCloseMenu, ReturnValue) == 0x000001, "Member 'WindowManagerWidget_CanOpenOrCloseMenu::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.WindowManagerWidget.IsMenuOpen
+// 0x0001 (0x0001 - 0x0000)
+struct WindowManagerWidget_IsMenuOpen final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(WindowManagerWidget_IsMenuOpen) == 0x000001, "Wrong alignment on WindowManagerWidget_IsMenuOpen");
+static_assert(sizeof(WindowManagerWidget_IsMenuOpen) == 0x000001, "Wrong size on WindowManagerWidget_IsMenuOpen");
+static_assert(offsetof(WindowManagerWidget_IsMenuOpen, ReturnValue) == 0x000000, "Member 'WindowManagerWidget_IsMenuOpen::ReturnValue' has a wrong offset!");
 
 // Function BrickRigs.BrickScrollBox.SetSlotSpacingStyle
 // 0x0001 (0x0001 - 0x0000)
@@ -7415,16 +7509,158 @@ static_assert(alignof(BrickScrollBox_SetSlotSpacingStyle) == 0x000001, "Wrong al
 static_assert(sizeof(BrickScrollBox_SetSlotSpacingStyle) == 0x000001, "Wrong size on BrickScrollBox_SetSlotSpacingStyle");
 static_assert(offsetof(BrickScrollBox_SetSlotSpacingStyle, NewStyle) == 0x000000, "Member 'BrickScrollBox_SetSlotSpacingStyle::NewStyle' has a wrong offset!");
 
-// Function BrickRigs.BrickSpacer.SetColorStyle
-// 0x0001 (0x0001 - 0x0000)
-struct BrickSpacer_SetColorStyle final
+// Function BrickRigs.BrickSliderWidget.OnTextChanged
+// 0x0020 (0x0020 - 0x0000)
+struct BrickSliderWidget_OnTextChanged final
 {
 public:
-	EBrickUIColorStyle                            NewStyle;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FText                                   NewText;                                           // 0x0000(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	EValueChangedEventType                        EventType;                                         // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(BrickSpacer_SetColorStyle) == 0x000001, "Wrong alignment on BrickSpacer_SetColorStyle");
-static_assert(sizeof(BrickSpacer_SetColorStyle) == 0x000001, "Wrong size on BrickSpacer_SetColorStyle");
-static_assert(offsetof(BrickSpacer_SetColorStyle, NewStyle) == 0x000000, "Member 'BrickSpacer_SetColorStyle::NewStyle' has a wrong offset!");
+static_assert(alignof(BrickSliderWidget_OnTextChanged) == 0x000008, "Wrong alignment on BrickSliderWidget_OnTextChanged");
+static_assert(sizeof(BrickSliderWidget_OnTextChanged) == 0x000020, "Wrong size on BrickSliderWidget_OnTextChanged");
+static_assert(offsetof(BrickSliderWidget_OnTextChanged, NewText) == 0x000000, "Member 'BrickSliderWidget_OnTextChanged::NewText' has a wrong offset!");
+static_assert(offsetof(BrickSliderWidget_OnTextChanged, EventType) == 0x000018, "Member 'BrickSliderWidget_OnTextChanged::EventType' has a wrong offset!");
+
+// Function BrickRigs.BrickSliderWidget.SetCustomTextFormat
+// 0x0018 (0x0018 - 0x0000)
+struct BrickSliderWidget_SetCustomTextFormat final
+{
+public:
+	class FText                                   InFormat;                                          // 0x0000(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickSliderWidget_SetCustomTextFormat) == 0x000008, "Wrong alignment on BrickSliderWidget_SetCustomTextFormat");
+static_assert(sizeof(BrickSliderWidget_SetCustomTextFormat) == 0x000018, "Wrong size on BrickSliderWidget_SetCustomTextFormat");
+static_assert(offsetof(BrickSliderWidget_SetCustomTextFormat, InFormat) == 0x000000, "Member 'BrickSliderWidget_SetCustomTextFormat::InFormat' has a wrong offset!");
+
+// Function BrickRigs.BrickSliderWidget.SetGridSnapMode
+// 0x0001 (0x0001 - 0x0000)
+struct BrickSliderWidget_SetGridSnapMode final
+{
+public:
+	EBrickSliderGridSnapMode                      NewMode;                                           // 0x0000(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickSliderWidget_SetGridSnapMode) == 0x000001, "Wrong alignment on BrickSliderWidget_SetGridSnapMode");
+static_assert(sizeof(BrickSliderWidget_SetGridSnapMode) == 0x000001, "Wrong size on BrickSliderWidget_SetGridSnapMode");
+static_assert(offsetof(BrickSliderWidget_SetGridSnapMode, NewMode) == 0x000000, "Member 'BrickSliderWidget_SetGridSnapMode::NewMode' has a wrong offset!");
+
+// Function BrickRigs.BrickSliderWidget.SetIsMarquee
+// 0x0001 (0x0001 - 0x0000)
+struct BrickSliderWidget_SetIsMarquee final
+{
+public:
+	bool                                          bInMarquee;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickSliderWidget_SetIsMarquee) == 0x000001, "Wrong alignment on BrickSliderWidget_SetIsMarquee");
+static_assert(sizeof(BrickSliderWidget_SetIsMarquee) == 0x000001, "Wrong size on BrickSliderWidget_SetIsMarquee");
+static_assert(offsetof(BrickSliderWidget_SetIsMarquee, bInMarquee) == 0x000000, "Member 'BrickSliderWidget_SetIsMarquee::bInMarquee' has a wrong offset!");
+
+// Function BrickRigs.BrickSliderWidget.SetIsReadOnly
+// 0x0001 (0x0001 - 0x0000)
+struct BrickSliderWidget_SetIsReadOnly final
+{
+public:
+	bool                                          bInReadOnly;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickSliderWidget_SetIsReadOnly) == 0x000001, "Wrong alignment on BrickSliderWidget_SetIsReadOnly");
+static_assert(sizeof(BrickSliderWidget_SetIsReadOnly) == 0x000001, "Wrong size on BrickSliderWidget_SetIsReadOnly");
+static_assert(offsetof(BrickSliderWidget_SetIsReadOnly, bInReadOnly) == 0x000000, "Member 'BrickSliderWidget_SetIsReadOnly::bInReadOnly' has a wrong offset!");
+
+// Function BrickRigs.BrickSliderWidget.SetMaxFractionalDigits
+// 0x0004 (0x0004 - 0x0000)
+struct BrickSliderWidget_SetMaxFractionalDigits final
+{
+public:
+	int32                                         InMaxDigits;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickSliderWidget_SetMaxFractionalDigits) == 0x000004, "Wrong alignment on BrickSliderWidget_SetMaxFractionalDigits");
+static_assert(sizeof(BrickSliderWidget_SetMaxFractionalDigits) == 0x000004, "Wrong size on BrickSliderWidget_SetMaxFractionalDigits");
+static_assert(offsetof(BrickSliderWidget_SetMaxFractionalDigits, InMaxDigits) == 0x000000, "Member 'BrickSliderWidget_SetMaxFractionalDigits::InMaxDigits' has a wrong offset!");
+
+// Function BrickRigs.BrickSliderWidget.SetValue
+// 0x0004 (0x0004 - 0x0000)
+struct BrickSliderWidget_SetValue final
+{
+public:
+	float                                         NewValue;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickSliderWidget_SetValue) == 0x000004, "Wrong alignment on BrickSliderWidget_SetValue");
+static_assert(sizeof(BrickSliderWidget_SetValue) == 0x000004, "Wrong size on BrickSliderWidget_SetValue");
+static_assert(offsetof(BrickSliderWidget_SetValue, NewValue) == 0x000000, "Member 'BrickSliderWidget_SetValue::NewValue' has a wrong offset!");
+
+// Function BrickRigs.BrickSliderWidget.SetValueRange
+// 0x0008 (0x0008 - 0x0000)
+struct BrickSliderWidget_SetValueRange final
+{
+public:
+	float                                         InMinValue;                                        // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         InMaxValue;                                        // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickSliderWidget_SetValueRange) == 0x000004, "Wrong alignment on BrickSliderWidget_SetValueRange");
+static_assert(sizeof(BrickSliderWidget_SetValueRange) == 0x000008, "Wrong size on BrickSliderWidget_SetValueRange");
+static_assert(offsetof(BrickSliderWidget_SetValueRange, InMinValue) == 0x000000, "Member 'BrickSliderWidget_SetValueRange::InMinValue' has a wrong offset!");
+static_assert(offsetof(BrickSliderWidget_SetValueRange, InMaxValue) == 0x000004, "Member 'BrickSliderWidget_SetValueRange::InMaxValue' has a wrong offset!");
+
+// Function BrickRigs.BrickSliderWidget.SetValueType
+// 0x0001 (0x0001 - 0x0000)
+struct BrickSliderWidget_SetValueType final
+{
+public:
+	ENumericValueType                             InType;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickSliderWidget_SetValueType) == 0x000001, "Wrong alignment on BrickSliderWidget_SetValueType");
+static_assert(sizeof(BrickSliderWidget_SetValueType) == 0x000001, "Wrong size on BrickSliderWidget_SetValueType");
+static_assert(offsetof(BrickSliderWidget_SetValueType, InType) == 0x000000, "Member 'BrickSliderWidget_SetValueType::InType' has a wrong offset!");
+
+// Function BrickRigs.BrickSliderWidget.UpdateIsDragging
+// 0x0001 (0x0001 - 0x0000)
+struct BrickSliderWidget_UpdateIsDragging final
+{
+public:
+	bool                                          bIsDragging;                                       // 0x0000(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickSliderWidget_UpdateIsDragging) == 0x000001, "Wrong alignment on BrickSliderWidget_UpdateIsDragging");
+static_assert(sizeof(BrickSliderWidget_UpdateIsDragging) == 0x000001, "Wrong size on BrickSliderWidget_UpdateIsDragging");
+static_assert(offsetof(BrickSliderWidget_UpdateIsDragging, bIsDragging) == 0x000000, "Member 'BrickSliderWidget_UpdateIsDragging::bIsDragging' has a wrong offset!");
+
+// Function BrickRigs.BrickSliderWidget.UpdateSliderPosition
+// 0x0004 (0x0004 - 0x0000)
+struct BrickSliderWidget_UpdateSliderPosition final
+{
+public:
+	float                                         NewValue;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickSliderWidget_UpdateSliderPosition) == 0x000004, "Wrong alignment on BrickSliderWidget_UpdateSliderPosition");
+static_assert(sizeof(BrickSliderWidget_UpdateSliderPosition) == 0x000004, "Wrong size on BrickSliderWidget_UpdateSliderPosition");
+static_assert(offsetof(BrickSliderWidget_UpdateSliderPosition, NewValue) == 0x000000, "Member 'BrickSliderWidget_UpdateSliderPosition::NewValue' has a wrong offset!");
+
+// Function BrickRigs.BrickSliderWidget.GetValue
+// 0x0004 (0x0004 - 0x0000)
+struct BrickSliderWidget_GetValue final
+{
+public:
+	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickSliderWidget_GetValue) == 0x000004, "Wrong alignment on BrickSliderWidget_GetValue");
+static_assert(sizeof(BrickSliderWidget_GetValue) == 0x000004, "Wrong size on BrickSliderWidget_GetValue");
+static_assert(offsetof(BrickSliderWidget_GetValue, ReturnValue) == 0x000000, "Member 'BrickSliderWidget_GetValue::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.BrickStatics.ColorToHex
+// 0x0028 (0x0028 - 0x0000)
+struct BrickStatics_ColorToHex final
+{
+public:
+	struct FLinearColor                           Color;                                             // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIncludeAlpha;                                     // 0x0010(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 ReturnValue;                                       // 0x0018(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickStatics_ColorToHex) == 0x000008, "Wrong alignment on BrickStatics_ColorToHex");
+static_assert(sizeof(BrickStatics_ColorToHex) == 0x000028, "Wrong size on BrickStatics_ColorToHex");
+static_assert(offsetof(BrickStatics_ColorToHex, Color) == 0x000000, "Member 'BrickStatics_ColorToHex::Color' has a wrong offset!");
+static_assert(offsetof(BrickStatics_ColorToHex, bIncludeAlpha) == 0x000010, "Member 'BrickStatics_ColorToHex::bIncludeAlpha' has a wrong offset!");
+static_assert(offsetof(BrickStatics_ColorToHex, ReturnValue) == 0x000018, "Member 'BrickStatics_ColorToHex::ReturnValue' has a wrong offset!");
 
 // Function BrickRigs.BrickStatics.CreateUniqueNetId
 // 0x0040 (0x0040 - 0x0000)
@@ -7479,6 +7715,34 @@ static_assert(alignof(BrickStatics_GetProjectVersion) == 0x000008, "Wrong alignm
 static_assert(sizeof(BrickStatics_GetProjectVersion) == 0x000010, "Wrong size on BrickStatics_GetProjectVersion");
 static_assert(offsetof(BrickStatics_GetProjectVersion, ReturnValue) == 0x000000, "Member 'BrickStatics_GetProjectVersion::ReturnValue' has a wrong offset!");
 
+// Function BrickRigs.BrickStatics.GetScalableBrickConnectorSpacingAxis
+// 0x0004 (0x0004 - 0x0000)
+struct BrickStatics_GetScalableBrickConnectorSpacingAxis final
+{
+public:
+	struct FScalableBrickConnectorSpacing         ConnectorSpacing;                                  // 0x0000(0x0002)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	EFluAxisSigned                                Axis;                                              // 0x0002(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EConnectorSpacing                             ReturnValue;                                       // 0x0003(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickStatics_GetScalableBrickConnectorSpacingAxis) == 0x000002, "Wrong alignment on BrickStatics_GetScalableBrickConnectorSpacingAxis");
+static_assert(sizeof(BrickStatics_GetScalableBrickConnectorSpacingAxis) == 0x000004, "Wrong size on BrickStatics_GetScalableBrickConnectorSpacingAxis");
+static_assert(offsetof(BrickStatics_GetScalableBrickConnectorSpacingAxis, ConnectorSpacing) == 0x000000, "Member 'BrickStatics_GetScalableBrickConnectorSpacingAxis::ConnectorSpacing' has a wrong offset!");
+static_assert(offsetof(BrickStatics_GetScalableBrickConnectorSpacingAxis, Axis) == 0x000002, "Member 'BrickStatics_GetScalableBrickConnectorSpacingAxis::Axis' has a wrong offset!");
+static_assert(offsetof(BrickStatics_GetScalableBrickConnectorSpacingAxis, ReturnValue) == 0x000003, "Member 'BrickStatics_GetScalableBrickConnectorSpacingAxis::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.BrickStatics.HexToColor
+// 0x0020 (0x0020 - 0x0000)
+struct BrickStatics_HexToColor final
+{
+public:
+	class FString                                 Hex;                                               // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FLinearColor                           ReturnValue;                                       // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickStatics_HexToColor) == 0x000008, "Wrong alignment on BrickStatics_HexToColor");
+static_assert(sizeof(BrickStatics_HexToColor) == 0x000020, "Wrong size on BrickStatics_HexToColor");
+static_assert(offsetof(BrickStatics_HexToColor, Hex) == 0x000000, "Member 'BrickStatics_HexToColor::Hex' has a wrong offset!");
+static_assert(offsetof(BrickStatics_HexToColor, ReturnValue) == 0x000010, "Member 'BrickStatics_HexToColor::ReturnValue' has a wrong offset!");
+
 // Function BrickRigs.BrickStatics.IsModdedAsset
 // 0x0010 (0x0010 - 0x0000)
 struct BrickStatics_IsModdedAsset final
@@ -7492,20 +7756,6 @@ static_assert(alignof(BrickStatics_IsModdedAsset) == 0x000008, "Wrong alignment 
 static_assert(sizeof(BrickStatics_IsModdedAsset) == 0x000010, "Wrong size on BrickStatics_IsModdedAsset");
 static_assert(offsetof(BrickStatics_IsModdedAsset, Asset) == 0x000000, "Member 'BrickStatics_IsModdedAsset::Asset' has a wrong offset!");
 static_assert(offsetof(BrickStatics_IsModdedAsset, ReturnValue) == 0x000008, "Member 'BrickStatics_IsModdedAsset::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.BrickStatics.QuatToNiceRotator
-// 0x0020 (0x0020 - 0x0000)
-struct BrickStatics_QuatToNiceRotator final
-{
-public:
-	struct FQuat                                  Quat;                                              // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	struct FRotator                               ReturnValue;                                       // 0x0010(0x000C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(BrickStatics_QuatToNiceRotator) == 0x000010, "Wrong alignment on BrickStatics_QuatToNiceRotator");
-static_assert(sizeof(BrickStatics_QuatToNiceRotator) == 0x000020, "Wrong size on BrickStatics_QuatToNiceRotator");
-static_assert(offsetof(BrickStatics_QuatToNiceRotator, Quat) == 0x000000, "Member 'BrickStatics_QuatToNiceRotator::Quat' has a wrong offset!");
-static_assert(offsetof(BrickStatics_QuatToNiceRotator, ReturnValue) == 0x000010, "Member 'BrickStatics_QuatToNiceRotator::ReturnValue' has a wrong offset!");
 
 // Function BrickRigs.BrickStatics.SetActorOnFire
 // 0x00A0 (0x00A0 - 0x0000)
@@ -7524,6 +7774,21 @@ static_assert(offsetof(BrickStatics_SetActorOnFire, Hit) == 0x000000, "Member 'B
 static_assert(offsetof(BrickStatics_SetActorOnFire, Instigator) == 0x000088, "Member 'BrickStatics_SetActorOnFire::Instigator' has a wrong offset!");
 static_assert(offsetof(BrickStatics_SetActorOnFire, DamageCauser) == 0x000090, "Member 'BrickStatics_SetActorOnFire::DamageCauser' has a wrong offset!");
 static_assert(offsetof(BrickStatics_SetActorOnFire, ReturnValue) == 0x000098, "Member 'BrickStatics_SetActorOnFire::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.BrickStatics.SetScalableBrickConnectorSpacingAxis
+// 0x0004 (0x0004 - 0x0000)
+struct BrickStatics_SetScalableBrickConnectorSpacingAxis final
+{
+public:
+	struct FScalableBrickConnectorSpacing         ConnectorSpacing;                                  // 0x0000(0x0002)(Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	EFluAxisSigned                                Axis;                                              // 0x0002(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EConnectorSpacing                             NewSpacing;                                        // 0x0003(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickStatics_SetScalableBrickConnectorSpacingAxis) == 0x000002, "Wrong alignment on BrickStatics_SetScalableBrickConnectorSpacingAxis");
+static_assert(sizeof(BrickStatics_SetScalableBrickConnectorSpacingAxis) == 0x000004, "Wrong size on BrickStatics_SetScalableBrickConnectorSpacingAxis");
+static_assert(offsetof(BrickStatics_SetScalableBrickConnectorSpacingAxis, ConnectorSpacing) == 0x000000, "Member 'BrickStatics_SetScalableBrickConnectorSpacingAxis::ConnectorSpacing' has a wrong offset!");
+static_assert(offsetof(BrickStatics_SetScalableBrickConnectorSpacingAxis, Axis) == 0x000002, "Member 'BrickStatics_SetScalableBrickConnectorSpacingAxis::Axis' has a wrong offset!");
+static_assert(offsetof(BrickStatics_SetScalableBrickConnectorSpacingAxis, NewSpacing) == 0x000003, "Member 'BrickStatics_SetScalableBrickConnectorSpacingAxis::NewSpacing' has a wrong offset!");
 
 // Function BrickRigs.BrickStatics.ShowPlayerProfileUI
 // 0x0038 (0x0038 - 0x0000)
@@ -7605,147 +7870,263 @@ static_assert(sizeof(BrickStatics_UniqueNetIdToString) == 0x000038, "Wrong size 
 static_assert(offsetof(BrickStatics_UniqueNetIdToString, UniqueNetId) == 0x000000, "Member 'BrickStatics_UniqueNetIdToString::UniqueNetId' has a wrong offset!");
 static_assert(offsetof(BrickStatics_UniqueNetIdToString, ReturnValue) == 0x000028, "Member 'BrickStatics_UniqueNetIdToString::ReturnValue' has a wrong offset!");
 
-// Function BrickRigs.BrickStatics.Vector2DAngle
-// 0x000C (0x000C - 0x0000)
-struct BrickStatics_Vector2DAngle final
-{
-public:
-	struct FVector2D                              Vector;                                            // 0x0000(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickStatics_Vector2DAngle) == 0x000004, "Wrong alignment on BrickStatics_Vector2DAngle");
-static_assert(sizeof(BrickStatics_Vector2DAngle) == 0x00000C, "Wrong size on BrickStatics_Vector2DAngle");
-static_assert(offsetof(BrickStatics_Vector2DAngle, Vector) == 0x000000, "Member 'BrickStatics_Vector2DAngle::Vector' has a wrong offset!");
-static_assert(offsetof(BrickStatics_Vector2DAngle, ReturnValue) == 0x000008, "Member 'BrickStatics_Vector2DAngle::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.BrickStatics.Vector2DAngle2
-// 0x0014 (0x0014 - 0x0000)
-struct BrickStatics_Vector2DAngle2 final
-{
-public:
-	struct FVector2D                              A;                                                 // 0x0000(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector2D                              B;                                                 // 0x0008(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickStatics_Vector2DAngle2) == 0x000004, "Wrong alignment on BrickStatics_Vector2DAngle2");
-static_assert(sizeof(BrickStatics_Vector2DAngle2) == 0x000014, "Wrong size on BrickStatics_Vector2DAngle2");
-static_assert(offsetof(BrickStatics_Vector2DAngle2, A) == 0x000000, "Member 'BrickStatics_Vector2DAngle2::A' has a wrong offset!");
-static_assert(offsetof(BrickStatics_Vector2DAngle2, B) == 0x000008, "Member 'BrickStatics_Vector2DAngle2::B' has a wrong offset!");
-static_assert(offsetof(BrickStatics_Vector2DAngle2, ReturnValue) == 0x000010, "Member 'BrickStatics_Vector2DAngle2::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.BrickStatics.WrapIndex
-// 0x000C (0x000C - 0x0000)
-struct BrickStatics_WrapIndex final
-{
-public:
-	int32                                         Value;                                             // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Num;                                               // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickStatics_WrapIndex) == 0x000004, "Wrong alignment on BrickStatics_WrapIndex");
-static_assert(sizeof(BrickStatics_WrapIndex) == 0x00000C, "Wrong size on BrickStatics_WrapIndex");
-static_assert(offsetof(BrickStatics_WrapIndex, Value) == 0x000000, "Member 'BrickStatics_WrapIndex::Value' has a wrong offset!");
-static_assert(offsetof(BrickStatics_WrapIndex, Num) == 0x000004, "Member 'BrickStatics_WrapIndex::Num' has a wrong offset!");
-static_assert(offsetof(BrickStatics_WrapIndex, ReturnValue) == 0x000008, "Member 'BrickStatics_WrapIndex::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.BrickTeam.SetMaxScore
-// 0x0004 (0x0004 - 0x0000)
-struct BrickTeam_SetMaxScore final
-{
-public:
-	int32                                         NewMaxScore;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickTeam_SetMaxScore) == 0x000004, "Wrong alignment on BrickTeam_SetMaxScore");
-static_assert(sizeof(BrickTeam_SetMaxScore) == 0x000004, "Wrong size on BrickTeam_SetMaxScore");
-static_assert(offsetof(BrickTeam_SetMaxScore, NewMaxScore) == 0x000000, "Member 'BrickTeam_SetMaxScore::NewMaxScore' has a wrong offset!");
-
-// Function BrickRigs.BrickTeam.SetScore
-// 0x0004 (0x0004 - 0x0000)
-struct BrickTeam_SetScore final
-{
-public:
-	int32                                         NewScore;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickTeam_SetScore) == 0x000004, "Wrong alignment on BrickTeam_SetScore");
-static_assert(sizeof(BrickTeam_SetScore) == 0x000004, "Wrong size on BrickTeam_SetScore");
-static_assert(offsetof(BrickTeam_SetScore, NewScore) == 0x000000, "Member 'BrickTeam_SetScore::NewScore' has a wrong offset!");
-
-// Function BrickRigs.BrickTeam.GetMaxScore
-// 0x0004 (0x0004 - 0x0000)
-struct BrickTeam_GetMaxScore final
-{
-public:
-	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickTeam_GetMaxScore) == 0x000004, "Wrong alignment on BrickTeam_GetMaxScore");
-static_assert(sizeof(BrickTeam_GetMaxScore) == 0x000004, "Wrong size on BrickTeam_GetMaxScore");
-static_assert(offsetof(BrickTeam_GetMaxScore, ReturnValue) == 0x000000, "Member 'BrickTeam_GetMaxScore::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.BrickTeam.GetScore
-// 0x0004 (0x0004 - 0x0000)
-struct BrickTeam_GetScore final
-{
-public:
-	int32                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrickTeam_GetScore) == 0x000004, "Wrong alignment on BrickTeam_GetScore");
-static_assert(sizeof(BrickTeam_GetScore) == 0x000004, "Wrong size on BrickTeam_GetScore");
-static_assert(offsetof(BrickTeam_GetScore, ReturnValue) == 0x000000, "Member 'BrickTeam_GetScore::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.BrickTeam.GetTeamDisplayName
+// Function BrickRigs.BrickTextBoxWidget.OnTextChanged
 // 0x0018 (0x0018 - 0x0000)
-struct BrickTeam_GetTeamDisplayName final
+struct BrickTextBoxWidget_OnTextChanged final
+{
+public:
+	class FText                                   NewText;                                           // 0x0000(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickTextBoxWidget_OnTextChanged) == 0x000008, "Wrong alignment on BrickTextBoxWidget_OnTextChanged");
+static_assert(sizeof(BrickTextBoxWidget_OnTextChanged) == 0x000018, "Wrong size on BrickTextBoxWidget_OnTextChanged");
+static_assert(offsetof(BrickTextBoxWidget_OnTextChanged, NewText) == 0x000000, "Member 'BrickTextBoxWidget_OnTextChanged::NewText' has a wrong offset!");
+
+// Function BrickRigs.BrickTextBoxWidget.SetAllowMultiLine
+// 0x0001 (0x0001 - 0x0000)
+struct BrickTextBoxWidget_SetAllowMultiLine final
+{
+public:
+	bool                                          bInAllowMultiLine;                                 // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickTextBoxWidget_SetAllowMultiLine) == 0x000001, "Wrong alignment on BrickTextBoxWidget_SetAllowMultiLine");
+static_assert(sizeof(BrickTextBoxWidget_SetAllowMultiLine) == 0x000001, "Wrong size on BrickTextBoxWidget_SetAllowMultiLine");
+static_assert(offsetof(BrickTextBoxWidget_SetAllowMultiLine, bInAllowMultiLine) == 0x000000, "Member 'BrickTextBoxWidget_SetAllowMultiLine::bInAllowMultiLine' has a wrong offset!");
+
+// Function BrickRigs.BrickTextBoxWidget.SetBrushStyle
+// 0x0001 (0x0001 - 0x0000)
+struct BrickTextBoxWidget_SetBrushStyle final
+{
+public:
+	EBrickUIBrushStyle                            InBrushStyle;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickTextBoxWidget_SetBrushStyle) == 0x000001, "Wrong alignment on BrickTextBoxWidget_SetBrushStyle");
+static_assert(sizeof(BrickTextBoxWidget_SetBrushStyle) == 0x000001, "Wrong size on BrickTextBoxWidget_SetBrushStyle");
+static_assert(offsetof(BrickTextBoxWidget_SetBrushStyle, InBrushStyle) == 0x000000, "Member 'BrickTextBoxWidget_SetBrushStyle::InBrushStyle' has a wrong offset!");
+
+// Function BrickRigs.BrickTextBoxWidget.SetColorStyle
+// 0x0001 (0x0001 - 0x0000)
+struct BrickTextBoxWidget_SetColorStyle final
+{
+public:
+	EBrickUIColorStyle                            InColorStyle;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickTextBoxWidget_SetColorStyle) == 0x000001, "Wrong alignment on BrickTextBoxWidget_SetColorStyle");
+static_assert(sizeof(BrickTextBoxWidget_SetColorStyle) == 0x000001, "Wrong size on BrickTextBoxWidget_SetColorStyle");
+static_assert(offsetof(BrickTextBoxWidget_SetColorStyle, InColorStyle) == 0x000000, "Member 'BrickTextBoxWidget_SetColorStyle::InColorStyle' has a wrong offset!");
+
+// Function BrickRigs.BrickTextBoxWidget.SetCustomFocus
+// 0x0002 (0x0002 - 0x0000)
+struct BrickTextBoxWidget_SetCustomFocus final
+{
+public:
+	bool                                          bNewUseCustomFocus;                                // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bNewFocused;                                       // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickTextBoxWidget_SetCustomFocus) == 0x000001, "Wrong alignment on BrickTextBoxWidget_SetCustomFocus");
+static_assert(sizeof(BrickTextBoxWidget_SetCustomFocus) == 0x000002, "Wrong size on BrickTextBoxWidget_SetCustomFocus");
+static_assert(offsetof(BrickTextBoxWidget_SetCustomFocus, bNewUseCustomFocus) == 0x000000, "Member 'BrickTextBoxWidget_SetCustomFocus::bNewUseCustomFocus' has a wrong offset!");
+static_assert(offsetof(BrickTextBoxWidget_SetCustomFocus, bNewFocused) == 0x000001, "Member 'BrickTextBoxWidget_SetCustomFocus::bNewFocused' has a wrong offset!");
+
+// Function BrickRigs.BrickTextBoxWidget.SetHintText
+// 0x0018 (0x0018 - 0x0000)
+struct BrickTextBoxWidget_SetHintText final
+{
+public:
+	class FText                                   InText;                                            // 0x0000(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickTextBoxWidget_SetHintText) == 0x000008, "Wrong alignment on BrickTextBoxWidget_SetHintText");
+static_assert(sizeof(BrickTextBoxWidget_SetHintText) == 0x000018, "Wrong size on BrickTextBoxWidget_SetHintText");
+static_assert(offsetof(BrickTextBoxWidget_SetHintText, InText) == 0x000000, "Member 'BrickTextBoxWidget_SetHintText::InText' has a wrong offset!");
+
+// Function BrickRigs.BrickTextBoxWidget.SetIsMarquee
+// 0x0001 (0x0001 - 0x0000)
+struct BrickTextBoxWidget_SetIsMarquee final
+{
+public:
+	bool                                          bNewMarquee;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickTextBoxWidget_SetIsMarquee) == 0x000001, "Wrong alignment on BrickTextBoxWidget_SetIsMarquee");
+static_assert(sizeof(BrickTextBoxWidget_SetIsMarquee) == 0x000001, "Wrong size on BrickTextBoxWidget_SetIsMarquee");
+static_assert(offsetof(BrickTextBoxWidget_SetIsMarquee, bNewMarquee) == 0x000000, "Member 'BrickTextBoxWidget_SetIsMarquee::bNewMarquee' has a wrong offset!");
+
+// Function BrickRigs.BrickTextBoxWidget.SetIsPassword
+// 0x0001 (0x0001 - 0x0000)
+struct BrickTextBoxWidget_SetIsPassword final
+{
+public:
+	bool                                          bNewIsPassword;                                    // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickTextBoxWidget_SetIsPassword) == 0x000001, "Wrong alignment on BrickTextBoxWidget_SetIsPassword");
+static_assert(sizeof(BrickTextBoxWidget_SetIsPassword) == 0x000001, "Wrong size on BrickTextBoxWidget_SetIsPassword");
+static_assert(offsetof(BrickTextBoxWidget_SetIsPassword, bNewIsPassword) == 0x000000, "Member 'BrickTextBoxWidget_SetIsPassword::bNewIsPassword' has a wrong offset!");
+
+// Function BrickRigs.BrickTextBoxWidget.SetIsReadOnly
+// 0x0001 (0x0001 - 0x0000)
+struct BrickTextBoxWidget_SetIsReadOnly final
+{
+public:
+	bool                                          bNewReadOnly;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickTextBoxWidget_SetIsReadOnly) == 0x000001, "Wrong alignment on BrickTextBoxWidget_SetIsReadOnly");
+static_assert(sizeof(BrickTextBoxWidget_SetIsReadOnly) == 0x000001, "Wrong size on BrickTextBoxWidget_SetIsReadOnly");
+static_assert(offsetof(BrickTextBoxWidget_SetIsReadOnly, bNewReadOnly) == 0x000000, "Member 'BrickTextBoxWidget_SetIsReadOnly::bNewReadOnly' has a wrong offset!");
+
+// Function BrickRigs.BrickTextBoxWidget.SetJustification
+// 0x0001 (0x0001 - 0x0000)
+struct BrickTextBoxWidget_SetJustification final
+{
+public:
+	ETextJustify                                  NewJustification;                                  // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickTextBoxWidget_SetJustification) == 0x000001, "Wrong alignment on BrickTextBoxWidget_SetJustification");
+static_assert(sizeof(BrickTextBoxWidget_SetJustification) == 0x000001, "Wrong size on BrickTextBoxWidget_SetJustification");
+static_assert(offsetof(BrickTextBoxWidget_SetJustification, NewJustification) == 0x000000, "Member 'BrickTextBoxWidget_SetJustification::NewJustification' has a wrong offset!");
+
+// Function BrickRigs.BrickTextBoxWidget.SetMaxTextLength
+// 0x0004 (0x0004 - 0x0000)
+struct BrickTextBoxWidget_SetMaxTextLength final
+{
+public:
+	int32                                         InMaxLength;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickTextBoxWidget_SetMaxTextLength) == 0x000004, "Wrong alignment on BrickTextBoxWidget_SetMaxTextLength");
+static_assert(sizeof(BrickTextBoxWidget_SetMaxTextLength) == 0x000004, "Wrong size on BrickTextBoxWidget_SetMaxTextLength");
+static_assert(offsetof(BrickTextBoxWidget_SetMaxTextLength, InMaxLength) == 0x000000, "Member 'BrickTextBoxWidget_SetMaxTextLength::InMaxLength' has a wrong offset!");
+
+// Function BrickRigs.BrickTextBoxWidget.SetPaddingStyle
+// 0x0001 (0x0001 - 0x0000)
+struct BrickTextBoxWidget_SetPaddingStyle final
+{
+public:
+	EBrickUIPaddingStyle                          InPaddingStyle;                                    // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickTextBoxWidget_SetPaddingStyle) == 0x000001, "Wrong alignment on BrickTextBoxWidget_SetPaddingStyle");
+static_assert(sizeof(BrickTextBoxWidget_SetPaddingStyle) == 0x000001, "Wrong size on BrickTextBoxWidget_SetPaddingStyle");
+static_assert(offsetof(BrickTextBoxWidget_SetPaddingStyle, InPaddingStyle) == 0x000000, "Member 'BrickTextBoxWidget_SetPaddingStyle::InPaddingStyle' has a wrong offset!");
+
+// Function BrickRigs.BrickTextBoxWidget.SetPasswordVisible
+// 0x0001 (0x0001 - 0x0000)
+struct BrickTextBoxWidget_SetPasswordVisible final
+{
+public:
+	bool                                          bNewVisible;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickTextBoxWidget_SetPasswordVisible) == 0x000001, "Wrong alignment on BrickTextBoxWidget_SetPasswordVisible");
+static_assert(sizeof(BrickTextBoxWidget_SetPasswordVisible) == 0x000001, "Wrong size on BrickTextBoxWidget_SetPasswordVisible");
+static_assert(offsetof(BrickTextBoxWidget_SetPasswordVisible, bNewVisible) == 0x000000, "Member 'BrickTextBoxWidget_SetPasswordVisible::bNewVisible' has a wrong offset!");
+
+// Function BrickRigs.BrickTextBoxWidget.SetText
+// 0x0020 (0x0020 - 0x0000)
+struct BrickTextBoxWidget_SetText final
+{
+public:
+	class FText                                   InText;                                            // 0x0000(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	bool                                          bValidateText;                                     // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(BrickTextBoxWidget_SetText) == 0x000008, "Wrong alignment on BrickTextBoxWidget_SetText");
+static_assert(sizeof(BrickTextBoxWidget_SetText) == 0x000020, "Wrong size on BrickTextBoxWidget_SetText");
+static_assert(offsetof(BrickTextBoxWidget_SetText, InText) == 0x000000, "Member 'BrickTextBoxWidget_SetText::InText' has a wrong offset!");
+static_assert(offsetof(BrickTextBoxWidget_SetText, bValidateText) == 0x000018, "Member 'BrickTextBoxWidget_SetText::bValidateText' has a wrong offset!");
+
+// Function BrickRigs.BrickTextBoxWidget.SetTextStyle
+// 0x0001 (0x0001 - 0x0000)
+struct BrickTextBoxWidget_SetTextStyle final
+{
+public:
+	EBrickUITextStyle                             InTextStyle;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickTextBoxWidget_SetTextStyle) == 0x000001, "Wrong alignment on BrickTextBoxWidget_SetTextStyle");
+static_assert(sizeof(BrickTextBoxWidget_SetTextStyle) == 0x000001, "Wrong size on BrickTextBoxWidget_SetTextStyle");
+static_assert(offsetof(BrickTextBoxWidget_SetTextStyle, InTextStyle) == 0x000000, "Member 'BrickTextBoxWidget_SetTextStyle::InTextStyle' has a wrong offset!");
+
+// Function BrickRigs.BrickTextBoxWidget.StartTyping
+// 0x0001 (0x0001 - 0x0000)
+struct BrickTextBoxWidget_StartTyping final
+{
+public:
+	bool                                          bSelectAllText;                                    // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickTextBoxWidget_StartTyping) == 0x000001, "Wrong alignment on BrickTextBoxWidget_StartTyping");
+static_assert(sizeof(BrickTextBoxWidget_StartTyping) == 0x000001, "Wrong size on BrickTextBoxWidget_StartTyping");
+static_assert(offsetof(BrickTextBoxWidget_StartTyping, bSelectAllText) == 0x000000, "Member 'BrickTextBoxWidget_StartTyping::bSelectAllText' has a wrong offset!");
+
+// Function BrickRigs.BrickTextBoxWidget.UpdateIsPassword
+// 0x0001 (0x0001 - 0x0000)
+struct BrickTextBoxWidget_UpdateIsPassword final
+{
+public:
+	bool                                          bNewIsPassword;                                    // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickTextBoxWidget_UpdateIsPassword) == 0x000001, "Wrong alignment on BrickTextBoxWidget_UpdateIsPassword");
+static_assert(sizeof(BrickTextBoxWidget_UpdateIsPassword) == 0x000001, "Wrong size on BrickTextBoxWidget_UpdateIsPassword");
+static_assert(offsetof(BrickTextBoxWidget_UpdateIsPassword, bNewIsPassword) == 0x000000, "Member 'BrickTextBoxWidget_UpdateIsPassword::bNewIsPassword' has a wrong offset!");
+
+// Function BrickRigs.BrickTextBoxWidget.UpdatePasswordVisible
+// 0x0001 (0x0001 - 0x0000)
+struct BrickTextBoxWidget_UpdatePasswordVisible final
+{
+public:
+	bool                                          bNewVisible;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickTextBoxWidget_UpdatePasswordVisible) == 0x000001, "Wrong alignment on BrickTextBoxWidget_UpdatePasswordVisible");
+static_assert(sizeof(BrickTextBoxWidget_UpdatePasswordVisible) == 0x000001, "Wrong size on BrickTextBoxWidget_UpdatePasswordVisible");
+static_assert(offsetof(BrickTextBoxWidget_UpdatePasswordVisible, bNewVisible) == 0x000000, "Member 'BrickTextBoxWidget_UpdatePasswordVisible::bNewVisible' has a wrong offset!");
+
+// Function BrickRigs.BrickTextBoxWidget.GetText
+// 0x0018 (0x0018 - 0x0000)
+struct BrickTextBoxWidget_GetText final
 {
 public:
 	class FText                                   ReturnValue;                                       // 0x0000(0x0018)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(BrickTeam_GetTeamDisplayName) == 0x000008, "Wrong alignment on BrickTeam_GetTeamDisplayName");
-static_assert(sizeof(BrickTeam_GetTeamDisplayName) == 0x000018, "Wrong size on BrickTeam_GetTeamDisplayName");
-static_assert(offsetof(BrickTeam_GetTeamDisplayName, ReturnValue) == 0x000000, "Member 'BrickTeam_GetTeamDisplayName::ReturnValue' has a wrong offset!");
+static_assert(alignof(BrickTextBoxWidget_GetText) == 0x000008, "Wrong alignment on BrickTextBoxWidget_GetText");
+static_assert(sizeof(BrickTextBoxWidget_GetText) == 0x000018, "Wrong size on BrickTextBoxWidget_GetText");
+static_assert(offsetof(BrickTextBoxWidget_GetText, ReturnValue) == 0x000000, "Member 'BrickTextBoxWidget_GetText::ReturnValue' has a wrong offset!");
 
-// Function BrickRigs.BrickTeam.GetTeamId
+// Function BrickRigs.BrickTextBoxWidget.IsMarquee
 // 0x0001 (0x0001 - 0x0000)
-struct BrickTeam_GetTeamId final
+struct BrickTextBoxWidget_IsMarquee final
 {
 public:
-	struct FGenericTeamId                         ReturnValue;                                       // 0x0000(0x0001)(ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(BrickTeam_GetTeamId) == 0x000001, "Wrong alignment on BrickTeam_GetTeamId");
-static_assert(sizeof(BrickTeam_GetTeamId) == 0x000001, "Wrong size on BrickTeam_GetTeamId");
-static_assert(offsetof(BrickTeam_GetTeamId, ReturnValue) == 0x000000, "Member 'BrickTeam_GetTeamId::ReturnValue' has a wrong offset!");
+static_assert(alignof(BrickTextBoxWidget_IsMarquee) == 0x000001, "Wrong alignment on BrickTextBoxWidget_IsMarquee");
+static_assert(sizeof(BrickTextBoxWidget_IsMarquee) == 0x000001, "Wrong size on BrickTextBoxWidget_IsMarquee");
+static_assert(offsetof(BrickTextBoxWidget_IsMarquee, ReturnValue) == 0x000000, "Member 'BrickTextBoxWidget_IsMarquee::ReturnValue' has a wrong offset!");
 
-// Function BrickRigs.BrickTextBlock.SetColorStyle
+// Function BrickRigs.BrickTextBoxWidget.IsPasswordVisible
 // 0x0001 (0x0001 - 0x0000)
-struct BrickTextBlock_SetColorStyle final
+struct BrickTextBoxWidget_IsPasswordVisible final
 {
 public:
-	EBrickUIColorStyle                            NewStyle;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(BrickTextBlock_SetColorStyle) == 0x000001, "Wrong alignment on BrickTextBlock_SetColorStyle");
-static_assert(sizeof(BrickTextBlock_SetColorStyle) == 0x000001, "Wrong size on BrickTextBlock_SetColorStyle");
-static_assert(offsetof(BrickTextBlock_SetColorStyle, NewStyle) == 0x000000, "Member 'BrickTextBlock_SetColorStyle::NewStyle' has a wrong offset!");
+static_assert(alignof(BrickTextBoxWidget_IsPasswordVisible) == 0x000001, "Wrong alignment on BrickTextBoxWidget_IsPasswordVisible");
+static_assert(sizeof(BrickTextBoxWidget_IsPasswordVisible) == 0x000001, "Wrong size on BrickTextBoxWidget_IsPasswordVisible");
+static_assert(offsetof(BrickTextBoxWidget_IsPasswordVisible, ReturnValue) == 0x000000, "Member 'BrickTextBoxWidget_IsPasswordVisible::ReturnValue' has a wrong offset!");
 
-// Function BrickRigs.BrickTextBlock.SetStyleState
+// Function BrickRigs.BrickTextBoxWidget.IsReadOnly
 // 0x0001 (0x0001 - 0x0000)
-struct BrickTextBlock_SetStyleState final
+struct BrickTextBoxWidget_IsReadOnly final
 {
 public:
-	EBrickUIStyleState                            NewState;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(BrickTextBlock_SetStyleState) == 0x000001, "Wrong alignment on BrickTextBlock_SetStyleState");
-static_assert(sizeof(BrickTextBlock_SetStyleState) == 0x000001, "Wrong size on BrickTextBlock_SetStyleState");
-static_assert(offsetof(BrickTextBlock_SetStyleState, NewState) == 0x000000, "Member 'BrickTextBlock_SetStyleState::NewState' has a wrong offset!");
+static_assert(alignof(BrickTextBoxWidget_IsReadOnly) == 0x000001, "Wrong alignment on BrickTextBoxWidget_IsReadOnly");
+static_assert(sizeof(BrickTextBoxWidget_IsReadOnly) == 0x000001, "Wrong size on BrickTextBoxWidget_IsReadOnly");
+static_assert(offsetof(BrickTextBoxWidget_IsReadOnly, ReturnValue) == 0x000000, "Member 'BrickTextBoxWidget_IsReadOnly::ReturnValue' has a wrong offset!");
 
-// Function BrickRigs.BrickTextBlock.SetTextStyle
+// Function BrickRigs.BrickTextBoxWidget.IsTyping
 // 0x0001 (0x0001 - 0x0000)
-struct BrickTextBlock_SetTextStyle final
+struct BrickTextBoxWidget_IsTyping final
 {
 public:
-	EBrickUITextStyle                             NewStyle;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(BrickTextBlock_SetTextStyle) == 0x000001, "Wrong alignment on BrickTextBlock_SetTextStyle");
-static_assert(sizeof(BrickTextBlock_SetTextStyle) == 0x000001, "Wrong size on BrickTextBlock_SetTextStyle");
-static_assert(offsetof(BrickTextBlock_SetTextStyle, NewStyle) == 0x000000, "Member 'BrickTextBlock_SetTextStyle::NewStyle' has a wrong offset!");
+static_assert(alignof(BrickTextBoxWidget_IsTyping) == 0x000001, "Wrong alignment on BrickTextBoxWidget_IsTyping");
+static_assert(sizeof(BrickTextBoxWidget_IsTyping) == 0x000001, "Wrong size on BrickTextBoxWidget_IsTyping");
+static_assert(offsetof(BrickTextBoxWidget_IsTyping, ReturnValue) == 0x000000, "Member 'BrickTextBoxWidget_IsTyping::ReturnValue' has a wrong offset!");
 
 // Function BrickRigs.BrickUIStyle.FormatRichTextStyle
 // 0x0038 (0x0038 - 0x0000)
@@ -8009,20 +8390,6 @@ static_assert(offsetof(BrickUIStyle_GetTextStyle, TextStyle) == 0x000000, "Membe
 static_assert(offsetof(BrickUIStyle_GetTextStyle, Fallback) == 0x000008, "Member 'BrickUIStyle_GetTextStyle::Fallback' has a wrong offset!");
 static_assert(offsetof(BrickUIStyle_GetTextStyle, ReturnValue) == 0x000278, "Member 'BrickUIStyle_GetTextStyle::ReturnValue' has a wrong offset!");
 
-// Function BrickRigs.BrickUnitsPropertyWidget.OnSliderValueChanged
-// 0x0008 (0x0008 - 0x0000)
-struct BrickUnitsPropertyWidget_OnSliderValueChanged final
-{
-public:
-	struct FBrickUnits                            NewValue;                                          // 0x0000(0x0004)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-	EValueChangedEventType                        EventType;                                         // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(BrickUnitsPropertyWidget_OnSliderValueChanged) == 0x000004, "Wrong alignment on BrickUnitsPropertyWidget_OnSliderValueChanged");
-static_assert(sizeof(BrickUnitsPropertyWidget_OnSliderValueChanged) == 0x000008, "Wrong size on BrickUnitsPropertyWidget_OnSliderValueChanged");
-static_assert(offsetof(BrickUnitsPropertyWidget_OnSliderValueChanged, NewValue) == 0x000000, "Member 'BrickUnitsPropertyWidget_OnSliderValueChanged::NewValue' has a wrong offset!");
-static_assert(offsetof(BrickUnitsPropertyWidget_OnSliderValueChanged, EventType) == 0x000004, "Member 'BrickUnitsPropertyWidget_OnSliderValueChanged::EventType' has a wrong offset!");
-
 // Function BrickRigs.BrickUserSettings.GetUserSettings
 // 0x0008 (0x0008 - 0x0000)
 struct BrickUserSettings_GetUserSettings final
@@ -8034,18 +8401,60 @@ static_assert(alignof(BrickUserSettings_GetUserSettings) == 0x000008, "Wrong ali
 static_assert(sizeof(BrickUserSettings_GetUserSettings) == 0x000008, "Wrong size on BrickUserSettings_GetUserSettings");
 static_assert(offsetof(BrickUserSettings_GetUserSettings, ReturnValue) == 0x000000, "Member 'BrickUserSettings_GetUserSettings::ReturnValue' has a wrong offset!");
 
-// Function BrickRigs.BrickViewportClient.Get
-// 0x0010 (0x0010 - 0x0000)
-struct BrickViewportClient_Get final
+// Function BrickRigs.BrickUserSettings.SetBrickUnitsDisplayMode
+// 0x0001 (0x0001 - 0x0000)
+struct BrickUserSettings_SetBrickUnitsDisplayMode final
 {
 public:
-	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UBrickViewportClient*                   ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EBrickUnitsDisplayMode                        NewMode;                                           // 0x0000(0x0001)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(BrickViewportClient_Get) == 0x000008, "Wrong alignment on BrickViewportClient_Get");
-static_assert(sizeof(BrickViewportClient_Get) == 0x000010, "Wrong size on BrickViewportClient_Get");
-static_assert(offsetof(BrickViewportClient_Get, WorldContextObject) == 0x000000, "Member 'BrickViewportClient_Get::WorldContextObject' has a wrong offset!");
-static_assert(offsetof(BrickViewportClient_Get, ReturnValue) == 0x000008, "Member 'BrickViewportClient_Get::ReturnValue' has a wrong offset!");
+static_assert(alignof(BrickUserSettings_SetBrickUnitsDisplayMode) == 0x000001, "Wrong alignment on BrickUserSettings_SetBrickUnitsDisplayMode");
+static_assert(sizeof(BrickUserSettings_SetBrickUnitsDisplayMode) == 0x000001, "Wrong size on BrickUserSettings_SetBrickUnitsDisplayMode");
+static_assert(offsetof(BrickUserSettings_SetBrickUnitsDisplayMode, NewMode) == 0x000000, "Member 'BrickUserSettings_SetBrickUnitsDisplayMode::NewMode' has a wrong offset!");
+
+// Function BrickRigs.BrickUserSettings.SetColorDisplayMode
+// 0x0001 (0x0001 - 0x0000)
+struct BrickUserSettings_SetColorDisplayMode final
+{
+public:
+	EColorDisplayMode                             NewMode;                                           // 0x0000(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickUserSettings_SetColorDisplayMode) == 0x000001, "Wrong alignment on BrickUserSettings_SetColorDisplayMode");
+static_assert(sizeof(BrickUserSettings_SetColorDisplayMode) == 0x000001, "Wrong size on BrickUserSettings_SetColorDisplayMode");
+static_assert(offsetof(BrickUserSettings_SetColorDisplayMode, NewMode) == 0x000000, "Member 'BrickUserSettings_SetColorDisplayMode::NewMode' has a wrong offset!");
+
+// Function BrickRigs.BrickUserSettings.GetBrickUnitsDisplayMode
+// 0x0001 (0x0001 - 0x0000)
+struct BrickUserSettings_GetBrickUnitsDisplayMode final
+{
+public:
+	EBrickUnitsDisplayMode                        ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickUserSettings_GetBrickUnitsDisplayMode) == 0x000001, "Wrong alignment on BrickUserSettings_GetBrickUnitsDisplayMode");
+static_assert(sizeof(BrickUserSettings_GetBrickUnitsDisplayMode) == 0x000001, "Wrong size on BrickUserSettings_GetBrickUnitsDisplayMode");
+static_assert(offsetof(BrickUserSettings_GetBrickUnitsDisplayMode, ReturnValue) == 0x000000, "Member 'BrickUserSettings_GetBrickUnitsDisplayMode::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.BrickUserSettings.GetColorDisplayMode
+// 0x0001 (0x0001 - 0x0000)
+struct BrickUserSettings_GetColorDisplayMode final
+{
+public:
+	EColorDisplayMode                             ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickUserSettings_GetColorDisplayMode) == 0x000001, "Wrong alignment on BrickUserSettings_GetColorDisplayMode");
+static_assert(sizeof(BrickUserSettings_GetColorDisplayMode) == 0x000001, "Wrong size on BrickUserSettings_GetColorDisplayMode");
+static_assert(offsetof(BrickUserSettings_GetColorDisplayMode, ReturnValue) == 0x000000, "Member 'BrickUserSettings_GetColorDisplayMode::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.BrickVerticalBox.SetSlotSpacingStyle
+// 0x0001 (0x0001 - 0x0000)
+struct BrickVerticalBox_SetSlotSpacingStyle final
+{
+public:
+	EBrickUISpacingStyle                          NewStyle;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrickVerticalBox_SetSlotSpacingStyle) == 0x000001, "Wrong alignment on BrickVerticalBox_SetSlotSpacingStyle");
+static_assert(sizeof(BrickVerticalBox_SetSlotSpacingStyle) == 0x000001, "Wrong size on BrickVerticalBox_SetSlotSpacingStyle");
+static_assert(offsetof(BrickVerticalBox_SetSlotSpacingStyle, NewStyle) == 0x000000, "Member 'BrickVerticalBox_SetSlotSpacingStyle::NewStyle' has a wrong offset!");
 
 // Function BrickRigs.BrickWorldSettings.Get
 // 0x0010 (0x0010 - 0x0000)
@@ -8082,209 +8491,6 @@ static_assert(alignof(BrickWorldSettings_RemoveHeatSeekingTarget) == 0x000008, "
 static_assert(sizeof(BrickWorldSettings_RemoveHeatSeekingTarget) == 0x000008, "Wrong size on BrickWorldSettings_RemoveHeatSeekingTarget");
 static_assert(offsetof(BrickWorldSettings_RemoveHeatSeekingTarget, Target) == 0x000000, "Member 'BrickWorldSettings_RemoveHeatSeekingTarget::Target' has a wrong offset!");
 
-// Function BrickRigs.CameraBrickWidget.UpdateTargetRange
-// 0x0008 (0x0008 - 0x0000)
-struct CameraBrickWidget_UpdateTargetRange final
-{
-public:
-	bool                                          bHitSomething;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         Distance;                                          // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(CameraBrickWidget_UpdateTargetRange) == 0x000004, "Wrong alignment on CameraBrickWidget_UpdateTargetRange");
-static_assert(sizeof(CameraBrickWidget_UpdateTargetRange) == 0x000008, "Wrong size on CameraBrickWidget_UpdateTargetRange");
-static_assert(offsetof(CameraBrickWidget_UpdateTargetRange, bHitSomething) == 0x000000, "Member 'CameraBrickWidget_UpdateTargetRange::bHitSomething' has a wrong offset!");
-static_assert(offsetof(CameraBrickWidget_UpdateTargetRange, Distance) == 0x000004, "Member 'CameraBrickWidget_UpdateTargetRange::Distance' has a wrong offset!");
-
-// Function BrickRigs.CapturePoint.OnRep_CapturePointState
-// 0x0008 (0x0008 - 0x0000)
-struct CapturePoint_OnRep_CapturePointState final
-{
-public:
-	struct FCapturePointState                     OldState;                                          // 0x0000(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(CapturePoint_OnRep_CapturePointState) == 0x000004, "Wrong alignment on CapturePoint_OnRep_CapturePointState");
-static_assert(sizeof(CapturePoint_OnRep_CapturePointState) == 0x000008, "Wrong size on CapturePoint_OnRep_CapturePointState");
-static_assert(offsetof(CapturePoint_OnRep_CapturePointState, OldState) == 0x000000, "Member 'CapturePoint_OnRep_CapturePointState::OldState' has a wrong offset!");
-
-// Function BrickRigs.CapturePoint.OnTriggerBeginOverlap
-// 0x00A8 (0x00A8 - 0x0000)
-struct CapturePoint_OnTriggerBeginOverlap final
-{
-public:
-	class UPrimitiveComponent*                    OverlappedComponent;                               // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AActor*                                 OtherActor;                                        // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UPrimitiveComponent*                    OtherComp;                                         // 0x0010(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         OtherBodyIndex;                                    // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bFromSweep;                                        // 0x001C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1D[0x3];                                       // 0x001D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FHitResult                             SweepResult;                                       // 0x0020(0x0088)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(CapturePoint_OnTriggerBeginOverlap) == 0x000008, "Wrong alignment on CapturePoint_OnTriggerBeginOverlap");
-static_assert(sizeof(CapturePoint_OnTriggerBeginOverlap) == 0x0000A8, "Wrong size on CapturePoint_OnTriggerBeginOverlap");
-static_assert(offsetof(CapturePoint_OnTriggerBeginOverlap, OverlappedComponent) == 0x000000, "Member 'CapturePoint_OnTriggerBeginOverlap::OverlappedComponent' has a wrong offset!");
-static_assert(offsetof(CapturePoint_OnTriggerBeginOverlap, OtherActor) == 0x000008, "Member 'CapturePoint_OnTriggerBeginOverlap::OtherActor' has a wrong offset!");
-static_assert(offsetof(CapturePoint_OnTriggerBeginOverlap, OtherComp) == 0x000010, "Member 'CapturePoint_OnTriggerBeginOverlap::OtherComp' has a wrong offset!");
-static_assert(offsetof(CapturePoint_OnTriggerBeginOverlap, OtherBodyIndex) == 0x000018, "Member 'CapturePoint_OnTriggerBeginOverlap::OtherBodyIndex' has a wrong offset!");
-static_assert(offsetof(CapturePoint_OnTriggerBeginOverlap, bFromSweep) == 0x00001C, "Member 'CapturePoint_OnTriggerBeginOverlap::bFromSweep' has a wrong offset!");
-static_assert(offsetof(CapturePoint_OnTriggerBeginOverlap, SweepResult) == 0x000020, "Member 'CapturePoint_OnTriggerBeginOverlap::SweepResult' has a wrong offset!");
-
-// Function BrickRigs.CapturePoint.OnTriggerEndOverlap
-// 0x0020 (0x0020 - 0x0000)
-struct CapturePoint_OnTriggerEndOverlap final
-{
-public:
-	class UPrimitiveComponent*                    OverlappedComponent;                               // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AActor*                                 OtherActor;                                        // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UPrimitiveComponent*                    OtherComp;                                         // 0x0010(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         OtherBodyIndex;                                    // 0x0018(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(CapturePoint_OnTriggerEndOverlap) == 0x000008, "Wrong alignment on CapturePoint_OnTriggerEndOverlap");
-static_assert(sizeof(CapturePoint_OnTriggerEndOverlap) == 0x000020, "Wrong size on CapturePoint_OnTriggerEndOverlap");
-static_assert(offsetof(CapturePoint_OnTriggerEndOverlap, OverlappedComponent) == 0x000000, "Member 'CapturePoint_OnTriggerEndOverlap::OverlappedComponent' has a wrong offset!");
-static_assert(offsetof(CapturePoint_OnTriggerEndOverlap, OtherActor) == 0x000008, "Member 'CapturePoint_OnTriggerEndOverlap::OtherActor' has a wrong offset!");
-static_assert(offsetof(CapturePoint_OnTriggerEndOverlap, OtherComp) == 0x000010, "Member 'CapturePoint_OnTriggerEndOverlap::OtherComp' has a wrong offset!");
-static_assert(offsetof(CapturePoint_OnTriggerEndOverlap, OtherBodyIndex) == 0x000018, "Member 'CapturePoint_OnTriggerEndOverlap::OtherBodyIndex' has a wrong offset!");
-
-// Function BrickRigs.CapturePoint.SetCapturedBy
-// 0x0003 (0x0003 - 0x0000)
-struct CapturePoint_SetCapturedBy final
-{
-public:
-	struct FGenericTeamId                         TeamID;                                            // 0x0000(0x0001)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bNewHasBeenCaptured;                               // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0002(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(CapturePoint_SetCapturedBy) == 0x000001, "Wrong alignment on CapturePoint_SetCapturedBy");
-static_assert(sizeof(CapturePoint_SetCapturedBy) == 0x000003, "Wrong size on CapturePoint_SetCapturedBy");
-static_assert(offsetof(CapturePoint_SetCapturedBy, TeamID) == 0x000000, "Member 'CapturePoint_SetCapturedBy::TeamID' has a wrong offset!");
-static_assert(offsetof(CapturePoint_SetCapturedBy, bNewHasBeenCaptured) == 0x000001, "Member 'CapturePoint_SetCapturedBy::bNewHasBeenCaptured' has a wrong offset!");
-static_assert(offsetof(CapturePoint_SetCapturedBy, ReturnValue) == 0x000002, "Member 'CapturePoint_SetCapturedBy::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.CapturePoint.SetCaptureRatio
-// 0x0008 (0x0008 - 0x0000)
-struct CapturePoint_SetCaptureRatio final
-{
-public:
-	float                                         NewRatio;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(CapturePoint_SetCaptureRatio) == 0x000004, "Wrong alignment on CapturePoint_SetCaptureRatio");
-static_assert(sizeof(CapturePoint_SetCaptureRatio) == 0x000008, "Wrong size on CapturePoint_SetCaptureRatio");
-static_assert(offsetof(CapturePoint_SetCaptureRatio, NewRatio) == 0x000000, "Member 'CapturePoint_SetCaptureRatio::NewRatio' has a wrong offset!");
-static_assert(offsetof(CapturePoint_SetCaptureRatio, ReturnValue) == 0x000004, "Member 'CapturePoint_SetCaptureRatio::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.CapturePoint.SetCapturingTeam
-// 0x0002 (0x0002 - 0x0000)
-struct CapturePoint_SetCapturingTeam final
-{
-public:
-	struct FGenericTeamId                         TeamID;                                            // 0x0000(0x0001)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0001(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(CapturePoint_SetCapturingTeam) == 0x000001, "Wrong alignment on CapturePoint_SetCapturingTeam");
-static_assert(sizeof(CapturePoint_SetCapturingTeam) == 0x000002, "Wrong size on CapturePoint_SetCapturingTeam");
-static_assert(offsetof(CapturePoint_SetCapturingTeam, TeamID) == 0x000000, "Member 'CapturePoint_SetCapturingTeam::TeamID' has a wrong offset!");
-static_assert(offsetof(CapturePoint_SetCapturingTeam, ReturnValue) == 0x000001, "Member 'CapturePoint_SetCapturingTeam::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.CapturePoint.GetCapturedBy
-// 0x0001 (0x0001 - 0x0000)
-struct CapturePoint_GetCapturedBy final
-{
-public:
-	struct FGenericTeamId                         ReturnValue;                                       // 0x0000(0x0001)(ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(CapturePoint_GetCapturedBy) == 0x000001, "Wrong alignment on CapturePoint_GetCapturedBy");
-static_assert(sizeof(CapturePoint_GetCapturedBy) == 0x000001, "Wrong size on CapturePoint_GetCapturedBy");
-static_assert(offsetof(CapturePoint_GetCapturedBy, ReturnValue) == 0x000000, "Member 'CapturePoint_GetCapturedBy::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.CapturePoint.GetCapturePointShortDisplayName
-// 0x0018 (0x0018 - 0x0000)
-struct CapturePoint_GetCapturePointShortDisplayName final
-{
-public:
-	class FText                                   ReturnValue;                                       // 0x0000(0x0018)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(CapturePoint_GetCapturePointShortDisplayName) == 0x000008, "Wrong alignment on CapturePoint_GetCapturePointShortDisplayName");
-static_assert(sizeof(CapturePoint_GetCapturePointShortDisplayName) == 0x000018, "Wrong size on CapturePoint_GetCapturePointShortDisplayName");
-static_assert(offsetof(CapturePoint_GetCapturePointShortDisplayName, ReturnValue) == 0x000000, "Member 'CapturePoint_GetCapturePointShortDisplayName::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.CapturePoint.GetCaptureRatio
-// 0x0004 (0x0004 - 0x0000)
-struct CapturePoint_GetCaptureRatio final
-{
-public:
-	float                                         ReturnValue;                                       // 0x0000(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(CapturePoint_GetCaptureRatio) == 0x000004, "Wrong alignment on CapturePoint_GetCaptureRatio");
-static_assert(sizeof(CapturePoint_GetCaptureRatio) == 0x000004, "Wrong size on CapturePoint_GetCaptureRatio");
-static_assert(offsetof(CapturePoint_GetCaptureRatio, ReturnValue) == 0x000000, "Member 'CapturePoint_GetCaptureRatio::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.CapturePoint.GetCapturingTeam
-// 0x0001 (0x0001 - 0x0000)
-struct CapturePoint_GetCapturingTeam final
-{
-public:
-	struct FGenericTeamId                         ReturnValue;                                       // 0x0000(0x0001)(ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(CapturePoint_GetCapturingTeam) == 0x000001, "Wrong alignment on CapturePoint_GetCapturingTeam");
-static_assert(sizeof(CapturePoint_GetCapturingTeam) == 0x000001, "Wrong size on CapturePoint_GetCapturingTeam");
-static_assert(offsetof(CapturePoint_GetCapturingTeam, ReturnValue) == 0x000000, "Member 'CapturePoint_GetCapturingTeam::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.CapturePoint.HasBeenCaptured
-// 0x0001 (0x0001 - 0x0000)
-struct CapturePoint_HasBeenCaptured final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(CapturePoint_HasBeenCaptured) == 0x000001, "Wrong alignment on CapturePoint_HasBeenCaptured");
-static_assert(sizeof(CapturePoint_HasBeenCaptured) == 0x000001, "Wrong size on CapturePoint_HasBeenCaptured");
-static_assert(offsetof(CapturePoint_HasBeenCaptured, ReturnValue) == 0x000000, "Member 'CapturePoint_HasBeenCaptured::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.CapturePoint.IsCapturePointOnBuilding
-// 0x0010 (0x0010 - 0x0000)
-struct CapturePoint_IsCapturePointOnBuilding final
-{
-public:
-	const class ABrickBuilding*                   InBuilding;                                        // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(CapturePoint_IsCapturePointOnBuilding) == 0x000008, "Wrong alignment on CapturePoint_IsCapturePointOnBuilding");
-static_assert(sizeof(CapturePoint_IsCapturePointOnBuilding) == 0x000010, "Wrong size on CapturePoint_IsCapturePointOnBuilding");
-static_assert(offsetof(CapturePoint_IsCapturePointOnBuilding, InBuilding) == 0x000000, "Member 'CapturePoint_IsCapturePointOnBuilding::InBuilding' has a wrong offset!");
-static_assert(offsetof(CapturePoint_IsCapturePointOnBuilding, ReturnValue) == 0x000008, "Member 'CapturePoint_IsCapturePointOnBuilding::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.CapturePoint.IsCharacterOnCapturePoint
-// 0x0010 (0x0010 - 0x0000)
-struct CapturePoint_IsCharacterOnCapturePoint final
-{
-public:
-	class ABaseCharacter*                         InCharacter;                                       // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0008(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(CapturePoint_IsCharacterOnCapturePoint) == 0x000008, "Wrong alignment on CapturePoint_IsCharacterOnCapturePoint");
-static_assert(sizeof(CapturePoint_IsCharacterOnCapturePoint) == 0x000010, "Wrong size on CapturePoint_IsCharacterOnCapturePoint");
-static_assert(offsetof(CapturePoint_IsCharacterOnCapturePoint, InCharacter) == 0x000000, "Member 'CapturePoint_IsCharacterOnCapturePoint::InCharacter' has a wrong offset!");
-static_assert(offsetof(CapturePoint_IsCharacterOnCapturePoint, ReturnValue) == 0x000008, "Member 'CapturePoint_IsCharacterOnCapturePoint::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.CarWheelBrick.OnRootComponentWake
-// 0x0010 (0x0010 - 0x0000)
-struct CarWheelBrick_OnRootComponentWake final
-{
-public:
-	class UPrimitiveComponent*                    SleepingComponent;                                 // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   BoneName;                                          // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(CarWheelBrick_OnRootComponentWake) == 0x000008, "Wrong alignment on CarWheelBrick_OnRootComponentWake");
-static_assert(sizeof(CarWheelBrick_OnRootComponentWake) == 0x000010, "Wrong size on CarWheelBrick_OnRootComponentWake");
-static_assert(offsetof(CarWheelBrick_OnRootComponentWake, SleepingComponent) == 0x000000, "Member 'CarWheelBrick_OnRootComponentWake::SleepingComponent' has a wrong offset!");
-static_assert(offsetof(CarWheelBrick_OnRootComponentWake, BoneName) == 0x000008, "Member 'CarWheelBrick_OnRootComponentWake::BoneName' has a wrong offset!");
-
 // Function BrickRigs.CharacterInputComponent.WalkForward
 // 0x0004 (0x0004 - 0x0000)
 struct CharacterInputComponent_WalkForward final
@@ -8307,432 +8513,18 @@ static_assert(alignof(CharacterInputComponent_WalkRight) == 0x000004, "Wrong ali
 static_assert(sizeof(CharacterInputComponent_WalkRight) == 0x000004, "Wrong size on CharacterInputComponent_WalkRight");
 static_assert(offsetof(CharacterInputComponent_WalkRight, Val) == 0x000000, "Member 'CharacterInputComponent_WalkRight::Val' has a wrong offset!");
 
-// Function BrickRigs.InventoryComponent.IsSlotCompatible
-// 0x0048 (0x0048 - 0x0000)
-struct InventoryComponent_IsSlotCompatible final
-{
-public:
-	struct FInventorySlot                         InSlot;                                            // 0x0000(0x0030)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-	struct FInventoryItemRef                      InItem;                                            // 0x0030(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0040(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_41[0x7];                                       // 0x0041(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(InventoryComponent_IsSlotCompatible) == 0x000008, "Wrong alignment on InventoryComponent_IsSlotCompatible");
-static_assert(sizeof(InventoryComponent_IsSlotCompatible) == 0x000048, "Wrong size on InventoryComponent_IsSlotCompatible");
-static_assert(offsetof(InventoryComponent_IsSlotCompatible, InSlot) == 0x000000, "Member 'InventoryComponent_IsSlotCompatible::InSlot' has a wrong offset!");
-static_assert(offsetof(InventoryComponent_IsSlotCompatible, InItem) == 0x000030, "Member 'InventoryComponent_IsSlotCompatible::InItem' has a wrong offset!");
-static_assert(offsetof(InventoryComponent_IsSlotCompatible, ReturnValue) == 0x000040, "Member 'InventoryComponent_IsSlotCompatible::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.InventoryComponent.MoveItems
-// 0x0040 (0x0040 - 0x0000)
-struct InventoryComponent_MoveItems final
-{
-public:
-	struct FMoveInventoryItemParams               Params_0;                                          // 0x0000(0x0028)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	TArray<class AInventoryItem*>                 OutDroppedItems;                                   // 0x0028(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-	int32                                         ReturnValue;                                       // 0x0038(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_3C[0x4];                                       // 0x003C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(InventoryComponent_MoveItems) == 0x000008, "Wrong alignment on InventoryComponent_MoveItems");
-static_assert(sizeof(InventoryComponent_MoveItems) == 0x000040, "Wrong size on InventoryComponent_MoveItems");
-static_assert(offsetof(InventoryComponent_MoveItems, Params_0) == 0x000000, "Member 'InventoryComponent_MoveItems::Params_0' has a wrong offset!");
-static_assert(offsetof(InventoryComponent_MoveItems, OutDroppedItems) == 0x000028, "Member 'InventoryComponent_MoveItems::OutDroppedItems' has a wrong offset!");
-static_assert(offsetof(InventoryComponent_MoveItems, ReturnValue) == 0x000038, "Member 'InventoryComponent_MoveItems::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.InventoryComponent.ConsumeAmmo
-// 0x0014 (0x0014 - 0x0000)
-struct InventoryComponent_ConsumeAmmo final
-{
-public:
-	struct FAmmoInfo                              InAmmo;                                            // 0x0000(0x000C)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-	int32                                         NumRequired;                                       // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(InventoryComponent_ConsumeAmmo) == 0x000004, "Wrong alignment on InventoryComponent_ConsumeAmmo");
-static_assert(sizeof(InventoryComponent_ConsumeAmmo) == 0x000014, "Wrong size on InventoryComponent_ConsumeAmmo");
-static_assert(offsetof(InventoryComponent_ConsumeAmmo, InAmmo) == 0x000000, "Member 'InventoryComponent_ConsumeAmmo::InAmmo' has a wrong offset!");
-static_assert(offsetof(InventoryComponent_ConsumeAmmo, NumRequired) == 0x00000C, "Member 'InventoryComponent_ConsumeAmmo::NumRequired' has a wrong offset!");
-static_assert(offsetof(InventoryComponent_ConsumeAmmo, ReturnValue) == 0x000010, "Member 'InventoryComponent_ConsumeAmmo::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.InventoryComponent.ConsumeItems
-// 0x000C (0x000C - 0x0000)
-struct InventoryComponent_ConsumeItems final
-{
-public:
-	struct FInventorySlotID                       SlotID;                                            // 0x0000(0x0001)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         Amount;                                            // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(InventoryComponent_ConsumeItems) == 0x000004, "Wrong alignment on InventoryComponent_ConsumeItems");
-static_assert(sizeof(InventoryComponent_ConsumeItems) == 0x00000C, "Wrong size on InventoryComponent_ConsumeItems");
-static_assert(offsetof(InventoryComponent_ConsumeItems, SlotID) == 0x000000, "Member 'InventoryComponent_ConsumeItems::SlotID' has a wrong offset!");
-static_assert(offsetof(InventoryComponent_ConsumeItems, Amount) == 0x000004, "Member 'InventoryComponent_ConsumeItems::Amount' has a wrong offset!");
-static_assert(offsetof(InventoryComponent_ConsumeItems, ReturnValue) == 0x000008, "Member 'InventoryComponent_ConsumeItems::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.InventoryComponent.DebugSpawnItems
+// Function BrickRigs.WorldSetupActor.Get
 // 0x0010 (0x0010 - 0x0000)
-struct InventoryComponent_DebugSpawnItems final
+struct WorldSetupActor_Get final
 {
 public:
-	TSubclassOf<class AInventoryItem>             ItemClass;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Amount;                                            // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AWorldSetupActor*                       ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(InventoryComponent_DebugSpawnItems) == 0x000008, "Wrong alignment on InventoryComponent_DebugSpawnItems");
-static_assert(sizeof(InventoryComponent_DebugSpawnItems) == 0x000010, "Wrong size on InventoryComponent_DebugSpawnItems");
-static_assert(offsetof(InventoryComponent_DebugSpawnItems, ItemClass) == 0x000000, "Member 'InventoryComponent_DebugSpawnItems::ItemClass' has a wrong offset!");
-static_assert(offsetof(InventoryComponent_DebugSpawnItems, Amount) == 0x000008, "Member 'InventoryComponent_DebugSpawnItems::Amount' has a wrong offset!");
-
-// Function BrickRigs.InventoryComponent.EmptyInventory
-// 0x0001 (0x0001 - 0x0000)
-struct InventoryComponent_EmptyInventory final
-{
-public:
-	bool                                          bCallDelegates;                                    // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(InventoryComponent_EmptyInventory) == 0x000001, "Wrong alignment on InventoryComponent_EmptyInventory");
-static_assert(sizeof(InventoryComponent_EmptyInventory) == 0x000001, "Wrong size on InventoryComponent_EmptyInventory");
-static_assert(offsetof(InventoryComponent_EmptyInventory, bCallDelegates) == 0x000000, "Member 'InventoryComponent_EmptyInventory::bCallDelegates' has a wrong offset!");
-
-// Function BrickRigs.InventoryComponent.Interact_Inventory
-// 0x0008 (0x0008 - 0x0000)
-struct InventoryComponent_Interact_Inventory final
-{
-public:
-	class ABrickPlayerController*                 PC;                                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(InventoryComponent_Interact_Inventory) == 0x000008, "Wrong alignment on InventoryComponent_Interact_Inventory");
-static_assert(sizeof(InventoryComponent_Interact_Inventory) == 0x000008, "Wrong size on InventoryComponent_Interact_Inventory");
-static_assert(offsetof(InventoryComponent_Interact_Inventory, PC) == 0x000000, "Member 'InventoryComponent_Interact_Inventory::PC' has a wrong offset!");
-
-// Function BrickRigs.InventoryComponent.SetContentHidden
-// 0x0001 (0x0001 - 0x0000)
-struct InventoryComponent_SetContentHidden final
-{
-public:
-	bool                                          bHidden;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(InventoryComponent_SetContentHidden) == 0x000001, "Wrong alignment on InventoryComponent_SetContentHidden");
-static_assert(sizeof(InventoryComponent_SetContentHidden) == 0x000001, "Wrong size on InventoryComponent_SetContentHidden");
-static_assert(offsetof(InventoryComponent_SetContentHidden, bHidden) == 0x000000, "Member 'InventoryComponent_SetContentHidden::bHidden' has a wrong offset!");
-
-// Function BrickRigs.InventoryComponent.SetInventoryProperties
-// 0x0060 (0x0060 - 0x0000)
-struct InventoryComponent_SetInventoryProperties final
-{
-public:
-	struct FInventoryProperties                   InProps;                                           // 0x0000(0x0060)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(InventoryComponent_SetInventoryProperties) == 0x000008, "Wrong alignment on InventoryComponent_SetInventoryProperties");
-static_assert(sizeof(InventoryComponent_SetInventoryProperties) == 0x000060, "Wrong size on InventoryComponent_SetInventoryProperties");
-static_assert(offsetof(InventoryComponent_SetInventoryProperties, InProps) == 0x000000, "Member 'InventoryComponent_SetInventoryProperties::InProps' has a wrong offset!");
-
-// Function BrickRigs.InventoryComponent.SetSpecialSlotAttachParent
-// 0x0008 (0x0008 - 0x0000)
-struct InventoryComponent_SetSpecialSlotAttachParent final
-{
-public:
-	class USceneComponent*                        NewAttachParent;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(InventoryComponent_SetSpecialSlotAttachParent) == 0x000008, "Wrong alignment on InventoryComponent_SetSpecialSlotAttachParent");
-static_assert(sizeof(InventoryComponent_SetSpecialSlotAttachParent) == 0x000008, "Wrong size on InventoryComponent_SetSpecialSlotAttachParent");
-static_assert(offsetof(InventoryComponent_SetSpecialSlotAttachParent, NewAttachParent) == 0x000000, "Member 'InventoryComponent_SetSpecialSlotAttachParent::NewAttachParent' has a wrong offset!");
-
-// Function BrickRigs.InventoryComponent.SpawnInventoryLoadout
-// 0x0010 (0x0010 - 0x0000)
-struct InventoryComponent_SpawnInventoryLoadout final
-{
-public:
-	struct FInventoryLoadout                      Loadout;                                           // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(InventoryComponent_SpawnInventoryLoadout) == 0x000008, "Wrong alignment on InventoryComponent_SpawnInventoryLoadout");
-static_assert(sizeof(InventoryComponent_SpawnInventoryLoadout) == 0x000010, "Wrong size on InventoryComponent_SpawnInventoryLoadout");
-static_assert(offsetof(InventoryComponent_SpawnInventoryLoadout, Loadout) == 0x000000, "Member 'InventoryComponent_SpawnInventoryLoadout::Loadout' has a wrong offset!");
-
-// Function BrickRigs.InventoryComponent.SpawnItems
-// 0x0010 (0x0010 - 0x0000)
-struct InventoryComponent_SpawnItems final
-{
-public:
-	TSubclassOf<class AInventoryItem>             ItemClass;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Amount;                                            // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ReturnValue;                                       // 0x000C(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(InventoryComponent_SpawnItems) == 0x000008, "Wrong alignment on InventoryComponent_SpawnItems");
-static_assert(sizeof(InventoryComponent_SpawnItems) == 0x000010, "Wrong size on InventoryComponent_SpawnItems");
-static_assert(offsetof(InventoryComponent_SpawnItems, ItemClass) == 0x000000, "Member 'InventoryComponent_SpawnItems::ItemClass' has a wrong offset!");
-static_assert(offsetof(InventoryComponent_SpawnItems, Amount) == 0x000008, "Member 'InventoryComponent_SpawnItems::Amount' has a wrong offset!");
-static_assert(offsetof(InventoryComponent_SpawnItems, ReturnValue) == 0x00000C, "Member 'InventoryComponent_SpawnItems::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.InventoryComponent.DoesSpecialSlotSupportItem
-// 0x0010 (0x0010 - 0x0000)
-struct InventoryComponent_DoesSpecialSlotSupportItem final
-{
-public:
-	const class AInventoryItem*                   InItem;                                            // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         SlotIndex;                                         // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x000C(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(InventoryComponent_DoesSpecialSlotSupportItem) == 0x000008, "Wrong alignment on InventoryComponent_DoesSpecialSlotSupportItem");
-static_assert(sizeof(InventoryComponent_DoesSpecialSlotSupportItem) == 0x000010, "Wrong size on InventoryComponent_DoesSpecialSlotSupportItem");
-static_assert(offsetof(InventoryComponent_DoesSpecialSlotSupportItem, InItem) == 0x000000, "Member 'InventoryComponent_DoesSpecialSlotSupportItem::InItem' has a wrong offset!");
-static_assert(offsetof(InventoryComponent_DoesSpecialSlotSupportItem, SlotIndex) == 0x000008, "Member 'InventoryComponent_DoesSpecialSlotSupportItem::SlotIndex' has a wrong offset!");
-static_assert(offsetof(InventoryComponent_DoesSpecialSlotSupportItem, ReturnValue) == 0x00000C, "Member 'InventoryComponent_DoesSpecialSlotSupportItem::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.InventoryComponent.FindFreeSlotID
-// 0x0018 (0x0018 - 0x0000)
-struct InventoryComponent_FindFreeSlotID final
-{
-public:
-	struct FInventoryItemRef                      InItem;                                            // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-	bool                                          bTryToReplace;                                     // 0x0010(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FInventorySlotID                       ReturnValue;                                       // 0x0011(0x0001)(Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_12[0x6];                                       // 0x0012(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(InventoryComponent_FindFreeSlotID) == 0x000008, "Wrong alignment on InventoryComponent_FindFreeSlotID");
-static_assert(sizeof(InventoryComponent_FindFreeSlotID) == 0x000018, "Wrong size on InventoryComponent_FindFreeSlotID");
-static_assert(offsetof(InventoryComponent_FindFreeSlotID, InItem) == 0x000000, "Member 'InventoryComponent_FindFreeSlotID::InItem' has a wrong offset!");
-static_assert(offsetof(InventoryComponent_FindFreeSlotID, bTryToReplace) == 0x000010, "Member 'InventoryComponent_FindFreeSlotID::bTryToReplace' has a wrong offset!");
-static_assert(offsetof(InventoryComponent_FindFreeSlotID, ReturnValue) == 0x000011, "Member 'InventoryComponent_FindFreeSlotID::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.InventoryComponent.FindFreeSpecialSlotID
-// 0x0068 (0x0068 - 0x0000)
-struct InventoryComponent_FindFreeSpecialSlotID final
-{
-public:
-	struct FInventoryItemRef                      InItem;                                            // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-	TSet<struct FInventorySlotID>                 InSlotIDs;                                         // 0x0010(0x0050)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	struct FInventorySlotID                       ReturnValue;                                       // 0x0060(0x0001)(Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_61[0x7];                                       // 0x0061(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(InventoryComponent_FindFreeSpecialSlotID) == 0x000008, "Wrong alignment on InventoryComponent_FindFreeSpecialSlotID");
-static_assert(sizeof(InventoryComponent_FindFreeSpecialSlotID) == 0x000068, "Wrong size on InventoryComponent_FindFreeSpecialSlotID");
-static_assert(offsetof(InventoryComponent_FindFreeSpecialSlotID, InItem) == 0x000000, "Member 'InventoryComponent_FindFreeSpecialSlotID::InItem' has a wrong offset!");
-static_assert(offsetof(InventoryComponent_FindFreeSpecialSlotID, InSlotIDs) == 0x000010, "Member 'InventoryComponent_FindFreeSpecialSlotID::InSlotIDs' has a wrong offset!");
-static_assert(offsetof(InventoryComponent_FindFreeSpecialSlotID, ReturnValue) == 0x000060, "Member 'InventoryComponent_FindFreeSpecialSlotID::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.InventoryComponent.FindFreeWildcardSlotID
-// 0x0018 (0x0018 - 0x0000)
-struct InventoryComponent_FindFreeWildcardSlotID final
-{
-public:
-	struct FInventoryItemRef                      InItem;                                            // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-	struct FInventorySlotID                       ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(InventoryComponent_FindFreeWildcardSlotID) == 0x000008, "Wrong alignment on InventoryComponent_FindFreeWildcardSlotID");
-static_assert(sizeof(InventoryComponent_FindFreeWildcardSlotID) == 0x000018, "Wrong size on InventoryComponent_FindFreeWildcardSlotID");
-static_assert(offsetof(InventoryComponent_FindFreeWildcardSlotID, InItem) == 0x000000, "Member 'InventoryComponent_FindFreeWildcardSlotID::InItem' has a wrong offset!");
-static_assert(offsetof(InventoryComponent_FindFreeWildcardSlotID, ReturnValue) == 0x000010, "Member 'InventoryComponent_FindFreeWildcardSlotID::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.InventoryComponent.GetAmmo
-// 0x0018 (0x0018 - 0x0000)
-struct InventoryComponent_GetAmmo final
-{
-public:
-	TArray<struct FAmmoInfo>                      InAmmoTypes;                                       // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-	int32                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(InventoryComponent_GetAmmo) == 0x000008, "Wrong alignment on InventoryComponent_GetAmmo");
-static_assert(sizeof(InventoryComponent_GetAmmo) == 0x000018, "Wrong size on InventoryComponent_GetAmmo");
-static_assert(offsetof(InventoryComponent_GetAmmo, InAmmoTypes) == 0x000000, "Member 'InventoryComponent_GetAmmo::InAmmoTypes' has a wrong offset!");
-static_assert(offsetof(InventoryComponent_GetAmmo, ReturnValue) == 0x000010, "Member 'InventoryComponent_GetAmmo::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.InventoryComponent.GetDisplayName
-// 0x0018 (0x0018 - 0x0000)
-struct InventoryComponent_GetDisplayName final
-{
-public:
-	class FText                                   ReturnValue;                                       // 0x0000(0x0018)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(InventoryComponent_GetDisplayName) == 0x000008, "Wrong alignment on InventoryComponent_GetDisplayName");
-static_assert(sizeof(InventoryComponent_GetDisplayName) == 0x000018, "Wrong size on InventoryComponent_GetDisplayName");
-static_assert(offsetof(InventoryComponent_GetDisplayName, ReturnValue) == 0x000000, "Member 'InventoryComponent_GetDisplayName::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.InventoryComponent.GetInventory
-// 0x0120 (0x0120 - 0x0000)
-struct InventoryComponent_GetInventory final
-{
-public:
-	struct FInventory                             ReturnValue;                                       // 0x0000(0x0120)(ConstParm, Parm, OutParm, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(InventoryComponent_GetInventory) == 0x000008, "Wrong alignment on InventoryComponent_GetInventory");
-static_assert(sizeof(InventoryComponent_GetInventory) == 0x000120, "Wrong size on InventoryComponent_GetInventory");
-static_assert(offsetof(InventoryComponent_GetInventory, ReturnValue) == 0x000000, "Member 'InventoryComponent_GetInventory::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.InventoryComponent.GetInventorySlots
-// 0x0010 (0x0010 - 0x0000)
-struct InventoryComponent_GetInventorySlots final
-{
-public:
-	TArray<struct FInventorySlot>                 ReturnValue;                                       // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(InventoryComponent_GetInventorySlots) == 0x000008, "Wrong alignment on InventoryComponent_GetInventorySlots");
-static_assert(sizeof(InventoryComponent_GetInventorySlots) == 0x000010, "Wrong size on InventoryComponent_GetInventorySlots");
-static_assert(offsetof(InventoryComponent_GetInventorySlots, ReturnValue) == 0x000000, "Member 'InventoryComponent_GetInventorySlots::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.InventoryComponent.GetNumItemsOfClass
-// 0x0010 (0x0010 - 0x0000)
-struct InventoryComponent_GetNumItemsOfClass final
-{
-public:
-	class UClass*                                 InClass;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(InventoryComponent_GetNumItemsOfClass) == 0x000008, "Wrong alignment on InventoryComponent_GetNumItemsOfClass");
-static_assert(sizeof(InventoryComponent_GetNumItemsOfClass) == 0x000010, "Wrong size on InventoryComponent_GetNumItemsOfClass");
-static_assert(offsetof(InventoryComponent_GetNumItemsOfClass, InClass) == 0x000000, "Member 'InventoryComponent_GetNumItemsOfClass::InClass' has a wrong offset!");
-static_assert(offsetof(InventoryComponent_GetNumItemsOfClass, ReturnValue) == 0x000008, "Member 'InventoryComponent_GetNumItemsOfClass::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.InventoryComponent.GetSpecialSlotID
-// 0x0008 (0x0008 - 0x0000)
-struct InventoryComponent_GetSpecialSlotID final
-{
-public:
-	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FInventorySlotID                       ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(InventoryComponent_GetSpecialSlotID) == 0x000004, "Wrong alignment on InventoryComponent_GetSpecialSlotID");
-static_assert(sizeof(InventoryComponent_GetSpecialSlotID) == 0x000008, "Wrong size on InventoryComponent_GetSpecialSlotID");
-static_assert(offsetof(InventoryComponent_GetSpecialSlotID, Index_0) == 0x000000, "Member 'InventoryComponent_GetSpecialSlotID::Index_0' has a wrong offset!");
-static_assert(offsetof(InventoryComponent_GetSpecialSlotID, ReturnValue) == 0x000004, "Member 'InventoryComponent_GetSpecialSlotID::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.InventoryComponent.GetWildcardSlotID
-// 0x0008 (0x0008 - 0x0000)
-struct InventoryComponent_GetWildcardSlotID final
-{
-public:
-	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FInventorySlotID                       ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ReturnParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(InventoryComponent_GetWildcardSlotID) == 0x000004, "Wrong alignment on InventoryComponent_GetWildcardSlotID");
-static_assert(sizeof(InventoryComponent_GetWildcardSlotID) == 0x000008, "Wrong size on InventoryComponent_GetWildcardSlotID");
-static_assert(offsetof(InventoryComponent_GetWildcardSlotID, Index_0) == 0x000000, "Member 'InventoryComponent_GetWildcardSlotID::Index_0' has a wrong offset!");
-static_assert(offsetof(InventoryComponent_GetWildcardSlotID, ReturnValue) == 0x000004, "Member 'InventoryComponent_GetWildcardSlotID::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.InventoryComponent.HasInfiniteAmmo
-// 0x0001 (0x0001 - 0x0000)
-struct InventoryComponent_HasInfiniteAmmo final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(InventoryComponent_HasInfiniteAmmo) == 0x000001, "Wrong alignment on InventoryComponent_HasInfiniteAmmo");
-static_assert(sizeof(InventoryComponent_HasInfiniteAmmo) == 0x000001, "Wrong size on InventoryComponent_HasInfiniteAmmo");
-static_assert(offsetof(InventoryComponent_HasInfiniteAmmo, ReturnValue) == 0x000000, "Member 'InventoryComponent_HasInfiniteAmmo::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.InventoryComponent.HasInventorySlot
-// 0x0002 (0x0002 - 0x0000)
-struct InventoryComponent_HasInventorySlot final
-{
-public:
-	struct FInventorySlotID                       InSlotID;                                          // 0x0000(0x0001)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0001(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(InventoryComponent_HasInventorySlot) == 0x000001, "Wrong alignment on InventoryComponent_HasInventorySlot");
-static_assert(sizeof(InventoryComponent_HasInventorySlot) == 0x000002, "Wrong size on InventoryComponent_HasInventorySlot");
-static_assert(offsetof(InventoryComponent_HasInventorySlot, InSlotID) == 0x000000, "Member 'InventoryComponent_HasInventorySlot::InSlotID' has a wrong offset!");
-static_assert(offsetof(InventoryComponent_HasInventorySlot, ReturnValue) == 0x000001, "Member 'InventoryComponent_HasInventorySlot::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.InventoryComponent.IsContentHidden
-// 0x0001 (0x0001 - 0x0000)
-struct InventoryComponent_IsContentHidden final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(InventoryComponent_IsContentHidden) == 0x000001, "Wrong alignment on InventoryComponent_IsContentHidden");
-static_assert(sizeof(InventoryComponent_IsContentHidden) == 0x000001, "Wrong size on InventoryComponent_IsContentHidden");
-static_assert(offsetof(InventoryComponent_IsContentHidden, ReturnValue) == 0x000000, "Member 'InventoryComponent_IsContentHidden::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.InventoryComponent.IsEmpty
-// 0x0001 (0x0001 - 0x0000)
-struct InventoryComponent_IsEmpty final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(InventoryComponent_IsEmpty) == 0x000001, "Wrong alignment on InventoryComponent_IsEmpty");
-static_assert(sizeof(InventoryComponent_IsEmpty) == 0x000001, "Wrong size on InventoryComponent_IsEmpty");
-static_assert(offsetof(InventoryComponent_IsEmpty, ReturnValue) == 0x000000, "Member 'InventoryComponent_IsEmpty::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.InventoryComponent.IsSlotFreeOrCompatible
-// 0x0020 (0x0020 - 0x0000)
-struct InventoryComponent_IsSlotFreeOrCompatible final
-{
-public:
-	struct FInventorySlotID                       InSlotID;                                          // 0x0000(0x0001)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FInventoryItemRef                      InItem;                                            // 0x0008(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(InventoryComponent_IsSlotFreeOrCompatible) == 0x000008, "Wrong alignment on InventoryComponent_IsSlotFreeOrCompatible");
-static_assert(sizeof(InventoryComponent_IsSlotFreeOrCompatible) == 0x000020, "Wrong size on InventoryComponent_IsSlotFreeOrCompatible");
-static_assert(offsetof(InventoryComponent_IsSlotFreeOrCompatible, InSlotID) == 0x000000, "Member 'InventoryComponent_IsSlotFreeOrCompatible::InSlotID' has a wrong offset!");
-static_assert(offsetof(InventoryComponent_IsSlotFreeOrCompatible, InItem) == 0x000008, "Member 'InventoryComponent_IsSlotFreeOrCompatible::InItem' has a wrong offset!");
-static_assert(offsetof(InventoryComponent_IsSlotFreeOrCompatible, ReturnValue) == 0x000018, "Member 'InventoryComponent_IsSlotFreeOrCompatible::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.InventoryComponent.IsSpecialSlotID
-// 0x0002 (0x0002 - 0x0000)
-struct InventoryComponent_IsSpecialSlotID final
-{
-public:
-	struct FInventorySlotID                       InSlotID;                                          // 0x0000(0x0001)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0001(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(InventoryComponent_IsSpecialSlotID) == 0x000001, "Wrong alignment on InventoryComponent_IsSpecialSlotID");
-static_assert(sizeof(InventoryComponent_IsSpecialSlotID) == 0x000002, "Wrong size on InventoryComponent_IsSpecialSlotID");
-static_assert(offsetof(InventoryComponent_IsSpecialSlotID, InSlotID) == 0x000000, "Member 'InventoryComponent_IsSpecialSlotID::InSlotID' has a wrong offset!");
-static_assert(offsetof(InventoryComponent_IsSpecialSlotID, ReturnValue) == 0x000001, "Member 'InventoryComponent_IsSpecialSlotID::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.InventoryComponent.IsValidSlotID
-// 0x0002 (0x0002 - 0x0000)
-struct InventoryComponent_IsValidSlotID final
-{
-public:
-	struct FInventorySlotID                       InSlotID;                                          // 0x0000(0x0001)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0001(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(InventoryComponent_IsValidSlotID) == 0x000001, "Wrong alignment on InventoryComponent_IsValidSlotID");
-static_assert(sizeof(InventoryComponent_IsValidSlotID) == 0x000002, "Wrong size on InventoryComponent_IsValidSlotID");
-static_assert(offsetof(InventoryComponent_IsValidSlotID, InSlotID) == 0x000000, "Member 'InventoryComponent_IsValidSlotID::InSlotID' has a wrong offset!");
-static_assert(offsetof(InventoryComponent_IsValidSlotID, ReturnValue) == 0x000001, "Member 'InventoryComponent_IsValidSlotID::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.InventoryComponent.IsWildcardSlotID
-// 0x0002 (0x0002 - 0x0000)
-struct InventoryComponent_IsWildcardSlotID final
-{
-public:
-	struct FInventorySlotID                       InSlotID;                                          // 0x0000(0x0001)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0001(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(InventoryComponent_IsWildcardSlotID) == 0x000001, "Wrong alignment on InventoryComponent_IsWildcardSlotID");
-static_assert(sizeof(InventoryComponent_IsWildcardSlotID) == 0x000002, "Wrong size on InventoryComponent_IsWildcardSlotID");
-static_assert(offsetof(InventoryComponent_IsWildcardSlotID, InSlotID) == 0x000000, "Member 'InventoryComponent_IsWildcardSlotID::InSlotID' has a wrong offset!");
-static_assert(offsetof(InventoryComponent_IsWildcardSlotID, ReturnValue) == 0x000001, "Member 'InventoryComponent_IsWildcardSlotID::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.InventoryComponent.RequiresSpecialSlot
-// 0x0060 (0x0060 - 0x0000)
-struct InventoryComponent_RequiresSpecialSlot final
-{
-public:
-	const class AInventoryItem*                   InItem;                                            // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSet<struct FInventorySlotID>                 OutSlots;                                          // 0x0008(0x0050)(Parm, OutParm, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0058(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_59[0x7];                                       // 0x0059(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(InventoryComponent_RequiresSpecialSlot) == 0x000008, "Wrong alignment on InventoryComponent_RequiresSpecialSlot");
-static_assert(sizeof(InventoryComponent_RequiresSpecialSlot) == 0x000060, "Wrong size on InventoryComponent_RequiresSpecialSlot");
-static_assert(offsetof(InventoryComponent_RequiresSpecialSlot, InItem) == 0x000000, "Member 'InventoryComponent_RequiresSpecialSlot::InItem' has a wrong offset!");
-static_assert(offsetof(InventoryComponent_RequiresSpecialSlot, OutSlots) == 0x000008, "Member 'InventoryComponent_RequiresSpecialSlot::OutSlots' has a wrong offset!");
-static_assert(offsetof(InventoryComponent_RequiresSpecialSlot, ReturnValue) == 0x000058, "Member 'InventoryComponent_RequiresSpecialSlot::ReturnValue' has a wrong offset!");
+static_assert(alignof(WorldSetupActor_Get) == 0x000008, "Wrong alignment on WorldSetupActor_Get");
+static_assert(sizeof(WorldSetupActor_Get) == 0x000010, "Wrong size on WorldSetupActor_Get");
+static_assert(offsetof(WorldSetupActor_Get, WorldContextObject) == 0x000000, "Member 'WorldSetupActor_Get::WorldContextObject' has a wrong offset!");
+static_assert(offsetof(WorldSetupActor_Get, ReturnValue) == 0x000008, "Member 'WorldSetupActor_Get::ReturnValue' has a wrong offset!");
 
 // Function BrickRigs.ChatMessageInputComponent.GetKickPlayerEnabled
 // 0x0001 (0x0001 - 0x0000)
@@ -8745,63 +8537,66 @@ static_assert(alignof(ChatMessageInputComponent_GetKickPlayerEnabled) == 0x00000
 static_assert(sizeof(ChatMessageInputComponent_GetKickPlayerEnabled) == 0x000001, "Wrong size on ChatMessageInputComponent_GetKickPlayerEnabled");
 static_assert(offsetof(ChatMessageInputComponent_GetKickPlayerEnabled, ReturnValue) == 0x000000, "Member 'ChatMessageInputComponent_GetKickPlayerEnabled::ReturnValue' has a wrong offset!");
 
-// Function BrickRigs.ChatWidget.GetWidgetToFocus
+// Function BrickRigs.ChatMessageWidget.UpdateColorStyle
+// 0x0001 (0x0001 - 0x0000)
+struct ChatMessageWidget_UpdateColorStyle final
+{
+public:
+	EBrickUIColorStyle                            NewColorStyle;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ChatMessageWidget_UpdateColorStyle) == 0x000001, "Wrong alignment on ChatMessageWidget_UpdateColorStyle");
+static_assert(sizeof(ChatMessageWidget_UpdateColorStyle) == 0x000001, "Wrong size on ChatMessageWidget_UpdateColorStyle");
+static_assert(offsetof(ChatMessageWidget_UpdateColorStyle, NewColorStyle) == 0x000000, "Member 'ChatMessageWidget_UpdateColorStyle::NewColorStyle' has a wrong offset!");
+
+// Function BrickRigs.ChatMessageWidget.UpdateMessageText
+// 0x0018 (0x0018 - 0x0000)
+struct ChatMessageWidget_UpdateMessageText final
+{
+public:
+	class FText                                   NewText;                                           // 0x0000(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ChatMessageWidget_UpdateMessageText) == 0x000008, "Wrong alignment on ChatMessageWidget_UpdateMessageText");
+static_assert(sizeof(ChatMessageWidget_UpdateMessageText) == 0x000018, "Wrong size on ChatMessageWidget_UpdateMessageText");
+static_assert(offsetof(ChatMessageWidget_UpdateMessageText, NewText) == 0x000000, "Member 'ChatMessageWidget_UpdateMessageText::NewText' has a wrong offset!");
+
+// Function BrickRigs.ColorPropertyWidget.SetColorPropertyValue
 // 0x0008 (0x0008 - 0x0000)
-struct ChatWidget_GetWidgetToFocus final
+struct ColorPropertyWidget_SetColorPropertyValue final
 {
 public:
-	class UWidget*                                ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FColor                                 Color;                                             // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EValueChangedEventType                        EventType;                                         // 0x0004(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(ChatWidget_GetWidgetToFocus) == 0x000008, "Wrong alignment on ChatWidget_GetWidgetToFocus");
-static_assert(sizeof(ChatWidget_GetWidgetToFocus) == 0x000008, "Wrong size on ChatWidget_GetWidgetToFocus");
-static_assert(offsetof(ChatWidget_GetWidgetToFocus, ReturnValue) == 0x000000, "Member 'ChatWidget_GetWidgetToFocus::ReturnValue' has a wrong offset!");
+static_assert(alignof(ColorPropertyWidget_SetColorPropertyValue) == 0x000004, "Wrong alignment on ColorPropertyWidget_SetColorPropertyValue");
+static_assert(sizeof(ColorPropertyWidget_SetColorPropertyValue) == 0x000008, "Wrong size on ColorPropertyWidget_SetColorPropertyValue");
+static_assert(offsetof(ColorPropertyWidget_SetColorPropertyValue, Color) == 0x000000, "Member 'ColorPropertyWidget_SetColorPropertyValue::Color' has a wrong offset!");
+static_assert(offsetof(ColorPropertyWidget_SetColorPropertyValue, EventType) == 0x000004, "Member 'ColorPropertyWidget_SetColorPropertyValue::EventType' has a wrong offset!");
 
-// Function BrickRigs.ChatWidget.OnTextChanged
-// 0x0020 (0x0020 - 0x0000)
-struct ChatWidget_OnTextChanged final
+// Function BrickRigs.ColorPropertyWidget.UpdateColorPropertyValue
+// 0x0008 (0x0008 - 0x0000)
+struct ColorPropertyWidget_UpdateColorPropertyValue final
 {
 public:
-	class FText                                   Text;                                              // 0x0000(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	EValueChangedEventType                        EventType;                                         // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FColor                                 NewColor;                                          // 0x0000(0x0004)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bValueChanged;                                     // 0x0004(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(ChatWidget_OnTextChanged) == 0x000008, "Wrong alignment on ChatWidget_OnTextChanged");
-static_assert(sizeof(ChatWidget_OnTextChanged) == 0x000020, "Wrong size on ChatWidget_OnTextChanged");
-static_assert(offsetof(ChatWidget_OnTextChanged, Text) == 0x000000, "Member 'ChatWidget_OnTextChanged::Text' has a wrong offset!");
-static_assert(offsetof(ChatWidget_OnTextChanged, EventType) == 0x000018, "Member 'ChatWidget_OnTextChanged::EventType' has a wrong offset!");
+static_assert(alignof(ColorPropertyWidget_UpdateColorPropertyValue) == 0x000004, "Wrong alignment on ColorPropertyWidget_UpdateColorPropertyValue");
+static_assert(sizeof(ColorPropertyWidget_UpdateColorPropertyValue) == 0x000008, "Wrong size on ColorPropertyWidget_UpdateColorPropertyValue");
+static_assert(offsetof(ColorPropertyWidget_UpdateColorPropertyValue, NewColor) == 0x000000, "Member 'ColorPropertyWidget_UpdateColorPropertyValue::NewColor' has a wrong offset!");
+static_assert(offsetof(ColorPropertyWidget_UpdateColorPropertyValue, bValueChanged) == 0x000004, "Member 'ColorPropertyWidget_UpdateColorPropertyValue::bValueChanged' has a wrong offset!");
 
-// Function BrickRigs.ChatWidget.UpdateIsFocused
+// Function BrickRigs.ColorPropertyWidget.HasAlphaChannel
 // 0x0001 (0x0001 - 0x0000)
-struct ChatWidget_UpdateIsFocused final
+struct ColorPropertyWidget_HasAlphaChannel final
 {
 public:
-	bool                                          bNewFocused;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(ChatWidget_UpdateIsFocused) == 0x000001, "Wrong alignment on ChatWidget_UpdateIsFocused");
-static_assert(sizeof(ChatWidget_UpdateIsFocused) == 0x000001, "Wrong size on ChatWidget_UpdateIsFocused");
-static_assert(offsetof(ChatWidget_UpdateIsFocused, bNewFocused) == 0x000000, "Member 'ChatWidget_UpdateIsFocused::bNewFocused' has a wrong offset!");
-
-// Function BrickRigs.ChatWidget.UpdateIsTyping
-// 0x0001 (0x0001 - 0x0000)
-struct ChatWidget_UpdateIsTyping final
-{
-public:
-	bool                                          bNewTyping;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(ChatWidget_UpdateIsTyping) == 0x000001, "Wrong alignment on ChatWidget_UpdateIsTyping");
-static_assert(sizeof(ChatWidget_UpdateIsTyping) == 0x000001, "Wrong size on ChatWidget_UpdateIsTyping");
-static_assert(offsetof(ChatWidget_UpdateIsTyping, bNewTyping) == 0x000000, "Member 'ChatWidget_UpdateIsTyping::bNewTyping' has a wrong offset!");
-
-// Function BrickRigs.ChatWidget.UpdateScrollBoxVisibility
-// 0x0001 (0x0001 - 0x0000)
-struct ChatWidget_UpdateScrollBoxVisibility final
-{
-public:
-	bool                                          bNewVisible;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(ChatWidget_UpdateScrollBoxVisibility) == 0x000001, "Wrong alignment on ChatWidget_UpdateScrollBoxVisibility");
-static_assert(sizeof(ChatWidget_UpdateScrollBoxVisibility) == 0x000001, "Wrong size on ChatWidget_UpdateScrollBoxVisibility");
-static_assert(offsetof(ChatWidget_UpdateScrollBoxVisibility, bNewVisible) == 0x000000, "Member 'ChatWidget_UpdateScrollBoxVisibility::bNewVisible' has a wrong offset!");
+static_assert(alignof(ColorPropertyWidget_HasAlphaChannel) == 0x000001, "Wrong alignment on ColorPropertyWidget_HasAlphaChannel");
+static_assert(sizeof(ColorPropertyWidget_HasAlphaChannel) == 0x000001, "Wrong size on ColorPropertyWidget_HasAlphaChannel");
+static_assert(offsetof(ColorPropertyWidget_HasAlphaChannel, ReturnValue) == 0x000000, "Member 'ColorPropertyWidget_HasAlphaChannel::ReturnValue' has a wrong offset!");
 
 // Function BrickRigs.ColorWheelWidget.SetColor
 // 0x0010 (0x0010 - 0x0000)
@@ -8814,173 +8609,243 @@ static_assert(alignof(ColorWheelWidget_SetColor) == 0x000004, "Wrong alignment o
 static_assert(sizeof(ColorWheelWidget_SetColor) == 0x000010, "Wrong size on ColorWheelWidget_SetColor");
 static_assert(offsetof(ColorWheelWidget_SetColor, NewColor) == 0x000000, "Member 'ColorWheelWidget_SetColor::NewColor' has a wrong offset!");
 
-// Function BrickRigs.ConnectorSpacingPropertyWidget.CycleAxisSpacing
-// 0x0008 (0x0008 - 0x0000)
-struct ConnectorSpacingPropertyWidget_CycleAxisSpacing final
+// Function BrickRigs.ControlHintWidget.OnInputMethodChanged
+// 0x0001 (0x0001 - 0x0000)
+struct ControlHintWidget_OnInputMethodChanged final
 {
 public:
-	int32                                         Axis;                                              // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bPositiveAxis;                                     // 0x0004(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	EInputMethod                                  NewInputMethod;                                    // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(ConnectorSpacingPropertyWidget_CycleAxisSpacing) == 0x000004, "Wrong alignment on ConnectorSpacingPropertyWidget_CycleAxisSpacing");
-static_assert(sizeof(ConnectorSpacingPropertyWidget_CycleAxisSpacing) == 0x000008, "Wrong size on ConnectorSpacingPropertyWidget_CycleAxisSpacing");
-static_assert(offsetof(ConnectorSpacingPropertyWidget_CycleAxisSpacing, Axis) == 0x000000, "Member 'ConnectorSpacingPropertyWidget_CycleAxisSpacing::Axis' has a wrong offset!");
-static_assert(offsetof(ConnectorSpacingPropertyWidget_CycleAxisSpacing, bPositiveAxis) == 0x000004, "Member 'ConnectorSpacingPropertyWidget_CycleAxisSpacing::bPositiveAxis' has a wrong offset!");
+static_assert(alignof(ControlHintWidget_OnInputMethodChanged) == 0x000001, "Wrong alignment on ControlHintWidget_OnInputMethodChanged");
+static_assert(sizeof(ControlHintWidget_OnInputMethodChanged) == 0x000001, "Wrong size on ControlHintWidget_OnInputMethodChanged");
+static_assert(offsetof(ControlHintWidget_OnInputMethodChanged, NewInputMethod) == 0x000000, "Member 'ControlHintWidget_OnInputMethodChanged::NewInputMethod' has a wrong offset!");
 
-// Function BrickRigs.ConnectorSpacingPropertyWidget.UpdateAxisSpacing
-// 0x0008 (0x0008 - 0x0000)
-struct ConnectorSpacingPropertyWidget_UpdateAxisSpacing final
-{
-public:
-	int32                                         Axis;                                              // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bPositiveAxis;                                     // 0x0004(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EConnectorSpacing                             Spacing;                                           // 0x0005(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_6[0x2];                                        // 0x0006(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(ConnectorSpacingPropertyWidget_UpdateAxisSpacing) == 0x000004, "Wrong alignment on ConnectorSpacingPropertyWidget_UpdateAxisSpacing");
-static_assert(sizeof(ConnectorSpacingPropertyWidget_UpdateAxisSpacing) == 0x000008, "Wrong size on ConnectorSpacingPropertyWidget_UpdateAxisSpacing");
-static_assert(offsetof(ConnectorSpacingPropertyWidget_UpdateAxisSpacing, Axis) == 0x000000, "Member 'ConnectorSpacingPropertyWidget_UpdateAxisSpacing::Axis' has a wrong offset!");
-static_assert(offsetof(ConnectorSpacingPropertyWidget_UpdateAxisSpacing, bPositiveAxis) == 0x000004, "Member 'ConnectorSpacingPropertyWidget_UpdateAxisSpacing::bPositiveAxis' has a wrong offset!");
-static_assert(offsetof(ConnectorSpacingPropertyWidget_UpdateAxisSpacing, Spacing) == 0x000005, "Member 'ConnectorSpacingPropertyWidget_UpdateAxisSpacing::Spacing' has a wrong offset!");
-
-// Function BrickRigs.ConnectorSpacingPropertyWidget.GetAxisSpacing
-// 0x0008 (0x0008 - 0x0000)
-struct ConnectorSpacingPropertyWidget_GetAxisSpacing final
-{
-public:
-	int32                                         Axis;                                              // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bPositiveAxis;                                     // 0x0004(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EConnectorSpacing                             ReturnValue;                                       // 0x0005(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_6[0x2];                                        // 0x0006(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(ConnectorSpacingPropertyWidget_GetAxisSpacing) == 0x000004, "Wrong alignment on ConnectorSpacingPropertyWidget_GetAxisSpacing");
-static_assert(sizeof(ConnectorSpacingPropertyWidget_GetAxisSpacing) == 0x000008, "Wrong size on ConnectorSpacingPropertyWidget_GetAxisSpacing");
-static_assert(offsetof(ConnectorSpacingPropertyWidget_GetAxisSpacing, Axis) == 0x000000, "Member 'ConnectorSpacingPropertyWidget_GetAxisSpacing::Axis' has a wrong offset!");
-static_assert(offsetof(ConnectorSpacingPropertyWidget_GetAxisSpacing, bPositiveAxis) == 0x000004, "Member 'ConnectorSpacingPropertyWidget_GetAxisSpacing::bPositiveAxis' has a wrong offset!");
-static_assert(offsetof(ConnectorSpacingPropertyWidget_GetAxisSpacing, ReturnValue) == 0x000005, "Member 'ConnectorSpacingPropertyWidget_GetAxisSpacing::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.ConnectorSpacingPropertyWidget.GetAxisWidget
-// 0x0010 (0x0010 - 0x0000)
-struct ConnectorSpacingPropertyWidget_GetAxisWidget final
-{
-public:
-	int32                                         Axis;                                              // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bPositiveAxis;                                     // 0x0004(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class UWidget*                                ReturnValue;                                       // 0x0008(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(ConnectorSpacingPropertyWidget_GetAxisWidget) == 0x000008, "Wrong alignment on ConnectorSpacingPropertyWidget_GetAxisWidget");
-static_assert(sizeof(ConnectorSpacingPropertyWidget_GetAxisWidget) == 0x000010, "Wrong size on ConnectorSpacingPropertyWidget_GetAxisWidget");
-static_assert(offsetof(ConnectorSpacingPropertyWidget_GetAxisWidget, Axis) == 0x000000, "Member 'ConnectorSpacingPropertyWidget_GetAxisWidget::Axis' has a wrong offset!");
-static_assert(offsetof(ConnectorSpacingPropertyWidget_GetAxisWidget, bPositiveAxis) == 0x000004, "Member 'ConnectorSpacingPropertyWidget_GetAxisWidget::bPositiveAxis' has a wrong offset!");
-static_assert(offsetof(ConnectorSpacingPropertyWidget_GetAxisWidget, ReturnValue) == 0x000008, "Member 'ConnectorSpacingPropertyWidget_GetAxisWidget::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.ContextMenuWidget.OnActionTriggered
+// Function BrickRigs.ControlHintWidget.SetAction
 // 0x000C (0x000C - 0x0000)
-struct ContextMenuWidget_OnActionTriggered final
+struct ControlHintWidget_SetAction final
 {
 public:
-	class FName                                   ActionName;                                        // 0x0000(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bReleased;                                         // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   InActionName;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EInputActionTriggerType                       InTriggerType;                                     // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_9[0x3];                                        // 0x0009(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(ContextMenuWidget_OnActionTriggered) == 0x000004, "Wrong alignment on ContextMenuWidget_OnActionTriggered");
-static_assert(sizeof(ContextMenuWidget_OnActionTriggered) == 0x00000C, "Wrong size on ContextMenuWidget_OnActionTriggered");
-static_assert(offsetof(ContextMenuWidget_OnActionTriggered, ActionName) == 0x000000, "Member 'ContextMenuWidget_OnActionTriggered::ActionName' has a wrong offset!");
-static_assert(offsetof(ContextMenuWidget_OnActionTriggered, bReleased) == 0x000008, "Member 'ContextMenuWidget_OnActionTriggered::bReleased' has a wrong offset!");
+static_assert(alignof(ControlHintWidget_SetAction) == 0x000004, "Wrong alignment on ControlHintWidget_SetAction");
+static_assert(sizeof(ControlHintWidget_SetAction) == 0x00000C, "Wrong size on ControlHintWidget_SetAction");
+static_assert(offsetof(ControlHintWidget_SetAction, InActionName) == 0x000000, "Member 'ControlHintWidget_SetAction::InActionName' has a wrong offset!");
+static_assert(offsetof(ControlHintWidget_SetAction, InTriggerType) == 0x000008, "Member 'ControlHintWidget_SetAction::InTriggerType' has a wrong offset!");
 
-// Function BrickRigs.ContextMenuWidget.UpdateTitleText
-// 0x0018 (0x0018 - 0x0000)
-struct ContextMenuWidget_UpdateTitleText final
-{
-public:
-	class FText                                   InText;                                            // 0x0000(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(ContextMenuWidget_UpdateTitleText) == 0x000008, "Wrong alignment on ContextMenuWidget_UpdateTitleText");
-static_assert(sizeof(ContextMenuWidget_UpdateTitleText) == 0x000018, "Wrong size on ContextMenuWidget_UpdateTitleText");
-static_assert(offsetof(ContextMenuWidget_UpdateTitleText, InText) == 0x000000, "Member 'ContextMenuWidget_UpdateTitleText::InText' has a wrong offset!");
-
-// Function BrickRigs.CouplingBrick.Interact_DisengageCoupling
-// 0x0008 (0x0008 - 0x0000)
-struct CouplingBrick_Interact_DisengageCoupling final
-{
-public:
-	class ABrickPlayerController*                 PC;                                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(CouplingBrick_Interact_DisengageCoupling) == 0x000008, "Wrong alignment on CouplingBrick_Interact_DisengageCoupling");
-static_assert(sizeof(CouplingBrick_Interact_DisengageCoupling) == 0x000008, "Wrong size on CouplingBrick_Interact_DisengageCoupling");
-static_assert(offsetof(CouplingBrick_Interact_DisengageCoupling, PC) == 0x000000, "Member 'CouplingBrick_Interact_DisengageCoupling::PC' has a wrong offset!");
-
-// Function BrickRigs.CouplingBrick.Interact_EngageCoupling
-// 0x0008 (0x0008 - 0x0000)
-struct CouplingBrick_Interact_EngageCoupling final
-{
-public:
-	class ABrickPlayerController*                 PC;                                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(CouplingBrick_Interact_EngageCoupling) == 0x000008, "Wrong alignment on CouplingBrick_Interact_EngageCoupling");
-static_assert(sizeof(CouplingBrick_Interact_EngageCoupling) == 0x000008, "Wrong size on CouplingBrick_Interact_EngageCoupling");
-static_assert(offsetof(CouplingBrick_Interact_EngageCoupling, PC) == 0x000000, "Member 'CouplingBrick_Interact_EngageCoupling::PC' has a wrong offset!");
-
-// Function BrickRigs.CurrentItemWidget.FadeOut
+// Function BrickRigs.ControlHintWidget.SetColorStyle
 // 0x0001 (0x0001 - 0x0000)
-struct CurrentItemWidget_FadeOut final
+struct ControlHintWidget_SetColorStyle final
 {
 public:
-	bool                                          bImmediate;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EBrickUIColorStyle                            NewStyle;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(CurrentItemWidget_FadeOut) == 0x000001, "Wrong alignment on CurrentItemWidget_FadeOut");
-static_assert(sizeof(CurrentItemWidget_FadeOut) == 0x000001, "Wrong size on CurrentItemWidget_FadeOut");
-static_assert(offsetof(CurrentItemWidget_FadeOut, bImmediate) == 0x000000, "Member 'CurrentItemWidget_FadeOut::bImmediate' has a wrong offset!");
+static_assert(alignof(ControlHintWidget_SetColorStyle) == 0x000001, "Wrong alignment on ControlHintWidget_SetColorStyle");
+static_assert(sizeof(ControlHintWidget_SetColorStyle) == 0x000001, "Wrong size on ControlHintWidget_SetColorStyle");
+static_assert(offsetof(ControlHintWidget_SetColorStyle, NewStyle) == 0x000000, "Member 'ControlHintWidget_SetColorStyle::NewStyle' has a wrong offset!");
 
-// Function BrickRigs.CurrentItemWidget.UpdateAmmo
+// Function BrickRigs.ControlHintWidget.SetDisplayInfo
+// 0x0028 (0x0028 - 0x0000)
+struct ControlHintWidget_SetDisplayInfo final
+{
+public:
+	struct FDisplayInfo                           InDisplayInfo;                                     // 0x0000(0x0028)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ControlHintWidget_SetDisplayInfo) == 0x000008, "Wrong alignment on ControlHintWidget_SetDisplayInfo");
+static_assert(sizeof(ControlHintWidget_SetDisplayInfo) == 0x000028, "Wrong size on ControlHintWidget_SetDisplayInfo");
+static_assert(offsetof(ControlHintWidget_SetDisplayInfo, InDisplayInfo) == 0x000000, "Member 'ControlHintWidget_SetDisplayInfo::InDisplayInfo' has a wrong offset!");
+
+// Function BrickRigs.ControlHintWidget.SetDisplayInfoMode
+// 0x0001 (0x0001 - 0x0000)
+struct ControlHintWidget_SetDisplayInfoMode final
+{
+public:
+	EControlHintDisplayInfoMode                   NewMode;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ControlHintWidget_SetDisplayInfoMode) == 0x000001, "Wrong alignment on ControlHintWidget_SetDisplayInfoMode");
+static_assert(sizeof(ControlHintWidget_SetDisplayInfoMode) == 0x000001, "Wrong size on ControlHintWidget_SetDisplayInfoMode");
+static_assert(offsetof(ControlHintWidget_SetDisplayInfoMode, NewMode) == 0x000000, "Member 'ControlHintWidget_SetDisplayInfoMode::NewMode' has a wrong offset!");
+
+// Function BrickRigs.ControlHintWidget.SetInputChordScale
+// 0x0004 (0x0004 - 0x0000)
+struct ControlHintWidget_SetInputChordScale final
+{
+public:
+	float                                         InScale;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ControlHintWidget_SetInputChordScale) == 0x000004, "Wrong alignment on ControlHintWidget_SetInputChordScale");
+static_assert(sizeof(ControlHintWidget_SetInputChordScale) == 0x000004, "Wrong size on ControlHintWidget_SetInputChordScale");
+static_assert(offsetof(ControlHintWidget_SetInputChordScale, InScale) == 0x000000, "Member 'ControlHintWidget_SetInputChordScale::InScale' has a wrong offset!");
+
+// Function BrickRigs.ControlHintWidget.SetShowInputChord
+// 0x0001 (0x0001 - 0x0000)
+struct ControlHintWidget_SetShowInputChord final
+{
+public:
+	bool                                          bShow;                                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ControlHintWidget_SetShowInputChord) == 0x000001, "Wrong alignment on ControlHintWidget_SetShowInputChord");
+static_assert(sizeof(ControlHintWidget_SetShowInputChord) == 0x000001, "Wrong size on ControlHintWidget_SetShowInputChord");
+static_assert(offsetof(ControlHintWidget_SetShowInputChord, bShow) == 0x000000, "Member 'ControlHintWidget_SetShowInputChord::bShow' has a wrong offset!");
+
+// Function BrickRigs.ControlHintWidget.SetShowUnboundKey
+// 0x0001 (0x0001 - 0x0000)
+struct ControlHintWidget_SetShowUnboundKey final
+{
+public:
+	bool                                          bShow;                                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ControlHintWidget_SetShowUnboundKey) == 0x000001, "Wrong alignment on ControlHintWidget_SetShowUnboundKey");
+static_assert(sizeof(ControlHintWidget_SetShowUnboundKey) == 0x000001, "Wrong size on ControlHintWidget_SetShowUnboundKey");
+static_assert(offsetof(ControlHintWidget_SetShowUnboundKey, bShow) == 0x000000, "Member 'ControlHintWidget_SetShowUnboundKey::bShow' has a wrong offset!");
+
+// Function BrickRigs.ControlHintWidget.SetStyleState
+// 0x0001 (0x0001 - 0x0000)
+struct ControlHintWidget_SetStyleState final
+{
+public:
+	EBrickUIStyleState                            NewState;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ControlHintWidget_SetStyleState) == 0x000001, "Wrong alignment on ControlHintWidget_SetStyleState");
+static_assert(sizeof(ControlHintWidget_SetStyleState) == 0x000001, "Wrong size on ControlHintWidget_SetStyleState");
+static_assert(offsetof(ControlHintWidget_SetStyleState, NewState) == 0x000000, "Member 'ControlHintWidget_SetStyleState::NewState' has a wrong offset!");
+
+// Function BrickRigs.ControlHintWidget.SetTextStyle
+// 0x0001 (0x0001 - 0x0000)
+struct ControlHintWidget_SetTextStyle final
+{
+public:
+	EBrickUITextStyle                             NewStyle;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ControlHintWidget_SetTextStyle) == 0x000001, "Wrong alignment on ControlHintWidget_SetTextStyle");
+static_assert(sizeof(ControlHintWidget_SetTextStyle) == 0x000001, "Wrong size on ControlHintWidget_SetTextStyle");
+static_assert(offsetof(ControlHintWidget_SetTextStyle, NewStyle) == 0x000000, "Member 'ControlHintWidget_SetTextStyle::NewStyle' has a wrong offset!");
+
+// Function BrickRigs.ControlHintWidget.UpdateDisplayInfo
+// 0x0028 (0x0028 - 0x0000)
+struct ControlHintWidget_UpdateDisplayInfo final
+{
+public:
+	struct FDisplayInfo                           NewDisplayInfo;                                    // 0x0000(0x0028)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ControlHintWidget_UpdateDisplayInfo) == 0x000008, "Wrong alignment on ControlHintWidget_UpdateDisplayInfo");
+static_assert(sizeof(ControlHintWidget_UpdateDisplayInfo) == 0x000028, "Wrong size on ControlHintWidget_UpdateDisplayInfo");
+static_assert(offsetof(ControlHintWidget_UpdateDisplayInfo, NewDisplayInfo) == 0x000000, "Member 'ControlHintWidget_UpdateDisplayInfo::NewDisplayInfo' has a wrong offset!");
+
+// Function BrickRigs.ControlHintWidget.UpdateHoldProgress
+// 0x0004 (0x0004 - 0x0000)
+struct ControlHintWidget_UpdateHoldProgress final
+{
+public:
+	float                                         InHoldProgress;                                    // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ControlHintWidget_UpdateHoldProgress) == 0x000004, "Wrong alignment on ControlHintWidget_UpdateHoldProgress");
+static_assert(sizeof(ControlHintWidget_UpdateHoldProgress) == 0x000004, "Wrong size on ControlHintWidget_UpdateHoldProgress");
+static_assert(offsetof(ControlHintWidget_UpdateHoldProgress, InHoldProgress) == 0x000000, "Member 'ControlHintWidget_UpdateHoldProgress::InHoldProgress' has a wrong offset!");
+
+// Function BrickRigs.ControlHintWidget.UpdateIconVisibility
+// 0x0001 (0x0001 - 0x0000)
+struct ControlHintWidget_UpdateIconVisibility final
+{
+public:
+	bool                                          bNewVisible;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ControlHintWidget_UpdateIconVisibility) == 0x000001, "Wrong alignment on ControlHintWidget_UpdateIconVisibility");
+static_assert(sizeof(ControlHintWidget_UpdateIconVisibility) == 0x000001, "Wrong size on ControlHintWidget_UpdateIconVisibility");
+static_assert(offsetof(ControlHintWidget_UpdateIconVisibility, bNewVisible) == 0x000000, "Member 'ControlHintWidget_UpdateIconVisibility::bNewVisible' has a wrong offset!");
+
+// Function BrickRigs.ControlHintWidget.UpdateInputChordStyleState
+// 0x0002 (0x0002 - 0x0000)
+struct ControlHintWidget_UpdateInputChordStyleState final
+{
+public:
+	EBrickUIStyleState                            InStyleState;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bInIsHoldAction;                                   // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ControlHintWidget_UpdateInputChordStyleState) == 0x000001, "Wrong alignment on ControlHintWidget_UpdateInputChordStyleState");
+static_assert(sizeof(ControlHintWidget_UpdateInputChordStyleState) == 0x000002, "Wrong size on ControlHintWidget_UpdateInputChordStyleState");
+static_assert(offsetof(ControlHintWidget_UpdateInputChordStyleState, InStyleState) == 0x000000, "Member 'ControlHintWidget_UpdateInputChordStyleState::InStyleState' has a wrong offset!");
+static_assert(offsetof(ControlHintWidget_UpdateInputChordStyleState, bInIsHoldAction) == 0x000001, "Member 'ControlHintWidget_UpdateInputChordStyleState::bInIsHoldAction' has a wrong offset!");
+
+// Function BrickRigs.ControlHintWidget.UpdateInputChordVisibility
+// 0x0001 (0x0001 - 0x0000)
+struct ControlHintWidget_UpdateInputChordVisibility final
+{
+public:
+	bool                                          bNewVisible;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ControlHintWidget_UpdateInputChordVisibility) == 0x000001, "Wrong alignment on ControlHintWidget_UpdateInputChordVisibility");
+static_assert(sizeof(ControlHintWidget_UpdateInputChordVisibility) == 0x000001, "Wrong size on ControlHintWidget_UpdateInputChordVisibility");
+static_assert(offsetof(ControlHintWidget_UpdateInputChordVisibility, bNewVisible) == 0x000000, "Member 'ControlHintWidget_UpdateInputChordVisibility::bNewVisible' has a wrong offset!");
+
+// Function BrickRigs.ControlHintWidget.UpdateIsHoldAction
+// 0x0001 (0x0001 - 0x0000)
+struct ControlHintWidget_UpdateIsHoldAction final
+{
+public:
+	bool                                          bIsHoldAction;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ControlHintWidget_UpdateIsHoldAction) == 0x000001, "Wrong alignment on ControlHintWidget_UpdateIsHoldAction");
+static_assert(sizeof(ControlHintWidget_UpdateIsHoldAction) == 0x000001, "Wrong size on ControlHintWidget_UpdateIsHoldAction");
+static_assert(offsetof(ControlHintWidget_UpdateIsHoldAction, bIsHoldAction) == 0x000000, "Member 'ControlHintWidget_UpdateIsHoldAction::bIsHoldAction' has a wrong offset!");
+
+// Function BrickRigs.ControlHintWidget.UpdateTextVisibility
+// 0x0001 (0x0001 - 0x0000)
+struct ControlHintWidget_UpdateTextVisibility final
+{
+public:
+	bool                                          bNewVisible;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ControlHintWidget_UpdateTextVisibility) == 0x000001, "Wrong alignment on ControlHintWidget_UpdateTextVisibility");
+static_assert(sizeof(ControlHintWidget_UpdateTextVisibility) == 0x000001, "Wrong size on ControlHintWidget_UpdateTextVisibility");
+static_assert(offsetof(ControlHintWidget_UpdateTextVisibility, bNewVisible) == 0x000000, "Member 'ControlHintWidget_UpdateTextVisibility::bNewVisible' has a wrong offset!");
+
+// Function BrickRigs.CrosshairWidget.OnHUDVisibilityChanged
+// 0x0001 (0x0001 - 0x0000)
+struct CrosshairWidget_OnHUDVisibilityChanged final
+{
+public:
+	EHUDVisibility                                NewVisibility;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(CrosshairWidget_OnHUDVisibilityChanged) == 0x000001, "Wrong alignment on CrosshairWidget_OnHUDVisibilityChanged");
+static_assert(sizeof(CrosshairWidget_OnHUDVisibilityChanged) == 0x000001, "Wrong size on CrosshairWidget_OnHUDVisibilityChanged");
+static_assert(offsetof(CrosshairWidget_OnHUDVisibilityChanged, NewVisibility) == 0x000000, "Member 'CrosshairWidget_OnHUDVisibilityChanged::NewVisibility' has a wrong offset!");
+
+// Function BrickRigs.CrosshairWidget.PlayHitAnimation
 // 0x000C (0x000C - 0x0000)
-struct CurrentItemWidget_UpdateAmmo final
+struct CrosshairWidget_PlayHitAnimation final
 {
 public:
-	int32                                         Current;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Capacity;                                          // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Ammo;                                              // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FClientDamageInfo                      DamageInfo;                                        // 0x0000(0x000C)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(CurrentItemWidget_UpdateAmmo) == 0x000004, "Wrong alignment on CurrentItemWidget_UpdateAmmo");
-static_assert(sizeof(CurrentItemWidget_UpdateAmmo) == 0x00000C, "Wrong size on CurrentItemWidget_UpdateAmmo");
-static_assert(offsetof(CurrentItemWidget_UpdateAmmo, Current) == 0x000000, "Member 'CurrentItemWidget_UpdateAmmo::Current' has a wrong offset!");
-static_assert(offsetof(CurrentItemWidget_UpdateAmmo, Capacity) == 0x000004, "Member 'CurrentItemWidget_UpdateAmmo::Capacity' has a wrong offset!");
-static_assert(offsetof(CurrentItemWidget_UpdateAmmo, Ammo) == 0x000008, "Member 'CurrentItemWidget_UpdateAmmo::Ammo' has a wrong offset!");
+static_assert(alignof(CrosshairWidget_PlayHitAnimation) == 0x000004, "Wrong alignment on CrosshairWidget_PlayHitAnimation");
+static_assert(sizeof(CrosshairWidget_PlayHitAnimation) == 0x00000C, "Wrong size on CrosshairWidget_PlayHitAnimation");
+static_assert(offsetof(CrosshairWidget_PlayHitAnimation, DamageInfo) == 0x000000, "Member 'CrosshairWidget_PlayHitAnimation::DamageInfo' has a wrong offset!");
 
-// Function BrickRigs.CurrentItemWidget.UpdateAmmoType
+// Function BrickRigs.CrosshairWidget.UpdateIsAttachingWinch
 // 0x0001 (0x0001 - 0x0000)
-struct CurrentItemWidget_UpdateAmmoType final
+struct CrosshairWidget_UpdateIsAttachingWinch final
 {
 public:
-	EAmmoType                                     NewType;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bNewAttaching;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(CurrentItemWidget_UpdateAmmoType) == 0x000001, "Wrong alignment on CurrentItemWidget_UpdateAmmoType");
-static_assert(sizeof(CurrentItemWidget_UpdateAmmoType) == 0x000001, "Wrong size on CurrentItemWidget_UpdateAmmoType");
-static_assert(offsetof(CurrentItemWidget_UpdateAmmoType, NewType) == 0x000000, "Member 'CurrentItemWidget_UpdateAmmoType::NewType' has a wrong offset!");
+static_assert(alignof(CrosshairWidget_UpdateIsAttachingWinch) == 0x000001, "Wrong alignment on CrosshairWidget_UpdateIsAttachingWinch");
+static_assert(sizeof(CrosshairWidget_UpdateIsAttachingWinch) == 0x000001, "Wrong size on CrosshairWidget_UpdateIsAttachingWinch");
+static_assert(offsetof(CrosshairWidget_UpdateIsAttachingWinch, bNewAttaching) == 0x000000, "Member 'CrosshairWidget_UpdateIsAttachingWinch::bNewAttaching' has a wrong offset!");
 
-// Function BrickRigs.CurrentItemWidget.UpdateFireMode
-// 0x0001 (0x0001 - 0x0000)
-struct CurrentItemWidget_UpdateFireMode final
+// Function BrickRigs.CrosshairWidget.UpdateWinchAttachment
+// 0x0002 (0x0002 - 0x0000)
+struct CrosshairWidget_UpdateWinchAttachment final
 {
 public:
-	EFireMode                                     NewMode;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bBlockingHit;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bWithinRange;                                      // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(CurrentItemWidget_UpdateFireMode) == 0x000001, "Wrong alignment on CurrentItemWidget_UpdateFireMode");
-static_assert(sizeof(CurrentItemWidget_UpdateFireMode) == 0x000001, "Wrong size on CurrentItemWidget_UpdateFireMode");
-static_assert(offsetof(CurrentItemWidget_UpdateFireMode, NewMode) == 0x000000, "Member 'CurrentItemWidget_UpdateFireMode::NewMode' has a wrong offset!");
-
-// Function BrickRigs.CurrentItemWidget.UpdateItemName
-// 0x0018 (0x0018 - 0x0000)
-struct CurrentItemWidget_UpdateItemName final
-{
-public:
-	class FText                                   NewName;                                           // 0x0000(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(CurrentItemWidget_UpdateItemName) == 0x000008, "Wrong alignment on CurrentItemWidget_UpdateItemName");
-static_assert(sizeof(CurrentItemWidget_UpdateItemName) == 0x000018, "Wrong size on CurrentItemWidget_UpdateItemName");
-static_assert(offsetof(CurrentItemWidget_UpdateItemName, NewName) == 0x000000, "Member 'CurrentItemWidget_UpdateItemName::NewName' has a wrong offset!");
+static_assert(alignof(CrosshairWidget_UpdateWinchAttachment) == 0x000001, "Wrong alignment on CrosshairWidget_UpdateWinchAttachment");
+static_assert(sizeof(CrosshairWidget_UpdateWinchAttachment) == 0x000002, "Wrong size on CrosshairWidget_UpdateWinchAttachment");
+static_assert(offsetof(CrosshairWidget_UpdateWinchAttachment, bBlockingHit) == 0x000000, "Member 'CrosshairWidget_UpdateWinchAttachment::bBlockingHit' has a wrong offset!");
+static_assert(offsetof(CrosshairWidget_UpdateWinchAttachment, bWithinRange) == 0x000001, "Member 'CrosshairWidget_UpdateWinchAttachment::bWithinRange' has a wrong offset!");
 
 // Function BrickRigs.DashboardIconWidget.UpdateIconImage
 // 0x0008 (0x0008 - 0x0000)
@@ -8998,71 +8863,122 @@ static_assert(offsetof(DashboardIconWidget_UpdateIconImage, bInVisible) == 0x000
 static_assert(offsetof(DashboardIconWidget_UpdateIconImage, InColorStyle) == 0x000001, "Member 'DashboardIconWidget_UpdateIconImage::InColorStyle' has a wrong offset!");
 static_assert(offsetof(DashboardIconWidget_UpdateIconImage, InIconIndex) == 0x000004, "Member 'DashboardIconWidget_UpdateIconImage::InIconIndex' has a wrong offset!");
 
-// Function BrickRigs.DashboardSliderWidget.UpdateColorStyle
-// 0x0001 (0x0001 - 0x0000)
-struct DashboardSliderWidget_UpdateColorStyle final
+// Function BrickRigs.DashboardWidget.AddIconWidget
+// 0x0010 (0x0010 - 0x0000)
+struct DashboardWidget_AddIconWidget final
 {
 public:
-	EBrickUIColorStyle                            NewStyle;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UDashboardIconWidget*                   Widget;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Index_0;                                           // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(DashboardSliderWidget_UpdateColorStyle) == 0x000001, "Wrong alignment on DashboardSliderWidget_UpdateColorStyle");
-static_assert(sizeof(DashboardSliderWidget_UpdateColorStyle) == 0x000001, "Wrong size on DashboardSliderWidget_UpdateColorStyle");
-static_assert(offsetof(DashboardSliderWidget_UpdateColorStyle, NewStyle) == 0x000000, "Member 'DashboardSliderWidget_UpdateColorStyle::NewStyle' has a wrong offset!");
+static_assert(alignof(DashboardWidget_AddIconWidget) == 0x000008, "Wrong alignment on DashboardWidget_AddIconWidget");
+static_assert(sizeof(DashboardWidget_AddIconWidget) == 0x000010, "Wrong size on DashboardWidget_AddIconWidget");
+static_assert(offsetof(DashboardWidget_AddIconWidget, Widget) == 0x000000, "Member 'DashboardWidget_AddIconWidget::Widget' has a wrong offset!");
+static_assert(offsetof(DashboardWidget_AddIconWidget, Index_0) == 0x000008, "Member 'DashboardWidget_AddIconWidget::Index_0' has a wrong offset!");
 
-// Function BrickRigs.DashboardSliderWidget.UpdateIcon
+// Function BrickRigs.DashboardWidget.AddSliderWidget
+// 0x0008 (0x0008 - 0x0000)
+struct DashboardWidget_AddSliderWidget final
+{
+public:
+	class UDashboardSliderWidget*                 Widget;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(DashboardWidget_AddSliderWidget) == 0x000008, "Wrong alignment on DashboardWidget_AddSliderWidget");
+static_assert(sizeof(DashboardWidget_AddSliderWidget) == 0x000008, "Wrong size on DashboardWidget_AddSliderWidget");
+static_assert(offsetof(DashboardWidget_AddSliderWidget, Widget) == 0x000000, "Member 'DashboardWidget_AddSliderWidget::Widget' has a wrong offset!");
+
+// Function BrickRigs.DashboardWidget.UpdateSliderWidgetSlot
+// 0x0010 (0x0010 - 0x0000)
+struct DashboardWidget_UpdateSliderWidgetSlot final
+{
+public:
+	class UDashboardSliderWidget*                 Widget;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Index_0;                                           // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         NumSliders;                                        // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(DashboardWidget_UpdateSliderWidgetSlot) == 0x000008, "Wrong alignment on DashboardWidget_UpdateSliderWidgetSlot");
+static_assert(sizeof(DashboardWidget_UpdateSliderWidgetSlot) == 0x000010, "Wrong size on DashboardWidget_UpdateSliderWidgetSlot");
+static_assert(offsetof(DashboardWidget_UpdateSliderWidgetSlot, Widget) == 0x000000, "Member 'DashboardWidget_UpdateSliderWidgetSlot::Widget' has a wrong offset!");
+static_assert(offsetof(DashboardWidget_UpdateSliderWidgetSlot, Index_0) == 0x000008, "Member 'DashboardWidget_UpdateSliderWidgetSlot::Index_0' has a wrong offset!");
+static_assert(offsetof(DashboardWidget_UpdateSliderWidgetSlot, NumSliders) == 0x00000C, "Member 'DashboardWidget_UpdateSliderWidgetSlot::NumSliders' has a wrong offset!");
+
+// Function BrickRigs.VehicleInputComponent.Brake
 // 0x0004 (0x0004 - 0x0000)
-struct DashboardSliderWidget_UpdateIcon final
+struct VehicleInputComponent_Brake final
 {
 public:
-	int32                                         IconIndex;                                         // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Val;                                               // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(DashboardSliderWidget_UpdateIcon) == 0x000004, "Wrong alignment on DashboardSliderWidget_UpdateIcon");
-static_assert(sizeof(DashboardSliderWidget_UpdateIcon) == 0x000004, "Wrong size on DashboardSliderWidget_UpdateIcon");
-static_assert(offsetof(DashboardSliderWidget_UpdateIcon, IconIndex) == 0x000000, "Member 'DashboardSliderWidget_UpdateIcon::IconIndex' has a wrong offset!");
+static_assert(alignof(VehicleInputComponent_Brake) == 0x000004, "Wrong alignment on VehicleInputComponent_Brake");
+static_assert(sizeof(VehicleInputComponent_Brake) == 0x000004, "Wrong size on VehicleInputComponent_Brake");
+static_assert(offsetof(VehicleInputComponent_Brake, Val) == 0x000000, "Member 'VehicleInputComponent_Brake::Val' has a wrong offset!");
 
-// Function BrickRigs.DetonatorBrick.Interact_Detonate
-// 0x0008 (0x0008 - 0x0000)
-struct DetonatorBrick_Interact_Detonate final
+// Function BrickRigs.VehicleInputComponent.Pitch
+// 0x0004 (0x0004 - 0x0000)
+struct VehicleInputComponent_Pitch final
 {
 public:
-	class ABrickPlayerController*                 PC;                                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Val;                                               // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(DetonatorBrick_Interact_Detonate) == 0x000008, "Wrong alignment on DetonatorBrick_Interact_Detonate");
-static_assert(sizeof(DetonatorBrick_Interact_Detonate) == 0x000008, "Wrong size on DetonatorBrick_Interact_Detonate");
-static_assert(offsetof(DetonatorBrick_Interact_Detonate, PC) == 0x000000, "Member 'DetonatorBrick_Interact_Detonate::PC' has a wrong offset!");
+static_assert(alignof(VehicleInputComponent_Pitch) == 0x000004, "Wrong alignment on VehicleInputComponent_Pitch");
+static_assert(sizeof(VehicleInputComponent_Pitch) == 0x000004, "Wrong size on VehicleInputComponent_Pitch");
+static_assert(offsetof(VehicleInputComponent_Pitch, Val) == 0x000000, "Member 'VehicleInputComponent_Pitch::Val' has a wrong offset!");
 
-// Function BrickRigs.DragStrip.CreateTreeMID
-// 0x0008 (0x0008 - 0x0000)
-struct DragStrip_CreateTreeMID final
+// Function BrickRigs.VehicleInputComponent.Steering
+// 0x0004 (0x0004 - 0x0000)
+struct VehicleInputComponent_Steering final
 {
 public:
-	class UMaterialInstanceDynamic*               ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Val;                                               // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(DragStrip_CreateTreeMID) == 0x000008, "Wrong alignment on DragStrip_CreateTreeMID");
-static_assert(sizeof(DragStrip_CreateTreeMID) == 0x000008, "Wrong size on DragStrip_CreateTreeMID");
-static_assert(offsetof(DragStrip_CreateTreeMID, ReturnValue) == 0x000000, "Member 'DragStrip_CreateTreeMID::ReturnValue' has a wrong offset!");
+static_assert(alignof(VehicleInputComponent_Steering) == 0x000004, "Wrong alignment on VehicleInputComponent_Steering");
+static_assert(sizeof(VehicleInputComponent_Steering) == 0x000004, "Wrong size on VehicleInputComponent_Steering");
+static_assert(offsetof(VehicleInputComponent_Steering, Val) == 0x000000, "Member 'VehicleInputComponent_Steering::Val' has a wrong offset!");
 
-// Function BrickRigs.DragStrip.Interact_StartRace
-// 0x0008 (0x0008 - 0x0000)
-struct DragStrip_Interact_StartRace final
+// Function BrickRigs.VehicleInputComponent.Throttle
+// 0x0004 (0x0004 - 0x0000)
+struct VehicleInputComponent_Throttle final
 {
 public:
-	class ABrickPlayerController*                 PC;                                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Val;                                               // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(DragStrip_Interact_StartRace) == 0x000008, "Wrong alignment on DragStrip_Interact_StartRace");
-static_assert(sizeof(DragStrip_Interact_StartRace) == 0x000008, "Wrong size on DragStrip_Interact_StartRace");
-static_assert(offsetof(DragStrip_Interact_StartRace, PC) == 0x000000, "Member 'DragStrip_Interact_StartRace::PC' has a wrong offset!");
+static_assert(alignof(VehicleInputComponent_Throttle) == 0x000004, "Wrong alignment on VehicleInputComponent_Throttle");
+static_assert(sizeof(VehicleInputComponent_Throttle) == 0x000004, "Wrong size on VehicleInputComponent_Throttle");
+static_assert(offsetof(VehicleInputComponent_Throttle, Val) == 0x000000, "Member 'VehicleInputComponent_Throttle::Val' has a wrong offset!");
 
-// Function BrickRigs.DragStrip.GetInteractionLocation
-// 0x000C (0x000C - 0x0000)
-struct DragStrip_GetInteractionLocation final
+// Function BrickRigs.VehicleInputComponent.ViewPitch
+// 0x0004 (0x0004 - 0x0000)
+struct VehicleInputComponent_ViewPitch final
 {
 public:
-	struct FVector                                ReturnValue;                                       // 0x0000(0x000C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Val;                                               // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(DragStrip_GetInteractionLocation) == 0x000004, "Wrong alignment on DragStrip_GetInteractionLocation");
-static_assert(sizeof(DragStrip_GetInteractionLocation) == 0x00000C, "Wrong size on DragStrip_GetInteractionLocation");
-static_assert(offsetof(DragStrip_GetInteractionLocation, ReturnValue) == 0x000000, "Member 'DragStrip_GetInteractionLocation::ReturnValue' has a wrong offset!");
+static_assert(alignof(VehicleInputComponent_ViewPitch) == 0x000004, "Wrong alignment on VehicleInputComponent_ViewPitch");
+static_assert(sizeof(VehicleInputComponent_ViewPitch) == 0x000004, "Wrong size on VehicleInputComponent_ViewPitch");
+static_assert(offsetof(VehicleInputComponent_ViewPitch, Val) == 0x000000, "Member 'VehicleInputComponent_ViewPitch::Val' has a wrong offset!");
+
+// Function BrickRigs.VehicleInputComponent.ViewYaw
+// 0x0004 (0x0004 - 0x0000)
+struct VehicleInputComponent_ViewYaw final
+{
+public:
+	float                                         Val;                                               // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(VehicleInputComponent_ViewYaw) == 0x000004, "Wrong alignment on VehicleInputComponent_ViewYaw");
+static_assert(sizeof(VehicleInputComponent_ViewYaw) == 0x000004, "Wrong size on VehicleInputComponent_ViewYaw");
+static_assert(offsetof(VehicleInputComponent_ViewYaw, Val) == 0x000000, "Member 'VehicleInputComponent_ViewYaw::Val' has a wrong offset!");
+
+// Function BrickRigs.VehicleInputComponent.GetCycleCameraModeValueText
+// 0x0018 (0x0018 - 0x0000)
+struct VehicleInputComponent_GetCycleCameraModeValueText final
+{
+public:
+	class FText                                   ReturnValue;                                       // 0x0000(0x0018)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(VehicleInputComponent_GetCycleCameraModeValueText) == 0x000008, "Wrong alignment on VehicleInputComponent_GetCycleCameraModeValueText");
+static_assert(sizeof(VehicleInputComponent_GetCycleCameraModeValueText) == 0x000018, "Wrong size on VehicleInputComponent_GetCycleCameraModeValueText");
+static_assert(offsetof(VehicleInputComponent_GetCycleCameraModeValueText, ReturnValue) == 0x000000, "Member 'VehicleInputComponent_GetCycleCameraModeValueText::ReturnValue' has a wrong offset!");
 
 // Function BrickRigs.DriverInputComponent.GetCycleTransmissionModeValueText
 // 0x0018 (0x0018 - 0x0000)
@@ -9086,84 +9002,66 @@ static_assert(alignof(DriverInputComponent_GetToggleAutoCounterSteeringValueText
 static_assert(sizeof(DriverInputComponent_GetToggleAutoCounterSteeringValueText) == 0x000018, "Wrong size on DriverInputComponent_GetToggleAutoCounterSteeringValueText");
 static_assert(offsetof(DriverInputComponent_GetToggleAutoCounterSteeringValueText, ReturnValue) == 0x000000, "Member 'DriverInputComponent_GetToggleAutoCounterSteeringValueText::ReturnValue' has a wrong offset!");
 
-// Function BrickRigs.Elevator.Interact_ElevatorDown
+// Function BrickRigs.EditorInputComponent.MoveForward
+// 0x0004 (0x0004 - 0x0000)
+struct EditorInputComponent_MoveForward final
+{
+public:
+	float                                         Val;                                               // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(EditorInputComponent_MoveForward) == 0x000004, "Wrong alignment on EditorInputComponent_MoveForward");
+static_assert(sizeof(EditorInputComponent_MoveForward) == 0x000004, "Wrong size on EditorInputComponent_MoveForward");
+static_assert(offsetof(EditorInputComponent_MoveForward, Val) == 0x000000, "Member 'EditorInputComponent_MoveForward::Val' has a wrong offset!");
+
+// Function BrickRigs.EditorInputComponent.MoveRight
+// 0x0004 (0x0004 - 0x0000)
+struct EditorInputComponent_MoveRight final
+{
+public:
+	float                                         Val;                                               // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(EditorInputComponent_MoveRight) == 0x000004, "Wrong alignment on EditorInputComponent_MoveRight");
+static_assert(sizeof(EditorInputComponent_MoveRight) == 0x000004, "Wrong size on EditorInputComponent_MoveRight");
+static_assert(offsetof(EditorInputComponent_MoveRight, Val) == 0x000000, "Member 'EditorInputComponent_MoveRight::Val' has a wrong offset!");
+
+// Function BrickRigs.EditorInputComponent.MoveUp
+// 0x0004 (0x0004 - 0x0000)
+struct EditorInputComponent_MoveUp final
+{
+public:
+	float                                         Val;                                               // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(EditorInputComponent_MoveUp) == 0x000004, "Wrong alignment on EditorInputComponent_MoveUp");
+static_assert(sizeof(EditorInputComponent_MoveUp) == 0x000004, "Wrong size on EditorInputComponent_MoveUp");
+static_assert(offsetof(EditorInputComponent_MoveUp, Val) == 0x000000, "Member 'EditorInputComponent_MoveUp::Val' has a wrong offset!");
+
+// Function BrickRigs.EnumPropertyWidget.InitializeItem
+// 0x0148 (0x0148 - 0x0000)
+struct EnumPropertyWidget_InitializeItem final
+{
+public:
+	int32                                         Item;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FBrickComboBoxItemParams               OutParams;                                         // 0x0008(0x0140)(Parm, OutParm, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(EnumPropertyWidget_InitializeItem) == 0x000008, "Wrong alignment on EnumPropertyWidget_InitializeItem");
+static_assert(sizeof(EnumPropertyWidget_InitializeItem) == 0x000148, "Wrong size on EnumPropertyWidget_InitializeItem");
+static_assert(offsetof(EnumPropertyWidget_InitializeItem, Item) == 0x000000, "Member 'EnumPropertyWidget_InitializeItem::Item' has a wrong offset!");
+static_assert(offsetof(EnumPropertyWidget_InitializeItem, OutParams) == 0x000008, "Member 'EnumPropertyWidget_InitializeItem::OutParams' has a wrong offset!");
+
+// Function BrickRigs.EnumPropertyWidget.OnItemSelected
 // 0x0008 (0x0008 - 0x0000)
-struct Elevator_Interact_ElevatorDown final
+struct EnumPropertyWidget_OnItemSelected final
 {
 public:
-	class ABrickPlayerController*                 PC;                                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Item;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EValueChangedEventType                        EventType;                                         // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(Elevator_Interact_ElevatorDown) == 0x000008, "Wrong alignment on Elevator_Interact_ElevatorDown");
-static_assert(sizeof(Elevator_Interact_ElevatorDown) == 0x000008, "Wrong size on Elevator_Interact_ElevatorDown");
-static_assert(offsetof(Elevator_Interact_ElevatorDown, PC) == 0x000000, "Member 'Elevator_Interact_ElevatorDown::PC' has a wrong offset!");
-
-// Function BrickRigs.Elevator.Interact_ElevatorUp
-// 0x0008 (0x0008 - 0x0000)
-struct Elevator_Interact_ElevatorUp final
-{
-public:
-	class ABrickPlayerController*                 PC;                                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(Elevator_Interact_ElevatorUp) == 0x000008, "Wrong alignment on Elevator_Interact_ElevatorUp");
-static_assert(sizeof(Elevator_Interact_ElevatorUp) == 0x000008, "Wrong size on Elevator_Interact_ElevatorUp");
-static_assert(offsetof(Elevator_Interact_ElevatorUp, PC) == 0x000000, "Member 'Elevator_Interact_ElevatorUp::PC' has a wrong offset!");
-
-// Function BrickRigs.Elevator.Interact_StopElevator
-// 0x0008 (0x0008 - 0x0000)
-struct Elevator_Interact_StopElevator final
-{
-public:
-	class ABrickPlayerController*                 PC;                                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(Elevator_Interact_StopElevator) == 0x000008, "Wrong alignment on Elevator_Interact_StopElevator");
-static_assert(sizeof(Elevator_Interact_StopElevator) == 0x000008, "Wrong size on Elevator_Interact_StopElevator");
-static_assert(offsetof(Elevator_Interact_StopElevator, PC) == 0x000000, "Member 'Elevator_Interact_StopElevator::PC' has a wrong offset!");
-
-// Function BrickRigs.Elevator.OnElevatorStateChanged
-// 0x000C (0x000C - 0x0000)
-struct Elevator_OnElevatorStateChanged final
-{
-public:
-	struct FElevatorState                         NewState;                                          // 0x0000(0x000C)(ConstParm, Parm, NoDestructor, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(Elevator_OnElevatorStateChanged) == 0x000004, "Wrong alignment on Elevator_OnElevatorStateChanged");
-static_assert(sizeof(Elevator_OnElevatorStateChanged) == 0x00000C, "Wrong size on Elevator_OnElevatorStateChanged");
-static_assert(offsetof(Elevator_OnElevatorStateChanged, NewState) == 0x000000, "Member 'Elevator_OnElevatorStateChanged::NewState' has a wrong offset!");
-
-// Function BrickRigs.Elevator.SetElevatorDirection
-// 0x0001 (0x0001 - 0x0000)
-struct Elevator_SetElevatorDirection final
-{
-public:
-	EElevatorDirection                            Dir;                                               // 0x0000(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(Elevator_SetElevatorDirection) == 0x000001, "Wrong alignment on Elevator_SetElevatorDirection");
-static_assert(sizeof(Elevator_SetElevatorDirection) == 0x000001, "Wrong size on Elevator_SetElevatorDirection");
-static_assert(offsetof(Elevator_SetElevatorDirection, Dir) == 0x000000, "Member 'Elevator_SetElevatorDirection::Dir' has a wrong offset!");
-
-// Function BrickRigs.Elevator.SetElevatorState
-// 0x000C (0x000C - 0x0000)
-struct Elevator_SetElevatorState final
-{
-public:
-	struct FElevatorState                         NewState;                                          // 0x0000(0x000C)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(Elevator_SetElevatorState) == 0x000004, "Wrong alignment on Elevator_SetElevatorState");
-static_assert(sizeof(Elevator_SetElevatorState) == 0x00000C, "Wrong size on Elevator_SetElevatorState");
-static_assert(offsetof(Elevator_SetElevatorState, NewState) == 0x000000, "Member 'Elevator_SetElevatorState::NewState' has a wrong offset!");
-
-// Function BrickRigs.Elevator.GetInteractionLocation
-// 0x0010 (0x0010 - 0x0000)
-struct Elevator_GetInteractionLocation final
-{
-public:
-	int32                                         Index_0;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                ReturnValue;                                       // 0x0004(0x000C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(Elevator_GetInteractionLocation) == 0x000004, "Wrong alignment on Elevator_GetInteractionLocation");
-static_assert(sizeof(Elevator_GetInteractionLocation) == 0x000010, "Wrong size on Elevator_GetInteractionLocation");
-static_assert(offsetof(Elevator_GetInteractionLocation, Index_0) == 0x000000, "Member 'Elevator_GetInteractionLocation::Index_0' has a wrong offset!");
-static_assert(offsetof(Elevator_GetInteractionLocation, ReturnValue) == 0x000004, "Member 'Elevator_GetInteractionLocation::ReturnValue' has a wrong offset!");
+static_assert(alignof(EnumPropertyWidget_OnItemSelected) == 0x000004, "Wrong alignment on EnumPropertyWidget_OnItemSelected");
+static_assert(sizeof(EnumPropertyWidget_OnItemSelected) == 0x000008, "Wrong size on EnumPropertyWidget_OnItemSelected");
+static_assert(offsetof(EnumPropertyWidget_OnItemSelected, Item) == 0x000000, "Member 'EnumPropertyWidget_OnItemSelected::Item' has a wrong offset!");
+static_assert(offsetof(EnumPropertyWidget_OnItemSelected, EventType) == 0x000004, "Member 'EnumPropertyWidget_OnItemSelected::EventType' has a wrong offset!");
 
 // Function BrickRigs.FadingPanelWidget.FadeIn
 // 0x0001 (0x0001 - 0x0000)
@@ -9409,28 +9307,6 @@ static_assert(alignof(Firearm_IsFiring) == 0x000001, "Wrong alignment on Firearm
 static_assert(sizeof(Firearm_IsFiring) == 0x000001, "Wrong size on Firearm_IsFiring");
 static_assert(offsetof(Firearm_IsFiring, ReturnValue) == 0x000000, "Member 'Firearm_IsFiring::ReturnValue' has a wrong offset!");
 
-// Function BrickRigs.FirearmComponent.OnRep_FirearmState
-// 0x0006 (0x0006 - 0x0000)
-struct FirearmComponent_OnRep_FirearmState final
-{
-public:
-	struct FFirearmState                          PrevState;                                         // 0x0000(0x0006)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FirearmComponent_OnRep_FirearmState) == 0x000002, "Wrong alignment on FirearmComponent_OnRep_FirearmState");
-static_assert(sizeof(FirearmComponent_OnRep_FirearmState) == 0x000006, "Wrong size on FirearmComponent_OnRep_FirearmState");
-static_assert(offsetof(FirearmComponent_OnRep_FirearmState, PrevState) == 0x000000, "Member 'FirearmComponent_OnRep_FirearmState::PrevState' has a wrong offset!");
-
-// Function BrickRigs.PlacableObjectWidget.UpdateIsFilterWidget
-// 0x0001 (0x0001 - 0x0000)
-struct PlacableObjectWidget_UpdateIsFilterWidget final
-{
-public:
-	bool                                          bNewIsFilter;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(PlacableObjectWidget_UpdateIsFilterWidget) == 0x000001, "Wrong alignment on PlacableObjectWidget_UpdateIsFilterWidget");
-static_assert(sizeof(PlacableObjectWidget_UpdateIsFilterWidget) == 0x000001, "Wrong size on PlacableObjectWidget_UpdateIsFilterWidget");
-static_assert(offsetof(PlacableObjectWidget_UpdateIsFilterWidget, bNewIsFilter) == 0x000000, "Member 'PlacableObjectWidget_UpdateIsFilterWidget::bNewIsFilter' has a wrong offset!");
-
 // Function BrickRigs.PingIndicatorWidget.SetColorStyle
 // 0x0001 (0x0001 - 0x0000)
 struct PingIndicatorWidget_SetColorStyle final
@@ -9508,22 +9384,16 @@ static_assert(alignof(PingIndicatorWidget_UpdatePing) == 0x000004, "Wrong alignm
 static_assert(sizeof(PingIndicatorWidget_UpdatePing) == 0x000004, "Wrong size on PingIndicatorWidget_UpdatePing");
 static_assert(offsetof(PingIndicatorWidget_UpdatePing, InPing) == 0x000000, "Member 'PingIndicatorWidget_UpdatePing::InPing' has a wrong offset!");
 
-// Function BrickRigs.PlayerIconWidget.UpdatePlayerIcon
-// 0x0004 (0x0004 - 0x0000)
-struct PlayerIconWidget_UpdatePlayerIcon final
+// Function BrickRigs.FirearmComponent.OnRep_FirearmState
+// 0x0006 (0x0006 - 0x0000)
+struct FirearmComponent_OnRep_FirearmState final
 {
 public:
-	bool                                          bNewIsLocalPlayer;                                 // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bNewIsTeamLeader;                                  // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ECharacterStateOfHealth                       NewStateOfHealth;                                  // 0x0002(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bNewCanBeDamaged;                                  // 0x0003(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FFirearmState                          PrevState;                                         // 0x0000(0x0006)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(PlayerIconWidget_UpdatePlayerIcon) == 0x000001, "Wrong alignment on PlayerIconWidget_UpdatePlayerIcon");
-static_assert(sizeof(PlayerIconWidget_UpdatePlayerIcon) == 0x000004, "Wrong size on PlayerIconWidget_UpdatePlayerIcon");
-static_assert(offsetof(PlayerIconWidget_UpdatePlayerIcon, bNewIsLocalPlayer) == 0x000000, "Member 'PlayerIconWidget_UpdatePlayerIcon::bNewIsLocalPlayer' has a wrong offset!");
-static_assert(offsetof(PlayerIconWidget_UpdatePlayerIcon, bNewIsTeamLeader) == 0x000001, "Member 'PlayerIconWidget_UpdatePlayerIcon::bNewIsTeamLeader' has a wrong offset!");
-static_assert(offsetof(PlayerIconWidget_UpdatePlayerIcon, NewStateOfHealth) == 0x000002, "Member 'PlayerIconWidget_UpdatePlayerIcon::NewStateOfHealth' has a wrong offset!");
-static_assert(offsetof(PlayerIconWidget_UpdatePlayerIcon, bNewCanBeDamaged) == 0x000003, "Member 'PlayerIconWidget_UpdatePlayerIcon::bNewCanBeDamaged' has a wrong offset!");
+static_assert(alignof(FirearmComponent_OnRep_FirearmState) == 0x000002, "Wrong alignment on FirearmComponent_OnRep_FirearmState");
+static_assert(sizeof(FirearmComponent_OnRep_FirearmState) == 0x000006, "Wrong size on FirearmComponent_OnRep_FirearmState");
+static_assert(offsetof(FirearmComponent_OnRep_FirearmState, PrevState) == 0x000000, "Member 'FirearmComponent_OnRep_FirearmState::PrevState' has a wrong offset!");
 
 // Function BrickRigs.PopupContainerWidget.AddPopupWidget
 // 0x0008 (0x0008 - 0x0000)
@@ -9626,59 +9496,16 @@ static_assert(alignof(PopupContainerWidget_UpdateTitleText) == 0x000008, "Wrong 
 static_assert(sizeof(PopupContainerWidget_UpdateTitleText) == 0x000018, "Wrong size on PopupContainerWidget_UpdateTitleText");
 static_assert(offsetof(PopupContainerWidget_UpdateTitleText, NewTitle) == 0x000000, "Member 'PopupContainerWidget_UpdateTitleText::NewTitle' has a wrong offset!");
 
-// Function BrickRigs.PropertyListInterface.AddPropertyContainerWidget
-// 0x0008 (0x0008 - 0x0000)
-struct PropertyListInterface_AddPropertyContainerWidget final
+// Function BrickRigs.PlacableObjectWidget.UpdateIsFilterWidget
+// 0x0001 (0x0001 - 0x0000)
+struct PlacableObjectWidget_UpdateIsFilterWidget final
 {
 public:
-	class UPropertyContainerWidget*               Widget;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bNewIsFilter;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(PropertyListInterface_AddPropertyContainerWidget) == 0x000008, "Wrong alignment on PropertyListInterface_AddPropertyContainerWidget");
-static_assert(sizeof(PropertyListInterface_AddPropertyContainerWidget) == 0x000008, "Wrong size on PropertyListInterface_AddPropertyContainerWidget");
-static_assert(offsetof(PropertyListInterface_AddPropertyContainerWidget, Widget) == 0x000000, "Member 'PropertyListInterface_AddPropertyContainerWidget::Widget' has a wrong offset!");
-
-// Function BrickRigs.PropertyListInterface.UpdatePropertyContainerWidgetSlot
-// 0x0010 (0x0010 - 0x0000)
-struct PropertyListInterface_UpdatePropertyContainerWidgetSlot final
-{
-public:
-	class UPropertyContainerWidget*               Widget;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Index_0;                                           // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         NumPerRow;                                         // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(PropertyListInterface_UpdatePropertyContainerWidgetSlot) == 0x000008, "Wrong alignment on PropertyListInterface_UpdatePropertyContainerWidgetSlot");
-static_assert(sizeof(PropertyListInterface_UpdatePropertyContainerWidgetSlot) == 0x000010, "Wrong size on PropertyListInterface_UpdatePropertyContainerWidgetSlot");
-static_assert(offsetof(PropertyListInterface_UpdatePropertyContainerWidgetSlot, Widget) == 0x000000, "Member 'PropertyListInterface_UpdatePropertyContainerWidgetSlot::Widget' has a wrong offset!");
-static_assert(offsetof(PropertyListInterface_UpdatePropertyContainerWidgetSlot, Index_0) == 0x000008, "Member 'PropertyListInterface_UpdatePropertyContainerWidgetSlot::Index_0' has a wrong offset!");
-static_assert(offsetof(PropertyListInterface_UpdatePropertyContainerWidgetSlot, NumPerRow) == 0x00000C, "Member 'PropertyListInterface_UpdatePropertyContainerWidgetSlot::NumPerRow' has a wrong offset!");
-
-// Function BrickRigs.ObjectPropertyWidget.InitializeItem
-// 0x0148 (0x0148 - 0x0000)
-struct ObjectPropertyWidget_InitializeItem final
-{
-public:
-	int32                                         Item;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FBrickComboBoxItemParams               OutParams;                                         // 0x0008(0x0140)(Parm, OutParm, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(ObjectPropertyWidget_InitializeItem) == 0x000008, "Wrong alignment on ObjectPropertyWidget_InitializeItem");
-static_assert(sizeof(ObjectPropertyWidget_InitializeItem) == 0x000148, "Wrong size on ObjectPropertyWidget_InitializeItem");
-static_assert(offsetof(ObjectPropertyWidget_InitializeItem, Item) == 0x000000, "Member 'ObjectPropertyWidget_InitializeItem::Item' has a wrong offset!");
-static_assert(offsetof(ObjectPropertyWidget_InitializeItem, OutParams) == 0x000008, "Member 'ObjectPropertyWidget_InitializeItem::OutParams' has a wrong offset!");
-
-// Function BrickRigs.ObjectPropertyWidget.OnItemSelected
-// 0x0008 (0x0008 - 0x0000)
-struct ObjectPropertyWidget_OnItemSelected final
-{
-public:
-	int32                                         Item;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EValueChangedEventType                        EventType;                                         // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(ObjectPropertyWidget_OnItemSelected) == 0x000004, "Wrong alignment on ObjectPropertyWidget_OnItemSelected");
-static_assert(sizeof(ObjectPropertyWidget_OnItemSelected) == 0x000008, "Wrong size on ObjectPropertyWidget_OnItemSelected");
-static_assert(offsetof(ObjectPropertyWidget_OnItemSelected, Item) == 0x000000, "Member 'ObjectPropertyWidget_OnItemSelected::Item' has a wrong offset!");
-static_assert(offsetof(ObjectPropertyWidget_OnItemSelected, EventType) == 0x000004, "Member 'ObjectPropertyWidget_OnItemSelected::EventType' has a wrong offset!");
+static_assert(alignof(PlacableObjectWidget_UpdateIsFilterWidget) == 0x000001, "Wrong alignment on PlacableObjectWidget_UpdateIsFilterWidget");
+static_assert(sizeof(PlacableObjectWidget_UpdateIsFilterWidget) == 0x000001, "Wrong size on PlacableObjectWidget_UpdateIsFilterWidget");
+static_assert(offsetof(PlacableObjectWidget_UpdateIsFilterWidget, bNewIsFilter) == 0x000000, "Member 'PlacableObjectWidget_UpdateIsFilterWidget::bNewIsFilter' has a wrong offset!");
 
 // Function BrickRigs.PlayersMenuWidget.UpdateCanKickPlayer
 // 0x0001 (0x0001 - 0x0000)
@@ -9746,19 +9573,353 @@ static_assert(alignof(PropertyContainerInputComponent_GetSelectByValueEnabled) =
 static_assert(sizeof(PropertyContainerInputComponent_GetSelectByValueEnabled) == 0x000001, "Wrong size on PropertyContainerInputComponent_GetSelectByValueEnabled");
 static_assert(offsetof(PropertyContainerInputComponent_GetSelectByValueEnabled, ReturnValue) == 0x000000, "Member 'PropertyContainerInputComponent_GetSelectByValueEnabled::ReturnValue' has a wrong offset!");
 
-// Function BrickRigs.FuelTank.ShouldSpawnLeakOnHit
-// 0x008C (0x008C - 0x0000)
-struct FuelTank_ShouldSpawnLeakOnHit final
+// Function BrickRigs.FlashSequenceItemWidget.UpdateIsLit
+// 0x0001 (0x0001 - 0x0000)
+struct FlashSequenceItemWidget_UpdateIsLit final
 {
 public:
-	struct FHitResult                             Hit;                                               // 0x0000(0x0088)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0088(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_89[0x3];                                       // 0x0089(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	bool                                          bNewLit;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(FuelTank_ShouldSpawnLeakOnHit) == 0x000004, "Wrong alignment on FuelTank_ShouldSpawnLeakOnHit");
-static_assert(sizeof(FuelTank_ShouldSpawnLeakOnHit) == 0x00008C, "Wrong size on FuelTank_ShouldSpawnLeakOnHit");
-static_assert(offsetof(FuelTank_ShouldSpawnLeakOnHit, Hit) == 0x000000, "Member 'FuelTank_ShouldSpawnLeakOnHit::Hit' has a wrong offset!");
-static_assert(offsetof(FuelTank_ShouldSpawnLeakOnHit, ReturnValue) == 0x000088, "Member 'FuelTank_ShouldSpawnLeakOnHit::ReturnValue' has a wrong offset!");
+static_assert(alignof(FlashSequenceItemWidget_UpdateIsLit) == 0x000001, "Wrong alignment on FlashSequenceItemWidget_UpdateIsLit");
+static_assert(sizeof(FlashSequenceItemWidget_UpdateIsLit) == 0x000001, "Wrong size on FlashSequenceItemWidget_UpdateIsLit");
+static_assert(offsetof(FlashSequenceItemWidget_UpdateIsLit, bNewLit) == 0x000000, "Member 'FlashSequenceItemWidget_UpdateIsLit::bNewLit' has a wrong offset!");
+
+// Function BrickRigs.PlayerIconWidget.UpdatePlayerIcon
+// 0x0004 (0x0004 - 0x0000)
+struct PlayerIconWidget_UpdatePlayerIcon final
+{
+public:
+	bool                                          bNewIsLocalPlayer;                                 // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bNewIsTeamLeader;                                  // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ECharacterStateOfHealth                       NewStateOfHealth;                                  // 0x0002(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bNewCanBeDamaged;                                  // 0x0003(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(PlayerIconWidget_UpdatePlayerIcon) == 0x000001, "Wrong alignment on PlayerIconWidget_UpdatePlayerIcon");
+static_assert(sizeof(PlayerIconWidget_UpdatePlayerIcon) == 0x000004, "Wrong size on PlayerIconWidget_UpdatePlayerIcon");
+static_assert(offsetof(PlayerIconWidget_UpdatePlayerIcon, bNewIsLocalPlayer) == 0x000000, "Member 'PlayerIconWidget_UpdatePlayerIcon::bNewIsLocalPlayer' has a wrong offset!");
+static_assert(offsetof(PlayerIconWidget_UpdatePlayerIcon, bNewIsTeamLeader) == 0x000001, "Member 'PlayerIconWidget_UpdatePlayerIcon::bNewIsTeamLeader' has a wrong offset!");
+static_assert(offsetof(PlayerIconWidget_UpdatePlayerIcon, NewStateOfHealth) == 0x000002, "Member 'PlayerIconWidget_UpdatePlayerIcon::NewStateOfHealth' has a wrong offset!");
+static_assert(offsetof(PlayerIconWidget_UpdatePlayerIcon, bNewCanBeDamaged) == 0x000003, "Member 'PlayerIconWidget_UpdatePlayerIcon::bNewCanBeDamaged' has a wrong offset!");
+
+// Function BrickRigs.PropertiesPanelWidget.AddCategoryWidget
+// 0x0010 (0x0010 - 0x0000)
+struct PropertiesPanelWidget_AddCategoryWidget final
+{
+public:
+	class UPropertyCategoryWidget*                Widget;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Index_0;                                           // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(PropertiesPanelWidget_AddCategoryWidget) == 0x000008, "Wrong alignment on PropertiesPanelWidget_AddCategoryWidget");
+static_assert(sizeof(PropertiesPanelWidget_AddCategoryWidget) == 0x000010, "Wrong size on PropertiesPanelWidget_AddCategoryWidget");
+static_assert(offsetof(PropertiesPanelWidget_AddCategoryWidget, Widget) == 0x000000, "Member 'PropertiesPanelWidget_AddCategoryWidget::Widget' has a wrong offset!");
+static_assert(offsetof(PropertiesPanelWidget_AddCategoryWidget, Index_0) == 0x000008, "Member 'PropertiesPanelWidget_AddCategoryWidget::Index_0' has a wrong offset!");
+
+// Function BrickRigs.PropertiesPanelWidget.AddProperties
+// 0x0030 (0x0030 - 0x0000)
+struct PropertiesPanelWidget_AddProperties final
+{
+public:
+	TArray<class UObject*>                        InContainers;                                      // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
+	struct FBrickPropertyReflectionFilter         InFilter;                                          // 0x0010(0x0020)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(PropertiesPanelWidget_AddProperties) == 0x000008, "Wrong alignment on PropertiesPanelWidget_AddProperties");
+static_assert(sizeof(PropertiesPanelWidget_AddProperties) == 0x000030, "Wrong size on PropertiesPanelWidget_AddProperties");
+static_assert(offsetof(PropertiesPanelWidget_AddProperties, InContainers) == 0x000000, "Member 'PropertiesPanelWidget_AddProperties::InContainers' has a wrong offset!");
+static_assert(offsetof(PropertiesPanelWidget_AddProperties, InFilter) == 0x000010, "Member 'PropertiesPanelWidget_AddProperties::InFilter' has a wrong offset!");
+
+// Function BrickRigs.FluMathStatics.AxisToIndex
+// 0x0008 (0x0008 - 0x0000)
+struct FluMathStatics_AxisToIndex final
+{
+public:
+	EAxis                                         Axis;                                              // 0x0000(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FluMathStatics_AxisToIndex) == 0x000004, "Wrong alignment on FluMathStatics_AxisToIndex");
+static_assert(sizeof(FluMathStatics_AxisToIndex) == 0x000008, "Wrong size on FluMathStatics_AxisToIndex");
+static_assert(offsetof(FluMathStatics_AxisToIndex, Axis) == 0x000000, "Member 'FluMathStatics_AxisToIndex::Axis' has a wrong offset!");
+static_assert(offsetof(FluMathStatics_AxisToIndex, ReturnValue) == 0x000004, "Member 'FluMathStatics_AxisToIndex::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.FluMathStatics.BitmaskHasFlag
+// 0x0008 (0x0008 - 0x0000)
+struct FluMathStatics_BitmaskHasFlag final
+{
+public:
+	int32                                         BitMask;                                           // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Index_0;                                           // 0x0004(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0005(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_6[0x2];                                        // 0x0006(0x0002)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FluMathStatics_BitmaskHasFlag) == 0x000004, "Wrong alignment on FluMathStatics_BitmaskHasFlag");
+static_assert(sizeof(FluMathStatics_BitmaskHasFlag) == 0x000008, "Wrong size on FluMathStatics_BitmaskHasFlag");
+static_assert(offsetof(FluMathStatics_BitmaskHasFlag, BitMask) == 0x000000, "Member 'FluMathStatics_BitmaskHasFlag::BitMask' has a wrong offset!");
+static_assert(offsetof(FluMathStatics_BitmaskHasFlag, Index_0) == 0x000004, "Member 'FluMathStatics_BitmaskHasFlag::Index_0' has a wrong offset!");
+static_assert(offsetof(FluMathStatics_BitmaskHasFlag, ReturnValue) == 0x000005, "Member 'FluMathStatics_BitmaskHasFlag::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.FluMathStatics.BitmaskSetFlag
+// 0x000C (0x000C - 0x0000)
+struct FluMathStatics_BitmaskSetFlag final
+{
+public:
+	int32                                         BitMask;                                           // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Index_0;                                           // 0x0004(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bFlag;                                             // 0x0005(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_6[0x2];                                        // 0x0006(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FluMathStatics_BitmaskSetFlag) == 0x000004, "Wrong alignment on FluMathStatics_BitmaskSetFlag");
+static_assert(sizeof(FluMathStatics_BitmaskSetFlag) == 0x00000C, "Wrong size on FluMathStatics_BitmaskSetFlag");
+static_assert(offsetof(FluMathStatics_BitmaskSetFlag, BitMask) == 0x000000, "Member 'FluMathStatics_BitmaskSetFlag::BitMask' has a wrong offset!");
+static_assert(offsetof(FluMathStatics_BitmaskSetFlag, Index_0) == 0x000004, "Member 'FluMathStatics_BitmaskSetFlag::Index_0' has a wrong offset!");
+static_assert(offsetof(FluMathStatics_BitmaskSetFlag, bFlag) == 0x000005, "Member 'FluMathStatics_BitmaskSetFlag::bFlag' has a wrong offset!");
+static_assert(offsetof(FluMathStatics_BitmaskSetFlag, ReturnValue) == 0x000008, "Member 'FluMathStatics_BitmaskSetFlag::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.FluMathStatics.IndexToAxis
+// 0x0008 (0x0008 - 0x0000)
+struct FluMathStatics_IndexToAxis final
+{
+public:
+	int32                                         Index_0;                                           // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EAxis                                         ReturnValue;                                       // 0x0004(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FluMathStatics_IndexToAxis) == 0x000004, "Wrong alignment on FluMathStatics_IndexToAxis");
+static_assert(sizeof(FluMathStatics_IndexToAxis) == 0x000008, "Wrong size on FluMathStatics_IndexToAxis");
+static_assert(offsetof(FluMathStatics_IndexToAxis, Index_0) == 0x000000, "Member 'FluMathStatics_IndexToAxis::Index_0' has a wrong offset!");
+static_assert(offsetof(FluMathStatics_IndexToAxis, ReturnValue) == 0x000004, "Member 'FluMathStatics_IndexToAxis::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.FluMathStatics.IntegrateEllipseArcLength
+// 0x0014 (0x0014 - 0x0000)
+struct FluMathStatics_IntegrateEllipseArcLength final
+{
+public:
+	struct FVector2D                              Radius;                                            // 0x0000(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AngleRad;                                          // 0x0008(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Steps;                                             // 0x000C(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FluMathStatics_IntegrateEllipseArcLength) == 0x000004, "Wrong alignment on FluMathStatics_IntegrateEllipseArcLength");
+static_assert(sizeof(FluMathStatics_IntegrateEllipseArcLength) == 0x000014, "Wrong size on FluMathStatics_IntegrateEllipseArcLength");
+static_assert(offsetof(FluMathStatics_IntegrateEllipseArcLength, Radius) == 0x000000, "Member 'FluMathStatics_IntegrateEllipseArcLength::Radius' has a wrong offset!");
+static_assert(offsetof(FluMathStatics_IntegrateEllipseArcLength, AngleRad) == 0x000008, "Member 'FluMathStatics_IntegrateEllipseArcLength::AngleRad' has a wrong offset!");
+static_assert(offsetof(FluMathStatics_IntegrateEllipseArcLength, Steps) == 0x00000C, "Member 'FluMathStatics_IntegrateEllipseArcLength::Steps' has a wrong offset!");
+static_assert(offsetof(FluMathStatics_IntegrateEllipseArcLength, ReturnValue) == 0x000010, "Member 'FluMathStatics_IntegrateEllipseArcLength::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.FluMathStatics.IsAxisSignedPositive
+// 0x0002 (0x0002 - 0x0000)
+struct FluMathStatics_IsAxisSignedPositive final
+{
+public:
+	EFluAxisSigned                                Axis;                                              // 0x0000(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0001(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FluMathStatics_IsAxisSignedPositive) == 0x000001, "Wrong alignment on FluMathStatics_IsAxisSignedPositive");
+static_assert(sizeof(FluMathStatics_IsAxisSignedPositive) == 0x000002, "Wrong size on FluMathStatics_IsAxisSignedPositive");
+static_assert(offsetof(FluMathStatics_IsAxisSignedPositive, Axis) == 0x000000, "Member 'FluMathStatics_IsAxisSignedPositive::Axis' has a wrong offset!");
+static_assert(offsetof(FluMathStatics_IsAxisSignedPositive, ReturnValue) == 0x000001, "Member 'FluMathStatics_IsAxisSignedPositive::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.FluMathStatics.MakeAxisSigned
+// 0x0003 (0x0003 - 0x0000)
+struct FluMathStatics_MakeAxisSigned final
+{
+public:
+	EAxis                                         Axis;                                              // 0x0000(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bPositiveAxis;                                     // 0x0001(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EFluAxisSigned                                ReturnValue;                                       // 0x0002(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FluMathStatics_MakeAxisSigned) == 0x000001, "Wrong alignment on FluMathStatics_MakeAxisSigned");
+static_assert(sizeof(FluMathStatics_MakeAxisSigned) == 0x000003, "Wrong size on FluMathStatics_MakeAxisSigned");
+static_assert(offsetof(FluMathStatics_MakeAxisSigned, Axis) == 0x000000, "Member 'FluMathStatics_MakeAxisSigned::Axis' has a wrong offset!");
+static_assert(offsetof(FluMathStatics_MakeAxisSigned, bPositiveAxis) == 0x000001, "Member 'FluMathStatics_MakeAxisSigned::bPositiveAxis' has a wrong offset!");
+static_assert(offsetof(FluMathStatics_MakeAxisSigned, ReturnValue) == 0x000002, "Member 'FluMathStatics_MakeAxisSigned::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.FluMathStatics.MakeBitmask
+// 0x0008 (0x0008 - 0x0000)
+struct FluMathStatics_MakeBitmask final
+{
+public:
+	uint8                                         Index_0;                                           // 0x0000(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FluMathStatics_MakeBitmask) == 0x000004, "Wrong alignment on FluMathStatics_MakeBitmask");
+static_assert(sizeof(FluMathStatics_MakeBitmask) == 0x000008, "Wrong size on FluMathStatics_MakeBitmask");
+static_assert(offsetof(FluMathStatics_MakeBitmask, Index_0) == 0x000000, "Member 'FluMathStatics_MakeBitmask::Index_0' has a wrong offset!");
+static_assert(offsetof(FluMathStatics_MakeBitmask, ReturnValue) == 0x000004, "Member 'FluMathStatics_MakeBitmask::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.FluMathStatics.QuatToNiceRotator
+// 0x0020 (0x0020 - 0x0000)
+struct FluMathStatics_QuatToNiceRotator final
+{
+public:
+	struct FQuat                                  Quat;                                              // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	struct FRotator                               ReturnValue;                                       // 0x0010(0x000C)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FluMathStatics_QuatToNiceRotator) == 0x000010, "Wrong alignment on FluMathStatics_QuatToNiceRotator");
+static_assert(sizeof(FluMathStatics_QuatToNiceRotator) == 0x000020, "Wrong size on FluMathStatics_QuatToNiceRotator");
+static_assert(offsetof(FluMathStatics_QuatToNiceRotator, Quat) == 0x000000, "Member 'FluMathStatics_QuatToNiceRotator::Quat' has a wrong offset!");
+static_assert(offsetof(FluMathStatics_QuatToNiceRotator, ReturnValue) == 0x000010, "Member 'FluMathStatics_QuatToNiceRotator::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.FluMathStatics.RemapAxisLockAxis
+// 0x0003 (0x0003 - 0x0000)
+struct FluMathStatics_RemapAxisLockAxis final
+{
+public:
+	EFluAxisLock                                  AxisLock;                                          // 0x0000(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EAxis                                         Axis;                                              // 0x0001(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EAxis                                         ReturnValue;                                       // 0x0002(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FluMathStatics_RemapAxisLockAxis) == 0x000001, "Wrong alignment on FluMathStatics_RemapAxisLockAxis");
+static_assert(sizeof(FluMathStatics_RemapAxisLockAxis) == 0x000003, "Wrong size on FluMathStatics_RemapAxisLockAxis");
+static_assert(offsetof(FluMathStatics_RemapAxisLockAxis, AxisLock) == 0x000000, "Member 'FluMathStatics_RemapAxisLockAxis::AxisLock' has a wrong offset!");
+static_assert(offsetof(FluMathStatics_RemapAxisLockAxis, Axis) == 0x000001, "Member 'FluMathStatics_RemapAxisLockAxis::Axis' has a wrong offset!");
+static_assert(offsetof(FluMathStatics_RemapAxisLockAxis, ReturnValue) == 0x000002, "Member 'FluMathStatics_RemapAxisLockAxis::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.FluMathStatics.RemapAxisLockIndex
+// 0x000C (0x000C - 0x0000)
+struct FluMathStatics_RemapAxisLockIndex final
+{
+public:
+	EFluAxisLock                                  AxisLock;                                          // 0x0000(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         AxisIndex;                                         // 0x0004(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FluMathStatics_RemapAxisLockIndex) == 0x000004, "Wrong alignment on FluMathStatics_RemapAxisLockIndex");
+static_assert(sizeof(FluMathStatics_RemapAxisLockIndex) == 0x00000C, "Wrong size on FluMathStatics_RemapAxisLockIndex");
+static_assert(offsetof(FluMathStatics_RemapAxisLockIndex, AxisLock) == 0x000000, "Member 'FluMathStatics_RemapAxisLockIndex::AxisLock' has a wrong offset!");
+static_assert(offsetof(FluMathStatics_RemapAxisLockIndex, AxisIndex) == 0x000004, "Member 'FluMathStatics_RemapAxisLockIndex::AxisIndex' has a wrong offset!");
+static_assert(offsetof(FluMathStatics_RemapAxisLockIndex, ReturnValue) == 0x000008, "Member 'FluMathStatics_RemapAxisLockIndex::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.FluMathStatics.RotateVector2D90
+// 0x0014 (0x0014 - 0x0000)
+struct FluMathStatics_RotateVector2D90 final
+{
+public:
+	struct FVector2D                              Vector;                                            // 0x0000(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         NumFlips;                                          // 0x0008(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector2D                              ReturnValue;                                       // 0x000C(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FluMathStatics_RotateVector2D90) == 0x000004, "Wrong alignment on FluMathStatics_RotateVector2D90");
+static_assert(sizeof(FluMathStatics_RotateVector2D90) == 0x000014, "Wrong size on FluMathStatics_RotateVector2D90");
+static_assert(offsetof(FluMathStatics_RotateVector2D90, Vector) == 0x000000, "Member 'FluMathStatics_RotateVector2D90::Vector' has a wrong offset!");
+static_assert(offsetof(FluMathStatics_RotateVector2D90, NumFlips) == 0x000008, "Member 'FluMathStatics_RotateVector2D90::NumFlips' has a wrong offset!");
+static_assert(offsetof(FluMathStatics_RotateVector2D90, ReturnValue) == 0x00000C, "Member 'FluMathStatics_RotateVector2D90::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.FluMathStatics.SplitAxisSigned
+// 0x0003 (0x0003 - 0x0000)
+struct FluMathStatics_SplitAxisSigned final
+{
+public:
+	EFluAxisSigned                                Axis;                                              // 0x0000(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EAxis                                         OutAxis;                                           // 0x0001(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bOutPositiveAxis;                                  // 0x0002(0x0001)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FluMathStatics_SplitAxisSigned) == 0x000001, "Wrong alignment on FluMathStatics_SplitAxisSigned");
+static_assert(sizeof(FluMathStatics_SplitAxisSigned) == 0x000003, "Wrong size on FluMathStatics_SplitAxisSigned");
+static_assert(offsetof(FluMathStatics_SplitAxisSigned, Axis) == 0x000000, "Member 'FluMathStatics_SplitAxisSigned::Axis' has a wrong offset!");
+static_assert(offsetof(FluMathStatics_SplitAxisSigned, OutAxis) == 0x000001, "Member 'FluMathStatics_SplitAxisSigned::OutAxis' has a wrong offset!");
+static_assert(offsetof(FluMathStatics_SplitAxisSigned, bOutPositiveAxis) == 0x000002, "Member 'FluMathStatics_SplitAxisSigned::bOutPositiveAxis' has a wrong offset!");
+
+// Function BrickRigs.FluMathStatics.Vector2DAngle2Deg
+// 0x0014 (0x0014 - 0x0000)
+struct FluMathStatics_Vector2DAngle2Deg final
+{
+public:
+	struct FVector2D                              A;                                                 // 0x0000(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector2D                              B;                                                 // 0x0008(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FluMathStatics_Vector2DAngle2Deg) == 0x000004, "Wrong alignment on FluMathStatics_Vector2DAngle2Deg");
+static_assert(sizeof(FluMathStatics_Vector2DAngle2Deg) == 0x000014, "Wrong size on FluMathStatics_Vector2DAngle2Deg");
+static_assert(offsetof(FluMathStatics_Vector2DAngle2Deg, A) == 0x000000, "Member 'FluMathStatics_Vector2DAngle2Deg::A' has a wrong offset!");
+static_assert(offsetof(FluMathStatics_Vector2DAngle2Deg, B) == 0x000008, "Member 'FluMathStatics_Vector2DAngle2Deg::B' has a wrong offset!");
+static_assert(offsetof(FluMathStatics_Vector2DAngle2Deg, ReturnValue) == 0x000010, "Member 'FluMathStatics_Vector2DAngle2Deg::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.FluMathStatics.Vector2DAngle2Rad
+// 0x0014 (0x0014 - 0x0000)
+struct FluMathStatics_Vector2DAngle2Rad final
+{
+public:
+	struct FVector2D                              A;                                                 // 0x0000(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector2D                              B;                                                 // 0x0008(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ReturnValue;                                       // 0x0010(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FluMathStatics_Vector2DAngle2Rad) == 0x000004, "Wrong alignment on FluMathStatics_Vector2DAngle2Rad");
+static_assert(sizeof(FluMathStatics_Vector2DAngle2Rad) == 0x000014, "Wrong size on FluMathStatics_Vector2DAngle2Rad");
+static_assert(offsetof(FluMathStatics_Vector2DAngle2Rad, A) == 0x000000, "Member 'FluMathStatics_Vector2DAngle2Rad::A' has a wrong offset!");
+static_assert(offsetof(FluMathStatics_Vector2DAngle2Rad, B) == 0x000008, "Member 'FluMathStatics_Vector2DAngle2Rad::B' has a wrong offset!");
+static_assert(offsetof(FluMathStatics_Vector2DAngle2Rad, ReturnValue) == 0x000010, "Member 'FluMathStatics_Vector2DAngle2Rad::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.FluMathStatics.Vector2DAngleDeg
+// 0x000C (0x000C - 0x0000)
+struct FluMathStatics_Vector2DAngleDeg final
+{
+public:
+	struct FVector2D                              Vector;                                            // 0x0000(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FluMathStatics_Vector2DAngleDeg) == 0x000004, "Wrong alignment on FluMathStatics_Vector2DAngleDeg");
+static_assert(sizeof(FluMathStatics_Vector2DAngleDeg) == 0x00000C, "Wrong size on FluMathStatics_Vector2DAngleDeg");
+static_assert(offsetof(FluMathStatics_Vector2DAngleDeg, Vector) == 0x000000, "Member 'FluMathStatics_Vector2DAngleDeg::Vector' has a wrong offset!");
+static_assert(offsetof(FluMathStatics_Vector2DAngleDeg, ReturnValue) == 0x000008, "Member 'FluMathStatics_Vector2DAngleDeg::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.FluMathStatics.Vector2DAngleRad
+// 0x000C (0x000C - 0x0000)
+struct FluMathStatics_Vector2DAngleRad final
+{
+public:
+	struct FVector2D                              Vector;                                            // 0x0000(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FluMathStatics_Vector2DAngleRad) == 0x000004, "Wrong alignment on FluMathStatics_Vector2DAngleRad");
+static_assert(sizeof(FluMathStatics_Vector2DAngleRad) == 0x00000C, "Wrong size on FluMathStatics_Vector2DAngleRad");
+static_assert(offsetof(FluMathStatics_Vector2DAngleRad, Vector) == 0x000000, "Member 'FluMathStatics_Vector2DAngleRad::Vector' has a wrong offset!");
+static_assert(offsetof(FluMathStatics_Vector2DAngleRad, ReturnValue) == 0x000008, "Member 'FluMathStatics_Vector2DAngleRad::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.FluMathStatics.WrapIndex
+// 0x000C (0x000C - 0x0000)
+struct FluMathStatics_WrapIndex final
+{
+public:
+	int32                                         Index_0;                                           // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Num;                                               // 0x0004(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FluMathStatics_WrapIndex) == 0x000004, "Wrong alignment on FluMathStatics_WrapIndex");
+static_assert(sizeof(FluMathStatics_WrapIndex) == 0x00000C, "Wrong size on FluMathStatics_WrapIndex");
+static_assert(offsetof(FluMathStatics_WrapIndex, Index_0) == 0x000000, "Member 'FluMathStatics_WrapIndex::Index_0' has a wrong offset!");
+static_assert(offsetof(FluMathStatics_WrapIndex, Num) == 0x000004, "Member 'FluMathStatics_WrapIndex::Num' has a wrong offset!");
+static_assert(offsetof(FluMathStatics_WrapIndex, ReturnValue) == 0x000008, "Member 'FluMathStatics_WrapIndex::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.PropertyListInterface.AddPropertyContainerWidget
+// 0x0008 (0x0008 - 0x0000)
+struct PropertyListInterface_AddPropertyContainerWidget final
+{
+public:
+	class UPropertyContainerWidget*               Widget;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(PropertyListInterface_AddPropertyContainerWidget) == 0x000008, "Wrong alignment on PropertyListInterface_AddPropertyContainerWidget");
+static_assert(sizeof(PropertyListInterface_AddPropertyContainerWidget) == 0x000008, "Wrong size on PropertyListInterface_AddPropertyContainerWidget");
+static_assert(offsetof(PropertyListInterface_AddPropertyContainerWidget, Widget) == 0x000000, "Member 'PropertyListInterface_AddPropertyContainerWidget::Widget' has a wrong offset!");
+
+// Function BrickRigs.PropertyListInterface.UpdatePropertyContainerWidgetSlot
+// 0x0010 (0x0010 - 0x0000)
+struct PropertyListInterface_UpdatePropertyContainerWidgetSlot final
+{
+public:
+	class UPropertyContainerWidget*               Widget;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Index_0;                                           // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         NumPerRow;                                         // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(PropertyListInterface_UpdatePropertyContainerWidgetSlot) == 0x000008, "Wrong alignment on PropertyListInterface_UpdatePropertyContainerWidgetSlot");
+static_assert(sizeof(PropertyListInterface_UpdatePropertyContainerWidgetSlot) == 0x000010, "Wrong size on PropertyListInterface_UpdatePropertyContainerWidgetSlot");
+static_assert(offsetof(PropertyListInterface_UpdatePropertyContainerWidgetSlot, Widget) == 0x000000, "Member 'PropertyListInterface_UpdatePropertyContainerWidgetSlot::Widget' has a wrong offset!");
+static_assert(offsetof(PropertyListInterface_UpdatePropertyContainerWidgetSlot, Index_0) == 0x000008, "Member 'PropertyListInterface_UpdatePropertyContainerWidgetSlot::Index_0' has a wrong offset!");
+static_assert(offsetof(PropertyListInterface_UpdatePropertyContainerWidgetSlot, NumPerRow) == 0x00000C, "Member 'PropertyListInterface_UpdatePropertyContainerWidgetSlot::NumPerRow' has a wrong offset!");
 
 // Function BrickRigs.GameOverlayWidget.Get
 // 0x0010 (0x0010 - 0x0000)
@@ -10087,6 +10248,22 @@ static_assert(sizeof(GameOverlayWidget_UpdateVehicleCameraNotification) == 0x000
 static_assert(offsetof(GameOverlayWidget_UpdateVehicleCameraNotification, Widget) == 0x000000, "Member 'GameOverlayWidget_UpdateVehicleCameraNotification::Widget' has a wrong offset!");
 static_assert(offsetof(GameOverlayWidget_UpdateVehicleCameraNotification, CameraDisplayName) == 0x000008, "Member 'GameOverlayWidget_UpdateVehicleCameraNotification::CameraDisplayName' has a wrong offset!");
 
+// Function BrickRigs.GameOverlayWidget.UpdateVehicleConstructionNotification
+// 0x0028 (0x0028 - 0x0000)
+struct GameOverlayWidget_UpdateVehicleConstructionNotification final
+{
+public:
+	class UHUDNotificationWidget*                 Widget;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FText                                   VehicleDisplayName;                                // 0x0008(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	float                                         Progress;                                          // 0x0020(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(GameOverlayWidget_UpdateVehicleConstructionNotification) == 0x000008, "Wrong alignment on GameOverlayWidget_UpdateVehicleConstructionNotification");
+static_assert(sizeof(GameOverlayWidget_UpdateVehicleConstructionNotification) == 0x000028, "Wrong size on GameOverlayWidget_UpdateVehicleConstructionNotification");
+static_assert(offsetof(GameOverlayWidget_UpdateVehicleConstructionNotification, Widget) == 0x000000, "Member 'GameOverlayWidget_UpdateVehicleConstructionNotification::Widget' has a wrong offset!");
+static_assert(offsetof(GameOverlayWidget_UpdateVehicleConstructionNotification, VehicleDisplayName) == 0x000008, "Member 'GameOverlayWidget_UpdateVehicleConstructionNotification::VehicleDisplayName' has a wrong offset!");
+static_assert(offsetof(GameOverlayWidget_UpdateVehicleConstructionNotification, Progress) == 0x000020, "Member 'GameOverlayWidget_UpdateVehicleConstructionNotification::Progress' has a wrong offset!");
+
 // Function BrickRigs.GameOverlayWidget.UpdateVehicleDownloadNotification
 // 0x0028 (0x0028 - 0x0000)
 struct GameOverlayWidget_UpdateVehicleDownloadNotification final
@@ -10094,16 +10271,60 @@ struct GameOverlayWidget_UpdateVehicleDownloadNotification final
 public:
 	class UHUDNotificationWidget*                 Widget;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	class FText                                   VehicleDisplayName;                                // 0x0008(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	bool                                          bIsDownloading;                                    // 0x0020(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_21[0x3];                                       // 0x0021(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         Progress;                                          // 0x0024(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Progress;                                          // 0x0020(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_24[0x4];                                       // 0x0024(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(GameOverlayWidget_UpdateVehicleDownloadNotification) == 0x000008, "Wrong alignment on GameOverlayWidget_UpdateVehicleDownloadNotification");
 static_assert(sizeof(GameOverlayWidget_UpdateVehicleDownloadNotification) == 0x000028, "Wrong size on GameOverlayWidget_UpdateVehicleDownloadNotification");
 static_assert(offsetof(GameOverlayWidget_UpdateVehicleDownloadNotification, Widget) == 0x000000, "Member 'GameOverlayWidget_UpdateVehicleDownloadNotification::Widget' has a wrong offset!");
 static_assert(offsetof(GameOverlayWidget_UpdateVehicleDownloadNotification, VehicleDisplayName) == 0x000008, "Member 'GameOverlayWidget_UpdateVehicleDownloadNotification::VehicleDisplayName' has a wrong offset!");
-static_assert(offsetof(GameOverlayWidget_UpdateVehicleDownloadNotification, bIsDownloading) == 0x000020, "Member 'GameOverlayWidget_UpdateVehicleDownloadNotification::bIsDownloading' has a wrong offset!");
-static_assert(offsetof(GameOverlayWidget_UpdateVehicleDownloadNotification, Progress) == 0x000024, "Member 'GameOverlayWidget_UpdateVehicleDownloadNotification::Progress' has a wrong offset!");
+static_assert(offsetof(GameOverlayWidget_UpdateVehicleDownloadNotification, Progress) == 0x000020, "Member 'GameOverlayWidget_UpdateVehicleDownloadNotification::Progress' has a wrong offset!");
+
+// Function BrickRigs.GameOverlayWidget.UpdateVehicleSeatNotification
+// 0x0020 (0x0020 - 0x0000)
+struct GameOverlayWidget_UpdateVehicleSeatNotification final
+{
+public:
+	class UHUDNotificationWidget*                 Widget;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FText                                   SeatDisplayName;                                   // 0x0008(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(GameOverlayWidget_UpdateVehicleSeatNotification) == 0x000008, "Wrong alignment on GameOverlayWidget_UpdateVehicleSeatNotification");
+static_assert(sizeof(GameOverlayWidget_UpdateVehicleSeatNotification) == 0x000020, "Wrong size on GameOverlayWidget_UpdateVehicleSeatNotification");
+static_assert(offsetof(GameOverlayWidget_UpdateVehicleSeatNotification, Widget) == 0x000000, "Member 'GameOverlayWidget_UpdateVehicleSeatNotification::Widget' has a wrong offset!");
+static_assert(offsetof(GameOverlayWidget_UpdateVehicleSeatNotification, SeatDisplayName) == 0x000008, "Member 'GameOverlayWidget_UpdateVehicleSeatNotification::SeatDisplayName' has a wrong offset!");
+
+// Function BrickRigs.Garage.Interact_EnterEditor
+// 0x0008 (0x0008 - 0x0000)
+struct Garage_Interact_EnterEditor final
+{
+public:
+	class ABrickPlayerController*                 PC;                                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(Garage_Interact_EnterEditor) == 0x000008, "Wrong alignment on Garage_Interact_EnterEditor");
+static_assert(sizeof(Garage_Interact_EnterEditor) == 0x000008, "Wrong size on Garage_Interact_EnterEditor");
+static_assert(offsetof(Garage_Interact_EnterEditor, PC) == 0x000000, "Member 'Garage_Interact_EnterEditor::PC' has a wrong offset!");
+
+// Function BrickRigs.Garage.Interact_Inventory
+// 0x0008 (0x0008 - 0x0000)
+struct Garage_Interact_Inventory final
+{
+public:
+	class ABrickPlayerController*                 PC;                                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(Garage_Interact_Inventory) == 0x000008, "Wrong alignment on Garage_Interact_Inventory");
+static_assert(sizeof(Garage_Interact_Inventory) == 0x000008, "Wrong size on Garage_Interact_Inventory");
+static_assert(offsetof(Garage_Interact_Inventory, PC) == 0x000000, "Member 'Garage_Interact_Inventory::PC' has a wrong offset!");
+
+// Function BrickRigs.Garage.Interact_SpawnVehicle
+// 0x0008 (0x0008 - 0x0000)
+struct Garage_Interact_SpawnVehicle final
+{
+public:
+	class ABrickPlayerController*                 PC;                                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(Garage_Interact_SpawnVehicle) == 0x000008, "Wrong alignment on Garage_Interact_SpawnVehicle");
+static_assert(sizeof(Garage_Interact_SpawnVehicle) == 0x000008, "Wrong size on Garage_Interact_SpawnVehicle");
+static_assert(offsetof(Garage_Interact_SpawnVehicle, PC) == 0x000000, "Member 'Garage_Interact_SpawnVehicle::PC' has a wrong offset!");
 
 // Function BrickRigs.GenericPropertyWidget.OnTextChanged
 // 0x0020 (0x0020 - 0x0000)
@@ -10119,54 +10340,30 @@ static_assert(sizeof(GenericPropertyWidget_OnTextChanged) == 0x000020, "Wrong si
 static_assert(offsetof(GenericPropertyWidget_OnTextChanged, Text) == 0x000000, "Member 'GenericPropertyWidget_OnTextChanged::Text' has a wrong offset!");
 static_assert(offsetof(GenericPropertyWidget_OnTextChanged, EventType) == 0x000018, "Member 'GenericPropertyWidget_OnTextChanged::EventType' has a wrong offset!");
 
-// Function BrickRigs.GravelSilo.Interact_CloseSilo
-// 0x0008 (0x0008 - 0x0000)
-struct GravelSilo_Interact_CloseSilo final
+// Function BrickRigs.ReuploadPopupWidget.GetOriginalAuthorName
+// 0x0020 (0x0020 - 0x0000)
+struct ReuploadPopupWidget_GetOriginalAuthorName final
 {
 public:
-	class ABrickPlayerController*                 PC;                                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FText                                   OutName;                                           // 0x0000(0x0018)(Parm, OutParm, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(GravelSilo_Interact_CloseSilo) == 0x000008, "Wrong alignment on GravelSilo_Interact_CloseSilo");
-static_assert(sizeof(GravelSilo_Interact_CloseSilo) == 0x000008, "Wrong size on GravelSilo_Interact_CloseSilo");
-static_assert(offsetof(GravelSilo_Interact_CloseSilo, PC) == 0x000000, "Member 'GravelSilo_Interact_CloseSilo::PC' has a wrong offset!");
+static_assert(alignof(ReuploadPopupWidget_GetOriginalAuthorName) == 0x000008, "Wrong alignment on ReuploadPopupWidget_GetOriginalAuthorName");
+static_assert(sizeof(ReuploadPopupWidget_GetOriginalAuthorName) == 0x000020, "Wrong size on ReuploadPopupWidget_GetOriginalAuthorName");
+static_assert(offsetof(ReuploadPopupWidget_GetOriginalAuthorName, OutName) == 0x000000, "Member 'ReuploadPopupWidget_GetOriginalAuthorName::OutName' has a wrong offset!");
+static_assert(offsetof(ReuploadPopupWidget_GetOriginalAuthorName, ReturnValue) == 0x000018, "Member 'ReuploadPopupWidget_GetOriginalAuthorName::ReturnValue' has a wrong offset!");
 
-// Function BrickRigs.GravelSilo.Interact_OpenSilo
-// 0x0008 (0x0008 - 0x0000)
-struct GravelSilo_Interact_OpenSilo final
+// Function BrickRigs.RestrictedAreaWidget.UpdateTimerRemaining
+// 0x0004 (0x0004 - 0x0000)
+struct RestrictedAreaWidget_UpdateTimerRemaining final
 {
 public:
-	class ABrickPlayerController*                 PC;                                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         TimeRemaining;                                     // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(GravelSilo_Interact_OpenSilo) == 0x000008, "Wrong alignment on GravelSilo_Interact_OpenSilo");
-static_assert(sizeof(GravelSilo_Interact_OpenSilo) == 0x000008, "Wrong size on GravelSilo_Interact_OpenSilo");
-static_assert(offsetof(GravelSilo_Interact_OpenSilo, PC) == 0x000000, "Member 'GravelSilo_Interact_OpenSilo::PC' has a wrong offset!");
-
-// Function BrickRigs.PropertiesPanelWidget.AddCategoryWidget
-// 0x0010 (0x0010 - 0x0000)
-struct PropertiesPanelWidget_AddCategoryWidget final
-{
-public:
-	class UPropertyCategoryWidget*                Widget;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Index_0;                                           // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(PropertiesPanelWidget_AddCategoryWidget) == 0x000008, "Wrong alignment on PropertiesPanelWidget_AddCategoryWidget");
-static_assert(sizeof(PropertiesPanelWidget_AddCategoryWidget) == 0x000010, "Wrong size on PropertiesPanelWidget_AddCategoryWidget");
-static_assert(offsetof(PropertiesPanelWidget_AddCategoryWidget, Widget) == 0x000000, "Member 'PropertiesPanelWidget_AddCategoryWidget::Widget' has a wrong offset!");
-static_assert(offsetof(PropertiesPanelWidget_AddCategoryWidget, Index_0) == 0x000008, "Member 'PropertiesPanelWidget_AddCategoryWidget::Index_0' has a wrong offset!");
-
-// Function BrickRigs.PropertiesPanelWidget.AddProperties
-// 0x0030 (0x0030 - 0x0000)
-struct PropertiesPanelWidget_AddProperties final
-{
-public:
-	TArray<class UObject*>                        InContainers;                                      // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, NativeAccessSpecifierPublic)
-	struct FBrickPropertyReflectionFilter         InFilter;                                          // 0x0010(0x0020)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(PropertiesPanelWidget_AddProperties) == 0x000008, "Wrong alignment on PropertiesPanelWidget_AddProperties");
-static_assert(sizeof(PropertiesPanelWidget_AddProperties) == 0x000030, "Wrong size on PropertiesPanelWidget_AddProperties");
-static_assert(offsetof(PropertiesPanelWidget_AddProperties, InContainers) == 0x000000, "Member 'PropertiesPanelWidget_AddProperties::InContainers' has a wrong offset!");
-static_assert(offsetof(PropertiesPanelWidget_AddProperties, InFilter) == 0x000010, "Member 'PropertiesPanelWidget_AddProperties::InFilter' has a wrong offset!");
+static_assert(alignof(RestrictedAreaWidget_UpdateTimerRemaining) == 0x000004, "Wrong alignment on RestrictedAreaWidget_UpdateTimerRemaining");
+static_assert(sizeof(RestrictedAreaWidget_UpdateTimerRemaining) == 0x000004, "Wrong size on RestrictedAreaWidget_UpdateTimerRemaining");
+static_assert(offsetof(RestrictedAreaWidget_UpdateTimerRemaining, TimeRemaining) == 0x000000, "Member 'RestrictedAreaWidget_UpdateTimerRemaining::TimeRemaining' has a wrong offset!");
 
 // Function BrickRigs.HealthBarWidget.OnHUDVisibilityChanged
 // 0x0001 (0x0001 - 0x0000)
@@ -10212,19 +10409,42 @@ static_assert(alignof(HealthBarWidget_UpdateHealth) == 0x000004, "Wrong alignmen
 static_assert(sizeof(HealthBarWidget_UpdateHealth) == 0x000004, "Wrong size on HealthBarWidget_UpdateHealth");
 static_assert(offsetof(HealthBarWidget_UpdateHealth, NewHealth) == 0x000000, "Member 'HealthBarWidget_UpdateHealth::NewHealth' has a wrong offset!");
 
-// Function BrickRigs.ReuploadPopupWidget.GetOriginalAuthorName
-// 0x0020 (0x0020 - 0x0000)
-struct ReuploadPopupWidget_GetOriginalAuthorName final
+// Function BrickRigs.ScoreboardPlayerWidget.UpdateButtonStyle
+// 0x0003 (0x0003 - 0x0000)
+struct ScoreboardPlayerWidget_UpdateButtonStyle final
 {
 public:
-	class FText                                   OutName;                                           // 0x0000(0x0018)(Parm, OutParm, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0018(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	bool                                          bNewSelected;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bIsLocalPlayer;                                    // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ETeamAttitude                                 TeamAttitude;                                      // 0x0002(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(ReuploadPopupWidget_GetOriginalAuthorName) == 0x000008, "Wrong alignment on ReuploadPopupWidget_GetOriginalAuthorName");
-static_assert(sizeof(ReuploadPopupWidget_GetOriginalAuthorName) == 0x000020, "Wrong size on ReuploadPopupWidget_GetOriginalAuthorName");
-static_assert(offsetof(ReuploadPopupWidget_GetOriginalAuthorName, OutName) == 0x000000, "Member 'ReuploadPopupWidget_GetOriginalAuthorName::OutName' has a wrong offset!");
-static_assert(offsetof(ReuploadPopupWidget_GetOriginalAuthorName, ReturnValue) == 0x000018, "Member 'ReuploadPopupWidget_GetOriginalAuthorName::ReturnValue' has a wrong offset!");
+static_assert(alignof(ScoreboardPlayerWidget_UpdateButtonStyle) == 0x000001, "Wrong alignment on ScoreboardPlayerWidget_UpdateButtonStyle");
+static_assert(sizeof(ScoreboardPlayerWidget_UpdateButtonStyle) == 0x000003, "Wrong size on ScoreboardPlayerWidget_UpdateButtonStyle");
+static_assert(offsetof(ScoreboardPlayerWidget_UpdateButtonStyle, bNewSelected) == 0x000000, "Member 'ScoreboardPlayerWidget_UpdateButtonStyle::bNewSelected' has a wrong offset!");
+static_assert(offsetof(ScoreboardPlayerWidget_UpdateButtonStyle, bIsLocalPlayer) == 0x000001, "Member 'ScoreboardPlayerWidget_UpdateButtonStyle::bIsLocalPlayer' has a wrong offset!");
+static_assert(offsetof(ScoreboardPlayerWidget_UpdateButtonStyle, TeamAttitude) == 0x000002, "Member 'ScoreboardPlayerWidget_UpdateButtonStyle::TeamAttitude' has a wrong offset!");
+
+// Function BrickRigs.ScoreboardPlayerWidget.UpdateIsAdmin
+// 0x0001 (0x0001 - 0x0000)
+struct ScoreboardPlayerWidget_UpdateIsAdmin final
+{
+public:
+	bool                                          bIsAdmin;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ScoreboardPlayerWidget_UpdateIsAdmin) == 0x000001, "Wrong alignment on ScoreboardPlayerWidget_UpdateIsAdmin");
+static_assert(sizeof(ScoreboardPlayerWidget_UpdateIsAdmin) == 0x000001, "Wrong size on ScoreboardPlayerWidget_UpdateIsAdmin");
+static_assert(offsetof(ScoreboardPlayerWidget_UpdateIsAdmin, bIsAdmin) == 0x000000, "Member 'ScoreboardPlayerWidget_UpdateIsAdmin::bIsAdmin' has a wrong offset!");
+
+// Function BrickRigs.ScoreboardPlayerWidget.UpdateIsAlive
+// 0x0001 (0x0001 - 0x0000)
+struct ScoreboardPlayerWidget_UpdateIsAlive final
+{
+public:
+	bool                                          bIsAlive;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ScoreboardPlayerWidget_UpdateIsAlive) == 0x000001, "Wrong alignment on ScoreboardPlayerWidget_UpdateIsAlive");
+static_assert(sizeof(ScoreboardPlayerWidget_UpdateIsAlive) == 0x000001, "Wrong size on ScoreboardPlayerWidget_UpdateIsAlive");
+static_assert(offsetof(ScoreboardPlayerWidget_UpdateIsAlive, bIsAlive) == 0x000000, "Member 'ScoreboardPlayerWidget_UpdateIsAlive::bIsAlive' has a wrong offset!");
 
 // Function BrickRigs.HostGamePageWidget.UpdatePlayButton
 // 0x0002 (0x0002 - 0x0000)
@@ -10238,63 +10458,6 @@ static_assert(alignof(HostGamePageWidget_UpdatePlayButton) == 0x000001, "Wrong a
 static_assert(sizeof(HostGamePageWidget_UpdatePlayButton) == 0x000002, "Wrong size on HostGamePageWidget_UpdatePlayButton");
 static_assert(offsetof(HostGamePageWidget_UpdatePlayButton, bCanPlay) == 0x000000, "Member 'HostGamePageWidget_UpdatePlayButton::bCanPlay' has a wrong offset!");
 static_assert(offsetof(HostGamePageWidget_UpdatePlayButton, bIsOnline) == 0x000001, "Member 'HostGamePageWidget_UpdatePlayButton::bIsOnline' has a wrong offset!");
-
-// Function BrickRigs.ScoreboardTeamWidget.UpdateCanEverJoinTeam
-// 0x0001 (0x0001 - 0x0000)
-struct ScoreboardTeamWidget_UpdateCanEverJoinTeam final
-{
-public:
-	bool                                          bCanJoin;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(ScoreboardTeamWidget_UpdateCanEverJoinTeam) == 0x000001, "Wrong alignment on ScoreboardTeamWidget_UpdateCanEverJoinTeam");
-static_assert(sizeof(ScoreboardTeamWidget_UpdateCanEverJoinTeam) == 0x000001, "Wrong size on ScoreboardTeamWidget_UpdateCanEverJoinTeam");
-static_assert(offsetof(ScoreboardTeamWidget_UpdateCanEverJoinTeam, bCanJoin) == 0x000000, "Member 'ScoreboardTeamWidget_UpdateCanEverJoinTeam::bCanJoin' has a wrong offset!");
-
-// Function BrickRigs.ScoreboardTeamWidget.UpdateCanJoinTeam
-// 0x0001 (0x0001 - 0x0000)
-struct ScoreboardTeamWidget_UpdateCanJoinTeam final
-{
-public:
-	bool                                          bCanJoin;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(ScoreboardTeamWidget_UpdateCanJoinTeam) == 0x000001, "Wrong alignment on ScoreboardTeamWidget_UpdateCanJoinTeam");
-static_assert(sizeof(ScoreboardTeamWidget_UpdateCanJoinTeam) == 0x000001, "Wrong size on ScoreboardTeamWidget_UpdateCanJoinTeam");
-static_assert(offsetof(ScoreboardTeamWidget_UpdateCanJoinTeam, bCanJoin) == 0x000000, "Member 'ScoreboardTeamWidget_UpdateCanJoinTeam::bCanJoin' has a wrong offset!");
-
-// Function BrickRigs.ScoreboardTeamWidget.UpdateTeamAttitude
-// 0x0002 (0x0002 - 0x0000)
-struct ScoreboardTeamWidget_UpdateTeamAttitude final
-{
-public:
-	bool                                          bIsOwnTeam;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ETeamAttitude                                 NewAttitude;                                       // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(ScoreboardTeamWidget_UpdateTeamAttitude) == 0x000001, "Wrong alignment on ScoreboardTeamWidget_UpdateTeamAttitude");
-static_assert(sizeof(ScoreboardTeamWidget_UpdateTeamAttitude) == 0x000002, "Wrong size on ScoreboardTeamWidget_UpdateTeamAttitude");
-static_assert(offsetof(ScoreboardTeamWidget_UpdateTeamAttitude, bIsOwnTeam) == 0x000000, "Member 'ScoreboardTeamWidget_UpdateTeamAttitude::bIsOwnTeam' has a wrong offset!");
-static_assert(offsetof(ScoreboardTeamWidget_UpdateTeamAttitude, NewAttitude) == 0x000001, "Member 'ScoreboardTeamWidget_UpdateTeamAttitude::NewAttitude' has a wrong offset!");
-
-// Function BrickRigs.HUDContainerWidget.AddGameOverlayWidget
-// 0x0008 (0x0008 - 0x0000)
-struct HUDContainerWidget_AddGameOverlayWidget final
-{
-public:
-	class UGameOverlayWidget*                     Widget;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(HUDContainerWidget_AddGameOverlayWidget) == 0x000008, "Wrong alignment on HUDContainerWidget_AddGameOverlayWidget");
-static_assert(sizeof(HUDContainerWidget_AddGameOverlayWidget) == 0x000008, "Wrong size on HUDContainerWidget_AddGameOverlayWidget");
-static_assert(offsetof(HUDContainerWidget_AddGameOverlayWidget, Widget) == 0x000000, "Member 'HUDContainerWidget_AddGameOverlayWidget::Widget' has a wrong offset!");
-
-// Function BrickRigs.HUDContainerWidget.AddHUDWidget
-// 0x0008 (0x0008 - 0x0000)
-struct HUDContainerWidget_AddHUDWidget final
-{
-public:
-	class UUserWidget*                            Widget;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(HUDContainerWidget_AddHUDWidget) == 0x000008, "Wrong alignment on HUDContainerWidget_AddHUDWidget");
-static_assert(sizeof(HUDContainerWidget_AddHUDWidget) == 0x000008, "Wrong size on HUDContainerWidget_AddHUDWidget");
-static_assert(offsetof(HUDContainerWidget_AddHUDWidget, Widget) == 0x000000, "Member 'HUDContainerWidget_AddHUDWidget::Widget' has a wrong offset!");
 
 // Function BrickRigs.HUDIconComponent.MakeAxisInteractionOption
 // 0x0080 (0x0080 - 0x0000)
@@ -10411,17 +10574,6 @@ static_assert(alignof(HUDIconComponent_SetShouldIconBeVisibleDelegate) == 0x0000
 static_assert(sizeof(HUDIconComponent_SetShouldIconBeVisibleDelegate) == 0x000010, "Wrong size on HUDIconComponent_SetShouldIconBeVisibleDelegate");
 static_assert(offsetof(HUDIconComponent_SetShouldIconBeVisibleDelegate, Delegate) == 0x000000, "Member 'HUDIconComponent_SetShouldIconBeVisibleDelegate::Delegate' has a wrong offset!");
 
-// Function BrickRigs.RestrictedAreaWidget.UpdateTimerRemaining
-// 0x0004 (0x0004 - 0x0000)
-struct RestrictedAreaWidget_UpdateTimerRemaining final
-{
-public:
-	float                                         TimeRemaining;                                     // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(RestrictedAreaWidget_UpdateTimerRemaining) == 0x000004, "Wrong alignment on RestrictedAreaWidget_UpdateTimerRemaining");
-static_assert(sizeof(RestrictedAreaWidget_UpdateTimerRemaining) == 0x000004, "Wrong size on RestrictedAreaWidget_UpdateTimerRemaining");
-static_assert(offsetof(RestrictedAreaWidget_UpdateTimerRemaining, TimeRemaining) == 0x000000, "Member 'RestrictedAreaWidget_UpdateTimerRemaining::TimeRemaining' has a wrong offset!");
-
 // Function BrickRigs.HUDIconContainerWidget.AddCrosshairWidgets
 // 0x0010 (0x0010 - 0x0000)
 struct HUDIconContainerWidget_AddCrosshairWidgets final
@@ -10510,43 +10662,6 @@ static_assert(alignof(HUDNotificationWidget_UpdateIsThumbnailNotification) == 0x
 static_assert(sizeof(HUDNotificationWidget_UpdateIsThumbnailNotification) == 0x000001, "Wrong size on HUDNotificationWidget_UpdateIsThumbnailNotification");
 static_assert(offsetof(HUDNotificationWidget_UpdateIsThumbnailNotification, bNewIsThumbnail) == 0x000000, "Member 'HUDNotificationWidget_UpdateIsThumbnailNotification::bNewIsThumbnail' has a wrong offset!");
 
-// Function BrickRigs.ScoreboardPlayerWidget.UpdateButtonStyle
-// 0x0003 (0x0003 - 0x0000)
-struct ScoreboardPlayerWidget_UpdateButtonStyle final
-{
-public:
-	bool                                          bNewSelected;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsLocalPlayer;                                    // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ETeamAttitude                                 TeamAttitude;                                      // 0x0002(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(ScoreboardPlayerWidget_UpdateButtonStyle) == 0x000001, "Wrong alignment on ScoreboardPlayerWidget_UpdateButtonStyle");
-static_assert(sizeof(ScoreboardPlayerWidget_UpdateButtonStyle) == 0x000003, "Wrong size on ScoreboardPlayerWidget_UpdateButtonStyle");
-static_assert(offsetof(ScoreboardPlayerWidget_UpdateButtonStyle, bNewSelected) == 0x000000, "Member 'ScoreboardPlayerWidget_UpdateButtonStyle::bNewSelected' has a wrong offset!");
-static_assert(offsetof(ScoreboardPlayerWidget_UpdateButtonStyle, bIsLocalPlayer) == 0x000001, "Member 'ScoreboardPlayerWidget_UpdateButtonStyle::bIsLocalPlayer' has a wrong offset!");
-static_assert(offsetof(ScoreboardPlayerWidget_UpdateButtonStyle, TeamAttitude) == 0x000002, "Member 'ScoreboardPlayerWidget_UpdateButtonStyle::TeamAttitude' has a wrong offset!");
-
-// Function BrickRigs.ScoreboardPlayerWidget.UpdateIsAdmin
-// 0x0001 (0x0001 - 0x0000)
-struct ScoreboardPlayerWidget_UpdateIsAdmin final
-{
-public:
-	bool                                          bIsAdmin;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(ScoreboardPlayerWidget_UpdateIsAdmin) == 0x000001, "Wrong alignment on ScoreboardPlayerWidget_UpdateIsAdmin");
-static_assert(sizeof(ScoreboardPlayerWidget_UpdateIsAdmin) == 0x000001, "Wrong size on ScoreboardPlayerWidget_UpdateIsAdmin");
-static_assert(offsetof(ScoreboardPlayerWidget_UpdateIsAdmin, bIsAdmin) == 0x000000, "Member 'ScoreboardPlayerWidget_UpdateIsAdmin::bIsAdmin' has a wrong offset!");
-
-// Function BrickRigs.ScoreboardPlayerWidget.UpdateIsAlive
-// 0x0001 (0x0001 - 0x0000)
-struct ScoreboardPlayerWidget_UpdateIsAlive final
-{
-public:
-	bool                                          bIsAlive;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(ScoreboardPlayerWidget_UpdateIsAlive) == 0x000001, "Wrong alignment on ScoreboardPlayerWidget_UpdateIsAlive");
-static_assert(sizeof(ScoreboardPlayerWidget_UpdateIsAlive) == 0x000001, "Wrong size on ScoreboardPlayerWidget_UpdateIsAlive");
-static_assert(offsetof(ScoreboardPlayerWidget_UpdateIsAlive, bIsAlive) == 0x000000, "Member 'ScoreboardPlayerWidget_UpdateIsAlive::bIsAlive' has a wrong offset!");
-
 // Function BrickRigs.HUDWidgetInterface.AddGameOverlayWidget
 // 0x0010 (0x0010 - 0x0000)
 struct HUDWidgetInterface_AddGameOverlayWidget final
@@ -10560,6 +10675,41 @@ static_assert(alignof(HUDWidgetInterface_AddGameOverlayWidget) == 0x000008, "Wro
 static_assert(sizeof(HUDWidgetInterface_AddGameOverlayWidget) == 0x000010, "Wrong size on HUDWidgetInterface_AddGameOverlayWidget");
 static_assert(offsetof(HUDWidgetInterface_AddGameOverlayWidget, Widget) == 0x000000, "Member 'HUDWidgetInterface_AddGameOverlayWidget::Widget' has a wrong offset!");
 static_assert(offsetof(HUDWidgetInterface_AddGameOverlayWidget, ReturnValue) == 0x000008, "Member 'HUDWidgetInterface_AddGameOverlayWidget::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.ScoreboardTeamWidget.UpdateCanEverJoinTeam
+// 0x0001 (0x0001 - 0x0000)
+struct ScoreboardTeamWidget_UpdateCanEverJoinTeam final
+{
+public:
+	bool                                          bCanJoin;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ScoreboardTeamWidget_UpdateCanEverJoinTeam) == 0x000001, "Wrong alignment on ScoreboardTeamWidget_UpdateCanEverJoinTeam");
+static_assert(sizeof(ScoreboardTeamWidget_UpdateCanEverJoinTeam) == 0x000001, "Wrong size on ScoreboardTeamWidget_UpdateCanEverJoinTeam");
+static_assert(offsetof(ScoreboardTeamWidget_UpdateCanEverJoinTeam, bCanJoin) == 0x000000, "Member 'ScoreboardTeamWidget_UpdateCanEverJoinTeam::bCanJoin' has a wrong offset!");
+
+// Function BrickRigs.ScoreboardTeamWidget.UpdateCanJoinTeam
+// 0x0001 (0x0001 - 0x0000)
+struct ScoreboardTeamWidget_UpdateCanJoinTeam final
+{
+public:
+	bool                                          bCanJoin;                                          // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ScoreboardTeamWidget_UpdateCanJoinTeam) == 0x000001, "Wrong alignment on ScoreboardTeamWidget_UpdateCanJoinTeam");
+static_assert(sizeof(ScoreboardTeamWidget_UpdateCanJoinTeam) == 0x000001, "Wrong size on ScoreboardTeamWidget_UpdateCanJoinTeam");
+static_assert(offsetof(ScoreboardTeamWidget_UpdateCanJoinTeam, bCanJoin) == 0x000000, "Member 'ScoreboardTeamWidget_UpdateCanJoinTeam::bCanJoin' has a wrong offset!");
+
+// Function BrickRigs.ScoreboardTeamWidget.UpdateTeamAttitude
+// 0x0002 (0x0002 - 0x0000)
+struct ScoreboardTeamWidget_UpdateTeamAttitude final
+{
+public:
+	bool                                          bIsOwnTeam;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	ETeamAttitude                                 NewAttitude;                                       // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ScoreboardTeamWidget_UpdateTeamAttitude) == 0x000001, "Wrong alignment on ScoreboardTeamWidget_UpdateTeamAttitude");
+static_assert(sizeof(ScoreboardTeamWidget_UpdateTeamAttitude) == 0x000002, "Wrong size on ScoreboardTeamWidget_UpdateTeamAttitude");
+static_assert(offsetof(ScoreboardTeamWidget_UpdateTeamAttitude, bIsOwnTeam) == 0x000000, "Member 'ScoreboardTeamWidget_UpdateTeamAttitude::bIsOwnTeam' has a wrong offset!");
+static_assert(offsetof(ScoreboardTeamWidget_UpdateTeamAttitude, NewAttitude) == 0x000001, "Member 'ScoreboardTeamWidget_UpdateTeamAttitude::NewAttitude' has a wrong offset!");
 
 // Function BrickRigs.ServerBrowserWidget.OnListEntrySelected
 // 0x0010 (0x0010 - 0x0000)
@@ -10864,45 +11014,56 @@ static_assert(alignof(InputHelpWidget_GetWidgetToFocus) == 0x000008, "Wrong alig
 static_assert(sizeof(InputHelpWidget_GetWidgetToFocus) == 0x000008, "Wrong size on InputHelpWidget_GetWidgetToFocus");
 static_assert(offsetof(InputHelpWidget_GetWidgetToFocus, ReturnValue) == 0x000000, "Member 'InputHelpWidget_GetWidgetToFocus::ReturnValue' has a wrong offset!");
 
-// Function BrickRigs.WinchBrick.Interact_AttachWinch
-// 0x0008 (0x0008 - 0x0000)
-struct WinchBrick_Interact_AttachWinch final
+// Function BrickRigs.SpectatorInputComponent.MoveForward
+// 0x0004 (0x0004 - 0x0000)
+struct SpectatorInputComponent_MoveForward final
 {
 public:
-	class ABrickPlayerController*                 OtherPC;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Val;                                               // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(WinchBrick_Interact_AttachWinch) == 0x000008, "Wrong alignment on WinchBrick_Interact_AttachWinch");
-static_assert(sizeof(WinchBrick_Interact_AttachWinch) == 0x000008, "Wrong size on WinchBrick_Interact_AttachWinch");
-static_assert(offsetof(WinchBrick_Interact_AttachWinch, OtherPC) == 0x000000, "Member 'WinchBrick_Interact_AttachWinch::OtherPC' has a wrong offset!");
+static_assert(alignof(SpectatorInputComponent_MoveForward) == 0x000004, "Wrong alignment on SpectatorInputComponent_MoveForward");
+static_assert(sizeof(SpectatorInputComponent_MoveForward) == 0x000004, "Wrong size on SpectatorInputComponent_MoveForward");
+static_assert(offsetof(SpectatorInputComponent_MoveForward, Val) == 0x000000, "Member 'SpectatorInputComponent_MoveForward::Val' has a wrong offset!");
 
-// Function BrickRigs.WinchBrick.Interact_DetachWinch
-// 0x0008 (0x0008 - 0x0000)
-struct WinchBrick_Interact_DetachWinch final
+// Function BrickRigs.SpectatorInputComponent.MoveRight
+// 0x0004 (0x0004 - 0x0000)
+struct SpectatorInputComponent_MoveRight final
 {
 public:
-	class ABrickPlayerController*                 OtherPC;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Val;                                               // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(WinchBrick_Interact_DetachWinch) == 0x000008, "Wrong alignment on WinchBrick_Interact_DetachWinch");
-static_assert(sizeof(WinchBrick_Interact_DetachWinch) == 0x000008, "Wrong size on WinchBrick_Interact_DetachWinch");
-static_assert(offsetof(WinchBrick_Interact_DetachWinch, OtherPC) == 0x000000, "Member 'WinchBrick_Interact_DetachWinch::OtherPC' has a wrong offset!");
+static_assert(alignof(SpectatorInputComponent_MoveRight) == 0x000004, "Wrong alignment on SpectatorInputComponent_MoveRight");
+static_assert(sizeof(SpectatorInputComponent_MoveRight) == 0x000004, "Wrong size on SpectatorInputComponent_MoveRight");
+static_assert(offsetof(SpectatorInputComponent_MoveRight, Val) == 0x000000, "Member 'SpectatorInputComponent_MoveRight::Val' has a wrong offset!");
 
-// Function BrickRigs.WinchBrick.OnRep_AttachTarget
-// 0x001C (0x001C - 0x0000)
-struct WinchBrick_OnRep_AttachTarget final
+// Function BrickRigs.SpectatorInputComponent.MoveUp
+// 0x0004 (0x0004 - 0x0000)
+struct SpectatorInputComponent_MoveUp final
 {
 public:
-	struct FWinchAttachTarget                     PrevAttachTarget;                                  // 0x0000(0x001C)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	float                                         Val;                                               // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(WinchBrick_OnRep_AttachTarget) == 0x000004, "Wrong alignment on WinchBrick_OnRep_AttachTarget");
-static_assert(sizeof(WinchBrick_OnRep_AttachTarget) == 0x00001C, "Wrong size on WinchBrick_OnRep_AttachTarget");
-static_assert(offsetof(WinchBrick_OnRep_AttachTarget, PrevAttachTarget) == 0x000000, "Member 'WinchBrick_OnRep_AttachTarget::PrevAttachTarget' has a wrong offset!");
+static_assert(alignof(SpectatorInputComponent_MoveUp) == 0x000004, "Wrong alignment on SpectatorInputComponent_MoveUp");
+static_assert(sizeof(SpectatorInputComponent_MoveUp) == 0x000004, "Wrong size on SpectatorInputComponent_MoveUp");
+static_assert(offsetof(SpectatorInputComponent_MoveUp, Val) == 0x000000, "Member 'SpectatorInputComponent_MoveUp::Val' has a wrong offset!");
+
+// Function BrickRigs.SpectatorInputComponent.RotatePawnCW
+// 0x0004 (0x0004 - 0x0000)
+struct SpectatorInputComponent_RotatePawnCW final
+{
+public:
+	float                                         Val;                                               // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(SpectatorInputComponent_RotatePawnCW) == 0x000004, "Wrong alignment on SpectatorInputComponent_RotatePawnCW");
+static_assert(sizeof(SpectatorInputComponent_RotatePawnCW) == 0x000004, "Wrong size on SpectatorInputComponent_RotatePawnCW");
+static_assert(offsetof(SpectatorInputComponent_RotatePawnCW, Val) == 0x000000, "Member 'SpectatorInputComponent_RotatePawnCW::Val' has a wrong offset!");
 
 // Function BrickRigs.InputKeyWidget.SetKey
 // 0x0020 (0x0020 - 0x0000)
 struct InputKeyWidget_SetKey final
 {
 public:
-	struct FKey                                   InKey;                                             // 0x0000(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FKey                                   InKey;                                             // 0x0000(0x0018)(ConstParm, Parm, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	bool                                          bInUsedAsModifier;                                 // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
@@ -10935,6 +11096,39 @@ public:
 static_assert(alignof(InputMappingKeyWidget_UpdateConflictedState) == 0x000001, "Wrong alignment on InputMappingKeyWidget_UpdateConflictedState");
 static_assert(sizeof(InputMappingKeyWidget_UpdateConflictedState) == 0x000001, "Wrong size on InputMappingKeyWidget_UpdateConflictedState");
 static_assert(offsetof(InputMappingKeyWidget_UpdateConflictedState, bNewConflicted) == 0x000000, "Member 'InputMappingKeyWidget_UpdateConflictedState::bNewConflicted' has a wrong offset!");
+
+// Function BrickRigs.WinchBrick.Interact_AttachWinch
+// 0x0008 (0x0008 - 0x0000)
+struct WinchBrick_Interact_AttachWinch final
+{
+public:
+	class ABrickPlayerController*                 OtherPC;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(WinchBrick_Interact_AttachWinch) == 0x000008, "Wrong alignment on WinchBrick_Interact_AttachWinch");
+static_assert(sizeof(WinchBrick_Interact_AttachWinch) == 0x000008, "Wrong size on WinchBrick_Interact_AttachWinch");
+static_assert(offsetof(WinchBrick_Interact_AttachWinch, OtherPC) == 0x000000, "Member 'WinchBrick_Interact_AttachWinch::OtherPC' has a wrong offset!");
+
+// Function BrickRigs.WinchBrick.Interact_DetachWinch
+// 0x0008 (0x0008 - 0x0000)
+struct WinchBrick_Interact_DetachWinch final
+{
+public:
+	class ABrickPlayerController*                 OtherPC;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(WinchBrick_Interact_DetachWinch) == 0x000008, "Wrong alignment on WinchBrick_Interact_DetachWinch");
+static_assert(sizeof(WinchBrick_Interact_DetachWinch) == 0x000008, "Wrong size on WinchBrick_Interact_DetachWinch");
+static_assert(offsetof(WinchBrick_Interact_DetachWinch, OtherPC) == 0x000000, "Member 'WinchBrick_Interact_DetachWinch::OtherPC' has a wrong offset!");
+
+// Function BrickRigs.WinchBrick.OnRep_AttachTarget
+// 0x001C (0x001C - 0x0000)
+struct WinchBrick_OnRep_AttachTarget final
+{
+public:
+	struct FWinchAttachTarget                     PrevAttachTarget;                                  // 0x0000(0x001C)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(WinchBrick_OnRep_AttachTarget) == 0x000004, "Wrong alignment on WinchBrick_OnRep_AttachTarget");
+static_assert(sizeof(WinchBrick_OnRep_AttachTarget) == 0x00001C, "Wrong size on WinchBrick_OnRep_AttachTarget");
+static_assert(offsetof(WinchBrick_OnRep_AttachTarget, PrevAttachTarget) == 0x000000, "Member 'WinchBrick_OnRep_AttachTarget::PrevAttachTarget' has a wrong offset!");
 
 // Function BrickRigs.InputMappingPropertyWidget.AddKeyWidget
 // 0x0010 (0x0010 - 0x0000)
@@ -10997,50 +11191,6 @@ static_assert(sizeof(InteractionWidget_AddOptionWidget) == 0x000010, "Wrong size
 static_assert(offsetof(InteractionWidget_AddOptionWidget, Widget) == 0x000000, "Member 'InteractionWidget_AddOptionWidget::Widget' has a wrong offset!");
 static_assert(offsetof(InteractionWidget_AddOptionWidget, OptionIndex) == 0x000008, "Member 'InteractionWidget_AddOptionWidget::OptionIndex' has a wrong offset!");
 
-// Function BrickRigs.SpectatorInputComponent.MoveForward
-// 0x0004 (0x0004 - 0x0000)
-struct SpectatorInputComponent_MoveForward final
-{
-public:
-	float                                         Val;                                               // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(SpectatorInputComponent_MoveForward) == 0x000004, "Wrong alignment on SpectatorInputComponent_MoveForward");
-static_assert(sizeof(SpectatorInputComponent_MoveForward) == 0x000004, "Wrong size on SpectatorInputComponent_MoveForward");
-static_assert(offsetof(SpectatorInputComponent_MoveForward, Val) == 0x000000, "Member 'SpectatorInputComponent_MoveForward::Val' has a wrong offset!");
-
-// Function BrickRigs.SpectatorInputComponent.MoveRight
-// 0x0004 (0x0004 - 0x0000)
-struct SpectatorInputComponent_MoveRight final
-{
-public:
-	float                                         Val;                                               // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(SpectatorInputComponent_MoveRight) == 0x000004, "Wrong alignment on SpectatorInputComponent_MoveRight");
-static_assert(sizeof(SpectatorInputComponent_MoveRight) == 0x000004, "Wrong size on SpectatorInputComponent_MoveRight");
-static_assert(offsetof(SpectatorInputComponent_MoveRight, Val) == 0x000000, "Member 'SpectatorInputComponent_MoveRight::Val' has a wrong offset!");
-
-// Function BrickRigs.SpectatorInputComponent.MoveUp
-// 0x0004 (0x0004 - 0x0000)
-struct SpectatorInputComponent_MoveUp final
-{
-public:
-	float                                         Val;                                               // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(SpectatorInputComponent_MoveUp) == 0x000004, "Wrong alignment on SpectatorInputComponent_MoveUp");
-static_assert(sizeof(SpectatorInputComponent_MoveUp) == 0x000004, "Wrong size on SpectatorInputComponent_MoveUp");
-static_assert(offsetof(SpectatorInputComponent_MoveUp, Val) == 0x000000, "Member 'SpectatorInputComponent_MoveUp::Val' has a wrong offset!");
-
-// Function BrickRigs.SpectatorInputComponent.RotatePawnCW
-// 0x0004 (0x0004 - 0x0000)
-struct SpectatorInputComponent_RotatePawnCW final
-{
-public:
-	float                                         Val;                                               // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(SpectatorInputComponent_RotatePawnCW) == 0x000004, "Wrong alignment on SpectatorInputComponent_RotatePawnCW");
-static_assert(sizeof(SpectatorInputComponent_RotatePawnCW) == 0x000004, "Wrong size on SpectatorInputComponent_RotatePawnCW");
-static_assert(offsetof(SpectatorInputComponent_RotatePawnCW, Val) == 0x000000, "Member 'SpectatorInputComponent_RotatePawnCW::Val' has a wrong offset!");
-
 // Function BrickRigs.InventoryContainerWidget.UpdateHasInventory
 // 0x0001 (0x0001 - 0x0000)
 struct InventoryContainerWidget_UpdateHasInventory final
@@ -11062,21 +11212,6 @@ public:
 static_assert(alignof(InventoryContainerWidget_UpdateOwnerMoney) == 0x000004, "Wrong alignment on InventoryContainerWidget_UpdateOwnerMoney");
 static_assert(sizeof(InventoryContainerWidget_UpdateOwnerMoney) == 0x000004, "Wrong size on InventoryContainerWidget_UpdateOwnerMoney");
 static_assert(offsetof(InventoryContainerWidget_UpdateOwnerMoney, NewMoney) == 0x000000, "Member 'InventoryContainerWidget_UpdateOwnerMoney::NewMoney' has a wrong offset!");
-
-// Function BrickRigs.InventoryPopupWidget.UpdateDropArea
-// 0x0003 (0x0003 - 0x0000)
-struct InventoryPopupWidget_UpdateDropArea final
-{
-public:
-	bool                                          bInIsDragging;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bInCanDrop;                                        // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bInIsDragOver;                                     // 0x0002(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(InventoryPopupWidget_UpdateDropArea) == 0x000001, "Wrong alignment on InventoryPopupWidget_UpdateDropArea");
-static_assert(sizeof(InventoryPopupWidget_UpdateDropArea) == 0x000003, "Wrong size on InventoryPopupWidget_UpdateDropArea");
-static_assert(offsetof(InventoryPopupWidget_UpdateDropArea, bInIsDragging) == 0x000000, "Member 'InventoryPopupWidget_UpdateDropArea::bInIsDragging' has a wrong offset!");
-static_assert(offsetof(InventoryPopupWidget_UpdateDropArea, bInCanDrop) == 0x000001, "Member 'InventoryPopupWidget_UpdateDropArea::bInCanDrop' has a wrong offset!");
-static_assert(offsetof(InventoryPopupWidget_UpdateDropArea, bInIsDragOver) == 0x000002, "Member 'InventoryPopupWidget_UpdateDropArea::bInIsDragOver' has a wrong offset!");
 
 // Function BrickRigs.InventorySlotWidget.AddSubInventoryWidget
 // 0x0008 (0x0008 - 0x0000)
@@ -11129,34 +11264,49 @@ static_assert(offsetof(InventorySlotWidget_UpdateSlotApperance, bInCanDrop) == 0
 static_assert(offsetof(InventorySlotWidget_UpdateSlotApperance, bInDropReplace) == 0x000006, "Member 'InventorySlotWidget_UpdateSlotApperance::bInDropReplace' has a wrong offset!");
 static_assert(offsetof(InventorySlotWidget_UpdateSlotApperance, bInIsDragOver) == 0x000007, "Member 'InventorySlotWidget_UpdateSlotApperance::bInIsDragOver' has a wrong offset!");
 
-// Function BrickRigs.JoinSessionPopupWidget.OnPasswordChanged
-// 0x0020 (0x0020 - 0x0000)
-struct JoinSessionPopupWidget_OnPasswordChanged final
+// Function BrickRigs.TargetMarkerIconWidget.UpdateAmmoType
+// 0x0001 (0x0001 - 0x0000)
+struct TargetMarkerIconWidget_UpdateAmmoType final
 {
 public:
-	class FText                                   NewText;                                           // 0x0000(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
-	EValueChangedEventType                        EventType;                                         // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	EAmmoType                                     NewType;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(JoinSessionPopupWidget_OnPasswordChanged) == 0x000008, "Wrong alignment on JoinSessionPopupWidget_OnPasswordChanged");
-static_assert(sizeof(JoinSessionPopupWidget_OnPasswordChanged) == 0x000020, "Wrong size on JoinSessionPopupWidget_OnPasswordChanged");
-static_assert(offsetof(JoinSessionPopupWidget_OnPasswordChanged, NewText) == 0x000000, "Member 'JoinSessionPopupWidget_OnPasswordChanged::NewText' has a wrong offset!");
-static_assert(offsetof(JoinSessionPopupWidget_OnPasswordChanged, EventType) == 0x000018, "Member 'JoinSessionPopupWidget_OnPasswordChanged::EventType' has a wrong offset!");
+static_assert(alignof(TargetMarkerIconWidget_UpdateAmmoType) == 0x000001, "Wrong alignment on TargetMarkerIconWidget_UpdateAmmoType");
+static_assert(sizeof(TargetMarkerIconWidget_UpdateAmmoType) == 0x000001, "Wrong size on TargetMarkerIconWidget_UpdateAmmoType");
+static_assert(offsetof(TargetMarkerIconWidget_UpdateAmmoType, NewType) == 0x000000, "Member 'TargetMarkerIconWidget_UpdateAmmoType::NewType' has a wrong offset!");
 
-// Function BrickRigs.JoinSessionPopupWidget.UpdateJoinState
-// 0x0003 (0x0003 - 0x0000)
-struct JoinSessionPopupWidget_UpdateJoinState final
+// Function BrickRigs.TargetMarkerIconWidget.UpdateFireAction
+// 0x0004 (0x0004 - 0x0000)
+struct TargetMarkerIconWidget_UpdateFireAction final
 {
 public:
-	EJoinSessionState                             InJoinState;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bInPasswordRequired;                               // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bInHasPassword;                                    // 0x0002(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         NewActionIndex;                                    // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(JoinSessionPopupWidget_UpdateJoinState) == 0x000001, "Wrong alignment on JoinSessionPopupWidget_UpdateJoinState");
-static_assert(sizeof(JoinSessionPopupWidget_UpdateJoinState) == 0x000003, "Wrong size on JoinSessionPopupWidget_UpdateJoinState");
-static_assert(offsetof(JoinSessionPopupWidget_UpdateJoinState, InJoinState) == 0x000000, "Member 'JoinSessionPopupWidget_UpdateJoinState::InJoinState' has a wrong offset!");
-static_assert(offsetof(JoinSessionPopupWidget_UpdateJoinState, bInPasswordRequired) == 0x000001, "Member 'JoinSessionPopupWidget_UpdateJoinState::bInPasswordRequired' has a wrong offset!");
-static_assert(offsetof(JoinSessionPopupWidget_UpdateJoinState, bInHasPassword) == 0x000002, "Member 'JoinSessionPopupWidget_UpdateJoinState::bInHasPassword' has a wrong offset!");
+static_assert(alignof(TargetMarkerIconWidget_UpdateFireAction) == 0x000004, "Wrong alignment on TargetMarkerIconWidget_UpdateFireAction");
+static_assert(sizeof(TargetMarkerIconWidget_UpdateFireAction) == 0x000004, "Wrong size on TargetMarkerIconWidget_UpdateFireAction");
+static_assert(offsetof(TargetMarkerIconWidget_UpdateFireAction, NewActionIndex) == 0x000000, "Member 'TargetMarkerIconWidget_UpdateFireAction::NewActionIndex' has a wrong offset!");
+
+// Function BrickRigs.TargetMarkerIconWidget.UpdateHasValidTarget
+// 0x0001 (0x0001 - 0x0000)
+struct TargetMarkerIconWidget_UpdateHasValidTarget final
+{
+public:
+	bool                                          bNewHasValidTarget;                                // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(TargetMarkerIconWidget_UpdateHasValidTarget) == 0x000001, "Wrong alignment on TargetMarkerIconWidget_UpdateHasValidTarget");
+static_assert(sizeof(TargetMarkerIconWidget_UpdateHasValidTarget) == 0x000001, "Wrong size on TargetMarkerIconWidget_UpdateHasValidTarget");
+static_assert(offsetof(TargetMarkerIconWidget_UpdateHasValidTarget, bNewHasValidTarget) == 0x000000, "Member 'TargetMarkerIconWidget_UpdateHasValidTarget::bNewHasValidTarget' has a wrong offset!");
+
+// Function BrickRigs.TargetMarkerIconWidget.UpdateTargetDistance
+// 0x0004 (0x0004 - 0x0000)
+struct TargetMarkerIconWidget_UpdateTargetDistance final
+{
+public:
+	float                                         NewDist;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(TargetMarkerIconWidget_UpdateTargetDistance) == 0x000004, "Wrong alignment on TargetMarkerIconWidget_UpdateTargetDistance");
+static_assert(sizeof(TargetMarkerIconWidget_UpdateTargetDistance) == 0x000004, "Wrong size on TargetMarkerIconWidget_UpdateTargetDistance");
+static_assert(offsetof(TargetMarkerIconWidget_UpdateTargetDistance, NewDist) == 0x000000, "Member 'TargetMarkerIconWidget_UpdateTargetDistance::NewDist' has a wrong offset!");
 
 // Function BrickRigs.BuildingPart.Fill
 // 0x0001 (0x0001 - 0x0000)
@@ -11239,86 +11389,6 @@ static_assert(offsetof(BuildingPart_Rect, StartPosition) == 0x00000C, "Member 'B
 static_assert(offsetof(BuildingPart_Rect, EndPosition) == 0x000010, "Member 'BuildingPart_Rect::EndPosition' has a wrong offset!");
 static_assert(offsetof(BuildingPart_Rect, MeshIdx) == 0x000014, "Member 'BuildingPart_Rect::MeshIdx' has a wrong offset!");
 
-// Function BrickRigs.LegacyBuilding.ConstructBuildingPart
-// 0x0020 (0x0020 - 0x0000)
-struct LegacyBuilding_ConstructBuildingPart final
-{
-public:
-	int32                                         NumX;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         NumY;                                              // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         Floors;                                            // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                Location;                                          // 0x000C(0x000C)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UBuildingPart*                          ReturnValue;                                       // 0x0018(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(LegacyBuilding_ConstructBuildingPart) == 0x000008, "Wrong alignment on LegacyBuilding_ConstructBuildingPart");
-static_assert(sizeof(LegacyBuilding_ConstructBuildingPart) == 0x000020, "Wrong size on LegacyBuilding_ConstructBuildingPart");
-static_assert(offsetof(LegacyBuilding_ConstructBuildingPart, NumX) == 0x000000, "Member 'LegacyBuilding_ConstructBuildingPart::NumX' has a wrong offset!");
-static_assert(offsetof(LegacyBuilding_ConstructBuildingPart, NumY) == 0x000004, "Member 'LegacyBuilding_ConstructBuildingPart::NumY' has a wrong offset!");
-static_assert(offsetof(LegacyBuilding_ConstructBuildingPart, Floors) == 0x000008, "Member 'LegacyBuilding_ConstructBuildingPart::Floors' has a wrong offset!");
-static_assert(offsetof(LegacyBuilding_ConstructBuildingPart, Location) == 0x00000C, "Member 'LegacyBuilding_ConstructBuildingPart::Location' has a wrong offset!");
-static_assert(offsetof(LegacyBuilding_ConstructBuildingPart, ReturnValue) == 0x000018, "Member 'LegacyBuilding_ConstructBuildingPart::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.LegacyBuilding.ConstructFlatRoof
-// 0x0010 (0x0010 - 0x0000)
-struct LegacyBuilding_ConstructFlatRoof final
-{
-public:
-	class UBuildingPart*                          Part;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Mesh;                                              // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(LegacyBuilding_ConstructFlatRoof) == 0x000008, "Wrong alignment on LegacyBuilding_ConstructFlatRoof");
-static_assert(sizeof(LegacyBuilding_ConstructFlatRoof) == 0x000010, "Wrong size on LegacyBuilding_ConstructFlatRoof");
-static_assert(offsetof(LegacyBuilding_ConstructFlatRoof, Part) == 0x000000, "Member 'LegacyBuilding_ConstructFlatRoof::Part' has a wrong offset!");
-static_assert(offsetof(LegacyBuilding_ConstructFlatRoof, Mesh) == 0x000008, "Member 'LegacyBuilding_ConstructFlatRoof::Mesh' has a wrong offset!");
-
-// Function BrickRigs.LegacyBuilding.ConstructIndustrialRoof
-// 0x0010 (0x0010 - 0x0000)
-struct LegacyBuilding_ConstructIndustrialRoof final
-{
-public:
-	class UBuildingPart*                          Part;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         RoofSlopeMesh;                                     // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         RoofMesh;                                          // 0x0009(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         WallMesh;                                          // 0x000A(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_B[0x5];                                        // 0x000B(0x0005)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(LegacyBuilding_ConstructIndustrialRoof) == 0x000008, "Wrong alignment on LegacyBuilding_ConstructIndustrialRoof");
-static_assert(sizeof(LegacyBuilding_ConstructIndustrialRoof) == 0x000010, "Wrong size on LegacyBuilding_ConstructIndustrialRoof");
-static_assert(offsetof(LegacyBuilding_ConstructIndustrialRoof, Part) == 0x000000, "Member 'LegacyBuilding_ConstructIndustrialRoof::Part' has a wrong offset!");
-static_assert(offsetof(LegacyBuilding_ConstructIndustrialRoof, RoofSlopeMesh) == 0x000008, "Member 'LegacyBuilding_ConstructIndustrialRoof::RoofSlopeMesh' has a wrong offset!");
-static_assert(offsetof(LegacyBuilding_ConstructIndustrialRoof, RoofMesh) == 0x000009, "Member 'LegacyBuilding_ConstructIndustrialRoof::RoofMesh' has a wrong offset!");
-static_assert(offsetof(LegacyBuilding_ConstructIndustrialRoof, WallMesh) == 0x00000A, "Member 'LegacyBuilding_ConstructIndustrialRoof::WallMesh' has a wrong offset!");
-
-// Function BrickRigs.LegacyBuilding.ConstructRoof
-// 0x0010 (0x0010 - 0x0000)
-struct LegacyBuilding_ConstructRoof final
-{
-public:
-	class UBuildingPart*                          Part;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         RoofGableMesh;                                     // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         RoofMesh;                                          // 0x0009(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bRotate;                                           // 0x000A(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_B[0x5];                                        // 0x000B(0x0005)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(LegacyBuilding_ConstructRoof) == 0x000008, "Wrong alignment on LegacyBuilding_ConstructRoof");
-static_assert(sizeof(LegacyBuilding_ConstructRoof) == 0x000010, "Wrong size on LegacyBuilding_ConstructRoof");
-static_assert(offsetof(LegacyBuilding_ConstructRoof, Part) == 0x000000, "Member 'LegacyBuilding_ConstructRoof::Part' has a wrong offset!");
-static_assert(offsetof(LegacyBuilding_ConstructRoof, RoofGableMesh) == 0x000008, "Member 'LegacyBuilding_ConstructRoof::RoofGableMesh' has a wrong offset!");
-static_assert(offsetof(LegacyBuilding_ConstructRoof, RoofMesh) == 0x000009, "Member 'LegacyBuilding_ConstructRoof::RoofMesh' has a wrong offset!");
-static_assert(offsetof(LegacyBuilding_ConstructRoof, bRotate) == 0x00000A, "Member 'LegacyBuilding_ConstructRoof::bRotate' has a wrong offset!");
-
-// Function BrickRigs.LegacyBuilding.SpawnBuildingPart
-// 0x0008 (0x0008 - 0x0000)
-struct LegacyBuilding_SpawnBuildingPart final
-{
-public:
-	class UBuildingPart*                          Part;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(LegacyBuilding_SpawnBuildingPart) == 0x000008, "Wrong alignment on LegacyBuilding_SpawnBuildingPart");
-static_assert(sizeof(LegacyBuilding_SpawnBuildingPart) == 0x000008, "Wrong size on LegacyBuilding_SpawnBuildingPart");
-static_assert(offsetof(LegacyBuilding_SpawnBuildingPart, Part) == 0x000000, "Member 'LegacyBuilding_SpawnBuildingPart::Part' has a wrong offset!");
-
 // Function BrickRigs.LoadoutContainer.Interact_Inventory
 // 0x0008 (0x0008 - 0x0000)
 struct LoadoutContainer_Interact_Inventory final
@@ -11362,196 +11432,6 @@ public:
 static_assert(alignof(MapCrosshairWidget_SetStyleState) == 0x000001, "Wrong alignment on MapCrosshairWidget_SetStyleState");
 static_assert(sizeof(MapCrosshairWidget_SetStyleState) == 0x000001, "Wrong size on MapCrosshairWidget_SetStyleState");
 static_assert(offsetof(MapCrosshairWidget_SetStyleState, NewState) == 0x000000, "Member 'MapCrosshairWidget_SetStyleState::NewState' has a wrong offset!");
-
-// Function BrickRigs.TargetMarkerIconWidget.UpdateAmmoType
-// 0x0001 (0x0001 - 0x0000)
-struct TargetMarkerIconWidget_UpdateAmmoType final
-{
-public:
-	EAmmoType                                     NewType;                                           // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(TargetMarkerIconWidget_UpdateAmmoType) == 0x000001, "Wrong alignment on TargetMarkerIconWidget_UpdateAmmoType");
-static_assert(sizeof(TargetMarkerIconWidget_UpdateAmmoType) == 0x000001, "Wrong size on TargetMarkerIconWidget_UpdateAmmoType");
-static_assert(offsetof(TargetMarkerIconWidget_UpdateAmmoType, NewType) == 0x000000, "Member 'TargetMarkerIconWidget_UpdateAmmoType::NewType' has a wrong offset!");
-
-// Function BrickRigs.TargetMarkerIconWidget.UpdateFireAction
-// 0x0004 (0x0004 - 0x0000)
-struct TargetMarkerIconWidget_UpdateFireAction final
-{
-public:
-	int32                                         NewActionIndex;                                    // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(TargetMarkerIconWidget_UpdateFireAction) == 0x000004, "Wrong alignment on TargetMarkerIconWidget_UpdateFireAction");
-static_assert(sizeof(TargetMarkerIconWidget_UpdateFireAction) == 0x000004, "Wrong size on TargetMarkerIconWidget_UpdateFireAction");
-static_assert(offsetof(TargetMarkerIconWidget_UpdateFireAction, NewActionIndex) == 0x000000, "Member 'TargetMarkerIconWidget_UpdateFireAction::NewActionIndex' has a wrong offset!");
-
-// Function BrickRigs.TargetMarkerIconWidget.UpdateHasValidTarget
-// 0x0001 (0x0001 - 0x0000)
-struct TargetMarkerIconWidget_UpdateHasValidTarget final
-{
-public:
-	bool                                          bNewHasValidTarget;                                // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(TargetMarkerIconWidget_UpdateHasValidTarget) == 0x000001, "Wrong alignment on TargetMarkerIconWidget_UpdateHasValidTarget");
-static_assert(sizeof(TargetMarkerIconWidget_UpdateHasValidTarget) == 0x000001, "Wrong size on TargetMarkerIconWidget_UpdateHasValidTarget");
-static_assert(offsetof(TargetMarkerIconWidget_UpdateHasValidTarget, bNewHasValidTarget) == 0x000000, "Member 'TargetMarkerIconWidget_UpdateHasValidTarget::bNewHasValidTarget' has a wrong offset!");
-
-// Function BrickRigs.TargetMarkerIconWidget.UpdateTargetDistance
-// 0x0004 (0x0004 - 0x0000)
-struct TargetMarkerIconWidget_UpdateTargetDistance final
-{
-public:
-	float                                         NewDist;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(TargetMarkerIconWidget_UpdateTargetDistance) == 0x000004, "Wrong alignment on TargetMarkerIconWidget_UpdateTargetDistance");
-static_assert(sizeof(TargetMarkerIconWidget_UpdateTargetDistance) == 0x000004, "Wrong size on TargetMarkerIconWidget_UpdateTargetDistance");
-static_assert(offsetof(TargetMarkerIconWidget_UpdateTargetDistance, NewDist) == 0x000000, "Member 'TargetMarkerIconWidget_UpdateTargetDistance::NewDist' has a wrong offset!");
-
-// Function BrickRigs.MapWidget.OnMeasurementSystemChanged
-// 0x0001 (0x0001 - 0x0000)
-struct MapWidget_OnMeasurementSystemChanged final
-{
-public:
-	EMeasurementSystem                            NewSystem;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(MapWidget_OnMeasurementSystemChanged) == 0x000001, "Wrong alignment on MapWidget_OnMeasurementSystemChanged");
-static_assert(sizeof(MapWidget_OnMeasurementSystemChanged) == 0x000001, "Wrong size on MapWidget_OnMeasurementSystemChanged");
-static_assert(offsetof(MapWidget_OnMeasurementSystemChanged, NewSystem) == 0x000000, "Member 'MapWidget_OnMeasurementSystemChanged::NewSystem' has a wrong offset!");
-
-// Function BrickRigs.MapWidget.ResetPanAndZoom
-// 0x0001 (0x0001 - 0x0000)
-struct MapWidget_ResetPanAndZoom final
-{
-public:
-	bool                                          bInitialize;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(MapWidget_ResetPanAndZoom) == 0x000001, "Wrong alignment on MapWidget_ResetPanAndZoom");
-static_assert(sizeof(MapWidget_ResetPanAndZoom) == 0x000001, "Wrong size on MapWidget_ResetPanAndZoom");
-static_assert(offsetof(MapWidget_ResetPanAndZoom, bInitialize) == 0x000000, "Member 'MapWidget_ResetPanAndZoom::bInitialize' has a wrong offset!");
-
-// Function BrickRigs.MapWidget.UpdateViewportPannedOrZoomed
-// 0x0001 (0x0001 - 0x0000)
-struct MapWidget_UpdateViewportPannedOrZoomed final
-{
-public:
-	bool                                          bValue;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(MapWidget_UpdateViewportPannedOrZoomed) == 0x000001, "Wrong alignment on MapWidget_UpdateViewportPannedOrZoomed");
-static_assert(sizeof(MapWidget_UpdateViewportPannedOrZoomed) == 0x000001, "Wrong size on MapWidget_UpdateViewportPannedOrZoomed");
-static_assert(offsetof(MapWidget_UpdateViewportPannedOrZoomed, bValue) == 0x000000, "Member 'MapWidget_UpdateViewportPannedOrZoomed::bValue' has a wrong offset!");
-
-// Function BrickRigs.MapWidget.CreateMapMID
-// 0x0008 (0x0008 - 0x0000)
-struct MapWidget_CreateMapMID final
-{
-public:
-	class UMaterialInstanceDynamic*               ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(MapWidget_CreateMapMID) == 0x000008, "Wrong alignment on MapWidget_CreateMapMID");
-static_assert(sizeof(MapWidget_CreateMapMID) == 0x000008, "Wrong size on MapWidget_CreateMapMID");
-static_assert(offsetof(MapWidget_CreateMapMID, ReturnValue) == 0x000000, "Member 'MapWidget_CreateMapMID::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.MapWidget.GetWidgetToFocus
-// 0x0008 (0x0008 - 0x0000)
-struct MapWidget_GetWidgetToFocus final
-{
-public:
-	class UWidget*                                ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(MapWidget_GetWidgetToFocus) == 0x000008, "Wrong alignment on MapWidget_GetWidgetToFocus");
-static_assert(sizeof(MapWidget_GetWidgetToFocus) == 0x000008, "Wrong size on MapWidget_GetWidgetToFocus");
-static_assert(offsetof(MapWidget_GetWidgetToFocus, ReturnValue) == 0x000000, "Member 'MapWidget_GetWidgetToFocus::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.MatchEndWidget.UpdateContinueButton
-// 0x0008 (0x0008 - 0x0000)
-struct MatchEndWidget_UpdateContinueButton final
-{
-public:
-	int32                                         TimeRemaining;                                     // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bIsHost;                                           // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(MatchEndWidget_UpdateContinueButton) == 0x000004, "Wrong alignment on MatchEndWidget_UpdateContinueButton");
-static_assert(sizeof(MatchEndWidget_UpdateContinueButton) == 0x000008, "Wrong size on MatchEndWidget_UpdateContinueButton");
-static_assert(offsetof(MatchEndWidget_UpdateContinueButton, TimeRemaining) == 0x000000, "Member 'MatchEndWidget_UpdateContinueButton::TimeRemaining' has a wrong offset!");
-static_assert(offsetof(MatchEndWidget_UpdateContinueButton, bIsHost) == 0x000004, "Member 'MatchEndWidget_UpdateContinueButton::bIsHost' has a wrong offset!");
-
-// Function BrickRigs.MatchEndWidget.UpdateMatchWinner
-// 0x0010 (0x0010 - 0x0000)
-struct MatchEndWidget_UpdateMatchWinner final
-{
-public:
-	class UBrickTeam*                             WinnerTeam;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	ETeamAttitude                                 TeamAttitude;                                      // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_9[0x7];                                        // 0x0009(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(MatchEndWidget_UpdateMatchWinner) == 0x000008, "Wrong alignment on MatchEndWidget_UpdateMatchWinner");
-static_assert(sizeof(MatchEndWidget_UpdateMatchWinner) == 0x000010, "Wrong size on MatchEndWidget_UpdateMatchWinner");
-static_assert(offsetof(MatchEndWidget_UpdateMatchWinner, WinnerTeam) == 0x000000, "Member 'MatchEndWidget_UpdateMatchWinner::WinnerTeam' has a wrong offset!");
-static_assert(offsetof(MatchEndWidget_UpdateMatchWinner, TeamAttitude) == 0x000008, "Member 'MatchEndWidget_UpdateMatchWinner::TeamAttitude' has a wrong offset!");
-
-// Function BrickRigs.MatchEndWidget.GetWidgetToFocus
-// 0x0008 (0x0008 - 0x0000)
-struct MatchEndWidget_GetWidgetToFocus final
-{
-public:
-	class UWidget*                                ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(MatchEndWidget_GetWidgetToFocus) == 0x000008, "Wrong alignment on MatchEndWidget_GetWidgetToFocus");
-static_assert(sizeof(MatchEndWidget_GetWidgetToFocus) == 0x000008, "Wrong size on MatchEndWidget_GetWidgetToFocus");
-static_assert(offsetof(MatchEndWidget_GetWidgetToFocus, ReturnValue) == 0x000000, "Member 'MatchEndWidget_GetWidgetToFocus::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.MatchMenuWidget.UpdateIsAdmin
-// 0x0001 (0x0001 - 0x0000)
-struct MatchMenuWidget_UpdateIsAdmin final
-{
-public:
-	bool                                          bNewIsAdmin;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(MatchMenuWidget_UpdateIsAdmin) == 0x000001, "Wrong alignment on MatchMenuWidget_UpdateIsAdmin");
-static_assert(sizeof(MatchMenuWidget_UpdateIsAdmin) == 0x000001, "Wrong size on MatchMenuWidget_UpdateIsAdmin");
-static_assert(offsetof(MatchMenuWidget_UpdateIsAdmin, bNewIsAdmin) == 0x000000, "Member 'MatchMenuWidget_UpdateIsAdmin::bNewIsAdmin' has a wrong offset!");
-
-// Function BrickRigs.MatchMenuWidget.UpdateRestartMatchButton
-// 0x0002 (0x0002 - 0x0000)
-struct MatchMenuWidget_UpdateRestartMatchButton final
-{
-public:
-	bool                                          bCanRestart;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bSameLevelAndMode;                                 // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(MatchMenuWidget_UpdateRestartMatchButton) == 0x000001, "Wrong alignment on MatchMenuWidget_UpdateRestartMatchButton");
-static_assert(sizeof(MatchMenuWidget_UpdateRestartMatchButton) == 0x000002, "Wrong size on MatchMenuWidget_UpdateRestartMatchButton");
-static_assert(offsetof(MatchMenuWidget_UpdateRestartMatchButton, bCanRestart) == 0x000000, "Member 'MatchMenuWidget_UpdateRestartMatchButton::bCanRestart' has a wrong offset!");
-static_assert(offsetof(MatchMenuWidget_UpdateRestartMatchButton, bSameLevelAndMode) == 0x000001, "Member 'MatchMenuWidget_UpdateRestartMatchButton::bSameLevelAndMode' has a wrong offset!");
-
-// Function BrickRigs.UGCItemWidget.UpdateItemWidget
-// 0x0004 (0x0004 - 0x0000)
-struct UGCItemWidget_UpdateItemWidget final
-{
-public:
-	bool                                          bInIsSelected;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bInIsLegacyFile;                                   // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bInHasAutoSave;                                    // 0x0002(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bInIsDedicatedAutoSave;                            // 0x0003(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(UGCItemWidget_UpdateItemWidget) == 0x000001, "Wrong alignment on UGCItemWidget_UpdateItemWidget");
-static_assert(sizeof(UGCItemWidget_UpdateItemWidget) == 0x000004, "Wrong size on UGCItemWidget_UpdateItemWidget");
-static_assert(offsetof(UGCItemWidget_UpdateItemWidget, bInIsSelected) == 0x000000, "Member 'UGCItemWidget_UpdateItemWidget::bInIsSelected' has a wrong offset!");
-static_assert(offsetof(UGCItemWidget_UpdateItemWidget, bInIsLegacyFile) == 0x000001, "Member 'UGCItemWidget_UpdateItemWidget::bInIsLegacyFile' has a wrong offset!");
-static_assert(offsetof(UGCItemWidget_UpdateItemWidget, bInHasAutoSave) == 0x000002, "Member 'UGCItemWidget_UpdateItemWidget::bInHasAutoSave' has a wrong offset!");
-static_assert(offsetof(UGCItemWidget_UpdateItemWidget, bInIsDedicatedAutoSave) == 0x000003, "Member 'UGCItemWidget_UpdateItemWidget::bInIsDedicatedAutoSave' has a wrong offset!");
-
-// Function BrickRigs.MatchTimerWidget.UpdateTimer
-// 0x0004 (0x0004 - 0x0000)
-struct MatchTimerWidget_UpdateTimer final
-{
-public:
-	int32                                         NewTime;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(MatchTimerWidget_UpdateTimer) == 0x000004, "Wrong alignment on MatchTimerWidget_UpdateTimer");
-static_assert(sizeof(MatchTimerWidget_UpdateTimer) == 0x000004, "Wrong size on MatchTimerWidget_UpdateTimer");
-static_assert(offsetof(MatchTimerWidget_UpdateTimer, NewTime) == 0x000000, "Member 'MatchTimerWidget_UpdateTimer::NewTime' has a wrong offset!");
 
 // Function BrickRigs.RadioButtonPanel.GetSelectedWidgets
 // 0x0010 (0x0010 - 0x0000)
@@ -11608,6 +11488,96 @@ static_assert(alignof(RadioButtonPanel_GetSelectedWidget) == 0x000008, "Wrong al
 static_assert(sizeof(RadioButtonPanel_GetSelectedWidget) == 0x000008, "Wrong size on RadioButtonPanel_GetSelectedWidget");
 static_assert(offsetof(RadioButtonPanel_GetSelectedWidget, ReturnValue) == 0x000000, "Member 'RadioButtonPanel_GetSelectedWidget::ReturnValue' has a wrong offset!");
 
+// Function BrickRigs.MapWidget.OnMeasurementSystemChanged
+// 0x0001 (0x0001 - 0x0000)
+struct MapWidget_OnMeasurementSystemChanged final
+{
+public:
+	EMeasurementSystem                            NewSystem;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(MapWidget_OnMeasurementSystemChanged) == 0x000001, "Wrong alignment on MapWidget_OnMeasurementSystemChanged");
+static_assert(sizeof(MapWidget_OnMeasurementSystemChanged) == 0x000001, "Wrong size on MapWidget_OnMeasurementSystemChanged");
+static_assert(offsetof(MapWidget_OnMeasurementSystemChanged, NewSystem) == 0x000000, "Member 'MapWidget_OnMeasurementSystemChanged::NewSystem' has a wrong offset!");
+
+// Function BrickRigs.MapWidget.ResetPanAndZoom
+// 0x0001 (0x0001 - 0x0000)
+struct MapWidget_ResetPanAndZoom final
+{
+public:
+	bool                                          bInitialize;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(MapWidget_ResetPanAndZoom) == 0x000001, "Wrong alignment on MapWidget_ResetPanAndZoom");
+static_assert(sizeof(MapWidget_ResetPanAndZoom) == 0x000001, "Wrong size on MapWidget_ResetPanAndZoom");
+static_assert(offsetof(MapWidget_ResetPanAndZoom, bInitialize) == 0x000000, "Member 'MapWidget_ResetPanAndZoom::bInitialize' has a wrong offset!");
+
+// Function BrickRigs.MapWidget.UpdateViewportPannedOrZoomed
+// 0x0001 (0x0001 - 0x0000)
+struct MapWidget_UpdateViewportPannedOrZoomed final
+{
+public:
+	bool                                          bValue;                                            // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(MapWidget_UpdateViewportPannedOrZoomed) == 0x000001, "Wrong alignment on MapWidget_UpdateViewportPannedOrZoomed");
+static_assert(sizeof(MapWidget_UpdateViewportPannedOrZoomed) == 0x000001, "Wrong size on MapWidget_UpdateViewportPannedOrZoomed");
+static_assert(offsetof(MapWidget_UpdateViewportPannedOrZoomed, bValue) == 0x000000, "Member 'MapWidget_UpdateViewportPannedOrZoomed::bValue' has a wrong offset!");
+
+// Function BrickRigs.MapWidget.CreateMapMID
+// 0x0008 (0x0008 - 0x0000)
+struct MapWidget_CreateMapMID final
+{
+public:
+	class UMaterialInstanceDynamic*               ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(MapWidget_CreateMapMID) == 0x000008, "Wrong alignment on MapWidget_CreateMapMID");
+static_assert(sizeof(MapWidget_CreateMapMID) == 0x000008, "Wrong size on MapWidget_CreateMapMID");
+static_assert(offsetof(MapWidget_CreateMapMID, ReturnValue) == 0x000000, "Member 'MapWidget_CreateMapMID::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.MapWidget.GetWidgetToFocus
+// 0x0008 (0x0008 - 0x0000)
+struct MapWidget_GetWidgetToFocus final
+{
+public:
+	class UWidget*                                ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(MapWidget_GetWidgetToFocus) == 0x000008, "Wrong alignment on MapWidget_GetWidgetToFocus");
+static_assert(sizeof(MapWidget_GetWidgetToFocus) == 0x000008, "Wrong size on MapWidget_GetWidgetToFocus");
+static_assert(offsetof(MapWidget_GetWidgetToFocus, ReturnValue) == 0x000000, "Member 'MapWidget_GetWidgetToFocus::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.MatchMenuWidget.UpdateIsAdmin
+// 0x0001 (0x0001 - 0x0000)
+struct MatchMenuWidget_UpdateIsAdmin final
+{
+public:
+	bool                                          bNewIsAdmin;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(MatchMenuWidget_UpdateIsAdmin) == 0x000001, "Wrong alignment on MatchMenuWidget_UpdateIsAdmin");
+static_assert(sizeof(MatchMenuWidget_UpdateIsAdmin) == 0x000001, "Wrong size on MatchMenuWidget_UpdateIsAdmin");
+static_assert(offsetof(MatchMenuWidget_UpdateIsAdmin, bNewIsAdmin) == 0x000000, "Member 'MatchMenuWidget_UpdateIsAdmin::bNewIsAdmin' has a wrong offset!");
+
+// Function BrickRigs.MatchMenuWidget.UpdateRestartMatchButton
+// 0x0002 (0x0002 - 0x0000)
+struct MatchMenuWidget_UpdateRestartMatchButton final
+{
+public:
+	bool                                          bCanRestart;                                       // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bSameLevelAndMode;                                 // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(MatchMenuWidget_UpdateRestartMatchButton) == 0x000001, "Wrong alignment on MatchMenuWidget_UpdateRestartMatchButton");
+static_assert(sizeof(MatchMenuWidget_UpdateRestartMatchButton) == 0x000002, "Wrong size on MatchMenuWidget_UpdateRestartMatchButton");
+static_assert(offsetof(MatchMenuWidget_UpdateRestartMatchButton, bCanRestart) == 0x000000, "Member 'MatchMenuWidget_UpdateRestartMatchButton::bCanRestart' has a wrong offset!");
+static_assert(offsetof(MatchMenuWidget_UpdateRestartMatchButton, bSameLevelAndMode) == 0x000001, "Member 'MatchMenuWidget_UpdateRestartMatchButton::bSameLevelAndMode' has a wrong offset!");
+
+// Function BrickRigs.MatchTimerWidget.UpdateTimer
+// 0x0004 (0x0004 - 0x0000)
+struct MatchTimerWidget_UpdateTimer final
+{
+public:
+	int32                                         NewTime;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(MatchTimerWidget_UpdateTimer) == 0x000004, "Wrong alignment on MatchTimerWidget_UpdateTimer");
+static_assert(sizeof(MatchTimerWidget_UpdateTimer) == 0x000004, "Wrong size on MatchTimerWidget_UpdateTimer");
+static_assert(offsetof(MatchTimerWidget_UpdateTimer, NewTime) == 0x000000, "Member 'MatchTimerWidget_UpdateTimer::NewTime' has a wrong offset!");
+
 // Function BrickRigs.MenuButtonPanelWidget.ClearButtons
 // 0x0001 (0x0001 - 0x0000)
 struct MenuButtonPanelWidget_ClearButtons final
@@ -11659,49 +11629,89 @@ static_assert(alignof(MenuButtonPanelWidget_GetWidgetToFocus) == 0x000008, "Wron
 static_assert(sizeof(MenuButtonPanelWidget_GetWidgetToFocus) == 0x000008, "Wrong size on MenuButtonPanelWidget_GetWidgetToFocus");
 static_assert(offsetof(MenuButtonPanelWidget_GetWidgetToFocus, ReturnValue) == 0x000000, "Member 'MenuButtonPanelWidget_GetWidgetToFocus::ReturnValue' has a wrong offset!");
 
-// Function BrickRigs.MenuButtonWidget.SetColorStyle
-// 0x0001 (0x0001 - 0x0000)
-struct MenuButtonWidget_SetColorStyle final
+// Function BrickRigs.UGCTagsPropertyWidget.InitializeDepartmentItem
+// 0x0148 (0x0148 - 0x0000)
+struct UGCTagsPropertyWidget_InitializeDepartmentItem final
 {
 public:
-	EBrickUIColorStyle                            InColorStyle;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Item;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FBrickComboBoxItemParams               OutParams;                                         // 0x0008(0x0140)(Parm, OutParm, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(MenuButtonWidget_SetColorStyle) == 0x000001, "Wrong alignment on MenuButtonWidget_SetColorStyle");
-static_assert(sizeof(MenuButtonWidget_SetColorStyle) == 0x000001, "Wrong size on MenuButtonWidget_SetColorStyle");
-static_assert(offsetof(MenuButtonWidget_SetColorStyle, InColorStyle) == 0x000000, "Member 'MenuButtonWidget_SetColorStyle::InColorStyle' has a wrong offset!");
+static_assert(alignof(UGCTagsPropertyWidget_InitializeDepartmentItem) == 0x000008, "Wrong alignment on UGCTagsPropertyWidget_InitializeDepartmentItem");
+static_assert(sizeof(UGCTagsPropertyWidget_InitializeDepartmentItem) == 0x000148, "Wrong size on UGCTagsPropertyWidget_InitializeDepartmentItem");
+static_assert(offsetof(UGCTagsPropertyWidget_InitializeDepartmentItem, Item) == 0x000000, "Member 'UGCTagsPropertyWidget_InitializeDepartmentItem::Item' has a wrong offset!");
+static_assert(offsetof(UGCTagsPropertyWidget_InitializeDepartmentItem, OutParams) == 0x000008, "Member 'UGCTagsPropertyWidget_InitializeDepartmentItem::OutParams' has a wrong offset!");
 
-// Function BrickRigs.MenuButtonWidget.SetDisplayIcon
-// 0x0004 (0x0004 - 0x0000)
-struct MenuButtonWidget_SetDisplayIcon final
+// Function BrickRigs.UGCTagsPropertyWidget.InitializeEraItem
+// 0x0148 (0x0148 - 0x0000)
+struct UGCTagsPropertyWidget_InitializeEraItem final
 {
 public:
-	int32                                         InIconIndex;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         Item;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FBrickComboBoxItemParams               OutParams;                                         // 0x0008(0x0140)(Parm, OutParm, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(MenuButtonWidget_SetDisplayIcon) == 0x000004, "Wrong alignment on MenuButtonWidget_SetDisplayIcon");
-static_assert(sizeof(MenuButtonWidget_SetDisplayIcon) == 0x000004, "Wrong size on MenuButtonWidget_SetDisplayIcon");
-static_assert(offsetof(MenuButtonWidget_SetDisplayIcon, InIconIndex) == 0x000000, "Member 'MenuButtonWidget_SetDisplayIcon::InIconIndex' has a wrong offset!");
+static_assert(alignof(UGCTagsPropertyWidget_InitializeEraItem) == 0x000008, "Wrong alignment on UGCTagsPropertyWidget_InitializeEraItem");
+static_assert(sizeof(UGCTagsPropertyWidget_InitializeEraItem) == 0x000148, "Wrong size on UGCTagsPropertyWidget_InitializeEraItem");
+static_assert(offsetof(UGCTagsPropertyWidget_InitializeEraItem, Item) == 0x000000, "Member 'UGCTagsPropertyWidget_InitializeEraItem::Item' has a wrong offset!");
+static_assert(offsetof(UGCTagsPropertyWidget_InitializeEraItem, OutParams) == 0x000008, "Member 'UGCTagsPropertyWidget_InitializeEraItem::OutParams' has a wrong offset!");
 
-// Function BrickRigs.MenuButtonWidget.SetDisplayText
-// 0x0018 (0x0018 - 0x0000)
-struct MenuButtonWidget_SetDisplayText final
+// Function BrickRigs.UGCTagsPropertyWidget.InitializeTypeItem
+// 0x0148 (0x0148 - 0x0000)
+struct UGCTagsPropertyWidget_InitializeTypeItem final
 {
 public:
-	class FText                                   InText;                                            // 0x0000(0x0018)(Parm, NativeAccessSpecifierPublic)
+	int32                                         Item;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FBrickComboBoxItemParams               OutParams;                                         // 0x0008(0x0140)(Parm, OutParm, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(MenuButtonWidget_SetDisplayText) == 0x000008, "Wrong alignment on MenuButtonWidget_SetDisplayText");
-static_assert(sizeof(MenuButtonWidget_SetDisplayText) == 0x000018, "Wrong size on MenuButtonWidget_SetDisplayText");
-static_assert(offsetof(MenuButtonWidget_SetDisplayText, InText) == 0x000000, "Member 'MenuButtonWidget_SetDisplayText::InText' has a wrong offset!");
+static_assert(alignof(UGCTagsPropertyWidget_InitializeTypeItem) == 0x000008, "Wrong alignment on UGCTagsPropertyWidget_InitializeTypeItem");
+static_assert(sizeof(UGCTagsPropertyWidget_InitializeTypeItem) == 0x000148, "Wrong size on UGCTagsPropertyWidget_InitializeTypeItem");
+static_assert(offsetof(UGCTagsPropertyWidget_InitializeTypeItem, Item) == 0x000000, "Member 'UGCTagsPropertyWidget_InitializeTypeItem::Item' has a wrong offset!");
+static_assert(offsetof(UGCTagsPropertyWidget_InitializeTypeItem, OutParams) == 0x000008, "Member 'UGCTagsPropertyWidget_InitializeTypeItem::OutParams' has a wrong offset!");
 
-// Function BrickRigs.MenuButtonWidget.UpdateDisplayText
-// 0x0018 (0x0018 - 0x0000)
-struct MenuButtonWidget_UpdateDisplayText final
+// Function BrickRigs.UGCTagsPropertyWidget.OnDepartmentItemSelected
+// 0x0008 (0x0008 - 0x0000)
+struct UGCTagsPropertyWidget_OnDepartmentItemSelected final
 {
 public:
-	class FText                                   InText;                                            // 0x0000(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	int32                                         Item;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EValueChangedEventType                        EventType;                                         // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(MenuButtonWidget_UpdateDisplayText) == 0x000008, "Wrong alignment on MenuButtonWidget_UpdateDisplayText");
-static_assert(sizeof(MenuButtonWidget_UpdateDisplayText) == 0x000018, "Wrong size on MenuButtonWidget_UpdateDisplayText");
-static_assert(offsetof(MenuButtonWidget_UpdateDisplayText, InText) == 0x000000, "Member 'MenuButtonWidget_UpdateDisplayText::InText' has a wrong offset!");
+static_assert(alignof(UGCTagsPropertyWidget_OnDepartmentItemSelected) == 0x000004, "Wrong alignment on UGCTagsPropertyWidget_OnDepartmentItemSelected");
+static_assert(sizeof(UGCTagsPropertyWidget_OnDepartmentItemSelected) == 0x000008, "Wrong size on UGCTagsPropertyWidget_OnDepartmentItemSelected");
+static_assert(offsetof(UGCTagsPropertyWidget_OnDepartmentItemSelected, Item) == 0x000000, "Member 'UGCTagsPropertyWidget_OnDepartmentItemSelected::Item' has a wrong offset!");
+static_assert(offsetof(UGCTagsPropertyWidget_OnDepartmentItemSelected, EventType) == 0x000004, "Member 'UGCTagsPropertyWidget_OnDepartmentItemSelected::EventType' has a wrong offset!");
+
+// Function BrickRigs.UGCTagsPropertyWidget.OnEraItemSelected
+// 0x0008 (0x0008 - 0x0000)
+struct UGCTagsPropertyWidget_OnEraItemSelected final
+{
+public:
+	int32                                         Item;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EValueChangedEventType                        EventType;                                         // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(UGCTagsPropertyWidget_OnEraItemSelected) == 0x000004, "Wrong alignment on UGCTagsPropertyWidget_OnEraItemSelected");
+static_assert(sizeof(UGCTagsPropertyWidget_OnEraItemSelected) == 0x000008, "Wrong size on UGCTagsPropertyWidget_OnEraItemSelected");
+static_assert(offsetof(UGCTagsPropertyWidget_OnEraItemSelected, Item) == 0x000000, "Member 'UGCTagsPropertyWidget_OnEraItemSelected::Item' has a wrong offset!");
+static_assert(offsetof(UGCTagsPropertyWidget_OnEraItemSelected, EventType) == 0x000004, "Member 'UGCTagsPropertyWidget_OnEraItemSelected::EventType' has a wrong offset!");
+
+// Function BrickRigs.UGCTagsPropertyWidget.OnTypeItemSelected
+// 0x0008 (0x0008 - 0x0000)
+struct UGCTagsPropertyWidget_OnTypeItemSelected final
+{
+public:
+	int32                                         Item;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EValueChangedEventType                        EventType;                                         // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(UGCTagsPropertyWidget_OnTypeItemSelected) == 0x000004, "Wrong alignment on UGCTagsPropertyWidget_OnTypeItemSelected");
+static_assert(sizeof(UGCTagsPropertyWidget_OnTypeItemSelected) == 0x000008, "Wrong size on UGCTagsPropertyWidget_OnTypeItemSelected");
+static_assert(offsetof(UGCTagsPropertyWidget_OnTypeItemSelected, Item) == 0x000000, "Member 'UGCTagsPropertyWidget_OnTypeItemSelected::Item' has a wrong offset!");
+static_assert(offsetof(UGCTagsPropertyWidget_OnTypeItemSelected, EventType) == 0x000004, "Member 'UGCTagsPropertyWidget_OnTypeItemSelected::EventType' has a wrong offset!");
 
 // Function BrickRigs.UGCBrowserWidget.AddOrRemoveSelectedItem
 // 0x0001 (0x0001 - 0x0000)
@@ -11968,6 +11978,329 @@ static_assert(alignof(MenuWidget_IsMainMenu) == 0x000001, "Wrong alignment on Me
 static_assert(sizeof(MenuWidget_IsMainMenu) == 0x000001, "Wrong size on MenuWidget_IsMainMenu");
 static_assert(offsetof(MenuWidget_IsMainMenu, ReturnValue) == 0x000000, "Member 'MenuWidget_IsMainMenu::ReturnValue' has a wrong offset!");
 
+// Function BrickRigs.ModHook.OnCharacterBeginPlay
+// 0x0008 (0x0008 - 0x0000)
+struct ModHook_OnCharacterBeginPlay final
+{
+public:
+	class ABaseCharacter*                         Character;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ModHook_OnCharacterBeginPlay) == 0x000008, "Wrong alignment on ModHook_OnCharacterBeginPlay");
+static_assert(sizeof(ModHook_OnCharacterBeginPlay) == 0x000008, "Wrong size on ModHook_OnCharacterBeginPlay");
+static_assert(offsetof(ModHook_OnCharacterBeginPlay, Character) == 0x000000, "Member 'ModHook_OnCharacterBeginPlay::Character' has a wrong offset!");
+
+// Function BrickRigs.ModHook.OnPlayerControllerBeginPlay
+// 0x0008 (0x0008 - 0x0000)
+struct ModHook_OnPlayerControllerBeginPlay final
+{
+public:
+	class ABasePlayerController*                  PC;                                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ModHook_OnPlayerControllerBeginPlay) == 0x000008, "Wrong alignment on ModHook_OnPlayerControllerBeginPlay");
+static_assert(sizeof(ModHook_OnPlayerControllerBeginPlay) == 0x000008, "Wrong size on ModHook_OnPlayerControllerBeginPlay");
+static_assert(offsetof(ModHook_OnPlayerControllerBeginPlay, PC) == 0x000000, "Member 'ModHook_OnPlayerControllerBeginPlay::PC' has a wrong offset!");
+
+// Function BrickRigs.ModHook.OnSpectatorBeginPlay
+// 0x0008 (0x0008 - 0x0000)
+struct ModHook_OnSpectatorBeginPlay final
+{
+public:
+	class ABrickSpectatorPawn*                    Pawn;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ModHook_OnSpectatorBeginPlay) == 0x000008, "Wrong alignment on ModHook_OnSpectatorBeginPlay");
+static_assert(sizeof(ModHook_OnSpectatorBeginPlay) == 0x000008, "Wrong size on ModHook_OnSpectatorBeginPlay");
+static_assert(offsetof(ModHook_OnSpectatorBeginPlay, Pawn) == 0x000000, "Member 'ModHook_OnSpectatorBeginPlay::Pawn' has a wrong offset!");
+
+// Function BrickRigs.ModHook.OnVehicleBeginPlay
+// 0x0008 (0x0008 - 0x0000)
+struct ModHook_OnVehicleBeginPlay final
+{
+public:
+	class ABrickVehicle*                          Vehicle;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ModHook_OnVehicleBeginPlay) == 0x000008, "Wrong alignment on ModHook_OnVehicleBeginPlay");
+static_assert(sizeof(ModHook_OnVehicleBeginPlay) == 0x000008, "Wrong size on ModHook_OnVehicleBeginPlay");
+static_assert(offsetof(ModHook_OnVehicleBeginPlay, Vehicle) == 0x000000, "Member 'ModHook_OnVehicleBeginPlay::Vehicle' has a wrong offset!");
+
+// Function BrickRigs.ModHook.OverrideBillboardTexture
+// 0x0058 (0x0058 - 0x0000)
+struct ModHook_OverrideBillboardTexture final
+{
+public:
+	TSoftObjectPtr<class UTexture2D>              Texture;                                           // 0x0000(0x0028)(ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class ABillboard*                             Billboard;                                         // 0x0028(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSoftObjectPtr<class UTexture2D>              ReturnValue;                                       // 0x0030(0x0028)(Parm, OutParm, ReturnParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ModHook_OverrideBillboardTexture) == 0x000008, "Wrong alignment on ModHook_OverrideBillboardTexture");
+static_assert(sizeof(ModHook_OverrideBillboardTexture) == 0x000058, "Wrong size on ModHook_OverrideBillboardTexture");
+static_assert(offsetof(ModHook_OverrideBillboardTexture, Texture) == 0x000000, "Member 'ModHook_OverrideBillboardTexture::Texture' has a wrong offset!");
+static_assert(offsetof(ModHook_OverrideBillboardTexture, Billboard) == 0x000028, "Member 'ModHook_OverrideBillboardTexture::Billboard' has a wrong offset!");
+static_assert(offsetof(ModHook_OverrideBillboardTexture, ReturnValue) == 0x000030, "Member 'ModHook_OverrideBillboardTexture::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.ModHook.OverrideCharacterLoadout
+// 0x0028 (0x0028 - 0x0000)
+struct ModHook_OverrideCharacterLoadout final
+{
+public:
+	struct FInventoryLoadout                      Loadout;                                           // 0x0000(0x0010)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	class ABaseCharacter*                         Character;                                         // 0x0010(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FInventoryLoadout                      ReturnValue;                                       // 0x0018(0x0010)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ModHook_OverrideCharacterLoadout) == 0x000008, "Wrong alignment on ModHook_OverrideCharacterLoadout");
+static_assert(sizeof(ModHook_OverrideCharacterLoadout) == 0x000028, "Wrong size on ModHook_OverrideCharacterLoadout");
+static_assert(offsetof(ModHook_OverrideCharacterLoadout, Loadout) == 0x000000, "Member 'ModHook_OverrideCharacterLoadout::Loadout' has a wrong offset!");
+static_assert(offsetof(ModHook_OverrideCharacterLoadout, Character) == 0x000010, "Member 'ModHook_OverrideCharacterLoadout::Character' has a wrong offset!");
+static_assert(offsetof(ModHook_OverrideCharacterLoadout, ReturnValue) == 0x000018, "Member 'ModHook_OverrideCharacterLoadout::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.ModHook.OverrideGameModeClass
+// 0x0040 (0x0040 - 0x0000)
+struct ModHook_OverrideGameModeClass final
+{
+public:
+	TSubclassOf<class AGameModeBase>              GameModeClass;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 MapName;                                           // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Options;                                           // 0x0018(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 Portal;                                            // 0x0028(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class AGameModeBase>              ReturnValue;                                       // 0x0038(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ModHook_OverrideGameModeClass) == 0x000008, "Wrong alignment on ModHook_OverrideGameModeClass");
+static_assert(sizeof(ModHook_OverrideGameModeClass) == 0x000040, "Wrong size on ModHook_OverrideGameModeClass");
+static_assert(offsetof(ModHook_OverrideGameModeClass, GameModeClass) == 0x000000, "Member 'ModHook_OverrideGameModeClass::GameModeClass' has a wrong offset!");
+static_assert(offsetof(ModHook_OverrideGameModeClass, MapName) == 0x000008, "Member 'ModHook_OverrideGameModeClass::MapName' has a wrong offset!");
+static_assert(offsetof(ModHook_OverrideGameModeClass, Options) == 0x000018, "Member 'ModHook_OverrideGameModeClass::Options' has a wrong offset!");
+static_assert(offsetof(ModHook_OverrideGameModeClass, Portal) == 0x000028, "Member 'ModHook_OverrideGameModeClass::Portal' has a wrong offset!");
+static_assert(offsetof(ModHook_OverrideGameModeClass, ReturnValue) == 0x000038, "Member 'ModHook_OverrideGameModeClass::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.ModHook.OverrideGameStateClass
+// 0x0010 (0x0010 - 0x0000)
+struct ModHook_OverrideGameStateClass final
+{
+public:
+	TSubclassOf<class AGameStateBase>             GameStateClass;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class AGameStateBase>             ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ModHook_OverrideGameStateClass) == 0x000008, "Wrong alignment on ModHook_OverrideGameStateClass");
+static_assert(sizeof(ModHook_OverrideGameStateClass) == 0x000010, "Wrong size on ModHook_OverrideGameStateClass");
+static_assert(offsetof(ModHook_OverrideGameStateClass, GameStateClass) == 0x000000, "Member 'ModHook_OverrideGameStateClass::GameStateClass' has a wrong offset!");
+static_assert(offsetof(ModHook_OverrideGameStateClass, ReturnValue) == 0x000008, "Member 'ModHook_OverrideGameStateClass::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.ModHook.OverrideLoadoutContainerItems
+// 0x0020 (0x0020 - 0x0000)
+struct ModHook_OverrideLoadoutContainerItems final
+{
+public:
+	TArray<TSubclassOf<class AInventoryItem>>     ItemClasses;                                       // 0x0000(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, UObjectWrapper, NativeAccessSpecifierPublic)
+	TArray<TSubclassOf<class AInventoryItem>>     ReturnValue;                                       // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, ReturnParm, UObjectWrapper, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ModHook_OverrideLoadoutContainerItems) == 0x000008, "Wrong alignment on ModHook_OverrideLoadoutContainerItems");
+static_assert(sizeof(ModHook_OverrideLoadoutContainerItems) == 0x000020, "Wrong size on ModHook_OverrideLoadoutContainerItems");
+static_assert(offsetof(ModHook_OverrideLoadoutContainerItems, ItemClasses) == 0x000000, "Member 'ModHook_OverrideLoadoutContainerItems::ItemClasses' has a wrong offset!");
+static_assert(offsetof(ModHook_OverrideLoadoutContainerItems, ReturnValue) == 0x000010, "Member 'ModHook_OverrideLoadoutContainerItems::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.ModHook.OverrideLoadSubLevel
+// 0x0028 (0x0028 - 0x0000)
+struct ModHook_OverrideLoadSubLevel final
+{
+public:
+	bool                                          bLoadLevel;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FString                                 LevelName;                                         // 0x0008(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UGameModeInfo*                          GameMode;                                          // 0x0018(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0020(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_21[0x7];                                       // 0x0021(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(ModHook_OverrideLoadSubLevel) == 0x000008, "Wrong alignment on ModHook_OverrideLoadSubLevel");
+static_assert(sizeof(ModHook_OverrideLoadSubLevel) == 0x000028, "Wrong size on ModHook_OverrideLoadSubLevel");
+static_assert(offsetof(ModHook_OverrideLoadSubLevel, bLoadLevel) == 0x000000, "Member 'ModHook_OverrideLoadSubLevel::bLoadLevel' has a wrong offset!");
+static_assert(offsetof(ModHook_OverrideLoadSubLevel, LevelName) == 0x000008, "Member 'ModHook_OverrideLoadSubLevel::LevelName' has a wrong offset!");
+static_assert(offsetof(ModHook_OverrideLoadSubLevel, GameMode) == 0x000018, "Member 'ModHook_OverrideLoadSubLevel::GameMode' has a wrong offset!");
+static_assert(offsetof(ModHook_OverrideLoadSubLevel, ReturnValue) == 0x000020, "Member 'ModHook_OverrideLoadSubLevel::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.ModHook.OverrideMenu
+// 0x0018 (0x0018 - 0x0000)
+struct ModHook_OverrideMenu final
+{
+public:
+	class UMenuWidget*                            Widget;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Context;                                           // 0x0008(0x0008)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(ModHook_OverrideMenu) == 0x000008, "Wrong alignment on ModHook_OverrideMenu");
+static_assert(sizeof(ModHook_OverrideMenu) == 0x000018, "Wrong size on ModHook_OverrideMenu");
+static_assert(offsetof(ModHook_OverrideMenu, Widget) == 0x000000, "Member 'ModHook_OverrideMenu::Widget' has a wrong offset!");
+static_assert(offsetof(ModHook_OverrideMenu, Context) == 0x000008, "Member 'ModHook_OverrideMenu::Context' has a wrong offset!");
+static_assert(offsetof(ModHook_OverrideMenu, ReturnValue) == 0x000010, "Member 'ModHook_OverrideMenu::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.ModHook.OverrideMenuSequence
+// 0x0050 (0x0050 - 0x0000)
+struct ModHook_OverrideMenuSequence final
+{
+public:
+	TSoftClassPtr<class UClass>                   SequenceClass;                                     // 0x0000(0x0028)(ConstParm, Parm, OutParm, ReferenceParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSoftClassPtr<class UClass>                   ReturnValue;                                       // 0x0028(0x0028)(Parm, OutParm, ReturnParm, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ModHook_OverrideMenuSequence) == 0x000008, "Wrong alignment on ModHook_OverrideMenuSequence");
+static_assert(sizeof(ModHook_OverrideMenuSequence) == 0x000050, "Wrong size on ModHook_OverrideMenuSequence");
+static_assert(offsetof(ModHook_OverrideMenuSequence, SequenceClass) == 0x000000, "Member 'ModHook_OverrideMenuSequence::SequenceClass' has a wrong offset!");
+static_assert(offsetof(ModHook_OverrideMenuSequence, ReturnValue) == 0x000028, "Member 'ModHook_OverrideMenuSequence::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.ModHook.OverrideMenuWorldSetupParams
+// 0x0060 (0x0060 - 0x0000)
+struct ModHook_OverrideMenuWorldSetupParams final
+{
+public:
+	struct FWorldSetupParams                      Params_0;                                          // 0x0000(0x0030)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	struct FWorldSetupParams                      ReturnValue;                                       // 0x0030(0x0030)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ModHook_OverrideMenuWorldSetupParams) == 0x000008, "Wrong alignment on ModHook_OverrideMenuWorldSetupParams");
+static_assert(sizeof(ModHook_OverrideMenuWorldSetupParams) == 0x000060, "Wrong size on ModHook_OverrideMenuWorldSetupParams");
+static_assert(offsetof(ModHook_OverrideMenuWorldSetupParams, Params_0) == 0x000000, "Member 'ModHook_OverrideMenuWorldSetupParams::Params_0' has a wrong offset!");
+static_assert(offsetof(ModHook_OverrideMenuWorldSetupParams, ReturnValue) == 0x000030, "Member 'ModHook_OverrideMenuWorldSetupParams::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.ModHook.OverridePawnClass
+// 0x0018 (0x0018 - 0x0000)
+struct ModHook_OverridePawnClass final
+{
+public:
+	TSubclassOf<class APawn>                      PawnClass;                                         // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AController*                            Controller;                                        // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class APawn>                      ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ModHook_OverridePawnClass) == 0x000008, "Wrong alignment on ModHook_OverridePawnClass");
+static_assert(sizeof(ModHook_OverridePawnClass) == 0x000018, "Wrong size on ModHook_OverridePawnClass");
+static_assert(offsetof(ModHook_OverridePawnClass, PawnClass) == 0x000000, "Member 'ModHook_OverridePawnClass::PawnClass' has a wrong offset!");
+static_assert(offsetof(ModHook_OverridePawnClass, Controller) == 0x000008, "Member 'ModHook_OverridePawnClass::Controller' has a wrong offset!");
+static_assert(offsetof(ModHook_OverridePawnClass, ReturnValue) == 0x000010, "Member 'ModHook_OverridePawnClass::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.ModHook.OverridePlayerCameraManagerClass
+// 0x0018 (0x0018 - 0x0000)
+struct ModHook_OverridePlayerCameraManagerClass final
+{
+public:
+	TSubclassOf<class APlayerCameraManager>       PlayerCameraManagerClass;                          // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class ABasePlayerController*                  PC;                                                // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class APlayerCameraManager>       ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ModHook_OverridePlayerCameraManagerClass) == 0x000008, "Wrong alignment on ModHook_OverridePlayerCameraManagerClass");
+static_assert(sizeof(ModHook_OverridePlayerCameraManagerClass) == 0x000018, "Wrong size on ModHook_OverridePlayerCameraManagerClass");
+static_assert(offsetof(ModHook_OverridePlayerCameraManagerClass, PlayerCameraManagerClass) == 0x000000, "Member 'ModHook_OverridePlayerCameraManagerClass::PlayerCameraManagerClass' has a wrong offset!");
+static_assert(offsetof(ModHook_OverridePlayerCameraManagerClass, PC) == 0x000008, "Member 'ModHook_OverridePlayerCameraManagerClass::PC' has a wrong offset!");
+static_assert(offsetof(ModHook_OverridePlayerCameraManagerClass, ReturnValue) == 0x000010, "Member 'ModHook_OverridePlayerCameraManagerClass::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.ModHook.OverridePlayerControllerClass
+// 0x0010 (0x0010 - 0x0000)
+struct ModHook_OverridePlayerControllerClass final
+{
+public:
+	TSubclassOf<class APlayerController>          PlayerControllerClass;                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class APlayerController>          ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ModHook_OverridePlayerControllerClass) == 0x000008, "Wrong alignment on ModHook_OverridePlayerControllerClass");
+static_assert(sizeof(ModHook_OverridePlayerControllerClass) == 0x000010, "Wrong size on ModHook_OverridePlayerControllerClass");
+static_assert(offsetof(ModHook_OverridePlayerControllerClass, PlayerControllerClass) == 0x000000, "Member 'ModHook_OverridePlayerControllerClass::PlayerControllerClass' has a wrong offset!");
+static_assert(offsetof(ModHook_OverridePlayerControllerClass, ReturnValue) == 0x000008, "Member 'ModHook_OverridePlayerControllerClass::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.ModHook.OverrideReplayPlayerControllerClass
+// 0x0010 (0x0010 - 0x0000)
+struct ModHook_OverrideReplayPlayerControllerClass final
+{
+public:
+	TSubclassOf<class APlayerController>          PlayerControllerClass;                             // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class APlayerController>          ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ModHook_OverrideReplayPlayerControllerClass) == 0x000008, "Wrong alignment on ModHook_OverrideReplayPlayerControllerClass");
+static_assert(sizeof(ModHook_OverrideReplayPlayerControllerClass) == 0x000010, "Wrong size on ModHook_OverrideReplayPlayerControllerClass");
+static_assert(offsetof(ModHook_OverrideReplayPlayerControllerClass, PlayerControllerClass) == 0x000000, "Member 'ModHook_OverrideReplayPlayerControllerClass::PlayerControllerClass' has a wrong offset!");
+static_assert(offsetof(ModHook_OverrideReplayPlayerControllerClass, ReturnValue) == 0x000008, "Member 'ModHook_OverrideReplayPlayerControllerClass::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.ModHook.OverrideSpectatorClass
+// 0x0010 (0x0010 - 0x0000)
+struct ModHook_OverrideSpectatorClass final
+{
+public:
+	TSubclassOf<class ASpectatorPawn>             SpectatorClass;                                    // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class ASpectatorPawn>             ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ModHook_OverrideSpectatorClass) == 0x000008, "Wrong alignment on ModHook_OverrideSpectatorClass");
+static_assert(sizeof(ModHook_OverrideSpectatorClass) == 0x000010, "Wrong size on ModHook_OverrideSpectatorClass");
+static_assert(offsetof(ModHook_OverrideSpectatorClass, SpectatorClass) == 0x000000, "Member 'ModHook_OverrideSpectatorClass::SpectatorClass' has a wrong offset!");
+static_assert(offsetof(ModHook_OverrideSpectatorClass, ReturnValue) == 0x000008, "Member 'ModHook_OverrideSpectatorClass::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.ModHook.OverrideTrainClass
+// 0x0010 (0x0010 - 0x0000)
+struct ModHook_OverrideTrainClass final
+{
+public:
+	TSubclassOf<class ATrain>                     TrainClass;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class ATrain>                     ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ModHook_OverrideTrainClass) == 0x000008, "Wrong alignment on ModHook_OverrideTrainClass");
+static_assert(sizeof(ModHook_OverrideTrainClass) == 0x000010, "Wrong size on ModHook_OverrideTrainClass");
+static_assert(offsetof(ModHook_OverrideTrainClass, TrainClass) == 0x000000, "Member 'ModHook_OverrideTrainClass::TrainClass' has a wrong offset!");
+static_assert(offsetof(ModHook_OverrideTrainClass, ReturnValue) == 0x000008, "Member 'ModHook_OverrideTrainClass::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.ModHook.OverrideVehicleClass
+// 0x0130 (0x0130 - 0x0000)
+struct ModHook_OverrideVehicleClass final
+{
+public:
+	TSubclassOf<class ABrickVehicle>              VehicleClass;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class ABrickPlayerController*                 PC;                                                // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FPlayerSpawnRequest                    SpawnRequest;                                      // 0x0010(0x0118)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	TSubclassOf<class ABrickVehicle>              ReturnValue;                                       // 0x0128(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ModHook_OverrideVehicleClass) == 0x000008, "Wrong alignment on ModHook_OverrideVehicleClass");
+static_assert(sizeof(ModHook_OverrideVehicleClass) == 0x000130, "Wrong size on ModHook_OverrideVehicleClass");
+static_assert(offsetof(ModHook_OverrideVehicleClass, VehicleClass) == 0x000000, "Member 'ModHook_OverrideVehicleClass::VehicleClass' has a wrong offset!");
+static_assert(offsetof(ModHook_OverrideVehicleClass, PC) == 0x000008, "Member 'ModHook_OverrideVehicleClass::PC' has a wrong offset!");
+static_assert(offsetof(ModHook_OverrideVehicleClass, SpawnRequest) == 0x000010, "Member 'ModHook_OverrideVehicleClass::SpawnRequest' has a wrong offset!");
+static_assert(offsetof(ModHook_OverrideVehicleClass, ReturnValue) == 0x000128, "Member 'ModHook_OverrideVehicleClass::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.ModHook.PostSpawnPawn
+// 0x0008 (0x0008 - 0x0000)
+struct ModHook_PostSpawnPawn final
+{
+public:
+	class APawn*                                  Pawn;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ModHook_PostSpawnPawn) == 0x000008, "Wrong alignment on ModHook_PostSpawnPawn");
+static_assert(sizeof(ModHook_PostSpawnPawn) == 0x000008, "Wrong size on ModHook_PostSpawnPawn");
+static_assert(offsetof(ModHook_PostSpawnPawn, Pawn) == 0x000000, "Member 'ModHook_PostSpawnPawn::Pawn' has a wrong offset!");
+
+// Function BrickRigs.ModHook.PostSpawnPlayerController
+// 0x0008 (0x0008 - 0x0000)
+struct ModHook_PostSpawnPlayerController final
+{
+public:
+	class APlayerController*                      PC;                                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ModHook_PostSpawnPlayerController) == 0x000008, "Wrong alignment on ModHook_PostSpawnPlayerController");
+static_assert(sizeof(ModHook_PostSpawnPlayerController) == 0x000008, "Wrong size on ModHook_PostSpawnPlayerController");
+static_assert(offsetof(ModHook_PostSpawnPlayerController, PC) == 0x000000, "Member 'ModHook_PostSpawnPlayerController::PC' has a wrong offset!");
+
+// Function BrickRigs.ModHook.PostSpawnSpectatorPawn
+// 0x0008 (0x0008 - 0x0000)
+struct ModHook_PostSpawnSpectatorPawn final
+{
+public:
+	class ASpectatorPawn*                         Pawn;                                              // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ModHook_PostSpawnSpectatorPawn) == 0x000008, "Wrong alignment on ModHook_PostSpawnSpectatorPawn");
+static_assert(sizeof(ModHook_PostSpawnSpectatorPawn) == 0x000008, "Wrong size on ModHook_PostSpawnSpectatorPawn");
+static_assert(offsetof(ModHook_PostSpawnSpectatorPawn, Pawn) == 0x000000, "Member 'ModHook_PostSpawnSpectatorPawn::Pawn' has a wrong offset!");
+
+// Function BrickRigs.ModHook.PostSpawnVehicle
+// 0x0008 (0x0008 - 0x0000)
+struct ModHook_PostSpawnVehicle final
+{
+public:
+	class ABrickVehicle*                          Vehicle;                                           // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(ModHook_PostSpawnVehicle) == 0x000008, "Wrong alignment on ModHook_PostSpawnVehicle");
+static_assert(sizeof(ModHook_PostSpawnVehicle) == 0x000008, "Wrong size on ModHook_PostSpawnVehicle");
+static_assert(offsetof(ModHook_PostSpawnVehicle, Vehicle) == 0x000000, "Member 'ModHook_PostSpawnVehicle::Vehicle' has a wrong offset!");
+
 // Function BrickRigs.ModHookSubsystem.GetModHookByClass
 // 0x0018 (0x0018 - 0x0000)
 struct ModHookSubsystem_GetModHookByClass final
@@ -11983,124 +12316,22 @@ static_assert(offsetof(ModHookSubsystem_GetModHookByClass, WorldContextObject) =
 static_assert(offsetof(ModHookSubsystem_GetModHookByClass, ModHookClass) == 0x000008, "Member 'ModHookSubsystem_GetModHookByClass::ModHookClass' has a wrong offset!");
 static_assert(offsetof(ModHookSubsystem_GetModHookByClass, ReturnValue) == 0x000010, "Member 'ModHookSubsystem_GetModHookByClass::ReturnValue' has a wrong offset!");
 
-// Function BrickRigs.UGCTaskPopupWidget.UpdateIsFinished
-// 0x0002 (0x0002 - 0x0000)
-struct UGCTaskPopupWidget_UpdateIsFinished final
-{
-public:
-	bool                                          bNewFinished;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bNewSuccess;                                       // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(UGCTaskPopupWidget_UpdateIsFinished) == 0x000001, "Wrong alignment on UGCTaskPopupWidget_UpdateIsFinished");
-static_assert(sizeof(UGCTaskPopupWidget_UpdateIsFinished) == 0x000002, "Wrong size on UGCTaskPopupWidget_UpdateIsFinished");
-static_assert(offsetof(UGCTaskPopupWidget_UpdateIsFinished, bNewFinished) == 0x000000, "Member 'UGCTaskPopupWidget_UpdateIsFinished::bNewFinished' has a wrong offset!");
-static_assert(offsetof(UGCTaskPopupWidget_UpdateIsFinished, bNewSuccess) == 0x000001, "Member 'UGCTaskPopupWidget_UpdateIsFinished::bNewSuccess' has a wrong offset!");
-
-// Function BrickRigs.UGCTaskPopupWidget.UpdateProgress
+// Function BrickRigs.UGCItemWidget.UpdateItemWidget
 // 0x0004 (0x0004 - 0x0000)
-struct UGCTaskPopupWidget_UpdateProgress final
+struct UGCItemWidget_UpdateItemWidget final
 {
 public:
-	float                                         NewProgress;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bInIsSelected;                                     // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bInIsLegacyFile;                                   // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bInHasAutoSave;                                    // 0x0002(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bInIsDedicatedAutoSave;                            // 0x0003(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(UGCTaskPopupWidget_UpdateProgress) == 0x000004, "Wrong alignment on UGCTaskPopupWidget_UpdateProgress");
-static_assert(sizeof(UGCTaskPopupWidget_UpdateProgress) == 0x000004, "Wrong size on UGCTaskPopupWidget_UpdateProgress");
-static_assert(offsetof(UGCTaskPopupWidget_UpdateProgress, NewProgress) == 0x000000, "Member 'UGCTaskPopupWidget_UpdateProgress::NewProgress' has a wrong offset!");
-
-// Function BrickRigs.MyUserSettings.Get
-// 0x0008 (0x0008 - 0x0000)
-struct MyUserSettings_Get final
-{
-public:
-	class UMyUserSettings*                        ReturnValue;                                       // 0x0000(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(MyUserSettings_Get) == 0x000008, "Wrong alignment on MyUserSettings_Get");
-static_assert(sizeof(MyUserSettings_Get) == 0x000008, "Wrong size on MyUserSettings_Get");
-static_assert(offsetof(MyUserSettings_Get, ReturnValue) == 0x000000, "Member 'MyUserSettings_Get::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.UGCTagsPropertyWidget.InitializeDepartmentItem
-// 0x0148 (0x0148 - 0x0000)
-struct UGCTagsPropertyWidget_InitializeDepartmentItem final
-{
-public:
-	int32                                         Item;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FBrickComboBoxItemParams               OutParams;                                         // 0x0008(0x0140)(Parm, OutParm, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(UGCTagsPropertyWidget_InitializeDepartmentItem) == 0x000008, "Wrong alignment on UGCTagsPropertyWidget_InitializeDepartmentItem");
-static_assert(sizeof(UGCTagsPropertyWidget_InitializeDepartmentItem) == 0x000148, "Wrong size on UGCTagsPropertyWidget_InitializeDepartmentItem");
-static_assert(offsetof(UGCTagsPropertyWidget_InitializeDepartmentItem, Item) == 0x000000, "Member 'UGCTagsPropertyWidget_InitializeDepartmentItem::Item' has a wrong offset!");
-static_assert(offsetof(UGCTagsPropertyWidget_InitializeDepartmentItem, OutParams) == 0x000008, "Member 'UGCTagsPropertyWidget_InitializeDepartmentItem::OutParams' has a wrong offset!");
-
-// Function BrickRigs.UGCTagsPropertyWidget.InitializeEraItem
-// 0x0148 (0x0148 - 0x0000)
-struct UGCTagsPropertyWidget_InitializeEraItem final
-{
-public:
-	int32                                         Item;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FBrickComboBoxItemParams               OutParams;                                         // 0x0008(0x0140)(Parm, OutParm, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(UGCTagsPropertyWidget_InitializeEraItem) == 0x000008, "Wrong alignment on UGCTagsPropertyWidget_InitializeEraItem");
-static_assert(sizeof(UGCTagsPropertyWidget_InitializeEraItem) == 0x000148, "Wrong size on UGCTagsPropertyWidget_InitializeEraItem");
-static_assert(offsetof(UGCTagsPropertyWidget_InitializeEraItem, Item) == 0x000000, "Member 'UGCTagsPropertyWidget_InitializeEraItem::Item' has a wrong offset!");
-static_assert(offsetof(UGCTagsPropertyWidget_InitializeEraItem, OutParams) == 0x000008, "Member 'UGCTagsPropertyWidget_InitializeEraItem::OutParams' has a wrong offset!");
-
-// Function BrickRigs.UGCTagsPropertyWidget.InitializeTypeItem
-// 0x0148 (0x0148 - 0x0000)
-struct UGCTagsPropertyWidget_InitializeTypeItem final
-{
-public:
-	int32                                         Item;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FBrickComboBoxItemParams               OutParams;                                         // 0x0008(0x0140)(Parm, OutParm, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(UGCTagsPropertyWidget_InitializeTypeItem) == 0x000008, "Wrong alignment on UGCTagsPropertyWidget_InitializeTypeItem");
-static_assert(sizeof(UGCTagsPropertyWidget_InitializeTypeItem) == 0x000148, "Wrong size on UGCTagsPropertyWidget_InitializeTypeItem");
-static_assert(offsetof(UGCTagsPropertyWidget_InitializeTypeItem, Item) == 0x000000, "Member 'UGCTagsPropertyWidget_InitializeTypeItem::Item' has a wrong offset!");
-static_assert(offsetof(UGCTagsPropertyWidget_InitializeTypeItem, OutParams) == 0x000008, "Member 'UGCTagsPropertyWidget_InitializeTypeItem::OutParams' has a wrong offset!");
-
-// Function BrickRigs.UGCTagsPropertyWidget.OnDepartmentItemSelected
-// 0x0008 (0x0008 - 0x0000)
-struct UGCTagsPropertyWidget_OnDepartmentItemSelected final
-{
-public:
-	int32                                         Item;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EValueChangedEventType                        EventType;                                         // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(UGCTagsPropertyWidget_OnDepartmentItemSelected) == 0x000004, "Wrong alignment on UGCTagsPropertyWidget_OnDepartmentItemSelected");
-static_assert(sizeof(UGCTagsPropertyWidget_OnDepartmentItemSelected) == 0x000008, "Wrong size on UGCTagsPropertyWidget_OnDepartmentItemSelected");
-static_assert(offsetof(UGCTagsPropertyWidget_OnDepartmentItemSelected, Item) == 0x000000, "Member 'UGCTagsPropertyWidget_OnDepartmentItemSelected::Item' has a wrong offset!");
-static_assert(offsetof(UGCTagsPropertyWidget_OnDepartmentItemSelected, EventType) == 0x000004, "Member 'UGCTagsPropertyWidget_OnDepartmentItemSelected::EventType' has a wrong offset!");
-
-// Function BrickRigs.UGCTagsPropertyWidget.OnEraItemSelected
-// 0x0008 (0x0008 - 0x0000)
-struct UGCTagsPropertyWidget_OnEraItemSelected final
-{
-public:
-	int32                                         Item;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EValueChangedEventType                        EventType;                                         // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(UGCTagsPropertyWidget_OnEraItemSelected) == 0x000004, "Wrong alignment on UGCTagsPropertyWidget_OnEraItemSelected");
-static_assert(sizeof(UGCTagsPropertyWidget_OnEraItemSelected) == 0x000008, "Wrong size on UGCTagsPropertyWidget_OnEraItemSelected");
-static_assert(offsetof(UGCTagsPropertyWidget_OnEraItemSelected, Item) == 0x000000, "Member 'UGCTagsPropertyWidget_OnEraItemSelected::Item' has a wrong offset!");
-static_assert(offsetof(UGCTagsPropertyWidget_OnEraItemSelected, EventType) == 0x000004, "Member 'UGCTagsPropertyWidget_OnEraItemSelected::EventType' has a wrong offset!");
-
-// Function BrickRigs.UGCTagsPropertyWidget.OnTypeItemSelected
-// 0x0008 (0x0008 - 0x0000)
-struct UGCTagsPropertyWidget_OnTypeItemSelected final
-{
-public:
-	int32                                         Item;                                              // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EValueChangedEventType                        EventType;                                         // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(UGCTagsPropertyWidget_OnTypeItemSelected) == 0x000004, "Wrong alignment on UGCTagsPropertyWidget_OnTypeItemSelected");
-static_assert(sizeof(UGCTagsPropertyWidget_OnTypeItemSelected) == 0x000008, "Wrong size on UGCTagsPropertyWidget_OnTypeItemSelected");
-static_assert(offsetof(UGCTagsPropertyWidget_OnTypeItemSelected, Item) == 0x000000, "Member 'UGCTagsPropertyWidget_OnTypeItemSelected::Item' has a wrong offset!");
-static_assert(offsetof(UGCTagsPropertyWidget_OnTypeItemSelected, EventType) == 0x000004, "Member 'UGCTagsPropertyWidget_OnTypeItemSelected::EventType' has a wrong offset!");
+static_assert(alignof(UGCItemWidget_UpdateItemWidget) == 0x000001, "Wrong alignment on UGCItemWidget_UpdateItemWidget");
+static_assert(sizeof(UGCItemWidget_UpdateItemWidget) == 0x000004, "Wrong size on UGCItemWidget_UpdateItemWidget");
+static_assert(offsetof(UGCItemWidget_UpdateItemWidget, bInIsSelected) == 0x000000, "Member 'UGCItemWidget_UpdateItemWidget::bInIsSelected' has a wrong offset!");
+static_assert(offsetof(UGCItemWidget_UpdateItemWidget, bInIsLegacyFile) == 0x000001, "Member 'UGCItemWidget_UpdateItemWidget::bInIsLegacyFile' has a wrong offset!");
+static_assert(offsetof(UGCItemWidget_UpdateItemWidget, bInHasAutoSave) == 0x000002, "Member 'UGCItemWidget_UpdateItemWidget::bInHasAutoSave' has a wrong offset!");
+static_assert(offsetof(UGCItemWidget_UpdateItemWidget, bInIsDedicatedAutoSave) == 0x000003, "Member 'UGCItemWidget_UpdateItemWidget::bInIsDedicatedAutoSave' has a wrong offset!");
 
 // Function BrickRigs.NewItemCountWidget.SetNumNewItems
 // 0x0004 (0x0004 - 0x0000)
@@ -12124,34 +12355,101 @@ static_assert(alignof(NewItemCountWidget_UpdateNumItems) == 0x000004, "Wrong ali
 static_assert(sizeof(NewItemCountWidget_UpdateNumItems) == 0x000004, "Wrong size on NewItemCountWidget_UpdateNumItems");
 static_assert(offsetof(NewItemCountWidget_UpdateNumItems, NewNum) == 0x000000, "Member 'NewItemCountWidget_UpdateNumItems::NewNum' has a wrong offset!");
 
-// Function BrickRigs.NumericPropertyWidget.OnSliderValueChanged
-// 0x0008 (0x0008 - 0x0000)
-struct NumericPropertyWidget_OnSliderValueChanged final
+// Function BrickRigs.PagedListHeaderWidget.OnMeasurementSystemChanged
+// 0x0001 (0x0001 - 0x0000)
+struct PagedListHeaderWidget_OnMeasurementSystemChanged final
 {
 public:
-	float                                         NewValue;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EValueChangedEventType                        EventType;                                         // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	EMeasurementSystem                            NewSystem;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(NumericPropertyWidget_OnSliderValueChanged) == 0x000004, "Wrong alignment on NumericPropertyWidget_OnSliderValueChanged");
-static_assert(sizeof(NumericPropertyWidget_OnSliderValueChanged) == 0x000008, "Wrong size on NumericPropertyWidget_OnSliderValueChanged");
-static_assert(offsetof(NumericPropertyWidget_OnSliderValueChanged, NewValue) == 0x000000, "Member 'NumericPropertyWidget_OnSliderValueChanged::NewValue' has a wrong offset!");
-static_assert(offsetof(NumericPropertyWidget_OnSliderValueChanged, EventType) == 0x000004, "Member 'NumericPropertyWidget_OnSliderValueChanged::EventType' has a wrong offset!");
+static_assert(alignof(PagedListHeaderWidget_OnMeasurementSystemChanged) == 0x000001, "Wrong alignment on PagedListHeaderWidget_OnMeasurementSystemChanged");
+static_assert(sizeof(PagedListHeaderWidget_OnMeasurementSystemChanged) == 0x000001, "Wrong size on PagedListHeaderWidget_OnMeasurementSystemChanged");
+static_assert(offsetof(PagedListHeaderWidget_OnMeasurementSystemChanged, NewSystem) == 0x000000, "Member 'PagedListHeaderWidget_OnMeasurementSystemChanged::NewSystem' has a wrong offset!");
 
-// Function BrickRigs.VehicleIconWidget.UpdateVehicleIcon
-// 0x0003 (0x0003 - 0x0000)
-struct VehicleIconWidget_UpdateVehicleIcon final
+// Function BrickRigs.PagedListHeaderWidget.UpdateDimensions
+// 0x0018 (0x0018 - 0x0000)
+struct PagedListHeaderWidget_UpdateDimensions final
 {
 public:
-	bool                                          bNewIsLocalPlayer;                                 // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bNewCanBeDamaged;                                  // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EVehiclePinMode                               NewPinMode;                                        // 0x0002(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                InDimensions;                                      // 0x0000(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                InMaxDimensions;                                   // 0x000C(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(VehicleIconWidget_UpdateVehicleIcon) == 0x000001, "Wrong alignment on VehicleIconWidget_UpdateVehicleIcon");
-static_assert(sizeof(VehicleIconWidget_UpdateVehicleIcon) == 0x000003, "Wrong size on VehicleIconWidget_UpdateVehicleIcon");
-static_assert(offsetof(VehicleIconWidget_UpdateVehicleIcon, bNewIsLocalPlayer) == 0x000000, "Member 'VehicleIconWidget_UpdateVehicleIcon::bNewIsLocalPlayer' has a wrong offset!");
-static_assert(offsetof(VehicleIconWidget_UpdateVehicleIcon, bNewCanBeDamaged) == 0x000001, "Member 'VehicleIconWidget_UpdateVehicleIcon::bNewCanBeDamaged' has a wrong offset!");
-static_assert(offsetof(VehicleIconWidget_UpdateVehicleIcon, NewPinMode) == 0x000002, "Member 'VehicleIconWidget_UpdateVehicleIcon::NewPinMode' has a wrong offset!");
+static_assert(alignof(PagedListHeaderWidget_UpdateDimensions) == 0x000004, "Wrong alignment on PagedListHeaderWidget_UpdateDimensions");
+static_assert(sizeof(PagedListHeaderWidget_UpdateDimensions) == 0x000018, "Wrong size on PagedListHeaderWidget_UpdateDimensions");
+static_assert(offsetof(PagedListHeaderWidget_UpdateDimensions, InDimensions) == 0x000000, "Member 'PagedListHeaderWidget_UpdateDimensions::InDimensions' has a wrong offset!");
+static_assert(offsetof(PagedListHeaderWidget_UpdateDimensions, InMaxDimensions) == 0x00000C, "Member 'PagedListHeaderWidget_UpdateDimensions::InMaxDimensions' has a wrong offset!");
+
+// Function BrickRigs.PagedListHeaderWidget.UpdateEntry
+// 0x0020 (0x0020 - 0x0000)
+struct PagedListHeaderWidget_UpdateEntry final
+{
+public:
+	class FText                                   InTitleText;                                       // 0x0000(0x0018)(ConstParm, Parm, OutParm, ReferenceParm, NativeAccessSpecifierPublic)
+	bool                                          bInHasEntry;                                       // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bInHasUnsavedChanges;                              // 0x0019(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1A[0x6];                                       // 0x001A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(PagedListHeaderWidget_UpdateEntry) == 0x000008, "Wrong alignment on PagedListHeaderWidget_UpdateEntry");
+static_assert(sizeof(PagedListHeaderWidget_UpdateEntry) == 0x000020, "Wrong size on PagedListHeaderWidget_UpdateEntry");
+static_assert(offsetof(PagedListHeaderWidget_UpdateEntry, InTitleText) == 0x000000, "Member 'PagedListHeaderWidget_UpdateEntry::InTitleText' has a wrong offset!");
+static_assert(offsetof(PagedListHeaderWidget_UpdateEntry, bInHasEntry) == 0x000018, "Member 'PagedListHeaderWidget_UpdateEntry::bInHasEntry' has a wrong offset!");
+static_assert(offsetof(PagedListHeaderWidget_UpdateEntry, bInHasUnsavedChanges) == 0x000019, "Member 'PagedListHeaderWidget_UpdateEntry::bInHasUnsavedChanges' has a wrong offset!");
+
+// Function BrickRigs.PagedListHeaderWidget.UpdateMass
+// 0x0008 (0x0008 - 0x0000)
+struct PagedListHeaderWidget_UpdateMass final
+{
+public:
+	float                                         InMass;                                            // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         InMaxMass;                                         // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(PagedListHeaderWidget_UpdateMass) == 0x000004, "Wrong alignment on PagedListHeaderWidget_UpdateMass");
+static_assert(sizeof(PagedListHeaderWidget_UpdateMass) == 0x000008, "Wrong size on PagedListHeaderWidget_UpdateMass");
+static_assert(offsetof(PagedListHeaderWidget_UpdateMass, InMass) == 0x000000, "Member 'PagedListHeaderWidget_UpdateMass::InMass' has a wrong offset!");
+static_assert(offsetof(PagedListHeaderWidget_UpdateMass, InMaxMass) == 0x000004, "Member 'PagedListHeaderWidget_UpdateMass::InMaxMass' has a wrong offset!");
+
+// Function BrickRigs.PagedListHeaderWidget.UpdateNumObjects
+// 0x0010 (0x0010 - 0x0000)
+struct PagedListHeaderWidget_UpdateNumObjects final
+{
+public:
+	int32                                         InNumObjects;                                      // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         InMaxNumObjects;                                   // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         InNumHiddenObjects;                                // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         InNumObjectsWithAerodynamics;                      // 0x000C(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(PagedListHeaderWidget_UpdateNumObjects) == 0x000004, "Wrong alignment on PagedListHeaderWidget_UpdateNumObjects");
+static_assert(sizeof(PagedListHeaderWidget_UpdateNumObjects) == 0x000010, "Wrong size on PagedListHeaderWidget_UpdateNumObjects");
+static_assert(offsetof(PagedListHeaderWidget_UpdateNumObjects, InNumObjects) == 0x000000, "Member 'PagedListHeaderWidget_UpdateNumObjects::InNumObjects' has a wrong offset!");
+static_assert(offsetof(PagedListHeaderWidget_UpdateNumObjects, InMaxNumObjects) == 0x000004, "Member 'PagedListHeaderWidget_UpdateNumObjects::InMaxNumObjects' has a wrong offset!");
+static_assert(offsetof(PagedListHeaderWidget_UpdateNumObjects, InNumHiddenObjects) == 0x000008, "Member 'PagedListHeaderWidget_UpdateNumObjects::InNumHiddenObjects' has a wrong offset!");
+static_assert(offsetof(PagedListHeaderWidget_UpdateNumObjects, InNumObjectsWithAerodynamics) == 0x00000C, "Member 'PagedListHeaderWidget_UpdateNumObjects::InNumObjectsWithAerodynamics' has a wrong offset!");
+
+// Function BrickRigs.PagedListHeaderWidget.UpdatePrice
+// 0x0008 (0x0008 - 0x0000)
+struct PagedListHeaderWidget_UpdatePrice final
+{
+public:
+	float                                         InPrice;                                           // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         InMoney;                                           // 0x0004(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(PagedListHeaderWidget_UpdatePrice) == 0x000004, "Wrong alignment on PagedListHeaderWidget_UpdatePrice");
+static_assert(sizeof(PagedListHeaderWidget_UpdatePrice) == 0x000008, "Wrong size on PagedListHeaderWidget_UpdatePrice");
+static_assert(offsetof(PagedListHeaderWidget_UpdatePrice, InPrice) == 0x000000, "Member 'PagedListHeaderWidget_UpdatePrice::InPrice' has a wrong offset!");
+static_assert(offsetof(PagedListHeaderWidget_UpdatePrice, InMoney) == 0x000004, "Member 'PagedListHeaderWidget_UpdatePrice::InMoney' has a wrong offset!");
+
+// Function BrickRigs.VehicleResourceSubsystem.Get
+// 0x0010 (0x0010 - 0x0000)
+struct VehicleResourceSubsystem_Get final
+{
+public:
+	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UVehicleResourceSubsystem*              ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(VehicleResourceSubsystem_Get) == 0x000008, "Wrong alignment on VehicleResourceSubsystem_Get");
+static_assert(sizeof(VehicleResourceSubsystem_Get) == 0x000010, "Wrong size on VehicleResourceSubsystem_Get");
+static_assert(offsetof(VehicleResourceSubsystem_Get, WorldContextObject) == 0x000000, "Member 'VehicleResourceSubsystem_Get::WorldContextObject' has a wrong offset!");
+static_assert(offsetof(VehicleResourceSubsystem_Get, ReturnValue) == 0x000008, "Member 'VehicleResourceSubsystem_Get::ReturnValue' has a wrong offset!");
 
 // Function BrickRigs.PagedListWidget.ClearSelectedEntryWidget
 // 0x0001 (0x0001 - 0x0000)
@@ -12331,48 +12629,6 @@ static_assert(alignof(PageSelectorWidget_GetCurrentPage) == 0x000004, "Wrong ali
 static_assert(sizeof(PageSelectorWidget_GetCurrentPage) == 0x000004, "Wrong size on PageSelectorWidget_GetCurrentPage");
 static_assert(offsetof(PageSelectorWidget_GetCurrentPage, ReturnValue) == 0x000000, "Member 'PageSelectorWidget_GetCurrentPage::ReturnValue' has a wrong offset!");
 
-// Function BrickRigs.VectorPropertyWidget.OnXSliderValueChanged
-// 0x0008 (0x0008 - 0x0000)
-struct VectorPropertyWidget_OnXSliderValueChanged final
-{
-public:
-	float                                         NewValue;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EValueChangedEventType                        EventType;                                         // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(VectorPropertyWidget_OnXSliderValueChanged) == 0x000004, "Wrong alignment on VectorPropertyWidget_OnXSliderValueChanged");
-static_assert(sizeof(VectorPropertyWidget_OnXSliderValueChanged) == 0x000008, "Wrong size on VectorPropertyWidget_OnXSliderValueChanged");
-static_assert(offsetof(VectorPropertyWidget_OnXSliderValueChanged, NewValue) == 0x000000, "Member 'VectorPropertyWidget_OnXSliderValueChanged::NewValue' has a wrong offset!");
-static_assert(offsetof(VectorPropertyWidget_OnXSliderValueChanged, EventType) == 0x000004, "Member 'VectorPropertyWidget_OnXSliderValueChanged::EventType' has a wrong offset!");
-
-// Function BrickRigs.VectorPropertyWidget.OnYSliderValueChanged
-// 0x0008 (0x0008 - 0x0000)
-struct VectorPropertyWidget_OnYSliderValueChanged final
-{
-public:
-	float                                         NewValue;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EValueChangedEventType                        EventType;                                         // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(VectorPropertyWidget_OnYSliderValueChanged) == 0x000004, "Wrong alignment on VectorPropertyWidget_OnYSliderValueChanged");
-static_assert(sizeof(VectorPropertyWidget_OnYSliderValueChanged) == 0x000008, "Wrong size on VectorPropertyWidget_OnYSliderValueChanged");
-static_assert(offsetof(VectorPropertyWidget_OnYSliderValueChanged, NewValue) == 0x000000, "Member 'VectorPropertyWidget_OnYSliderValueChanged::NewValue' has a wrong offset!");
-static_assert(offsetof(VectorPropertyWidget_OnYSliderValueChanged, EventType) == 0x000004, "Member 'VectorPropertyWidget_OnYSliderValueChanged::EventType' has a wrong offset!");
-
-// Function BrickRigs.VectorPropertyWidget.OnZSliderValueChanged
-// 0x0008 (0x0008 - 0x0000)
-struct VectorPropertyWidget_OnZSliderValueChanged final
-{
-public:
-	float                                         NewValue;                                          // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EValueChangedEventType                        EventType;                                         // 0x0004(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(VectorPropertyWidget_OnZSliderValueChanged) == 0x000004, "Wrong alignment on VectorPropertyWidget_OnZSliderValueChanged");
-static_assert(sizeof(VectorPropertyWidget_OnZSliderValueChanged) == 0x000008, "Wrong size on VectorPropertyWidget_OnZSliderValueChanged");
-static_assert(offsetof(VectorPropertyWidget_OnZSliderValueChanged, NewValue) == 0x000000, "Member 'VectorPropertyWidget_OnZSliderValueChanged::NewValue' has a wrong offset!");
-static_assert(offsetof(VectorPropertyWidget_OnZSliderValueChanged, EventType) == 0x000004, "Member 'VectorPropertyWidget_OnZSliderValueChanged::EventType' has a wrong offset!");
-
 // Function BrickRigs.PlayerInputComponent.InteractAxis
 // 0x0004 (0x0004 - 0x0000)
 struct PlayerInputComponent_InteractAxis final
@@ -12551,6 +12807,17 @@ public:
 static_assert(alignof(PropertyContainerWidget_UpdateOrientation) == 0x000001, "Wrong alignment on PropertyContainerWidget_UpdateOrientation");
 static_assert(sizeof(PropertyContainerWidget_UpdateOrientation) == 0x000001, "Wrong size on PropertyContainerWidget_UpdateOrientation");
 static_assert(offsetof(PropertyContainerWidget_UpdateOrientation, InOrientation) == 0x000000, "Member 'PropertyContainerWidget_UpdateOrientation::InOrientation' has a wrong offset!");
+
+// Function BrickRigs.PropertyContainerWidget.GetMenuButtonPanelWidget
+// 0x0008 (0x0008 - 0x0000)
+struct PropertyContainerWidget_GetMenuButtonPanelWidget final
+{
+public:
+	class UMenuButtonPanelWidget*                 ReturnValue;                                       // 0x0000(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(PropertyContainerWidget_GetMenuButtonPanelWidget) == 0x000008, "Wrong alignment on PropertyContainerWidget_GetMenuButtonPanelWidget");
+static_assert(sizeof(PropertyContainerWidget_GetMenuButtonPanelWidget) == 0x000008, "Wrong size on PropertyContainerWidget_GetMenuButtonPanelWidget");
+static_assert(offsetof(PropertyContainerWidget_GetMenuButtonPanelWidget, ReturnValue) == 0x000000, "Member 'PropertyContainerWidget_GetMenuButtonPanelWidget::ReturnValue' has a wrong offset!");
 
 // Function BrickRigs.PropertyContainerWidget.GetWidgetToFocus
 // 0x0008 (0x0008 - 0x0000)
@@ -12854,6 +13121,30 @@ static_assert(alignof(UGCPropertyWidget_UpdateItemsText) == 0x000004, "Wrong ali
 static_assert(sizeof(UGCPropertyWidget_UpdateItemsText) == 0x000004, "Wrong size on UGCPropertyWidget_UpdateItemsText");
 static_assert(offsetof(UGCPropertyWidget_UpdateItemsText, NumSelected) == 0x000000, "Member 'UGCPropertyWidget_UpdateItemsText::NumSelected' has a wrong offset!");
 
+// Function BrickRigs.UGCTaskPopupWidget.UpdateIsFinished
+// 0x0002 (0x0002 - 0x0000)
+struct UGCTaskPopupWidget_UpdateIsFinished final
+{
+public:
+	bool                                          bNewFinished;                                      // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bNewSuccess;                                       // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(UGCTaskPopupWidget_UpdateIsFinished) == 0x000001, "Wrong alignment on UGCTaskPopupWidget_UpdateIsFinished");
+static_assert(sizeof(UGCTaskPopupWidget_UpdateIsFinished) == 0x000002, "Wrong size on UGCTaskPopupWidget_UpdateIsFinished");
+static_assert(offsetof(UGCTaskPopupWidget_UpdateIsFinished, bNewFinished) == 0x000000, "Member 'UGCTaskPopupWidget_UpdateIsFinished::bNewFinished' has a wrong offset!");
+static_assert(offsetof(UGCTaskPopupWidget_UpdateIsFinished, bNewSuccess) == 0x000001, "Member 'UGCTaskPopupWidget_UpdateIsFinished::bNewSuccess' has a wrong offset!");
+
+// Function BrickRigs.UGCTaskPopupWidget.UpdateProgress
+// 0x0004 (0x0004 - 0x0000)
+struct UGCTaskPopupWidget_UpdateProgress final
+{
+public:
+	float                                         NewProgress;                                       // 0x0000(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(UGCTaskPopupWidget_UpdateProgress) == 0x000004, "Wrong alignment on UGCTaskPopupWidget_UpdateProgress");
+static_assert(sizeof(UGCTaskPopupWidget_UpdateProgress) == 0x000004, "Wrong size on UGCTaskPopupWidget_UpdateProgress");
+static_assert(offsetof(UGCTaskPopupWidget_UpdateProgress, NewProgress) == 0x000000, "Member 'UGCTaskPopupWidget_UpdateProgress::NewProgress' has a wrong offset!");
+
 // Function BrickRigs.UIFunctionLibrary.BoolAsText
 // 0x0020 (0x0020 - 0x0000)
 struct UIFunctionLibrary_BoolAsText final
@@ -12867,6 +13158,38 @@ static_assert(alignof(UIFunctionLibrary_BoolAsText) == 0x000008, "Wrong alignmen
 static_assert(sizeof(UIFunctionLibrary_BoolAsText) == 0x000020, "Wrong size on UIFunctionLibrary_BoolAsText");
 static_assert(offsetof(UIFunctionLibrary_BoolAsText, bValue) == 0x000000, "Member 'UIFunctionLibrary_BoolAsText::bValue' has a wrong offset!");
 static_assert(offsetof(UIFunctionLibrary_BoolAsText, ReturnValue) == 0x000008, "Member 'UIFunctionLibrary_BoolAsText::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.UIFunctionLibrary.BrickSizeToText
+// 0x0028 (0x0028 - 0x0000)
+struct UIFunctionLibrary_BrickSizeToText final
+{
+public:
+	struct FVector                                Size;                                              // 0x0000(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bZeroAsUndetermined;                               // 0x000C(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class FText                                   ReturnValue;                                       // 0x0010(0x0018)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(UIFunctionLibrary_BrickSizeToText) == 0x000008, "Wrong alignment on UIFunctionLibrary_BrickSizeToText");
+static_assert(sizeof(UIFunctionLibrary_BrickSizeToText) == 0x000028, "Wrong size on UIFunctionLibrary_BrickSizeToText");
+static_assert(offsetof(UIFunctionLibrary_BrickSizeToText, Size) == 0x000000, "Member 'UIFunctionLibrary_BrickSizeToText::Size' has a wrong offset!");
+static_assert(offsetof(UIFunctionLibrary_BrickSizeToText, bZeroAsUndetermined) == 0x00000C, "Member 'UIFunctionLibrary_BrickSizeToText::bZeroAsUndetermined' has a wrong offset!");
+static_assert(offsetof(UIFunctionLibrary_BrickSizeToText, ReturnValue) == 0x000010, "Member 'UIFunctionLibrary_BrickSizeToText::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.UIFunctionLibrary.BrickUnitsToText
+// 0x0020 (0x0020 - 0x0000)
+struct UIFunctionLibrary_BrickUnitsToText final
+{
+public:
+	float                                         UnrealUnits;                                       // 0x0000(0x0004)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bZeroAsUndetermined;                               // 0x0004(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_5[0x3];                                        // 0x0005(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class FText                                   ReturnValue;                                       // 0x0008(0x0018)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(UIFunctionLibrary_BrickUnitsToText) == 0x000008, "Wrong alignment on UIFunctionLibrary_BrickUnitsToText");
+static_assert(sizeof(UIFunctionLibrary_BrickUnitsToText) == 0x000020, "Wrong size on UIFunctionLibrary_BrickUnitsToText");
+static_assert(offsetof(UIFunctionLibrary_BrickUnitsToText, UnrealUnits) == 0x000000, "Member 'UIFunctionLibrary_BrickUnitsToText::UnrealUnits' has a wrong offset!");
+static_assert(offsetof(UIFunctionLibrary_BrickUnitsToText, bZeroAsUndetermined) == 0x000004, "Member 'UIFunctionLibrary_BrickUnitsToText::bZeroAsUndetermined' has a wrong offset!");
+static_assert(offsetof(UIFunctionLibrary_BrickUnitsToText, ReturnValue) == 0x000008, "Member 'UIFunctionLibrary_BrickUnitsToText::ReturnValue' has a wrong offset!");
 
 // Function BrickRigs.UIFunctionLibrary.ConvertToRealUnits
 // 0x000C (0x000C - 0x0000)
@@ -12932,6 +13255,21 @@ static_assert(offsetof(UIFunctionLibrary_FilterTextForURLs, InText) == 0x000000,
 static_assert(offsetof(UIFunctionLibrary_FilterTextForURLs, OutText) == 0x000018, "Member 'UIFunctionLibrary_FilterTextForURLs::OutText' has a wrong offset!");
 static_assert(offsetof(UIFunctionLibrary_FilterTextForURLs, ReturnValue) == 0x000030, "Member 'UIFunctionLibrary_FilterTextForURLs::ReturnValue' has a wrong offset!");
 
+// Function BrickRigs.UIFunctionLibrary.FindFirstWidgetInWidgetPath
+// 0x0020 (0x0020 - 0x0000)
+struct UIFunctionLibrary_FindFirstWidgetInWidgetPath final
+{
+public:
+	TArray<class UWidget*>                        Widgets;                                           // 0x0000(0x0010)(ConstParm, Parm, ZeroConstructor, ContainsInstancedReference, NativeAccessSpecifierPublic)
+	struct FWidgetPathWrapper                     WidgetPath;                                        // 0x0010(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	class UWidget*                                ReturnValue;                                       // 0x0018(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(UIFunctionLibrary_FindFirstWidgetInWidgetPath) == 0x000008, "Wrong alignment on UIFunctionLibrary_FindFirstWidgetInWidgetPath");
+static_assert(sizeof(UIFunctionLibrary_FindFirstWidgetInWidgetPath) == 0x000020, "Wrong size on UIFunctionLibrary_FindFirstWidgetInWidgetPath");
+static_assert(offsetof(UIFunctionLibrary_FindFirstWidgetInWidgetPath, Widgets) == 0x000000, "Member 'UIFunctionLibrary_FindFirstWidgetInWidgetPath::Widgets' has a wrong offset!");
+static_assert(offsetof(UIFunctionLibrary_FindFirstWidgetInWidgetPath, WidgetPath) == 0x000010, "Member 'UIFunctionLibrary_FindFirstWidgetInWidgetPath::WidgetPath' has a wrong offset!");
+static_assert(offsetof(UIFunctionLibrary_FindFirstWidgetInWidgetPath, ReturnValue) == 0x000018, "Member 'UIFunctionLibrary_FindFirstWidgetInWidgetPath::ReturnValue' has a wrong offset!");
+
 // Function BrickRigs.UIFunctionLibrary.GetAmmoTypeDisplayText
 // 0x0020 (0x0020 - 0x0000)
 struct UIFunctionLibrary_GetAmmoTypeDisplayText final
@@ -12962,20 +13300,6 @@ static_assert(sizeof(UIFunctionLibrary_GetCameraModeDisplayText) == 0x000020, "W
 static_assert(offsetof(UIFunctionLibrary_GetCameraModeDisplayText, InCameraMode) == 0x000000, "Member 'UIFunctionLibrary_GetCameraModeDisplayText::InCameraMode' has a wrong offset!");
 static_assert(offsetof(UIFunctionLibrary_GetCameraModeDisplayText, ReturnValue) == 0x000008, "Member 'UIFunctionLibrary_GetCameraModeDisplayText::ReturnValue' has a wrong offset!");
 
-// Function BrickRigs.UIFunctionLibrary.GetDefaultValueStep
-// 0x0008 (0x0008 - 0x0000)
-struct UIFunctionLibrary_GetDefaultValueStep final
-{
-public:
-	ENumericValueType                             ValueType;                                         // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         ReturnValue;                                       // 0x0004(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(UIFunctionLibrary_GetDefaultValueStep) == 0x000004, "Wrong alignment on UIFunctionLibrary_GetDefaultValueStep");
-static_assert(sizeof(UIFunctionLibrary_GetDefaultValueStep) == 0x000008, "Wrong size on UIFunctionLibrary_GetDefaultValueStep");
-static_assert(offsetof(UIFunctionLibrary_GetDefaultValueStep, ValueType) == 0x000000, "Member 'UIFunctionLibrary_GetDefaultValueStep::ValueType' has a wrong offset!");
-static_assert(offsetof(UIFunctionLibrary_GetDefaultValueStep, ReturnValue) == 0x000004, "Member 'UIFunctionLibrary_GetDefaultValueStep::ReturnValue' has a wrong offset!");
-
 // Function BrickRigs.UIFunctionLibrary.GetFireModeDisplayText
 // 0x0020 (0x0020 - 0x0000)
 struct UIFunctionLibrary_GetFireModeDisplayText final
@@ -13004,6 +13328,20 @@ static_assert(sizeof(UIFunctionLibrary_GetHUDVisibilityDisplayText) == 0x000020,
 static_assert(offsetof(UIFunctionLibrary_GetHUDVisibilityDisplayText, InHUDVisibility) == 0x000000, "Member 'UIFunctionLibrary_GetHUDVisibilityDisplayText::InHUDVisibility' has a wrong offset!");
 static_assert(offsetof(UIFunctionLibrary_GetHUDVisibilityDisplayText, ReturnValue) == 0x000008, "Member 'UIFunctionLibrary_GetHUDVisibilityDisplayText::ReturnValue' has a wrong offset!");
 
+// Function BrickRigs.UIFunctionLibrary.GetMultidimensionalNumberDelimiter
+// 0x0020 (0x0020 - 0x0000)
+struct UIFunctionLibrary_GetMultidimensionalNumberDelimiter final
+{
+public:
+	ENumericValueType                             ValueType;                                         // 0x0000(0x0001)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FText                                   ReturnValue;                                       // 0x0008(0x0018)(Parm, OutParm, ReturnParm, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(UIFunctionLibrary_GetMultidimensionalNumberDelimiter) == 0x000008, "Wrong alignment on UIFunctionLibrary_GetMultidimensionalNumberDelimiter");
+static_assert(sizeof(UIFunctionLibrary_GetMultidimensionalNumberDelimiter) == 0x000020, "Wrong size on UIFunctionLibrary_GetMultidimensionalNumberDelimiter");
+static_assert(offsetof(UIFunctionLibrary_GetMultidimensionalNumberDelimiter, ValueType) == 0x000000, "Member 'UIFunctionLibrary_GetMultidimensionalNumberDelimiter::ValueType' has a wrong offset!");
+static_assert(offsetof(UIFunctionLibrary_GetMultidimensionalNumberDelimiter, ReturnValue) == 0x000008, "Member 'UIFunctionLibrary_GetMultidimensionalNumberDelimiter::ReturnValue' has a wrong offset!");
+
 // Function BrickRigs.UIFunctionLibrary.GetUnitFormat
 // 0x0020 (0x0020 - 0x0000)
 struct UIFunctionLibrary_GetUnitFormat final
@@ -13017,6 +13355,22 @@ static_assert(alignof(UIFunctionLibrary_GetUnitFormat) == 0x000008, "Wrong align
 static_assert(sizeof(UIFunctionLibrary_GetUnitFormat) == 0x000020, "Wrong size on UIFunctionLibrary_GetUnitFormat");
 static_assert(offsetof(UIFunctionLibrary_GetUnitFormat, ValueType) == 0x000000, "Member 'UIFunctionLibrary_GetUnitFormat::ValueType' has a wrong offset!");
 static_assert(offsetof(UIFunctionLibrary_GetUnitFormat, ReturnValue) == 0x000008, "Member 'UIFunctionLibrary_GetUnitFormat::ReturnValue' has a wrong offset!");
+
+// Function BrickRigs.UIFunctionLibrary.IsWidgetInWidgetPath
+// 0x0018 (0x0018 - 0x0000)
+struct UIFunctionLibrary_IsWidgetInWidgetPath final
+{
+public:
+	const class UWidget*                          Widget;                                            // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FWidgetPathWrapper                     WidgetPath;                                        // 0x0008(0x0008)(ConstParm, Parm, OutParm, ReferenceParm, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x0010(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_11[0x7];                                       // 0x0011(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(UIFunctionLibrary_IsWidgetInWidgetPath) == 0x000008, "Wrong alignment on UIFunctionLibrary_IsWidgetInWidgetPath");
+static_assert(sizeof(UIFunctionLibrary_IsWidgetInWidgetPath) == 0x000018, "Wrong size on UIFunctionLibrary_IsWidgetInWidgetPath");
+static_assert(offsetof(UIFunctionLibrary_IsWidgetInWidgetPath, Widget) == 0x000000, "Member 'UIFunctionLibrary_IsWidgetInWidgetPath::Widget' has a wrong offset!");
+static_assert(offsetof(UIFunctionLibrary_IsWidgetInWidgetPath, WidgetPath) == 0x000008, "Member 'UIFunctionLibrary_IsWidgetInWidgetPath::WidgetPath' has a wrong offset!");
+static_assert(offsetof(UIFunctionLibrary_IsWidgetInWidgetPath, ReturnValue) == 0x000010, "Member 'UIFunctionLibrary_IsWidgetInWidgetPath::ReturnValue' has a wrong offset!");
 
 // Function BrickRigs.UIFunctionLibrary.NumberToText
 // 0x0028 (0x0028 - 0x0000)
@@ -13104,6 +13458,21 @@ static_assert(alignof(UserIdPropertyWidget_UpdateUsername) == 0x000008, "Wrong a
 static_assert(sizeof(UserIdPropertyWidget_UpdateUsername) == 0x000018, "Wrong size on UserIdPropertyWidget_UpdateUsername");
 static_assert(offsetof(UserIdPropertyWidget_UpdateUsername, InUsername) == 0x000000, "Member 'UserIdPropertyWidget_UpdateUsername::InUsername' has a wrong offset!");
 
+// Function BrickRigs.VehicleIconWidget.UpdateVehicleIcon
+// 0x0003 (0x0003 - 0x0000)
+struct VehicleIconWidget_UpdateVehicleIcon final
+{
+public:
+	bool                                          bNewIsLocalPlayer;                                 // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bNewCanBeDamaged;                                  // 0x0001(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EVehiclePinMode                               NewPinMode;                                        // 0x0002(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(VehicleIconWidget_UpdateVehicleIcon) == 0x000001, "Wrong alignment on VehicleIconWidget_UpdateVehicleIcon");
+static_assert(sizeof(VehicleIconWidget_UpdateVehicleIcon) == 0x000003, "Wrong size on VehicleIconWidget_UpdateVehicleIcon");
+static_assert(offsetof(VehicleIconWidget_UpdateVehicleIcon, bNewIsLocalPlayer) == 0x000000, "Member 'VehicleIconWidget_UpdateVehicleIcon::bNewIsLocalPlayer' has a wrong offset!");
+static_assert(offsetof(VehicleIconWidget_UpdateVehicleIcon, bNewCanBeDamaged) == 0x000001, "Member 'VehicleIconWidget_UpdateVehicleIcon::bNewCanBeDamaged' has a wrong offset!");
+static_assert(offsetof(VehicleIconWidget_UpdateVehicleIcon, NewPinMode) == 0x000002, "Member 'VehicleIconWidget_UpdateVehicleIcon::NewPinMode' has a wrong offset!");
+
 // Function BrickRigs.VideoSettingsPageWidget.UpdateApplyButton
 // 0x0001 (0x0001 - 0x0000)
 struct VideoSettingsPageWidget_UpdateApplyButton final
@@ -13125,65 +13494,6 @@ public:
 static_assert(alignof(VideoSettingsPageWidget_AreVideoSettingsDirty) == 0x000001, "Wrong alignment on VideoSettingsPageWidget_AreVideoSettingsDirty");
 static_assert(sizeof(VideoSettingsPageWidget_AreVideoSettingsDirty) == 0x000001, "Wrong size on VideoSettingsPageWidget_AreVideoSettingsDirty");
 static_assert(offsetof(VideoSettingsPageWidget_AreVideoSettingsDirty, ReturnValue) == 0x000000, "Member 'VideoSettingsPageWidget_AreVideoSettingsDirty::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.WindowManagerWidget.Get
-// 0x0010 (0x0010 - 0x0000)
-struct WindowManagerWidget_Get final
-{
-public:
-	const class UObject*                          WorldContextObject;                                // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UWindowManagerWidget*                   ReturnValue;                                       // 0x0008(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(WindowManagerWidget_Get) == 0x000008, "Wrong alignment on WindowManagerWidget_Get");
-static_assert(sizeof(WindowManagerWidget_Get) == 0x000010, "Wrong size on WindowManagerWidget_Get");
-static_assert(offsetof(WindowManagerWidget_Get, WorldContextObject) == 0x000000, "Member 'WindowManagerWidget_Get::WorldContextObject' has a wrong offset!");
-static_assert(offsetof(WindowManagerWidget_Get, ReturnValue) == 0x000008, "Member 'WindowManagerWidget_Get::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.WindowManagerWidget.AddActiveWidget
-// 0x0008 (0x0008 - 0x0000)
-struct WindowManagerWidget_AddActiveWidget final
-{
-public:
-	class UMainWidgetBase*                        Widget;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(WindowManagerWidget_AddActiveWidget) == 0x000008, "Wrong alignment on WindowManagerWidget_AddActiveWidget");
-static_assert(sizeof(WindowManagerWidget_AddActiveWidget) == 0x000008, "Wrong size on WindowManagerWidget_AddActiveWidget");
-static_assert(offsetof(WindowManagerWidget_AddActiveWidget, Widget) == 0x000000, "Member 'WindowManagerWidget_AddActiveWidget::Widget' has a wrong offset!");
-
-// Function BrickRigs.WindowManagerWidget.SetMenuOpen
-// 0x0001 (0x0001 - 0x0000)
-struct WindowManagerWidget_SetMenuOpen final
-{
-public:
-	bool                                          bOpen;                                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(WindowManagerWidget_SetMenuOpen) == 0x000001, "Wrong alignment on WindowManagerWidget_SetMenuOpen");
-static_assert(sizeof(WindowManagerWidget_SetMenuOpen) == 0x000001, "Wrong size on WindowManagerWidget_SetMenuOpen");
-static_assert(offsetof(WindowManagerWidget_SetMenuOpen, bOpen) == 0x000000, "Member 'WindowManagerWidget_SetMenuOpen::bOpen' has a wrong offset!");
-
-// Function BrickRigs.WindowManagerWidget.CanOpenOrCloseMenu
-// 0x0002 (0x0002 - 0x0000)
-struct WindowManagerWidget_CanOpenOrCloseMenu final
-{
-public:
-	bool                                          bOpen;                                             // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x0001(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(WindowManagerWidget_CanOpenOrCloseMenu) == 0x000001, "Wrong alignment on WindowManagerWidget_CanOpenOrCloseMenu");
-static_assert(sizeof(WindowManagerWidget_CanOpenOrCloseMenu) == 0x000002, "Wrong size on WindowManagerWidget_CanOpenOrCloseMenu");
-static_assert(offsetof(WindowManagerWidget_CanOpenOrCloseMenu, bOpen) == 0x000000, "Member 'WindowManagerWidget_CanOpenOrCloseMenu::bOpen' has a wrong offset!");
-static_assert(offsetof(WindowManagerWidget_CanOpenOrCloseMenu, ReturnValue) == 0x000001, "Member 'WindowManagerWidget_CanOpenOrCloseMenu::ReturnValue' has a wrong offset!");
-
-// Function BrickRigs.WindowManagerWidget.IsMenuOpen
-// 0x0001 (0x0001 - 0x0000)
-struct WindowManagerWidget_IsMenuOpen final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(WindowManagerWidget_IsMenuOpen) == 0x000001, "Wrong alignment on WindowManagerWidget_IsMenuOpen");
-static_assert(sizeof(WindowManagerWidget_IsMenuOpen) == 0x000001, "Wrong size on WindowManagerWidget_IsMenuOpen");
-static_assert(offsetof(WindowManagerWidget_IsMenuOpen, ReturnValue) == 0x000000, "Member 'WindowManagerWidget_IsMenuOpen::ReturnValue' has a wrong offset!");
 
 }
 
