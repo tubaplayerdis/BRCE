@@ -15,7 +15,6 @@
 #include "main.h"
 #include <MinHook.h>
 
-#pragma comment(lib, "MinHook.x64.lib")
 
 FILE* pStdIn = nullptr;
 FILE* pStdOut = nullptr;
@@ -34,13 +33,6 @@ DWORD WINAPI MainThread(LPVOID lpReserved)
         SetConsoleOutputCP(CP_UTF8);
     #endif // _DEBUG
 
-    if (GetModuleHandle(L"MinHook.x64.dll") == NULL) {
-        MessageBox(GetActiveWindow(), L"Please Inject MinHook.x64.dll Before Loading. Uninjecting BRCI.", L"Uninjecting BRCI", MB_OK);
-        FreeLibraryAndExitThread(hModule, 0);
-        return 0;
-    }
-
-    
     MH_Initialize(); //Initalize MinHook
 
     SetThreadPriority(GetCurrentThread(), THREAD_PRIORITY_LOWEST); //Prevent random freezes

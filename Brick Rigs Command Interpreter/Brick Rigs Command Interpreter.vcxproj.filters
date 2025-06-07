@@ -437,6 +437,21 @@
     <ClCompile Include="..\Include\SDK\ABP_Character_functions.cpp">
       <Filter>More Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\Include\hde\hde32.c">
+      <Filter>More Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\hde\hde64.c">
+      <Filter>More Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\buffer.c">
+      <Filter>More Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\hook.c">
+      <Filter>More Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\trampoline.c">
+      <Filter>More Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Modules.txt">
