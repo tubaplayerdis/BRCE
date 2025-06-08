@@ -1,5 +1,7 @@
 # Brick Rigs Command Interpreter
 
+## DEVELOPMENT WILL NOT BE DONE THE WEEK OF 6/8 and will resume 6/14
+
 ## Overview
 
 The Brick Rigs Command Interpreter (BRCI) adds chat message command functionality to your brick rigs server.
