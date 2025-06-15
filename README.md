@@ -1,15 +1,12 @@
 # Brick Rigs Command Interpreter
 
-## DEVELOPMENT WILL NOT BE DONE THE WEEK OF 6/8 and will resume 6/14
-
 ## Overview
 
 The Brick Rigs Command Interpreter (BRCI) adds chat message command functionality to your brick rigs server.
 
 ## Development
 
-This project is still under development. The expected release window is around the time of the Brick Rigs 1.8 update.
-A Discord Bot that controls these functions or other administatrive items might be developed at some point
+This project is still under development. The expected release window is later june of 2025
 
 ### Todo:
 
