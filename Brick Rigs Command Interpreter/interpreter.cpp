@@ -147,7 +147,11 @@ void modules::interpreter::interpretCommand(std::string command, std::vector<std
             if (args.size() < 1) { ToFewArgs(info, "/unblock", "main"); break; }
             Commands::Moderation::ToggleBlock(info, PlayerInfo(args[0]), true);
             break;
+        case hs("/ghost"):
+            Commands::Ghost(info);
+            break;
         default:
+            sendUserSpecificMessageCommandFailed(info, "The command: " + command + " was not found! Use /help to view all commands!");
             break;
 	}
 }
@@ -236,6 +240,8 @@ void modules::interpreter::Commands::Toggle(PlayerInfo info, std::string command
         case hs("walk"):
             isWalk = toggle;
             break;
+        case hs("ghost"):
+            isGhost = toggle;
     default:
         break;
     }
@@ -314,14 +320,10 @@ void modules::interpreter::Commands::Fly(PlayerInfo info)
     if(!isFly) { sendUserSpecificMessageCommandFailed(info, "The /fly command is currently disabled!"); return; }
     using namespace global;
     auto BrickPlayerController = GetBrickPlayerControllerFromName(info.name);
+    if (global::GetBrickPlayerControllerFromName(info.name)) global::GetBrickPlayerControllerFromName(info.name)->Character->SetActorEnableCollision(true);
     if (BrickPlayerController == nullptr) return;
-    if (canModifyMovement(BrickPlayerController)) {
-        BrickPlayerController->Character->CharacterMovement->MaxFlySpeed = 3000;//This dosent get replicated. Very sad.
-        BrickPlayerController->Character->CharacterMovement->SetMovementMode(SDK::EMovementMode::MOVE_None, 0);
-        BrickPlayerController->Character->CharacterMovement->SetMovementMode(SDK::EMovementMode::MOVE_Flying, 0);
-        BrickPlayerController->Character->CharacterMovement->Velocity = SDK::FVector(0, 0);
-    }
-    else sendUserSpecificMessageCommandFailed(info, "Movement commands can only be used when controlling an independent character (walking around).");
+    if (canModifyMovement(BrickPlayerController)) BrickPlayerController->Character->CharacterMovement->SetMovementMode(SDK::EMovementMode::MOVE_Flying, 0);
+    else sendUserSpecificMessageCommandFailed(info, "Movement commands can only be used when controlling an independent character (not in a vehicle).");
     //Change accel and speed values to appropriate levels
 }
 
@@ -330,28 +332,39 @@ void modules::interpreter::Commands::Walk(PlayerInfo info)
     using namespace global;
     if (!isWalk) { sendUserSpecificMessageCommandFailed(info, "The /walk command is currently disabled!"); return; }
     auto BrickPlayerController = GetBrickPlayerControllerFromName(info.name);
+    if (global::GetBrickPlayerControllerFromName(info.name)) global::GetBrickPlayerControllerFromName(info.name)->Character->SetActorEnableCollision(true);
     if (BrickPlayerController == nullptr) return;
     if (canModifyMovement(BrickPlayerController)) {
         BrickPlayerController->Character->CharacterMovement->MaxAcceleration = 750; //This is the default value
         BrickPlayerController->Character->CharacterMovement->SetMovementMode(SDK::EMovementMode::MOVE_Walking, 0);
     }
-    else sendUserSpecificMessageCommandFailed(info, "Movement commands can only be used when controlling an independent character (walking around).");
+    else sendUserSpecificMessageCommandFailed(info, "Movement commands can only be used when controlling an independent character (not in a vehicle).");
     //Return speed and accel to regular values
 }
 
 void modules::interpreter::Commands::Speed(PlayerInfo info, char level)
 {
     if (!isSpeed) { sendUserSpecificMessageCommandFailed(info, "The /speed command is currently disabled!"); return; }
+    if (global::GetBrickPlayerControllerFromName(info.name)) global::GetBrickPlayerControllerFromName(info.name)->Character->SetActorEnableCollision(true);
 }
 
 void modules::interpreter::Commands::Teleport(PlayerInfo info)
 {
     if (!isTeleport) { sendUserSpecificMessageCommandFailed(info, "The /tp command is currently disabled!"); return; }
+    if(global::GetBrickPlayerControllerFromName(info.name)) global::GetBrickPlayerControllerFromName(info.name)->Character->SetActorEnableCollision(true);
 }
 
 void modules::interpreter::Commands::Ghost(PlayerInfo info)
 {
     if (!isGhost) { sendUserSpecificMessageCommandFailed(info, "The /ghost command is currently disabled!"); return; }
+    using namespace global;
+    auto BrickPlayerController = GetBrickPlayerControllerFromName(info.name);
+    if (BrickPlayerController == nullptr) return;
+    if (canModifyMovement(BrickPlayerController)) {
+        BrickPlayerController->Character->SetActorEnableCollision(false);
+        BrickPlayerController->Character->CharacterMovement->SetMovementMode(SDK::EMovementMode::MOVE_Flying, 0);
+    }
+    else sendUserSpecificMessageCommandFailed(info, "Movement commands can only be used when controlling an independent character (not in a vehicle).");
 }
 
 /*
