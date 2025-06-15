@@ -68,6 +68,11 @@ namespace global
 		void UnInitalizeWaterMark();
 	}
 
+	namespace welcome
+	{
+		void SendWelcomeMessage();
+	}
+
 	namespace moderation
 	{
 		inline std::vector<PlayerInfo> MutedPlayers = std::vector<PlayerInfo>();

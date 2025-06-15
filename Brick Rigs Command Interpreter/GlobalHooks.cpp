@@ -14,6 +14,7 @@
 #include "MinHook.h"
 #include "global.h"
 #include "ChatMessageHooks.h"
+#include "HelpLists.h"
 
 void __fastcall hooks::BeginPlay::HookedBeginPlayFunction(SDK::UWorld* This)
 {
@@ -21,6 +22,7 @@ void __fastcall hooks::BeginPlay::HookedBeginPlayFunction(SDK::UWorld* This)
 	global::UpdatePointers(This);
 	if (global::isMapValid()) global::watermark::HideWaterWark();
 	else global::watermark::ShowWaterMark();
+	global::welcome::SendWelcomeMessage();
 }
 
 bool hooks::BeginPlay::Init()
@@ -169,7 +171,7 @@ void hooks::OpenMenu::Disable()
 void __fastcall hooks::OnPlayerJoined::HookedOnPlayerJoinedFunction(SDK::ABrickGameSession* This, SDK::ABrickPlayerController* PC)
 {
 	OriginalOnPlayerJoinedFunction(This, PC);
-	modules::interpreter::sendUserSpecificMessageWithContext(global::GetPlayerInfoFromController(PC), "This server uses the Brick Rigs Command Interpreter(BRCI), use /help to get started!", SDK::EChatContext::Global, L"Welcome!");
+	modules::interpreter::sendUserSpecificMessageWithContext(global::GetPlayerInfoFromController(PC), WelcomeClientMessage, SDK::EChatContext::Global, L"Welcome!");
 }
 
 bool hooks::OnPlayerJoined::Init()

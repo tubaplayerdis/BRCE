@@ -267,3 +267,8 @@ void global::moderation::clearModerationValues()
 {
 	//Implement Later
 }
+
+void global::welcome::SendWelcomeMessage()
+{
+	if (isMapValid()) modules::interpreter::sendUserSpecificMessageWithContext(GetPlayerInfoFromController(GetBrickPlayerController()), WelcomeServerMessage, SDK::EChatContext::Global, L"Welcome!");
+}

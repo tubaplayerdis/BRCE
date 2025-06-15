@@ -131,15 +131,20 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;BRICKRIGSCOMMANDINTERPRETER_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>None</DebugInformationFormat>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
+      <AdditionalLibraryDirectories>$(SolutionDir)Libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <OutputFile>$(OutDir)R_$(TargetName)$(TargetExt)</OutputFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -159,17 +164,6 @@
     <ClCompile Include="..\Include\hde\hde32.c" />
     <ClCompile Include="..\Include\hde\hde64.c" />
     <ClCompile Include="..\Include\hook.c" />
-    <ClCompile Include="..\Include\SDK\ABP_Character_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\ABP_Zombie_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\AIModule_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\AnimationSharing_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\AnimGraphRuntime_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\ApexDestruction_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\AssetRegistry_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\AssetTags_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\AudioMixer_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\AugmentedReality_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\AutomationUtils_functions.cpp" />
     <ClCompile Include="..\Include\SDK\Basic.cpp" />
     <ClCompile Include="..\Include\SDK\BP_Blender_functions.cpp" />
     <ClCompile Include="..\Include\SDK\BP_BrickCharacter_functions.cpp" />
@@ -191,45 +185,10 @@
     <ClCompile Include="..\Include\SDK\BP_UIStyle_White_functions.cpp" />
     <ClCompile Include="..\Include\SDK\BP_ZombieAIController_functions.cpp" />
     <ClCompile Include="..\Include\SDK\BrickRigs_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\BTS_ZombieFindTarget_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\BTT_ZombieAttack_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\CableComponent_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\CinematicCamera_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\ClothingSystemRuntimeInterface_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\ClothingSystemRuntimeNv_functions.cpp" />
     <ClCompile Include="..\Include\SDK\CoreUObject_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\DLSSBlueprint_functions.cpp" />
     <ClCompile Include="..\Include\SDK\EngineSettings_functions.cpp" />
     <ClCompile Include="..\Include\SDK\Engine_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\EyeTracker_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\FluMoveSync_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\FluUGC_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\Foliage_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\GameplayCameras_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\GameplayTags_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\GameplayTasks_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\HeadMountedDisplay_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\ImageWriteQueue_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\InteractiveToolsFramework_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\Landscape_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\LevelSequence_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\MediaAssets_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\MeshDescription_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\MovieSceneCapture_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\MovieSceneTracks_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\MovieScene_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\MRMesh_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\NavigationSystem_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\NiagaraAnimNotifies_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\Niagara_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\OnlineSubsystemUtils_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\OnlineSubsystem_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\ProceduralMeshComponent_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\StaticMeshDescription_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\TemplateSequence_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\TimeManagement_functions.cpp" />
     <ClCompile Include="..\Include\SDK\UMG_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\Water_functions.cpp" />
     <ClCompile Include="..\Include\SDK\WBP_BrickSliderReadOnly_functions.cpp" />
     <ClCompile Include="..\Include\SDK\WBP_BrickSlider_functions.cpp" />
     <ClCompile Include="..\Include\SDK\WBP_BrickTextBox_functions.cpp" />

@@ -68,3 +68,10 @@ Star the GitHub: https://github.com/tubaplayerdis/BRCI
 Follow the Creator: https://github.com/tubaplayerdis
 )";
 
+inline std::string WelcomeServerMessage = R"(
+Welcome to Brick Rigs Command Interpreter(BRCI). Use /help to get started!
+)";
+
+inline std::string WelcomeClientMessage = R"(
+This server uses the Brick Rigs Command Interpreter(BRCI). Use /help to get started!
+)";

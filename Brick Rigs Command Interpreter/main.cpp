@@ -39,6 +39,8 @@ void mainLoop()
 
 	global::watermark::InitalizeWaterMark();
 
+	global::welcome::SendWelcomeMessage();
+
 	std::cout << "Starting Main Loop!" << std::endl;
 
 	while (true) {
