@@ -49,7 +49,7 @@ This project is still under development. The expected release window is later ju
 
 /speed [1-3] - changes the players speed based off input (!)
 
-/tp - teleports player to the place they are looking (!)
+/tp [other] - teleports player to the place they are looking/ another player if specified (!)
 
 /ghost - disables collision with the world and player can fly (!)
 
