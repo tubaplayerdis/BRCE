@@ -62,16 +62,16 @@ Do not use the [] in the actual command call!
 Weapon Commands:
 /bombgun - Get a bombgun!)";
 
-inline std::string InfoMessage = R"(
-Brick Rigs Command Interpreter(BRCI), is a chat command mod made for Bricks Rigs that adds chat message functionality to your server. It is dll based and server-side only.
+inline std::string InfoMessage = R"(Brick Rigs Command Interpreter(BRCI), is a chat command mod made for Bricks Rigs that adds chat message functionality to your server. It is dll based and server-side only.
 Star the GitHub: https://github.com/tubaplayerdis/BRCI
 Follow the Creator: https://github.com/tubaplayerdis
 )";
 
-inline std::string WelcomeServerMessage = R"(
-Welcome to Brick Rigs Command Interpreter(BRCI). Use /help to get started!
-)";
 
-inline std::string WelcomeClientMessage = R"(
-This server uses the Brick Rigs Command Interpreter(BRCI). Use /help to get started!
-)";
+#ifdef _DEBUG
+inline std::string WelcomeServerMessage = R"((DEV)Welcome to the Brick Rigs Command Interpreter(BRCI). Use /help to get started!)";
+#else
+inline std::string WelcomeServerMessage = R"(Welcome to the Brick Rigs Command Interpreter(BRCI). Use /help to get started!)";
+#endif
+
+inline std::string WelcomeClientMessage = R"(This server uses the Brick Rigs Command Interpreter(BRCI). Use /help to get started!)";

@@ -69,20 +69,20 @@ namespace modules
 			void Help(PlayerInfo info, std::string arg);
 
 			//Movement
-			void Fly(PlayerInfo info);
-			void Walk(PlayerInfo info);
-			void Speed(PlayerInfo info, char level);
-			void Teleport(PlayerInfo info);
-			void Ghost(PlayerInfo info);
+			bool Fly(PlayerInfo info);
+			bool Walk(PlayerInfo info);
+			bool Speed(PlayerInfo info, char level);
+			bool Teleport(PlayerInfo info);
+			bool Ghost(PlayerInfo info);
 
 			//Enviroment
-			void Night(PlayerInfo info);
-			void Day(PlayerInfo info);
-			void Rain(PlayerInfo info);
-			void Sun(PlayerInfo info);
+			bool Night(PlayerInfo info);
+			bool Day(PlayerInfo info);
+			bool Rain(PlayerInfo info);
+			bool Sun(PlayerInfo info);
 
 			//Weapons
-			void BombGun(PlayerInfo info);
+			bool BombGun(PlayerInfo info);
 
 			//Misc
 			void Debug(PlayerInfo info); //Use this to test varius functions. Can be called by imgui.

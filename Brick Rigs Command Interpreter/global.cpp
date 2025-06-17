@@ -116,7 +116,7 @@ void global::SendNotificationLocal(std::wstring notif, int slot)
 	if (SDK::UGameOverlayWidget::Get(World) == nullptr) return;
 	SDK::UHUDNotificationWidget* WidgetSkib = SDK::UGameOverlayWidget::Get(World)->CreateHUDNotification(nameS, true);
 	WidgetSkib->TextBlock->SetText(SDK::UKismetTextLibrary::Conv_StringToText(notif.c_str()));
-	WidgetSkib->TextBlock->SetTextStyle(SDK::EBrickUITextStyle::Bold);
+	WidgetSkib->TextBlock->SetTextStyle(SDK::EBrickUITextStyle::Default);
 	WidgetSkib->TextBlock->SetStyleState(SDK::EBrickUIStyleState::Foreground);
 	SDK::FBrickUIIconSlot slots = WidgetSkib->IconImage->IconSlot;
 	slots.Index = slot;
@@ -182,7 +182,13 @@ bool global::watermark::InitalizeWaterMark()
 	if (!TextBlock) return false;
 	#undef TEXT
 	#define TEXT(text) SDK::UKismetTextLibrary::Conv_StringToText(SDK::FString(text))
+
+	#ifdef _DEBUG
+	TextBlock->SetText(TEXT(L"(DEV)Brick Rigs Command Interpreter V1.0 (BRCI)"));
+	#else
 	TextBlock->SetText(TEXT(L"Brick Rigs Command Interpreter V1.0 (BRCI)"));
+	#endif // _DEBUG
+
 	TextBlock->SetColorStyle(SDK::EBrickUIColorStyle::Default);
 	TextBlock->SetTextStyle(SDK::EBrickUITextStyle::Bold);
 	TextBlock->SetStyleState(SDK::EBrickUIStyleState::Foreground);
@@ -270,5 +276,10 @@ void global::moderation::clearModerationValues()
 
 void global::welcome::SendWelcomeMessage()
 {
-	if (isMapValid()) modules::interpreter::sendUserSpecificMessageWithContext(GetPlayerInfoFromController(GetBrickPlayerController()), WelcomeServerMessage, SDK::EChatContext::Global, L"Welcome!");
+	if (isMapValid()) modules::interpreter::sendUserSpecificMessageWithContext(GetPlayerInfoFromController(GetBrickPlayerController()), WelcomeServerMessage, SDK::EChatContext::Global, L"BRCI");
+}
+
+void global::welcome::SendWelcomeMessageA()
+{
+	modules::interpreter::sendUserSpecificMessageWithContext(GetPlayerInfoFromController(GetBrickPlayerController()), WelcomeServerMessage, SDK::EChatContext::Global, L"BRCI");
 }

@@ -18,49 +18,57 @@
 #include "hooks.h"
 #include "global.h"
 
-void modules::interpreter::Commands::Night(PlayerInfo info)
+#define Message(info, message) modules::interpreter::sendUserSpecificMessage(info, message)
+#define MIF(cond, info, message) (cond ? Message(info, message) : (void)0)
+
+bool modules::interpreter::Commands::Night(PlayerInfo info)
 {
-    if (!isNight) { sendUserSpecificMessageCommandFailed(info, "The /night command is currently disabled!"); return; }
+    if (!isNight) { sendUserSpecificMessageCommandFailed(info, "The /night command is currently disabled!"); RETF; }
     using namespace global;
     auto cur = GetBrickGameState()->GetMatchSettings();
     std::cout << cur.WorldSetupParams.TimeOfDay << std::endl;
     cur.WorldSetupParams.TimeOfDay = 0.00f;
     GetBrickGameState()->SetMatchSettings(cur);
+    RETT;
 }
 
-void modules::interpreter::Commands::Day(PlayerInfo info)
+bool modules::interpreter::Commands::Day(PlayerInfo info)
 {
-    if (!isDay) { sendUserSpecificMessageCommandFailed(info, "The /day command is currently disabled!"); return; }
+    if (!isDay) { sendUserSpecificMessageCommandFailed(info, "The /day command is currently disabled!"); RETF; }
     using namespace global;
     auto cur = GetBrickGameState()->MatchSettings;
     std::cout << cur.WorldSetupParams.TimeOfDay << std::endl;
     cur.WorldSetupParams.TimeOfDay = 12.00f;
     GetBrickGameState()->SetMatchSettings(cur);
+    RETT;
 }
 
-void modules::interpreter::Commands::Rain(PlayerInfo info)
+bool modules::interpreter::Commands::Rain(PlayerInfo info)
 {
-    if (!isRain) { sendUserSpecificMessageCommandFailed(info, "The /rain command is currently disabled!"); return; }
+    if (!isRain) { sendUserSpecificMessageCommandFailed(info, "The /rain command is currently disabled!"); RETF; }
     using namespace global;
     auto cur = GetBrickGameState()->MatchSettings;
     cur.WorldSetupParams.Weather->Weather.PrecipitationType = SDK::EPrecipitationType::Rain;
     cur.WorldSetupParams.Weather->Weather.PrecipitationIntensity = 100.00f;
     GetBrickGameState()->SetMatchSettings(cur);
+    RETT;
 }
 
-void modules::interpreter::Commands::Sun(PlayerInfo info)
+bool modules::interpreter::Commands::Sun(PlayerInfo info)
 {
-    if (!isSun) { sendUserSpecificMessageCommandFailed(info, "The /sun command is currently disabled!"); return; }
+    if (!isSun) { sendUserSpecificMessageCommandFailed(info, "The /sun command is currently disabled!"); RETF; }
     using namespace global;
     auto cur = GetBrickGameState()->MatchSettings;
     cur.WorldSetupParams.Weather->Weather.PrecipitationType = SDK::EPrecipitationType::None;
     cur.WorldSetupParams.Weather->Weather.PrecipitationIntensity = 0.00f;
     GetBrickGameState()->SetMatchSettings(cur);
+    RETT;
 }
 
-void modules::interpreter::Commands::BombGun(PlayerInfo info)
+bool modules::interpreter::Commands::BombGun(PlayerInfo info)
 {
-    if (!isBombGun) { sendUserSpecificMessageCommandFailed(info, "The /bombgun command is currently disabled!"); return; }
+    if (!isBombGun) { sendUserSpecificMessageCommandFailed(info, "The /bombgun command is currently disabled!"); RETF; }
+    RETT;
 }
 
 size_t hash_string(const std::string& str) {
@@ -105,22 +113,22 @@ void modules::interpreter::interpretCommand(std::string command, std::vector<std
             Commands::Toggle(info, args[0], false);
             break;
 		case hs("/night"):
-            Commands::Night(info);
+            MIF(Commands::Night(info), info, "Set the time to night!");
             break;
         case hs("/day"):
-            Commands::Day(info);
+            MIF(Commands::Day(info), info, "Set the time to day!");
             break;
         case hs("/rain"):
-            Commands::Rain(info);
+            MIF(Commands::Rain(info), info, "Set the weather to rain!");
             break;
         case hs("/sun"):
-            Commands::Sun(info);
+            MIF(Commands::Sun(info), info, "Set the weather to sunny!");
             break;
         case hs("/fly"):
-            Commands::Fly(info);
+            MIF(Commands::Fly(info), info, "You feel lighter...");
             break;
         case hs("/walk"):
-            Commands::Walk(info);
+            MIF(Commands::Walk(info), info, "Your feet are heavy...");
             break;
         case hs("/pm"):
             Commands::PersonalMessage(info, originalMessage);
@@ -148,7 +156,7 @@ void modules::interpreter::interpretCommand(std::string command, std::vector<std
             Commands::Moderation::ToggleBlock(info, PlayerInfo(args[0]), true);
             break;
         case hs("/ghost"):
-            Commands::Ghost(info);
+            MIF(Commands::Ghost(info), info, "Set the movement mode to ghost!");
             break;
         default:
             sendUserSpecificMessageCommandFailed(info, "The command: " + command + " was not found! Use /help to view all commands!");
@@ -168,7 +176,7 @@ void modules::interpreter::sendUserSpecificMessage(PlayerInfo info, std::string 
         SMessage.Type = SDK::EChatMessageType::Message;
         SMessage.IntOption = 1;//Equates to SDK::EChatContext. use this to get admin messages or other types of messages.
         SMessage.Player.PlayerId = cont->GetPlayerId();
-        SMessage.Player.PlayerName = STRING(L"Command Interpreter");
+        SMessage.Player.PlayerName = STRING(L"BRCI");
         cont->ClientReceiveChatMessage(SMessage);
     }
     else {
@@ -220,6 +228,7 @@ void modules::interpreter::Commands::Toggle(PlayerInfo info, std::string command
         return;
     } 
     size_t hash_val = hash_string(command);
+    bool defa = false;
 
     switch (hash_val) {
         case hs("night"):
@@ -242,9 +251,12 @@ void modules::interpreter::Commands::Toggle(PlayerInfo info, std::string command
             break;
         case hs("ghost"):
             isGhost = toggle;
-    default:
-        break;
+            break;
+        default:
+            defa = true;
+            break;
     }
+    if(!defa) sendUserSpecificMessage(info, "Toggled: " + command + " to" + GetBoolString(toggle));
 }
 
 /*
@@ -315,56 +327,63 @@ bool canModifyMovement(SDK::ABrickPlayerController* Controller)
     return (Controller->Character != nullptr && Controller->Character->CharacterMovement != nullptr);
 }
 
-void modules::interpreter::Commands::Fly(PlayerInfo info)
+bool modules::interpreter::Commands::Fly(PlayerInfo info)
 {
-    if(!isFly) { sendUserSpecificMessageCommandFailed(info, "The /fly command is currently disabled!"); return; }
+    if (!isFly) { sendUserSpecificMessageCommandFailed(info, "The /fly command is currently disabled!"); RETF; }
     using namespace global;
     auto BrickPlayerController = GetBrickPlayerControllerFromName(info.name);
     if (global::GetBrickPlayerControllerFromName(info.name)) global::GetBrickPlayerControllerFromName(info.name)->Character->SetActorEnableCollision(true);
-    if (BrickPlayerController == nullptr) return;
-    if (canModifyMovement(BrickPlayerController)) BrickPlayerController->Character->CharacterMovement->SetMovementMode(SDK::EMovementMode::MOVE_Flying, 0);
+    if (BrickPlayerController == nullptr) RETF;
+    if (canModifyMovement(BrickPlayerController)) { BrickPlayerController->Character->CharacterMovement->SetMovementMode(SDK::EMovementMode::MOVE_Flying, 0); RETT; }
     else sendUserSpecificMessageCommandFailed(info, "Movement commands can only be used when controlling an independent character (not in a vehicle).");
+    RETF;
     //Change accel and speed values to appropriate levels
 }
 
-void modules::interpreter::Commands::Walk(PlayerInfo info)
+bool modules::interpreter::Commands::Walk(PlayerInfo info)
 {
     using namespace global;
-    if (!isWalk) { sendUserSpecificMessageCommandFailed(info, "The /walk command is currently disabled!"); return; }
+    if (!isWalk) { sendUserSpecificMessageCommandFailed(info, "The /walk command is currently disabled!"); RETF; }
     auto BrickPlayerController = GetBrickPlayerControllerFromName(info.name);
     if (global::GetBrickPlayerControllerFromName(info.name)) global::GetBrickPlayerControllerFromName(info.name)->Character->SetActorEnableCollision(true);
-    if (BrickPlayerController == nullptr) return;
+    if (BrickPlayerController == nullptr) RETF;
     if (canModifyMovement(BrickPlayerController)) {
         BrickPlayerController->Character->CharacterMovement->MaxAcceleration = 750; //This is the default value
         BrickPlayerController->Character->CharacterMovement->SetMovementMode(SDK::EMovementMode::MOVE_Walking, 0);
+        RETT;
     }
     else sendUserSpecificMessageCommandFailed(info, "Movement commands can only be used when controlling an independent character (not in a vehicle).");
+    RETF;
     //Return speed and accel to regular values
 }
 
-void modules::interpreter::Commands::Speed(PlayerInfo info, char level)
+bool modules::interpreter::Commands::Speed(PlayerInfo info, char level)
 {
-    if (!isSpeed) { sendUserSpecificMessageCommandFailed(info, "The /speed command is currently disabled!"); return; }
+    if (!isSpeed) { sendUserSpecificMessageCommandFailed(info, "The /speed command is currently disabled!"); RETF; }
     if (global::GetBrickPlayerControllerFromName(info.name)) global::GetBrickPlayerControllerFromName(info.name)->Character->SetActorEnableCollision(true);
+    RETT;
 }
 
-void modules::interpreter::Commands::Teleport(PlayerInfo info)
+bool modules::interpreter::Commands::Teleport(PlayerInfo info)
 {
-    if (!isTeleport) { sendUserSpecificMessageCommandFailed(info, "The /tp command is currently disabled!"); return; }
+    if (!isTeleport) { sendUserSpecificMessageCommandFailed(info, "The /tp command is currently disabled!"); RETF; }
     if(global::GetBrickPlayerControllerFromName(info.name)) global::GetBrickPlayerControllerFromName(info.name)->Character->SetActorEnableCollision(true);
+    RETT;
 }
 
-void modules::interpreter::Commands::Ghost(PlayerInfo info)
+bool modules::interpreter::Commands::Ghost(PlayerInfo info)
 {
-    if (!isGhost) { sendUserSpecificMessageCommandFailed(info, "The /ghost command is currently disabled!"); return; }
+    if (!isGhost) { sendUserSpecificMessageCommandFailed(info, "The /ghost command is currently disabled!"); RETF; }
     using namespace global;
     auto BrickPlayerController = GetBrickPlayerControllerFromName(info.name);
-    if (BrickPlayerController == nullptr) return;
+    if (BrickPlayerController == nullptr) RETF;
     if (canModifyMovement(BrickPlayerController)) {
         BrickPlayerController->Character->SetActorEnableCollision(false);
         BrickPlayerController->Character->CharacterMovement->SetMovementMode(SDK::EMovementMode::MOVE_Flying, 0);
+        RETT;
     }
     else sendUserSpecificMessageCommandFailed(info, "Movement commands can only be used when controlling an independent character (not in a vehicle).");
+    RETF;
 }
 
 /*

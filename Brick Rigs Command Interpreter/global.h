@@ -15,6 +15,11 @@
 #define TEXT(text) SDK::UKismetTextLibrary::Conv_StringToText(SDK::FString(text))
 #define STRING(string) UC::FString(string)
 #define NAME(text) SDK::UKistmetStringLibrary::Conv_StringToName(SDK::FString(text));
+#define GetBoolString(text) (text ? "true" : "false")
+#define RETF return false
+#define RETT return true
+#define RET0 return 0
+#define RET1 return 1
 #include <string>
 #include "SDK.hpp"
 #include "interpreter.h"
@@ -71,6 +76,7 @@ namespace global
 	namespace welcome
 	{
 		void SendWelcomeMessage();
+		void SendWelcomeMessageA(); 
 	}
 
 	namespace moderation

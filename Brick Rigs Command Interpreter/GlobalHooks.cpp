@@ -22,7 +22,7 @@ void __fastcall hooks::BeginPlay::HookedBeginPlayFunction(SDK::UWorld* This)
 	global::UpdatePointers(This);
 	if (global::isMapValid()) global::watermark::HideWaterWark();
 	else global::watermark::ShowWaterMark();
-	global::welcome::SendWelcomeMessage();
+	global::welcome::SendWelcomeMessageA();
 }
 
 bool hooks::BeginPlay::Init()
