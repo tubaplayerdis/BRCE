@@ -69,6 +69,8 @@ Star the GitHub: https://github.com/tubaplayerdis/BRCI
 Follow the Creator: https://github.com/tubaplayerdis
 )";
 
+inline std::string BypassPassword = "uno";
+
 
 #ifdef _DEBUG
 inline std::string WelcomeServerMessage = R"((DEV)Thank you for using the Brick Rigs Command Interpreter(BRCI). Use /help to get started!)";

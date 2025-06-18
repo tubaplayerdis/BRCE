@@ -15,6 +15,7 @@
 #include "global.h"
 #include "ChatMessageHooks.h"
 #include "HelpLists.h"
+#include <thread>
 
 void __fastcall hooks::BeginPlay::HookedBeginPlayFunction(SDK::UWorld* This)
 {
@@ -22,7 +23,9 @@ void __fastcall hooks::BeginPlay::HookedBeginPlayFunction(SDK::UWorld* This)
 	global::UpdatePointers(This);
 	if (global::isMapValid()) global::watermark::HideWaterWark();
 	else global::watermark::ShowWaterMark();
-	//global::welcome::SendWelcomeMessageA(); //This causes issues for some reason.
+	Sleep(1);
+	global::welcome::SendWelcomeMessageA();
+	
 }
 
 bool hooks::BeginPlay::Init()
@@ -195,5 +198,36 @@ void hooks::OnPlayerJoined::Disable()
 {
 	if (!initalized || !enabled) return;
 	MH_DisableHook((LPVOID)OnPlayerJoinedFunctionPointer);
+	enabled = false;
+}
+
+char __fastcall hooks::LoadMap::HookedLoadMapFunction(SDK::UEngine* This, SDK::FWorldContext* WorldContext, void* URL, void* Pending, void* Error)
+{
+	char ret = OriginalLoadMapFunction(This, WorldContext, URL, Pending, Error);
+	global::welcome::SendWelcomeMessageA();
+	return ret;
+}
+
+bool hooks::LoadMap::Init()
+{
+	if (initalized) return false;
+	LoadMapFunctionPointer = FindPattern(pattern, mask, GetModuleBaseN(), GetModuleSizeN());
+	if (LoadMapFunctionPointer == 0) return false;
+	MH_STATUS ret = MH_CreateHook((LPVOID)LoadMapFunctionPointer, &HookedLoadMapFunction, (void**)&OriginalLoadMapFunction);
+	initalized = true;
+	return ret == MH_OK;
+}
+
+void hooks::LoadMap::Enable()
+{
+	if (!initalized || enabled) return;
+	MH_EnableHook((LPVOID)LoadMapFunctionPointer);
+	enabled = true;
+}
+
+void hooks::LoadMap::Disable()
+{
+	if (!initalized || !enabled) return;
+	MH_DisableHook((LPVOID)LoadMapFunctionPointer);
 	enabled = false;
 }

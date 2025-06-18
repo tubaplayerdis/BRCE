@@ -25,6 +25,7 @@ namespace hooks
 		bool OMHook = OpenMenu::Init();
 		bool SYNCHook = Functions::SynchronizeProperties::Init();//0
 		bool ONJHook = OnPlayerJoined::Init();//0
+		//bool LMHook = LoadMap::Init();
 		auto end = std::chrono::high_resolution_clock::now();
 		std::cout << "Elapsed Time Finding Hooks: " << std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count() << std::endl;
 		if (!ACMHook || !BPHook || !OMHook || !SYNCHook || !ONJHook) {
@@ -34,6 +35,7 @@ namespace hooks
 			std::cout << "OMHOOK: " << OMHook << std::endl;
 			std::cout << "SYNCHOOK: " << SYNCHook << std::endl;
 			std::cout << "ONJHOOK:" << ONJHook << std::endl;
+			//std::cout << "LMHOOK:" << LMHook << std::endl;
 			return false;
 		}
 		return true;
@@ -44,14 +46,18 @@ namespace hooks
 		BeginPlay::Enable();
 		OpenMenu::Enable();
 		OnPlayerJoined::Enable();
+		//LoadMap::Enable();
 		//PossessedBy::Enable();
 	}
 
+	//This is should not be used anymore
 	inline void DisableAllHooks() {
 		//Disable all hooks in one place
 		AddChatMessage::Disable();
 		BeginPlay::Disable();
 		OpenMenu::Disable();
+		OnPlayerJoined::Disable();
+		//LoadMap::Disable();
 		//PossessedBy::Disable();
 	}
 }

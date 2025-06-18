@@ -89,11 +89,14 @@ namespace modules
 
 			namespace Moderation
 			{
-				void ToggleMute(PlayerInfo info, PlayerInfo other, bool on_off);
-				void ToggleBlock(PlayerInfo info, PlayerInfo other, bool on_off);
+				void ToggleMute(PlayerInfo info, PlayerInfo other, bool on_off, bool bypass);
+				void ToggleBlock(PlayerInfo info, PlayerInfo other, bool on_off, bool bypass);
 				void ToggleSilence(PlayerInfo info, bool on_off);
 				void Save(PlayerInfo info);
 				void Load(PlayerInfo info);
+				void ListMuted(PlayerInfo info);
+				void ListBlocked(PlayerInfo info);
+				void IsOnSilence(PlayerInfo info);
 			}
 
 			//Toggles for wether or not a command is enabled or disabled
