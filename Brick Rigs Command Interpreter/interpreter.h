@@ -92,6 +92,8 @@ namespace modules
 				void ToggleMute(PlayerInfo info, PlayerInfo other, bool on_off);
 				void ToggleBlock(PlayerInfo info, PlayerInfo other, bool on_off);
 				void ToggleSilence(PlayerInfo info, bool on_off);
+				void Save(PlayerInfo info);
+				void Load(PlayerInfo info);
 			}
 
 			//Toggles for wether or not a command is enabled or disabled

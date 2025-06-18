@@ -18,6 +18,8 @@
 #include <codecvt>
 #include <locale>
 #include "GlobalHooks.h"
+#include <iostream>
+#include <fstream>
 
 SDK::UEngine* global::Engine = SDK::UEngine::GetEngine();
 SDK::UWorld* global::World = SDK::UWorld::GetWorld();
@@ -259,19 +261,30 @@ bool global::moderation::isPlayerOnSilence(PlayerInfo player)
 
 bool global::moderation::saveModerationValues()
 {
-	//Implement Later
+	std::fstream saveFile;
+	saveFile.open("MutedPlayers.txt", std::ios::out);
+	if (!saveFile.bad() && !saveFile.fail() && saveFile.is_open()) {
+		for (PlayerInfo info : MutedPlayers) {
+			saveFile << info.name << std::endl;
+		}
+		saveFile.close();
+		return true;
+	}
 	return false;
 }
 
 bool global::moderation::loadModerationValues()
 {
-	//Implement Later
+	std::fstream saveFile;
+	saveFile.open("MutedPlayers.txt", std::ios::in);
+	if (!saveFile.bad() && !saveFile.fail() && saveFile.is_open()) {
+		std::string line;
+		while (std::getline(saveFile, line)) {
+			AddMutedPlayer(PlayerInfo(line));
+		}
+		return true;
+	}
 	return false;
-}
-
-void global::moderation::clearModerationValues()
-{
-	//Implement Later
 }
 
 void global::welcome::SendWelcomeMessage()

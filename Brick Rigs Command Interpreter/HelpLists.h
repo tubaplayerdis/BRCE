@@ -37,7 +37,9 @@ Moderation Commands:
 /off [command] - Disables command (*)
 /on [command] - Enables command (*)
 /mute [who] - Disable a users ability to message (*)
-/unmute - [who] - Re-Enable a users ability to message (*))";
+/unmute - [who] - Re-Enable a users ability to message (*)
+/save - Save the current moderation config to the disk (*)
+/load - Load the moderation config on the disk (*))";
 
 inline std::string MovementHelpMessage = R"(
 Do not use the [] in the actual command call!
@@ -69,9 +71,9 @@ Follow the Creator: https://github.com/tubaplayerdis
 
 
 #ifdef _DEBUG
-inline std::string WelcomeServerMessage = R"((DEV)Welcome to the Brick Rigs Command Interpreter(BRCI). Use /help to get started!)";
+inline std::string WelcomeServerMessage = R"((DEV)Thank you for using the Brick Rigs Command Interpreter(BRCI). Use /help to get started!)";
 #else
-inline std::string WelcomeServerMessage = R"(Welcome to the Brick Rigs Command Interpreter(BRCI). Use /help to get started!)";
+inline std::string WelcomeServerMessage = R"(Thank you for using the Brick Rigs Command Interpreter(BRCI). Use /help to get started!)";
 #endif
 
 inline std::string WelcomeClientMessage = R"(This server uses the Brick Rigs Command Interpreter(BRCI). Use /help to get started!)";

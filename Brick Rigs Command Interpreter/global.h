@@ -99,6 +99,5 @@ namespace global
 
 		bool saveModerationValues();
 		bool loadModerationValues();
-		void clearModerationValues(); //Does it on the file and local instances.
 	}
 }

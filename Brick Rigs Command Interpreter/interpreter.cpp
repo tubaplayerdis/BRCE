@@ -158,6 +158,12 @@ void modules::interpreter::interpretCommand(std::string command, std::vector<std
         case hs("/ghost"):
             MIF(Commands::Ghost(info), info, "Set the movement mode to ghost!");
             break;
+        case hs("/save"):
+            Commands::Moderation::Save(info);
+            break;
+        case hs("/load"):
+            Commands::Moderation::Load(info);
+            break;
         default:
             sendUserSpecificMessageCommandFailed(info, "The command: " + command + " was not found! Use /help to view all commands!");
             break;
@@ -447,4 +453,22 @@ void modules::interpreter::Commands::Moderation::ToggleSilence(PlayerInfo info, 
         sendUserSpecificMessageWithContext(info, std::string("Disallowed incoming personal messages!"), SDK::EChatContext::Global, L"BRCI Moderation");
     }
     else { RemovePMSilencePlayer(info); sendUserSpecificMessageWithContext(info, std::string("Disallowed incoming personal messages!"), SDK::EChatContext::Global, L"BRCI Moderation"); }
+}
+
+void modules::interpreter::Commands::Moderation::Save(PlayerInfo info)
+{
+    using namespace global;
+    using namespace global::moderation;
+    if (!GetIsPlayerAdminFromName(info.name)) { sendUserSpecificMessageCommandFailed(info, "Only admins can use this command!"); return; }
+    if (saveModerationValues()) sendUserSpecificMessage(info, "Successfully saved the current moderation values to the disk!");
+    else sendUserSpecificMessageCommandFailed(info, "Failed to save the current moderation values to the disk!");
+}
+
+void modules::interpreter::Commands::Moderation::Load(PlayerInfo info)
+{
+    using namespace global;
+    using namespace global::moderation;
+    if (!GetIsPlayerAdminFromName(info.name)) { sendUserSpecificMessageCommandFailed(info, "Only admins can use this command!"); return; }
+    if(loadModerationValues()) sendUserSpecificMessage(info, "Successfully loaded the current moderation values from the disk!");
+    else sendUserSpecificMessageCommandFailed(info, "Failed to load the current moderation values from the disk!");
 }
