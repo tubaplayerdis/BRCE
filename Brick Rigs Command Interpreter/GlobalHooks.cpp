@@ -20,10 +20,22 @@
 void __fastcall hooks::BeginPlay::HookedBeginPlayFunction(SDK::UWorld* This)
 {
 	OriginalBeginPlayFunction(This);
+	if (!global::IsHost(This->NetDriver)) {
+		//Disable Hooks
+		AddChatMessage::Disable();
+		OnPlayerJoined::Disable();
+		global::watermark::HideWaterWark();
+		return;
+	}
+	else {
+		//Re-Enable hooks. Enable() function pretects agaisnt enabling twice.
+		AddChatMessage::Enable();
+		OnPlayerJoined::Enable();
+	}
 	global::UpdatePointers(This);
 	if (global::isMapValid()) global::watermark::HideWaterWark();
 	else global::watermark::ShowWaterMark();
-	Sleep(1);
+	Sleep(10); //This is janky but allows for execution of other systems to prevent freezes
 	global::welcome::SendWelcomeMessageA();
 	
 }
@@ -230,4 +242,13 @@ void hooks::LoadMap::Disable()
 	if (!initalized || !enabled) return;
 	MH_DisableHook((LPVOID)LoadMapFunctionPointer);
 	enabled = false;
+}
+
+bool hooks::Functions::isServer::isServer(SDK::UNetDriver* driver)
+{
+	if (!driver) return false;
+	using IsServerFn = bool(__fastcall*)(SDK::UNetDriver*);
+	void** vtable = *(void***)driver;
+	IsServerFn IsServerFunc = reinterpret_cast<IsServerFn>(vtable[0x378 / 8]);
+	return IsServerFunc(driver);
 }

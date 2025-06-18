@@ -173,5 +173,10 @@ namespace hooks
             void SynchronizeProperties(SDK::UBrickBorder* This);
             bool Init(); //Find the address
         }
+
+        namespace isServer
+        {
+            bool isServer(SDK::UNetDriver* driver);
+        }
     }
 }

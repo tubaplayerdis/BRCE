@@ -56,8 +56,9 @@ namespace global
 	* Returns true if a map that is loaded is playable, false if otherwise.
 	*/
 	bool isMapValid();
-	bool IsHost();
-	inline bool NotHost() { return !IsHost(); };
+	bool IsHost(SDK::UNetDriver* driver);
+	inline bool IsHost() { return IsHost(World->NetDriver); }
+	inline bool NotHost() { return !IsHost(World->NetDriver); }
 	void SendNotificationLocal(std::wstring notif, int slot);
 	PlayerInfo GetPlayerInfoFromController(SDK::ABrickPlayerController* controller);
 

@@ -29,7 +29,7 @@ void mainLoop()
 	//Find a way to alert the user that BRCI is loaded without using the console. Maybe try to make a notification out of a text border. a watermark is currently used but it might not be enough.
 
 	if (!hooks::InitAllHooks()) {
-		MessageBox(GetActiveWindow(), L"Failed To Hook Critical Functions. Uninjecting BCRI.", L"Uninjecting BRCI", MB_OK);
+		if (MessageBox(GetActiveWindow(), L"Failed To Hook Critical Functions. Uninjecting BCRI. Would you like to look at the crash log?", L"Uninjecting BRCI", MB_YESNO) == IDYES) hooks::OpenCrashFile();
 		return;
 	}
 
@@ -39,7 +39,7 @@ void mainLoop()
 
 	global::watermark::InitalizeWaterMark();
 
-	global::welcome::SendWelcomeMessage();
+	if(!IsHost()) global::welcome::SendWelcomeMessage();
 
 	std::cout << "Starting Main Loop!" << std::endl;
 

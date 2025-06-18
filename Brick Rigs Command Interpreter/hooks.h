@@ -14,6 +14,11 @@
 #include "ChatMessageHooks.h"
 #include "GlobalHooks.h"
 #include <chrono>
+#include <fstream>
+#include <windows.h>
+#include <shellapi.h>
+
+#pragma comment(lib, "shell32.lib")
 
 namespace hooks
 {
@@ -25,7 +30,6 @@ namespace hooks
 		bool OMHook = OpenMenu::Init();
 		bool SYNCHook = Functions::SynchronizeProperties::Init();//0
 		bool ONJHook = OnPlayerJoined::Init();//0
-		//bool LMHook = LoadMap::Init();
 		auto end = std::chrono::high_resolution_clock::now();
 		std::cout << "Elapsed Time Finding Hooks: " << std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count() << std::endl;
 		if (!ACMHook || !BPHook || !OMHook || !SYNCHook || !ONJHook) {
@@ -35,7 +39,19 @@ namespace hooks
 			std::cout << "OMHOOK: " << OMHook << std::endl;
 			std::cout << "SYNCHOOK: " << SYNCHook << std::endl;
 			std::cout << "ONJHOOK:" << ONJHook << std::endl;
-			//std::cout << "LMHOOK:" << LMHook << std::endl;
+
+			//Print cases to file
+			std::ofstream saveFile;
+			saveFile.open("BRCICRASH.txt", std::ios::trunc);
+			if (!saveFile.bad() && !saveFile.fail() && saveFile.is_open()) {
+				saveFile << "Hooks have a possibility of loading incorrectly given a version change for BR. This is normal an update should be out soon fixing this if that is the case." << std::endl;
+				saveFile << "ACMHOOK: " << ACMHook << std::endl;
+				saveFile << "BPHOOK: " << BPHook << std::endl;
+				saveFile << "OMHOOK: " << OMHook << std::endl;
+				saveFile << "SYNCHOOK: " << SYNCHook << std::endl;
+				saveFile << "ONJHOOK:" << ONJHook << std::endl;
+				saveFile.close();
+			}
 			return false;
 		}
 		return true;
@@ -59,5 +75,21 @@ namespace hooks
 		OnPlayerJoined::Disable();
 		//LoadMap::Disable();
 		//PossessedBy::Disable();
+	}
+
+	inline void OpenCrashFile() {
+		DWORD bufsize = GetCurrentDirectory(0, NULL);
+		std::wstring curDir(bufsize, L'\0');
+		GetCurrentDirectory(bufsize, &curDir[0]);
+
+		// Remove trailing null char left by GetCurrentDirectory
+		curDir.resize(wcslen(curDir.c_str()));
+
+		// Add backslash if missing
+		if (!curDir.empty() && curDir.back() != L'\\') {
+			curDir += L'\\';
+		}
+		curDir += L"BRCICRASH.txt";
+		ShellExecute(NULL, L"open", curDir.c_str(), NULL, NULL, SW_SHOW);
 	}
 }

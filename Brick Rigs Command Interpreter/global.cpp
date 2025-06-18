@@ -105,9 +105,9 @@ bool global::isMapValid()
 	else return false;
 }
 
-bool global::IsHost()
+bool global::IsHost(SDK::UNetDriver* driver)
 {
-	if(updatingPointers || World->NetDriver == nullptr && World->NetDriver->ServerConnection != nullptr) return false;
+	if(updatingPointers || !hooks::Functions::isServer::isServer(driver)) return false;
 	return true;
 }
 
