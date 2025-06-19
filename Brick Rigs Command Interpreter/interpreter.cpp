@@ -444,20 +444,13 @@ void modules::interpreter::Commands::Moderation::ToggleMute(PlayerInfo info, std
     if (!controller) controller = GetBrickPlayerControllerFromID(input);
     if (!controller) { sendUserSpecificMessageCommandFailed(info, "The user you wanted to block was not found!"); return; }
     PlayerInfo other = GetPlayerInfoFromController(controller);
-    bool res = false;
-
     if (on_off) {
-        res = AddMutedPlayer(other);
+        if (!AddMutedPlayer(other)) sendUserSpecificMessageWithContext(info, other.name + " is already muted!", SDK::EChatContext::Admin, L"Admin");
+        else sendUserSpecificMessageWithContext(info, std::string("Successfully Muted: ") + other.name, SDK::EChatContext::Admin, L"Admin");
     }
     else {
-        res = RemoveMutedPlayer(other); 
-    }
-
-    if (on_off) {
-        res ? sendUserSpecificMessageWithContext(info, std::string("Successfully Muted: ") + other.name, SDK::EChatContext::Admin, L"Admin") : sendUserSpecificMessageWithContext(info, other.name + " is already muted!", SDK::EChatContext::Admin, L"Admin");
-    }
-    else {
-        res ? sendUserSpecificMessageWithContext(info, std::string("Successfully Unmuted: ") + other.name, SDK::EChatContext::Admin, L"Admin") : sendUserSpecificMessageWithContext(info, other.name + "is already unmuted", SDK::EChatContext::Admin, L"Admin");
+        if (!RemoveMutedPlayer(other)) sendUserSpecificMessageWithContext(info, other.name + "is already unmuted", SDK::EChatContext::Admin, L"Admin");
+        else sendUserSpecificMessageWithContext(info, std::string("Successfully Unmuted: ") + other.name, SDK::EChatContext::Admin, L"Admin");
     }
 }
 
