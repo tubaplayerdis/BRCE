@@ -39,7 +39,7 @@ void mainLoop()
 
 	global::watermark::InitalizeWaterMark();
 
-	if(!IsHost()) global::welcome::SendWelcomeMessage();
+	if(IsHost()) global::welcome::SendWelcomeMessage();
 
 	std::cout << "Starting Main Loop!" << std::endl;
 

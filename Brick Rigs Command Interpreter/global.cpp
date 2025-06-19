@@ -86,6 +86,21 @@ SDK::ABrickPlayerController* global::GetBrickPlayerControllerFromName(std::strin
 	return nullptr;
 }
 
+SDK::ABrickPlayerController* global::GetBrickPlayerControllerFromID(std::string ID)
+{
+	int playerID = std::stoi(ID);
+	UC::TArray<SDK::AActor*> raw = UC::TArray<SDK::AActor*>();
+	UC::TArray<SDK::AActor*>* what = &raw;
+	SDK::UGameplayStatics::GetAllActorsOfClass(World, SDK::ABrickPlayerController::StaticClass(), what);
+	for (int i = 0; i < raw.Num(); i++)
+	{
+		SDK::ABrickPlayerController* cast = static_cast<SDK::ABrickPlayerController*>(raw[i]);
+		SDK::ABrickPlayerState* state = static_cast<SDK::ABrickPlayerState*>(cast->PlayerState);
+		if (state->PlayerId == playerID) return cast;
+	}
+	return nullptr;
+}
+
 bool global::GetIsPlayerAdminFromName(std::string name)
 {
 	if (GetBrickPlayerControllerFromName(name) == nullptr) return false;
@@ -133,6 +148,11 @@ PlayerInfo global::GetPlayerInfoFromController(SDK::ABrickPlayerController* cont
 	SDK::ABrickPlayerState* state = static_cast<SDK::ABrickPlayerState*>(controller->PlayerState);
 	ret.name = state->GetPlayerNameText().ToString();
 	return ret;
+}
+
+std::string global::GetPlayerNameFromID(std::string ID)
+{
+	return GetPlayerInfoFromController(GetBrickPlayerControllerFromID(ID)).name;
 }
 
 void global::InitPointers()
@@ -257,6 +277,51 @@ bool global::moderation::isPlayerOnSilence(PlayerInfo player)
 		if (player == info) return true;
 	}
 	return false;
+}
+
+bool global::moderation::AddMutedPlayer(PlayerInfo info)
+{
+	if (isPlayerMuted(info)) return false;
+	MutedPlayers.push_back(info);
+	return true;
+}
+
+bool global::moderation::RemoveMutedPlayer(PlayerInfo info)
+{
+	size_t old = MutedPlayers.size();
+	MutedPlayers.erase(std::remove(MutedPlayers.begin(), MutedPlayers.end(), info), MutedPlayers.end());
+	size_t news = MutedPlayers.size();
+	return (news < old);
+}
+
+bool global::moderation::AddPMSilencePlayer(PlayerInfo info)
+{
+	if (isPlayerOnSilence(info)) return false;
+	PlayersOnPMSilence.push_back(info);
+	return true;
+}
+
+bool global::moderation::RemovePMSilencePlayer(PlayerInfo info)
+{
+	size_t old = PlayersOnPMSilence.size();
+	PlayersOnPMSilence.erase(std::remove(PlayersOnPMSilence.begin(), PlayersOnPMSilence.end(), info), PlayersOnPMSilence.end());
+	size_t news = PlayersOnPMSilence.size();
+	return (news < old);
+}
+
+bool global::moderation::AddBlockedPlayer(BlockedPlayer info)
+{
+	if (isPlayerBlockedBy(info.Blocker, info.Blocked)) return false;
+	BlockedPlayers.push_back(info);
+	return true;
+}
+
+bool global::moderation::RemoveBlockedPlayer(BlockedPlayer info)
+{
+	size_t old = BlockedPlayers.size();
+	BlockedPlayers.erase(std::remove(BlockedPlayers.begin(), BlockedPlayers.end(), info), BlockedPlayers.end());
+	size_t news = BlockedPlayers.size();
+	return (news < old);
 }
 
 bool global::moderation::saveModerationValues()

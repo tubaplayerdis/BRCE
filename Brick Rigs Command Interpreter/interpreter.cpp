@@ -135,13 +135,11 @@ void modules::interpreter::interpretCommand(std::string command, std::vector<std
             break;
         case hs("/mute"):
             if (args.size() < 1) { ToFewArgs(info, "/mute", "moderation"); break; }
-            if (args.size() == 2 && args[1] == BypassPassword) Commands::Moderation::ToggleMute(info, PlayerInfo(args[0]), true, true);
-            else Commands::Moderation::ToggleMute(info, PlayerInfo(args[0]), true, false);
+            Commands::Moderation::ToggleMute(info, originalMessage, true);
             break;
         case hs("/unmute"):
             if (args.size() < 1) { ToFewArgs(info, "/unmute", "moderation"); break; }
-            if (args.size() == 2 && args[1] == BypassPassword) Commands::Moderation::ToggleMute(info, PlayerInfo(args[0]), false, true);
-            else Commands::Moderation::ToggleMute(info, PlayerInfo(args[0]), false, false);
+            Commands::Moderation::ToggleMute(info, originalMessage, false);
             break;
         case hs("/silence"):
             Commands::Moderation::ToggleSilence(info, true);
@@ -151,13 +149,11 @@ void modules::interpreter::interpretCommand(std::string command, std::vector<std
             break;
         case hs("/block"):
             if (args.size() < 1) { ToFewArgs(info, "/block", "main"); break; }
-            if (args.size() == 2 && args[1] == BypassPassword) Commands::Moderation::ToggleBlock(info, PlayerInfo(args[0]), true, true);
-            else Commands::Moderation::ToggleBlock(info, PlayerInfo(args[0]), true, false);
+            Commands::Moderation::ToggleBlock(info, originalMessage, true);
             break;
         case hs("/unblock"):
             if (args.size() < 1) { ToFewArgs(info, "/unblock", "main"); break; }
-            if (args.size() == 2 && args[1] == BypassPassword) Commands::Moderation::ToggleBlock(info, PlayerInfo(args[0]), false, true);
-            else Commands::Moderation::ToggleBlock(info, PlayerInfo(args[0]), false, false);
+            Commands::Moderation::ToggleBlock(info, originalMessage, false);
             break;
         case hs("/ghost"):
             MIF(Commands::Ghost(info), info, "Set the movement mode to ghost!");
@@ -176,6 +172,9 @@ void modules::interpreter::interpretCommand(std::string command, std::vector<std
             break;
         case hs("/silenced"):
             Commands::Moderation::IsOnSilence(info);
+            break;
+        case hs("/pid"):
+            Commands::Moderation::ListPlayerIDS(info);
             break;
         default:
             sendUserSpecificMessageCommandFailed(info, "The command: " + command + " was not found! Use /help to view all commands!");
@@ -300,6 +299,7 @@ void modules::interpreter::Commands::PersonalMessage(PlayerInfo info, std::strin
     std::string recipient = sub.substr(0, second);
 
     SDK::ABrickPlayerController* otherCont = global::GetBrickPlayerControllerFromName(recipient);
+    if (!otherCont) otherCont = global::GetBrickPlayerControllerFromID(recipient);
     if(!otherCont) { sendUserSpecificMessageCommandFailed(info, "The intended recipient was not found! Please try agian."); return; }
 
     if (global::moderation::isPlayerBlockedBy(info, PlayerInfo(recipient))) { return; }
@@ -432,40 +432,66 @@ void modules::interpreter::Commands::Debug(PlayerInfo info)
 * slomo
 */
 
-void modules::interpreter::Commands::Moderation::ToggleMute(PlayerInfo info, PlayerInfo other, bool on_off, bool bypass)
+void modules::interpreter::Commands::Moderation::ToggleMute(PlayerInfo info, std::string originalMessage, bool on_off)
 {
     using namespace global;
     using namespace global::moderation;
     using namespace modules::interpreter;
     if (!GetIsPlayerAdminFromName(info.name)) { sendUserSpecificMessageCommandFailed(info, "Only admins can use this command!"); return; }
+    std::string input = originalMessage.substr(originalMessage.find_first_of(' ') + 1);
+    SDK::ABrickPlayerController* controller = nullptr;
+    controller = GetBrickPlayerControllerFromName(input);
+    if (!controller) controller = GetBrickPlayerControllerFromID(input);
+    if (!controller) { sendUserSpecificMessageCommandFailed(info, "The user you wanted to block was not found!"); return; }
+    PlayerInfo other = GetPlayerInfoFromController(controller);
+    bool res = false;
+
     if (on_off) {
-        if (bypass ? GetBrickPlayerControllerFromName(info.name) : GetBrickPlayerControllerFromName(other.name)) { AddMutedPlayer(other); }
-        else { sendUserSpecificMessageCommandFailed(info, "The user you wanted to mute was not found!"); return; }
-        sendUserSpecificMessageWithContext(info, std::string("Successfully Muted: ") + other.name, SDK::EChatContext::Admin, L"Admin");
+        res = AddMutedPlayer(other);
     }
-    else { RemoveMutedPlayer(other); sendUserSpecificMessageWithContext(info, std::string("Successfully Unmuted: ") + other.name, SDK::EChatContext::Admin, L"Admin"); }
+    else {
+        res = RemoveMutedPlayer(other); 
+    }
+
+    if (on_off) {
+        res ? sendUserSpecificMessageWithContext(info, std::string("Successfully Muted: ") + other.name, SDK::EChatContext::Admin, L"Admin") : sendUserSpecificMessageWithContext(info, other.name + " is already muted!", SDK::EChatContext::Admin, L"Admin");
+    }
+    else {
+        res ? sendUserSpecificMessageWithContext(info, std::string("Successfully Unmuted: ") + other.name, SDK::EChatContext::Admin, L"Admin") : sendUserSpecificMessageWithContext(info, other.name + "is already unmuted", SDK::EChatContext::Admin, L"Admin");
+    }
 }
 
-void modules::interpreter::Commands::Moderation::ToggleBlock(PlayerInfo info, PlayerInfo other, bool on_off, bool bypass)
+void modules::interpreter::Commands::Moderation::ToggleBlock(PlayerInfo info, std::string originalMessage, bool on_off)
 {
     using namespace global;
     using namespace global::moderation;
+    std::string input = originalMessage.substr(originalMessage.find_first_of(' ') + 1);
+    SDK::ABrickPlayerController* controller = nullptr;
+    controller = GetBrickPlayerControllerFromName(input);
+    if (!controller) controller = GetBrickPlayerControllerFromID(input);
+    if(!controller) { sendUserSpecificMessageCommandFailed(info, "The user you wanted to block was not found!"); return; }
+    PlayerInfo other = GetPlayerInfoFromController(controller);
     if (on_off) {
-        if (bypass ? GetBrickPlayerControllerFromName(info.name) : GetBrickPlayerControllerFromName(other.name)) { AddBlockedPlayer(BlockedPlayer(info, other)); }
-        else { sendUserSpecificMessageCommandFailed(info, "The user you wanted to block was not found!"); return; }
-        sendUserSpecificMessageWithContext(info, std::string("Successfully Blocked: ") + other.name, SDK::EChatContext::Admin, L"Admin");
+        if (!AddBlockedPlayer(BlockedPlayer(info, other))) sendUserSpecificMessageWithContext(info, std::string("You have already blocked: ") + other.name, SDK::EChatContext::Admin, L"Admin");
+        else sendUserSpecificMessageWithContext(info, std::string("Successfully Blocked: ") + other.name, SDK::EChatContext::Admin, L"Admin");
     }
-    else { RemoveBlockedPlayer(BlockedPlayer(info, other)); sendUserSpecificMessageWithContext(info, std::string("Successfully Unblocked: ") + other.name, SDK::EChatContext::Admin, L"Admin"); }
+    else { 
+        if(!RemoveBlockedPlayer(BlockedPlayer(info, other)))  sendUserSpecificMessageWithContext(info, std::string("You have already unblocked: ") + other.name, SDK::EChatContext::Admin, L"Admin");
+        else sendUserSpecificMessageWithContext(info, std::string("Successfully Unblocked: ") + other.name, SDK::EChatContext::Admin, L"Admin");
+    }
 }
 
 void modules::interpreter::Commands::Moderation::ToggleSilence(PlayerInfo info, bool on_off)
 {
     using namespace global::moderation;
     if (on_off) {
-        AddPMSilencePlayer(info);
-        sendUserSpecificMessageWithContext(info, std::string("Disallowed incoming personal messages!"), SDK::EChatContext::Global, L"BRCI Moderation");
+        if(!AddPMSilencePlayer(info)) sendUserSpecificMessageWithContext(info, std::string("You are already on silence!"), SDK::EChatContext::Global, L"BRCI Moderation");
+        else sendUserSpecificMessageWithContext(info, std::string("Disallowed incoming personal messages!"), SDK::EChatContext::Global, L"BRCI Moderation");
     }
-    else { RemovePMSilencePlayer(info); sendUserSpecificMessageWithContext(info, std::string("Disallowed incoming personal messages!"), SDK::EChatContext::Global, L"BRCI Moderation"); }
+    else {
+        if(!RemovePMSilencePlayer(info)) sendUserSpecificMessageWithContext(info, std::string("You are already not on silence!"), SDK::EChatContext::Global, L"BRCI Moderation");
+        else sendUserSpecificMessageWithContext(info, std::string("Allowed incoming personal messages!"), SDK::EChatContext::Global, L"BRCI Moderation");
+    }
 }
 
 void modules::interpreter::Commands::Moderation::Save(PlayerInfo info)
@@ -522,4 +548,19 @@ void modules::interpreter::Commands::Moderation::IsOnSilence(PlayerInfo info)
         }
     }
     sendUserSpecificMessage(info, "You are not on silence. You will recieve Personal Messages(PM)");
+}
+
+void modules::interpreter::Commands::Moderation::ListPlayerIDS(PlayerInfo info)
+{
+    std::string message = "Player IDS:";
+    UC::TArray<SDK::AActor*> raw = UC::TArray<SDK::AActor*>();
+    UC::TArray<SDK::AActor*>* what = &raw;
+    SDK::UGameplayStatics::GetAllActorsOfClass(global::World, SDK::ABrickPlayerController::StaticClass(), what);
+    for (int i = 0; i < raw.Num(); i++)
+    {
+        SDK::ABrickPlayerController* cast = static_cast<SDK::ABrickPlayerController*>(raw[i]);
+        SDK::ABrickPlayerState* state = static_cast<SDK::ABrickPlayerState*>(cast->PlayerState);
+        message += "\n" + state->GetPlayerNameText().ToString() + ": " + std::to_string(state->PlayerId);
+    }
+    sendUserSpecificMessage(info, message);
 }

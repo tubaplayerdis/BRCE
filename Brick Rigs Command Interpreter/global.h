@@ -47,6 +47,7 @@ namespace global
 	SDK::ABrickGameSession* GetBrickGameSession();
 	SDK::AWorldSetupActor* GetWorldSetupActor();
 	SDK::ABrickPlayerController* GetBrickPlayerControllerFromName(std::string name);
+	SDK::ABrickPlayerController* GetBrickPlayerControllerFromID(std::string ID);
 
 	//General Helpers
 	std::wstring to_wstring_n(const std::string& str);
@@ -61,6 +62,7 @@ namespace global
 	inline bool NotHost() { return !IsHost(World->NetDriver); }
 	void SendNotificationLocal(std::wstring notif, int slot);
 	PlayerInfo GetPlayerInfoFromController(SDK::ABrickPlayerController* controller);
+	std::string GetPlayerNameFromID(std::string ID);
 
 	//Watermark
 	namespace watermark
@@ -86,17 +88,17 @@ namespace global
 		inline std::vector<PlayerInfo> PlayersOnPMSilence = std::vector<PlayerInfo>();
 		inline std::vector<BlockedPlayer> BlockedPlayers = std::vector<BlockedPlayer>();
 
-		//basic set and getters
-		inline void AddMutedPlayer(PlayerInfo info) { MutedPlayers.push_back(info); }
-		inline void RemoveMutedPlayer(PlayerInfo info) { MutedPlayers.erase(std::remove(MutedPlayers.begin(), MutedPlayers.end(), info), MutedPlayers.end()); }
-		inline void AddPMSilencePlayer(PlayerInfo info) { PlayersOnPMSilence.push_back(info); }
-		inline void RemovePMSilencePlayer(PlayerInfo info) { PlayersOnPMSilence.erase(std::remove(PlayersOnPMSilence.begin(), PlayersOnPMSilence.end(), info), PlayersOnPMSilence.end()); }
-		inline void AddBlockedPlayer(BlockedPlayer info) { BlockedPlayers.push_back(info); }
-		inline void RemoveBlockedPlayer(BlockedPlayer info) { BlockedPlayers.erase(std::remove(BlockedPlayers.begin(), BlockedPlayers.end(), info), BlockedPlayers.end()); }
-
 		bool isPlayerBlockedBy(PlayerInfo blocker, PlayerInfo blocked);
 		bool isPlayerMuted(PlayerInfo player);
 		bool isPlayerOnSilence(PlayerInfo player);
+
+		//basic set and getters
+		bool AddMutedPlayer(PlayerInfo info);
+		bool RemoveMutedPlayer(PlayerInfo info);
+		bool AddPMSilencePlayer(PlayerInfo info);
+		bool RemovePMSilencePlayer(PlayerInfo info);
+		bool AddBlockedPlayer(BlockedPlayer info);
+		bool RemoveBlockedPlayer(BlockedPlayer info);
 
 		bool saveModerationValues();
 		bool loadModerationValues();
