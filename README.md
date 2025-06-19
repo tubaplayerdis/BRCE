@@ -17,7 +17,7 @@ This project is still under development. The expected release window is later ju
 ### Commands
 
 (!) = Still being worked on or not implemented  
-(*) = Admin Only  
+* = Admin Only  
 
 ### Master
 
