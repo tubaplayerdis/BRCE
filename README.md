@@ -39,12 +39,12 @@ This project is still under development. The expected release window is later ju
 
 #### Moderation
 
-/off [command] - Disables command (*)  
-/on [command] - Enables command (*)  
-/mute [who] - Disable a users ability to message (*)  
-/unmute - [who] - Re-Enable a users ability to message (*)  
-/save - Save the current moderation config to the disk (*)  
-/load - Load the moderation config on the disk (*)  
+/off [command] - Disables command *  
+/on [command] - Enables command *  
+/mute [who] - Disable a users ability to message *  
+/unmute - [who] - Re-Enable a users ability to message *  
+/save - Save the current moderation config to the disk *  
+/load - Load the moderation config on the disk *  
 
 ### Movement
 
