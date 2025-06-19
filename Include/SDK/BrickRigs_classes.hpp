@@ -9146,15 +9146,72 @@ static_assert(sizeof(UFirearmAnimInstance) == 0x0002C0, "Wrong size on UFirearmA
 class UFirearmComponent final : public UActorComponent
 {
 public:
-	uint8                                         Pad_B0[0x28];                                      // 0x00B0(0x0028)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FFirearmState                          FirearmState;                                      // 0x00D8(0x0006)(Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_DE[0x72];                                      // 0x00DE(0x0072)(Fixing Size After Last Property [ Dumper-7 ])
-	class UAudioComponent*                        FireAC;                                            // 0x0150(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class UParticleSystemComponent*               FirePSC;                                           // 0x0158(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class UParticleSystem*                        FireEmitter;                                       // 0x0160(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class USoundBase*                             FireSound;                                         // 0x0168(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_170[0x170];                                    // 0x0170(0x0170)(Fixing Struct Size After Last Property [ Dumper-7 ])
-
+	// 0x00B0 - Original: FFluAsyncAssetLoader AssetLoader_FireEmitter (size 0x10, 0x00B0 to 0x00C0)
+	uint8                                         Pad_AssetLoader_FireEmitter[0x10];
+	// 0x00C0 - Original: FFluAsyncAssetLoader AssetLoader_FireSound (size 0x10, 0x00C0 to 0x00D0)
+	uint8                                         Pad_AssetLoader_FireSound[0x10];
+	// 0x00D0
+	struct FTimerHandle                           TimerHandle_RevertFirearmState;
+	// 0x00D8(0x0006)(Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, NativeAccessSpecifierPrivate)
+	struct FFirearmState                          FirearmState;
+	// 0x00DE
+	struct FFirearmState                          LastConfirmedFirearmState;
+	// 0x00E4
+	EFireMode                                     FireMode;
+	// 0x00E5
+	EFireMode                                     CurrentBurstFireMode;
+	// 0x00E8
+	int32                                         SpreadRandomSeed;
+	// 0x00EC (starts at bit 0)
+	uint8                                         bWantsToFire : 1;
+	// 0x00EC (starts at bit 1)
+	uint8                                         bWasFiringLocally : 1;
+	// 0x00EE
+	uint16                                        BurstCount;
+	// 0x00F0
+	float                                         LastFireTime;
+	// 0x00F4
+	TWeakObjectPtr<class ABrickCharacter>         ControllingCharacter;
+	// 0x0100
+	TMap<TWeakObjectPtr<class ABrickCharacter>, TMap<EAmmoType, float>> RemoteClientsFireTime;
+	// 0x0150(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class UAudioComponent* FireAC;
+	// 0x0158(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class UParticleSystemComponent* FirePSC;
+	// 0x0160(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class UParticleSystem* FireEmitter;
+	// 0x0168(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class USoundBase* FireSound;
+	// 0x0170
+	struct FFirearmProperties                     FirearmProperties;
+	// 0x0200
+	uint8										  MuzzleEffectAttachment[0x28];
+	// 0x0228 (starts at bit 0)
+	uint8                                         bInitializedFirePSC : 1;
+	// 0x0228 (starts at bit 1)
+	uint8                                         bInitializedFireAC : 1;
+	// 0x0228 (starts at bit 2)
+	uint8                                         bIsViewTarget : 1;
+	// 0x022C
+	int32                                         ReplicationKey;
+	// 0x0230 - Original: TDelegate<void(float)> OnFireDelegate (size 0x10, 0x0230 to 0x0240)
+	uint8                                         Pad_OnFireDelegate[0x10];
+	// 0x0240 - Original: TDelegate<void()> OnBoltCycledDelegate (size 0x10, 0x0240 to 0x0250)
+	uint8                                         Pad_OnBoltCycledDelegate[0x10];
+	// 0x0250 - Original: TMulticastDelegate<void(const FFirearmState&)> OnFirearmStateChangedDelegate (size 0x18, 0x0250 to 0x0268)
+	uint8                                         Pad_OnFirearmStateChangedDelegate[0x18];
+	// 0x0268 - Original: TMulticastDelegate<void(EFireMode)> OnFireModeChangedDelegate (size 0x18, 0x0268 to 0x0280)
+	uint8                                         Pad_OnFireModeChangedDelegate[0x18];
+	// 0x0280 - Original: TMulticastDelegate<void(EAmmoType)> OnAmmoTypeChangedDelegate (size 0x18, 0x0280 to 0x0298)
+	uint8                                         Pad_OnAmmoTypeChangedDelegate[0x18];
+	// 0x0298 - Original: TDelegate<void(FVector&, FRotator&, FVector&, float)> GetProjectileSpawnPointDelegate (size 0x10, 0x0298 to 0x02A8)
+	uint8                                         Pad_GetProjectileSpawnPointDelegate[0x10];
+	// 0x02A8 - Original: TDelegate<void(TArray<AActor*>&)> GetIgnoredActorsDelegate (size 0x10, 0x02A8 to 0x02B8)
+	uint8                                         Pad_GetIgnoredActorsDelegate[0x10];
+	// 0x02B8 - Original: TDelegate<bool(class UFirearmComponent*)> CanMergeProjectileDelegate (size 0x10, 0x02B8 to 0x02C8)
+	uint8                                         Pad_CanMergeProjectileDelegate[0x10];
+	// 0x02C8 - Original: TMulticastDelegate<void()> OnReplicationKeyChangedDelegate (size 0x18, 0x02C8 to 0x02E0)
+	uint8                                         Pad_OnReplicationKeyChangedDelegate[0x18];
 public:
 	void OnRep_FirearmState(const struct FFirearmState& PrevState);
 
@@ -9169,12 +9226,7 @@ public:
 	}
 };
 static_assert(alignof(UFirearmComponent) == 0x000008, "Wrong alignment on UFirearmComponent");
-static_assert(sizeof(UFirearmComponent) == 0x0002E0, "Wrong size on UFirearmComponent");
-static_assert(offsetof(UFirearmComponent, FirearmState) == 0x0000D8, "Member 'UFirearmComponent::FirearmState' has a wrong offset!");
-static_assert(offsetof(UFirearmComponent, FireAC) == 0x000150, "Member 'UFirearmComponent::FireAC' has a wrong offset!");
-static_assert(offsetof(UFirearmComponent, FirePSC) == 0x000158, "Member 'UFirearmComponent::FirePSC' has a wrong offset!");
-static_assert(offsetof(UFirearmComponent, FireEmitter) == 0x000160, "Member 'UFirearmComponent::FireEmitter' has a wrong offset!");
-static_assert(offsetof(UFirearmComponent, FireSound) == 0x000168, "Member 'UFirearmComponent::FireSound' has a wrong offset!");
+static_assert(sizeof(UFirearmComponent) == 0x2E0, "Wrong size on UFirearmComponent");
 
 // Class BrickRigs.FirearmInventoryComponent
 // 0x0000 (0x0298 - 0x0298)

@@ -2694,8 +2694,13 @@ static_assert(offsetof(FFirearmProperties, MuzzleEffect) == 0x000040, "Member 'F
 // 0x0006 (0x0006 - 0x0000)
 struct alignas(0x02) FFirearmState final
 {
+	//MANUALLY ADDED
 public:
-	uint8                                         Pad_0[0x6];                                        // 0x0000(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	EChamberState ChamberState;   // 0x0000 (1 byte)
+	SDK::EAmmoType AmmoType;               // 0x0001 (1 byte)
+	uint16 RoundsFired;           // 0x0002 (2 bytes)
+	bool bIsAutoFiring;           // 0x0004 (1 byte)
+	uint8 Pad_0;
 };
 static_assert(alignof(FFirearmState) == 0x000002, "Wrong alignment on FFirearmState");
 static_assert(sizeof(FFirearmState) == 0x000006, "Wrong size on FFirearmState");

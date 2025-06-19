@@ -55,7 +55,8 @@ inline std::string EnviromentHelpMessage = R"(Enviroment Commands:
 /clear - Clears the weather)";
 
 inline std::string WeaponsHelpMessage = R"(Weapon Commands:
-/bombgun - Get a bombgun!)";
+/ammotype [type] - Change all your guns to the selected ammo type)";
+//List the ammo types later
 
 inline std::string InfoMessage = R"(Brick Rigs Command Interpreter(BRCI), is a chat command mod made for Bricks Rigs that adds chat message functionality to your server. It is dll based and server-side only.
 Star the GitHub: https://github.com/tubaplayerdis/BRCI

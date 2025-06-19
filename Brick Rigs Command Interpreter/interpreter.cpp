@@ -65,9 +65,19 @@ bool modules::interpreter::Commands::Sun(PlayerInfo info)
     RETT;
 }
 
-bool modules::interpreter::Commands::BombGun(PlayerInfo info)
+bool modules::interpreter::Commands::AmmoType(PlayerInfo info, std::string ammotype)
 {
+    //todo implement ammo types change
     if (!isBombGun) { sendUserSpecificMessageCommandFailed(info, "The /bombgun command is currently disabled!"); RETF; }
+    UC::TArray<SDK::AActor*> raw = UC::TArray<SDK::AActor*>();
+    UC::TArray<SDK::AActor*>* what = &raw;
+    SDK::UGameplayStatics::GetAllActorsOfClass(global::World, SDK::AFirearm::StaticClass(), what);
+    for (int i = 0; i < raw.Num(); i++)
+    {
+        SDK::AFirearm* cast = static_cast<SDK::AFirearm*>(raw[i]);
+        if (cast->FirearmComponent->ControllingCharacter.Get() != global::GetBrickPlayerControllerFromName(info.name)->Character) continue;
+        cast->FirearmComponent->FirearmState.AmmoType = SDK::EAmmoType::HighExplosive;
+    }
     RETT;
 }
 
@@ -175,6 +185,10 @@ void modules::interpreter::interpretCommand(std::string command, std::vector<std
             break;
         case hs("/pid"):
             Commands::Moderation::ListPlayerIDS(info);
+            break;
+        case hs("/ammotype"):
+            if (args.size() < 1) { ToFewArgs(info, "/ammotype", "weapons"); break; }
+            MIF(Commands::AmmoType(info, args[0]), info, "Changed ammo type to: " + args[0]);
             break;
         default:
             sendUserSpecificMessageCommandFailed(info, "The command: " + command + " was not found! Use /help to view all commands!");

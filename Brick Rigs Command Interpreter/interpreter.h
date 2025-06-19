@@ -82,7 +82,7 @@ namespace modules
 			bool Sun(PlayerInfo info);
 
 			//Weapons
-			bool BombGun(PlayerInfo info);
+			bool AmmoType(PlayerInfo info, std::string ammotype);
 
 			//Misc
 			void Debug(PlayerInfo info); //Use this to test varius functions. Can be called by imgui.
