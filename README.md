@@ -8,6 +8,8 @@ The Brick Rigs Command Interpreter (BRCI) adds chat message command functionalit
 
 This project is still under development. The expected release window is later june of 2025
 
+Follow development: https://youtube.com/@johndenver
+
 ### Todo:
 
  - Change README command list groups
