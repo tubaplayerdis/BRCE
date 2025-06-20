@@ -13,8 +13,9 @@ Follow development: https://youtube.com/@johndenver-co9rr
 ### Todo:
 
  - Fix weather commands to look more realistic
- - Remove traces of speed command and remove it from helplist and readme
+ - Remove traces of speed command and remove it from helplist
  - Bug test with a closed and open beta.
+ - Create showcase video (?)
 
 ### Commands
 
@@ -51,8 +52,7 @@ Follow development: https://youtube.com/@johndenver-co9rr
 ### Movement
 
 /fly - Fly around (slow)  
-/walk - Walk around  
-/speed [1-3] - Change max sprint speed  
+/walk - Walk around 
 /tp [who] - Teleport to other people  
 /ghost - Fly around and disable collisions  
 
