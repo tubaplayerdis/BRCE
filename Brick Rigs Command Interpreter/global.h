@@ -63,6 +63,8 @@ namespace global
 	void SendNotificationLocal(std::wstring notif, int slot);
 	PlayerInfo GetPlayerInfoFromController(SDK::ABrickPlayerController* controller);
 	std::string GetPlayerNameFromID(std::string ID);
+	std::string GetPlayerNameFromIDORName(std::string input);
+	inline SDK::ABrickPlayerController* GetBrickPlayerControllerFromIDORName(std::string input) { return GetBrickPlayerControllerFromName(GetPlayerNameFromIDORName(input)); }
 
 	//Watermark
 	namespace watermark

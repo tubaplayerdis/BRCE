@@ -67,8 +67,46 @@ bool modules::interpreter::Commands::Sun(PlayerInfo info)
 
 bool modules::interpreter::Commands::AmmoType(PlayerInfo info, std::string ammotype)
 {
-    //todo implement ammo types change
-    if (!isBombGun) { sendUserSpecificMessageCommandFailed(info, "The /bombgun command is currently disabled!"); RETF; }
+    if (!isAmmoType) { sendUserSpecificMessageCommandFailed(info, "The /ammotype command is currently disabled!"); RETF; }
+
+    SDK::EAmmoType selected = SDK::EAmmoType::Default;
+    int desired = -1;
+    try {
+        desired = std::stoi(ammotype);
+        if (desired > 5 || desired < 0) {
+            sendUserSpecificMessageCommandFailed(info, "Please use a value 0-5 for the ammo type. Ammo types are listed here: /help weapons");
+            RETF;
+        }
+    }
+    catch (...) {
+        sendUserSpecificMessageCommandFailed(info, "Please use a value 0-5 for the ammo type. Ammo types are listed here: /help weapons");
+        RETF;
+    }
+    std::cout << desired << std::endl;
+    switch (desired)
+    {
+        case 0:
+            selected = SDK::EAmmoType::Default;
+            break;
+        case 1:
+            selected = SDK::EAmmoType::Incendiary;
+            break;
+        case 2:
+            selected = SDK::EAmmoType::HighExplosive;
+            break;
+        case 3:
+            selected = SDK::EAmmoType::TargetSeeking;
+            break;
+        case 4:
+            selected = SDK::EAmmoType::Guided;
+            break;
+        case 5:
+            selected = SDK::EAmmoType::Flare;
+            break;
+        default:
+            selected = SDK::EAmmoType::Default;
+            break;
+    }
     UC::TArray<SDK::AActor*> raw = UC::TArray<SDK::AActor*>();
     UC::TArray<SDK::AActor*>* what = &raw;
     SDK::UGameplayStatics::GetAllActorsOfClass(global::World, SDK::AFirearm::StaticClass(), what);
@@ -76,7 +114,7 @@ bool modules::interpreter::Commands::AmmoType(PlayerInfo info, std::string ammot
     {
         SDK::AFirearm* cast = static_cast<SDK::AFirearm*>(raw[i]);
         if (cast->FirearmComponent->ControllingCharacter.Get() != global::GetBrickPlayerControllerFromName(info.name)->Character) continue;
-        cast->FirearmComponent->FirearmState.AmmoType = SDK::EAmmoType::HighExplosive;
+        cast->FirearmComponent->FirearmState.AmmoType = selected;
     }
     RETT;
 }
@@ -188,7 +226,11 @@ void modules::interpreter::interpretCommand(std::string command, std::vector<std
             break;
         case hs("/ammotype"):
             if (args.size() < 1) { ToFewArgs(info, "/ammotype", "weapons"); break; }
-            MIF(Commands::AmmoType(info, args[0]), info, "Changed ammo type to: " + args[0]);
+            MIF(Commands::AmmoType(info, args[0]), info, "Changed ammo type on your weapons to: " + getAmmoTypeString(args[0]));
+            break;
+        case hs("/tp"):
+            if (args.size() < 1) { ToFewArgs(info, "/tp", "movement"); break; }
+            MIF(Commands::Teleport(info, args[0]), info, "Teleported to: " + global::GetPlayerNameFromIDORName(args[0]));
             break;
         default:
             sendUserSpecificMessageCommandFailed(info, "The command: " + command + " was not found! Use /help to view all commands!");
@@ -252,6 +294,66 @@ void modules::interpreter::sendMessageToAdmin(std::string message)
     sendUserSpecificMessageWithContext(global::GetPlayerInfoFromController(global::GetBrickPlayerController()), message, SDK::EChatContext::Admin, L"Command Interpreter");
 }
 
+std::string modules::interpreter::getAmmoTypeString(std::string ammotype)
+{
+    SDK::EAmmoType selected = SDK::EAmmoType::Default;
+    int desired = -1;
+    try {
+        desired = std::stoi(ammotype);
+        if (desired > 5 || desired < 0) {
+            return std::string("N/A");
+        }
+    }
+    catch (...) {
+        return std::string("N/A");
+    }
+
+    switch (desired)
+    {
+    case 0:
+        selected = SDK::EAmmoType::Default;
+        break;
+    case 1:
+        selected = SDK::EAmmoType::Incendiary;
+        break;
+    case 2:
+        selected = SDK::EAmmoType::HighExplosive;
+        break;
+    case 3:
+        selected = SDK::EAmmoType::TargetSeeking;
+        break;
+    case 4:
+        selected = SDK::EAmmoType::Guided;
+        break;
+    case 5:
+        selected = SDK::EAmmoType::Flare;
+        break;
+    default:
+        selected = SDK::EAmmoType::Default;
+        break;
+    }
+
+    switch (selected)
+    {
+        case SDK::EAmmoType::Default:
+            return std::string("Default");
+        case SDK::EAmmoType::Incendiary:
+            return std::string("Incendiary");
+        case SDK::EAmmoType::HighExplosive:
+            return std::string("HighExplosive");
+        case SDK::EAmmoType::TargetSeeking:
+            return std::string("TargetSeeking");
+        case SDK::EAmmoType::Guided:
+            return std::string("Guided");
+        case SDK::EAmmoType::Flare:
+            return std::string("Flare");
+        case SDK::EAmmoType::Max:
+            return std::string("Max");
+        default:
+            return std::string("N/A");
+    }
+}
+
 void modules::interpreter::Commands::Toggle(PlayerInfo info, std::string command, bool toggle)
 {
     using namespace global;
@@ -283,6 +385,12 @@ void modules::interpreter::Commands::Toggle(PlayerInfo info, std::string command
             break;
         case hs("ghost"):
             isGhost = toggle;
+            break;
+        case hs("ammotype"):
+            isAmmoType = toggle;
+            break;
+        case hs("tp"):
+            isTeleport = toggle;
             break;
         default:
             defa = true;
@@ -354,7 +462,7 @@ void modules::interpreter::Commands::Help(PlayerInfo info, std::string arg)
     }
 }
 
-//Verifies that the playercontroller is ok to have its movement changed, which is only when it is not null.
+//Verifies that the playercontrollers character and character movement are not null.
 bool canModifyMovement(SDK::ABrickPlayerController* Controller)
 {
     return (Controller->Character != nullptr && Controller->Character->CharacterMovement != nullptr);
@@ -390,17 +498,17 @@ bool modules::interpreter::Commands::Walk(PlayerInfo info)
     //Return speed and accel to regular values
 }
 
-bool modules::interpreter::Commands::Speed(PlayerInfo info, char level)
+bool modules::interpreter::Commands::Teleport(PlayerInfo info, std::string other)
 {
-    if (!isSpeed) { sendUserSpecificMessageCommandFailed(info, "The /speed command is currently disabled!"); RETF; }
-    if (global::GetBrickPlayerControllerFromName(info.name)) global::GetBrickPlayerControllerFromName(info.name)->Character->SetActorEnableCollision(true);
-    RETT;
-}
-
-bool modules::interpreter::Commands::Teleport(PlayerInfo info)
-{
+    using namespace global;
     if (!isTeleport) { sendUserSpecificMessageCommandFailed(info, "The /tp command is currently disabled!"); RETF; }
-    if(global::GetBrickPlayerControllerFromName(info.name)) global::GetBrickPlayerControllerFromName(info.name)->Character->SetActorEnableCollision(true);
+    SDK::ABrickPlayerController* controllerother = GetBrickPlayerControllerFromIDORName(other);
+    if (controllerother == nullptr) { sendUserSpecificMessageCommandFailed(info, "The user you wanted to teleport to was not found!"); RETF; }
+    if (controllerother->K2_GetPawn() == nullptr) { sendUserSpecificMessageCommandFailed(info, "The user you wanted to teleport to was not in a valid location!"); RETF;  }
+    SDK::ABrickPlayerController* controller = GetBrickPlayerControllerFromName(info.name);
+    if (!canModifyMovement(controller)) { sendUserSpecificMessageCommandFailed(info, "Movement commands can only be used when controlling an independent character (not in a vehicle)."); RETF; }
+
+    controller->Character->K2_SetActorLocation(controllerother->K2_GetPawn()->K2_GetActorLocation(), false, nullptr, true);
     RETT;
 }
 
@@ -456,8 +564,9 @@ void modules::interpreter::Commands::Moderation::ToggleMute(PlayerInfo info, std
     SDK::ABrickPlayerController* controller = nullptr;
     controller = GetBrickPlayerControllerFromName(input);
     if (!controller) controller = GetBrickPlayerControllerFromID(input);
-    if (!controller) { sendUserSpecificMessageCommandFailed(info, "The user you wanted to block was not found!"); return; }
+    if (!controller) { sendUserSpecificMessageCommandFailed(info, "The user you wanted to mute was not found!"); return; }
     PlayerInfo other = GetPlayerInfoFromController(controller);
+    if(info == other) { sendUserSpecificMessageCommandFailed(info, "You cannot mute yourself!"); return; }
     if (on_off) {
         if (!AddMutedPlayer(other)) sendUserSpecificMessageWithContext(info, other.name + " is already muted!", SDK::EChatContext::Admin, L"Admin");
         else sendUserSpecificMessageWithContext(info, std::string("Successfully Muted: ") + other.name, SDK::EChatContext::Admin, L"Admin");

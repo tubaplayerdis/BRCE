@@ -88,7 +88,13 @@ SDK::ABrickPlayerController* global::GetBrickPlayerControllerFromName(std::strin
 
 SDK::ABrickPlayerController* global::GetBrickPlayerControllerFromID(std::string ID)
 {
-	int playerID = std::stoi(ID);
+	int playerID = -1;
+	try {
+		playerID = std::stoi(ID);
+	}
+	catch (...) {
+		return nullptr;
+	}
 	UC::TArray<SDK::AActor*> raw = UC::TArray<SDK::AActor*>();
 	UC::TArray<SDK::AActor*>* what = &raw;
 	SDK::UGameplayStatics::GetAllActorsOfClass(World, SDK::ABrickPlayerController::StaticClass(), what);
@@ -153,6 +159,15 @@ PlayerInfo global::GetPlayerInfoFromController(SDK::ABrickPlayerController* cont
 std::string global::GetPlayerNameFromID(std::string ID)
 {
 	return GetPlayerInfoFromController(GetBrickPlayerControllerFromID(ID)).name;
+}
+
+std::string global::GetPlayerNameFromIDORName(std::string input)
+{
+	SDK::ABrickPlayerController* controller = nullptr;
+	controller = GetBrickPlayerControllerFromName(input);
+	if (!controller) controller = GetBrickPlayerControllerFromID(input);
+	if (!controller) { return std::string("None"); }
+	return GetPlayerInfoFromController(controller).name;
 }
 
 void global::InitPointers()

@@ -71,8 +71,7 @@ namespace modules
 			//Movement
 			bool Fly(PlayerInfo info);
 			bool Walk(PlayerInfo info);
-			bool Speed(PlayerInfo info, char level);
-			bool Teleport(PlayerInfo info);
+			bool Teleport(PlayerInfo info, std::string other);
 			bool Ghost(PlayerInfo info);
 
 			//Enviroment
@@ -106,7 +105,6 @@ namespace modules
 
 			inline bool isFly = true;
 			inline bool isWalk = true;
-			inline bool isSpeed = true;
 			inline bool isTeleport = true;
 			inline bool isGhost = true;
 
@@ -115,7 +113,7 @@ namespace modules
 			inline bool isRain = true;
 			inline bool isSun = true;
 
-			inline bool isBombGun = true;
+			inline bool isAmmoType = true;
 		}
 		void interpretCommand(std::string command, std::vector<std::string> args, PlayerInfo info, std::string originalMessage);
 
@@ -147,5 +145,7 @@ namespace modules
 
 
 		void sendMessageToAdmin(std::string message);
+
+		std::string getAmmoTypeString(std::string ammotype);
 	}
 }

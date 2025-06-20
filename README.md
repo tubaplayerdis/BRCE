@@ -12,9 +12,8 @@ Follow development: https://youtube.com/@johndenver-co9rr
 
 ### Todo:
 
- - Change README command list groups
- - Implement unimplemented commands
- - Fix freezing/hook/memory issues
+ - Fix weather commands to look more realistic
+ - Bug test with a closed and open beta.
 
 ### Commands
 
@@ -53,8 +52,7 @@ Follow development: https://youtube.com/@johndenver-co9rr
 /fly - Fly around (slow)  
 /walk - Walk around  
 /speed [1-3] - Change max sprint speed  
-/tp - Telport to where you are looking (!)  
-/tp [who] - Teleport to other people (!)  
+/tp [who] - Teleport to other people  
 /ghost - Fly around and disable collisions  
 
 #### Enviroment
@@ -66,4 +64,4 @@ Follow development: https://youtube.com/@johndenver-co9rr
 
 #### Weapons
 
-/bombgun - gives the player a gun that shoots bombs (!)
+/ammotype [type] - Changes all weapons in players inventory to the selected ammotype. Does not affect vehicles or weapons held by the player in a vehicle
