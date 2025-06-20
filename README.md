@@ -13,6 +13,7 @@ Follow development: https://youtube.com/@johndenver-co9rr
 ### Todo:
 
  - Fix weather commands to look more realistic
+ - Remove traces of speed command and remove it from helplist and readme
  - Bug test with a closed and open beta.
 
 ### Commands
