@@ -43,7 +43,6 @@ Moderation Commands:
 inline std::string MovementHelpMessage = R"(Movement Commands:
 /fly - Fly around (slow)
 /walk - Walk around
-/speed [1-3] - Change max sprint speed
 /tp - Telport to where you are looking
 /tp [who] - Teleport to other people
 /ghost - Fly around and disable collisions)";
