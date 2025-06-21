@@ -13,6 +13,7 @@ Follow development: https://youtube.com/@johndenver-co9rr
 ### Todo:
 
  - Fix weather commands to look more realistic
+ - Add feeback for save/load or other commands that need it.
  - Remove traces of speed command and remove it from helplist
  - Bug test with a closed and open beta.
  - Create showcase video (?)
