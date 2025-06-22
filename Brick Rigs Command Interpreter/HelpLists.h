@@ -25,14 +25,14 @@ inline std::string MasterHelpMessage = R"(
 
 #ifdef _DEBUG
 
-inline std::string ControlsHelpMessage = R"(These only work on the host!
+inline std::string ControlsHelpMessage = R"(BRCI Controls:
 Divide - Uninject
 Multiply - Toggle Chat Commands
 Return - (Fix Freezes))";
 
 #else
 
-inline std::string ControlsHelpMessage = R"(These only work on the host!
+inline std::string ControlsHelpMessage = R"(BRCI Controls:
 CTRL-U - Uninject
 CTRL-T - Toggle Chat Commands
 Return - (Fix Freezes))";

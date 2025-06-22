@@ -392,10 +392,14 @@ bool global::moderation::loadModerationValues()
 
 void global::welcome::SendWelcomeMessage()
 {
-	if (isMapValid()) modules::interpreter::sendUserSpecificMessageWithContext(GetPlayerInfoFromController(GetBrickPlayerController()), WelcomeServerMessage, SDK::EChatContext::Global, L"BRCI");
+	if (isMapValid()) {
+		modules::interpreter::sendUserSpecificMessageWithContext(GetPlayerInfoFromController(GetBrickPlayerController()), WelcomeServerMessage, SDK::EChatContext::Global, L"BRCI");
+		modules::interpreter::sendUserSpecificMessageWithContext(GetPlayerInfoFromController(GetBrickPlayerController()), ControlsHelpMessage, SDK::EChatContext::Global, L"BRCI");
+	}
 }
 
 void global::welcome::SendWelcomeMessageA()
 {
 	modules::interpreter::sendUserSpecificMessageWithContext(GetPlayerInfoFromController(GetBrickPlayerController()), WelcomeServerMessage, SDK::EChatContext::Global, L"BRCI");
+	modules::interpreter::sendUserSpecificMessageWithContext(GetPlayerInfoFromController(GetBrickPlayerController()), ControlsHelpMessage, SDK::EChatContext::Global, L"BRCI");
 }
