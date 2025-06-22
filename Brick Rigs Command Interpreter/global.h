@@ -69,6 +69,8 @@ namespace global
 	std::string GetPlayerNameFromIDORName(std::string input);
 	inline SDK::ABrickPlayerController* GetBrickPlayerControllerFromIDORName(std::string input) { return GetBrickPlayerControllerFromName(GetPlayerNameFromIDORName(input)); }
 
+	bool IsActiveWindow();
+
 	//Watermark
 	namespace watermark
 	{

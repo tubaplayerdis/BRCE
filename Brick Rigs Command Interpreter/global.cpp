@@ -182,6 +182,17 @@ std::string global::GetPlayerNameFromIDORName(std::string input)
 	return GetPlayerInfoFromController(controller).name;
 }
 
+bool global::IsActiveWindow()
+{
+	HWND hwnd = GetForegroundWindow();
+	if (hwnd == NULL) return false;
+
+	DWORD foregroundPid;
+	if (GetWindowThreadProcessId(hwnd, &foregroundPid) == 0) return false;
+
+	return (foregroundPid == GetCurrentProcessId());
+}
+
 void global::InitPointers()
 {
 	Engine = SDK::UEngine::GetEngine();

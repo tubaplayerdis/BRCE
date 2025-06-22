@@ -20,13 +20,17 @@
 #include <psapi.h>
 #include "SDK.hpp"
 
+#define PRESSED 0x8000
+
 #ifdef _DEBUG
 #define UninjectPress() GetAsyncKeyState(VK_DIVIDE) & 1
 #define TogglePress() GetAsyncKeyState(VK_MULTIPLY) & 1
 #else
-#define UninjectPress() ((GetAsyncKeyState(VK_CONTROL) & 0x8000) && (GetAsyncKeyState(0x55) & 1))
-#define TogglePress() ((GetAsyncKeyState(VK_CONTROL) & 0x8000) && (GetAsyncKeyState(0x54) & 1))
+#define UninjectPress() (IsActiveWindow() && (GetAsyncKeyState(VK_CONTROL) & PRESSED) && (GetAsyncKeyState('U') & PRESSED))
+#define TogglePress() (IsActiveWindow() &&(GetAsyncKeyState(VK_CONTROL) & PRESSED) && (GetAsyncKeyState('T') & PRESSED))
 #endif
+
+#define ContinuePress() (IsActiveWindow() && (GetAsyncKeyState(VK_RETURN) & 1))
 
 using namespace global;
 
@@ -55,7 +59,10 @@ void mainLoop()
 
 		Sleep(10);
 
-		if (GetAsyncKeyState(VK_RETURN) & 1) continue;
+		if (ContinuePress()) {
+			std::cout << IsActiveWindow() << std::endl;
+			continue;
+		}
 
 		if (UninjectPress() || doUninject) break;
 
