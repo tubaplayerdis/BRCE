@@ -252,3 +252,13 @@ bool hooks::Functions::isServer::isServer(SDK::UNetDriver* driver)
 	IsServerFn IsServerFunc = reinterpret_cast<IsServerFn>(vtable[0x378 / 8]);
 	return IsServerFunc(driver);
 }
+
+void hooks::Functions::UpdateWorldSetupParams::UpdateWorldSetupParams(bool fadeIn)
+{
+	uintptr_t UpdateWorldSetupParamsFunction = (uintptr_t)GetModuleHandle(NULL) + 0x0E30830;
+
+	using UpdateWorldSetupParamsFn = void(__fastcall*)(SDK::AWorldSetupActor* This, bool bFadeIn);
+	UpdateWorldSetupParamsFn OnUpdateWorldSetupParams = reinterpret_cast<UpdateWorldSetupParamsFn>(UpdateWorldSetupParamsFunction);
+
+	OnUpdateWorldSetupParams(global::GetWorldSetupActor(), fadeIn);
+}

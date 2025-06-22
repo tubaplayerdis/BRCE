@@ -62,6 +62,11 @@ SDK::AWorldSetupActor* global::GetWorldSetupActor()
 	return SDK::AWorldSetupActor::Get(World);
 }
 
+SDK::UBrickAssetManager* global::GetBrickAssetManager()
+{
+	return SDK::UBrickAssetManager::Get();
+}
+
 //Manually written helper functions in the big 25? are we serious.
 std::wstring global::to_wstring_n(const std::string& str)
 {

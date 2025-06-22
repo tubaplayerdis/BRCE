@@ -46,6 +46,7 @@ namespace global
 	SDK::ABrickGameState* GetBrickGameState();
 	SDK::ABrickGameSession* GetBrickGameSession();
 	SDK::AWorldSetupActor* GetWorldSetupActor();
+	SDK::UBrickAssetManager* GetBrickAssetManager();
 	SDK::ABrickPlayerController* GetBrickPlayerControllerFromName(std::string name);
 	SDK::ABrickPlayerController* GetBrickPlayerControllerFromID(std::string ID);
 

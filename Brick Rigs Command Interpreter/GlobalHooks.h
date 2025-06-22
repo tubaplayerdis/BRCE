@@ -167,7 +167,7 @@ namespace hooks
 
         namespace SynchronizeProperties
         {   
-            inline const char* pattern = ""; //Signature is faling. Currently using raw address
+            inline const char* pattern = ""; //Signature is failng. Currently using raw address
             inline const char* mask = "";
             inline uintptr_t SynchronizePropertiesFunction = 0;//Calculated at first run.
             void SynchronizeProperties(SDK::UBrickBorder* This);
@@ -177,6 +177,11 @@ namespace hooks
         namespace isServer
         {
             bool isServer(SDK::UNetDriver* driver);
+        }
+
+        namespace UpdateWorldSetupParams
+        {
+            void UpdateWorldSetupParams(bool fadeIn);
         }
     }
 }

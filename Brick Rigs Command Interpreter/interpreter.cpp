@@ -47,10 +47,7 @@ bool modules::interpreter::Commands::Rain(PlayerInfo info)
 {
     if (!isRain) { sendUserSpecificMessageCommandFailed(info, "The /rain command is currently disabled!"); RETF; }
     using namespace global;
-    auto cur = GetBrickGameState()->MatchSettings;
-    cur.WorldSetupParams.Weather->Weather.PrecipitationType = SDK::EPrecipitationType::Rain;
-    cur.WorldSetupParams.Weather->Weather.PrecipitationIntensity = 100.00f;
-    GetBrickGameState()->SetMatchSettings(cur);
+    SDK::UBrickAssetManager* manager = GetBrickAssetManager();
     RETT;
 }
 
@@ -58,9 +55,10 @@ bool modules::interpreter::Commands::Sun(PlayerInfo info)
 {
     if (!isSun) { sendUserSpecificMessageCommandFailed(info, "The /sun command is currently disabled!"); RETF; }
     using namespace global;
-    auto cur = GetBrickGameState()->MatchSettings;
+    SDK::FMatchSettings cur = GetBrickGameState()->GetMatchSettings();
     cur.WorldSetupParams.Weather->Weather.PrecipitationType = SDK::EPrecipitationType::None;
     cur.WorldSetupParams.Weather->Weather.PrecipitationIntensity = 0.00f;
+    cur.WorldSetupParams.Weather->Weather.WindSpeed = 300;
     GetBrickGameState()->SetMatchSettings(cur);
     RETT;
 }
@@ -625,7 +623,7 @@ void modules::interpreter::Commands::Moderation::Load(PlayerInfo info)
     using namespace global::moderation;
     if (!GetIsPlayerAdminFromName(info.name)) { sendUserSpecificMessageCommandFailed(info, "Only admins can use this command!"); return; }
     if(loadModerationValues()) sendUserSpecificMessage(info, "Successfully loaded the current moderation values from the disk!");
-    else sendUserSpecificMessageCommandFailed(info, "Failed to load the current moderation values from the disk!");
+    else sendUserSpecificMessageCommandFailed(info, "Failed to load the current moderation values from the disk! Either the file does not exist or it is corrupted");
 }
 
 void modules::interpreter::Commands::Moderation::ListMuted(PlayerInfo info)
