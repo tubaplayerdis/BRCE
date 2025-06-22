@@ -56,7 +56,7 @@ RETURN - Fix Freezes
 ### Movement
 
 /fly - Fly around (slow)  
-/walk - Walk around 
+/walk - Walk around  
 /tp [who] - Teleport to other people  
 /ghost - Fly around and disable collisions  
 
