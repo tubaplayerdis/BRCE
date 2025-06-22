@@ -13,13 +13,31 @@
 #pragma once
 #include <string>
 
-inline std::string MasterHelpMessage = R"(Do not use the [] in the actual command call!
+inline std::string MasterHelpMessage = R"(
+/help controls (Host Only)
 /help main
 /help moderation
 /help movement
 /help enviroment
 /help weapons
-/info)";
+/info
+/uninject)";
+
+#ifdef _DEBUG
+
+inline std::string ControlsHelpMessage = R"(These only work on the host!
+Divide - Uninject
+Multiply - Toggle Chat Commands
+Return - (Fix Freezes))";
+
+#else
+
+inline std::string ControlsHelpMessage = R"(These only work on the host!
+CTRL-U - Uninject
+CTRL-T - Toggle Chat Commands
+Return - (Fix Freezes))";
+
+#endif // _DEBUG
 
 inline std::string MainHelpMessage = R"(You can use PlayerID's for pm/block. use /pid
 Main Commands:
@@ -50,7 +68,7 @@ inline std::string EnviromentHelpMessage = R"(Enviroment Commands:
 /night - Make it night
 /day - Make it day
 /rain - Make it rain
-/clear - Clears the weather)";
+/sun - Make it sunny)";
 
 inline std::string WeaponsHelpMessage = R"(Weapon Commands:
 /ammotype [type] - Change all your guns to the selected ammo type. Ammotypes:

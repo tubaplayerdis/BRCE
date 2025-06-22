@@ -20,6 +20,14 @@
 #include <psapi.h>
 #include "SDK.hpp"
 
+#ifdef _DEBUG
+#define UninjectPress() GetAsyncKeyState(VK_DIVIDE) & 1
+#define TogglePress() GetAsyncKeyState(VK_MULTIPLY) & 1
+#else
+#define UninjectPress() ((GetAsyncKeyState(VK_CONTROL) & 0x8000) && (GetAsyncKeyState(0x55) & 1))
+#define TogglePress() ((GetAsyncKeyState(VK_CONTROL) & 0x8000) && (GetAsyncKeyState(0x54) & 1))
+#endif
+
 using namespace global;
 
 void mainLoop()
@@ -35,7 +43,7 @@ void mainLoop()
 
 	global::InitPointers();
 
-	hooks::EnableAllHooks(); //Excludes the rendering hook.
+	hooks::EnableAllHooks();
 
 	global::watermark::InitalizeWaterMark();
 
@@ -49,9 +57,9 @@ void mainLoop()
 
 		if (GetAsyncKeyState(VK_RETURN) & 1) continue;
 
-		if (GetAsyncKeyState(VK_DIVIDE) & 1) break;
+		if (UninjectPress() || doUninject) break;
 
-		if (GetAsyncKeyState(VK_MULTIPLY) & 1) {
+		if (TogglePress()) {
 			if (hooks::AddChatMessage::enabled) {
 				hooks::AddChatMessage::Disable();
 				SendNotificationLocal(L"Disabled Chat Commands!", 1); //Explore the icon atlas more

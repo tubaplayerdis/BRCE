@@ -86,6 +86,8 @@ namespace modules
 			//Misc
 			void Debug(PlayerInfo info); //Use this to test varius functions. Can be called by imgui.
 
+			void Uninject(PlayerInfo info);
+
 			namespace Moderation
 			{
 				void ToggleMute(PlayerInfo info, std::string originalMessage, bool on_of);

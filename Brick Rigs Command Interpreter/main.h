@@ -24,4 +24,6 @@ Brick Rigs Command Interpreter (Developer Build)
 
 )";
 
+inline bool doUninject = false;
+
 void mainLoop();

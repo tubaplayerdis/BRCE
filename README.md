@@ -12,9 +12,14 @@ Follow development: https://youtube.com/@johndenver-co9rr
 
 ### Todo:
 
- - Fix weather commands to look more realistic
  - Bug test with a closed and open beta.
  - Create showcase video (?)
+
+### Controls
+
+CTRL-U - Uninject
+CTRL-T - Toggle Chat Commands
+RETURN - Fix Freezes
 
 ### Commands
 
@@ -59,8 +64,8 @@ Follow development: https://youtube.com/@johndenver-co9rr
 
 /night - Make it night  
 /day - Make it day  
-/rain - Make it rain (!)  
-/clear - Clears the weather (!)  
+/rain - Make it rain  
+/sun - Make it sunny
 
 #### Weapons
 

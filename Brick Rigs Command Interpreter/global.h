@@ -20,6 +20,7 @@
 #define RETT return true
 #define RET0 return 0
 #define RET1 return 1
+#define World() SDK::UWorld::GetWorld()
 #include <string>
 #include "SDK.hpp"
 #include "interpreter.h"
@@ -53,6 +54,7 @@ namespace global
 	//General Helpers
 	std::wstring to_wstring_n(const std::string& str);
 	bool GetIsPlayerAdminFromName(std::string name);
+	bool GetIsPlayerHostFromName(std::string name);
 
 	/*
 	* Returns true if a map that is loaded is playable, false if otherwise.

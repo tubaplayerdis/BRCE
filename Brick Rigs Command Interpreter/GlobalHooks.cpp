@@ -24,6 +24,7 @@ void __fastcall hooks::BeginPlay::HookedBeginPlayFunction(SDK::UWorld* This)
 		//Disable Hooks
 		AddChatMessage::Disable();
 		OnPlayerJoined::Disable();
+		StartPlay::Disable();
 		global::watermark::HideWaterWark();
 		return;
 	}
@@ -31,11 +32,12 @@ void __fastcall hooks::BeginPlay::HookedBeginPlayFunction(SDK::UWorld* This)
 		//Re-Enable hooks. Enable() function pretects agaisnt enabling twice.
 		AddChatMessage::Enable();
 		OnPlayerJoined::Enable();
+		StartPlay::Enable();
 	}
 	global::UpdatePointers(This);
 	if (global::isMapValid()) global::watermark::HideWaterWark();
 	else global::watermark::ShowWaterMark();
-	Sleep(10); //This is janky but allows for execution of other systems to prevent freezes
+	Sleep(50); //This is janky but allows for execution of other systems to prevent freezes
 	global::welcome::SendWelcomeMessageA();
 	
 }
@@ -261,4 +263,35 @@ void hooks::Functions::UpdateWorldSetupParams::UpdateWorldSetupParams(bool fadeI
 	UpdateWorldSetupParamsFn OnUpdateWorldSetupParams = reinterpret_cast<UpdateWorldSetupParamsFn>(UpdateWorldSetupParamsFunction);
 
 	OnUpdateWorldSetupParams(global::GetWorldSetupActor(), fadeIn);
+}
+
+void __fastcall hooks::StartPlay::HookedStartPlayFunction(SDK::AGameMode* This)
+{
+	OriginalStartPlayFunction(This);
+	std::cout << "Started Play!" << std::endl;
+	global::UpdatePointers(SDK::UWorld::GetWorld());
+}
+
+bool hooks::StartPlay::Init()
+{
+	if (initalized) return false;
+	StartPlayFunctionPointer = FindPattern(pattern, mask, GetModuleBaseN(), GetModuleSizeN());
+	if (StartPlayFunctionPointer == 0) return false;
+	MH_STATUS ret = MH_CreateHook((LPVOID)StartPlayFunctionPointer, &HookedStartPlayFunction, (void**)&OriginalStartPlayFunction);
+	initalized = true;
+	return ret == MH_OK;
+}
+
+void hooks::StartPlay::Enable()
+{
+	if (!initalized || enabled) return;
+	MH_EnableHook((LPVOID)StartPlayFunctionPointer);
+	enabled = true;
+}
+
+void hooks::StartPlay::Disable()
+{
+	if (!initalized || !enabled) return;
+	MH_DisableHook((LPVOID)StartPlayFunctionPointer);
+	enabled = false;
 }

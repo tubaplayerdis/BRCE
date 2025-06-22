@@ -17,6 +17,7 @@
 #include <SDK.hpp>
 #include "hooks.h"
 #include "global.h"
+#include "main.h"
 
 #define Message(info, message) modules::interpreter::sendUserSpecificMessage(info, message)
 #define MIF(cond, info, message) (cond ? Message(info, message) : (void)0)
@@ -36,7 +37,7 @@ bool modules::interpreter::Commands::Day(PlayerInfo info)
 {
     if (!isDay) { sendUserSpecificMessageCommandFailed(info, "The /day command is currently disabled!"); RETF; }
     using namespace global;
-    auto cur = GetBrickGameState()->MatchSettings;
+    SDK::FMatchSettings cur = GetBrickGameState()->MatchSettings;
     std::cout << cur.WorldSetupParams.TimeOfDay << std::endl;
     cur.WorldSetupParams.TimeOfDay = 12.00f;
     GetBrickGameState()->SetMatchSettings(cur);
@@ -48,6 +49,19 @@ bool modules::interpreter::Commands::Rain(PlayerInfo info)
     if (!isRain) { sendUserSpecificMessageCommandFailed(info, "The /rain command is currently disabled!"); RETF; }
     using namespace global;
     SDK::UBrickAssetManager* manager = GetBrickAssetManager();
+    SDK::AWorldSetupActor* setup = GetWorldSetupActor();
+    for (SDK::UWeatherCondition* condition : manager->WeatherConditions) {
+        std::cout << condition->GetName() << std::endl;
+        if (condition->GetName() == "WC_Rain") {
+            std::cout << "FOUND Condition!" << std::endl;
+            SDK::FMatchSettings cur = GetBrickGameState()->GetMatchSettings();
+            cur.WorldSetupParams.Weather = condition;
+            bool old = cur.bFadeIn;
+            cur.bFadeIn = false;
+            GetBrickGameState()->SetMatchSettings(cur);
+            cur.bFadeIn = old;
+        }
+    }
     RETT;
 }
 
@@ -55,11 +69,20 @@ bool modules::interpreter::Commands::Sun(PlayerInfo info)
 {
     if (!isSun) { sendUserSpecificMessageCommandFailed(info, "The /sun command is currently disabled!"); RETF; }
     using namespace global;
-    SDK::FMatchSettings cur = GetBrickGameState()->GetMatchSettings();
-    cur.WorldSetupParams.Weather->Weather.PrecipitationType = SDK::EPrecipitationType::None;
-    cur.WorldSetupParams.Weather->Weather.PrecipitationIntensity = 0.00f;
-    cur.WorldSetupParams.Weather->Weather.WindSpeed = 300;
-    GetBrickGameState()->SetMatchSettings(cur);
+    SDK::UBrickAssetManager* manager = GetBrickAssetManager();
+    SDK::AWorldSetupActor* setup = GetWorldSetupActor();
+    for (SDK::UWeatherCondition* condition : manager->WeatherConditions) {
+        std::cout << condition->GetName() << std::endl;
+        if (condition->GetName() == "WC_Sun") {
+            std::cout << "FOUND Condition!" << std::endl;
+            SDK::FMatchSettings cur = GetBrickGameState()->GetMatchSettings();
+            cur.WorldSetupParams.Weather = condition;
+            bool old = cur.bFadeIn;
+            cur.bFadeIn = false;
+            GetBrickGameState()->SetMatchSettings(cur);
+            cur.bFadeIn = old;
+        }
+    }
     RETT;
 }
 
@@ -140,6 +163,9 @@ void modules::interpreter::interpretCommand(std::string command, std::vector<std
     }
 
 	switch (hash_val) {
+        case hs("/uninject"):
+            Commands::Uninject(info);
+            break;
         case hs("/help"):
             if (args.size() < 1) {
                 Commands::Help(info, "master");
@@ -436,6 +462,9 @@ void modules::interpreter::Commands::Help(PlayerInfo info, std::string arg)
 {
     size_t hash_val = hash_string(arg);
     switch (hash_val) {
+        case hs("controls"):
+            sendUserSpecificMessageWithContext(info, ControlsHelpMessage, SDK::EChatContext::Global, L"Controls List:");
+            break;
         case hs("master"):
             sendUserSpecificMessageWithContext(info, MasterHelpMessage, SDK::EChatContext::Global, L"Help Command List:");
             break;
@@ -471,8 +500,8 @@ bool modules::interpreter::Commands::Fly(PlayerInfo info)
     if (!isFly) { sendUserSpecificMessageCommandFailed(info, "The /fly command is currently disabled!"); RETF; }
     using namespace global;
     auto BrickPlayerController = GetBrickPlayerControllerFromName(info.name);
+    if (BrickPlayerController == nullptr) { sendUserSpecificMessageCommandFailed(info, "Your ABrickPlayerController was not found. Cannot change movement modes"); RETF; }
     if (global::GetBrickPlayerControllerFromName(info.name)) global::GetBrickPlayerControllerFromName(info.name)->Character->SetActorEnableCollision(true);
-    if (BrickPlayerController == nullptr) RETF;
     if (canModifyMovement(BrickPlayerController)) { BrickPlayerController->Character->CharacterMovement->SetMovementMode(SDK::EMovementMode::MOVE_Flying, 0); RETT; }
     else sendUserSpecificMessageCommandFailed(info, "Movement commands can only be used when controlling an independent character (not in a vehicle).");
     RETF;
@@ -484,8 +513,8 @@ bool modules::interpreter::Commands::Walk(PlayerInfo info)
     using namespace global;
     if (!isWalk) { sendUserSpecificMessageCommandFailed(info, "The /walk command is currently disabled!"); RETF; }
     auto BrickPlayerController = GetBrickPlayerControllerFromName(info.name);
+    if (BrickPlayerController == nullptr) { sendUserSpecificMessageCommandFailed(info, "Your ABrickPlayerController was not found. Cannot change movement modes"); RETF; }
     if (global::GetBrickPlayerControllerFromName(info.name)) global::GetBrickPlayerControllerFromName(info.name)->Character->SetActorEnableCollision(true);
-    if (BrickPlayerController == nullptr) RETF;
     if (canModifyMovement(BrickPlayerController)) {
         BrickPlayerController->Character->CharacterMovement->MaxAcceleration = 750; //This is the default value
         BrickPlayerController->Character->CharacterMovement->SetMovementMode(SDK::EMovementMode::MOVE_Walking, 0);
@@ -515,7 +544,7 @@ bool modules::interpreter::Commands::Ghost(PlayerInfo info)
     if (!isGhost) { sendUserSpecificMessageCommandFailed(info, "The /ghost command is currently disabled!"); RETF; }
     using namespace global;
     auto BrickPlayerController = GetBrickPlayerControllerFromName(info.name);
-    if (BrickPlayerController == nullptr) RETF;
+    if (BrickPlayerController == nullptr) { sendUserSpecificMessageCommandFailed(info, "Your ABrickPlayerController was not found. Cannot change movement modes"); RETF; }
     if (canModifyMovement(BrickPlayerController)) {
         BrickPlayerController->Character->SetActorEnableCollision(false);
         BrickPlayerController->Character->CharacterMovement->SetMovementMode(SDK::EMovementMode::MOVE_Flying, 0);
@@ -531,6 +560,12 @@ Replace code with varius things.
 void modules::interpreter::Commands::Debug(PlayerInfo info)
 {
     sendMessageToAdmin("This message is really sad!");
+}
+
+void modules::interpreter::Commands::Uninject(PlayerInfo info)
+{
+    if (!global::GetIsPlayerHostFromName(info.name)) { sendUserSpecificMessageCommandFailed(info, "Only hosts can use this command!"); return; }
+    doUninject = true;
 }
 
 /*
@@ -669,7 +704,7 @@ void modules::interpreter::Commands::Moderation::ListPlayerIDS(PlayerInfo info)
     std::string message = "Player IDS:";
     UC::TArray<SDK::AActor*> raw = UC::TArray<SDK::AActor*>();
     UC::TArray<SDK::AActor*>* what = &raw;
-    SDK::UGameplayStatics::GetAllActorsOfClass(global::World, SDK::ABrickPlayerController::StaticClass(), what);
+    SDK::UGameplayStatics::GetAllActorsOfClass(World(), SDK::ABrickPlayerController::StaticClass(), what);
     for (int i = 0; i < raw.Num(); i++)
     {
         SDK::ABrickPlayerController* cast = static_cast<SDK::ABrickPlayerController*>(raw[i]);

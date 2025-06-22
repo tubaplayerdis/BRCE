@@ -81,7 +81,7 @@ SDK::ABrickPlayerController* global::GetBrickPlayerControllerFromName(std::strin
 {
 	UC::TArray<SDK::AActor*> raw = UC::TArray<SDK::AActor*>();
 	UC::TArray<SDK::AActor*>* what = &raw;
-	SDK::UGameplayStatics::GetAllActorsOfClass(World, SDK::ABrickPlayerController::StaticClass(), what);
+	SDK::UGameplayStatics::GetAllActorsOfClass(World(), SDK::ABrickPlayerController::StaticClass(), what);
 	for (int i = 0; i < raw.Num(); i++)
 	{
 		SDK::ABrickPlayerController* cast = static_cast<SDK::ABrickPlayerController*>(raw[i]);
@@ -102,7 +102,7 @@ SDK::ABrickPlayerController* global::GetBrickPlayerControllerFromID(std::string 
 	}
 	UC::TArray<SDK::AActor*> raw = UC::TArray<SDK::AActor*>();
 	UC::TArray<SDK::AActor*>* what = &raw;
-	SDK::UGameplayStatics::GetAllActorsOfClass(World, SDK::ABrickPlayerController::StaticClass(), what);
+	SDK::UGameplayStatics::GetAllActorsOfClass(World(), SDK::ABrickPlayerController::StaticClass(), what);
 	for (int i = 0; i < raw.Num(); i++)
 	{
 		SDK::ABrickPlayerController* cast = static_cast<SDK::ABrickPlayerController*>(raw[i]);
@@ -116,6 +116,12 @@ bool global::GetIsPlayerAdminFromName(std::string name)
 {
 	if (GetBrickPlayerControllerFromName(name) == nullptr) return false;
 	return static_cast<SDK::ABrickPlayerState*>(GetBrickPlayerControllerFromName(name)->PlayerState)->IsAdmin();
+}
+
+bool global::GetIsPlayerHostFromName(std::string name)
+{
+	if (GetBrickPlayerControllerFromName(name) == nullptr) return false;
+	return GetBrickPlayerControllerFromName(name) == MyController;
 }
 
 bool global::isMapValid()
