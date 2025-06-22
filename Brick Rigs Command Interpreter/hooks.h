@@ -31,9 +31,10 @@ namespace hooks
 		bool SYNCHook = Functions::SynchronizeProperties::Init();//0
 		bool ONJHook = OnPlayerJoined::Init();//0
 		bool RGHook = StartPlay::Init();
+		bool LMHook = LoadMap::Init();
 		auto end = std::chrono::high_resolution_clock::now();
 		std::cout << "Elapsed Time Finding Hooks: " << std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count() << std::endl;
-		if (!ACMHook || !BPHook || !OMHook || !SYNCHook || !ONJHook || !RGHook) {
+		if (!ACMHook || !BPHook || !OMHook || !SYNCHook || !ONJHook || !RGHook || !LMHook) {
 			//print cases
 			std::cout << "ACMHOOK: " << ACMHook << std::endl;
 			std::cout << "BPHOOK: " << BPHook << std::endl;
@@ -41,6 +42,7 @@ namespace hooks
 			std::cout << "SYNCHOOK: " << SYNCHook << std::endl;
 			std::cout << "ONJHOOK:" << ONJHook << std::endl;
 			std::cout << "RGHOOK:" << RGHook << std::endl;
+			std::cout << "LMHook" << LMHook << std::endl;
 
 			//Print cases to file
 			std::ofstream saveFile;
@@ -53,6 +55,7 @@ namespace hooks
 				saveFile << "SYNCHOOK: " << SYNCHook << std::endl;
 				saveFile << "ONJHOOK:" << ONJHook << std::endl;
 				saveFile << "RGHOOK:" << RGHook << std::endl;
+				saveFile << "LMHook" << LMHook << std::endl;
 				saveFile.close();
 			}
 			return false;
@@ -66,7 +69,7 @@ namespace hooks
 		OpenMenu::Enable();
 		OnPlayerJoined::Enable();
 		StartPlay::Enable();
-		//LoadMap::Enable();
+		LoadMap::Enable();
 		//PossessedBy::Enable();
 	}
 

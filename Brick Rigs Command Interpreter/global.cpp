@@ -2,7 +2,7 @@
 /*                                                                            */
 /*    Copyright (c) Aaron Wilk 2025, All rights reserved.                     */
 /*                                                                            */
-/*    Module:     global.cp                                                   */
+/*    Module:     global.cpp                                                  */
 /*    Author:     Aaron Wilk                                                  */
 /*    Created:    2 May 2025                                                  */
 /*                                                                            */
@@ -145,6 +145,7 @@ bool global::IsHost(SDK::UNetDriver* driver)
 
 void global::SendNotificationLocal(std::wstring notif, int slot)
 {
+	if (!isMapValid()) return;
 	//WidgetSkib->SetColorAndOpacity(hooks::constructors::CreateLinearColor(0, 135, 255, 1)); //Change Color
 	SDK::FName nameS = SDK::UKismetStringLibrary::Conv_StringToName(L"None");
 	if (SDK::UGameOverlayWidget::Get(World) == nullptr) return;

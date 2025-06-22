@@ -36,7 +36,7 @@ void __fastcall hooks::BeginPlay::HookedBeginPlayFunction(SDK::UWorld* This)
 	}
 	global::UpdatePointers(This);
 	if (global::isMapValid()) global::watermark::HideWaterWark();
-	else global::watermark::ShowWaterMark();
+	else { global::watermark::ShowWaterMark(); }
 	Sleep(50); //This is janky but allows for execution of other systems to prevent freezes
 	global::welcome::SendWelcomeMessageA();
 	
@@ -218,7 +218,9 @@ void hooks::OnPlayerJoined::Disable()
 char __fastcall hooks::LoadMap::HookedLoadMapFunction(SDK::UEngine* This, SDK::FWorldContext* WorldContext, void* URL, void* Pending, void* Error)
 {
 	char ret = OriginalLoadMapFunction(This, WorldContext, URL, Pending, Error);
-	global::welcome::SendWelcomeMessageA();
+	global::mapLevelName = World()->PersistentLevel->Outer->GetName();
+	if (global::mapLevelName == "MainMenu") global::watermark::ShowWaterMark();
+	Sleep(20);
 	return ret;
 }
 
