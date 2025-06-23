@@ -38,8 +38,8 @@ RETURN - Fix Freezes
 #### Main
 
 /pm [who] [content] - Personal Message Someone  
-/pma - allow incoming personal messages  
-/pmd - disallow incoming personal messages  
+/unsilence - allow incoming personal messages  
+/silence - disallow incoming personal messages  
 /block [who] - Block a user from personal messaging you  
 /unblock [who] - Un-Block a user from personal messaging you  
 /pid - List every players PlayerID  
