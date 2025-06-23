@@ -42,8 +42,8 @@ Return - (Fix Freezes))";
 inline std::string MainHelpMessage = R"(You can use PlayerID's for pm/block. use /pid
 Main Commands:
 /pm [who] [content] - Personal Message Someone
-/pma - allow incoming personal messages
-/pmd - disallow incoming personal messages
+/silence - allow incoming personal messages
+/unsilence - disallow incoming personal messages
 /block [who] - Block a user from personal messaging you
 /unblock [who] - Un-Block a user from personal messaging you
 /pid - List every players PlayerID)";

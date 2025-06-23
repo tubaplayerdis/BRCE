@@ -17,9 +17,9 @@ Follow development: https://youtube.com/@johndenver-co9rr
 
 ### Controls
 
-CTRL-U - Uninject
-CTRL-T - Toggle Chat Commands
-RETURN - Fix Freezes
+CTRL-U - Uninject  
+CTRL-T - Toggle Chat Commands  
+RETURN - Fix Freezes  
 
 ### Commands
 
@@ -38,8 +38,8 @@ RETURN - Fix Freezes
 #### Main
 
 /pm [who] [content] - Personal Message Someone  
-/pma - allow incoming personal messages  
-/pmd - disallow incoming personal messages  
+/unsilence - allow incoming personal messages  
+/silence - disallow incoming personal messages  
 /block [who] - Block a user from personal messaging you  
 /unblock [who] - Un-Block a user from personal messaging you  
 /pid - List every players PlayerID  
