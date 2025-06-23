@@ -17,9 +17,9 @@ Follow development: https://youtube.com/@johndenver-co9rr
 
 ### Controls
 
-CTRL-U - Uninject
-CTRL-T - Toggle Chat Commands
-RETURN - Fix Freezes
+CTRL-U - Uninject  
+CTRL-T - Toggle Chat Commands  
+RETURN - Fix Freezes  
 
 ### Commands
 
