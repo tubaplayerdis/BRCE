@@ -201,5 +201,10 @@ namespace hooks
         {
             void UpdateWorldSetupParams(bool fadeIn);
         }
+
+        namespace IsViewTarget
+        {
+            bool IsViewTarget(SDK::AInventoryItem* item);
+        }
     }
 }

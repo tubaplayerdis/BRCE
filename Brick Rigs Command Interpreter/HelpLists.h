@@ -70,15 +70,14 @@ inline std::string EnviromentHelpMessage = R"(Enviroment Commands:
 /rain - Make it rain
 /sun - Make it sunny)";
 
-inline std::string WeaponsHelpMessage = R"(Weapon Commands:
-/ammotype [type] - Change all your guns to the selected ammo type. Ammotypes:
+inline std::string WeaponsHelpMessage = R"(Ammo Types:
 0 - Default
 1 - Incendiary
 2 - HighExplosive
 3 - TargetSeeking
 4 - Guided
 5 - Flare
-*ammotype will NOT change the ammotype on weaons you hold inside a vehicle or a vehicles weapons)";
+/ammotype [type] - Change your active weapon's ammo type to the desired ammo type number.)";
 //List the ammo types later
 
 inline std::string InfoMessage = R"(Brick Rigs Command Interpreter(BRCI), is a chat command mod made for Bricks Rigs that adds chat message functionality to your server. It is dll based and server-side only.

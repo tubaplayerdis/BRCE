@@ -103,7 +103,6 @@ bool modules::interpreter::Commands::AmmoType(PlayerInfo info, std::string ammot
         sendUserSpecificMessageCommandFailed(info, "Please use a value 0-5 for the ammo type. Ammo types are listed here: /help weapons");
         RETF;
     }
-    std::cout << desired << std::endl;
     switch (desired)
     {
         case 0:
@@ -128,15 +127,13 @@ bool modules::interpreter::Commands::AmmoType(PlayerInfo info, std::string ammot
             selected = SDK::EAmmoType::Default;
             break;
     }
-    UC::TArray<SDK::AActor*> raw = UC::TArray<SDK::AActor*>();
-    UC::TArray<SDK::AActor*>* what = &raw;
-    SDK::UGameplayStatics::GetAllActorsOfClass(global::World, SDK::AFirearm::StaticClass(), what);
-    for (int i = 0; i < raw.Num(); i++)
-    {
-        SDK::AFirearm* cast = static_cast<SDK::AFirearm*>(raw[i]);
-        if (cast->FirearmComponent->ControllingCharacter.Get() != global::GetBrickPlayerControllerFromName(info.name)->Character) continue;
-        cast->FirearmComponent->FirearmState.AmmoType = selected;
-    }
+    if (!global::GetBrickPlayerControllerFromName(info.name)->Character) { sendUserSpecificMessageCommandFailed(info, "A valid character to access your active item was not found!"); RETF; }
+    SDK::ABrickCharacter* Character = static_cast<SDK::ABrickCharacter*>(global::GetBrickPlayerControllerFromName(info.name)->Character);
+    SDK::AInventoryItem* CItem = Character->GetCurrentItem();
+    if(!CItem) { sendUserSpecificMessageCommandFailed(info, "You do not have a active item! Equip a weapon to your active item to change your ammotype!"); RETF;}
+    if(!CItem->IsA(SDK::AFirearm::StaticClass())) { sendUserSpecificMessageCommandFailed(info, "Your active item is not a weapon! Equip a weapon as your active item to change your ammotype!"); RETF;}
+    SDK::AFirearm* Firearm = static_cast<SDK::AFirearm*>(CItem);
+    Firearm->FirearmComponent->FirearmState.AmmoType = selected;
     RETT;
 }
 
@@ -250,7 +247,7 @@ void modules::interpreter::interpretCommand(std::string command, std::vector<std
             break;
         case hs("/ammotype"):
             if (args.size() < 1) { ToFewArgs(info, "/ammotype", "weapons"); break; }
-            MIF(Commands::AmmoType(info, args[0]), info, "Changed ammo type on your weapons to: " + getAmmoTypeString(args[0]));
+            MIF(Commands::AmmoType(info, args[0]), info, "Changed ammo type on your active weapon to: " + getAmmoTypeString(args[0]));
             break;
         case hs("/tp"):
             if (args.size() < 1) { ToFewArgs(info, "/tp", "movement"); break; }
@@ -432,9 +429,6 @@ void modules::interpreter::Commands::PersonalMessage(PlayerInfo info, std::strin
 {
     if (!isPM) { sendUserSpecificMessageCommandFailed(info, "The /pm command is currently disabled!"); return; }
 
-    //Send the user back thier original message for context.
-    sendUserSpecificMessageWithContext(info, originalMessage, SDK::EChatContext::Global, L"(Only you can see this)");
-
     size_t firstSpace = originalMessage.find_first_of(' ');
     if (firstSpace == std::string::npos) { sendUserSpecificMessageCommandFailed(info, "There was a formatting error when using /pm! Usage Example: /pm john123 Whats Up!"); return; } //This realisitclly shouldnt happen, but edge cases are edge cases
 
@@ -447,14 +441,19 @@ void modules::interpreter::Commands::PersonalMessage(PlayerInfo info, std::strin
     SDK::ABrickPlayerController* otherCont = global::GetBrickPlayerControllerFromName(recipient);
     if (!otherCont) otherCont = global::GetBrickPlayerControllerFromID(recipient);
     if(!otherCont) { sendUserSpecificMessageCommandFailed(info, "The intended recipient was not found! Please try agian."); return; }
+    PlayerInfo recipientInfo = global::GetPlayerInfoFromController(otherCont);
 
-    if (global::moderation::isPlayerBlockedBy(info, PlayerInfo(recipient))) { return; }
-    if (global::moderation::isPlayerOnSilence(info)) { return; }
+    //Send the user back thier original message for context.
+    std::wstring UserContextMessage = L"Only you and " + global::to_wstring_n(recipientInfo.name) + L" can see this)";
+    sendUserSpecificMessageWithContext(info, originalMessage, SDK::EChatContext::Global, UserContextMessage.c_str());
+
+    if (global::moderation::isPlayerBlockedBy(info, PlayerInfo(recipient))) { sendUserSpecificMessageCommandFailed(info, "You cannot message this user!"); return; }
+    if (global::moderation::isPlayerOnSilence(info)) { sendUserSpecificMessageCommandFailed(info, "You cannot message this user!"); return; }
 
     std::string message = sub.substr(second + 1);
     std::wstring contextmessage = global::to_wstring_n(info.name);
     contextmessage += L" (Personal Message)";
-    sendUserSpecificMessageWithContext(PlayerInfo(recipient), message, SDK::EChatContext::Global, contextmessage.c_str());
+    sendUserSpecificMessageWithContext(PlayerInfo(recipientInfo), message, SDK::EChatContext::Global, contextmessage.c_str());
     
 }
 

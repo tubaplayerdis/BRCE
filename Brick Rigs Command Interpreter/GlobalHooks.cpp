@@ -156,10 +156,6 @@ void __fastcall hooks::OpenMenu::HookedOpenMenuFunction(SDK::UMenuWidget* This, 
 {
 	OriginalOpenMenuFunction(This, InMenu);
 	if (!This) return;
-	if (!global::IsHost(World()->NetDriver)) {
-		global::watermark::HideWaterWark();
-		return;
-	}
 	if (InMenu.GetRawString().c_str() == nullptr) return;
 	if (InMenu.GetRawString() == "InGameMenu") global::watermark::ShowWaterMark();
 	if (InMenu.GetRawString() == "None" && global::isMapValid()) global::watermark::HideWaterWark();
@@ -300,4 +296,14 @@ void hooks::StartPlay::Disable()
 	if (!initalized || !enabled) return;
 	MH_DisableHook((LPVOID)StartPlayFunctionPointer);
 	enabled = false;
+}
+
+bool hooks::Functions::IsViewTarget::IsViewTarget(SDK::AInventoryItem* item)
+{
+	uintptr_t IsViewTargetFunction = (uintptr_t)GetModuleHandle(NULL) + 0x0CEBAE0;
+
+	using IsViewTargetFn = bool(__fastcall*)(SDK::AInventoryItem* This);
+	IsViewTargetFn OnIsViewTarget = reinterpret_cast<IsViewTargetFn>(IsViewTargetFunction);
+
+	return OnIsViewTarget(item);
 }
