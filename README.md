@@ -12,6 +12,7 @@ Follow development: https://youtube.com/@johndenver-co9rr
 
 ### Todo:
 
+ - Add logging system to log command calls and only command calls
  - Bug test with a closed and open beta.
  - Create showcase video (?)
 
