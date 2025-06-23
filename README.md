@@ -70,4 +70,4 @@ RETURN - Fix Freezes
 
 #### Weapons
 
-/ammotype [type] - Changes all weapons in players inventory to the selected ammotype. Does not affect vehicles or weapons held by the player in a vehicle
+/ammotype [type] - Changes actively held weapons ammotype
