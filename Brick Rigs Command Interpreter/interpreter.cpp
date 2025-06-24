@@ -462,28 +462,28 @@ void modules::interpreter::Commands::Help(PlayerInfo info, std::string arg)
     size_t hash_val = hash_string(arg);
     switch (hash_val) {
         case hs("controls"):
-            sendUserSpecificMessageWithContext(info, ControlsHelpMessage, SDK::EChatContext::Global, L"Controls List:");
+            sendUserSpecificMessageWithContext(info, ControlsHelpMessage, SDK::EChatContext::Global, L"Controls List");
             break;
         case hs("master"):
-            sendUserSpecificMessageWithContext(info, MasterHelpMessage, SDK::EChatContext::Global, L"Help Command List:");
+            sendUserSpecificMessageWithContext(info, MasterHelpMessage, SDK::EChatContext::Global, L"Help Command List");
             break;
         case hs("main"):
-            sendUserSpecificMessageWithContext(info, MainHelpMessage, SDK::EChatContext::Global, L"Main Command List:");
+            sendUserSpecificMessageWithContext(info, MainHelpMessage, SDK::EChatContext::Global, L"Main Command List");
             break;
         case hs("moderation"):
-            sendUserSpecificMessageWithContext(info, ModerationHelpMessage, SDK::EChatContext::Global, L"Moderation Command List:");
+            sendUserSpecificMessageWithContext(info, ModerationHelpMessage, SDK::EChatContext::Global, L"Moderation Command List");
             break;
         case hs("movement"):
-            sendUserSpecificMessageWithContext(info, MovementHelpMessage, SDK::EChatContext::Global, L"Movement Command List:");
+            sendUserSpecificMessageWithContext(info, MovementHelpMessage, SDK::EChatContext::Global, L"Movement Command List");
             break;
         case hs("enviroment"):
-            sendUserSpecificMessageWithContext(info, EnviromentHelpMessage, SDK::EChatContext::Global, L"Enviroment Command List:");
+            sendUserSpecificMessageWithContext(info, EnviromentHelpMessage, SDK::EChatContext::Global, L"Enviroment Command List");
             break;
         case hs("weapons"):
-            sendUserSpecificMessageWithContext(info, WeaponsHelpMessage, SDK::EChatContext::Global, L"Weapons Command List:");
+            sendUserSpecificMessageWithContext(info, WeaponsHelpMessage, SDK::EChatContext::Global, L"Weapons Command List");
             break;
         default:
-            sendUserSpecificMessageWithContext(info, MasterHelpMessage, SDK::EChatContext::Global, L"Help Command List:");
+            sendUserSpecificMessageWithContext(info, MasterHelpMessage, SDK::EChatContext::Global, L"Help Command List");
             break;
     }
 }

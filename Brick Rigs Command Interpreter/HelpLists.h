@@ -13,15 +13,14 @@
 #pragma once
 #include <string>
 
-inline std::string MasterHelpMessage = R"(
+inline std::string MasterHelpMessage = R"(/info
+/uninject
 /help controls (Host Only)
-/help main
 /help moderation
 /help movement
 /help enviroment
 /help weapons
-/info
-/uninject)";
+/help main)";
 
 #ifdef _DEBUG
 
@@ -39,8 +38,7 @@ Return - (Fix Freezes))";
 
 #endif // _DEBUG
 
-inline std::string MainHelpMessage = R"(You can use PlayerID's for pm/block. use /pid
-Main Commands:
+inline std::string MainHelpMessage = R"(PlayerID's work for pm/block. Try /pid
 /pm [who] [content] - Personal Message Someone
 /silence - allow incoming personal messages
 /unsilence - disallow incoming personal messages
@@ -48,9 +46,8 @@ Main Commands:
 /unblock [who] - Un-Block a user from personal messaging you
 /pid - List every players PlayerID)";
 
-inline std::string ModerationHelpMessage = R"(You can use PlayerID's for mute/unmute. use /pid
+inline std::string ModerationHelpMessage = R"(PlayerID's work for mute/unmute. Try /pid
 (*) = Admin Only
-Moderation Commands:
 /off [command] - Disables command (*)
 /on [command] - Enables command (*)
 /mute [who] - Disable a users ability to message (*)
@@ -58,13 +55,13 @@ Moderation Commands:
 /save - Save the current moderation config to the disk (*)
 /load - Load the moderation config on the disk (*))";
 
-inline std::string MovementHelpMessage = R"(Movement Commands:
+inline std::string MovementHelpMessage = R"(
 /fly - Fly around (slow)
 /walk - Walk around
 /tp [who] - Teleport to other people
 /ghost - Fly around and disable collisions)";
 
-inline std::string EnviromentHelpMessage = R"(Enviroment Commands:
+inline std::string EnviromentHelpMessage = R"(
 /night - Make it night
 /day - Make it day
 /rain - Make it rain
