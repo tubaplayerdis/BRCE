@@ -6,12 +6,14 @@ The Brick Rigs Command Interpreter (BRCI) adds chat message command functionalit
 
 ## Development
 
-This project is still under development. The expected release window is later june of 2025
+This project is still under development. A Beta is currently out  
+The full release is coming soon
 
 Follow development: https://youtube.com/@johndenver-co9rr
 
 ### Todo:
 
+ - Add logging system to log command calls and only command calls
  - Bug test with a closed and open beta.
  - Create showcase video (?)
 
@@ -69,4 +71,4 @@ RETURN - Fix Freezes
 
 #### Weapons
 
-/ammotype [type] - Changes all weapons in players inventory to the selected ammotype. Does not affect vehicles or weapons held by the player in a vehicle
+/ammotype [type] - Changes actively held weapons ammotype
