@@ -4,17 +4,17 @@
 
 The Brick Rigs Command Interpreter (BRCI) adds chat message command functionality to your brick rigs server.
 
+## How To Download: https://www.youtube.com/watch?v=MSOKNhwErSc
+
 ## Development
 
-This project is still under development. A Beta is currently out  
-The full release is coming soon
+Full Release. Bug Fixes from here on out.
 
-Follow development: https://youtube.com/@johndenver-co9rr
+Feature showcases: https://youtube.com/@johndenver-co9rr
 
 ### Todo:
 
- - Add logging system to log command calls and only command calls
- - Bug test with a closed and open beta.
+ - Fix Bugs as they come up
  - Create showcase video (?)
 
 ### Controls
