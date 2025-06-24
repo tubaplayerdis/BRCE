@@ -246,7 +246,7 @@ bool global::watermark::InitalizeWaterMark()
 	#ifdef _DEBUG
 	TextBlock->SetText(TEXT(L"(DEV)Brick Rigs Command Interpreter V1.0 (BRCI)"));
 	#else
-	TextBlock->SetText(TEXT(L"(BETA)Brick Rigs Command Interpreter V0.1 (BRCI)"));
+	TextBlock->SetText(TEXT(L"Brick Rigs Command Interpreter V1.0 (BRCI)"));
 	#endif // _DEBUG
 
 	TextBlock->SetColorStyle(SDK::EBrickUIColorStyle::Default);
