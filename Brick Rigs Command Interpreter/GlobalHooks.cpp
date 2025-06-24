@@ -297,13 +297,3 @@ void hooks::StartPlay::Disable()
 	MH_DisableHook((LPVOID)StartPlayFunctionPointer);
 	enabled = false;
 }
-
-bool hooks::Functions::IsViewTarget::IsViewTarget(SDK::AInventoryItem* item)
-{
-	uintptr_t IsViewTargetFunction = (uintptr_t)GetModuleHandle(NULL) + 0x0CEBAE0;
-
-	using IsViewTargetFn = bool(__fastcall*)(SDK::AInventoryItem* This);
-	IsViewTargetFn OnIsViewTarget = reinterpret_cast<IsViewTargetFn>(IsViewTargetFunction);
-
-	return OnIsViewTarget(item);
-}

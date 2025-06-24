@@ -127,7 +127,7 @@ bool modules::interpreter::Commands::AmmoType(PlayerInfo info, std::string ammot
             selected = SDK::EAmmoType::Default;
             break;
     }
-    if (!global::GetBrickPlayerControllerFromName(info.name)->Character) { sendUserSpecificMessageCommandFailed(info, "A valid character to access your active item was not found!"); RETF; }
+    if (!global::GetBrickPlayerControllerFromName(info.name)->Character) { sendUserSpecificMessageCommandFailed(info, "A valid character to access your active item was not found! This normally happens because you are inside a vehicle."); RETF; }
     SDK::ABrickCharacter* Character = static_cast<SDK::ABrickCharacter*>(global::GetBrickPlayerControllerFromName(info.name)->Character);
     SDK::AInventoryItem* CItem = Character->GetCurrentItem();
     if(!CItem) { sendUserSpecificMessageCommandFailed(info, "You do not have a active item! Equip a weapon to your active item to change your ammotype!"); RETF;}
