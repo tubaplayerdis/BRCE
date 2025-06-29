@@ -1,8 +1,8 @@
-# Brick Rigs Command Interpreter
+# Brick Rigs Command Engine
 
 ## Overview
 
-The Brick Rigs Command Interpreter (BRCI) adds chat message command functionality to your brick rigs server.
+The Brick Rigs Command Engine (BRCE) adds chat message command functionality to your brick rigs server.
 
 ## How To Download: https://www.youtube.com/watch?v=MSOKNhwErSc
 
@@ -35,7 +35,7 @@ RETURN - Fix Freezes
 /help movement - movement command list  
 /help enviroment - enviroment command list  
 /help weapons - weapons command list  
-/info - Info about BRCI  
+/info - Info about BRCE  
 
 #### Main
 
