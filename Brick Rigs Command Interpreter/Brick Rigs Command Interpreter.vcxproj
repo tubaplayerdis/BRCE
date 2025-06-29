@@ -24,6 +24,7 @@
     <ProjectGuid>{b1fbfd6c-9f05-4228-b7cd-2d45af7f9359}</ProjectGuid>
     <RootNamespace>BrickRigsCommandInterpreter</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Brick Rigs Command Engine</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

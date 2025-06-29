@@ -29,7 +29,7 @@ DWORD WINAPI MainThread(LPVOID lpReserved)
         freopen_s(&pStdIn, "CONIN$", "r", stdin);
         freopen_s(&pStdOut, "CONOUT$", "w", stdout);
         freopen_s(&pStdErr, "CONOUT$", "w", stderr);
-        SetConsoleTitleW(L"Brick Rigs Command Interpreter");
+        SetConsoleTitleW(L"Brick Rigs Command Engine");
         SetConsoleOutputCP(CP_UTF8);
     #endif // _DEBUG
 

@@ -38,10 +38,10 @@ void mainLoop()
 {
 	std::cout << reinterpret_cast<const char*>(CommandLineLogo) << std::endl;
 
-	//Find a way to alert the user that BRCI is loaded without using the console. Maybe try to make a notification out of a text border. a watermark is currently used but it might not be enough.
+	//Find a way to alert the user that BRCE is loaded without using the console. Maybe try to make a notification out of a text border. a watermark is currently used but it might not be enough.
 
 	if (!hooks::InitAllHooks()) {
-		if (MessageBox(GetActiveWindow(), L"Failed To Hook Critical Functions. Uninjecting BCRI. Would you like to look at the crash log?", L"Uninjecting BRCI", MB_YESNO) == IDYES) hooks::OpenCrashFile();
+		if (MessageBox(GetActiveWindow(), L"Failed To Hook Critical Functions. Uninjecting BCRE. Would you like to look at the crash log?", L"Uninjecting BRCE", MB_YESNO) == IDYES) hooks::OpenCrashFile();
 		return;
 	}
 
@@ -81,6 +81,6 @@ void mainLoop()
 	global::watermark::HideWaterWark();
 	global::watermark::UnInitalizeWaterMark();
 
-	modules::interpreter::sendMessageToAdmin("Uninjecting BRCI!");
-	SendNotificationLocal(L"Uninjecting BRCI", 9);
+	modules::interpreter::sendMessageToAdmin("Uninjecting BRCE!");
+	SendNotificationLocal(L"Uninjecting BRCE", 9);
 }

@@ -171,7 +171,7 @@ void modules::interpreter::interpretCommand(std::string command, std::vector<std
             Commands::Help(info, args[0]);
             break;
         case hs("/info"):
-            sendUserSpecificMessageWithContext(info, InfoMessage, SDK::EChatContext::Global, L"Info ABout BRCI:");
+            sendUserSpecificMessageWithContext(info, InfoMessage, SDK::EChatContext::Global, L"Info ABout BRCE:");
             break;
         case hs("/on"):
             if (args.size() < 1) { ToFewArgs(info, "/on", "moderation"); break; }
@@ -271,7 +271,7 @@ void modules::interpreter::sendUserSpecificMessage(PlayerInfo info, std::string 
         SMessage.Type = SDK::EChatMessageType::Message;
         SMessage.IntOption = 1;//Equates to SDK::EChatContext. use this to get admin messages or other types of messages.
         SMessage.Player.PlayerId = cont->GetPlayerId();
-        SMessage.Player.PlayerName = STRING(L"BRCI");
+        SMessage.Player.PlayerName = STRING(L"BRCE");
         cont->ClientReceiveChatMessage(SMessage);
     }
     else {
@@ -633,12 +633,12 @@ void modules::interpreter::Commands::Moderation::ToggleSilence(PlayerInfo info, 
 {
     using namespace global::moderation;
     if (on_off) {
-        if(!AddPMSilencePlayer(info)) sendUserSpecificMessageWithContext(info, std::string("You are already on silence!"), SDK::EChatContext::Global, L"BRCI Moderation");
-        else sendUserSpecificMessageWithContext(info, std::string("Disallowed incoming personal messages!"), SDK::EChatContext::Global, L"BRCI Moderation");
+        if(!AddPMSilencePlayer(info)) sendUserSpecificMessageWithContext(info, std::string("You are already on silence!"), SDK::EChatContext::Global, L"BRCE Moderation");
+        else sendUserSpecificMessageWithContext(info, std::string("Disallowed incoming personal messages!"), SDK::EChatContext::Global, L"BRCE Moderation");
     }
     else {
-        if(!RemovePMSilencePlayer(info)) sendUserSpecificMessageWithContext(info, std::string("You are already not on silence!"), SDK::EChatContext::Global, L"BRCI Moderation");
-        else sendUserSpecificMessageWithContext(info, std::string("Allowed incoming personal messages!"), SDK::EChatContext::Global, L"BRCI Moderation");
+        if(!RemovePMSilencePlayer(info)) sendUserSpecificMessageWithContext(info, std::string("You are already not on silence!"), SDK::EChatContext::Global, L"BRCE Moderation");
+        else sendUserSpecificMessageWithContext(info, std::string("Allowed incoming personal messages!"), SDK::EChatContext::Global, L"BRCE Moderation");
     }
 }
 

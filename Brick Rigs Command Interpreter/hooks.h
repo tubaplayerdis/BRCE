@@ -46,7 +46,7 @@ namespace hooks
 
 			//Print cases to file
 			std::ofstream saveFile;
-			saveFile.open("BRCICRASH.txt", std::ios::trunc);
+			saveFile.open("BRCECRASH.txt", std::ios::trunc);
 			if (!saveFile.bad() && !saveFile.fail() && saveFile.is_open()) {
 				saveFile << "Hooks have a possibility of loading incorrectly given a version change for BR. This is normal an update should be out soon fixing this if that is the case." << std::endl;
 				saveFile << "ACMHOOK: " << ACMHook << std::endl;
@@ -97,7 +97,7 @@ namespace hooks
 		if (!curDir.empty() && curDir.back() != L'\\') {
 			curDir += L'\\';
 		}
-		curDir += L"BRCICRASH.txt";
+		curDir += L"BRCECRASH.txt";
 		ShellExecute(NULL, L"open", curDir.c_str(), NULL, NULL, SW_SHOW);
 	}
 }

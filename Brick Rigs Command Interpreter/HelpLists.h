@@ -24,14 +24,14 @@ inline std::string MasterHelpMessage = R"(/info
 
 #ifdef _DEBUG
 
-inline std::string ControlsHelpMessage = R"(BRCI Controls:
+inline std::string ControlsHelpMessage = R"(BRCE Controls:
 Divide - Uninject
 Multiply - Toggle Chat Commands
 Return - (Fix Freezes))";
 
 #else
 
-inline std::string ControlsHelpMessage = R"(BRCI Controls:
+inline std::string ControlsHelpMessage = R"(BRCE Controls:
 CTRL-U - Uninject
 CTRL-T - Toggle Chat Commands
 Return - (Fix Freezes))";
@@ -77,8 +77,8 @@ inline std::string WeaponsHelpMessage = R"(Ammo Types:
 /ammotype [type] - Change your active weapon's ammo type to the desired ammo type number.)";
 //List the ammo types later
 
-inline std::string InfoMessage = R"(Brick Rigs Command Interpreter(BRCI), is a chat command mod made for Bricks Rigs that adds chat message functionality to your server. It is dll based and server-side only.
-Star the GitHub: https://github.com/tubaplayerdis/BRCI
+inline std::string InfoMessage = R"(Brick Rigs Command Engine(BRCE), is a chat command mod made for Bricks Rigs that adds chat message functionality to your server. It is dll based and server-side only.
+Star the GitHub: https://github.com/tubaplayerdis/BRCE
 Follow the Creator: https://github.com/tubaplayerdis
 )";
 
@@ -86,9 +86,9 @@ inline std::string BypassPassword = "uno";
 
 
 #ifdef _DEBUG
-inline std::string WelcomeServerMessage = R"((DEV)Thank you for using the Brick Rigs Command Interpreter(BRCI). Use /help to get started!)";
+inline std::string WelcomeServerMessage = R"((DEV)Thank you for using the Brick Rigs Command Engine(BRCE). Use /help to get started!)";
 #else
-inline std::string WelcomeServerMessage = R"(Thank you for using the Brick Rigs Command Interpreter(BRCI). Use /help to get started!)";
+inline std::string WelcomeServerMessage = R"(Thank you for using the Brick Rigs Command Engine(BRCE). Use /help to get started!)";
 #endif
 
-inline std::string WelcomeClientMessage = R"(This server uses the Brick Rigs Command Interpreter(BRCI). Use /help to get started!)";
+inline std::string WelcomeClientMessage = R"(This server uses the Brick Rigs Command Engine(BRCE). Use /help to get started!)";

@@ -244,9 +244,9 @@ bool global::watermark::InitalizeWaterMark()
 	#define TEXT(text) SDK::UKismetTextLibrary::Conv_StringToText(SDK::FString(text))
 
 	#ifdef _DEBUG
-	TextBlock->SetText(TEXT(L"(DEV)Brick Rigs Command Interpreter V1.0 (BRCI)"));
+	TextBlock->SetText(TEXT(L"(DEV)Brick Rigs Command Engine V1.0 (BRCE)"));
 	#else
-	TextBlock->SetText(TEXT(L"Brick Rigs Command Interpreter V1.0 (BRCI)"));
+	TextBlock->SetText(TEXT(L"Brick Rigs Command Engine V1.0 (BRCE)"));
 	#endif // _DEBUG
 
 	TextBlock->SetColorStyle(SDK::EBrickUIColorStyle::Default);
@@ -393,13 +393,13 @@ bool global::moderation::loadModerationValues()
 void global::welcome::SendWelcomeMessage()
 {
 	if (isMapValid()) {
-		modules::interpreter::sendUserSpecificMessageWithContext(GetPlayerInfoFromController(GetBrickPlayerController()), WelcomeServerMessage, SDK::EChatContext::Global, L"BRCI");
-		modules::interpreter::sendUserSpecificMessageWithContext(GetPlayerInfoFromController(GetBrickPlayerController()), ControlsHelpMessage, SDK::EChatContext::Global, L"BRCI");
+		modules::interpreter::sendUserSpecificMessageWithContext(GetPlayerInfoFromController(GetBrickPlayerController()), WelcomeServerMessage, SDK::EChatContext::Global, L"BRCE");
+		modules::interpreter::sendUserSpecificMessageWithContext(GetPlayerInfoFromController(GetBrickPlayerController()), ControlsHelpMessage, SDK::EChatContext::Global, L"BRCE");
 	}
 }
 
 void global::welcome::SendWelcomeMessageA()
 {
-	modules::interpreter::sendUserSpecificMessageWithContext(GetPlayerInfoFromController(GetBrickPlayerController()), WelcomeServerMessage, SDK::EChatContext::Global, L"BRCI");
-	modules::interpreter::sendUserSpecificMessageWithContext(GetPlayerInfoFromController(GetBrickPlayerController()), ControlsHelpMessage, SDK::EChatContext::Global, L"BRCI");
+	modules::interpreter::sendUserSpecificMessageWithContext(GetPlayerInfoFromController(GetBrickPlayerController()), WelcomeServerMessage, SDK::EChatContext::Global, L"BRCE");
+	modules::interpreter::sendUserSpecificMessageWithContext(GetPlayerInfoFromController(GetBrickPlayerController()), ControlsHelpMessage, SDK::EChatContext::Global, L"BRCE");
 }
