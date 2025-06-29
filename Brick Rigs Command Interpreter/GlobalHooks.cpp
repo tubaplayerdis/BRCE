@@ -16,6 +16,7 @@
 #include "ChatMessageHooks.h"
 #include "HelpLists.h"
 #include <thread>
+#include <fstream>
 
 void __fastcall hooks::BeginPlay::HookedBeginPlayFunction(SDK::UWorld* This)
 {
@@ -188,7 +189,24 @@ void hooks::OpenMenu::Disable()
 void __fastcall hooks::OnPlayerJoined::HookedOnPlayerJoinedFunction(SDK::ABrickGameSession* This, SDK::ABrickPlayerController* PC)
 {
 	OriginalOnPlayerJoinedFunction(This, PC);
+	Sleep(10);
 	modules::interpreter::sendUserSpecificMessageWithContext(global::GetPlayerInfoFromController(PC), WelcomeClientMessage, SDK::EChatContext::Global, L"Welcome!");
+	UC::TArray<SDK::AActor*> raw = UC::TArray<SDK::AActor*>();
+	UC::TArray<SDK::AActor*>* what = &raw;
+	SDK::UGameplayStatics::GetAllActorsOfClass(World(), SDK::ABrickPlayerController::StaticClass(), what);
+	std::ofstream playerFile("LastPlayersJoined.txt", std::ios::trunc);
+	bool isValidFile = playerFile.is_open() && !playerFile.bad() && !playerFile.fail();
+	playerFile << "Last Player List:\n";
+	for (int i = 0; i < raw.Num(); i++)
+	{
+		SDK::ABrickPlayerController* cast = static_cast<SDK::ABrickPlayerController*>(raw[i]);
+		if (cast->PlayerState) 
+		{
+			SDK::ABrickPlayerState* state = static_cast<SDK::ABrickPlayerState*>(cast->PlayerState);
+			if(state && isValidFile) playerFile << state->GetPlayerNameText().ToString() << "\n";
+		};
+	}
+	playerFile.close();
 }
 
 bool hooks::OnPlayerJoined::Init()
