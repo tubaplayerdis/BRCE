@@ -4,7 +4,7 @@
 
 The Brick Rigs Command Engine (BRCE) adds chat message command functionality to your brick rigs server.
 
-## How To Download: https://www.youtube.com/watch?v=MSOKNhwErSc
+## [How To Download](https://youtu.be/bsyfrGKo8QI)
 
 ## Development
 
