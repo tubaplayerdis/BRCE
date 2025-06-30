@@ -86,9 +86,9 @@ inline std::string BypassPassword = "uno";
 
 
 #ifdef _DEBUG
-inline std::string WelcomeServerMessage = R"((DEV)Thank you for using the Brick Rigs Command Engine(BRCE). Use /help to get started!)";
+inline std::string WelcomeServerMessage = R"((DEV)Thank you for using the Brick Rigs Command Engine (BRCE). Use /help to get started!)";
 #else
-inline std::string WelcomeServerMessage = R"(Thank you for using the Brick Rigs Command Engine(BRCE). Use /help to get started!)";
+inline std::string WelcomeServerMessage = R"(Thank you for using the Brick Rigs Command Engine (BRCE). Use /help to get started!)";
 #endif
 
-inline std::string WelcomeClientMessage = R"(This server uses the Brick Rigs Command Engine(BRCE). Use /help to get started!)";
+inline std::string WelcomeClientMessage = R"(This server uses the Brick Rigs Command Engine (BRCE). Use /help to get started!)";
