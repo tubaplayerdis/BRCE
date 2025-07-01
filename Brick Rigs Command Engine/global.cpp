@@ -127,14 +127,9 @@ bool global::GetIsPlayerHostFromName(std::string name)
 bool global::isMapValid()
 {
 	std::string name = mapLevelName;
-	if (name == "City2") return true;
-	else if (name == "Canyon") return true;
-	else if (name == "City") return true;
-	else if (name == "Desert") return true;
-	else if (name == "GridMap") return true;
-	else if (name == "Raceway") return true;
-	else if (name == "Space") return true;
-	else return false;
+	if (name == "MainMenu") return false;
+	else if (name == "Changing") return false;
+	else return true;
 }
 
 bool global::IsHost(SDK::UNetDriver* driver)
